@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI Agent Widget — Kofon demo</title>
+<link rel="stylesheet" href="widget.css">
+<style>
+  /* ----- Demo page styling only (the widget brings its own CSS) ----- */
+  :root {
+    --kofon-navy: #132178;
+    --kofon-navy-dark: #0c164f;
+    --kofon-green: #c2e295;
+    --ink: #16181d;
+    --ink-muted: #5a6473;
+    --line: #e6e8ef;
+    --bg: #f6f7fb;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+  /* Top bar */
+  .nav {
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+    position: sticky; top: 0; z-index: 10;
+  }
+  .nav-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+  }
+  .logo {
+    font-weight: 800; font-size: 20px; letter-spacing: -0.4px;
+    color: var(--kofon-navy);
+  }
+  .logo span { color: var(--ink-muted); font-weight: 500; margin-left: 4px; }
+  .nav-links { display: flex; gap: 26px; }
+  .nav-links a {
+    color: var(--ink); text-decoration: none; font-size: 14px; font-weight: 500;
+  }
+  .nav-links a:hover { color: var(--kofon-navy); }
+  .nav-cta {
+    background: var(--kofon-navy); color: #fff; padding: 8px 16px;
+    border-radius: 8px; font-size: 13px; font-weight: 600; text-decoration: none;
+  }
+  /* Hero */
+  .hero {
+    background:
+      radial-gradient(80% 60% at 80% 0%, rgba(194, 226, 149, 0.18), transparent 60%),
+      linear-gradient(150deg, var(--kofon-navy) 0%, var(--kofon-navy-dark) 100%);
+    color: #fff;
+    padding: 90px 0 110px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero h1 {
+    font-size: 52px; line-height: 1.05; margin: 0 0 22px;
+    font-weight: 700; letter-spacing: -1.5px;
+    max-width: 720px;
+  }
+  .hero p {
+    font-size: 18px; color: rgba(255,255,255,0.78); margin: 0 0 32px;
+    max-width: 560px;
+  }
+  .hero-tags {
+    display: flex; gap: 10px; flex-wrap: wrap;
+  }
+  .hero-tag {
+    padding: 6px 12px; border-radius: 16px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.18);
+    font-size: 12.5px; color: rgba(255,255,255,0.9);
+  }
+  /* Section */
+  section { padding: 72px 0; }
+  .section-eyebrow {
+    text-transform: uppercase; letter-spacing: 1.2px; font-size: 12px;
+    font-weight: 700; color: var(--kofon-navy); margin: 0 0 10px;
+  }
+  .section-title {
+    font-size: 34px; line-height: 1.15; margin: 0 0 16px;
+    font-weight: 700; letter-spacing: -0.6px;
+  }
+  .section-lead {
+    font-size: 17px; color: var(--ink-muted); max-width: 640px; margin: 0 0 40px;
+  }
+  /* Product grid */
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .card {
+    background: #fff; border: 1px solid var(--line); border-radius: 14px;
+    padding: 22px; transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  }
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px rgba(15, 23, 60, 0.08);
+    border-color: var(--kofon-navy);
+  }
+  .card-thumb {
+    height: 120px; border-radius: 10px; margin-bottom: 16px;
+    background: linear-gradient(135deg, #eef1f9 0%, #d8dfee 100%);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--kofon-navy); font-size: 28px; font-weight: 700;
+  }
+  .card h3 { margin: 0 0 6px; font-size: 17px; font-weight: 600; }
+  .card p { margin: 0; font-size: 13.5px; color: var(--ink-muted); }
+  /* Banner */
+  .banner {
+    background: #fff; border: 1px solid var(--line); border-radius: 16px;
+    padding: 36px; display: grid; grid-template-columns: 1.4fr 1fr; gap: 36px;
+    align-items: center;
+  }
+  .banner h3 { font-size: 26px; margin: 0 0 12px; letter-spacing: -0.4px; }
+  .banner p { color: var(--ink-muted); margin: 0 0 18px; font-size: 15px; }
+  .banner-cta {
+    display: inline-block; background: var(--kofon-navy); color: #fff;
+    padding: 11px 20px; border-radius: 8px; font-size: 14px; font-weight: 600;
+    text-decoration: none;
+  }
+  .banner-visual {
+    height: 180px; border-radius: 12px;
+    background:
+      radial-gradient(circle at 30% 30%, rgba(194, 226, 149, 0.5), transparent 60%),
+      linear-gradient(135deg, var(--kofon-navy) 0%, #1e2f9c 100%);
+  }
+  /* Footer */
+  footer {
+    padding: 40px 0; border-top: 1px solid var(--line); background: #fff;
+    color: var(--ink-muted); font-size: 13px; text-align: center;
+  }
+  /* Demo banner explaining this is a preview */
+  .demo-note {
+    position: fixed; top: 12px; left: 12px; z-index: 100;
+    background: rgba(22, 24, 29, 0.92);
+    color: #fff; padding: 10px 14px; border-radius: 10px;
+    font-size: 12.5px; max-width: 320px;
+    backdrop-filter: blur(8px);
+  }
+  .demo-note strong { color: var(--kofon-green); }
+  .demo-note kbd {
+    background: rgba(255,255,255,0.14); padding: 1px 6px; border-radius: 4px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 11px;
+  }
+  @media (max-width: 760px) {
+    .hero h1 { font-size: 36px; }
+    .grid { grid-template-columns: 1fr; }
+    .banner { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="demo-note">
+  <strong>Widget preview</strong> — this faux site shows the chat addon in context. Click the launcher (bottom-right).
+</div>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <a class="logo" href="#">KOFON<span>motion</span></a>
+    <div class="nav-links">
+      <a href="#">Company</a>
+      <a href="#">Products</a>
+      <a href="#">Industries</a>
+      <a href="#">Institute</a>
+      <a href="#">Service</a>
+    </div>
+    <a class="nav-cta" href="#">Contact</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <h1>Precision motion components, engineered for what comes next.</h1>
+    <p>Planetary gearboxes, roller screws, strain wave gears and robot joint modules — across 15+ industries, with ISO 9001 production and 5-day standard lead times.</p>
+    <div class="hero-tags">
+      <span class="hero-tag">Factory automation</span>
+      <span class="hero-tag">Robotics</span>
+      <span class="hero-tag">Semiconductor</span>
+      <span class="hero-tag">Medical equipment</span>
+      <span class="hero-tag">Laser processing</span>
+      <span class="hero-tag">+ 10 more</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <p class="section-eyebrow">Product families</p>
+    <h2 class="section-title">Six engineering families, one supplier.</h2>
+    <p class="section-lead">From economic-tier standard SKUs to high-precision custom builds. Datasheets, CAD files and KDP design tool available online.</p>
+    <div class="grid">
+      <div class="card">
+        <div class="card-thumb">CP</div>
+        <h3>CaesarPlanetary</h3>
+        <p>Precision planetary gearboxes — inline, right-angle, reinforced.</p>
+      </div>
+      <div class="card">
+        <div class="card-thumb">RS</div>
+        <h3>Rollsate</h3>
+        <p>Precision planetary roller screws for high-load linear motion.</p>
+      </div>
+      <div class="card">
+        <div class="card-thumb">EW</div>
+        <h3>Elitewave</h3>
+        <p>Strain wave gears with low backlash and high reduction ratios.</p>
+      </div>
+      <div class="card">
+        <div class="card-thumb">SV</div>
+        <h3>Servolux</h3>
+        <p>Robot modular joint solutions for collaborative & industrial arms.</p>
+      </div>
+      <div class="card">
+        <div class="card-thumb">SB</div>
+        <h3>Spiral bevel</h3>
+        <p>Compact right-angle gearboxes for tight installation envelopes.</p>
+      </div>
+      <div class="card">
+        <div class="card-thumb">KGV</div>
+        <h3>KGV solutions</h3>
+        <p>Customized geared motors for specialist applications.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="banner">
+      <div>
+        <p class="section-eyebrow">Design tools</p>
+        <h3>Pick the right gearbox in under a minute with KDP.</h3>
+        <p>Enter torque, ratio, backlash class and mounting. KDP returns a shortlist of matching SKUs with datasheets and CAD files ready to download.</p>
+        <a class="banner-cta" href="#">Open KDP →</a>
+      </div>
+      <div class="banner-visual"></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    Kofon Motion Group · ISO 9001:2015 · info@kofon-motion.com · +86 713 8585919
+  </div>
+</footer>
+
+<!-- AI Agent widget — drop these two lines into any site -->
+<script src="widget.js"></script>
+<script src="config.kofon.js"></script>
+
+</body>
+</html>
