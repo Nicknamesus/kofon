@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell($bytes = [System.IO.File]::ReadAllBytes\\(\"X:\\\\programming\\\\websites\\\\kofon\\\\current\\\\www.kofon-motion.com\\\\index.html\"\\); \"First 3 bytes: $\\($bytes[0..2] -join ','\\)\")",
+      "Bash(node --check X:/programming/websites/kofon/ai-agent-addon/widget.js)",
+      "Bash(node --check X:/programming/websites/kofon/ai-agent-addon/config.kofon.js)",
+      "Bash(docker --version)",
+      "Bash(docker compose *)",
+      "Bash(python -c \"import ast; [ast.parse\\(open\\(p\\).read\\(\\)\\) for p in ['app/config.py','app/db.py','app/main.py','alembic/env.py']]; print\\('All Python files parse OK'\\)\")"
+    ]
+  }
+}
