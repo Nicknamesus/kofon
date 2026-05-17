@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Kofon Motion Group — Precision Motion, Engineered for Automation</title>
+<meta name="description" content="Kofon Motion Group designs and manufactures precision planetary gearboxes, harmonic drives, roller screws and motion solutions for robotics, semiconductor and factory automation worldwide." />
+<meta name="theme-color" content="#05070d" />
+<link rel="icon" href="current/www.kofon-motion.com/favicon.ico" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ambient background grid + glow -->
+<div class="bg-layer" aria-hidden="true">
+  <div class="bg-grid"></div>
+  <div class="bg-glow glow-a"></div>
+  <div class="bg-glow glow-b"></div>
+  <div class="bg-noise"></div>
+</div>
+
+<header class="site-header" id="siteHeader">
+  <a class="brand" href="#top" aria-label="Kofon Motion Group home">
+    <span class="brand-mark" aria-hidden="true">
+      <svg viewBox="0 0 40 40" width="34" height="34">
+        <defs>
+          <linearGradient id="bgrad" x1="0" x2="1" y1="0" y2="1">
+            <stop offset="0" stop-color="#67f0ff"/>
+            <stop offset="1" stop-color="#4b6bff"/>
+          </linearGradient>
+        </defs>
+        <circle cx="20" cy="20" r="18" fill="none" stroke="url(#bgrad)" stroke-width="1.4"/>
+        <circle cx="20" cy="20" r="9" fill="none" stroke="url(#bgrad)" stroke-width="1.4"/>
+        <g stroke="url(#bgrad)" stroke-width="1.4">
+          <line x1="20" y1="2" x2="20" y2="11"/>
+          <line x1="20" y1="29" x2="20" y2="38"/>
+          <line x1="2" y1="20" x2="11" y2="20"/>
+          <line x1="29" y1="20" x2="38" y2="20"/>
+        </g>
+        <circle cx="20" cy="20" r="2.4" fill="#67f0ff"/>
+      </svg>
+    </span>
+    <span class="brand-word">
+      <span class="brand-name">KOFON</span>
+      <span class="brand-sub">Motion Group</span>
+    </span>
+  </a>
+
+  <nav class="primary-nav" aria-label="Primary">
+    <a href="#products">Products</a>
+    <a href="#industries">Industries</a>
+    <a href="#capabilities">Capabilities</a>
+    <a href="#global">Global</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="header-cta">
+    <a class="ghost-btn" href="#contact">
+      <span>Request quote</span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="hero-meta">
+      <span class="dot"></span>
+      <span>ISO 9001:2015 · RoHS · CE-Ready</span>
+    </div>
+
+    <h1 class="hero-title">
+      <span class="line">Precision motion,</span>
+      <span class="line accent">engineered for the next industrial era.</span>
+    </h1>
+
+    <p class="hero-sub">
+      Planetary gearboxes, harmonic drives, roller screws and integrated motion solutions
+      built for robotics, semiconductor, laser and intelligent logistics — shipped from
+      China with engineering presence in Germany and Korea.
+    </p>
+
+    <div class="hero-actions">
+      <a class="primary-btn" href="#products">
+        <span>Explore product lines</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+      <a class="link-btn" href="#capabilities">
+        <span>See capabilities</span>
+      </a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-value" data-count="6">0</div>
+        <div class="stat-label">Engineering brands</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value" data-count="13">0</div>
+        <div class="stat-label">Target industries</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">
+          <span data-count="5">0</span><span class="unit">d</span>
+        </div>
+        <div class="stat-label">Standard lead time</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">
+          <span data-count="15">0</span><span class="unit">d</span>
+        </div>
+        <div class="stat-label">Custom lead time</div>
+      </div>
+    </div>
+
+    <!-- Hero visual: rotating concentric rings (planetary) -->
+    <div class="hero-visual" aria-hidden="true">
+      <svg viewBox="0 0 600 600" class="rings">
+        <defs>
+          <radialGradient id="core" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#67f0ff" stop-opacity=".9"/>
+            <stop offset="60%" stop-color="#4b6bff" stop-opacity=".25"/>
+            <stop offset="100%" stop-color="#4b6bff" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="ring" x1="0" x2="1">
+            <stop offset="0" stop-color="#67f0ff" stop-opacity=".0"/>
+            <stop offset=".5" stop-color="#67f0ff" stop-opacity=".9"/>
+            <stop offset="1" stop-color="#67f0ff" stop-opacity=".0"/>
+          </linearGradient>
+        </defs>
+
+        <circle cx="300" cy="300" r="260" class="ring ring-1" />
+        <circle cx="300" cy="300" r="200" class="ring ring-2" />
+        <circle cx="300" cy="300" r="140" class="ring ring-3" />
+        <circle cx="300" cy="300" r="80"  class="ring ring-4" />
+
+        <g class="orbit orbit-1">
+          <circle cx="300" cy="40" r="6" fill="#67f0ff"/>
+        </g>
+        <g class="orbit orbit-2">
+          <circle cx="500" cy="300" r="4" fill="#4b6bff"/>
+        </g>
+        <g class="orbit orbit-3">
+          <circle cx="300" cy="440" r="3" fill="#a3b5ff"/>
+        </g>
+
+        <circle cx="300" cy="300" r="120" fill="url(#core)" />
+        <circle cx="300" cy="300" r="6" fill="#eaf2ff"/>
+
+        <!-- tick marks -->
+        <g class="ticks">
+          <g transform="translate(300,300)">
+            <g class="tick-ring">
+              <!-- generated marks -->
+            </g>
+          </g>
+        </g>
+      </svg>
+      <div class="hero-visual-meta">
+        <span>// LIVE.SYSTEM.MOTION</span>
+        <span class="pulse">●</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MARQUEE ============ -->
+  <section class="marquee" aria-label="Brand families">
+    <div class="marquee-track">
+      <span>CaesarPlanetary®</span><span class="sep">/</span>
+      <span>CaesarSpiral®</span><span class="sep">/</span>
+      <span>Elitewave®</span><span class="sep">/</span>
+      <span>Rollsate®</span><span class="sep">/</span>
+      <span>Servolux®</span><span class="sep">/</span>
+      <span>KGV®</span><span class="sep">/</span>
+      <span>CaesarPlanetary®</span><span class="sep">/</span>
+      <span>CaesarSpiral®</span><span class="sep">/</span>
+      <span>Elitewave®</span><span class="sep">/</span>
+      <span>Rollsate®</span><span class="sep">/</span>
+      <span>Servolux®</span><span class="sep">/</span>
+      <span>KGV®</span><span class="sep">/</span>
+    </div>
+  </section>
+
+  <!-- ============ PRODUCTS ============ -->
+  <section class="section" id="products">
+    <div class="section-head">
+      <div class="section-tag">// 01 — Product families</div>
+      <h2>Six engineering brands. One integrated motion portfolio.</h2>
+      <p>From sub-millimetre micro gearboxes to integrated AGV/AMR drivetrains — engineered to interoperate, specified to perform.</p>
+    </div>
+
+    <div class="product-grid">
+      <article class="product-card" style="--accent:#67f0ff">
+        <div class="product-card-head">
+          <div class="product-icon">
+            <svg viewBox="0 0 40 40" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6">
+              <circle cx="20" cy="20" r="14"/>
+              <circle cx="20" cy="20" r="5"/>
+              <circle cx="20" cy="8"  r="3"/>
+              <circle cx="20" cy="32" r="3"/>
+              <circle cx="8"  cy="20" r="3"/>
+              <circle cx="32" cy="20" r="3"/>
+            </svg>
+          </div>
+          <div class="product-id">001</div>
+        </div>
+        <h3>CaesarPlanetary<sup>®</sup></h3>
+        <p>Precision planetary gearboxes — inline, right-angle, reinforced, micro and economic variants.</p>
+        <ul class="chips">
+          <li>KPE</li><li>KPLF</li><li>KPLN</li><li>KPX</li><li>KPH</li><li>KPG</li><li>SPL</li><li>SPLF</li><li>SPH</li>
+        </ul>
+      </article>
+
+      <article class="product-card" style="--accent:#7ad7ff">
+        <div class="product-card-head">
+          <div class="product-icon">
+            <svg viewBox="0 0 40 40" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M6 30 L20 6 L34 30 Z"/>
+              <circle cx="20" cy="22" r="4"/>
+              <path d="M20 26 L20 34"/>
+            </svg>
+          </div>
+          <div class="product-id">002</div>
+        </div>
+        <h3>CaesarSpiral<sup>®</sup></h3>
+        <p>Spiral bevel gearbox solutions for right-angle torque transmission with quiet, low-backlash performance.</p>
+        <ul class="chips">
+          <li>Bevel</li><li>Right-angle</li><li>Low backlash</li>
+        </ul>
+      </article>
+
+      <article class="product-card" style="--accent:#9b8cff">
+        <div class="product-card-head">
+          <div class="product-icon">
+            <svg viewBox="0 0 40 40" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6">
+              <circle cx="20" cy="20" r="14"/>
+              <path d="M6 20 Q20 6 34 20 Q20 34 6 20" />
+              <circle cx="20" cy="20" r="2.5" fill="currentColor"/>
+            </svg>
+          </div>
+          <div class="product-id">003</div>
+        </div>
+        <h3>Elitewave<sup>®</sup></h3>
+        <p>Ultra-precision strain-wave (harmonic) gears for collaborative robots and articulated joints.</p>
+        <ul class="chips">
+          <li>Harmonic drive</li><li>Cobot joints</li><li>Zero-backlash</li>
+        </ul>
+      </article>
+
+      <article class="product-card" style="--accent:#67f0ff">
+        <div class="product-card-head">
+          <div class="product-icon">
+            <svg viewBox="0 0 40 40" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6">
+              <rect x="6" y="17" width="28" height="6" rx="1"/>
+              <path d="M8 14 L32 14 M8 26 L32 26"/>
+              <circle cx="12" cy="20" r="1.4" fill="currentColor"/>
+              <circle cx="20" cy="20" r="1.4" fill="currentColor"/>
+              <circle cx="28" cy="20" r="1.4" fill="currentColor"/>
+            </svg>
+          </div>
+          <div class="product-id">004</div>
+        </div>
+        <h3>Rollsate<sup>®</sup></h3>
+        <p>Precision planetary roller screws — high load capacity, long life, smooth linear motion.</p>
+        <ul class="chips">
+          <li>Roller screw</li><li>High-load linear</li>
+        </ul>
+      </article>
+
+      <article class="product-card" style="--accent:#4b6bff">
+        <div class="product-card-head">
+          <div class="product-icon">
+            <svg viewBox="0 0 40 40" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6">
+              <rect x="10" y="10" width="20" height="20" rx="3"/>
+              <path d="M14 14 L26 26 M26 14 L14 26"/>
+              <path d="M4 20 L10 20 M30 20 L36 20 M20 4 L20 10 M20 30 L20 36"/>
+            </svg>
+          </div>
+          <div class="product-id">005</div>
+        </div>
+        <h3>Servolux<sup>®</sup></h3>
+        <p>High-performance servo motors and robot modular joint solutions for next-gen robotics.</p>
+        <ul class="chips">
+          <li>Servo motors</li><li>Modular joints</li><li>Robotics</li>
+        </ul>
+      </article>
+
+      <article class="product-card" style="--accent:#67ffb3">
+        <div class="product-card-head">
+          <div class="product-icon">
+            <svg viewBox="0 0 40 40" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6">
+              <rect x="6" y="14" width="28" height="14" rx="2"/>
+              <circle cx="13" cy="30" r="3"/>
+              <circle cx="27" cy="30" r="3"/>
+              <path d="M14 14 L14 10 L26 10 L26 14"/>
+            </svg>
+          </div>
+          <div class="product-id">006</div>
+        </div>
+        <h3>KGV<sup>®</sup></h3>
+        <p>Integrated motion for AGV / AMR autonomous mobile robots — drivetrain to controller, ready to deploy.</p>
+        <ul class="chips">
+          <li>AGV</li><li>AMR</li><li>Integrated drive</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ INDUSTRIES ============ -->
+  <section class="section section-alt" id="industries">
+    <div class="section-head">
+      <div class="section-tag">// 02 — Competence industries</div>
+      <h2>Where Kofon motion lives.</h2>
+      <p>Application-specific gearbox selection, datasheets and engineering support for thirteen verticals.</p>
+    </div>
+
+    <div class="industry-grid">
+      <div class="industry-cell"><span>01</span>Robotics</div>
+      <div class="industry-cell"><span>02</span>Factory Automation</div>
+      <div class="industry-cell"><span>03</span>Laser Processing</div>
+      <div class="industry-cell"><span>04</span>Semiconductor</div>
+      <div class="industry-cell"><span>05</span>Medical Equipment</div>
+      <div class="industry-cell"><span>06</span>Intelligent Logistics</div>
+      <div class="industry-cell"><span>07</span>New Energy</div>
+      <div class="industry-cell"><span>08</span>Packaging &amp; Printing</div>
+      <div class="industry-cell"><span>09</span>Tooling Machines</div>
+      <div class="industry-cell"><span>10</span>Pharmaceutical</div>
+      <div class="industry-cell"><span>11</span>Food</div>
+      <div class="industry-cell"><span>12</span>Textile</div>
+      <div class="industry-cell"><span>13</span>Entertainment Equipment</div>
+      <div class="industry-cell industry-cell-cta">
+        <span>→</span>
+        <a href="#contact">Discuss your application</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CAPABILITIES ============ -->
+  <section class="section" id="capabilities">
+    <div class="section-head">
+      <div class="section-tag">// 03 — Capabilities</div>
+      <h2>Why engineering teams pick Kofon.</h2>
+      <p>We compete in the same space as Wittenstein, Neugart, Apex Dynamics and SEW-Eurodrive — and win on customisation speed and total cost.</p>
+    </div>
+
+    <div class="capability-grid">
+      <div class="cap-card cap-feature">
+        <div class="cap-num">15<span>d</span></div>
+        <div class="cap-title">Custom gearboxes, 1–50 pcs</div>
+        <p>Specification to door in roughly fifteen days — the difference between a prototype quarter and a missed launch.</p>
+      </div>
+
+      <div class="cap-card">
+        <div class="cap-num">5<span>d</span></div>
+        <div class="cap-title">Standard gearboxes</div>
+        <p>1–50 pcs, off-the-shelf, ready for integration.</p>
+      </div>
+
+      <div class="cap-card">
+        <div class="cap-icon">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M12 2 L20 6 V12 C20 17 16 21 12 22 C8 21 4 17 4 12 V6 Z"/>
+            <path d="M9 12 L11 14 L15 10"/>
+          </svg>
+        </div>
+        <div class="cap-title">Certified &amp; compliant</div>
+        <p>ISO 9001:2015 quality system. RoHS materials. CE-ready per EU Machinery Directive 2006/42/EC (components exempt from mandatory marking).</p>
+      </div>
+
+      <div class="cap-card">
+        <div class="cap-icon">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M3 12 L9 18 L21 6"/>
+          </svg>
+        </div>
+        <div class="cap-title">Smart Kofon Design Programme</div>
+        <p>Online gearbox selection by application or servo motor — engineering tools that compress the spec cycle.</p>
+      </div>
+
+      <div class="cap-card">
+        <div class="cap-icon">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="12" cy="12" r="9"/>
+            <path d="M3 12 H21 M12 3 C15 7 15 17 12 21 C9 17 9 7 12 3"/>
+          </svg>
+        </div>
+        <div class="cap-title">Global engineering presence</div>
+        <p>HQ in Hubei, China. Offices in Augsburg and Igersheim (Germany) and Seoul (Korea) — local support, global reach.</p>
+      </div>
+
+      <div class="cap-card">
+        <div class="cap-icon">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M4 7 H20 V19 H4 Z"/>
+            <path d="M4 7 L12 13 L20 7"/>
+          </svg>
+        </div>
+        <div class="cap-title">Precision Motion Institute</div>
+        <p>Technical and educational resources — application notes, sizing guides and continuing engineering content.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GLOBAL ============ -->
+  <section class="section section-alt" id="global">
+    <div class="section-head">
+      <div class="section-tag">// 04 — Global footprint</div>
+      <h2>Four offices, one motion network.</h2>
+    </div>
+
+    <div class="global-grid">
+      <div class="office-card primary-office">
+        <div class="office-flag">CN</div>
+        <h3>Hubei <span>· HQ</span></h3>
+        <p>Headquarters and manufacturing campus. R&amp;D, machining, assembly and global logistics.</p>
+        <div class="office-meta">
+          <a href="tel:+867138585919">+86 713 8585919</a>
+          <a href="mailto:info@kofon-motion.com">info@kofon-motion.com</a>
+        </div>
+      </div>
+      <div class="office-card">
+        <div class="office-flag">DE</div>
+        <h3>Augsburg</h3>
+        <p>Germany — sales and engineering office serving central Europe.</p>
+      </div>
+      <div class="office-card">
+        <div class="office-flag">DE</div>
+        <h3>Igersheim</h3>
+        <p>Germany — application engineering for OEM partners.</p>
+      </div>
+      <div class="office-card">
+        <div class="office-flag">KR</div>
+        <h3>Seoul</h3>
+        <p>Korea — regional support for the APAC robotics and electronics belt.</p>
+      </div>
+    </div>
+
+    <div class="exhibition-strip">
+      <div class="exhibition-tag">UPCOMING ON THE SHOWFLOOR</div>
+      <ul>
+        <li>AUTOMATE</li>
+        <li>ATX West</li>
+        <li>Smart Factory + Automation World</li>
+      </ul>
+      <a class="link-btn" href="#contact">
+        <span>Book a meeting</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="section contact-section" id="contact">
+    <div class="contact-grid">
+      <div class="contact-left">
+        <div class="section-tag">// 05 — Start a project</div>
+        <h2>Tell us what you're moving.</h2>
+        <p>Send a torque profile, a duty cycle or a rough idea. An engineer in Hubei, Augsburg, Igersheim or Seoul replies within one working day.</p>
+
+        <div class="contact-direct">
+          <a href="mailto:info@kofon-motion.com" class="contact-direct-row">
+            <span class="cdr-label">Email</span>
+            <span class="cdr-value">info@kofon-motion.com</span>
+          </a>
+          <a href="tel:+867138585919" class="contact-direct-row">
+            <span class="cdr-label">Phone</span>
+            <span class="cdr-value">+86 713 8585919</span>
+          </a>
+        </div>
+      </div>
+
+      <form class="contact-form" onsubmit="event.preventDefault(); this.querySelector('.form-success').hidden=false; this.reset();">
+        <div class="field">
+          <label for="cf-name">Name</label>
+          <input id="cf-name" name="name" type="text" required autocomplete="name" />
+        </div>
+        <div class="field">
+          <label for="cf-company">Company</label>
+          <input id="cf-company" name="company" type="text" autocomplete="organization" />
+        </div>
+        <div class="field">
+          <label for="cf-email">Email</label>
+          <input id="cf-email" name="email" type="email" required autocomplete="email" />
+        </div>
+        <div class="field">
+          <label for="cf-app">Application</label>
+          <select id="cf-app" name="application">
+            <option>Robotics</option>
+            <option>Factory Automation</option>
+            <option>Semiconductor</option>
+            <option>Laser Processing</option>
+            <option>Medical Equipment</option>
+            <option>Intelligent Logistics</option>
+            <option>New Energy</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="field field-full">
+          <label for="cf-msg">Project notes</label>
+          <textarea id="cf-msg" name="message" rows="4" placeholder="Torque, speed, duty cycle, mounting, qty..."></textarea>
+        </div>
+        <button type="submit" class="primary-btn">
+          <span>Send inquiry</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </button>
+        <p class="form-success" hidden>Inquiry queued — an engineer will reply shortly.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="foot-top">
+    <div class="foot-brand">
+      <span class="brand-name">KOFON</span>
+      <span class="brand-sub">Motion Group · Precision Motion &amp; Transmission Components</span>
+    </div>
+    <nav class="foot-nav">
+      <a href="#products">Products</a>
+      <a href="#industries">Industries</a>
+      <a href="#capabilities">Capabilities</a>
+      <a href="#global">Global</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+  <div class="foot-bottom">
+    <span>© <span id="year">2026</span> Kofon Motion Group. All rights reserved.</span>
+    <span class="foot-meta">ISO 9001:2015 · RoHS · CE-Ready</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
