@@ -12,6 +12,12 @@
    ============================================================ */
 (function () {
   const config = {
+    /* ----- Backend wiring -----
+       Set apiUrl to point at the FastAPI backend. With it set, the
+       widget routes all interactions through /api/messages (SSE).
+       Leave unset to render the visuals-only mock _flows. ----- */
+    apiUrl: "http://127.0.0.1:8001",
+
     /* ----- Branding ----- */
     primaryColor: "#132178",     // Kofon navy (matches site CSS)
     primaryHover: "#1e2f9c",

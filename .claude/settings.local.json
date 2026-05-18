@@ -8,7 +8,15 @@
       "mcp__claude_ai_Google_Drive__read_file_content",
       "mcp__claude_ai_Google_Drive__get_file_metadata",
       "mcp__claude_ai_Google_Drive__download_file_content",
-      "Bash(python -c ' *)"
+      "Bash(python -c ' *)",
+      "PowerShell(Set-Location X:\\\\programming\\\\websites\\\\kofon\\\\ai-agent-backend; .\\\\.venv\\\\Scripts\\\\Activate.ps1; $env:PYTHONIOENCODING='utf-8'; python -m app.agent.smoke_2c 2>&1)",
+      "PowerShell(uvicorn app.main:app *)",
+      "PowerShell(Set-Location X:\\\\programming\\\\websites\\\\kofon\\\\ai-agent-backend; .\\\\.venv\\\\Scripts\\\\Activate.ps1; $env:PYTHONIOENCODING='utf-8'; python -m app.agent.smoke_2d 2>&1)",
+      "PowerShell(Set-Location X:\\\\programming\\\\websites\\\\kofon\\\\ai-agent-backend; .\\\\.venv\\\\Scripts\\\\Activate.ps1; $env:PYTHONIOENCODING='utf-8'; python -m app.serve --port 8001)",
+      "Bash(node --check widget.js)",
+      "Bash(node --check api.js)",
+      "PowerShell($body = '{\"session_uuid\":\"00000000-0000-0000-0000-000000000099\",\"text\":\"PG090, low backlash 90mm 80Nm\",\"flow\":\"guide\"}'; curl.exe -s -X POST -H \"Content-Type: application/json\" -d $body http://127.0.0.1:8001/api/messages)",
+      "Bash(curl.exe -s -o /dev/null -w \"%{http_code}\\\\n\" http://127.0.0.1:8002/demo.html)"
     ]
   }
 }

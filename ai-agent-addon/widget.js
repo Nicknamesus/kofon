@@ -41,6 +41,19 @@
   }
   function $(root, sel) { return root.querySelector(sel); }
   function $$(root, sel) { return Array.from(root.querySelectorAll(sel)); }
+  function _escapeHtml(s) {
+    return String(s ?? "").replace(/[&<>"']/g, c => ({
+      "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&#39;"
+    }[c]));
+  }
+  /* Minimal markdown — bold (**x**) and italics (_x_ or *x*).
+     Run AFTER _escapeHtml so the tags can't be smuggled in via user text. */
+  function _miniMarkdown(html) {
+    return html
+      .replace(/\*\*([^*\n]+?)\*\*/g, "<strong>$1</strong>")
+      .replace(/(^|[\s(>])_([^_\n]+?)_(?=[\s).,!?:;<]|$)/g, "$1<em>$2</em>")
+      .replace(/(^|[\s(>])\*([^*\n]+?)\*(?=[\s).,!?:;<]|$)/g, "$1<em>$2</em>");
+  }
 
   /* ============================================================
      Widget class
@@ -313,7 +326,8 @@
       // Back to menu
       $(r, ".aiagent-back-bar").addEventListener("click", () => this.showScreen("welcome"));
 
-      // Composer (visual only — no real send wired)
+      // Composer — sends through the API when configured, else falls
+      // back to the visuals-only mock reply.
       const input = $(r, ".aiagent-composer-input");
       const send = () => {
         const v = input.value.trim();
@@ -321,7 +335,10 @@
         this.addUserMessage(v);
         input.value = "";
         if (this.state.screen === "welcome") this.showScreen("chat");
-        // mock a typing+reply
+        if (this.cfg.apiUrl && global.AIAgentAPI) {
+          this._streamFromApi({ text: v });
+          return;
+        }
         this.showTyping();
         setTimeout(() => {
           this.hideTyping();
@@ -352,9 +369,15 @@
         s.setAttribute("data-active", s.dataset.screen === name ? "true" : "false");
       });
       if (name === "welcome") {
-        // clear the thread on going back
+        // Clear the thread on going back. Also drop the persisted session
+        // when the API is wired — the welcome screen is the "fresh start"
+        // surface; lingering session UUIDs from an old terminated
+        // conversation would cause the next chip click to silently no-op.
         this._thread().innerHTML = "";
         this._setSuggestions([]);
+        if (this.cfg.apiUrl && global.AIAgentAPI && global.AIAgentAPI.resetSession) {
+          global.AIAgentAPI.resetSession();
+        }
       }
     }
 
@@ -371,13 +394,178 @@
       }
     }
 
-    /* ----- Flow dispatch (the pre-baked sample exchanges) ----- */
+    /* ----- Flow dispatch.
+
+       Two modes:
+       - `cfg.apiUrl` set  → real agent over SSE (Phase 2+).
+       - `cfg.apiUrl` null → pre-baked mock _flows below (visuals-only). ----- */
     startFlow(name, opts) {
       this.state.flow = name;
       this.showScreen("chat");
       this._thread().innerHTML = "";
+
+      if (this.cfg.apiUrl && global.AIAgentAPI) {
+        this._startFlowApi(name, opts || {});
+        return;
+      }
       const fn = this._flows[name] || this._flows.freeform;
       fn.call(this, opts || {});
+    }
+
+    /* ----- API-backed flow start. ----- */
+    _startFlowApi(name, opts) {
+      // A chip click means "start a new conversation in this flow" — reset
+      // the persisted session so we don't accidentally resume into an
+      // already-terminated thread (which would just yield an empty stream).
+      if (global.AIAgentAPI && global.AIAgentAPI.resetSession) {
+        global.AIAgentAPI.resetSession();
+      }
+
+      // The primary flows have a router-friendly seed; secondary
+      // utilities pass through whatever the chip implied.
+      const seedByFlow = {
+        presales:  "I want to explore what would fit my application.",
+        guide:     "I know roughly what I need — help me find products.",
+        postsales: "I have a problem with a product I own.",
+        other:     "I have a question.",
+      };
+      const text = (opts && opts.seed) || seedByFlow[name] || "(hi)";
+      const apiFlow = (name === "presales" || name === "guide"
+        || name === "postsales" || name === "other") ? name : undefined;
+
+      this.addUserMessage(text);
+      this._streamFromApi({ text, flow: apiFlow });
+    }
+
+    /* ----- Stream a turn through the backend. ----- */
+    async _streamFromApi(payload) {
+      this._lockComposer(true);
+      this.showTyping();
+      let firstEvent = true;
+      try {
+        await global.AIAgentAPI.streamMessage(
+          this.cfg.apiUrl,
+          payload,
+          (name, data) => {
+            if (firstEvent) { this.hideTyping(); firstEvent = false; }
+            this._handleAgentEvent(name, data);
+          },
+        );
+      } catch (err) {
+        this.hideTyping();
+        this.addBotMessage(
+          `<em>Couldn't reach the agent (${err.message}). Check the backend on <code>${this.cfg.apiUrl}</code>.</em>`
+        );
+      } finally {
+        this._lockComposer(false);
+      }
+    }
+
+    _lockComposer(locked) {
+      const input = $(this.root, ".aiagent-composer-input");
+      const send = $(this.root, ".aiagent-send");
+      if (input) input.disabled = !!locked;
+      if (send) send.disabled = !!locked;
+    }
+
+    /* ----- Map an SSE event to widget UI. ----- */
+    _handleAgentEvent(name, data) {
+      if (name === "bot_text") {
+        const safe = _escapeHtml(data.text || "");
+        const md = _miniMarkdown(safe).replace(/\n/g, "<br>");
+        this.addBotMessage(md);
+        return;
+      }
+      if (name === "card") {
+        const kind = data.kind || "";
+        const payload = data.payload || {};
+        if (kind === "product_results") return this._renderProductResultsCard(payload);
+        if (kind === "recommendations") return this._renderRecommendationsCard(payload);
+        if (kind === "gate")            return this._renderGateCard(payload);
+        if (kind === "outcome")         return this._renderOutcomeCard(payload);
+        console.warn("AIAgent: unknown card kind", kind, payload);
+        return;
+      }
+      if (name === "outcome" || name === "done") {
+        // No UI; outcome card already rendered (if any), done just unlocks.
+        return;
+      }
+    }
+
+    /* ----- Card renderers for agent events. ----- */
+    _renderProductResultsCard(payload) {
+      const results = payload.results || [];
+      const rows = results.map(r => {
+        const specs = r.specs || {};
+        const bits = [];
+        if (specs.ratio != null) bits.push(`${specs.ratio}:1`);
+        if (specs.nominal_torque_nm != null) bits.push(`${specs.nominal_torque_nm} Nm`);
+        if (specs.backlash_arcmin != null) bits.push(`${specs.backlash_arcmin} arcmin`);
+        const detail = bits.join(" · ");
+        const datasheet = r.datasheet_url
+          ? `<a class="aiagent-card-cta" href="${r.datasheet_url}" target="_blank" rel="noopener">Datasheet ${ICON.arrow}</a>`
+          : "";
+        return `
+          <div class="aiagent-product-row">
+            <div class="aiagent-product-row-main">
+              <strong>${_escapeHtml(r.sku || "")}</strong>
+              <span class="aiagent-product-row-name">${_escapeHtml(r.name || "")}</span>
+              <span class="aiagent-product-row-meta">${_escapeHtml(detail)}</span>
+            </div>
+            ${datasheet}
+          </div>`;
+      }).join("");
+      return this.addCard(`
+        <div class="aiagent-card aiagent-product-results">
+          <p class="aiagent-card-title">Matching products</p>
+          ${rows || "<p>No matches yet.</p>"}
+        </div>
+      `);
+    }
+
+    _renderRecommendationsCard(payload) {
+      const recs = payload.recommendations || [];
+      const rows = recs.map(r => `
+        <div class="aiagent-product-row">
+          <div class="aiagent-product-row-main">
+            <strong>${_escapeHtml(r.name || "")}</strong>
+            <span class="aiagent-product-row-meta">fit ${r.fit_score}/5 · ${_escapeHtml(r.family || "")}</span>
+            <span class="aiagent-product-row-name">${_escapeHtml(r.rationale || "")}</span>
+          </div>
+        </div>
+      `).join("");
+      return this.addCard(`
+        <div class="aiagent-card aiagent-product-results">
+          <p class="aiagent-card-title">Recommended families</p>
+          ${rows || "<p>No curated match for that combination yet.</p>"}
+        </div>
+      `);
+    }
+
+    _renderGateCard(payload) {
+      this._addGate({
+        title: payload.question || "Are these results helpful?",
+        yesLabel: payload.yes_label || "Yes",
+        noLabel:  payload.no_label  || "No",
+        onYes: () => {
+          this.addUserMessage(payload.yes_label || "Yes");
+          this._streamFromApi({ gate_choice: "yes" });
+        },
+        onNo: () => {
+          this.addUserMessage(payload.no_label || "No");
+          this._streamFromApi({ gate_choice: "no" });
+        },
+      });
+    }
+
+    _renderOutcomeCard(payload) {
+      const map = {
+        sell:           { type: "sell",     badge: "Sales handoff",  title: payload.title || "Connecting you with sales" },
+        human_handoff:  { type: "human",    badge: "Engineer",       title: payload.title || "Connecting you with an engineer" },
+        resolved:       { type: "resolved", badge: "Resolved",       title: payload.title || "All set" },
+      };
+      const opt = map[payload.outcome] || { type: "info", badge: "", title: payload.title || "Done" };
+      this._addOutcome({ ...opt, description: payload.next_step ? `Next: ${payload.next_step}` : "" });
     }
 
     /* ----- Internal: thread & message helpers ----- */

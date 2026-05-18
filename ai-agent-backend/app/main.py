@@ -2,17 +2,24 @@
 
 Phase 0 exposed /api/health.
 Phase 1 adds /api/tools/{search_products,recommend_categories,solutions}.
-Phase 2 will add /api/sessions and /api/flows/{flow}/start.
+Phase 2 adds /api/sessions and /api/messages (SSE-streamed).
 """
 
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy import text
 
 from app.config import get_settings
 from app.db import engine
+from app.routers.agent import router as agent_router
 from app.routers.tools import router as tools_router
+from app.runtime import install_async_event_loop_policy
+
+# Must happen before uvicorn creates its event loop — psycopg async (used by
+# the LangGraph checkpointer) is incompatible with Windows' ProactorEventLoop.
+install_async_event_loop_policy()
 
 
 @asynccontextmanager
@@ -27,11 +34,23 @@ async def lifespan(app: FastAPI):  # noqa: ARG001
 
 app = FastAPI(
     title="Kofon Chatbot Backend",
-    version="0.1.0",
+    version="0.2.0",
     lifespan=lifespan,
 )
 
+# Dev CORS: the widget will be served via `python -m http.server` on a
+# different port than the API, so we need to allow cross-origin XHR. In
+# prod, replace this with an explicit allowlist of customer domains.
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=False,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 app.include_router(tools_router)
+app.include_router(agent_router)
 
 
 @app.get("/api/health")

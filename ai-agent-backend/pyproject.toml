@@ -12,6 +12,18 @@ dependencies = [
   "pydantic>=2.9",
   "pydantic-settings>=2.6",
   "pyyaml>=6.0",
+  # ---- Phase 2: agent (LangGraph + DeepSeek) ----
+  # DeepSeek instead of Anthropic/OpenAI because Kofon is in China — see
+  # memory/project-china-llm-constraint.md for the why.
+  "langchain>=0.3",
+  "langchain-core>=0.3",
+  "langgraph>=0.2",
+  "langchain-deepseek>=0.1",
+  # Checkpointer writes graph state to Postgres between nodes so sessions
+  # can resume. Uses psycopg async; coexists fine with the asyncpg driver
+  # SQLAlchemy already uses for app code.
+  "langgraph-checkpoint-postgres>=2.0",
+  "psycopg[binary,pool]>=3.2",
 ]
 
 [project.optional-dependencies]

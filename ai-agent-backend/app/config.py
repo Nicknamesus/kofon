@@ -28,6 +28,13 @@ class Settings(BaseSettings):
     app_env: str = Field(default="development")
     app_log_level: str = Field(default="INFO")
 
+    # ---- DeepSeek (LLM provider) ----
+    # Default models follow BACKEND_PLAN §3.5 — cheap model for narrow nodes,
+    # reasoner kept available for harder reasoning in Phase 3.
+    deepseek_api_key: str = ""
+    deepseek_chat_model: str = "deepseek-chat"
+    deepseek_reasoner_model: str = "deepseek-reasoner"
+
     @computed_field  # type: ignore[prop-decorator]
     @property
     def effective_database_url(self) -> str:
@@ -35,6 +42,24 @@ class Settings(BaseSettings):
             return self.database_url
         return (
             f"postgresql+asyncpg://{self.postgres_user}:{self.postgres_password}"
+            f"@{self.postgres_host}:{self.postgres_port}/{self.postgres_db}"
+        )
+
+    @computed_field  # type: ignore[prop-decorator]
+    @property
+    def checkpointer_database_url(self) -> str:
+        """Sync-style URL for langgraph-checkpoint-postgres (psycopg driver).
+
+        The checkpointer uses psycopg, not asyncpg, so the URL scheme is
+        plain `postgresql://`. Same database as the app — just a different
+        driver pointing at it.
+        """
+        if self.database_url:
+            return self.database_url.replace(
+                "postgresql+asyncpg://", "postgresql://"
+            )
+        return (
+            f"postgresql://{self.postgres_user}:{self.postgres_password}"
             f"@{self.postgres_host}:{self.postgres_port}/{self.postgres_db}"
         )
 
