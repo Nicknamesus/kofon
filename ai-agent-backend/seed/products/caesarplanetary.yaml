@@ -1,0 +1,74 @@
+# Concrete SKUs in the CaesarPlanetary family.
+# `product_type_code` is the natural-key link to product_types.yaml; the
+# loader resolves it to `product_type_id` at insert time.
+
+product_type_code: caesarplanetary
+
+products:
+  - sku: PG060-3-HP
+    name: CaesarPlanetary 60 — 3:1 HP
+    specs:
+      frame_size_mm: 60
+      ratio: 3
+      nominal_torque_nm: 18
+      peak_torque_nm: 36
+      backlash_arcmin: 3
+      input_speed_rpm_max: 6000
+      efficiency_pct: 96
+      weight_kg: 1.1
+      variant: HP
+    datasheet_url: https://www.kofon-motion.com/datasheets/PG060-3-HP.pdf
+    cad_url: https://www.kofon-motion.com/cad/PG060-3-HP.step
+    lead_time_days: 21
+    status: active
+
+  - sku: PG090-10-HP
+    name: CaesarPlanetary 90 — 10:1 HP
+    specs:
+      frame_size_mm: 90
+      ratio: 10
+      nominal_torque_nm: 90
+      peak_torque_nm: 180
+      backlash_arcmin: 4
+      input_speed_rpm_max: 5000
+      efficiency_pct: 94
+      weight_kg: 3.2
+      variant: HP
+    datasheet_url: https://www.kofon-motion.com/datasheets/PG090-10-HP.pdf
+    cad_url: https://www.kofon-motion.com/cad/PG090-10-HP.step
+    lead_time_days: 28
+    status: active
+
+  - sku: PG090-25-HT
+    name: CaesarPlanetary 90 — 25:1 HT
+    specs:
+      frame_size_mm: 90
+      ratio: 25
+      nominal_torque_nm: 160
+      peak_torque_nm: 320
+      backlash_arcmin: 8
+      input_speed_rpm_max: 5000
+      efficiency_pct: 92
+      weight_kg: 3.4
+      variant: HT
+    datasheet_url: https://www.kofon-motion.com/datasheets/PG090-25-HT.pdf
+    cad_url: https://www.kofon-motion.com/cad/PG090-25-HT.step
+    lead_time_days: 28
+    status: active
+
+  - sku: PG140-50-HT
+    name: CaesarPlanetary 140 — 50:1 HT
+    specs:
+      frame_size_mm: 140
+      ratio: 50
+      nominal_torque_nm: 540
+      peak_torque_nm: 1100
+      backlash_arcmin: 10
+      input_speed_rpm_max: 4000
+      efficiency_pct: 90
+      weight_kg: 9.8
+      variant: HT
+    datasheet_url: https://www.kofon-motion.com/datasheets/PG140-50-HT.pdf
+    cad_url: https://www.kofon-motion.com/cad/PG140-50-HT.step
+    lead_time_days: 42
+    status: active

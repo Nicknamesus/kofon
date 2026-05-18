@@ -1,0 +1,7 @@
+industry,application,product_type_code,fit_score,rationale
+Robotics,Cobot joint actuation,caesarplanetary,5,"Low-backlash HP variants in the 60/90 frame match cobot joint envelopes. Smooth output and modest weight are ideal."
+Robotics,AGV / AMR wheel drive,caesarplanetary,3,"HT variants handle continuous-duty loads, but a Rollsate roller screw or KGV right-angle unit is usually a better wheel-drive fit."
+Packaging,Servo indexing table,caesarplanetary,4,"Peak torque on 90/140 frame HT variants comfortably handles index-and-hold cycles; backlash is acceptable for station-aligned dials."
+Machine tool,Rotary axis (B/C),caesarplanetary,4,"HP variants meet the low-backlash requirement; for the tightest precision axes, pair with a direct-encoder feedback loop."
+Solar,Heliostat / tracker drive,caesarplanetary,2,"Possible but not optimal — a SpiralBevel or KGV right-angle unit usually wins on self-locking behavior and form factor for tracker mounts."
+Aerospace ground support,Antenna positioner,caesarplanetary,3,"HP variants give the smooth low-speed control needed; ensure outdoor enclosure/sealing requirements are evaluated."

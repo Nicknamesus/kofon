@@ -1,0 +1,44 @@
+# CaesarPlanetary — precision planetary gearbox family.
+# `spec_schema` declares which spec keys SKUs in this family expose, so the
+# Phase 2 configurator can render the right inputs and the Phase 1
+# `search_products` tool can filter on them.
+
+code: caesarplanetary
+name: CaesarPlanetary
+family: Planetary gearbox
+description: >-
+  High-precision inline planetary gearboxes for servo-driven motion. Available
+  in three frame sizes (60, 90, 140 mm) and ratios from 3:1 to 100:1.
+  Low-backlash (HP) and high-torque (HT) variants share a common mounting
+  interface so a customer can step up torque without redesigning the bracket.
+
+spec_schema:
+  frame_size_mm:
+    type: integer
+    enum: [60, 90, 140]
+    label: Frame size (mm)
+  ratio:
+    type: integer
+    label: Reduction ratio (:1)
+  nominal_torque_nm:
+    type: number
+    label: Nominal output torque (Nm)
+  peak_torque_nm:
+    type: number
+    label: Peak output torque (Nm)
+  backlash_arcmin:
+    type: number
+    label: Backlash (arcmin)
+  input_speed_rpm_max:
+    type: integer
+    label: Max input speed (rpm)
+  efficiency_pct:
+    type: integer
+    label: Efficiency (%)
+  weight_kg:
+    type: number
+    label: Weight (kg)
+  variant:
+    type: string
+    enum: [HP, HT]
+    label: "Variant (HP = low backlash, HT = high torque)"

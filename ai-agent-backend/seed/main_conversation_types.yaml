@@ -1,0 +1,32 @@
+# The four primary branches in `Ai chatbot logic_17-05-26.pdf`.
+# Codes are referenced by `conversations.main_type_code` at runtime and
+# by `entry_router` to dispatch.
+
+- code: presales
+  label: Pre-Sales
+  description: >-
+    User hasn't picked a product yet — wants help mapping their application
+    (industry, load, constraints) to a suitable Kofon product family.
+  greeting_key: greeting.presales
+
+- code: guide
+  label: Guide
+  description: >-
+    User knows roughly what they need; they're choosing between SKUs in a
+    family (Find) or assembling a custom variant from modules (Customize).
+  greeting_key: greeting.guide
+
+- code: postsales
+  label: Post-Sales
+  description: >-
+    User owns a Kofon product and is reporting a problem with it — needs
+    troubleshooting, an SOP, or an RMA path.
+  greeting_key: greeting.postsales
+
+- code: other
+  label: Other
+  description: >-
+    Free-form question that doesn't fit pre-sales, guide, or post-sales.
+    Router attempts one re-classification, then drops to free chat with a
+    permanent human-handoff CTA.
+  greeting_key: greeting.other

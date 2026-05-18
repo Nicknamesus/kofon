@@ -1,0 +1,88 @@
+# Known issues for CaesarPlanetary, with curated solutions.
+# `confidence` on each solution feeds the Phase 3 "easily fixable?" gate —
+# the LLM paraphrases the outcome but doesn't decide it.
+
+product_type_code: caesarplanetary
+
+problems:
+  - code: backlash_exceeds_spec
+    label: Backlash exceeds spec
+    description: >-
+      Measured backlash at the output shaft is larger than the datasheet
+      value, often appearing after a few hundred hours of cyclic load.
+    severity: 3
+    solutions:
+      - summary: Re-preload the output stage per SOP-CP-001.
+        body_markdown: |
+          ## Re-preloading the output stage
+
+          1. Disconnect the gearbox from the driven load and lock the input shaft.
+          2. Loosen the four output-stage cap screws (M5 × 12) in a cross pattern,
+             1/4 turn each.
+          3. Apply preload torque per the table below:
+
+             | Frame | Torque (Nm) |
+             | ----- | ----------- |
+             | 60    | 4.5         |
+             | 90    | 9.0         |
+             | 140   | 18.0        |
+
+          4. Re-measure backlash with a dial indicator at 100 mm radius. If
+             still out of spec, escalate to RMA.
+        confidence: 4
+        sop_url: https://www.kofon-motion.com/sop/SOP-CP-001.pdf
+
+  - code: input_seal_leak
+    label: Input shaft oil weep
+    description: >-
+      Light oil film visible around the input shaft seal after extended use,
+      most common in vertical-shaft installations.
+    severity: 2
+    solutions:
+      - summary: Replace the input-side lip seal (kit RKT-CP-IN).
+        body_markdown: |
+          ## Input seal replacement
+
+          1. Remove the motor adapter; the input shaft and seal are now exposed.
+          2. Pry out the old lip seal with a hooked pick — do not damage the
+             housing bore.
+          3. Press in the new seal (kit **RKT-CP-IN**) flush with the housing
+             face, lubed lip facing the gearbox interior.
+          4. Reinstall the motor adapter to 10 Nm.
+
+          Most weep cases are seated installation issues, not seal failure —
+          inspect for an over-torqued motor flange before replacing.
+        confidence: 5
+        sop_url: https://www.kofon-motion.com/sop/SOP-CP-002.pdf
+        rma_template_url: https://www.kofon-motion.com/rma/RKT-CP-IN.pdf
+
+  - code: thermal_alarm_continuous_duty
+    label: Housing temperature alarm under continuous duty
+    description: >-
+      Housing surface temperature exceeds 90°C during sustained operation at
+      nominal torque. May indicate cooling, lubricant, or duty-cycle issue.
+    severity: 4
+    solutions:
+      - summary: >-
+          Verify duty cycle and ambient first; lubricant change is rarely
+          the root cause. Escalate to engineering if duty is within spec.
+        body_markdown: |
+          ## Thermal triage
+
+          Most "running hot" tickets resolve at step 1 or 2.
+
+          1. **Confirm duty cycle.** CaesarPlanetary HT variants are rated for
+             60% intermittent duty at nominal torque. Continuous-duty
+             applications need de-rating per the load chart in the datasheet.
+          2. **Check ambient.** Ratings assume 40°C ambient. Above that, derate
+             3% nominal torque per °C.
+          3. **Inspect mounting.** A gearbox bolted to a thin sheet-metal panel
+             can't shed heat. Look for a thick metal mounting boss.
+          4. If 1–3 are clean and the unit still alarms, this is an engineering
+             escalation — open an RMA with thermocouple data attached.
+        confidence: 3
+        escalate_if:
+          duty_cycle_within_spec: true
+          ambient_within_spec: true
+          mounting_adequate: true
+        sop_url: https://www.kofon-motion.com/sop/SOP-CP-003.pdf

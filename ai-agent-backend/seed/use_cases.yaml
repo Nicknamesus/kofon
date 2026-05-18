@@ -1,0 +1,45 @@
+# Application contexts the chatbot can match a user's free-form description to.
+# Demo subset for Phase 1 — covers a couple of motion-control industries that
+# CaesarPlanetary plausibly serves.
+
+- industry: Robotics
+  application: Cobot joint actuation
+  description: >-
+    Compact collaborative-robot joints requiring low backlash, smooth
+    torque output, and modest peak loads.
+  notes: Frame size constrained by arm geometry; weight matters.
+
+- industry: Robotics
+  application: AGV / AMR wheel drive
+  description: >-
+    Mobile-robot drivetrain — moderate continuous torque, high duty cycle,
+    sealed against shop-floor dust.
+  notes: Side-load and shock resistance matter more than absolute precision.
+
+- industry: Packaging
+  application: Servo indexing table
+  description: >-
+    Rotary indexer driving a packaging dial — high peak torque per index,
+    low backlash for repeatable station alignment.
+  notes: Duty is intermittent; thermal budget is generous.
+
+- industry: Machine tool
+  application: Rotary axis (B/C)
+  description: >-
+    Auxiliary rotary axis on a CNC mill — very low backlash, high stiffness,
+    minimal lost motion under reversing loads.
+  notes: Precision is the dominant requirement.
+
+- industry: Solar
+  application: Heliostat / tracker drive
+  description: >-
+    Slow, high-torque azimuth/elevation drive holding a panel against wind
+    loads. Long lifetime under outdoor conditions.
+  notes: Self-locking behavior is a plus.
+
+- industry: Aerospace ground support
+  application: Antenna positioner
+  description: >-
+    Precision positioning of a directional antenna — low backlash, smooth
+    velocity control at low speeds.
+  notes: Outdoor environment; corrosion resistance helpful.

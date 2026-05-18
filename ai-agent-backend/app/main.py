@@ -1,7 +1,8 @@
 """FastAPI application entrypoint.
 
-Phase 0 only exposes /api/health. Future phases add /api/sessions,
-/api/flows/{flow}/start, etc.
+Phase 0 exposed /api/health.
+Phase 1 adds /api/tools/{search_products,recommend_categories,solutions}.
+Phase 2 will add /api/sessions and /api/flows/{flow}/start.
 """
 
 from contextlib import asynccontextmanager
@@ -11,6 +12,7 @@ from sqlalchemy import text
 
 from app.config import get_settings
 from app.db import engine
+from app.routers.tools import router as tools_router
 
 
 @asynccontextmanager
@@ -25,9 +27,11 @@ async def lifespan(app: FastAPI):  # noqa: ARG001
 
 app = FastAPI(
     title="Kofon Chatbot Backend",
-    version="0.0.0",
+    version="0.1.0",
     lifespan=lifespan,
 )
+
+app.include_router(tools_router)
 
 
 @app.get("/api/health")

@@ -1,7 +1,14 @@
 {
   "permissions": {
     "allow": [
-      "Bash(dir *)"
+      "Bash(dir *)",
+      "PowerShell(docker compose ps *)",
+      "PowerShell(Invoke-RestMethod -Uri http://127.0.0.1:8000/api/tools/solutions/1 -Method Get | ConvertTo-Json -Depth 8)",
+      "WebFetch(domain:drive.google.com)",
+      "mcp__claude_ai_Google_Drive__read_file_content",
+      "mcp__claude_ai_Google_Drive__get_file_metadata",
+      "mcp__claude_ai_Google_Drive__download_file_content",
+      "Bash(python -c ' *)"
     ]
   }
 }

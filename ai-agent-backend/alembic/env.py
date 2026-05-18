@@ -16,6 +16,7 @@ from alembic import context
 
 from app.config import get_settings
 from app.db import Base  # noqa: F401  — registers metadata
+from app.models import *  # noqa: F401, F403  — registers all model tables on Base.metadata
 
 # Alembic Config object, provides access to .ini values.
 config = context.config
