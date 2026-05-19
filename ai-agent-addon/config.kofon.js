@@ -16,7 +16,7 @@
        Set apiUrl to point at the FastAPI backend. With it set, the
        widget routes all interactions through /api/messages (SSE).
        Leave unset to render the visuals-only mock _flows. ----- */
-    apiUrl: "https://boulder-showed-fragrance-moms.trycloudflare.com",
+    apiUrl: "https://boulder-showed-fragrance-moms.trycloudflare.com/docs",
 
     /* ----- Branding ----- */
     primaryColor: "#132178",     // Kofon navy (matches site CSS)
