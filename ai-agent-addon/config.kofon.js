@@ -16,13 +16,13 @@
        Set apiUrl to point at the FastAPI backend. With it set, the
        widget routes all interactions through /api/messages (SSE).
        Leave unset to render the visuals-only mock _flows. ----- */
-    apiUrl: "http://127.0.0.1:8001",
+    apiUrl: "https://boulder-showed-fragrance-moms.trycloudflare.com",
 
     /* ----- Branding ----- */
     primaryColor: "#132178",     // Kofon navy (matches site CSS)
     primaryHover: "#1e2f9c",
-    accentColor:  "#c2e295",     // Kofon green
-    agentName:    "Kofon AI",
+    accentColor: "#c2e295",     // Kofon green
+    agentName: "Kofon AI",
     agentInitial: "K",
 
     /* ----- Greeting ----- */
@@ -35,18 +35,18 @@
 
     /* ----- Languages (header switcher) ----- */
     languages: [
-      { code: "EN", label: "English",  flag: "🇬🇧" },
-      { code: "DE", label: "Deutsch",  flag: "🇩🇪" },
-      { code: "KO", label: "한국어",    flag: "🇰🇷" },
-      { code: "ZH", label: "中文",      flag: "🇨🇳" },
+      { code: "EN", label: "English", flag: "🇬🇧" },
+      { code: "DE", label: "Deutsch", flag: "🇩🇪" },
+      { code: "KO", label: "한국어", flag: "🇰🇷" },
+      { code: "ZH", label: "中文", flag: "🇨🇳" },
     ],
 
     /* ----- Top-of-welcome contextual banner (set null to hide) ----- */
     expoBanner: {
       emoji: "🎪",
       title: "We're at AUTOMATE 2026 — Booth 3245",
-      meta:  "Detroit · May 14–17",
-      cta:   "Were you there? Continue here",
+      meta: "Detroit · May 14–17",
+      cta: "Were you there? Continue here",
     },
 
     /* ----- Primary actions = the 4 conversation types ----- */
@@ -81,19 +81,21 @@
     /* ----- Secondary utilities (smaller chips below the main grid) ----- */
     utilitiesTitle: "Quick tools",
     utilities: [
-      { flow: "guide", subflow: "customize", icon: "sparkle", label: "Custom build",
-        seed: "I want to customize a gearbox for my application." },
-      { flow: "leadtime",  icon: "clock", label: "Lead times" },
-      { flow: "datasheet", icon: "file",  label: "Get a datasheet" },
-      { flow: "expo",      icon: "expo",  label: "We met at an expo" },
-      { flow: "human",     icon: "user",  label: "Talk to a human" },
+      {
+        flow: "guide", subflow: "customize", icon: "sparkle", label: "Custom build",
+        seed: "I want to customize a gearbox for my application."
+      },
+      { flow: "leadtime", icon: "clock", label: "Lead times" },
+      { flow: "datasheet", icon: "file", label: "Get a datasheet" },
+      { flow: "expo", icon: "expo", label: "We met at an expo" },
+      { flow: "human", icon: "user", label: "Talk to a human" },
     ],
 
     /* ----- Bottom-of-welcome resource links ----- */
     quickLinks: [
       { label: "FAQ — lead times, certifications, customization", href: "/service177/faq984/" },
-      { label: "Browse all data downloads",                      href: "/service177/data_download782/" },
-      { label: "Open the KDP design selection tool",             href: "/service177/design_selection_tool_kdp838/" },
+      { label: "Browse all data downloads", href: "/service177/data_download782/" },
+      { label: "Open the KDP design selection tool", href: "/service177/design_selection_tool_kdp838/" },
     ],
 
     /* ----- Footer trust strip ----- */
