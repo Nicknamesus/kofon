@@ -16,7 +16,14 @@
       "Bash(node --check widget.js)",
       "Bash(node --check api.js)",
       "PowerShell($body = '{\"session_uuid\":\"00000000-0000-0000-0000-000000000099\",\"text\":\"PG090, low backlash 90mm 80Nm\",\"flow\":\"guide\"}'; curl.exe -s -X POST -H \"Content-Type: application/json\" -d $body http://127.0.0.1:8001/api/messages)",
-      "Bash(curl.exe -s -o /dev/null -w \"%{http_code}\\\\n\" http://127.0.0.1:8002/demo.html)"
+      "Bash(curl.exe -s -o /dev/null -w \"%{http_code}\\\\n\" http://127.0.0.1:8002/demo.html)",
+      "Bash(docker compose *)",
+      "PowerShell(cd 'X:\\\\programming\\\\websites\\\\kofon\\\\ai-agent-backend'; $env:PYTHONIOENCODING='utf-8'; .\\\\.venv\\\\Scripts\\\\python.exe -m app.agent.smoke_3b 2>&1)",
+      "PowerShell(cd 'X:\\\\programming\\\\websites\\\\kofon\\\\ai-agent-backend'; $env:PYTHONIOENCODING='utf-8'; .\\\\.venv\\\\Scripts\\\\alembic.exe downgrade c96b3d3b7fda; .\\\\.venv\\\\Scripts\\\\alembic.exe upgrade head 2>&1)",
+      "PowerShell(cd 'X:\\\\programming\\\\websites\\\\kofon\\\\ai-agent-backend'; $env:PYTHONIOENCODING='utf-8'; .\\\\.venv\\\\Scripts\\\\python.exe -m app.seed.load 2>&1)",
+      "PowerShell(cd 'X:\\\\programming\\\\websites\\\\kofon\\\\ai-agent-backend'; $env:PYTHONIOENCODING='utf-8'; .\\\\.venv\\\\Scripts\\\\python.exe -m app.agent.smoke_3a 2>&1)",
+      "PowerShell(cd 'X:\\\\programming\\\\websites\\\\kofon\\\\ai-agent-backend'; $env:PYTHONIOENCODING='utf-8'; .\\\\.venv\\\\Scripts\\\\python.exe -m app.agent.smoke_3c 2>&1)",
+      "PowerShell(cd 'X:\\\\programming\\\\websites\\\\kofon\\\\ai-agent-backend'; $env:PYTHONIOENCODING='utf-8'; .\\\\.venv\\\\Scripts\\\\python.exe -m app.agent.smoke_3d 2>&1)"
     ]
   }
 }

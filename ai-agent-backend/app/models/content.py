@@ -1,14 +1,15 @@
 """Content tables — seeded by domain experts, read by the agent.
 
 Names mirror `DB_structure_17-05-26.pdf` so the mapping is one-to-one.
-Embedding tables (`product_embeddings`, `problem_embeddings`) are deferred
-to Phase 3 along with the KB-search work.
+Embedding tables (`product_embeddings`, `problem_embeddings`) landed in
+Phase 3 along with the postsales KB-match work.
 """
 
 from __future__ import annotations
 
 from typing import Any
 
+from pgvector.sqlalchemy import Vector
 from sqlalchemy import (
     BigInteger,
     CheckConstraint,
@@ -22,6 +23,7 @@ from sqlalchemy.dialects.postgresql import JSONB
 from sqlalchemy.orm import Mapped, mapped_column
 
 from app.db import Base
+from app.embeddings import EMBEDDING_DIM
 
 
 class MainConversationType(Base):
@@ -186,5 +188,62 @@ class Solution(Base):
     __table_args__ = (
         CheckConstraint(
             "confidence BETWEEN 1 AND 5", name="ck_solutions_confidence"
+        ),
+    )
+
+
+class ProductEmbedding(Base):
+    """Vector embedding for a product or product_type.
+
+    `source_type` is 'product' or 'product_type'; `source_id` is the
+    corresponding row id. `text_hash` is a stable digest of `text` so the
+    seed loader can skip re-embedding unchanged rows.
+    """
+
+    __tablename__ = "product_embeddings"
+
+    id: Mapped[int] = mapped_column(BigInteger, primary_key=True)
+    source_type: Mapped[str] = mapped_column(Text, nullable=False)
+    source_id: Mapped[int] = mapped_column(BigInteger, nullable=False)
+    text: Mapped[str] = mapped_column(Text, nullable=False)
+    text_hash: Mapped[str] = mapped_column(Text, nullable=False)
+    embedding: Mapped[list[float]] = mapped_column(
+        Vector(EMBEDDING_DIM), nullable=False
+    )
+
+    __table_args__ = (
+        UniqueConstraint(
+            "source_type", "source_id", "text_hash",
+            name="uq_product_embeddings_source_hash",
+        ),
+    )
+
+
+class ProblemEmbedding(Base):
+    """Vector embedding for a problem_type's label+description.
+
+    Filtered by `product_type_id` at query time when the SKU is known —
+    the family is a strong prior that cuts cross-family false positives.
+    """
+
+    __tablename__ = "problem_embeddings"
+
+    id: Mapped[int] = mapped_column(BigInteger, primary_key=True)
+    problem_type_id: Mapped[int] = mapped_column(
+        BigInteger,
+        ForeignKey("problem_types.id", ondelete="CASCADE"),
+        nullable=False,
+        index=True,
+    )
+    text: Mapped[str] = mapped_column(Text, nullable=False)
+    text_hash: Mapped[str] = mapped_column(Text, nullable=False)
+    embedding: Mapped[list[float]] = mapped_column(
+        Vector(EMBEDDING_DIM), nullable=False
+    )
+
+    __table_args__ = (
+        UniqueConstraint(
+            "problem_type_id", "text_hash",
+            name="uq_problem_embeddings_problem_hash",
         ),
     )

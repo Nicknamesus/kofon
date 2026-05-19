@@ -35,6 +35,15 @@ class Settings(BaseSettings):
     deepseek_chat_model: str = "deepseek-chat"
     deepseek_reasoner_model: str = "deepseek-reasoner"
 
+    # ---- Embeddings (Phase 3) ----
+    # Provider for product/problem text embeddings. Three values:
+    #   'hash'      — deterministic, non-semantic. Zero-config; CI/dev default.
+    #   'bge-m3'    — local via `sentence-transformers`. Production-quality;
+    #                  first run downloads ~2 GB.
+    #   'dashscope' — Alibaba Qwen text-embedding-v3 (requires DASHSCOPE_API_KEY).
+    # See `app/embeddings.py` and `memory/project-china-llm-constraint.md`.
+    embedding_provider: str = "hash"
+
     @computed_field  # type: ignore[prop-decorator]
     @property
     def effective_database_url(self) -> str:

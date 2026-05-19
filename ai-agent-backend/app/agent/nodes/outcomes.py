@@ -63,3 +63,40 @@ async def outcome_human(state: AgentState) -> dict:
             }
         ],
     }
+
+
+async def outcome_resolved(state: AgentState) -> dict:
+    """Post-sales happy path — the curated fix worked.
+
+    Surfaces a short closer and an optional feedback prompt the widget
+    can wire to a thumbs-up/down later.
+    """
+    slots = state.get("slots") or {}
+    postsales = slots.get("postsales") or {}
+    solution = postsales.get("candidate_solution") or {}
+    label = postsales.get("candidate_problem_label")
+
+    msg = (
+        f"Glad that worked. If the symptom comes back, mention "
+        f"**{label}** to support so they can pick up where we left off."
+        if label
+        else "Glad that worked. If the symptom comes back, just open a "
+        "new chat and we'll dig in again."
+    )
+
+    return {
+        "messages": [AIMessage(content=msg)],
+        "outcome": "resolved",
+        "current_node": "outcome_resolved",
+        "cards": [
+            {
+                "kind": "outcome",
+                "payload": {
+                    "outcome": "resolved",
+                    "title": "Issue resolved",
+                    "sop_url": solution.get("sop_url"),
+                    "next_step": "feedback",
+                },
+            }
+        ],
+    }

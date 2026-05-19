@@ -57,6 +57,11 @@ class MessageRequest(BaseModel):
         description="Optional flow override (chip click). Skips entry_router. "
         "One of: presales | guide | postsales | other.",
     )
+    subflow: str | None = Field(
+        default=None,
+        description="Optional sub-flow within a primary flow. "
+        "Currently honoured: 'customize' (inside `flow=guide`).",
+    )
 
 
 @router.post("/sessions", response_model=SessionStartResponse)
@@ -83,6 +88,9 @@ async def post_message(payload: MessageRequest) -> StreamingResponse:
         }
         if payload.flow:
             graph_input["flow"] = payload.flow
+        if payload.subflow == "customize":
+            # Trip the guide.customize branch in _guide_dispatch.
+            graph_input["slots"] = {"customize": {"active": True}}
 
         async with make_checkpointer() as cp:
             graph = build_graph(checkpointer=cp)

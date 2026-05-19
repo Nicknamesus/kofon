@@ -114,3 +114,62 @@ class SolutionOut(BaseModel):
 class GetSolutionResponse(BaseModel):
     problem: ProblemSummary
     solutions: list[SolutionOut]
+
+
+# ---------------------- find_problems (Phase 3) ----------------------
+
+
+class FindProblemsRequest(BaseModel):
+    sku: str | None = Field(
+        default=None,
+        description="Exact SKU. If known, restricts the search to that product's family.",
+    )
+    symptom_text: str = Field(
+        description="Free-form description of what the customer is seeing."
+    )
+    limit: int = Field(default=3, ge=1, le=10)
+
+
+class ProblemMatch(BaseModel):
+    """One candidate problem and how confident we are it's the right one."""
+
+    problem: ProblemSummary
+    similarity: float = Field(
+        description="Cosine similarity 0..1 (higher = closer to the symptom)."
+    )
+    top_solution: SolutionOut | None = Field(
+        default=None,
+        description="The highest-confidence curated fix; null if no solution rows.",
+    )
+
+
+class FindProblemsResponse(BaseModel):
+    sku: str | None
+    product_type_code: str | None = Field(
+        default=None,
+        description="Family resolved from the SKU. Null if SKU was unknown or unresolvable.",
+    )
+    matches: list[ProblemMatch]
+
+
+# ---------------------- build_custom_config (Phase 3) ----------------------
+
+
+class BuildCustomConfigRequest(BaseModel):
+    family_code: str = Field(description="`product_types.code` to configure.")
+    modules: dict[str, Any] = Field(
+        description="User-chosen spec values keyed by `spec_schema` keys."
+    )
+
+
+class BuildCustomConfigResponse(BaseModel):
+    family_code: str
+    family_name: str
+    modules: dict[str, Any]
+    closest_stock_sku: str | None = Field(
+        default=None,
+        description="Stock SKU that gets closest to the chosen config (best-effort).",
+    )
+    rationale: str = Field(
+        description="One sentence summarising the custom build for the user."
+    )

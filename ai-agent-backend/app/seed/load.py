@@ -257,6 +257,18 @@ async def run() -> None:
         probs, sols = await load_problems_and_solutions(session)
         await session.commit()
 
+        # Phase 3: refresh embeddings in the same transaction sequence,
+        # so content + vectors stay in sync. Hash-keyed inside; only
+        # rows whose text changed get re-embedded.
+        from app.seed.embed import (
+            refresh_problem_embeddings,
+            refresh_product_embeddings,
+        )
+
+        prod_emb = await refresh_product_embeddings(session)
+        prob_emb = await refresh_problem_embeddings(session)
+        await session.commit()
+
     await engine.dispose()
 
     print(
@@ -267,7 +279,9 @@ async def run() -> None:
         f"products={prod}, "
         f"use_case_product_types={fits}, "
         f"problem_types={probs}, "
-        f"solutions={sols}"
+        f"solutions={sols}, "
+        f"product_embeddings_new={prod_emb}, "
+        f"problem_embeddings_new={prob_emb}"
     )
 
 

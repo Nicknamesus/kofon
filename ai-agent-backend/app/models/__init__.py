@@ -12,8 +12,10 @@ what Alembic autogenerate uses to detect schema drift.
 
 from app.models.content import (
     MainConversationType,
+    ProblemEmbedding,
     ProblemType,
     Product,
+    ProductEmbedding,
     ProductType,
     Solution,
     UseCase,
@@ -29,6 +31,8 @@ __all__ = [
     "Product",
     "ProblemType",
     "Solution",
+    "ProductEmbedding",
+    "ProblemEmbedding",
     "Conversation",
     "Message",
 ]
