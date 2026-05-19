@@ -17,9 +17,12 @@ Slot keys (under slots.postsales):
 from __future__ import annotations
 
 from langchain_core.messages import AIMessage
+from sqlalchemy import select
 
 from app.agent.state import AgentState
 from app.db import SessionLocal
+from app.models import ProblemType, ProductType, Solution
+from app.schemas.tools import ProblemSummary, SolutionOut
 from app.tools import find_problems
 
 # Below this similarity, we don't trust the top match enough to confidently
@@ -27,10 +30,147 @@ from app.tools import find_problems
 # narrows to the family when the SKU is known.
 MATCH_FLOOR = 0.55
 
+# `find_problems` always returns top-N rows, even when none are relevant
+# (e.g. "LCD won't turn on" against a planetary-gearbox KB). Below this
+# floor we treat the result as no match at all and escalate, rather than
+# offering an irrelevant shortlist.
+AMBIGUOUS_FLOOR = 0.30
+
+
+async def _present_by_id(
+    problem_id: int, postsales: dict
+) -> dict | None:
+    """Look up a problem + its top solution by id and build a presented
+    response. Returns None if the id doesn't resolve."""
+    async with SessionLocal() as session:
+        row = (
+            await session.execute(
+                select(ProblemType, ProductType)
+                .join(
+                    ProductType,
+                    ProblemType.product_type_id == ProductType.id,
+                    isouter=True,
+                )
+                .where(ProblemType.id == problem_id)
+            )
+        ).first()
+        if row is None:
+            return None
+        prob, ptype = row
+        top_sol = (
+            await session.execute(
+                select(Solution)
+                .where(Solution.problem_type_id == prob.id)
+                .order_by(Solution.confidence.desc(), Solution.id)
+                .limit(1)
+            )
+        ).scalar_one_or_none()
+
+    problem_summary = ProblemSummary(
+        id=prob.id,
+        code=prob.code,
+        label=prob.label,
+        description=prob.description,
+        severity=prob.severity,
+        product_type_code=ptype.code if ptype else None,
+    )
+
+    if top_sol is None:
+        return {
+            "messages": [
+                AIMessage(
+                    content=(
+                        f"This looks like **{prob.label}**, but I don't "
+                        "have a self-serve fix for it on file. Let me hand "
+                        "you off to a service engineer."
+                    )
+                )
+            ],
+            "outcome": "human_handoff",
+            "cards": [
+                {
+                    "kind": "outcome",
+                    "payload": {
+                        "outcome": "human_handoff",
+                        "title": "Connecting you with service",
+                        "next_step": "human",
+                    },
+                }
+            ],
+            "slots": {
+                "postsales": {
+                    **postsales,
+                    "candidate_problem_id": prob.id,
+                    "match_phase": "no_solution",
+                },
+                "picked_problem_id": None,
+            },
+            "current_node": "postsales.match_kb.no_solution",
+        }
+
+    sol_out = SolutionOut(
+        id=top_sol.id,
+        summary=top_sol.summary,
+        body_markdown=top_sol.body_markdown,
+        confidence=top_sol.confidence,
+        escalate_if=top_sol.escalate_if,
+        sop_url=top_sol.sop_url,
+        rma_template_url=top_sol.rma_template_url,
+    )
+    summary_text = (
+        f"This looks like **{prob.label}**.\n\n"
+        f"_{sol_out.summary}_\n\n"
+        "Did that fix it?"
+    )
+    return {
+        "messages": [AIMessage(content=summary_text)],
+        "cards": [
+            {
+                "kind": "problem_match",
+                "payload": {
+                    "problem": problem_summary.model_dump(),
+                    "solution": sol_out.model_dump(),
+                    "similarity": 1.0,
+                },
+            },
+            {
+                "kind": "gate",
+                "payload": {
+                    "question": "Did that fix the issue?",
+                    "yes_label": "Yes, fixed",
+                    "no_label": "No, still broken",
+                },
+            },
+        ],
+        "slots": {
+            "postsales": {
+                **postsales,
+                "candidate_problem_id": prob.id,
+                "candidate_solution": sol_out.model_dump(),
+                "candidate_similarity": 1.0,
+                "symptom": postsales.get("symptom") or prob.label,
+                "phase": "ready",
+                "match_phase": "presented",
+                "ambiguous_candidates": None,
+            },
+            "picked_problem_id": None,
+        },
+        "current_node": "postsales.match_kb.presented",
+    }
+
 
 async def run(state: AgentState) -> dict:
     slots = state.get("slots") or {}
     postsales = dict(slots.get("postsales") or {})
+
+    # Deterministic pick from the UI's candidate shortlist — skip the
+    # vector search entirely and present the chosen problem by id.
+    picked_id = slots.get("picked_problem_id")
+    if picked_id:
+        result = await _present_by_id(int(picked_id), postsales)
+        if result is not None:
+            return result
+        # Fell through — id didn't resolve. Fall back to vector path.
 
     sku = postsales.get("sku")
     symptom = postsales.get("symptom") or ""
@@ -47,7 +187,11 @@ async def run(state: AgentState) -> dict:
             session, sku=sku, symptom_text=symptom, limit=3
         )
 
-    if not result.matches:
+    top_sim = result.matches[0].similarity if result.matches else 0.0
+    if not result.matches or top_sim < AMBIGUOUS_FLOOR:
+        # Either no rows at all, or the closest row is far enough away
+        # that even offering it as a candidate would be misleading
+        # (e.g. unrelated symptom against a gearbox-only KB).
         msg = (
             "I don't have any known issues that look like this in my "
             "catalog. Let me connect you with a service engineer."

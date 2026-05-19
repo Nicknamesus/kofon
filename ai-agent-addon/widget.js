@@ -162,10 +162,8 @@
           </div>
           <div class="aiagent-suggestions"></div>
           <div class="aiagent-composer">
-            <button class="aiagent-composer-icon" type="button" aria-label="Attach file">${ICON.clip}</button>
             <div class="aiagent-composer-input-wrap">
               <input class="aiagent-composer-input" type="text" placeholder="Type your question…" />
-              <button class="aiagent-composer-icon" type="button" aria-label="Voice input">${ICON.mic}</button>
             </div>
             <button class="aiagent-send" type="button" aria-label="Send">${ICON.send}</button>
           </div>
@@ -202,6 +200,7 @@
                   `).join("")}
                 </div>
               </div>
+              <button class="aiagent-icon-btn aiagent-icon-btn-menu" type="button" aria-label="Back to menu" data-action="menu" title="Back to menu">${ICON.back}</button>
               <button class="aiagent-icon-btn" type="button" aria-label="Minimize" data-action="minimize">${ICON.minus}</button>
               <button class="aiagent-icon-btn" type="button" aria-label="Close" data-action="close">${ICON.close}</button>
             </div>
@@ -234,8 +233,8 @@
           ${utilities.length ? `
             <p class="aiagent-section-title">${this.cfg.utilitiesTitle || "Quick tools"}</p>
             <div class="aiagent-utility-row">
-              ${utilities.map(u => `
-                <button class="aiagent-utility-chip" type="button" data-flow="${u.flow}">
+              ${utilities.map((u, i) => `
+                <button class="aiagent-utility-chip" type="button" data-flow="${u.flow}" data-utility-idx="${i}">
                   <span class="aiagent-utility-icon">${ICON[u.icon] || u.icon || ICON.chat}</span>
                   <span>${u.label}</span>
                 </button>
@@ -279,10 +278,11 @@
     _bind() {
       const r = this.root;
 
-      // Close / minimize
+      // Close / minimize / menu
       r.addEventListener("click", (e) => {
         const action = e.target.closest("[data-action]")?.dataset.action;
         if (action === "close" || action === "minimize") this.close();
+        if (action === "menu") this.showScreen("welcome");
         if (action === "lang") {
           e.stopPropagation();
           const menu = $(r, ".aiagent-lang-menu");
@@ -308,7 +308,19 @@
 
       // Welcome action chips (primary 4) + utilities (secondary)
       $$(r, ".aiagent-action-chip, .aiagent-utility-chip").forEach(c => {
-        c.addEventListener("click", () => this.startFlow(c.dataset.flow));
+        c.addEventListener("click", () => {
+          // Utility chips can carry a `subflow` + a custom seed message
+          // — look those up on the cfg by index so we don't have to
+          // serialize objects through DOM attributes.
+          const opts = {};
+          const idx = c.dataset.utilityIdx;
+          if (idx != null && this.cfg.utilities && this.cfg.utilities[idx]) {
+            const u = this.cfg.utilities[idx];
+            if (u.subflow) opts.subflow = u.subflow;
+            if (u.seed) opts.seed = u.seed;
+          }
+          this.startFlow(c.dataset.flow, opts);
+        });
       });
 
       // Expo banner click
@@ -329,11 +341,24 @@
       // Composer — sends through the API when configured, else falls
       // back to the visuals-only mock reply.
       const input = $(r, ".aiagent-composer-input");
+      const sendBtn = $(r, ".aiagent-send");
+      const updateSendState = () => {
+        const empty = !input.value.trim();
+        sendBtn.setAttribute("data-empty", empty ? "true" : "false");
+      };
       const send = () => {
         const v = input.value.trim();
-        if (!v) return;
+        if (!v) {
+          // Empty: give a clear "nothing to send" signal and focus the
+          // input so the user can just start typing.
+          input.focus();
+          sendBtn.setAttribute("data-shake", "true");
+          setTimeout(() => sendBtn.removeAttribute("data-shake"), 400);
+          return;
+        }
         this.addUserMessage(v);
         input.value = "";
+        updateSendState();
         if (this.state.screen === "welcome") this.showScreen("chat");
         if (this.cfg.apiUrl && global.AIAgentAPI) {
           this._streamFromApi({ text: v });
@@ -345,8 +370,10 @@
           this.addBotMessage("Got it — I'll route this to the right team. (Demo build: no live model wired yet.)");
         }, 900);
       };
-      $(r, ".aiagent-send").addEventListener("click", send);
+      sendBtn.addEventListener("click", send);
       input.addEventListener("keydown", (e) => { if (e.key === "Enter") send(); });
+      input.addEventListener("input", updateSendState);
+      updateSendState();
     }
 
     /* ----- Public-ish state methods ----- */
@@ -432,9 +459,10 @@
       const text = (opts && opts.seed) || seedByFlow[name] || "(hi)";
       const apiFlow = (name === "presales" || name === "guide"
         || name === "postsales" || name === "other") ? name : undefined;
+      const subflow = opts && opts.subflow ? opts.subflow : undefined;
 
       this.addUserMessage(text);
-      this._streamFromApi({ text, flow: apiFlow });
+      this._streamFromApi({ text, flow: apiFlow, subflow });
     }
 
     /* ----- Stream a turn through the backend. ----- */
@@ -479,10 +507,12 @@
       if (name === "card") {
         const kind = data.kind || "";
         const payload = data.payload || {};
-        if (kind === "product_results") return this._renderProductResultsCard(payload);
-        if (kind === "recommendations") return this._renderRecommendationsCard(payload);
-        if (kind === "gate")            return this._renderGateCard(payload);
-        if (kind === "outcome")         return this._renderOutcomeCard(payload);
+        if (kind === "product_results")     return this._renderProductResultsCard(payload);
+        if (kind === "recommendations")     return this._renderRecommendationsCard(payload);
+        if (kind === "gate")                return this._renderGateCard(payload);
+        if (kind === "outcome")             return this._renderOutcomeCard(payload);
+        if (kind === "problem_candidates")  return this._renderProblemCandidatesCard(payload);
+        if (kind === "problem_match")       return this._renderProblemMatchCard(payload);
         console.warn("AIAgent: unknown card kind", kind, payload);
         return;
       }
@@ -556,6 +586,68 @@
           this._streamFromApi({ gate_choice: "no" });
         },
       });
+    }
+
+    _renderProblemCandidatesCard(payload) {
+      const candidates = payload.candidates || [];
+      if (!candidates.length) {
+        // Nothing useful to pick. Don't render an empty list — just nudge.
+        return this.addBotMessage(
+          "Could you tell me a bit more about what's happening? Any noise, error code, or what changed recently helps me narrow it down."
+        );
+      }
+      const rows = candidates.map((c, idx) => `
+        <button class="aiagent-product-row aiagent-candidate-row" type="button" data-idx="${idx}">
+          <div class="aiagent-product-row-main">
+            <strong>${_escapeHtml(c.label || "")}</strong>
+            ${c.description ? `<span class="aiagent-product-row-name">${_escapeHtml(c.description)}</span>` : ""}
+          </div>
+        </button>
+      `).join("");
+      const card = this.addCard(`
+        <div class="aiagent-card aiagent-product-results">
+          <p class="aiagent-card-title">Closest matches</p>
+          ${rows}
+          <button class="aiagent-card-cta aiagent-candidate-none" type="button">None of these — let me describe more</button>
+        </div>
+      `);
+      $$(card, ".aiagent-candidate-row").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const idx = parseInt(btn.dataset.idx, 10);
+          const picked = candidates[idx];
+          if (!picked) return;
+          $$(card, "button").forEach(b => { b.disabled = true; });
+          this.addUserMessage(picked.label);
+          this._streamFromApi({ picked_problem_id: picked.problem_type_id });
+        });
+      });
+      const none = card.querySelector(".aiagent-candidate-none");
+      if (none) {
+        none.addEventListener("click", () => {
+          $$(card, "button").forEach(b => { b.disabled = true; });
+          this.addBotMessage(
+            "Got it — could you describe what the unit is doing in a bit more detail? E.g. any noise, leak, error code, or what changed recently."
+          );
+        });
+      }
+      return card;
+    }
+
+    _renderProblemMatchCard(payload) {
+      const problem = payload.problem || {};
+      const solution = payload.solution || {};
+      const steps = Array.isArray(solution.steps) ? solution.steps : [];
+      const stepHtml = steps.length
+        ? `<ol class="aiagent-solution-steps">${steps.map(s => `<li>${_escapeHtml(s)}</li>`).join("")}</ol>`
+        : "";
+      return this.addCard(`
+        <div class="aiagent-card aiagent-product-results">
+          <p class="aiagent-card-title">${_escapeHtml(problem.label || "Likely issue")}</p>
+          ${problem.description ? `<p>${_escapeHtml(problem.description)}</p>` : ""}
+          ${solution.summary ? `<p><em>${_escapeHtml(solution.summary)}</em></p>` : ""}
+          ${stepHtml}
+        </div>
+      `);
     }
 
     _renderOutcomeCard(payload) {

@@ -332,6 +332,9 @@
   height: 18px;
 }
 
+/* Back-to-menu button: only relevant inside the chat screen. */
+.aiagent-root[data-screen="welcome"] .aiagent-icon-btn-menu { display: none; }
+
 .aiagent-lang-wrap {
   position: relative;
 }
@@ -1060,6 +1063,25 @@
 .aiagent-send:active { transform: scale(0.94); }
 
 .aiagent-send svg { width: 16px; height: 16px; }
+
+.aiagent-send[data-empty="true"] {
+  background: var(--aiagent-border-strong);
+  cursor: pointer;
+}
+.aiagent-send[data-empty="true"]:hover {
+  background: var(--aiagent-text-faint);
+}
+
+@keyframes aiagent-shake {
+  0%, 100% { transform: translateX(0); }
+  20%      { transform: translateX(-3px); }
+  40%      { transform: translateX(3px); }
+  60%      { transform: translateX(-2px); }
+  80%      { transform: translateX(2px); }
+}
+.aiagent-send[data-shake="true"] {
+  animation: aiagent-shake 350ms ease;
+}
 
 /* ============================================================
    FOOTER trust strip

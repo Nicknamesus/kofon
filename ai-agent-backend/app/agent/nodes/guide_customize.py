@@ -71,17 +71,24 @@ async def run(state: AgentState) -> dict:
     ).get("family")
 
     async with SessionLocal() as session:
-        family = (
-            await session.execute(
-                select(ProductType).where(ProductType.code == family_code)
-                if family_code
-                else select(ProductType).limit(0)
-            )
-        ).scalar_one_or_none()
+        family = None
+        if family_code:
+            family = (
+                await session.execute(
+                    select(ProductType).where(ProductType.code == family_code)
+                )
+            ).scalar_one_or_none()
+        if family is None:
+            # No family in scope yet — but if the catalog only has one,
+            # picking it for the user is much friendlier than asking.
+            all_families = (
+                await session.execute(select(ProductType))
+            ).scalars().all()
+            if len(all_families) == 1:
+                family = all_families[0]
 
     if family is None:
-        # No family in scope yet. Ask which family — the LLM has plenty
-        # of context in the running conversation; one short prompt is fine.
+        # Genuinely ambiguous — multiple families and none chosen. Ask.
         return {
             "messages": [
                 AIMessage(

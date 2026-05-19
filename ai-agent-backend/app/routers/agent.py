@@ -62,6 +62,12 @@ class MessageRequest(BaseModel):
         description="Optional sub-flow within a primary flow. "
         "Currently honoured: 'customize' (inside `flow=guide`).",
     )
+    picked_problem_id: int | None = Field(
+        default=None,
+        description="UI signal: user clicked a candidate from a postsales "
+        "ambiguous shortlist. Routes the turn straight to match_kb to "
+        "present that specific problem by id (no vector search).",
+    )
 
 
 @router.post("/sessions", response_model=SessionStartResponse)
@@ -72,7 +78,7 @@ async def start_session() -> SessionStartResponse:
 
 @router.post("/messages")
 async def post_message(payload: MessageRequest) -> StreamingResponse:
-    if not payload.text and not payload.gate_choice:
+    if not payload.text and not payload.gate_choice and not payload.picked_problem_id:
         # No content to send — empty stream with just `done`.
         async def empty() -> AsyncIterator[str]:
             yield _sse("done", {})
@@ -83,35 +89,22 @@ async def post_message(payload: MessageRequest) -> StreamingResponse:
 
     async def event_stream() -> AsyncIterator[str]:
         config = {"configurable": {"thread_id": str(payload.session_uuid)}}
-        graph_input: dict = {
-            "messages": [HumanMessage(content=user_text)],
-        }
+        graph_input: dict = {}
+        if user_text:
+            graph_input["messages"] = [HumanMessage(content=user_text)]
         if payload.flow:
             graph_input["flow"] = payload.flow
+        slot_input: dict = {}
         if payload.subflow == "customize":
             # Trip the guide.customize branch in _guide_dispatch.
-            graph_input["slots"] = {"customize": {"active": True}}
+            slot_input["customize"] = {"active": True}
+        if payload.picked_problem_id:
+            slot_input["picked_problem_id"] = payload.picked_problem_id
+        if slot_input:
+            graph_input["slots"] = slot_input
 
         async with make_checkpointer() as cp:
             graph = build_graph(checkpointer=cp)
-
-            # If this thread already terminated, the dispatch will short-
-            # circuit to END and the stream would be empty (typing dots
-            # would just disappear). Surface that explicitly so the user
-            # knows to start a new conversation.
-            try:
-                snapshot = await graph.aget_state(config)
-                if snapshot and snapshot.values.get("outcome"):
-                    yield _sse("bot_text", {
-                        "text": "This conversation already wrapped up — "
-                                "head back to the menu and pick a new path "
-                                "to start fresh."
-                    })
-                    yield _sse("done", {})
-                    return
-            except Exception:  # noqa: BLE001
-                # No prior state — first turn on this thread. Nothing to do.
-                pass
 
             final_outcome: str | None = None
 

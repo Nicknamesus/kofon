@@ -81,6 +81,8 @@
     /* ----- Secondary utilities (smaller chips below the main grid) ----- */
     utilitiesTitle: "Quick tools",
     utilities: [
+      { flow: "guide", subflow: "customize", icon: "sparkle", label: "Custom build",
+        seed: "I want to customize a gearbox for my application." },
       { flow: "leadtime",  icon: "clock", label: "Lead times" },
       { flow: "datasheet", icon: "file",  label: "Get a datasheet" },
       { flow: "expo",      icon: "expo",  label: "We met at an expo" },

@@ -38,6 +38,7 @@ from app.agent.nodes import (
     guide_happy_gate,
     other_reclassify,
     outcomes,
+    post_outcome_chat,
     postsales_fix_gate,
     postsales_identify,
     postsales_match_kb,
@@ -60,15 +61,24 @@ def build_echo_graph(checkpointer: BaseCheckpointSaver | None = None):
 
 def _guide_dispatch(slots: dict) -> str:
     """Pick the right guide-* node based on slot state."""
-    # Gate first — if a result was presented and the user hasn't answered.
+    customize = slots.get("customize") or {}
+
+    # Customize takes precedence: a fresh "I want to custom build…" must
+    # not be intercepted by a stale find_phase=presented from an earlier
+    # product search. Only fall through to the gate when customize itself
+    # is the thing waiting for an answer.
+    if customize.get("active") and customize.get("phase") != "presented":
+        return "guide.customize"
+
+    # Gate — a result (search or customize) was presented and the user
+    # hasn't answered yet.
     if (
         slots.get("find_phase") == "presented"
         and slots.get("happy") is None
     ):
         return "guide.happy_gate"
 
-    # Customize sub-flow if explicitly selected.
-    if (slots.get("customize") or {}).get("active"):
+    if customize.get("active"):
         return "guide.customize"
 
     return "guide.find"
@@ -79,8 +89,19 @@ def _postsales_dispatch(slots: dict) -> str:
     postsales = slots.get("postsales") or {}
     phase = postsales.get("match_phase")
 
+    # Deterministic candidate pick from the UI: go straight to match_kb,
+    # which will look the problem up by id and present it.
+    if slots.get("picked_problem_id"):
+        return "postsales.match_kb"
+
     if phase == "presented" and postsales.get("fixed") is None:
         return "postsales.fix_gate"
+
+    # If we previously presented an ambiguous shortlist, the user's next
+    # turn is either picking a label or clarifying. Re-run identify so the
+    # symptom slot gets refreshed before re-matching.
+    if phase == "ambiguous":
+        return "postsales.identify"
 
     if postsales.get("phase") == "ready" and phase != "no_match":
         return "postsales.match_kb"
@@ -91,8 +112,9 @@ def _postsales_dispatch(slots: dict) -> str:
 def _entry_dispatch(state: AgentState) -> str:
     """First branch on every turn."""
     if state.get("outcome"):
-        # Conversation already terminated. Don't re-run anything.
-        return END
+        # Flow has terminated — don't re-run it, but still answer the user
+        # via the post-outcome chat node so the conversation stays open.
+        return "post_outcome_chat"
 
     flow = state.get("flow")
     slots = state.get("slots") or {}
@@ -205,6 +227,7 @@ def build_graph(checkpointer: BaseCheckpointSaver | None = None):
     g.add_node("outcome_sell", outcomes.outcome_sell)
     g.add_node("outcome_human", outcomes.outcome_human)
     g.add_node("outcome_resolved", outcomes.outcome_resolved)
+    g.add_node("post_outcome_chat", post_outcome_chat.run)
 
     flow_nodes = [
         "entry_router",
@@ -221,7 +244,7 @@ def build_graph(checkpointer: BaseCheckpointSaver | None = None):
     g.add_conditional_edges(
         START,
         _entry_dispatch,
-        flow_nodes + ["outcome_human", END],
+        flow_nodes + ["outcome_human", "post_outcome_chat", END],
     )
 
     g.add_conditional_edges(
@@ -290,5 +313,6 @@ def build_graph(checkpointer: BaseCheckpointSaver | None = None):
     g.add_edge("outcome_sell", END)
     g.add_edge("outcome_human", END)
     g.add_edge("outcome_resolved", END)
+    g.add_edge("post_outcome_chat", END)
 
     return g.compile(checkpointer=checkpointer)
