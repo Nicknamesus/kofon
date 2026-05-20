@@ -13,7 +13,7 @@ later by editing `widget.js` → `_flows`.
 | `widget.css`      | All styles, scoped under `.aiagent-root`                         |
 | `widget.js`       | DOM builder + state machine. Exposes `window.AIAgent.mount()`    |
 | `config.kofon.js` | Site-specific config (branding, actions, languages). **Replace this for other sites.** |
-| `demo.html`       | Standalone preview page                                          |
+| `index.html`      | Standalone preview page (served as the directory root)           |
 
 ## Preview
 
@@ -23,7 +23,7 @@ From this folder:
 python -m http.server 8001
 ```
 
-Open <http://127.0.0.1:8001/demo.html>.
+Open <http://127.0.0.1:8001/> — `index.html` is served automatically.
 
 ## Integrate into another site
 
