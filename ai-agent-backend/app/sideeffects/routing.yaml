@@ -1,0 +1,70 @@
+# Lead routing matrix — (main_type, product_family) → division.
+#
+# The orchestrator looks up the division here when a side effect fires.
+# `division.code` is what we store in conversations.division_code and
+# pass through to the CRM payload. `division.inbox` is the address the
+# notification email is sent to.
+#
+# Lookup precedence:
+#   1. exact (main_type, product_family_code)
+#   2. exact (main_type, '*')
+#   3. fallback
+#
+# product_family_code matches `product_types.code` from the seed
+# (caesarplanetary, rollsate, elitewave, servolux, kgv, spiralbevel).
+#
+# Only the structure is authoritative — the actual division names and
+# inbox addresses should be edited by the Kofon team before going live.
+
+divisions:
+  planetary:
+    code: planetary
+    name: Planetary Gear Division
+    inbox: planetary-sales@kofon-motion.example
+  roller_screw:
+    code: roller_screw
+    name: Roller Screw Division
+    inbox: rollsate-sales@kofon-motion.example
+  harmonic:
+    code: harmonic
+    name: Harmonic Drive Division
+    inbox: elitewave-sales@kofon-motion.example
+  linear:
+    code: linear
+    name: Linear Motion Division
+    inbox: servolux-sales@kofon-motion.example
+  bevel:
+    code: bevel
+    name: Bevel Gear Division
+    inbox: bevel-sales@kofon-motion.example
+  applications:
+    code: applications
+    name: Applications Engineering
+    inbox: apps-engineering@kofon-motion.example
+
+# Map product family → division. Used as the second key in routes.
+families:
+  caesarplanetary: planetary
+  rollsate: roller_screw
+  elitewave: harmonic
+  servolux: linear
+  kgv: linear
+  spiralbevel: bevel
+
+routes:
+  # Confirmed sales — go to the division that owns the family.
+  - main_type: presales
+    family: '*'
+    division: applications        # presales is still upstream — route to apps engineering
+  - main_type: guide
+    family: '*'
+    division_by_family: true      # use the families map above
+  - main_type: postsales
+    family: '*'
+    division_by_family: true
+  - main_type: other
+    family: '*'
+    division: applications
+
+fallback:
+  division: applications

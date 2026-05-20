@@ -44,6 +44,42 @@ class Settings(BaseSettings):
     # See `app/embeddings.py` and `memory/project-china-llm-constraint.md`.
     embedding_provider: str = "hash"
 
+    # ---- Phase 4: side effects (CRM + email) ----
+    # CRM provider. Default `log` writes only to the `crm_calls` audit
+    # table — fine for demo / CI. Set `zoho` to enable the real adapter.
+    # See `app/crm/` and `memory/project-kofon-chatbot.md` Phase 4 notes.
+    crm_provider: str = "log"
+
+    # Zoho — required when CRM_PROVIDER=zoho. Get these from
+    # https://api-console.zoho.com (or zoho.com.cn for China).
+    zoho_client_id: str = ""
+    zoho_client_secret: str = ""
+    zoho_refresh_token: str = ""
+    # Region: us | eu | in | au | jp | cn. Kofon will likely use 'cn'.
+    zoho_region: str = "us"
+    # Optional explicit overrides — handy for sandbox / proxy setups.
+    zoho_accounts_url: str | None = None
+    zoho_api_url: str | None = None
+
+    # Email provider. Default `log` records would-be sends in
+    # `email_calls`. `aliyun` enables Aliyun DirectMail.
+    mail_provider: str = "log"
+
+    aliyun_access_key_id: str = ""
+    aliyun_access_key_secret: str = ""
+    aliyun_dm_region: str = "cn-hangzhou"
+    aliyun_dm_account_name: str = ""
+    aliyun_dm_from_alias: str = ""
+
+    # Side-effect orchestration knobs.
+    # When True (default), CRM / email failures are swallowed and logged
+    # — the user still sees the terminal card. Flip to False in
+    # production-with-monitoring once alerting is in place.
+    sideeffects_soft_fail: bool = True
+    # Path to the routing matrix YAML; resolved relative to the backend
+    # working directory if not absolute.
+    routing_matrix_path: str = "app/sideeffects/routing.yaml"
+
     @computed_field  # type: ignore[prop-decorator]
     @property
     def effective_database_url(self) -> str:

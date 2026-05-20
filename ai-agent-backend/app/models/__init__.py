@@ -22,6 +22,7 @@ from app.models.content import (
     UseCaseProductType,
 )
 from app.models.runtime import Conversation, Message
+from app.models.sideeffects import CrmCall, EmailCall, Rfq, Ticket
 
 __all__ = [
     "MainConversationType",
@@ -35,4 +36,8 @@ __all__ = [
     "ProblemEmbedding",
     "Conversation",
     "Message",
+    "Rfq",
+    "Ticket",
+    "CrmCall",
+    "EmailCall",
 ]

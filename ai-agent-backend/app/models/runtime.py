@@ -56,6 +56,11 @@ class Conversation(Base):
     )
     outcome: Mapped[str | None] = mapped_column(Text)
     ticket_id: Mapped[str | None] = mapped_column(Text)
+    # Phase 4: provider-agnostic pointers to side-effect records.
+    rfq_id: Mapped[int | None] = mapped_column(
+        BigInteger, ForeignKey("rfqs.id", ondelete="SET NULL")
+    )
+    division_code: Mapped[str | None] = mapped_column(Text)
     started_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True), nullable=False, server_default=text("now()")
     )

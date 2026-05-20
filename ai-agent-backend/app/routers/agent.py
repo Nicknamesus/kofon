@@ -19,6 +19,10 @@ Event kinds streamed:
 A `POST /api/sessions` helper returns a new `session_uuid` for fresh
 clients that haven't put one in localStorage yet. Strictly optional —
 clients can generate their own UUIDs.
+
+Phase 4: every turn also writes shaped `conversations` / `messages`
+rows via `app.persistence`. The LangGraph checkpoint covers resumability;
+these tables cover analytics.
 """
 
 from __future__ import annotations
@@ -32,6 +36,7 @@ from fastapi.responses import StreamingResponse
 from langchain_core.messages import AIMessage, HumanMessage
 from pydantic import BaseModel, Field
 
+from app import persistence
 from app.agent.checkpointer import make_checkpointer
 from app.agent.graph import build_graph
 
@@ -68,6 +73,11 @@ class MessageRequest(BaseModel):
         "ambiguous shortlist. Routes the turn straight to match_kb to "
         "present that specific problem by id (no vector search).",
     )
+    language: str | None = Field(
+        default=None,
+        description="Optional 2-letter language code (e.g. 'EN', 'ZH'). "
+        "Persisted on the conversations row for analytics.",
+    )
 
 
 @router.post("/sessions", response_model=SessionStartResponse)
@@ -88,8 +98,27 @@ async def post_message(payload: MessageRequest) -> StreamingResponse:
     user_text = payload.text or payload.gate_choice or ""
 
     async def event_stream() -> AsyncIterator[str]:
+        # Persist conversation + user message before running the graph,
+        # so the conversations.id is available to outcome side-effects.
+        conversation_id = await persistence.upsert_conversation(
+            payload.session_uuid,
+            flow=payload.flow,
+            language=payload.language,
+        )
+        await persistence.append_user_message(
+            conversation_id,
+            text=payload.text,
+            gate_choice=payload.gate_choice,
+            flow=payload.flow,
+            subflow=payload.subflow,
+            picked_problem_id=payload.picked_problem_id,
+        )
+
         config = {"configurable": {"thread_id": str(payload.session_uuid)}}
-        graph_input: dict = {}
+        graph_input: dict = {
+            "session_uuid": payload.session_uuid,
+            "conversation_id": conversation_id,
+        }
         if user_text:
             graph_input["messages"] = [HumanMessage(content=user_text)]
         if payload.flow:
@@ -107,24 +136,43 @@ async def post_message(payload: MessageRequest) -> StreamingResponse:
             graph = build_graph(checkpointer=cp)
 
             final_outcome: str | None = None
+            last_node: str | None = None
+            last_state: dict | None = None
 
             async for chunk in graph.astream(
                 graph_input, config=config, stream_mode="updates"
             ):
                 # chunk is {node_name: state_update}
-                for _node, update in chunk.items():
+                for node_name, update in chunk.items():
                     if not isinstance(update, dict):
                         continue
+                    last_node = node_name
+                    last_state = update
                     for msg in update.get("messages") or []:
                         if isinstance(msg, AIMessage) and msg.content:
                             yield _sse("bot_text", {"text": msg.content})
+                            await persistence.append_bot_text(
+                                conversation_id, msg.content, node=node_name
+                            )
                     for card in update.get("cards") or []:
                         yield _sse("card", card)
+                        await persistence.append_bot_card(
+                            conversation_id, card, node=node_name
+                        )
                     if update.get("outcome"):
                         final_outcome = update["outcome"]
 
             if final_outcome:
                 yield _sse("outcome", {"outcome": final_outcome})
+
+            # Patch the conversations row with the latest snapshot. The
+            # outcome side-effects handler already wrote outcome/rfq/ticket
+            # columns; here we sync current_node and the slim state mirror.
+            await persistence.update_conversation_state(
+                conversation_id,
+                current_node=(last_state or {}).get("current_node") or last_node,
+                state_snapshot=last_state,
+            )
 
             yield _sse("done", {})
 
