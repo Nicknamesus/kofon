@@ -1,0 +1,3 @@
+# Standalone repo for the hardcoded (single-process) demo build.
+# Lives inside this tree for convenience but is managed independently.
+agent-hardcoded/
