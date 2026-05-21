@@ -1,0 +1,53 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/94.html
+# Review before promoting to seed/product_types/kr110_23.yaml
+# Notes: Single SKU page for KR110-23 joint reducer. Only one ratio (23:1) is listed. The datasheet PDF link (伺服行星关节模组20250914.pdf) is referenced but the full URL is not extractable from the page text; I left datasheet_url pointing to the product page itself. The page title mentions '关节减速器KR110-23' which translates to 'Joint Reducer KR110-23'. The product appears to be a single-stage planetary gearbox (no stage count given explicitly). Backlash is listed as ≤8 arcmin — used 8 as the upper bound. Size is given as 110×61.5 mm — interpreted as outer diameter 110 mm and length 61.5 mm.
+code: kr110_23
+name: KR110-23 Joint Reducer
+family: Planetary gearbox
+description: The KR110-23 is a precision joint reducer (planetary gearbox) from Kofon.
+  It features backlash below 8 arcmin, gears made from low-carbon alloy forged steel
+  with carburizing and quenching hardening to HRC60, and gear precision controlled
+  to ISO 4 or better. The cage-type planetary carrier is integrated with the output
+  shaft for high rigidity and precision, and the planetary wheel bearings use full
+  needle rollers (no cage) to increase output torque and rigidity. Supports non-standard
+  customization.
+spec_schema:
+  ratio:
+    type: integer
+    label: Reducer ratio
+  nominal_torque_nm:
+    type: number
+    label: Rated torque (Nm)
+  peak_torque_nm:
+    type: number
+    label: Peak torque (Nm)
+  rated_speed_rpm:
+    type: integer
+    label: Rated speed (RPM)
+  peak_speed_rpm:
+    type: integer
+    label: Peak speed (RPM)
+  efficiency_pct:
+    type: number
+    label: Efficiency (%)
+  weight_kg:
+    type: number
+    label: Weight (kg)
+  backlash_arcmin:
+    type: number
+    label: Backlash (Arcmin)
+  frame_size_mm:
+    type: number
+    label: Outer diameter (mm)
+  length_mm:
+    type: number
+    label: Length (mm)
+  operating_temp_min_c:
+    type: integer
+    label: Min operating temperature (°C)
+  operating_temp_max_c:
+    type: integer
+    label: Max operating temperature (°C)
+  lubrication:
+    type: string
+    label: Lubrication

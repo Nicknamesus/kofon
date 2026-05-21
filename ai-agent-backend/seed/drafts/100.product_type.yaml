@@ -1,0 +1,47 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/100.html
+# Review before promoting to seed/product_types/tkz_series.yaml
+# Notes: The page is a product detail page for the TKZ090 tightening gearbox (TKZ型拧紧机-TKZ090). However, the "技术参数" (Technical Parameters) section and "标准尺寸" (Standard Dimensions) section appear to have their content loaded dynamically (likely via JavaScript or images) and were not captured in the scraped text. Only the product name, model TKZ090, and general feature descriptions were extracted. No torque, ratio, backlash, speed, or dimension tables were present in the text. Therefore only a single placeholder SKU with minimal specs is emitted. If the actual technical data table is available elsewhere (e.g., PDF datasheet linked as "柠紧机系列.pdf"), that should be consulted for a complete extraction. The PDF link is noted but not accessible via this scrape.
+code: tkz_series
+name: TKZ Series Tightening Gearbox
+family: Planetary gearbox
+description: TKZ series tightening gearboxes (拧紧机) integrate advanced wear-resistant
+  materials with planetary gear trains for high-speed wear resistance and noise reduction.
+  They feature customized gear profiles with tooth optimization for improved impact
+  resistance, special bearings designed to withstand multi-directional loads under
+  tightening shocks, and can accommodate built-in torque and displacement sensors
+  for torque visualization. The output shaft uses high-strength special materials
+  with appropriate heat treatment for enhanced impact resistance and wear resistance.
+spec_schema:
+  model:
+    type: string
+    label: Model
+  stage:
+    type: string
+    label: Stage
+  ratio:
+    type: string
+    label: Ratio
+  nominal_torque_nm:
+    type: number
+    label: Nominal torque (Nm)
+  peak_torque_nm:
+    type: number
+    label: Peak torque (Nm)
+  backlash_arcmin:
+    type: number
+    label: Backlash (arcmin)
+  input_speed_rpm_max:
+    type: integer
+    label: Max input speed (rpm)
+  efficiency_pct:
+    type: number
+    label: Efficiency (%)
+  weight_kg:
+    type: number
+    label: Weight (kg)
+  frame_size_mm:
+    type: string
+    label: Frame size (mm)
+  service_life_cycles:
+    type: integer
+    label: Service life (cycles)

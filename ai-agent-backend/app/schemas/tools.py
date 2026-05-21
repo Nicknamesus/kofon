@@ -24,13 +24,28 @@ class SearchProductsFilters(BaseModel):
 
     family: str | None = Field(
         default=None,
-        description="`product_types.code` (e.g. 'caesarplanetary').",
+        description=(
+            "`product_types.code` from the catalog. Examples spanning "
+            "the families: 'caesarplanetary' / 'kr_series' / 'kpx_s_series' "
+            "(planetary), '8_11_series_harmonic' (harmonic), "
+            "'kofon_ball_screw' (linear), 'agv_drive_wheel_kfq150' (mobility)."
+        ),
     )
-    frame_size_mm: int | None = None
+    frame_size_mm: int | None = Field(
+        default=None,
+        description=(
+            "Frame size in mm. Values are family-specific — e.g. caesarplanetary "
+            "uses 60/90/140; kr_series uses 045/060/070/080/090/110/128."
+        ),
+    )
     min_nominal_torque_nm: float | None = None
     max_backlash_arcmin: float | None = None
     variant: str | None = Field(
-        default=None, description="Family-specific variant tag (e.g. 'HP', 'HT')."
+        default=None,
+        description=(
+            "Family-specific variant tag. Examples: 'HP' (low backlash) / "
+            "'HT' (high torque) on caesarplanetary."
+        ),
     )
 
 

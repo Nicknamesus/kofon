@@ -1,0 +1,100 @@
+# Promoted from 4 draft(s) under seed/drafts/.
+# Merged LLM codes: w10_micro, w12_micro, w8_micro, w_series
+# Sources: 25.product_type, 26.product_type, 27.product_type, pdf_4_-w_304708.product_type
+code: w_series
+name: W8 Micro Gearbox
+family: Planetary gearbox
+description: W8 micro planetary gearbox series from Kofon. Designed for low-speed,
+  high-torque applications in small spaces such as humanoid robot joints and drones.
+  Features hardened gear hobbing, integrated front-flange ring gear, high torque,
+  impact resistance, low noise, and grease lubrication (maintenance-free). Available
+  in frame sizes 08/10/12/16/19/22/26/32 with single, double, triple, and quadruple
+  stage configurations.
+spec_schema:
+  frame_size_mm:
+    type: integer
+    label: Frame size (mm)
+  stages:
+    type: integer
+    label: Number of stages
+  ratio:
+    type: number
+    label: Ratio
+  nominal_torque_nm:
+    type: number
+    label: Nominal torque (Nm)
+  peak_torque_nm:
+    type: number
+    label: Peak torque (Nm)
+  input_speed_rpm_max:
+    type: integer
+    label: Max continuous input speed (rpm)
+  input_speed_instantaneous_rpm_max:
+    type: integer
+    label: Max instantaneous input speed (rpm)
+  efficiency_pct:
+    type: number
+    label: Efficiency (%)
+  backlash_arcmin:
+    type: number
+    label: Backlash (arcmin)
+  weight_kg:
+    type: number
+    label: Weight (kg)
+  max_motor_shaft_diameter_mm:
+    type: number
+    label: Max motor shaft diameter (mm)
+  length_mm:
+    type: number
+    label: Length L1 (mm)
+  max_continuous_power_w:
+    type: number
+    label: Max continuous power (W)
+  max_instantaneous_power_w:
+    type: number
+    label: Max instantaneous power (W)
+  moment_of_inertia_g_cm2:
+    type: number
+    label: Moment of inertia (g·cm²)
+  max_axial_load_dynamic_n:
+    type: number
+    label: Max axial load (dynamic, N)
+  max_radial_load_n:
+    type: number
+    label: Max radial load (N, at 5mm from flange)
+  temperature_range_c:
+    type: string
+    label: Recommended temperature range (°C)
+  temperature_range_extended_c:
+    type: string
+    label: Extended temperature range (°C)
+  moment_of_inertia_gcm2:
+    type: number
+    label: Moment of inertia (g·cm²)
+  max_axial_load_n:
+    type: number
+    label: Max axial load (N)
+  max_continuous_torque_nm:
+    type: number
+    label: Max continuous torque (Nm)
+  max_instantaneous_torque_nm:
+    type: number
+    label: Max instantaneous torque (Nm)
+  max_continuous_input_speed_rpm:
+    type: integer
+    label: Max continuous input speed (rpm)
+  max_instantaneous_input_speed_rpm:
+    type: integer
+    label: Max instantaneous input speed (rpm)
+  weight_g:
+    type: integer
+    label: Weight (g)
+  recommended_temperature_range_c:
+    type: string
+    label: Recommended temperature range (°C)
+  optional_extended_temperature_range_c:
+    type: string
+    label: Optional extended temperature range (°C)
+  stage:
+    type: integer
+    label: Number of stages

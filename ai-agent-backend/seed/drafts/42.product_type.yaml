@@ -1,0 +1,38 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/42.html
+# Review before promoting to seed/product_types/pwzq_heavy_duty_travel.yaml
+# Notes: The page lists 11 frame sizes (PWZQ250 through PWZQ785). Each frame has multiple ratios. I expanded each ratio into its own SKU. The rated input speed is listed as 1500 r/min for all models in the table (the column header applies to all rows). The 'max output torque' values are described in a footnote as short-term peak torque only. No nominal/rated torque is given, so I used the max output torque as provided. No backlash, efficiency, or input speed max values were available. The PWZQ285 row is missing the rated input speed value in the table (blank cell), so I assumed 1500 r/min same as others. The hydraulic motor column lists compatible motor models. The datasheet PDF link is provided on the page. No CAD URLs or lead times were found.
+code: pwzq_heavy_duty_travel
+name: PWZQ Heavy-Duty Travel Planetary Gearbox
+family: Planetary gearbox
+description: PWZQ series heavy-duty travel planetary gearboxes designed for high radial
+  load applications. Features custom paired tapered roller bearings for strong radial
+  load capacity, a ring gear made of medium-carbon alloy forged steel with nitriding
+  surface treatment for high toughness, and low-carbon alloy forged steel carburized
+  and ground gears for strength and longevity. An optional static brake can be integrated
+  via the hydraulic system for parking braking. Available in 11 frame sizes (PWZQ250
+  to PWZQ785) with various ratios and hydraulic motor compatibility.
+spec_schema:
+  model:
+    type: string
+    label: Model
+  max_output_torque_nm:
+    type: integer
+    label: Max Output Torque (Nm)
+  rated_input_speed_rpm:
+    type: integer
+    label: Rated Input Speed (r/min)
+  oil_capacity_l:
+    type: number
+    label: Oil Capacity (L)
+  weight_kg:
+    type: integer
+    label: Weight (kg)
+  single_wheel_load_t:
+    type: integer
+    label: Single Wheel Load Bearing (t)
+  ratio:
+    type: number
+    label: Ratio
+  hydraulic_motor:
+    type: string
+    label: Hydraulic Motor

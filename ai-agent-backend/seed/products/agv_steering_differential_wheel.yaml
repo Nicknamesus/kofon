@@ -1,0 +1,130 @@
+# Promoted from 1 draft(s) under seed/drafts/.
+# Sources: 39.products
+# SKUs: 5
+product_type_code: agv_steering_differential_wheel
+products:
+- sku: KF150S-16-400W-A
+  name: KF150S — Speed ratio 16, 400W, Type A
+  specs:
+    model: KF150S
+    speed_ratio_options: '16'
+    steering_ratio: 160
+    motor_power_walking_w: 400
+    motor_torque_walking_nm: 1.27
+    voltage_v: 48
+    motor_current_walking_a: 10.6
+    motor_speed_walking_rpm: 3000
+    motor_power_steering_w: 200
+    motor_torque_steering_nm: 0.64
+    motor_current_steering_a: 5.7
+    motor_speed_steering_rpm: 3000
+    drive_wheel_diameter_mm: 150
+    max_speed_m_min: 88.3
+    max_turning_speed_deg_sec: 112.5
+    driving_wheel_load_kg: 400
+    turning_radius_mm: 180
+    brake_torque_nm: 6
+    electron_limit_angle_deg: 126
+    mechanical_limit_angle_deg: 135
+    total_weight_kg: 16
+  status: active
+- sku: KF150S-21-400W-A
+  name: KF150S — Speed ratio 21, 400W, Type A
+  specs:
+    model: KF150S
+    speed_ratio_options: '21'
+    steering_ratio: 160
+    motor_power_walking_w: 400
+    motor_torque_walking_nm: 1.27
+    voltage_v: 48
+    motor_current_walking_a: 10.6
+    motor_speed_walking_rpm: 3000
+    motor_power_steering_w: 200
+    motor_torque_steering_nm: 0.64
+    motor_current_steering_a: 5.7
+    motor_speed_steering_rpm: 3000
+    drive_wheel_diameter_mm: 150
+    max_speed_m_min: 67.3
+    max_turning_speed_deg_sec: 112.5
+    driving_wheel_load_kg: 400
+    turning_radius_mm: 180
+    brake_torque_nm: 6
+    electron_limit_angle_deg: 126
+    mechanical_limit_angle_deg: 135
+    total_weight_kg: 16
+  status: active
+- sku: KF150S-24-400W-A
+  name: KF150S — Speed ratio 24, 400W, Type A
+  specs:
+    model: KF150S
+    speed_ratio_options: '24'
+    steering_ratio: 160
+    motor_power_walking_w: 400
+    motor_torque_walking_nm: 1.27
+    voltage_v: 48
+    motor_current_walking_a: 10.6
+    motor_speed_walking_rpm: 3000
+    motor_power_steering_w: 200
+    motor_torque_steering_nm: 0.64
+    motor_current_steering_a: 5.7
+    motor_speed_steering_rpm: 3000
+    drive_wheel_diameter_mm: 150
+    max_speed_m_min: 58.9
+    max_turning_speed_deg_sec: 112.5
+    driving_wheel_load_kg: 400
+    turning_radius_mm: 180
+    brake_torque_nm: 6
+    electron_limit_angle_deg: 126
+    mechanical_limit_angle_deg: 135
+    total_weight_kg: 16
+  status: active
+- sku: KF150S-28-400W-A
+  name: KF150S — Speed ratio 28, 400W, Type A
+  specs:
+    model: KF150S
+    speed_ratio_options: '28'
+    steering_ratio: 160
+    motor_power_walking_w: 400
+    motor_torque_walking_nm: 1.27
+    voltage_v: 48
+    motor_current_walking_a: 10.6
+    motor_speed_walking_rpm: 3000
+    motor_power_steering_w: 200
+    motor_torque_steering_nm: 0.64
+    motor_current_steering_a: 5.7
+    motor_speed_steering_rpm: 3000
+    drive_wheel_diameter_mm: 150
+    max_speed_m_min: 50.5
+    max_turning_speed_deg_sec: 112.5
+    driving_wheel_load_kg: 400
+    turning_radius_mm: 180
+    brake_torque_nm: 6
+    electron_limit_angle_deg: 126
+    mechanical_limit_angle_deg: 135
+    total_weight_kg: 16
+  status: active
+- sku: KF150S-32-400W-A
+  name: KF150S — Speed ratio 32, 400W, Type A
+  specs:
+    model: KF150S
+    speed_ratio_options: '32'
+    steering_ratio: 160
+    motor_power_walking_w: 400
+    motor_torque_walking_nm: 1.27
+    voltage_v: 48
+    motor_current_walking_a: 10.6
+    motor_speed_walking_rpm: 3000
+    motor_power_steering_w: 200
+    motor_torque_steering_nm: 0.64
+    motor_current_steering_a: 5.7
+    motor_speed_steering_rpm: 3000
+    drive_wheel_diameter_mm: 150
+    max_speed_m_min: 44.2
+    max_turning_speed_deg_sec: 112.5
+    driving_wheel_load_kg: 400
+    turning_radius_mm: 180
+    brake_torque_nm: 6
+    electron_limit_angle_deg: 126
+    mechanical_limit_angle_deg: 135
+    total_weight_kg: 16
+  status: active

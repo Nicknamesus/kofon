@@ -1,0 +1,52 @@
+# Promoted from 1 draft(s) under seed/drafts/.
+# Sources: 78.product_type
+code: kbd_mc_series
+name: KBD-MC Series Harmonic Drive
+family: Harmonic drive / strain wave
+description: KBD-MC series harmonic drive reducers from Kofon. Ultra-short design
+  with high transmission accuracy, high torsional stiffness, large load capacity,
+  high efficiency, and long life. Available in frame sizes 14, 17, 20, 25, and 32
+  with various reduction ratios.
+spec_schema:
+  frame_size_mm:
+    type: integer
+    label: Frame size
+  ratio:
+    type: integer
+    label: Ratio
+  nominal_torque_nm:
+    type: number
+    label: Rated torque (Nm)
+  peak_torque_nm:
+    type: number
+    label: Max start/stop peak torque (Nm)
+  max_average_load_torque_nm:
+    type: number
+    label: Max average load torque (Nm)
+  max_instant_torque_nm:
+    type: number
+    label: Instant max torque (Nm)
+  max_input_speed_rpm:
+    type: integer
+    label: Max input speed (rpm)
+  max_average_input_speed_rpm:
+    type: integer
+    label: Max average input speed (rpm)
+  transmission_accuracy_arcmin:
+    type: number
+    label: Transmission accuracy (arcmin)
+  hysteresis_arcmin:
+    type: number
+    label: Hysteresis (arcmin)
+  lost_motion_arcmin:
+    type: number
+    label: Lost motion (arcmin)
+  repeatability_arcmin:
+    type: number
+    label: Repeatability (±arcmin)
+  start_torque_mnm:
+    type: integer
+    label: Start torque (mNm)
+  weight_kg:
+    type: number
+    label: Weight (kg)

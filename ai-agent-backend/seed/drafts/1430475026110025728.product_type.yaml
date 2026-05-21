@@ -1,0 +1,53 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/1430475026110025728.html
+# Review before promoting to seed/product_types/kr060_22.yaml
+# Notes: Single SKU page for KR060-22 with ratio 22 only. The page title says "关节减速器KR060-22" which translates to "Joint Reducer KR060-22". The model code appears to be KR060-22 (the -22 is the ratio, not a variant suffix). I kept the SKU as KR060-22 since the page presents this as a single product. The backlash is given as ≤8 arcmin — used 8 as the upper bound. The size is given as 60×39 mm — interpreted as outer diameter 60 mm (frame_size_mm) and length 39 mm. No datasheet URL or CAD URL available beyond a PDF named "伺服行星关节模组20250914.pdf" which is a generic servo planetary joint module document, not specific to this SKU, so omitted.
+code: kr060_22
+name: KR060-22 Joint Reducer
+family: Planetary gearbox
+description: The KR060-22 is a precision joint reducer (planetary gearbox) from Kofon.
+  It features backlash below 8 arcmin, ultra-precision machined gears with ISO grade
+  4 or better accuracy, and carburized alloy forged steel gears hardened to HRC60.
+  The integrated cage-type planetary carrier and output shaft design provides high
+  rigidity and precision. Needle roller bearings without retainers are used on the
+  planet gears to maximise output torque and stiffness. The unit is lubricated with
+  synthetic grease and operates from -25°C to +90°C.
+spec_schema:
+  ratio:
+    type: integer
+    label: Ratio
+  nominal_torque_nm:
+    type: number
+    label: Rated torque (Nm)
+  peak_torque_nm:
+    type: number
+    label: Peak torque (Nm)
+  rated_speed_rpm:
+    type: integer
+    label: Rated speed (RPM)
+  peak_speed_rpm:
+    type: integer
+    label: Peak speed (RPM)
+  efficiency_pct:
+    type: number
+    label: Efficiency (%)
+  weight_kg:
+    type: number
+    label: Weight (kg)
+  backlash_arcmin:
+    type: number
+    label: Backlash (arcmin)
+  frame_size_mm:
+    type: number
+    label: Frame size (mm)
+  length_mm:
+    type: number
+    label: Length (mm)
+  operating_temp_min_c:
+    type: integer
+    label: Min operating temp (°C)
+  operating_temp_max_c:
+    type: integer
+    label: Max operating temp (°C)
+  lubrication:
+    type: string
+    label: Lubrication

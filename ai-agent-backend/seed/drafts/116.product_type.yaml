@@ -1,0 +1,68 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/116.html
+# Review before promoting to seed/product_types/kpx_s_series.yaml
+# Notes: This page covers only one frame size (KPX-SY065) of the KPX-S series. The product type code 'kpx_s_series' was chosen to group all KPX-S hand-input gearboxes. The page lists two tables: 1-stage (ratios 3-10) and 2-stage (ratios 12-64). Each ratio was expanded into its own SKU. The rotational inertia for 2-stage is listed as 'kgcm' (likely kg·cm²) — kept as-is. The page header says '手摇输入减速机KPX-S系列' (Hand-input gearbox KPX-S series) so this is one model within that series. Other frame sizes (KPX-SY180, KPX-SY142) are shown as related products but not detailed on this page. The 'Max Radial Force' and 'Max Axial Force' labels appear swapped in the Chinese table (最大轴向力 = Max Axial Force, 最大径向力 = Max Radial Force) — I mapped them according to the English labels provided in the table headers.
+code: kpx_s_series
+name: KPX-S Series Hand-Input Gearbox
+family: Planetary gearbox
+description: The KPX-S series is a hand-input (manual crank) planetary gearbox designed
+  for applications where electric power is unavailable or during power failures. It
+  offers high reliability, simple operation, and wide application range. Available
+  in 1-stage and 2-stage configurations with multiple ratios.
+spec_schema:
+  ratio:
+    type: integer
+    label: Ratio i
+  stages:
+    type: integer
+    label: Number of stages
+  nominal_torque_nm:
+    type: number
+    label: Rated output torque (Nm)
+  peak_torque_nm:
+    type: number
+    label: Maximum acceleration torque (Nm)
+  emergency_stop_torque_nm:
+    type: number
+    label: Emergency stop torque (Nm)
+  rated_input_speed_rpm:
+    type: integer
+    label: Rated input speed (rpm)
+  max_input_speed_rpm:
+    type: integer
+    label: Max input speed (rpm)
+  backlash_arcmin:
+    type: number
+    label: Backlash (arcmin)
+  max_radial_force_n:
+    type: integer
+    label: Max radial force (N)
+  max_axial_force_n:
+    type: integer
+    label: Max axial force (N)
+  rotational_inertia_kgcm2:
+    type: number
+    label: Rotational inertia (kg·cm²)
+  noise_db:
+    type: number
+    label: Noise (dB(A))
+  efficiency_pct:
+    type: integer
+    label: Full loading efficiency (%)
+  operating_temp_min_c:
+    type: integer
+    label: Operating temperature min (°C)
+  operating_temp_max_c:
+    type: integer
+    label: Operating temperature max (°C)
+  lubrication:
+    type: string
+    label: Lubrication
+  mounting_position:
+    type: string
+    label: Mounting position
+  service_lifetime_h:
+    type: integer
+    label: Service lifetime (h)
+  weight_kg:
+    type: number
+    label: Weight (kg)

@@ -1,0 +1,22 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/1430475997913485312.html
+# Review before promoting to seed/products/kr070_series.yaml
+product_type_code: kr070_series
+products:
+- sku: KR070-25
+  name: KR070 — 25:1 Joint Reducer
+  specs:
+    ratio: 25
+    nominal_torque_nm: 30
+    peak_torque_nm: 90
+    rated_speed_rpm: 3000
+    peak_speed_rpm: 6000
+    efficiency_pct: 85
+    weight_kg: 0.47
+    backlash_arcmin: 8
+    frame_size_mm: 70
+    length_mm: 63.5
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Synthetic grease
+  datasheet_url: https://www.kofon.com.cn/products_detail/1430475997913485312.html
+  status: active

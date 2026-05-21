@@ -1,0 +1,46 @@
+# Promoted from 3 draft(s) under seed/drafts/.
+# Merged LLM codes: tl_series, tl_series_tightening
+# Sources: 83.products, 96.products, 97.products
+# SKUs: 3
+product_type_code: tl_series
+products:
+- sku: TL045
+  name: TL045 — Offset Tightening Gearbox
+  specs:
+    model: TL045
+    stage: '1'
+    ratio: '1:1'
+    frame_size_mm: '45'
+  status: active
+- sku: TL067-1
+  name: TL067 — Offset Tightening Gearbox
+  specs:
+    frame_size_mm: TL067
+    ratio: '1'
+    nominal_torque_nm: null
+    peak_torque_nm: null
+    max_tightening_torque_nm: null
+    input_speed_rpm_max: null
+    weight_kg: null
+    backlash_arcmin: null
+    efficiency_pct: null
+    service_life_cycles: null
+  datasheet_url: https://www.kofon.com.cn/products_detail/96.html
+  status: active
+- sku: TL054
+  name: TL054 — Offset tightening gearbox
+  specs:
+    model: TL054
+    stage: '1'
+    ratio: null
+    nominal_torque_nm: null
+    peak_torque_nm: null
+    backlash_arcmin: null
+    input_speed_rpm_max: null
+    efficiency_pct: null
+    weight_kg: null
+    frame_size_mm: TL054
+    max_tightening_torque_nm: null
+    tightening_speed_rpm: null
+    life_cycles: null
+  status: active

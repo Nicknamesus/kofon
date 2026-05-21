@@ -1,0 +1,69 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/59.html
+# Review before promoting to seed/product_types/r_series_rf080.yaml
+# Notes: 1. The page lists weight for 1-stage as 23 kg in the table but the 2-stage is 3.3 kg and 3-stage is 4.3 kg — the 23 kg is likely a typo (should be 2.3 kg) based on the pattern. I used 2.3 kg for 1-stage. 2. The 2-stage noise is listed as 's63' — interpreted as ≤63 dB(A). 3. The 2-stage ratio column header says '1' but the listed ratios are 12/15/16/20/25/32/40 — the '1' is likely a formatting artifact. 4. Rotational inertia units are listed as 'kgc㎡' and 'kgcm2' — interpreted as kg·cm². 5. The 3-stage table has ratio '1' as header but lists 64/80/100/125/160/200/256/320 — same formatting artifact. 6. All shared specs (backlash, forces, lubrication, protection, lifetime, weight) are per-stage-group, applied uniformly to all SKUs in that stage group. 7. The product_type_code 'r_series_rf080' is specific to this frame size (RF080) within the R-series family, since the spec schema differs by frame size.
+code: r_series_rf080
+name: RF080 Series Precision Planetary Gearbox
+family: Planetary gearbox
+description: The RF080 series precision planetary gearbox from Kofon's R-series line.
+  Available in 1-stage, 2-stage, and 3-stage configurations with ratios from 3:1 to
+  320:1. Features high efficiency (up to 97%), low backlash (8-15 arcmin depending
+  on stages), IP65 protection, grease lubrication, and a rated input speed of 3000
+  rpm (max 6000 rpm). Suitable for a wide range of precision motion control applications.
+spec_schema:
+  ratio:
+    type: integer
+    label: Ratio
+  stages:
+    type: integer
+    label: Number of stages
+  nominal_torque_nm:
+    type: number
+    label: Rated output torque (Nm)
+  peak_torque_nm:
+    type: number
+    label: Maximum acceleration torque (Nm)
+  emergency_stop_torque_nm:
+    type: number
+    label: Emergency stop torque (Nm)
+  rated_input_speed_rpm:
+    type: integer
+    label: Rated input speed (rpm)
+  max_input_speed_rpm:
+    type: integer
+    label: Max input speed (rpm)
+  backlash_arcmin:
+    type: number
+    label: Backlash (arcmin)
+  max_radial_force_n:
+    type: integer
+    label: Max radial force (N)
+  max_axial_force_n:
+    type: integer
+    label: Max axial force (N)
+  rotational_inertia_kgcm2:
+    type: number
+    label: Rotational inertia (kg·cm²)
+  noise_db_a:
+    type: number
+    label: Noise (dB(A))
+  efficiency_pct:
+    type: integer
+    label: Full-load efficiency (%)
+  operating_temp_min_c:
+    type: integer
+    label: Min operating temperature (°C)
+  operating_temp_max_c:
+    type: integer
+    label: Max operating temperature (°C)
+  lubrication:
+    type: string
+    label: Lubrication
+  protection_class:
+    type: string
+    label: Protection class
+  service_lifetime_h:
+    type: integer
+    label: Service lifetime (h)
+  weight_kg:
+    type: number
+    label: Weight (kg)

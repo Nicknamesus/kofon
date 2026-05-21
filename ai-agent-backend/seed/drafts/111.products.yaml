@@ -1,0 +1,394 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/111.html
+# Review before promoting to seed/products/k_r_series.yaml
+product_type_code: k_r_series
+products:
+- sku: KGR160-1-3
+  name: KGR160 — 1-stage, 3:1
+  specs:
+    ratio: 3
+    stages: 1
+    nominal_torque_nm: 180
+    peak_torque_nm: 288
+    emergency_stop_torque_nm: 333
+    rated_input_speed_rpm: 1900
+    max_input_speed_rpm: 5000
+    mean_no_load_torque_nm: 9.4
+    backlash_arcmin: 4
+    torsional_rigidity_nm_per_arcmin: 27
+    max_axial_force_n: 9900
+    max_tilting_moment_nm: 1692
+    rotational_inertia_kgcm2: 28.4
+    noise_db_a: 68
+    efficiency_pct: 96
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Oil lubrication
+    mounting_position: Any position
+    protection_class: IP65
+    service_lifetime_h: 20000
+    weight_kg: 22.1
+  status: active
+- sku: KGR160-1-4
+  name: KGR160 — 1-stage, 4:1
+  specs:
+    ratio: 4
+    stages: 1
+    nominal_torque_nm: 180
+    peak_torque_nm: 288
+    emergency_stop_torque_nm: 333
+    rated_input_speed_rpm: 2000
+    max_input_speed_rpm: 5000
+    mean_no_load_torque_nm: 7.1
+    backlash_arcmin: 4
+    torsional_rigidity_nm_per_arcmin: 30
+    max_axial_force_n: 9900
+    max_tilting_moment_nm: 1692
+    rotational_inertia_kgcm2: 21.0
+    noise_db_a: 68
+    efficiency_pct: 96
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Oil lubrication
+    mounting_position: Any position
+    protection_class: IP65
+    service_lifetime_h: 20000
+    weight_kg: 22.1
+  status: active
+- sku: KGR160-1-5
+  name: KGR160 — 1-stage, 5:1
+  specs:
+    ratio: 5
+    stages: 1
+    nominal_torque_nm: 180
+    peak_torque_nm: 288
+    emergency_stop_torque_nm: 333
+    rated_input_speed_rpm: 2200
+    max_input_speed_rpm: 5000
+    mean_no_load_torque_nm: 8.4
+    backlash_arcmin: 4
+    torsional_rigidity_nm_per_arcmin: 32
+    max_axial_force_n: 9900
+    max_tilting_moment_nm: 1692
+    rotational_inertia_kgcm2: 17.6
+    noise_db_a: 68
+    efficiency_pct: 96
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Oil lubrication
+    mounting_position: Any position
+    protection_class: IP65
+    service_lifetime_h: 20000
+    weight_kg: 22.1
+  status: active
+- sku: KGR160-1-7
+  name: KGR160 — 1-stage, 7:1
+  specs:
+    ratio: 7
+    stages: 1
+    nominal_torque_nm: 166
+    peak_torque_nm: 250
+    emergency_stop_torque_nm: 250
+    rated_input_speed_rpm: 2000
+    max_input_speed_rpm: 5000
+    mean_no_load_torque_nm: 9.5
+    backlash_arcmin: 4
+    torsional_rigidity_nm_per_arcmin: 28
+    max_axial_force_n: 9900
+    max_tilting_moment_nm: 1692
+    rotational_inertia_kgcm2: 14.7
+    noise_db_a: 68
+    efficiency_pct: 96
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Oil lubrication
+    mounting_position: Any position
+    protection_class: IP65
+    service_lifetime_h: 20000
+    weight_kg: 22.1
+  status: active
+- sku: KGR160-1-10
+  name: KGR160 — 1-stage, 10:1
+  specs:
+    ratio: 10
+    stages: 1
+    nominal_torque_nm: 152
+    peak_torque_nm: 210
+    emergency_stop_torque_nm: 210
+    rated_input_speed_rpm: 2000
+    max_input_speed_rpm: 5000
+    mean_no_load_torque_nm: 7.2
+    backlash_arcmin: 4
+    torsional_rigidity_nm_per_arcmin: 26
+    max_axial_force_n: 9900
+    max_tilting_moment_nm: 1692
+    rotational_inertia_kgcm2: 13.1
+    noise_db_a: 68
+    efficiency_pct: 96
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Oil lubrication
+    mounting_position: Any position
+    protection_class: IP65
+    service_lifetime_h: 20000
+    weight_kg: 22.1
+  status: active
+- sku: KGR160-2-12
+  name: KGR160 — 2-stage, 12:1
+  specs:
+    ratio: 12
+    stages: 2
+    nominal_torque_nm: 180
+    peak_torque_nm: 288
+    emergency_stop_torque_nm: 333
+    rated_input_speed_rpm: 2900
+    max_input_speed_rpm: 4500
+    mean_no_load_torque_nm: 1.7
+    backlash_arcmin: 4
+    torsional_rigidity_nm_per_arcmin: 27
+    max_axial_force_n: 9900
+    max_tilting_moment_nm: 1692
+    rotational_inertia_kgcm2: 11.3
+    noise_db_a: 68
+    efficiency_pct: 94
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Grease lubrication
+    mounting_position: Any position
+    protection_class: IP65
+    service_lifetime_h: 20000
+    weight_kg: 25.2
+  status: active
+- sku: KGR160-2-16
+  name: KGR160 — 2-stage, 16:1
+  specs:
+    ratio: 16
+    stages: 2
+    nominal_torque_nm: 180
+    peak_torque_nm: 288
+    emergency_stop_torque_nm: 333
+    rated_input_speed_rpm: 2900
+    max_input_speed_rpm: 4500
+    mean_no_load_torque_nm: 1.1
+    backlash_arcmin: 4
+    torsional_rigidity_nm_per_arcmin: 30
+    max_axial_force_n: 9900
+    max_tilting_moment_nm: 1692
+    rotational_inertia_kgcm2: 10.9
+    noise_db_a: 68
+    efficiency_pct: 94
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Grease lubrication
+    mounting_position: Any position
+    protection_class: IP65
+    service_lifetime_h: 20000
+    weight_kg: 25.2
+  status: active
+- sku: KGR160-2-20
+  name: KGR160 — 2-stage, 20:1
+  specs:
+    ratio: 20
+    stages: 2
+    nominal_torque_nm: 180
+    peak_torque_nm: 288
+    emergency_stop_torque_nm: 333
+    rated_input_speed_rpm: 2900
+    max_input_speed_rpm: 4500
+    mean_no_load_torque_nm: 0.8
+    backlash_arcmin: 4
+    torsional_rigidity_nm_per_arcmin: 32
+    max_axial_force_n: 9900
+    max_tilting_moment_nm: 1692
+    rotational_inertia_kgcm2: 10.3
+    noise_db_a: 68
+    efficiency_pct: 94
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Grease lubrication
+    mounting_position: Any position
+    protection_class: IP65
+    service_lifetime_h: 20000
+    weight_kg: 25.2
+  status: active
+- sku: KGR160-2-25
+  name: KGR160 — 2-stage, 25:1
+  specs:
+    ratio: 25
+    stages: 2
+    nominal_torque_nm: 180
+    peak_torque_nm: 288
+    emergency_stop_torque_nm: 333
+    rated_input_speed_rpm: 2900
+    max_input_speed_rpm: 4500
+    mean_no_load_torque_nm: 0.6
+    backlash_arcmin: 4
+    torsional_rigidity_nm_per_arcmin: 32
+    max_axial_force_n: 9900
+    max_tilting_moment_nm: 1692
+    rotational_inertia_kgcm2: 10.1
+    noise_db_a: 68
+    efficiency_pct: 94
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Grease lubrication
+    mounting_position: Any position
+    protection_class: IP65
+    service_lifetime_h: 20000
+    weight_kg: 25.2
+  status: active
+- sku: KGR160-2-28
+  name: KGR160 — 2-stage, 28:1
+  specs:
+    ratio: 28
+    stages: 2
+    nominal_torque_nm: 180
+    peak_torque_nm: 288
+    emergency_stop_torque_nm: 333
+    rated_input_speed_rpm: 2900
+    max_input_speed_rpm: 4500
+    mean_no_load_torque_nm: 0.6
+    backlash_arcmin: 4
+    torsional_rigidity_nm_per_arcmin: 30
+    max_axial_force_n: 9900
+    max_tilting_moment_nm: 1692
+    rotational_inertia_kgcm2: 9.74
+    noise_db_a: 68
+    efficiency_pct: 94
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Grease lubrication
+    mounting_position: Any position
+    protection_class: IP65
+    service_lifetime_h: 20000
+    weight_kg: 25.2
+  status: active
+- sku: KGR160-2-35
+  name: KGR160 — 2-stage, 35:1
+  specs:
+    ratio: 35
+    stages: 2
+    nominal_torque_nm: 180
+    peak_torque_nm: 288
+    emergency_stop_torque_nm: 333
+    rated_input_speed_rpm: 2900
+    max_input_speed_rpm: 4500
+    mean_no_load_torque_nm: 0.5
+    backlash_arcmin: 4
+    torsional_rigidity_nm_per_arcmin: 32
+    max_axial_force_n: 9900
+    max_tilting_moment_nm: 1692
+    rotational_inertia_kgcm2: 9.66
+    noise_db_a: 68
+    efficiency_pct: 94
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Grease lubrication
+    mounting_position: Any position
+    protection_class: IP65
+    service_lifetime_h: 20000
+    weight_kg: 25.2
+  status: active
+- sku: KGR160-2-40
+  name: KGR160 — 2-stage, 40:1
+  specs:
+    ratio: 40
+    stages: 2
+    nominal_torque_nm: 180
+    peak_torque_nm: 288
+    emergency_stop_torque_nm: 333
+    rated_input_speed_rpm: 2900
+    max_input_speed_rpm: 4500
+    mean_no_load_torque_nm: 0.5
+    backlash_arcmin: 4
+    torsional_rigidity_nm_per_arcmin: 30
+    max_axial_force_n: 9900
+    max_tilting_moment_nm: 1692
+    rotational_inertia_kgcm2: 9.66
+    noise_db_a: 68
+    efficiency_pct: 94
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Grease lubrication
+    mounting_position: Any position
+    protection_class: IP65
+    service_lifetime_h: 20000
+    weight_kg: 25.2
+  status: active
+- sku: KGR160-2-50
+  name: KGR160 — 2-stage, 50:1
+  specs:
+    ratio: 50
+    stages: 2
+    nominal_torque_nm: 180
+    peak_torque_nm: 288
+    emergency_stop_torque_nm: 333
+    rated_input_speed_rpm: 2900
+    max_input_speed_rpm: 4500
+    mean_no_load_torque_nm: 0.5
+    backlash_arcmin: 4
+    torsional_rigidity_nm_per_arcmin: 32
+    max_axial_force_n: 9900
+    max_tilting_moment_nm: 1692
+    rotational_inertia_kgcm2: 9.66
+    noise_db_a: 68
+    efficiency_pct: 94
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Grease lubrication
+    mounting_position: Any position
+    protection_class: IP65
+    service_lifetime_h: 20000
+    weight_kg: 25.2
+  status: active
+- sku: KGR160-2-70
+  name: KGR160 — 2-stage, 70:1
+  specs:
+    ratio: 70
+    stages: 2
+    nominal_torque_nm: 180
+    peak_torque_nm: 288
+    emergency_stop_torque_nm: 333
+    rated_input_speed_rpm: 2900
+    max_input_speed_rpm: 4500
+    mean_no_load_torque_nm: 0.4
+    backlash_arcmin: 4
+    torsional_rigidity_nm_per_arcmin: 28
+    max_axial_force_n: 9900
+    max_tilting_moment_nm: 1692
+    rotational_inertia_kgcm2: 9.66
+    noise_db_a: 68
+    efficiency_pct: 94
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Grease lubrication
+    mounting_position: Any position
+    protection_class: IP65
+    service_lifetime_h: 20000
+    weight_kg: 25.2
+  status: active
+- sku: KGR160-2-100
+  name: KGR160 — 2-stage, 100:1
+  specs:
+    ratio: 100
+    stages: 2
+    nominal_torque_nm: 180
+    peak_torque_nm: 288
+    emergency_stop_torque_nm: 333
+    rated_input_speed_rpm: 2900
+    max_input_speed_rpm: 4500
+    mean_no_load_torque_nm: 0.4
+    backlash_arcmin: 4
+    torsional_rigidity_nm_per_arcmin: 26
+    max_axial_force_n: 9900
+    max_tilting_moment_nm: 1692
+    rotational_inertia_kgcm2: 9.66
+    noise_db_a: 68
+    efficiency_pct: 94
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Grease lubrication
+    mounting_position: Any position
+    protection_class: IP65
+    service_lifetime_h: 20000
+    weight_kg: 25.2
+  status: active

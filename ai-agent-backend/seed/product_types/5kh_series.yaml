@@ -1,0 +1,37 @@
+# Promoted from 1 draft(s) under seed/drafts/.
+# Sources: pdf_5kh_8a8963.product_type
+code: 5kh_series
+name: 5KH Series High Precision Planetary Gearbox
+family: Planetary gearbox
+description: The 5KH series is a high-precision planetary gearbox line designed for
+  applications requiring low backlash, high torque density, and smooth operation.
+  Available in multiple frame sizes and reduction ratios, the series offers robust
+  performance for servo-driven motion control systems.
+spec_schema:
+  frame_size_mm:
+    type: integer
+    label: Frame size (mm)
+  ratio:
+    type: integer
+    label: Reduction ratio
+  stages:
+    type: integer
+    label: Number of stages
+  nominal_torque_nm:
+    type: number
+    label: Nominal torque (Nm)
+  peak_torque_nm:
+    type: number
+    label: Peak torque (Nm)
+  backlash_arcmin:
+    type: number
+    label: Backlash (arcmin)
+  input_speed_rpm_max:
+    type: integer
+    label: Max input speed (rpm)
+  efficiency_pct:
+    type: number
+    label: Efficiency (%)
+  weight_kg:
+    type: number
+    label: Weight (kg)

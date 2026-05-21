@@ -1,0 +1,405 @@
+# Promoted from 1 draft(s) under seed/drafts/.
+# Sources: 76.products
+# SKUs: 20
+product_type_code: 8_11_series_harmonic
+products:
+- sku: KB-HF-8-50
+  name: KB-HF-8 — HF form, 50:1
+  specs:
+    model: 8
+    ratio: 50
+    structural_form: HF
+    nominal_torque_nm: 1.8
+    peak_torque_nm: 3.3
+    average_load_torque_max_nm: 2.3
+    instant_max_torque_nm: 6.6
+    max_input_speed_rpm: 8500
+    rated_input_speed_rpm: 3500
+    inertia_kgm2: 2.3e-07
+    weight_kg: 0.101
+    pitch_circle_diameter_mm: 19.7
+    basic_dynamic_load_kn: 1.32
+    basic_static_load_kn: 1.1
+    max_axial_force_n: 115
+    max_radial_force_n: 389
+  status: active
+- sku: KB-HS-8-50
+  name: KB-HS-8 — HS form, 50:1
+  specs:
+    model: 8
+    ratio: 50
+    structural_form: HS
+    nominal_torque_nm: 1.8
+    peak_torque_nm: 3.3
+    average_load_torque_max_nm: 2.3
+    instant_max_torque_nm: 6.6
+    max_input_speed_rpm: 8500
+    rated_input_speed_rpm: 3500
+    inertia_kgm2: 2.3e-07
+    weight_kg: 0.115
+    pitch_circle_diameter_mm: 19.7
+    basic_dynamic_load_kn: 1.32
+    basic_static_load_kn: 1.1
+    max_axial_force_n: 115
+    max_radial_force_n: 389
+  status: active
+- sku: KB-SF-8-50
+  name: KB-SF-8 — SF form, 50:1
+  specs:
+    model: 8
+    ratio: 50
+    structural_form: SF
+    nominal_torque_nm: 1.8
+    peak_torque_nm: 3.3
+    average_load_torque_max_nm: 2.3
+    instant_max_torque_nm: 6.6
+    max_input_speed_rpm: 8500
+    rated_input_speed_rpm: 3500
+    inertia_kgm2: 2.0e-07
+    weight_kg: 0.12
+    pitch_circle_diameter_mm: 19.7
+    basic_dynamic_load_kn: 1.32
+    basic_static_load_kn: 1.1
+    max_axial_force_n: 115
+    max_radial_force_n: 389
+  status: active
+- sku: KB-SS-8-50
+  name: KB-SS-8 — SS form, 50:1
+  specs:
+    model: 8
+    ratio: 50
+    structural_form: SS
+    nominal_torque_nm: 1.8
+    peak_torque_nm: 3.3
+    average_load_torque_max_nm: 2.3
+    instant_max_torque_nm: 6.6
+    max_input_speed_rpm: 8500
+    rated_input_speed_rpm: 3500
+    inertia_kgm2: 2.0e-07
+    weight_kg: 0.13
+    pitch_circle_diameter_mm: 19.7
+    basic_dynamic_load_kn: 1.32
+    basic_static_load_kn: 1.1
+    max_axial_force_n: 115
+    max_radial_force_n: 389
+  status: active
+- sku: KB-HF-8-100
+  name: KB-HF-8 — HF form, 100:1
+  specs:
+    model: 8
+    ratio: 100
+    structural_form: HF
+    nominal_torque_nm: 2.4
+    peak_torque_nm: 4.8
+    average_load_torque_max_nm: 3.3
+    instant_max_torque_nm: 9
+    max_input_speed_rpm: 8501
+    rated_input_speed_rpm: 3501
+    inertia_kgm2: 2.3e-07
+    weight_kg: 0.101
+    pitch_circle_diameter_mm: 19.7
+    basic_dynamic_load_kn: 1.32
+    basic_static_load_kn: 1.1
+    max_axial_force_n: 115
+    max_radial_force_n: 389
+  status: active
+- sku: KB-HS-8-100
+  name: KB-HS-8 — HS form, 100:1
+  specs:
+    model: 8
+    ratio: 100
+    structural_form: HS
+    nominal_torque_nm: 2.4
+    peak_torque_nm: 4.8
+    average_load_torque_max_nm: 3.3
+    instant_max_torque_nm: 9
+    max_input_speed_rpm: 8501
+    rated_input_speed_rpm: 3501
+    inertia_kgm2: 2.3e-07
+    weight_kg: 0.115
+    pitch_circle_diameter_mm: 19.7
+    basic_dynamic_load_kn: 1.32
+    basic_static_load_kn: 1.1
+    max_axial_force_n: 115
+    max_radial_force_n: 389
+  status: active
+- sku: KB-SF-8-100
+  name: KB-SF-8 — SF form, 100:1
+  specs:
+    model: 8
+    ratio: 100
+    structural_form: SF
+    nominal_torque_nm: 2.4
+    peak_torque_nm: 4.8
+    average_load_torque_max_nm: 3.3
+    instant_max_torque_nm: 9
+    max_input_speed_rpm: 8501
+    rated_input_speed_rpm: 3501
+    inertia_kgm2: 2.0e-07
+    weight_kg: 0.12
+    pitch_circle_diameter_mm: 19.7
+    basic_dynamic_load_kn: 1.32
+    basic_static_load_kn: 1.1
+    max_axial_force_n: 115
+    max_radial_force_n: 389
+  status: active
+- sku: KB-SS-8-100
+  name: KB-SS-8 — SS form, 100:1
+  specs:
+    model: 8
+    ratio: 100
+    structural_form: SS
+    nominal_torque_nm: 2.4
+    peak_torque_nm: 4.8
+    average_load_torque_max_nm: 3.3
+    instant_max_torque_nm: 9
+    max_input_speed_rpm: 8501
+    rated_input_speed_rpm: 3501
+    inertia_kgm2: 2.0e-07
+    weight_kg: 0.13
+    pitch_circle_diameter_mm: 19.7
+    basic_dynamic_load_kn: 1.32
+    basic_static_load_kn: 1.1
+    max_axial_force_n: 115
+    max_radial_force_n: 389
+  status: active
+- sku: KB-HF-2-11-50
+  name: KB-HF-2-11 — HF-2 form, 50:1
+  specs:
+    model: 11
+    ratio: 50
+    structural_form: HF-2
+    nominal_torque_nm: 3.5
+    peak_torque_nm: 8.3
+    average_load_torque_max_nm: 5.5
+    instant_max_torque_nm: 17
+    max_input_speed_rpm: 8501
+    rated_input_speed_rpm: 3501
+    inertia_kgm2: 4.2e-06
+    weight_kg: 0.363
+    pitch_circle_diameter_mm: 24.7
+    basic_dynamic_load_kn: 1.49
+    basic_static_load_kn: 1.4
+    max_axial_force_n: 139
+    max_radial_force_n: 475
+  status: active
+- sku: KB-HF-11-50
+  name: KB-HF-11 — HF form, 50:1
+  specs:
+    model: 11
+    ratio: 50
+    structural_form: HF
+    nominal_torque_nm: 3.5
+    peak_torque_nm: 8.3
+    average_load_torque_max_nm: 5.5
+    instant_max_torque_nm: 17
+    max_input_speed_rpm: 8501
+    rated_input_speed_rpm: 3501
+    inertia_kgm2: 1.33e-06
+    weight_kg: 0.275
+    pitch_circle_diameter_mm: 24.7
+    basic_dynamic_load_kn: 1.49
+    basic_static_load_kn: 1.4
+    max_axial_force_n: 139
+    max_radial_force_n: 475
+  status: active
+- sku: KB-HS-2-11-50
+  name: KB-HS-2-11 — HS-2 form, 50:1
+  specs:
+    model: 11
+    ratio: 50
+    structural_form: HS-2
+    nominal_torque_nm: 3.5
+    peak_torque_nm: 8.3
+    average_load_torque_max_nm: 5.5
+    instant_max_torque_nm: 17
+    max_input_speed_rpm: 8501
+    rated_input_speed_rpm: 3501
+    inertia_kgm2: 4.2e-06
+    weight_kg: 0.387
+    pitch_circle_diameter_mm: 24.7
+    basic_dynamic_load_kn: 1.49
+    basic_static_load_kn: 1.4
+    max_axial_force_n: 139
+    max_radial_force_n: 475
+  status: active
+- sku: KB-HS-11-50
+  name: KB-HS-11 — HS form, 50:1
+  specs:
+    model: 11
+    ratio: 50
+    structural_form: HS
+    nominal_torque_nm: 3.5
+    peak_torque_nm: 8.3
+    average_load_torque_max_nm: 5.5
+    instant_max_torque_nm: 17
+    max_input_speed_rpm: 8501
+    rated_input_speed_rpm: 3501
+    inertia_kgm2: 1.33e-06
+    weight_kg: 0.299
+    pitch_circle_diameter_mm: 24.7
+    basic_dynamic_load_kn: 1.49
+    basic_static_load_kn: 1.4
+    max_axial_force_n: 139
+    max_radial_force_n: 475
+  status: active
+- sku: KB-SF-11-50
+  name: KB-SF-11 — SF form, 50:1
+  specs:
+    model: 11
+    ratio: 50
+    structural_form: SF
+    nominal_torque_nm: 3.5
+    peak_torque_nm: 8.3
+    average_load_torque_max_nm: 5.5
+    instant_max_torque_nm: 17
+    max_input_speed_rpm: 8501
+    rated_input_speed_rpm: 3501
+    inertia_kgm2: 2.2e-06
+    weight_kg: 0.357
+    pitch_circle_diameter_mm: 24.7
+    basic_dynamic_load_kn: 1.49
+    basic_static_load_kn: 1.4
+    max_axial_force_n: 139
+    max_radial_force_n: 475
+  status: active
+- sku: KB-SS-11-50
+  name: KB-SS-11 — SS form, 50:1
+  specs:
+    model: 11
+    ratio: 50
+    structural_form: SS
+    nominal_torque_nm: 3.5
+    peak_torque_nm: 8.3
+    average_load_torque_max_nm: 5.5
+    instant_max_torque_nm: 17
+    max_input_speed_rpm: 8501
+    rated_input_speed_rpm: 3501
+    inertia_kgm2: 2.2e-06
+    weight_kg: 0.384
+    pitch_circle_diameter_mm: 24.7
+    basic_dynamic_load_kn: 1.49
+    basic_static_load_kn: 1.4
+    max_axial_force_n: 139
+    max_radial_force_n: 475
+  status: active
+- sku: KB-HF-2-11-100
+  name: KB-HF-2-11 — HF-2 form, 100:1
+  specs:
+    model: 11
+    ratio: 100
+    structural_form: HF-2
+    nominal_torque_nm: 5
+    peak_torque_nm: 11
+    average_load_torque_max_nm: 8.9
+    instant_max_torque_nm: 25
+    max_input_speed_rpm: 8501
+    rated_input_speed_rpm: 3501
+    inertia_kgm2: 4.2e-06
+    weight_kg: 0.363
+    pitch_circle_diameter_mm: 24.7
+    basic_dynamic_load_kn: 1.49
+    basic_static_load_kn: 1.4
+    max_axial_force_n: 139
+    max_radial_force_n: 475
+  status: active
+- sku: KB-HF-11-100
+  name: KB-HF-11 — HF form, 100:1
+  specs:
+    model: 11
+    ratio: 100
+    structural_form: HF
+    nominal_torque_nm: 5
+    peak_torque_nm: 11
+    average_load_torque_max_nm: 8.9
+    instant_max_torque_nm: 25
+    max_input_speed_rpm: 8501
+    rated_input_speed_rpm: 3501
+    inertia_kgm2: 1.33e-06
+    weight_kg: 0.275
+    pitch_circle_diameter_mm: 24.7
+    basic_dynamic_load_kn: 1.49
+    basic_static_load_kn: 1.4
+    max_axial_force_n: 139
+    max_radial_force_n: 475
+  status: active
+- sku: KB-HS-2-11-100
+  name: KB-HS-2-11 — HS-2 form, 100:1
+  specs:
+    model: 11
+    ratio: 100
+    structural_form: HS-2
+    nominal_torque_nm: 5
+    peak_torque_nm: 11
+    average_load_torque_max_nm: 8.9
+    instant_max_torque_nm: 25
+    max_input_speed_rpm: 8501
+    rated_input_speed_rpm: 3501
+    inertia_kgm2: 4.2e-06
+    weight_kg: 0.387
+    pitch_circle_diameter_mm: 24.7
+    basic_dynamic_load_kn: 1.49
+    basic_static_load_kn: 1.4
+    max_axial_force_n: 139
+    max_radial_force_n: 475
+  status: active
+- sku: KB-HS-11-100
+  name: KB-HS-11 — HS form, 100:1
+  specs:
+    model: 11
+    ratio: 100
+    structural_form: HS
+    nominal_torque_nm: 5
+    peak_torque_nm: 11
+    average_load_torque_max_nm: 8.9
+    instant_max_torque_nm: 25
+    max_input_speed_rpm: 8501
+    rated_input_speed_rpm: 3501
+    inertia_kgm2: 1.33e-06
+    weight_kg: 0.299
+    pitch_circle_diameter_mm: 24.7
+    basic_dynamic_load_kn: 1.49
+    basic_static_load_kn: 1.4
+    max_axial_force_n: 139
+    max_radial_force_n: 475
+  status: active
+- sku: KB-SF-11-100
+  name: KB-SF-11 — SF form, 100:1
+  specs:
+    model: 11
+    ratio: 100
+    structural_form: SF
+    nominal_torque_nm: 5
+    peak_torque_nm: 11
+    average_load_torque_max_nm: 8.9
+    instant_max_torque_nm: 25
+    max_input_speed_rpm: 8501
+    rated_input_speed_rpm: 3501
+    inertia_kgm2: 2.2e-06
+    weight_kg: 0.357
+    pitch_circle_diameter_mm: 24.7
+    basic_dynamic_load_kn: 1.49
+    basic_static_load_kn: 1.4
+    max_axial_force_n: 139
+    max_radial_force_n: 475
+  status: active
+- sku: KB-SS-11-100
+  name: KB-SS-11 — SS form, 100:1
+  specs:
+    model: 11
+    ratio: 100
+    structural_form: SS
+    nominal_torque_nm: 5
+    peak_torque_nm: 11
+    average_load_torque_max_nm: 8.9
+    instant_max_torque_nm: 25
+    max_input_speed_rpm: 8501
+    rated_input_speed_rpm: 3501
+    inertia_kgm2: 2.2e-06
+    weight_kg: 0.384
+    pitch_circle_diameter_mm: 24.7
+    basic_dynamic_load_kn: 1.49
+    basic_static_load_kn: 1.4
+    max_axial_force_n: 139
+    max_radial_force_n: 475
+  status: active

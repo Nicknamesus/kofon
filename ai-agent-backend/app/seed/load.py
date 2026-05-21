@@ -184,13 +184,33 @@ async def load_use_case_fits(session: AsyncSession) -> int:
                 "rationale": r["rationale"],
             }
         )
-    return await _upsert(
+    upserted = await _upsert(
         session,
         UseCaseProductType,
         rows,
         conflict_cols=["use_case_id", "product_type_id"],
         update_cols=["fit_score", "rationale"],
     )
+    # Delete fits whose (use_case_id, product_type_id) pair isn't in the CSV
+    # anymore. The CSV is the source of truth — without this, regenerating
+    # the file leaves stale rows when the LLM picks different fit pairs.
+    csv_pairs = {(r["use_case_id"], r["product_type_id"]) for r in rows}
+    existing = (
+        await session.execute(
+            select(
+                UseCaseProductType.use_case_id, UseCaseProductType.product_type_id
+            )
+        )
+    ).all()
+    stale = [(uc, pt) for uc, pt in existing if (uc, pt) not in csv_pairs]
+    for uc, pt in stale:
+        await session.execute(
+            delete(UseCaseProductType).where(
+                UseCaseProductType.use_case_id == uc,
+                UseCaseProductType.product_type_id == pt,
+            )
+        )
+    return upserted
 
 
 async def load_problems_and_solutions(session: AsyncSession) -> tuple[int, int]:

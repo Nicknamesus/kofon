@@ -1,0 +1,58 @@
+# Promoted from 1 draft(s) under seed/drafts/.
+# Sources: 76.product_type
+code: 8_11_series_harmonic
+name: 8/11 Series Harmonic Drive
+family: Harmonic drive / strain wave
+description: Kofon 8/11 series harmonic drive reducers offering high transmission
+  accuracy, high torsional stiffness, large load capacity, high efficiency, and long
+  life. Available in multiple structural forms (HF, HS, SF, SS) for standalone use
+  with easy installation.
+spec_schema:
+  model:
+    type: string
+    label: Model (size)
+  ratio:
+    type: integer
+    label: Ratio
+  structural_form:
+    type: string
+    label: Structural form (HF/HS/SF/SS)
+  nominal_torque_nm:
+    type: number
+    label: Rated torque at 2000 rpm (Nm)
+  peak_torque_nm:
+    type: number
+    label: Start/stop peak torque (Nm)
+  average_load_torque_max_nm:
+    type: number
+    label: Max average load torque (Nm)
+  instant_max_torque_nm:
+    type: number
+    label: Instant max torque (Nm)
+  max_input_speed_rpm:
+    type: integer
+    label: Max average input speed (rpm)
+  rated_input_speed_rpm:
+    type: integer
+    label: Rated input speed (rpm)
+  inertia_kgm2:
+    type: number
+    label: Moment of inertia (kg·m²)
+  weight_kg:
+    type: number
+    label: Weight (kg)
+  pitch_circle_diameter_mm:
+    type: number
+    label: Pitch circle diameter (mm)
+  basic_dynamic_load_kn:
+    type: number
+    label: Basic dynamic load rating (kN)
+  basic_static_load_kn:
+    type: number
+    label: Basic static load rating (kN)
+  max_axial_force_n:
+    type: number
+    label: Max axial force (N)
+  max_radial_force_n:
+    type: number
+    label: Max radial force (N)

@@ -1,0 +1,79 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/34.html
+# Review before promoting to seed/product_types/pwhz_rotary.yaml
+# Notes: 1. The page does not list gear ratios — these are slewing drives with a single-stage or multi-stage reduction but no ratio table is provided. SKUs are identified by model + stage count (inferred from the "结构" column: T = 1-stage, W = 2-stage; no 3-stage models have dimensional data). 2. Weight for PWHZ320B is given as "116-140" — used lower bound 116 kg. For PWHZ380 1-stage weight is "160-180" — used 160 kg. For PWHZ380 2-stage weight is listed as "约4.5" which seems inconsistent (likely a copy error from the brake pressure row); used 180 kg as the upper bound from the range. 3. The "L" column in the technical parameters table is labeled "Kg" but appears to be weight; the "t" column is application tonnage. 4. PWHZ320A has static brake torque 155 Nm which seems low vs others — kept as-is from page. 5. The "最大耐压MPa" column for PWHZ280 shows 220 MPa which seems extremely high for hydraulic pressure — likely a typo or different unit, kept as-is. 6. No ratio or backlash data available on this page. 7. The datasheet PDF link is mentioned but no URL was extractable from the page text.
+code: pwhz_rotary
+name: PWHZ Rotary Planetary Gearbox
+family: Planetary gearbox
+description: PWHZ series rotary planetary gearboxes are designed for slewing applications
+  in hydraulic truck cranes, crawler cranes, railway cranes, ship decks, docks, and
+  container handling. Features include same-direction input/output rotation, easy
+  installation and oil change, low-noise operation, modular high-strength planetary
+  gearing, and 1–3 stage configurations. A wet multi-disc brake (normally closed)
+  is integrated. The motor is not included.
+spec_schema:
+  model:
+    type: string
+    label: Model
+  output_torque_max_nm:
+    type: integer
+    label: Max output torque (Nm)
+  input_speed_rpm_max:
+    type: integer
+    label: Max input speed (rpm)
+  static_brake_torque_nm:
+    type: integer
+    label: Static brake torque (Nm)
+  brake_release_pressure_min_mpa:
+    type: number
+    label: Brake release pressure min (MPa)
+  brake_release_pressure_max_mpa:
+    type: number
+    label: Brake release pressure max (MPa)
+  max_pressure_mpa:
+    type: integer
+    label: Max pressure (MPa)
+  weight_kg:
+    type: number
+    label: Weight (kg)
+  application_tonnage_t:
+    type: string
+    label: Application tonnage (t)
+  stages:
+    type: integer
+    label: Number of stages
+  frame_size_d_mm:
+    type: number
+    label: D (mm)
+  frame_size_d1_mm:
+    type: number
+    label: D1 (mm)
+  frame_size_d2_mm:
+    type: number
+    label: D2 (mm)
+  frame_size_d3_mm:
+    type: number
+    label: D3 (mm)
+  length_l1_mm:
+    type: number
+    label: L1 (mm)
+  length_l2_mm:
+    type: number
+    label: L2 (mm)
+  length_l3_mm:
+    type: number
+    label: L3 (mm)
+  length_l4_mm:
+    type: number
+    label: L4 (mm)
+  length_l5_mm:
+    type: number
+    label: L5 (mm)
+  length_l6_mm:
+    type: number
+    label: L6 (mm)
+  a_mm:
+    type: number
+    label: A (mm)
+  bolt_holes:
+    type: string
+    label: Bolt holes

@@ -1,0 +1,394 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/109.html
+# Review before promoting to seed/products/k_r_series.yaml
+product_type_code: k_r_series
+products:
+- sku: KHR180-1-3
+  name: KHR180 — 1-stage, 3:1
+  specs:
+    ratio: 3
+    stages: 1
+    nominal_torque_nm: 380
+    peak_torque_nm: 608
+    emergency_stop_torque_nm: 703
+    rated_input_speed_rpm: 1400
+    max_input_speed_rpm: 4500
+    mean_no_load_torque_nm: 20
+    backlash_arcmin: 4
+    torsional_rigidity_nm_per_arcmin: 76
+    max_axial_force_n: 14200
+    max_tilting_moment_nm: 3213
+    rotational_inertia_kgcm2: 96.5
+    noise_db_a: 68
+    efficiency_pct: 96
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Oil lubrication
+    mounting_position: Any position
+    protection_class: IP65
+    service_lifetime_h: 20000
+    weight_kg: 47
+  status: active
+- sku: KHR180-1-4
+  name: KHR180 — 1-stage, 4:1
+  specs:
+    ratio: 4
+    stages: 1
+    nominal_torque_nm: 380
+    peak_torque_nm: 608
+    emergency_stop_torque_nm: 703
+    rated_input_speed_rpm: 1600
+    max_input_speed_rpm: 4500
+    mean_no_load_torque_nm: 17
+    backlash_arcmin: 4
+    torsional_rigidity_nm_per_arcmin: 87
+    max_axial_force_n: 14200
+    max_tilting_moment_nm: 3213
+    rotational_inertia_kgcm2: 64.6
+    noise_db_a: 68
+    efficiency_pct: 96
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Oil lubrication
+    mounting_position: Any position
+    protection_class: IP65
+    service_lifetime_h: 20000
+    weight_kg: 47
+  status: active
+- sku: KHR180-1-5
+  name: KHR180 — 1-stage, 5:1
+  specs:
+    ratio: 5
+    stages: 1
+    nominal_torque_nm: 380
+    peak_torque_nm: 608
+    emergency_stop_torque_nm: 703
+    rated_input_speed_rpm: 1800
+    max_input_speed_rpm: 4500
+    mean_no_load_torque_nm: 18
+    backlash_arcmin: 4
+    torsional_rigidity_nm_per_arcmin: 99
+    max_axial_force_n: 14200
+    max_tilting_moment_nm: 3213
+    rotational_inertia_kgcm2: 50.5
+    noise_db_a: 68
+    efficiency_pct: 96
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Oil lubrication
+    mounting_position: Any position
+    protection_class: IP65
+    service_lifetime_h: 20000
+    weight_kg: 47
+  status: active
+- sku: KHR180-1-7
+  name: KHR180 — 1-stage, 7:1
+  specs:
+    ratio: 7
+    stages: 1
+    nominal_torque_nm: 361
+    peak_torque_nm: 523
+    emergency_stop_torque_nm: 523
+    rated_input_speed_rpm: 1600
+    max_input_speed_rpm: 4500
+    mean_no_load_torque_nm: 19
+    backlash_arcmin: 4
+    torsional_rigidity_nm_per_arcmin: 85
+    max_axial_force_n: 14200
+    max_tilting_moment_nm: 3213
+    rotational_inertia_kgcm2: 38.2
+    noise_db_a: 68
+    efficiency_pct: 96
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Oil lubrication
+    mounting_position: Any position
+    protection_class: IP65
+    service_lifetime_h: 20000
+    weight_kg: 47
+  status: active
+- sku: KHR180-1-10
+  name: KHR180 — 1-stage, 10:1
+  specs:
+    ratio: 10
+    stages: 1
+    nominal_torque_nm: 342
+    peak_torque_nm: 445
+    emergency_stop_torque_nm: 445
+    rated_input_speed_rpm: 1600
+    max_input_speed_rpm: 4500
+    mean_no_load_torque_nm: 16
+    backlash_arcmin: 4
+    torsional_rigidity_nm_per_arcmin: 80
+    max_axial_force_n: 14200
+    max_tilting_moment_nm: 3213
+    rotational_inertia_kgcm2: 31.8
+    noise_db_a: 68
+    efficiency_pct: 96
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Oil lubrication
+    mounting_position: Any position
+    protection_class: IP65
+    service_lifetime_h: 20000
+    weight_kg: 47
+  status: active
+- sku: KHR180-2-12
+  name: KHR180 — 2-stage, 12:1
+  specs:
+    ratio: 12
+    stages: 2
+    nominal_torque_nm: 380
+    peak_torque_nm: 608
+    emergency_stop_torque_nm: 703
+    rated_input_speed_rpm: 2700
+    max_input_speed_rpm: 4000
+    mean_no_load_torque_nm: 3.6
+    backlash_arcmin: 4
+    torsional_rigidity_nm_per_arcmin: 76
+    max_axial_force_n: 14200
+    max_tilting_moment_nm: 3213
+    rotational_inertia_kgcm2: 31.5
+    noise_db_a: 68
+    efficiency_pct: 94
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Grease lubrication
+    mounting_position: Any position
+    protection_class: IP65
+    service_lifetime_h: 20000
+    weight_kg: 54
+  status: active
+- sku: KHR180-2-16
+  name: KHR180 — 2-stage, 16:1
+  specs:
+    ratio: 16
+    stages: 2
+    nominal_torque_nm: 380
+    peak_torque_nm: 608
+    emergency_stop_torque_nm: 703
+    rated_input_speed_rpm: 2700
+    max_input_speed_rpm: 4000
+    mean_no_load_torque_nm: 2.8
+    backlash_arcmin: 4
+    torsional_rigidity_nm_per_arcmin: 87
+    max_axial_force_n: 14200
+    max_tilting_moment_nm: 3213
+    rotational_inertia_kgcm2: 29.5
+    noise_db_a: 68
+    efficiency_pct: 94
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Grease lubrication
+    mounting_position: Any position
+    protection_class: IP65
+    service_lifetime_h: 20000
+    weight_kg: 54
+  status: active
+- sku: KHR180-2-20
+  name: KHR180 — 2-stage, 20:1
+  specs:
+    ratio: 20
+    stages: 2
+    nominal_torque_nm: 380
+    peak_torque_nm: 608
+    emergency_stop_torque_nm: 703
+    rated_input_speed_rpm: 2700
+    max_input_speed_rpm: 4000
+    mean_no_load_torque_nm: 2.2
+    backlash_arcmin: 4
+    torsional_rigidity_nm_per_arcmin: 87
+    max_axial_force_n: 14200
+    max_tilting_moment_nm: 3213
+    rotational_inertia_kgcm2: 27.6
+    noise_db_a: 68
+    efficiency_pct: 94
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Grease lubrication
+    mounting_position: Any position
+    protection_class: IP65
+    service_lifetime_h: 20000
+    weight_kg: 54
+  status: active
+- sku: KHR180-2-25
+  name: KHR180 — 2-stage, 25:1
+  specs:
+    ratio: 25
+    stages: 2
+    nominal_torque_nm: 380
+    peak_torque_nm: 608
+    emergency_stop_torque_nm: 703
+    rated_input_speed_rpm: 2700
+    max_input_speed_rpm: 4000
+    mean_no_load_torque_nm: 1.9
+    backlash_arcmin: 4
+    torsional_rigidity_nm_per_arcmin: 99
+    max_axial_force_n: 14200
+    max_tilting_moment_nm: 3213
+    rotational_inertia_kgcm2: 27
+    noise_db_a: 68
+    efficiency_pct: 94
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Grease lubrication
+    mounting_position: Any position
+    protection_class: IP65
+    service_lifetime_h: 20000
+    weight_kg: 54
+  status: active
+- sku: KHR180-2-28
+  name: KHR180 — 2-stage, 28:1
+  specs:
+    ratio: 28
+    stages: 2
+    nominal_torque_nm: 380
+    peak_torque_nm: 608
+    emergency_stop_torque_nm: 703
+    rated_input_speed_rpm: 2700
+    max_input_speed_rpm: 4000
+    mean_no_load_torque_nm: 1.6
+    backlash_arcmin: 4
+    torsional_rigidity_nm_per_arcmin: 87
+    max_axial_force_n: 14200
+    max_tilting_moment_nm: 3213
+    rotational_inertia_kgcm2: 25.9
+    noise_db_a: 68
+    efficiency_pct: 94
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Grease lubrication
+    mounting_position: Any position
+    protection_class: IP65
+    service_lifetime_h: 20000
+    weight_kg: 54
+  status: active
+- sku: KHR180-2-35
+  name: KHR180 — 2-stage, 35:1
+  specs:
+    ratio: 35
+    stages: 2
+    nominal_torque_nm: 380
+    peak_torque_nm: 608
+    emergency_stop_torque_nm: 703
+    rated_input_speed_rpm: 2700
+    max_input_speed_rpm: 4000
+    mean_no_load_torque_nm: 1.4
+    backlash_arcmin: 4
+    torsional_rigidity_nm_per_arcmin: 87
+    max_axial_force_n: 14200
+    max_tilting_moment_nm: 3213
+    rotational_inertia_kgcm2: 25.6
+    noise_db_a: 68
+    efficiency_pct: 94
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Grease lubrication
+    mounting_position: Any position
+    protection_class: IP65
+    service_lifetime_h: 20000
+    weight_kg: 54
+  status: active
+- sku: KHR180-2-40
+  name: KHR180 — 2-stage, 40:1
+  specs:
+    ratio: 40
+    stages: 2
+    nominal_torque_nm: 380
+    peak_torque_nm: 608
+    emergency_stop_torque_nm: 703
+    rated_input_speed_rpm: 2700
+    max_input_speed_rpm: 4000
+    mean_no_load_torque_nm: 1.4
+    backlash_arcmin: 4
+    torsional_rigidity_nm_per_arcmin: 87
+    max_axial_force_n: 14200
+    max_tilting_moment_nm: 3213
+    rotational_inertia_kgcm2: 25
+    noise_db_a: 68
+    efficiency_pct: 94
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Grease lubrication
+    mounting_position: Any position
+    protection_class: IP65
+    service_lifetime_h: 20000
+    weight_kg: 54
+  status: active
+- sku: KHR180-2-50
+  name: KHR180 — 2-stage, 50:1
+  specs:
+    ratio: 50
+    stages: 2
+    nominal_torque_nm: 380
+    peak_torque_nm: 608
+    emergency_stop_torque_nm: 703
+    rated_input_speed_rpm: 2700
+    max_input_speed_rpm: 4000
+    mean_no_load_torque_nm: 1.4
+    backlash_arcmin: 4
+    torsional_rigidity_nm_per_arcmin: 99
+    max_axial_force_n: 14200
+    max_tilting_moment_nm: 3213
+    rotational_inertia_kgcm2: 25
+    noise_db_a: 68
+    efficiency_pct: 94
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Grease lubrication
+    mounting_position: Any position
+    protection_class: IP65
+    service_lifetime_h: 20000
+    weight_kg: 54
+  status: active
+- sku: KHR180-2-70
+  name: KHR180 — 2-stage, 70:1
+  specs:
+    ratio: 70
+    stages: 2
+    nominal_torque_nm: 380
+    peak_torque_nm: 608
+    emergency_stop_torque_nm: 703
+    rated_input_speed_rpm: 2700
+    max_input_speed_rpm: 4000
+    mean_no_load_torque_nm: 1.4
+    backlash_arcmin: 4
+    torsional_rigidity_nm_per_arcmin: 85
+    max_axial_force_n: 14200
+    max_tilting_moment_nm: 3213
+    rotational_inertia_kgcm2: 25
+    noise_db_a: 68
+    efficiency_pct: 94
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Grease lubrication
+    mounting_position: Any position
+    protection_class: IP65
+    service_lifetime_h: 20000
+    weight_kg: 54
+  status: active
+- sku: KHR180-2-100
+  name: KHR180 — 2-stage, 100:1
+  specs:
+    ratio: 100
+    stages: 2
+    nominal_torque_nm: 342
+    peak_torque_nm: 445
+    emergency_stop_torque_nm: 445
+    rated_input_speed_rpm: 2700
+    max_input_speed_rpm: 4000
+    mean_no_load_torque_nm: 1.4
+    backlash_arcmin: 4
+    torsional_rigidity_nm_per_arcmin: 80
+    max_axial_force_n: 14200
+    max_tilting_moment_nm: 3213
+    rotational_inertia_kgcm2: 25
+    noise_db_a: 68
+    efficiency_pct: 94
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Grease lubrication
+    mounting_position: Any position
+    protection_class: IP65
+    service_lifetime_h: 20000
+    weight_kg: 54
+  status: active

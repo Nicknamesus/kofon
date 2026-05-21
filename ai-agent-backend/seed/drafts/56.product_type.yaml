@@ -1,0 +1,72 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/56.html
+# Review before promoting to seed/product_types/r060_series.yaml
+# Notes: The page lists R060 in 1-stage (ratios 3/4/5/8/10), 2-stage (ratios 12/15/16/20/25/32/40), and 3-stage (ratios 64/80/100/125/160/200/256/320). Each ratio has its own torque values, so I expanded each into a separate SKU. The 2-stage table header says "速比 Ratio i" but the first column shows "1" which appears to be a column index, not a ratio — the actual ratios start from 12. Similarly for 3-stage the first column shows "1" then ratios 64-320. I used the torque values as listed per ratio. The page has some typos: "Emergency sotp torque", "Mouting Position", "Mouting Posiion", "kgcm2" (should be kg·cm²). I kept the values as-is. The radial/axial force labels appear swapped in the Chinese table (最大轴向力 = Max Axial Force, 最大径向力 = Max Radial Force) but the N values match the English labels shown, so I used the English labels as given. No datasheet or CAD URLs were available on the page.
+code: r060_series
+name: R060 Series
+family: Planetary gearbox
+description: The R060 series is a compact precision planetary gearbox from Kofon's
+  R-series line, available in 1-stage, 2-stage, and 3-stage configurations. It offers
+  ratios from 3:1 to 320:1, rated torques up to 35 Nm, backlash as low as 8 arcmin
+  (1-stage), and IP65 protection. Suitable for general-purpose precision motion control
+  applications.
+spec_schema:
+  ratio:
+    type: integer
+    label: Ratio
+  stage_count:
+    type: integer
+    label: Number of stages
+  nominal_torque_nm:
+    type: number
+    label: Rated output torque (Nm)
+  peak_torque_nm:
+    type: number
+    label: Maximum acceleration torque (Nm)
+  emergency_stop_torque_nm:
+    type: number
+    label: Emergency stop torque (Nm)
+  rated_input_speed_rpm:
+    type: integer
+    label: Rated input speed (rpm)
+  max_input_speed_rpm:
+    type: integer
+    label: Max input speed (rpm)
+  backlash_arcmin:
+    type: number
+    label: Backlash (arcmin)
+  max_radial_force_n:
+    type: integer
+    label: Max radial force (N)
+  max_axial_force_n:
+    type: integer
+    label: Max axial force (N)
+  rotational_inertia_kgcm2:
+    type: number
+    label: Rotational inertia (kg·cm²)
+  noise_db_a:
+    type: number
+    label: Noise (dB(A))
+  efficiency_pct:
+    type: integer
+    label: Full-load efficiency (%)
+  operating_temp_min_c:
+    type: integer
+    label: Operating temperature min (°C)
+  operating_temp_max_c:
+    type: integer
+    label: Operating temperature max (°C)
+  lubrication:
+    type: string
+    label: Lubrication
+  mounting_position:
+    type: string
+    label: Mounting position
+  protection_class:
+    type: string
+    label: Protection class
+  service_lifetime_h:
+    type: integer
+    label: Service lifetime (h)
+  weight_kg:
+    type: number
+    label: Weight (kg)

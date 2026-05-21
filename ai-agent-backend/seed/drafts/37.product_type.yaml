@@ -1,0 +1,35 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/37.html
+# Review before promoting to seed/product_types/pwzq_hub_mounted.yaml
+# Notes: This page is a category/product-family overview page for the PWZQ hub-mounted planetary gearbox series. It does NOT contain any detailed technical specifications (torque, ratios, backlash, dimensions, etc.) for individual models. The page shows a list of "related products" (RF080, RF060, R080, R060, KPX-SY180, KPX-SY142) but those are separate product links, not specs for PWZQ. No concrete SKU data is available on this page. Products list is empty because no spec values could be extracted.
+code: pwzq_hub_mounted
+name: PWZQ Hub-Mounted Planetary Gearbox
+family: Planetary gearbox
+description: PWZQ series hub-mounted (wheel-specific) planetary gearboxes from Kofon.
+  Designed for direct wheel/drive integration in mobile machinery and AGV applications.
+  The page provides an overview of the series but does not include detailed technical
+  specifications (torque, ratio, backlash, etc.) for individual models.
+spec_schema:
+  frame_size_mm:
+    type: string
+    label: Frame size / model code
+  ratio:
+    type: string
+    label: Ratio
+  nominal_torque_nm:
+    type: number
+    label: Nominal torque (Nm)
+  peak_torque_nm:
+    type: number
+    label: Peak torque (Nm)
+  backlash_arcmin:
+    type: number
+    label: Backlash (arcmin)
+  input_speed_rpm_max:
+    type: integer
+    label: Max input speed (rpm)
+  efficiency_pct:
+    type: number
+    label: Efficiency (%)
+  weight_kg:
+    type: number
+    label: Weight (kg)

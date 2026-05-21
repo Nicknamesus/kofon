@@ -1,0 +1,71 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/1430478512256126976.html
+# Review before promoting to seed/product_types/kr095_23.yaml
+# Notes: Single SKU page — the KR095-23 is a specific joint module model with a fixed 23:1 reduction ratio. No ratio bands to expand. The datasheet PDF link is '伺服行星关节模组20250914.pdf' but no full URL was extractable from the page text; left as null. The family is classified as 'Harmonic drive / strain wave' given the joint module nature with a reducer and dual encoders, though it could also be considered a 'servo actuator' — reviewer may adjust. All specs taken directly from the '技术参数' table. The 'built-in drive' field says '可选择' (optional/selectable), captured as 'Optional'.
+code: kr095_23
+name: KR095-23 Joint Module
+family: Harmonic drive / strain wave
+description: The KR095-23 is a joint actuator module integrating a harmonic drive
+  reducer, servo motor, and dual encoders for closed-loop control, eliminating transmission
+  chain errors. It supports multiple control modes (force-position hybrid, servo position,
+  servo velocity, current/torque) and features adaptive control technology, high control
+  bandwidth, and protections against over-temperature, over-voltage, and overload.
+  The module has a 23:1 reduction ratio, 48 VDC rated voltage, and CAN communication
+  at 1 Mbps. The built-in drive is optional.
+spec_schema:
+  reduction_ratio:
+    type: integer
+    label: Reduction ratio
+  rated_voltage_v:
+    type: number
+    label: Rated voltage (V)
+  rated_current_a:
+    type: number
+    label: Rated phase current (A)
+  rated_power_w:
+    type: integer
+    label: Rated power (W)
+  rated_speed_rpm:
+    type: integer
+    label: Rated speed (RPM)
+  rated_torque_nm:
+    type: number
+    label: Rated torque (Nm)
+  peak_current_a:
+    type: number
+    label: Peak phase current (A)
+  peak_torque_nm:
+    type: integer
+    label: Peak torque (Nm)
+  peak_speed_rpm:
+    type: integer
+    label: Peak speed (RPM)
+  efficiency_pct:
+    type: number
+    label: Efficiency (%)
+  power_density_w_kg:
+    type: number
+    label: Power density (W/kg)
+  torque_constant_nm_per_a:
+    type: number
+    label: Torque constant (Nm/A)
+  weight_kg:
+    type: number
+    label: Weight (kg)
+  backlash_arcmin:
+    type: number
+    label: Backlash (arcmin)
+  size_mm:
+    type: string
+    label: Size (outer diameter × thickness, mm)
+  communication:
+    type: string
+    label: Communication
+  communication_baud_rate:
+    type: string
+    label: Communication baud rate
+  double_encoder:
+    type: string
+    label: Double encoder
+  built_in_drive:
+    type: string
+    label: Built-in drive

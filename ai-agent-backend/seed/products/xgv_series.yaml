@@ -1,0 +1,85 @@
+# Promoted from 1 draft(s) under seed/drafts/.
+# Sources: 55.products
+# SKUs: 4
+product_type_code: xgv_series
+products:
+- sku: XGV500
+  name: XGV500 — 500W Servo Integrated Drive Wheel
+  specs:
+    power_supply_v: 48
+    logic_supply_v: 24
+    nominal_torque_nm: 18
+    peak_torque_nm: 54
+    allowable_radial_load_n: 3000
+    allowable_axial_load_n: 1500
+    wheel_diameter_mm: 150
+    wheel_width_mm: 39.5
+    motor_rated_speed_rpm: 2380
+    rated_travel_speed_mps: 2.0
+    motor_rated_torque_nm: 2
+    motor_rated_power_w: 500
+    backlash_arcmin: 12
+    noise_level_db: 65
+    control_protocol: CAN
+    debug_protocol: '232'
+  status: active
+- sku: XGV750
+  name: XGV750 — 750W Servo Integrated Drive Wheel
+  specs:
+    power_supply_v: 48
+    logic_supply_v: 24
+    nominal_torque_nm: 27
+    peak_torque_nm: 80
+    allowable_radial_load_n: 3000
+    allowable_axial_load_n: 1500
+    wheel_diameter_mm: 150
+    wheel_width_mm: 39.5
+    motor_rated_speed_rpm: 2380
+    rated_travel_speed_mps: 2.0
+    motor_rated_torque_nm: 3
+    motor_rated_power_w: 750
+    backlash_arcmin: 12
+    noise_level_db: 65
+    control_protocol: CAN
+    debug_protocol: '232'
+  status: active
+- sku: XGV1000
+  name: XGV1000 — 1000W Servo Integrated Drive Wheel
+  specs:
+    power_supply_v: 48
+    logic_supply_v: 24
+    nominal_torque_nm: 50
+    peak_torque_nm: 125
+    allowable_radial_load_n: 8000
+    allowable_axial_load_n: 2000
+    wheel_diameter_mm: 180
+    wheel_width_mm: 60
+    motor_rated_speed_rpm: 2870
+    rated_travel_speed_mps: 1.8
+    motor_rated_torque_nm: 3.3
+    motor_rated_power_w: 1000
+    backlash_arcmin: 12
+    noise_level_db: 65
+    control_protocol: CAN
+    debug_protocol: '232'
+  status: active
+- sku: XGV1500
+  name: XGV1500 — 1500W Servo Integrated Drive Wheel
+  specs:
+    power_supply_v: 48
+    logic_supply_v: 24
+    nominal_torque_nm: 70
+    peak_torque_nm: 180
+    allowable_radial_load_n: 8000
+    allowable_axial_load_n: 2000
+    wheel_diameter_mm: 180
+    wheel_width_mm: 60
+    motor_rated_speed_rpm: 2870
+    rated_travel_speed_mps: 1.8
+    motor_rated_torque_nm: 5
+    motor_rated_power_w: 1500
+    backlash_arcmin: 12
+    noise_level_db: 65
+    control_protocol: CAN
+    debug_protocol: '232'
+  status: active

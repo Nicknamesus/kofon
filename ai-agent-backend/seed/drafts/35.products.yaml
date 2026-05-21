@@ -1,0 +1,76 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/35.html
+# Review before promoting to seed/products/pwjy_series.yaml
+product_type_code: pwjy_series
+products:
+- sku: PWJY450
+  name: PWJY450 — Planetary Gearbox, 10000 Nm
+  specs:
+    frame_size_mm: PWJY450
+    nominal_torque_nm: 10000
+    input_speed_rpm_max: 1000
+    installation_direction: Horizontal
+    lubrication_system: L-CKC220 Industrial Gear Oil/15L
+    roller_radial_static_load_n: 98066.5
+    braking_torque_nm_min: 50
+    braking_torque_nm_max: 500
+  status: active
+- sku: PWJY490
+  name: PWJY490 — Planetary Gearbox, 25000 Nm
+  specs:
+    frame_size_mm: PWJY490
+    nominal_torque_nm: 25000
+    input_speed_rpm_max: 1000
+    installation_direction: Horizontal
+    lubrication_system: L-CKC220 Industrial Gear Oil/15L
+    roller_radial_static_load_n: 176519.7
+    braking_torque_nm_min: 300
+    braking_torque_nm_max: 1000
+  status: active
+- sku: PWJY620
+  name: PWJY620 — Planetary Gearbox, 19000 Nm
+  specs:
+    frame_size_mm: PWJY620
+    nominal_torque_nm: 19000
+    input_speed_rpm_max: 1000
+    installation_direction: Horizontal
+    lubrication_system: L-CKC220 Industrial Gear Oil/15L
+    roller_radial_static_load_n: 147099.75
+    braking_torque_nm_min: 50
+    braking_torque_nm_max: 500
+  status: active
+- sku: PWJY720
+  name: PWJY720 — Planetary Gearbox, 40000 Nm
+  specs:
+    frame_size_mm: PWJY720
+    nominal_torque_nm: 40000
+    input_speed_rpm_max: 1000
+    installation_direction: Horizontal
+    lubrication_system: L-CKC220 Industrial Gear Oil/15L
+    roller_radial_static_load_n: 245166.25
+    braking_torque_nm_min: 300
+    braking_torque_nm_max: 1000
+  status: active
+- sku: PWJY740
+  name: PWJY740 — Planetary Gearbox, 50000 Nm
+  specs:
+    frame_size_mm: PWJY740
+    nominal_torque_nm: 50000
+    input_speed_rpm_max: 600
+    installation_direction: Horizontal
+    lubrication_system: L-CKC220 Industrial Gear Oil/15L
+    roller_radial_static_load_n: 245166.25
+    braking_torque_nm_min: 300
+    braking_torque_nm_max: 1000
+  status: active
+- sku: PWJY800
+  name: PWJY800 — Planetary Gearbox, 60000 Nm
+  specs:
+    frame_size_mm: PWJY800
+    nominal_torque_nm: 60000
+    input_speed_rpm_max: 1000
+    installation_direction: Horizontal
+    lubrication_system: L-CKC220 Industrial Gear Oil/15L
+    roller_radial_static_load_n: 372652.7
+    braking_torque_nm_min: 500
+    braking_torque_nm_max: 1000
+  status: active

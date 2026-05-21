@@ -1,0 +1,21 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/1430475026110025728.html
+# Review before promoting to seed/products/kr060_22.yaml
+product_type_code: kr060_22
+products:
+- sku: KR060-22
+  name: KR060-22 — Joint Reducer, 22:1
+  specs:
+    ratio: 22
+    nominal_torque_nm: 11
+    peak_torque_nm: 33
+    rated_speed_rpm: 4000
+    peak_speed_rpm: 6000
+    efficiency_pct: 85
+    weight_kg: 0.24
+    backlash_arcmin: 8
+    frame_size_mm: 60
+    length_mm: 39
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Synthetic grease
+  status: active

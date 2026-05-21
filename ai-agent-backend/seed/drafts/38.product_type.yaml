@@ -1,0 +1,38 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/38.html
+# Review before promoting to seed/product_types/pwzq_series.yaml
+# Notes: 1. The page lists "额定输入转速(r/min) Rated Input Speed" as 1500 for all models (only shown once in the PWZQ250 row; assumed same for all). 2. The "最大输出扭矩(Nm) Max Output Torque" is the short-term peak torque per the footnote. 3. Ratios are expanded per model from the ratio table. 4. No backlash, efficiency, or input speed max data available — omitted. 5. The page notes these gearboxes default without brake; brake is optional via hydraulic system. 6. SKU naming uses model-ratio (no stage info as stages are not listed). 7. Hydraulic motor compatibility is listed per model as shown on page.
+code: pwzq_series
+name: PWZQ Series
+family: Planetary gearbox
+description: Heavy-duty traveling planetary gearbox series PWZQ, designed for mobile/construction
+  machinery applications. Features customized paired tapered roller bearings for high
+  radial load capacity, a ring gear made of medium-carbon alloy steel with nitriding
+  treatment for toughness, and internal static brakes actuated by the hydraulic system.
+  Gears are carburized and ground from low-carbon alloy forged steel for strength
+  and durability. Available in 11 frame sizes with various ratios and compatible hydraulic
+  motor options.
+spec_schema:
+  model:
+    type: string
+    label: Model
+  max_output_torque_nm:
+    type: integer
+    label: Max Output Torque (Nm)
+  rated_input_speed_rpm:
+    type: integer
+    label: Rated Input Speed (r/min)
+  oil_volume_l:
+    type: number
+    label: Oil Volume (L)
+  weight_kg:
+    type: integer
+    label: Weight (kg)
+  single_wheel_load_t:
+    type: integer
+    label: Single Wheel Load (t)
+  ratio:
+    type: number
+    label: Ratio
+  hydraulic_motor:
+    type: string
+    label: Hydraulic Motor

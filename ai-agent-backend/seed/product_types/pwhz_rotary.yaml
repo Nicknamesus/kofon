@@ -1,0 +1,78 @@
+# Promoted from 1 draft(s) under seed/drafts/.
+# Sources: 34.product_type
+code: pwhz_rotary
+name: PWHZ Rotary Planetary Gearbox
+family: Planetary gearbox
+description: PWHZ series rotary planetary gearboxes are designed for slewing applications
+  in hydraulic truck cranes, crawler cranes, railway cranes, ship decks, docks, and
+  container handling. Features include same-direction input/output rotation, easy
+  installation and oil change, low-noise operation, modular high-strength planetary
+  gearing, and 1–3 stage configurations. A wet multi-disc brake (normally closed)
+  is integrated. The motor is not included.
+spec_schema:
+  model:
+    type: string
+    label: Model
+  output_torque_max_nm:
+    type: integer
+    label: Max output torque (Nm)
+  input_speed_rpm_max:
+    type: integer
+    label: Max input speed (rpm)
+  static_brake_torque_nm:
+    type: integer
+    label: Static brake torque (Nm)
+  brake_release_pressure_min_mpa:
+    type: number
+    label: Brake release pressure min (MPa)
+  brake_release_pressure_max_mpa:
+    type: number
+    label: Brake release pressure max (MPa)
+  max_pressure_mpa:
+    type: integer
+    label: Max pressure (MPa)
+  weight_kg:
+    type: number
+    label: Weight (kg)
+  application_tonnage_t:
+    type: string
+    label: Application tonnage (t)
+  stages:
+    type: integer
+    label: Number of stages
+  frame_size_d_mm:
+    type: number
+    label: D (mm)
+  frame_size_d1_mm:
+    type: number
+    label: D1 (mm)
+  frame_size_d2_mm:
+    type: number
+    label: D2 (mm)
+  frame_size_d3_mm:
+    type: number
+    label: D3 (mm)
+  length_l1_mm:
+    type: number
+    label: L1 (mm)
+  length_l2_mm:
+    type: number
+    label: L2 (mm)
+  length_l3_mm:
+    type: number
+    label: L3 (mm)
+  length_l4_mm:
+    type: number
+    label: L4 (mm)
+  length_l5_mm:
+    type: number
+    label: L5 (mm)
+  length_l6_mm:
+    type: number
+    label: L6 (mm)
+  a_mm:
+    type: number
+    label: A (mm)
+  bolt_holes:
+    type: string
+    label: Bolt holes

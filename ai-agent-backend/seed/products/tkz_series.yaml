@@ -1,0 +1,60 @@
+# Promoted from 5 draft(s) under seed/drafts/.
+# Sources: 100.products, 103.products, 104.products, 105.products, 99.products
+# SKUs: 5
+product_type_code: tkz_series
+products:
+- sku: TKZ090
+  name: TKZ090 — Tightening Gearbox
+  specs:
+    model: TKZ090
+    stage: N/A
+    ratio: N/A
+    frame_size_mm: 090
+  status: active
+- sku: TKZ050
+  name: TKZ050 — Tightening Gearbox
+  specs:
+    model: TKZ050
+    stage: null
+    ratio: null
+    nominal_torque_nm: null
+    peak_torque_nm: null
+    backlash_arcmin: null
+    input_speed_rpm_max: null
+    efficiency_pct: null
+    weight_kg: null
+    frame_size_mm: '050'
+  datasheet_url: https://www.kofon.com.cn/products_detail/103.html
+  status: active
+- sku: TKZ075
+  name: TKZ075 — Tightening Unit
+  specs:
+    model: TKZ075
+    stage: '1'
+    ratio: unknown
+    frame_size_mm: '75'
+  status: active
+- sku: TKZ120
+  name: TKZ120 — Tightening Gearbox
+  specs:
+    model: TKZ120
+    stage: '1'
+    ratio: unknown
+    frame_size_mm: '120'
+  status: active
+- sku: TKZ060
+  name: TKZ060 — Tightening Gearbox
+  specs:
+    model: TKZ060
+    stage: null
+    ratio: null
+    nominal_torque_nm: null
+    peak_torque_nm: null
+    backlash_arcmin: null
+    input_speed_rpm_max: null
+    efficiency_pct: null
+    weight_kg: null
+    frame_size_mm: null
+    variant: null
+  datasheet_url: https://www.kofon.com.cn/products_detail/99.html
+  status: active

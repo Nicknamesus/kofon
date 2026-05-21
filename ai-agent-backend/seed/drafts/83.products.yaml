@@ -1,0 +1,12 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/83.html
+# Review before promoting to seed/products/tl_series.yaml
+product_type_code: tl_series
+products:
+- sku: TL045
+  name: TL045 — Offset Tightening Gearbox
+  specs:
+    model: TL045
+    stage: '1'
+    ratio: '1:1'
+    frame_size_mm: '45'
+  status: active

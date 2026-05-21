@@ -1,0 +1,21 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/1430477106942623744.html
+# Review before promoting to seed/products/kr080_series.yaml
+product_type_code: kr080_series
+products:
+- sku: KR080-19
+  name: KR080 — 19:1
+  specs:
+    ratio: 19
+    nominal_torque_nm: 20
+    peak_torque_nm: 80
+    rated_speed_rpm: 4000
+    peak_speed_rpm: 6000
+    efficiency_pct: 85
+    weight_kg: 0.56
+    backlash_arcmin: 8
+    frame_size_mm: 80
+    length_mm: 53
+    temperature_range: -25°C~+90°C
+    lubrication: Synthetic grease
+  datasheet_url: https://www.kofon.com.cn/products_detail/1430477106942623744.html
+  status: active

@@ -1,0 +1,22 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/94.html
+# Review before promoting to seed/products/kr110_23.yaml
+product_type_code: kr110_23
+products:
+- sku: KR110-23
+  name: KR110-23 — 23:1 Joint Reducer
+  specs:
+    ratio: 23
+    nominal_torque_nm: 75
+    peak_torque_nm: 225
+    rated_speed_rpm: 3000
+    peak_speed_rpm: 6000
+    efficiency_pct: 85
+    weight_kg: 0.93
+    backlash_arcmin: 8
+    frame_size_mm: 110
+    length_mm: 61.5
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Synthetic grease
+  datasheet_url: https://www.kofon.com.cn/products_detail/94.html
+  status: active

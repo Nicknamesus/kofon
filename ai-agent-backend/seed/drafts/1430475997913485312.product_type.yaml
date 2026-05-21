@@ -1,0 +1,55 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/1430475997913485312.html
+# Review before promoting to seed/product_types/kr070_series.yaml
+# Notes: Single SKU page for KR070-25 (ratio 25 only). The product is described as a "关节减速器" (joint reducer) which is a harmonic/strain-wave type reducer for robotic joints. The frame size is 70mm (outer diameter) and length is 63.5mm. Backlash is given as ≤8 arcmin (upper bound used). The datasheet PDF link is relative but the filename suggests it's available. No other ratios or variants are listed on this page. The family is named 'kr070_series' since the model code is KR070 and the page only covers this frame size.
+code: kr070_series
+name: KR070 Series
+family: Harmonic drive / strain wave
+description: The KR070 series is a precision joint reducer (关节减速器) from Kofon, designed
+  for robotic joint applications. It features backlash below 8 arcmin, ultra-precision
+  machining with ISO Grade 4 gear accuracy, carburized and hardened alloy steel gears
+  (HRC60), an integrated cage-type planetary carrier and output shaft design for high
+  rigidity and precision, and full-needle roller bearings without retainers for increased
+  torque and stiffness. Supports non-standard customization.
+spec_schema:
+  ratio:
+    type: integer
+    label: Ratio
+  nominal_torque_nm:
+    type: number
+    label: Rated Torque (Nm)
+  peak_torque_nm:
+    type: number
+    label: Peak Torque (Nm)
+  rated_speed_rpm:
+    type: integer
+    label: Rated Speed (RPM)
+  peak_speed_rpm:
+    type: integer
+    label: Peak Speed (RPM)
+  efficiency_pct:
+    type: number
+    label: Efficiency (%)
+  weight_kg:
+    type: number
+    label: Weight (kg)
+  backlash_arcmin:
+    type: number
+    label: Backlash (Arcmin)
+  frame_size_mm:
+    type: number
+    label: Frame size (mm)
+  length_mm:
+    type: number
+    label: Length (mm)
+  operating_temp_min_c:
+    type: integer
+    label: Operating Temp Min (°C)
+  operating_temp_max_c:
+    type: integer
+    label: Operating Temp Max (°C)
+  lubrication:
+    type: string
+    label: Lubrication
+  variant:
+    type: string
+    label: Variant

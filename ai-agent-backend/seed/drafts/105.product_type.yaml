@@ -1,0 +1,44 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/105.html
+# Review before promoting to seed/product_types/tkz_series.yaml
+# Notes: The page is for the TKZ120 tightening gearbox (TKZ型拧紧机-TKZ120). However, the "技术参数" (Technical Parameters) section and "标准尺寸" (Standard Dimensions) section appear to have no visible data in the extracted text — likely the data is embedded in images or a table that wasn't captured in the text extraction. Only the model name TKZ120 and the frame size (inferred from model code 120 = 120mm) are available. No torque, ratio, backlash, speed, efficiency, or weight values could be extracted. The PDF "柠紧机系列.pdf" is referenced but not accessible. I've created a minimal product entry with what's available. A human reviewer should consult the PDF or the page's image content to fill in the technical specs and expand to multiple ratios if applicable.
+code: tkz_series
+name: TKZ Series
+family: Planetary gearbox
+description: TKZ series tightening gearboxes (拧紧机) designed for high-impact tightening
+  applications. Features advanced wear-resistant materials integrated with planetary
+  gear trains for high-speed wear resistance and noise reduction. Customized gear
+  profiles improve impact resistance. Special bearings handle multi-directional loads
+  under tightening shocks. Can integrate torque and displacement sensors for torque
+  visualization. Output shaft uses high-strength special materials with heat treatment
+  for impact and wear resistance.
+spec_schema:
+  model:
+    type: string
+    label: Model
+  stage:
+    type: string
+    label: Stage
+  ratio:
+    type: string
+    label: Ratio
+  nominal_torque_nm:
+    type: number
+    label: Nominal Torque (Nm)
+  peak_torque_nm:
+    type: number
+    label: Peak Torque (Nm)
+  backlash_arcmin:
+    type: number
+    label: Backlash (arcmin)
+  input_speed_rpm_max:
+    type: integer
+    label: Max Input Speed (rpm)
+  efficiency_pct:
+    type: number
+    label: Efficiency (%)
+  weight_kg:
+    type: number
+    label: Weight (kg)
+  frame_size_mm:
+    type: string
+    label: Frame Size (mm)

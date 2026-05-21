@@ -1,0 +1,79 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/108.html
+# Review before promoting to seed/product_types/k_r_series.yaml
+# Notes: 1. The page lists "KHR120" as the only frame size. The product family is "K-R Series" (准双曲面直角减速机K-R系列). I used product_type_code 'k_r_series' to match the series name. 2. Backlash is listed as ≤4 arcmin for all variants — used 4 as the upper bound. 3. Rotational inertia for 1-stage is given in kgcm² (e.g. 12.700) — kept as-is. For 2-stage it's listed as kg.cm² — same unit. 4. Max axial force (5700 N) and max tilting moment (833 N) are single values shared across all ratios — applied uniformly. 5. Noise ≤66 dB(A) shared across all. 6. 1-stage efficiency 96%, 2-stage efficiency 94%. 7. 1-stage lubrication is "Oil lubrication", 2-stage is "Grease lubrication". 8. Weight: 1-stage = 8.1 kg, 2-stage = 10.5 kg. 9. The page mentions "KHR0120单级外形尺寸图" and "KHR0120双级外形尺寸图" — likely a typo for KHR120. 10. No datasheet or CAD URLs available on the page beyond a general PDF link for the K-R series. 11. All SKUs set to status "active".
+code: k_r_series
+name: K-R Series — Hypoid Right-Angle Gearbox
+family: Bevel gear
+description: Kofon K-R Series hypoid right-angle gearboxes combine high-precision
+  hypoid gearing with a compact right-angle design. They feature backlash ≤4 arcmin,
+  high torsional rigidity, and a patented筒式锁紧机构 (cartridge locking mechanism) or coupling
+  input design for concentricity and zero-backlash input transmission. Available in
+  1-stage and 2-stage configurations with ratios from 3:1 to 100:1, rated torques
+  up to 95 Nm, and IP65 protection.
+spec_schema:
+  ratio:
+    type: integer
+    label: Ratio i
+  stages:
+    type: integer
+    label: Number of stages
+  nominal_torque_nm:
+    type: number
+    label: Rated output torque (Nm)
+  peak_torque_nm:
+    type: number
+    label: Maximum acceleration torque (Nm)
+  emergency_stop_torque_nm:
+    type: number
+    label: Emergency stop torque (Nm)
+  rated_input_speed_rpm:
+    type: integer
+    label: Rated input speed (rpm)
+  max_input_speed_rpm:
+    type: integer
+    label: Max input speed (rpm)
+  no_load_torque_nm:
+    type: number
+    label: Mean no-load running torque (Nm)
+  backlash_arcmin:
+    type: number
+    label: Backlash (arcmin)
+  torsional_rigidity_nm_per_arcmin:
+    type: number
+    label: Torsional rigidity (Nm/arcmin)
+  max_axial_force_n:
+    type: integer
+    label: Max axial force (N)
+  max_tilting_moment_nm:
+    type: integer
+    label: Max tilting moment (Nm)
+  rotational_inertia_kgcm2:
+    type: number
+    label: Rotational inertia (kg·cm²)
+  noise_db:
+    type: number
+    label: Noise (dB(A))
+  efficiency_pct:
+    type: integer
+    label: Full-load efficiency (%)
+  operating_temp_min_c:
+    type: integer
+    label: Min operating temperature (°C)
+  operating_temp_max_c:
+    type: integer
+    label: Max operating temperature (°C)
+  lubrication:
+    type: string
+    label: Lubrication type
+  mounting_position:
+    type: string
+    label: Mounting position
+  protection_class:
+    type: string
+    label: Protection class
+  service_lifetime_h:
+    type: integer
+    label: Service lifetime (h)
+  weight_kg:
+    type: number
+    label: Weight (kg)

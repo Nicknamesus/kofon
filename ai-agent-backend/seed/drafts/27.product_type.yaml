@@ -1,0 +1,66 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/27.html
+# Review before promoting to seed/product_types/w12_micro.yaml
+# Notes: The page is titled "W12微型减速机" (W12 Micro Gearbox). The product listing mentions frame sizes 08/10/12/16/19/22/26/32 but the detailed technical table only provides data for what appears to be the W12 frame (max motor shaft diameter 1.5mm, etc.). The overview mentions single-stage ratios 3.9/5.3/6.6 but the technical table only lists 3.9/5.3 for 1-stage — 6.6 is missing from the table. I included 6.6 as a 1-stage ratio based on the overview list. The 4-stage ratios (243-1135) are listed in the overview but have no corresponding technical data row, so I omitted them. The page lists "最大连续传输功率 0.39W-100W" as a general range but the per-stage table gives specific values (2W, 1W, 0.5W) — I used the table values. Moment of inertia is given in gc㎡ (gram-force centimeter squared) which is equivalent to g·cm² — kept as-is. Backlash is given in degrees (°) on the page (1.2°, 1.5°, 1.8°) — converted to arcmin (multiply by 60): 72, 90, 108 arcmin. Wait, let me re-check: the page says "空载平均回程间隙 。 1.2 1.5 1.8" — the unit symbol is ° (degrees). 1.2° = 72 arcmin, which seems very high for a precision gearbox. However, this is a micro gearbox (W12, weight 12g) so high backlash is plausible. I'll keep the value as-is in degrees but label it correctly. Actually, looking at the schema convention, backlash is typically in arcmin. 1.2° = 72 arcmin. I'll store as arcmin. Also, the page mentions "W系列微型行星减速机" as the category — this is the W series micro planetary gearbox family. The product_type_code 'w12_micro' reflects the specific W12 model within that family.
+code: w12_micro
+name: W12 Micro Gearbox
+family: Planetary gearbox
+description: W12 micro planetary gearbox series from Kofon. Hardened gear hobbing,
+  integrated front-flange ring gear design, high torque, impact resistant, low noise,
+  grease lubrication (maintenance-free). Designed for low-speed high-torque applications
+  in small spaces such as humanoid robot joints and drones. Available in single, double,
+  triple and quadruple stage configurations with ratios from 3.9 up to 1135.
+spec_schema:
+  stages:
+    type: integer
+    label: Number of stages
+  ratio:
+    type: number
+    label: Ratio
+  max_motor_shaft_diameter_mm:
+    type: number
+    label: Max motor shaft diameter (mm)
+  length_mm:
+    type: number
+    label: Length L1 (mm)
+  max_continuous_power_w:
+    type: number
+    label: Max continuous power (W)
+  max_instantaneous_power_w:
+    type: number
+    label: Max instantaneous power (W)
+  max_continuous_torque_nm:
+    type: number
+    label: Max continuous torque (Nm)
+  max_instantaneous_torque_nm:
+    type: number
+    label: Max instantaneous torque (Nm)
+  max_continuous_input_speed_rpm:
+    type: integer
+    label: Max continuous input speed (rpm)
+  max_instantaneous_input_speed_rpm:
+    type: integer
+    label: Max instantaneous input speed (rpm)
+  efficiency_pct:
+    type: number
+    label: Efficiency (%)
+  backlash_arcmin:
+    type: number
+    label: Backlash (arcmin)
+  moment_of_inertia_g_cm2:
+    type: number
+    label: Moment of inertia (g·cm²)
+  weight_g:
+    type: integer
+    label: Weight (g)
+  max_axial_load_dynamic_n:
+    type: number
+    label: Max axial load dynamic (N)
+  max_radial_load_n:
+    type: number
+    label: Max radial load (N at 5mm from flange)
+  recommended_temperature_range_c:
+    type: string
+    label: Recommended temperature range (°C)
+  optional_extended_temperature_range_c:
+    type: string
+    label: Optional extended temperature range (°C)

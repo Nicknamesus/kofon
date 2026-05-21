@@ -1,0 +1,60 @@
+# Promoted from 1 draft(s) under seed/drafts/.
+# Sources: 55.product_type
+code: xgv_series
+name: XGV Series Servo Integrated Drive Wheel
+family: Servo integrated drive wheel
+description: XGV series servo integrated drive wheels adopt an integrated design concept,
+  highly integrating the driver, encoder, brake, motor and reducer into one coaxial
+  unit. The motor and reducer are coaxially integrated to ensure precision and stability
+  during operation. High-performance servo motors paired with high-reliability precision
+  planetary reducers achieve long life and high precision retention. Available in
+  500W, 750W, 1000W and 1500W power variants with wheel diameters of 150mm or 180mm.
+spec_schema:
+  power_supply_v:
+    type: integer
+    label: Power supply voltage (V)
+  logic_supply_v:
+    type: integer
+    label: Logic supply voltage (V)
+  nominal_torque_nm:
+    type: number
+    label: Nominal torque (Nm)
+  peak_torque_nm:
+    type: number
+    label: Peak torque (Nm)
+  allowable_radial_load_n:
+    type: integer
+    label: Allowable radial load (N)
+  allowable_axial_load_n:
+    type: integer
+    label: Allowable axial load (N)
+  wheel_diameter_mm:
+    type: integer
+    label: Wheel diameter (mm)
+  wheel_width_mm:
+    type: number
+    label: Wheel width (mm)
+  motor_rated_speed_rpm:
+    type: integer
+    label: Motor rated speed (rpm)
+  rated_travel_speed_mps:
+    type: number
+    label: Rated travel speed (m/s)
+  motor_rated_torque_nm:
+    type: number
+    label: Motor rated torque (Nm)
+  motor_rated_power_w:
+    type: integer
+    label: Motor rated power (W)
+  backlash_arcmin:
+    type: number
+    label: Backlash (arcmin)
+  noise_level_db:
+    type: integer
+    label: Noise level (dB)
+  control_protocol:
+    type: string
+    label: Control protocol
+  debug_protocol:
+    type: string
+    label: Debug protocol

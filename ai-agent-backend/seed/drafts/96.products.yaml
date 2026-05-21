@@ -1,0 +1,19 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/96.html
+# Review before promoting to seed/products/tl_series_tightening.yaml
+product_type_code: tl_series_tightening
+products:
+- sku: TL067-1
+  name: TL067 — Offset Tightening Gearbox
+  specs:
+    frame_size_mm: TL067
+    ratio: '1'
+    nominal_torque_nm: null
+    peak_torque_nm: null
+    max_tightening_torque_nm: null
+    input_speed_rpm_max: null
+    weight_kg: null
+    backlash_arcmin: null
+    efficiency_pct: null
+    service_life_cycles: null
+  datasheet_url: https://www.kofon.com.cn/products_detail/96.html
+  status: active

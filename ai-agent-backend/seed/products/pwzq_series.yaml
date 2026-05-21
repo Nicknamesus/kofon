@@ -1,0 +1,546 @@
+# Promoted from 3 draft(s) under seed/drafts/.
+# Merged LLM codes: pwzq_heavy_duty_travel, pwzq_hub_mounted, pwzq_series
+# Sources: 37.products, 38.products, 42.products
+# SKUs: 45
+product_type_code: pwzq_series
+products:
+- sku: PWZQ250-50.8
+  name: PWZQ250 — Ratio 50.8
+  specs:
+    model: PWZQ250
+    max_output_torque_nm: 7000
+    rated_input_speed_rpm: 1500
+    oil_volume_l: 1
+    weight_kg: 40
+    single_wheel_load_t: 5
+    ratio: 50.8
+    hydraulic_motor: A10VM28, 45
+  status: active
+- sku: PWZQ250-63.8
+  name: PWZQ250 — Ratio 63.8
+  specs:
+    model: PWZQ250
+    max_output_torque_nm: 7000
+    rated_input_speed_rpm: 1500
+    oil_volume_l: 1
+    weight_kg: 40
+    single_wheel_load_t: 5
+    ratio: 63.8
+    hydraulic_motor: A10VM28, 45
+  status: active
+- sku: PWZQ250-76.8
+  name: PWZQ250 — Ratio 76.8
+  specs:
+    model: PWZQ250
+    max_output_torque_nm: 7000
+    rated_input_speed_rpm: 1500
+    oil_volume_l: 1
+    weight_kg: 40
+    single_wheel_load_t: 5
+    ratio: 76.8
+    hydraulic_motor: A10VM28, 45
+  status: active
+- sku: PWZQ250-89.7
+  name: PWZQ250 — Ratio 89.7
+  specs:
+    model: PWZQ250
+    max_output_torque_nm: 7000
+    rated_input_speed_rpm: 1500
+    oil_volume_l: 1
+    weight_kg: 40
+    single_wheel_load_t: 5
+    ratio: 89.7
+    hydraulic_motor: A10VM28, 45
+  status: active
+- sku: PWZQ285-69.9
+  name: PWZQ285 — Ratio 69.9
+  specs:
+    model: PWZQ285
+    max_output_torque_nm: 10000
+    rated_input_speed_rpm: 1500
+    oil_volume_l: 1.5
+    weight_kg: 60
+    single_wheel_load_t: 8
+    ratio: 69.9
+    hydraulic_motor: A10VM45
+  status: active
+- sku: PWZQ285-73.6
+  name: PWZQ285 — Ratio 73.6
+  specs:
+    model: PWZQ285
+    max_output_torque_nm: 10000
+    rated_input_speed_rpm: 1500
+    oil_volume_l: 1.5
+    weight_kg: 60
+    single_wheel_load_t: 8
+    ratio: 73.6
+    hydraulic_motor: A10VM45
+  status: active
+- sku: PWZQ285-87.6
+  name: PWZQ285 — Ratio 87.6
+  specs:
+    model: PWZQ285
+    max_output_torque_nm: 10000
+    rated_input_speed_rpm: 1500
+    oil_volume_l: 1.5
+    weight_kg: 60
+    single_wheel_load_t: 8
+    ratio: 87.6
+    hydraulic_motor: A10VM45
+  status: active
+- sku: PWZQ285-113.3
+  name: PWZQ285 — Ratio 113.3
+  specs:
+    model: PWZQ285
+    max_output_torque_nm: 10000
+    rated_input_speed_rpm: 1500
+    oil_volume_l: 1.5
+    weight_kg: 60
+    single_wheel_load_t: 8
+    ratio: 113.3
+    hydraulic_motor: A10VM45
+  status: active
+- sku: PWZQ285-133.3
+  name: PWZQ285 — Ratio 133.3
+  specs:
+    model: PWZQ285
+    max_output_torque_nm: 10000
+    rated_input_speed_rpm: 1500
+    oil_volume_l: 1.5
+    weight_kg: 60
+    single_wheel_load_t: 8
+    ratio: 133.3
+    hydraulic_motor: A10VM45
+  status: active
+- sku: PWZQ330-50.8
+  name: PWZQ330 — Ratio 50.8
+  specs:
+    model: PWZQ330
+    max_output_torque_nm: 17000
+    rated_input_speed_rpm: 1500
+    oil_volume_l: 2
+    weight_kg: 95
+    single_wheel_load_t: 10
+    ratio: 50.8
+    hydraulic_motor: A6VE55/A2FE45, 56, 63
+  status: active
+- sku: PWZQ330-63.8
+  name: PWZQ330 — Ratio 63.8
+  specs:
+    model: PWZQ330
+    max_output_torque_nm: 17000
+    rated_input_speed_rpm: 1500
+    oil_volume_l: 2
+    weight_kg: 95
+    single_wheel_load_t: 10
+    ratio: 63.8
+    hydraulic_motor: A6VE55/A2FE45, 56, 63
+  status: active
+- sku: PWZQ330-76.8
+  name: PWZQ330 — Ratio 76.8
+  specs:
+    model: PWZQ330
+    max_output_torque_nm: 17000
+    rated_input_speed_rpm: 1500
+    oil_volume_l: 2
+    weight_kg: 95
+    single_wheel_load_t: 10
+    ratio: 76.8
+    hydraulic_motor: A6VE55/A2FE45, 56, 63
+  status: active
+- sku: PWZQ330-89.7
+  name: PWZQ330 — Ratio 89.7
+  specs:
+    model: PWZQ330
+    max_output_torque_nm: 17000
+    rated_input_speed_rpm: 1500
+    oil_volume_l: 2
+    weight_kg: 95
+    single_wheel_load_t: 10
+    ratio: 89.7
+    hydraulic_motor: A6VE55/A2FE45, 56, 63
+  status: active
+- sku: PWZQ380-50
+  name: PWZQ380 — Ratio 50
+  specs:
+    model: PWZQ380
+    max_output_torque_nm: 28000
+    rated_input_speed_rpm: 1500
+    oil_volume_l: 4
+    weight_kg: 160
+    single_wheel_load_t: 12
+    ratio: 50
+    hydraulic_motor: A6VE55, 80/A2FE45, 56, 63, 80, 90
+  status: active
+- sku: PWZQ380-63.4
+  name: PWZQ380 — Ratio 63.4
+  specs:
+    model: PWZQ380
+    max_output_torque_nm: 28000
+    rated_input_speed_rpm: 1500
+    oil_volume_l: 4
+    weight_kg: 160
+    single_wheel_load_t: 12
+    ratio: 63.4
+    hydraulic_motor: A6VE55, 80/A2FE45, 56, 63, 80, 90
+  status: active
+- sku: PWZQ380-66.1
+  name: PWZQ380 — Ratio 66.1
+  specs:
+    model: PWZQ380
+    max_output_torque_nm: 28000
+    rated_input_speed_rpm: 1500
+    oil_volume_l: 4
+    weight_kg: 160
+    single_wheel_load_t: 12
+    ratio: 66.1
+    hydraulic_motor: A6VE55, 80/A2FE45, 56, 63, 80, 90
+  status: active
+- sku: PWZQ380-79.3
+  name: PWZQ380 — Ratio 79.3
+  specs:
+    model: PWZQ380
+    max_output_torque_nm: 28000
+    rated_input_speed_rpm: 1500
+    oil_volume_l: 4
+    weight_kg: 160
+    single_wheel_load_t: 12
+    ratio: 79.3
+    hydraulic_motor: A6VE55, 80/A2FE45, 56, 63, 80, 90
+  status: active
+- sku: PWZQ380-97.6
+  name: PWZQ380 — Ratio 97.6
+  specs:
+    model: PWZQ380
+    max_output_torque_nm: 28000
+    rated_input_speed_rpm: 1500
+    oil_volume_l: 4
+    weight_kg: 160
+    single_wheel_load_t: 12
+    ratio: 97.6
+    hydraulic_motor: A6VE55, 80/A2FE45, 56, 63, 80, 90
+  status: active
+- sku: PWZQ380-115
+  name: PWZQ380 — Ratio 115
+  specs:
+    model: PWZQ380
+    max_output_torque_nm: 28000
+    rated_input_speed_rpm: 1500
+    oil_volume_l: 4
+    weight_kg: 160
+    single_wheel_load_t: 12
+    ratio: 115
+    hydraulic_motor: A6VE55, 80/A2FE45, 56, 63, 80, 90
+  status: active
+- sku: PWZQ380-136.8
+  name: PWZQ380 — Ratio 136.8
+  specs:
+    model: PWZQ380
+    max_output_torque_nm: 28000
+    rated_input_speed_rpm: 1500
+    oil_volume_l: 4
+    weight_kg: 160
+    single_wheel_load_t: 12
+    ratio: 136.8
+    hydraulic_motor: A6VE55, 80/A2FE45, 56, 63, 80, 90
+  status: active
+- sku: PWZQ450-94.6
+  name: PWZQ450 — Ratio 94.6
+  specs:
+    model: PWZQ450
+    max_output_torque_nm: 41000
+    rated_input_speed_rpm: 1500
+    oil_volume_l: 5
+    weight_kg: 275
+    single_wheel_load_t: 33
+    ratio: 94.6
+    hydraulic_motor: A6VE80, 107/A2FE80, 90
+  status: active
+- sku: PWZQ450-105.2
+  name: PWZQ450 — Ratio 105.2
+  specs:
+    model: PWZQ450
+    max_output_torque_nm: 41000
+    rated_input_speed_rpm: 1500
+    oil_volume_l: 5
+    weight_kg: 275
+    single_wheel_load_t: 33
+    ratio: 105.2
+    hydraulic_motor: A6VE80, 107/A2FE80, 90
+  status: active
+- sku: PWZQ450-121.2
+  name: PWZQ450 — Ratio 121.2
+  specs:
+    model: PWZQ450
+    max_output_torque_nm: 41000
+    rated_input_speed_rpm: 1500
+    oil_volume_l: 5
+    weight_kg: 275
+    single_wheel_load_t: 33
+    ratio: 121.2
+    hydraulic_motor: A6VE80, 107/A2FE80, 90
+  status: active
+- sku: PWZQ450-139.3
+  name: PWZQ450 — Ratio 139.3
+  specs:
+    model: PWZQ450
+    max_output_torque_nm: 41000
+    rated_input_speed_rpm: 1500
+    oil_volume_l: 5
+    weight_kg: 275
+    single_wheel_load_t: 33
+    ratio: 139.3
+    hydraulic_motor: A6VE80, 107/A2FE80, 90
+  status: active
+- sku: PWZQ450-169
+  name: PWZQ450 — Ratio 169
+  specs:
+    model: PWZQ450
+    max_output_torque_nm: 41000
+    rated_input_speed_rpm: 1500
+    oil_volume_l: 5
+    weight_kg: 275
+    single_wheel_load_t: 33
+    ratio: 169
+    hydraulic_motor: A6VE80, 107/A2FE80, 90
+  status: active
+- sku: PWZQ490-92.6
+  name: PWZQ490 — Ratio 92.6
+  specs:
+    model: PWZQ490
+    max_output_torque_nm: 58000
+    rated_input_speed_rpm: 1500
+    oil_volume_l: 7
+    weight_kg: 335
+    single_wheel_load_t: 38
+    ratio: 92.6
+    hydraulic_motor: A6VE80, 107/A2FE80, 90
+  status: active
+- sku: PWZQ490-104.6
+  name: PWZQ490 — Ratio 104.6
+  specs:
+    model: PWZQ490
+    max_output_torque_nm: 58000
+    rated_input_speed_rpm: 1500
+    oil_volume_l: 7
+    weight_kg: 335
+    single_wheel_load_t: 38
+    ratio: 104.6
+    hydraulic_motor: A6VE80, 107/A2FE80, 90
+  status: active
+- sku: PWZQ490-120.2
+  name: PWZQ490 — Ratio 120.2
+  specs:
+    model: PWZQ490
+    max_output_torque_nm: 58000
+    rated_input_speed_rpm: 1500
+    oil_volume_l: 7
+    weight_kg: 335
+    single_wheel_load_t: 38
+    ratio: 120.2
+    hydraulic_motor: A6VE80, 107/A2FE80, 90
+  status: active
+- sku: PWZQ490-141.6
+  name: PWZQ490 — Ratio 141.6
+  specs:
+    model: PWZQ490
+    max_output_torque_nm: 58000
+    rated_input_speed_rpm: 1500
+    oil_volume_l: 7
+    weight_kg: 335
+    single_wheel_load_t: 38
+    ratio: 141.6
+    hydraulic_motor: A6VE80, 107/A2FE80, 90
+  status: active
+- sku: PWZQ490-164.2
+  name: PWZQ490 — Ratio 164.2
+  specs:
+    model: PWZQ490
+    max_output_torque_nm: 58000
+    rated_input_speed_rpm: 1500
+    oil_volume_l: 7
+    weight_kg: 335
+    single_wheel_load_t: 38
+    ratio: 164.2
+    hydraulic_motor: A6VE80, 107/A2FE80, 90
+  status: active
+- sku: PWZQ550-76.8
+  name: PWZQ550 — Ratio 76.8
+  specs:
+    model: PWZQ550
+    max_output_torque_nm: 96000
+    rated_input_speed_rpm: 1500
+    oil_volume_l: 8
+    weight_kg: 500
+    single_wheel_load_t: 46
+    ratio: 76.8
+    hydraulic_motor: A6VE107, 160/A2FE107, 125, 160, 180
+  status: active
+- sku: PWZQ550-97.5
+  name: PWZQ550 — Ratio 97.5
+  specs:
+    model: PWZQ550
+    max_output_torque_nm: 96000
+    rated_input_speed_rpm: 1500
+    oil_volume_l: 8
+    weight_kg: 500
+    single_wheel_load_t: 46
+    ratio: 97.5
+    hydraulic_motor: A6VE107, 160/A2FE107, 125, 160, 180
+  status: active
+- sku: PWZQ550-106.7
+  name: PWZQ550 — Ratio 106.7
+  specs:
+    model: PWZQ550
+    max_output_torque_nm: 96000
+    rated_input_speed_rpm: 1500
+    oil_volume_l: 8
+    weight_kg: 500
+    single_wheel_load_t: 46
+    ratio: 106.7
+    hydraulic_motor: A6VE107, 160/A2FE107, 125, 160, 180
+  status: active
+- sku: PWZQ550-131.2
+  name: PWZQ550 — Ratio 131.2
+  specs:
+    model: PWZQ550
+    max_output_torque_nm: 96000
+    rated_input_speed_rpm: 1500
+    oil_volume_l: 8
+    weight_kg: 500
+    single_wheel_load_t: 46
+    ratio: 131.2
+    hydraulic_motor: A6VE107, 160/A2FE107, 125, 160, 180
+  status: active
+- sku: PWZQ615-97.8
+  name: PWZQ615 — Ratio 97.8
+  specs:
+    model: PWZQ615
+    max_output_torque_nm: 107000
+    rated_input_speed_rpm: 1500
+    oil_volume_l: 9
+    weight_kg: 650
+    single_wheel_load_t: 64
+    ratio: 97.8
+    hydraulic_motor: A6VE107, 160/A2FE107, 125, 160, 180
+  status: active
+- sku: PWZQ615-115.3
+  name: PWZQ615 — Ratio 115.3
+  specs:
+    model: PWZQ615
+    max_output_torque_nm: 107000
+    rated_input_speed_rpm: 1500
+    oil_volume_l: 9
+    weight_kg: 650
+    single_wheel_load_t: 64
+    ratio: 115.3
+    hydraulic_motor: A6VE107, 160/A2FE107, 125, 160, 180
+  status: active
+- sku: PWZQ615-128.2
+  name: PWZQ615 — Ratio 128.2
+  specs:
+    model: PWZQ615
+    max_output_torque_nm: 107000
+    rated_input_speed_rpm: 1500
+    oil_volume_l: 9
+    weight_kg: 650
+    single_wheel_load_t: 64
+    ratio: 128.2
+    hydraulic_motor: A6VE107, 160/A2FE107, 125, 160, 180
+  status: active
+- sku: PWZQ615-144.4
+  name: PWZQ615 — Ratio 144.4
+  specs:
+    model: PWZQ615
+    max_output_torque_nm: 107000
+    rated_input_speed_rpm: 1500
+    oil_volume_l: 9
+    weight_kg: 650
+    single_wheel_load_t: 64
+    ratio: 144.4
+    hydraulic_motor: A6VE107, 160/A2FE107, 125, 160, 180
+  status: active
+- sku: PWZQ615-173.4
+  name: PWZQ615 — Ratio 173.4
+  specs:
+    model: PWZQ615
+    max_output_torque_nm: 107000
+    rated_input_speed_rpm: 1500
+    oil_volume_l: 9
+    weight_kg: 650
+    single_wheel_load_t: 64
+    ratio: 173.4
+    hydraulic_motor: A6VE107, 160/A2FE107, 125, 160, 180
+  status: active
+- sku: PWZQ670-165.3
+  name: PWZQ670 — Ratio 165.3
+  specs:
+    model: PWZQ670
+    max_output_torque_nm: 155000
+    rated_input_speed_rpm: 1500
+    oil_volume_l: 9.5
+    weight_kg: 820
+    single_wheel_load_t: 70
+    ratio: 165.3
+    hydraulic_motor: A6VE250/A2FE250, 355
+  status: active
+- sku: PWZQ670-209.7
+  name: PWZQ670 — Ratio 209.7
+  specs:
+    model: PWZQ670
+    max_output_torque_nm: 155000
+    rated_input_speed_rpm: 1500
+    oil_volume_l: 9.5
+    weight_kg: 820
+    single_wheel_load_t: 70
+    ratio: 209.7
+    hydraulic_motor: A6VE250/A2FE250, 355
+  status: active
+- sku: PWZQ735-97.3
+  name: PWZQ735 — Ratio 97.3
+  specs:
+    model: PWZQ735
+    max_output_torque_nm: 197000
+    rated_input_speed_rpm: 1500
+    oil_volume_l: 10.5
+    weight_kg: 1050
+    single_wheel_load_t: 88
+    ratio: 97.3
+    hydraulic_motor: A6VE107, 160/A2FE107, 125, 160, 180
+  status: active
+- sku: PWZQ735-145.7
+  name: PWZQ735 — Ratio 145.7
+  specs:
+    model: PWZQ735
+    max_output_torque_nm: 197000
+    rated_input_speed_rpm: 1500
+    oil_volume_l: 10.5
+    weight_kg: 1050
+    single_wheel_load_t: 88
+    ratio: 145.7
+    hydraulic_motor: A6VE107, 160/A2FE107, 125, 160, 180
+  status: active
+- sku: PWZQ785-131.2
+  name: PWZQ785 — Ratio 131.2
+  specs:
+    model: PWZQ785
+    max_output_torque_nm: 279000
+    rated_input_speed_rpm: 1500
+    oil_volume_l: 12
+    weight_kg: 1400
+    single_wheel_load_t: 110
+    ratio: 131.2
+    hydraulic_motor: A6VE250/A2FE250, 355
+  status: active
+- sku: PWZQ785-169
+  name: PWZQ785 — Ratio 169
+  specs:
+    model: PWZQ785
+    max_output_torque_nm: 279000
+    rated_input_speed_rpm: 1500
+    oil_volume_l: 12
+    weight_kg: 1400
+    single_wheel_load_t: 110
+    ratio: 169
+    hydraulic_motor: A6VE250/A2FE250, 355
+  status: active

@@ -1,0 +1,59 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/77.html
+# Review before promoting to seed/product_types/kcd_mc_series.yaml
+# Notes: The page lists torque values in a table where each row corresponds to a frame size (14, 17, 20, 25, 32) but the ratio column is ambiguous. The first table header shows "减速比" (reduction ratio) with values 50, 100, 160 appearing in the leftmost column alongside frame sizes. I interpreted the structure as: for each frame size, the torque values apply across ratios 50, 80, 100, 120, 160 (based on the start torque table which explicitly lists those ratios). The torque values (peak, avg load, rated, emergency) are shared per frame size across all ratios. I expanded each frame size × ratio combination into a separate SKU. The start torque table provides per-ratio values; where '/' appears (no data), I set null. Transmission accuracy is <1.5 arcmin for sizes 14/17, <1 arcmin for sizes ≥20. Hysteresis and lost motion are both <1 arcmin for all. Repeatability is <±0.1 arcmin. Weight is not provided on the page. The "刚性" (stiffness) table provides torsional stiffness values but I did not include them in spec_schema as they are not commonly requested in the seed format; they could be added if needed. The datasheet link is '谐波减速机.pdf' but no full URL is given.
+code: kcd_mc_series
+name: KCD-MC Series Harmonic Drive / Strain Wave Gearbox
+family: Harmonic drive / strain wave
+description: KCD-MC series harmonic drive reducers from Kofon. Features ultra-short
+  component design, high transmission accuracy and repeatability, high torsional stiffness,
+  large load capacity, high efficiency, and long service life. Available in frame
+  sizes 14, 17, 20, 25, and 32 with various reduction ratios.
+spec_schema:
+  frame_size:
+    type: integer
+    label: Frame size
+  ratio:
+    type: integer
+    label: Reduction ratio
+  peak_torque_nm:
+    type: number
+    label: Start/stop permissible peak torque (Nm)
+  avg_load_torque_nm:
+    type: number
+    label: Average load torque max (Nm)
+  nominal_torque_nm:
+    type: number
+    label: Rated output torque (Nm)
+  emergency_stop_torque_nm:
+    type: number
+    label: Emergency stop torque (Nm)
+  input_speed_rpm_max:
+    type: integer
+    label: Max input speed (r/min)
+  avg_input_speed_rpm_max:
+    type: integer
+    label: Max average input speed (r/min)
+  design_life_hrs:
+    type: integer
+    label: Design life (Hrs)
+  transmission_accuracy_arcmin:
+    type: number
+    label: Transmission accuracy (arc min)
+  hysteresis_arcmin:
+    type: number
+    label: Hysteresis (arc min)
+  lost_motion_arcmin:
+    type: number
+    label: Lost motion (arc min)
+  repeatability_arcmin:
+    type: number
+    label: Repeatability (±arc min)
+  start_torque_mnm:
+    type: integer
+    label: Start torque (mNm)
+  weight_kg:
+    type: number
+    label: Weight (kg)
+  variant:
+    type: string
+    label: Variant

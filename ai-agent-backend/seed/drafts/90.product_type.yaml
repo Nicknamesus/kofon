@@ -1,0 +1,70 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/90.html
+# Review before promoting to seed/product_types/kr080_19.yaml
+# Notes: Single SKU product page for the KR080-19 joint module. The page lists only one ratio (19:1). The datasheet PDF link is relative ('伺服行星关节模组20250914.pdf') — not included as absolute URL since the base path is unclear. The family is classified as 'Harmonic drive / strain wave' because the product is an integrated joint module with a reducer (likely harmonic/strain wave type based on the backlash ≤8 arcmin and compact form factor), though the page does not explicitly state the reducer technology. The 'built_in_drive' spec value 'Optional' is inferred from '可选择' (selectable).
+code: kr080_19
+name: KR080-19 Joint Module
+family: Harmonic drive / strain wave
+description: The KR080-19 is an integrated joint module featuring dual encoders for
+  closed-loop control, eliminating transmission chain errors. It supports multiple
+  control modes (force-position hybrid, servo position, servo speed, current/torque
+  control), adaptive control technology, high control bandwidth, and protection against
+  over-temperature, over-voltage, and overload. The module includes a 19:1 reducer,
+  CAN communication, and is available with or without a built-in drive.
+spec_schema:
+  reducer_ratio:
+    type: integer
+    label: Reducer ratio
+  rated_voltage_v:
+    type: number
+    label: Rated Voltage (V)
+  rated_current_a:
+    type: number
+    label: Rated Phase Current (A)
+  rated_power_w:
+    type: integer
+    label: Rated Power (W)
+  rated_speed_rpm:
+    type: integer
+    label: Rated Speed (RPM)
+  rated_torque_nm:
+    type: number
+    label: Rated Torque (Nm)
+  peak_current_a:
+    type: number
+    label: Peak Phase Current (A)
+  peak_torque_nm:
+    type: number
+    label: Peak Torque (Nm)
+  peak_speed_rpm:
+    type: integer
+    label: Peak Speed (RPM)
+  efficiency_pct:
+    type: number
+    label: Efficiency (%)
+  power_density_w_kg:
+    type: number
+    label: Power Density (W/Kg)
+  torque_constant_nm_a:
+    type: number
+    label: Torque constant (Nm/A)
+  weight_kg:
+    type: number
+    label: Weight (kg)
+  backlash_arcmin:
+    type: number
+    label: Backlash (Arcmin)
+  motor_size_mm:
+    type: string
+    label: Motor Size (diameter × thickness, mm)
+  communication:
+    type: string
+    label: Communication
+  baud_rate:
+    type: string
+    label: Communication baud rate
+  double_encoder:
+    type: string
+    label: Has dual encoder
+  built_in_drive:
+    type: string
+    label: Built-in drive available

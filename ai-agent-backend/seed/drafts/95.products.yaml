@@ -1,0 +1,21 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/95.html
+# Review before promoting to seed/products/kr128_series.yaml
+product_type_code: kr128_series
+products:
+- sku: KR128-22
+  name: KR128 — 22:1
+  specs:
+    ratio: 22
+    nominal_torque_nm: 100
+    peak_torque_nm: 300
+    rated_speed_rpm: 3000
+    peak_speed_rpm: 6000
+    efficiency_pct: 85
+    weight_kg: 1.36
+    backlash_arcmin: 8
+    frame_size_mm: 128
+    length_mm: 60.6
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Synthetic grease
+  status: active

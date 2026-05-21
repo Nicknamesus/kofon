@@ -1,0 +1,484 @@
+# Promoted from 1 draft(s) under seed/drafts/.
+# Sources: 46.products
+# SKUs: 27
+product_type_code: kofon_ball_screw
+products:
+- sku: BS16-4-2.381-3
+  name: Ball screw 16×4 — ball Ø2.381, 3 circuits
+  specs:
+    screw_diameter_mm: 16
+    lead_mm: 4
+    ball_diameter_mm: 2.381
+    circuit_count: 3
+    dynamic_load_capacity_kgf: 432
+    static_load_capacity_kgf: 915
+    nut_outer_diameter_mm: 28
+    nut_length_mm: 42
+    flange_diameter_mm: 49
+    flange_thickness_mm: 10
+    flange_width_mm: 39
+    flange_center_hole_mm: 20
+    flange_bolt_circle_mm: 40
+    mounting_hole_diameter_mm: 4.5
+    mounting_hole_counterbore_mm: 8
+    mounting_hole_depth_mm: 4.5
+    oil_hole: M6x1
+    rigidity_kgf_per_um: 16
+  status: active
+- sku: BS16-5-3.175-3
+  name: Ball screw 16×5 — ball Ø3.175, 3 circuits
+  specs:
+    screw_diameter_mm: 16
+    lead_mm: 5
+    ball_diameter_mm: 3.175
+    circuit_count: 3
+    dynamic_load_capacity_kgf: 760
+    static_load_capacity_kgf: 1210
+    nut_outer_diameter_mm: 30
+    nut_length_mm: 42
+    flange_diameter_mm: 49
+    flange_thickness_mm: 10
+    flange_width_mm: 39
+    flange_center_hole_mm: 20
+    flange_bolt_circle_mm: 40
+    mounting_hole_diameter_mm: 4.5
+    mounting_hole_counterbore_mm: 8
+    mounting_hole_depth_mm: 4.5
+    oil_hole: M6x1
+    rigidity_kgf_per_um: 16
+  status: active
+- sku: BS18-4-? -?
+  name: Ball screw 18×4 — (ball diameter & circuits unclear from table)
+  specs:
+    screw_diameter_mm: 18
+    lead_mm: 4
+    dynamic_load_capacity_kgf: 970
+    static_load_capacity_kgf: 1630
+    nut_outer_diameter_mm: 49
+    nut_length_mm: 49
+    flange_diameter_mm: 10
+    flange_width_mm: 39
+    flange_center_hole_mm: 20
+    flange_bolt_circle_mm: 40
+    mounting_hole_diameter_mm: 4.5
+    mounting_hole_counterbore_mm: 8
+    mounting_hole_depth_mm: 4.5
+    oil_hole: M6x1
+    rigidity_kgf_per_um: 23
+  status: active
+- sku: BS20-4-2.381-4
+  name: Ball screw 20×4 — ball Ø2.381, 4 circuits
+  specs:
+    screw_diameter_mm: 20
+    lead_mm: 4
+    ball_diameter_mm: 2.381
+    circuit_count: 4
+    dynamic_load_capacity_kgf: 580
+    static_load_capacity_kgf: 1520
+    nut_outer_diameter_mm: 34
+    nut_length_mm: 44
+    flange_diameter_mm: 60
+    flange_thickness_mm: 12
+    flange_width_mm: 48
+    flange_center_hole_mm: 22
+    flange_bolt_circle_mm: 44
+    mounting_hole_diameter_mm: 5.5
+    mounting_hole_counterbore_mm: 9.5
+    mounting_hole_depth_mm: 5.5
+    oil_hole: M6x1
+    rigidity_kgf_per_um: 24
+  status: active
+- sku: BS20-5-3.175-3
+  name: Ball screw 20×5 — ball Ø3.175, 3 circuits
+  specs:
+    screw_diameter_mm: 20
+    lead_mm: 5
+    ball_diameter_mm: 3.175
+    circuit_count: 3
+    dynamic_load_capacity_kgf: 850
+    static_load_capacity_kgf: 1700
+    nut_outer_diameter_mm: 34
+    nut_length_mm: 47
+    flange_diameter_mm: 57
+    flange_thickness_mm: 12
+    flange_width_mm: 45
+    flange_center_hole_mm: 20
+    flange_bolt_circle_mm: 40
+    mounting_hole_diameter_mm: 5.5
+    mounting_hole_counterbore_mm: 9.5
+    mounting_hole_depth_mm: 5.5
+    oil_hole: M6x1
+    rigidity_kgf_per_um: 21
+  status: active
+- sku: BS20-4-? -?
+  name: Ball screw 20×4 — (second row, ball diameter & circuits unclear)
+  specs:
+    screw_diameter_mm: 20
+    lead_mm: 4
+    dynamic_load_capacity_kgf: 1080
+    static_load_capacity_kgf: 2250
+    nut_outer_diameter_mm: 53
+    nut_length_mm: 28
+    flange_diameter_mm: 6
+    flange_thickness_mm: 1550
+    flange_width_mm: 3400
+    rigidity_kgf_per_um: 62
+  status: active
+- sku: BS20-6-3.969-3
+  name: Ball screw 20×6 — ball Ø3.969, 3 circuits
+  specs:
+    screw_diameter_mm: 20
+    lead_mm: 6
+    ball_diameter_mm: 3.969
+    circuit_count: 3
+    dynamic_load_capacity_kgf: 1060
+    static_load_capacity_kgf: 2030
+    nut_outer_diameter_mm: 34
+    nut_length_mm: 53
+    flange_diameter_mm: 57
+    flange_thickness_mm: 12
+    flange_width_mm: 45
+    flange_center_hole_mm: 20
+    flange_bolt_circle_mm: 40
+    mounting_hole_diameter_mm: 5.5
+    mounting_hole_counterbore_mm: 9.5
+    mounting_hole_depth_mm: 5.5
+    oil_hole: M6x1
+    rigidity_kgf_per_um: 22
+  status: active
+- sku: BS20-6-3.969-4
+  name: Ball screw 20×6 — ball Ø3.969, 4 circuits
+  specs:
+    screw_diameter_mm: 20
+    lead_mm: 6
+    ball_diameter_mm: 3.969
+    circuit_count: 4
+    dynamic_load_capacity_kgf: 1360
+    static_load_capacity_kgf: 2710
+    nut_outer_diameter_mm: 61
+    nut_length_mm: 29
+    rigidity_kgf_per_um: 25
+  status: active
+- sku: BS25-4-2.381-3
+  name: Ball screw 25×4 — ball Ø2.381, 3 circuits
+  specs:
+    screw_diameter_mm: 25
+    lead_mm: 4
+    ball_diameter_mm: 2.381
+    circuit_count: 3
+    dynamic_load_capacity_kgf: 485
+    static_load_capacity_kgf: 1425
+    nut_outer_diameter_mm: 40
+    nut_length_mm: 40
+    flange_diameter_mm: 63
+    flange_thickness_mm: 12
+    flange_width_mm: 51
+    flange_center_hole_mm: 22
+    flange_bolt_circle_mm: 44
+    mounting_hole_diameter_mm: 5.5
+    mounting_hole_counterbore_mm: 9.5
+    mounting_hole_depth_mm: 5.5
+    oil_hole: M8x1
+    rigidity_kgf_per_um: 23
+  status: active
+- sku: BS25-5-3.175-3
+  name: Ball screw 25×5 — ball Ø3.175, 3 circuits
+  specs:
+    screw_diameter_mm: 25
+    lead_mm: 5
+    ball_diameter_mm: 3.175
+    circuit_count: 3
+    dynamic_load_capacity_kgf: 970
+    static_load_capacity_kgf: 2280
+    nut_outer_diameter_mm: 40
+    nut_length_mm: 47
+    flange_diameter_mm: 63.5
+    flange_thickness_mm: 12
+    flange_width_mm: 51
+    flange_center_hole_mm: 22
+    flange_bolt_circle_mm: 44
+    mounting_hole_diameter_mm: 5.5
+    mounting_hole_counterbore_mm: 9.5
+    mounting_hole_depth_mm: 5.5
+    oil_hole: M8x1
+    rigidity_kgf_per_um: 25
+  status: active
+- sku: BS25-4-? -?
+  name: Ball screw 25×4 — (second row, ball diameter & circuits unclear)
+  specs:
+    screw_diameter_mm: 25
+    lead_mm: 4
+    dynamic_load_capacity_kgf: 1240
+    static_load_capacity_kgf: 3050
+    nut_outer_diameter_mm: 53
+    nut_length_mm: 32
+    rigidity_kgf_per_um: 25
+  status: active
+- sku: BS25-5-? -?
+  name: Ball screw 25×5 — (second row, ball diameter & circuits unclear)
+  specs:
+    screw_diameter_mm: 25
+    lead_mm: 5
+    dynamic_load_capacity_kgf: 1500
+    static_load_capacity_kgf: 3810
+    nut_outer_diameter_mm: 57
+    nut_length_mm: 41
+    rigidity_kgf_per_um: 25
+  status: active
+- sku: BS25-6-3.969-3
+  name: Ball screw 25×6 — ball Ø3.969, 3 circuits
+  specs:
+    screw_diameter_mm: 25
+    lead_mm: 6
+    ball_diameter_mm: 3.969
+    circuit_count: 3
+    dynamic_load_capacity_kgf: 1270
+    static_load_capacity_kgf: 2720
+    nut_outer_diameter_mm: 40
+    nut_length_mm: 53
+    flange_diameter_mm: 63.5
+    flange_thickness_mm: 12
+    flange_width_mm: 51
+    flange_center_hole_mm: 22
+    flange_bolt_circle_mm: 44
+    mounting_hole_diameter_mm: 5.5
+    mounting_hole_counterbore_mm: 9.5
+    mounting_hole_depth_mm: 5.5
+    oil_hole: M8x1
+    rigidity_kgf_per_um: 25
+  status: active
+- sku: BS25-6-3.969-4
+  name: Ball screw 25×6 — ball Ø3.969, 4 circuits
+  specs:
+    screw_diameter_mm: 25
+    lead_mm: 6
+    ball_diameter_mm: 3.969
+    circuit_count: 4
+    dynamic_load_capacity_kgf: 1620
+    static_load_capacity_kgf: 3630
+    nut_outer_diameter_mm: 40
+    nut_length_mm: 69
+    flange_diameter_mm: 63.5
+    flange_thickness_mm: 12
+    flange_width_mm: 51
+    flange_center_hole_mm: 22
+    flange_bolt_circle_mm: 44
+    mounting_hole_diameter_mm: 5.5
+    mounting_hole_counterbore_mm: 9.5
+    mounting_hole_depth_mm: 5.5
+    oil_hole: M8x1
+    rigidity_kgf_per_um: 33
+  status: active
+- sku: BS25-8-3.969-4
+  name: Ball screw 25×8 — ball Ø3.969, 4 circuits
+  specs:
+    screw_diameter_mm: 25
+    lead_mm: 8
+    ball_diameter_mm: 3.969
+    circuit_count: 4
+    dynamic_load_capacity_kgf: 1620
+    static_load_capacity_kgf: 3630
+    nut_outer_diameter_mm: 40
+    nut_length_mm: 69
+    flange_diameter_mm: 63.5
+    flange_thickness_mm: 12
+    flange_width_mm: 51
+    flange_center_hole_mm: 22
+    flange_bolt_circle_mm: 44
+    mounting_hole_diameter_mm: 5.5
+    mounting_hole_counterbore_mm: 9.5
+    mounting_hole_depth_mm: 5.5
+    oil_hole: M8x1
+    rigidity_kgf_per_um: 33
+  status: active
+- sku: BS25-5-? -? (2)
+  name: Ball screw 25×5 — (third row, ball diameter & circuits unclear)
+  specs:
+    screw_diameter_mm: 25
+    lead_mm: 5
+    dynamic_load_capacity_kgf: 1950
+    static_load_capacity_kgf: 4550
+    nut_outer_diameter_mm: 77
+    nut_length_mm: 42
+    rigidity_kgf_per_um: 32
+  status: active
+- sku: BS32-4-2.381-3
+  name: Ball screw 32×4 — ball Ø2.381, 3 circuits
+  specs:
+    screw_diameter_mm: 32
+    lead_mm: 4
+    ball_diameter_mm: 2.381
+    circuit_count: 3
+    dynamic_load_capacity_kgf: 560
+    static_load_capacity_kgf: 1840
+    nut_outer_diameter_mm: 43
+    nut_length_mm: 40
+    flange_diameter_mm: 68
+    flange_thickness_mm: 15
+    flange_width_mm: 55
+    flange_center_hole_mm: 26
+    flange_bolt_circle_mm: 52
+    mounting_hole_diameter_mm: 6.6
+    mounting_hole_counterbore_mm: 11
+    mounting_hole_depth_mm: 6.5
+    oil_hole: M8x1
+    rigidity_kgf_per_um: 28
+  status: active
+- sku: BS32-5-? -?
+  name: Ball screw 32×5 — (ball diameter & circuits unclear)
+  specs:
+    screw_diameter_mm: 32
+    lead_mm: 5
+    dynamic_load_capacity_kgf: 870
+    static_load_capacity_kgf: 3070
+    nut_outer_diameter_mm: 49
+    oil_hole: M8x1
+    rigidity_kgf_per_um: 45
+  status: active
+- sku: BS32-5-3.175-3
+  name: Ball screw 32×5 — ball Ø3.175, 3 circuits
+  specs:
+    screw_diameter_mm: 32
+    lead_mm: 5
+    ball_diameter_mm: 3.175
+    circuit_count: 3
+    dynamic_load_capacity_kgf: 1095
+    static_load_capacity_kgf: 3060
+    nut_outer_diameter_mm: 48
+    nut_length_mm: 47
+    flange_diameter_mm: 73.5
+    flange_thickness_mm: 12
+    flange_width_mm: 60
+    flange_center_hole_mm: 30
+    flange_bolt_circle_mm: 60
+    mounting_hole_diameter_mm: 6.6
+    mounting_hole_counterbore_mm: 11
+    mounting_hole_depth_mm: 6.5
+    oil_hole: M8x1
+    rigidity_kgf_per_um: 31
+  status: active
+- sku: BS32-5-? -? (2)
+  name: Ball screw 32×5 — (second row, ball diameter & circuits unclear)
+  specs:
+    screw_diameter_mm: 32
+    lead_mm: 5
+    dynamic_load_capacity_kgf: 1400
+    static_load_capacity_kgf: 4080
+    nut_outer_diameter_mm: 53
+    nut_length_mm: 41
+    rigidity_kgf_per_um: 32
+  status: active
+- sku: BS32-6-? -?
+  name: Ball screw 32×6 — (ball diameter & circuits unclear)
+  specs:
+    screw_diameter_mm: 32
+    lead_mm: 6
+    dynamic_load_capacity_kgf: 1980
+    static_load_capacity_kgf: 6120
+    nut_outer_diameter_mm: 62
+    nut_length_mm: 60
+    rigidity_kgf_per_um: 32
+  status: active
+- sku: BS32-6-3.969-3
+  name: Ball screw 32×6 — ball Ø3.969, 3 circuits
+  specs:
+    screw_diameter_mm: 32
+    lead_mm: 6
+    ball_diameter_mm: 3.969
+    circuit_count: 3
+    dynamic_load_capacity_kgf: 1500
+    static_load_capacity_kgf: 3750
+    nut_outer_diameter_mm: 48
+    nut_length_mm: 53
+    flange_diameter_mm: 73.5
+    flange_thickness_mm: 12
+    flange_width_mm: 60
+    flange_center_hole_mm: 30
+    flange_bolt_circle_mm: 60
+    mounting_hole_diameter_mm: 6.6
+    mounting_hole_counterbore_mm: 11
+    mounting_hole_depth_mm: 6.5
+    oil_hole: M8x1
+    rigidity_kgf_per_um: 32
+  status: active
+- sku: BS32-6-? -? (2)
+  name: Ball screw 32×6 — (second row, ball diameter & circuits unclear)
+  specs:
+    screw_diameter_mm: 32
+    lead_mm: 6
+    dynamic_load_capacity_kgf: 1920
+    static_load_capacity_kgf: 2720
+    nut_outer_diameter_mm: 5000
+    nut_length_mm: 7500
+    rigidity_kgf_per_um: 61
+  status: active
+- sku: BS40-8-4.762-3
+  name: Ball screw 40×8 — ball Ø4.762, 3 circuits
+  specs:
+    screw_diameter_mm: 40
+    lead_mm: 8
+    ball_diameter_mm: 4.762
+    circuit_count: 3
+    dynamic_load_capacity_kgf: 1820
+    static_load_capacity_kgf: 4230
+    nut_outer_diameter_mm: 50
+    nut_length_mm: 68
+    flange_diameter_mm: 83
+    flange_thickness_mm: 16
+    flange_width_mm: 66
+    flange_center_hole_mm: 32
+    flange_bolt_circle_mm: 64
+    mounting_hole_diameter_mm: 6.6
+    mounting_hole_counterbore_mm: 11
+    mounting_hole_depth_mm: 6.5
+    oil_hole: M8x1
+    rigidity_kgf_per_um: 32
+  status: active
+- sku: BS40-8-4.762-4
+  name: Ball screw 40×8 — ball Ø4.762, 4 circuits
+  specs:
+    screw_diameter_mm: 40
+    lead_mm: 8
+    ball_diameter_mm: 4.762
+    circuit_count: 4
+    dynamic_load_capacity_kgf: 2330
+    static_load_capacity_kgf: 5640
+    nut_outer_diameter_mm: 77
+    nut_length_mm: 43
+    rigidity_kgf_per_um: 32
+  status: active
+- sku: BS40-10-6.35-3
+  name: Ball screw 40×10 — ball Ø6.35, 3 circuits
+  specs:
+    screw_diameter_mm: 40
+    lead_mm: 10
+    ball_diameter_mm: 6.35
+    circuit_count: 3
+    dynamic_load_capacity_kgf: 2605
+    static_load_capacity_kgf: 5310
+    nut_outer_diameter_mm: 54
+    nut_length_mm: 80
+    flange_diameter_mm: 88
+    flange_thickness_mm: 16
+    flange_width_mm: 70
+    flange_center_hole_mm: 34
+    flange_bolt_circle_mm: 68
+    mounting_hole_diameter_mm: 9
+    mounting_hole_counterbore_mm: 14
+    mounting_hole_depth_mm: 8.5
+    oil_hole: M8x1
+    rigidity_kgf_per_um: 33
+  status: active
+- sku: BS40-10-6.35-4
+  name: Ball screw 40×10 — ball Ø6.35, 4 circuits
+  specs:
+    screw_diameter_mm: 40
+    lead_mm: 10
+    ball_diameter_mm: 6.35
+    circuit_count: 4
+    dynamic_load_capacity_kgf: 3340
+    static_load_capacity_kgf: 7080
+    nut_outer_diameter_mm: 90
+    nut_length_mm: 45
+    rigidity_kgf_per_um: 32
+  status: active

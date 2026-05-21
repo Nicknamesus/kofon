@@ -1,0 +1,34 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/36.html
+# Review before promoting to seed/product_types/pwzd.yaml
+# Notes: The table header says "输出相矩" (output torque) in Nm, "传动比" (ratio) with two slash-separated values per row (e.g. 80/320), "推荐电机" (recommended motor) in kW, "重量" (weight) in kg, "加油量" (oil volume) in L. Each row lists two ratios sharing the same torque, motor, weight, and oil volume. I expanded each row into two SKUs (one per ratio). The PWZD680 row only shows one ratio (320). The -P suffix models are listed separately with identical specs — I created them as variant "P". The table note says output torque varies with ratio and values are for reference only; I used the stated torque as-is. No backlash, efficiency, input speed, or dimensional data was available on this page. The "标准尺寸" (standard dimensions) section had no visible table in the extracted text. The PDF datasheet link is included but no CAD URL was found.
+code: pwzd
+name: PWZD Series Planetary Gearbox
+family: Planetary gearbox
+description: PWZD series planetary gearboxes are heavy-duty drives designed for tunnel
+  boring, pipe jacking, and other non-excavation construction machinery. They feature
+  carburized and ground sun/planet gears, nitrided ring gears, a motor-direct input
+  design, and German-standard internal spline outputs. The housing is ultra-compact
+  for confined spaces, and the load capacity exceeds that of standard planetary gearboxes
+  by over 20%.
+spec_schema:
+  model:
+    type: string
+    label: Model
+  output_torque_nm:
+    type: number
+    label: Output torque (Nm)
+  ratio:
+    type: string
+    label: Ratio
+  recommended_motor_kw:
+    type: string
+    label: Recommended motor (kW)
+  weight_kg:
+    type: number
+    label: Weight (kg)
+  oil_volume_l:
+    type: number
+    label: Oil volume (L)
+  variant:
+    type: string
+    label: Variant

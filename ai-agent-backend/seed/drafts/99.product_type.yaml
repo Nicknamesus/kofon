@@ -1,0 +1,46 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/99.html
+# Review before promoting to seed/product_types/tkz_series.yaml
+# Notes: The page is a product detail page for the TKZ060 tightening gearbox (TKZ型拧紧机-TKZ060). However, the "技术参数" (Technical Parameters) section appears to be empty in the scraped text — no numeric specs (torque, ratio, backlash, speed, weight, dimensions) were captured. The page mentions a PDF download ("柠紧机系列.pdf") which likely contains the actual spec table. Only the model code TKZ060 is identifiable. No ratios, stages, or torque values are available from the scraped text. A single SKU is created with null specs; the reviewer should consult the PDF or the live page for the technical data table.
+code: tkz_series
+name: TKZ Series
+family: Planetary gearbox
+description: TKZ series tightening gearboxes (拧紧机) designed for high-speed, high-impact
+  tightening applications. Features advanced wear-resistant materials integrated with
+  planetary gear trains, customized gear profiles for impact resistance, special bearings
+  capable of multi-directional load under tightening shocks, and optional built-in
+  torque and displacement sensors for torque visualization. Output shaft uses high-strength
+  special materials with heat treatment for impact and wear resistance.
+spec_schema:
+  model:
+    type: string
+    label: Model
+  stage:
+    type: string
+    label: Stage
+  ratio:
+    type: string
+    label: Ratio
+  nominal_torque_nm:
+    type: number
+    label: Nominal torque (Nm)
+  peak_torque_nm:
+    type: number
+    label: Peak torque (Nm)
+  backlash_arcmin:
+    type: number
+    label: Backlash (arcmin)
+  input_speed_rpm_max:
+    type: integer
+    label: Max input speed (rpm)
+  efficiency_pct:
+    type: number
+    label: Efficiency (%)
+  weight_kg:
+    type: number
+    label: Weight (kg)
+  frame_size_mm:
+    type: string
+    label: Frame size (mm)
+  variant:
+    type: string
+    label: Variant

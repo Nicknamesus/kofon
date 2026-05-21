@@ -1,0 +1,77 @@
+# Promoted from 2 draft(s) under seed/drafts/.
+# Sources: 112.product_type, 85.product_type
+code: zf_s_series
+name: ZF-S Series
+family: Planetary gearbox
+description: 'ZF-S two-stage planetary gearbox series, designed for machine tool spindle
+  drives. Suitable for lathes (horizontal B5) and vertical machining centers (vertical
+  V1), excelling in low-speed high-torque applications. Features coaxial output, helical
+  gear design for low noise, low backlash, high radial load capacity, and 24V DC shift-by-wire
+  actuation. Available in four frame sizes: 2S250, 2S300, 2S450, 2S600.'
+spec_schema:
+  frame_size:
+    type: string
+    label: Frame size
+  ratio:
+    type: number
+    label: Ratio i
+  motor_center_height_mm:
+    type: integer
+    label: Motor center height (mm)
+  nominal_input_torque_nm:
+    type: number
+    label: Nominal input torque (Nm)
+  nominal_output_torque_nm:
+    type: number
+    label: Nominal output torque (Nm)
+  max_acceleration_torque_nm:
+    type: number
+    label: Max acceleration torque (Nm)
+  max_axial_force_n:
+    type: integer
+    label: Max axial force (N)
+  rated_power_kw:
+    type: number
+    label: Rated power (kW)
+  rated_speed_rpm:
+    type: integer
+    label: Rated speed (rpm)
+  max_speed_geared_rpm:
+    type: integer
+    label: Max speed (geared, rpm)
+  max_speed_direct_drive_rpm:
+    type: integer
+    label: Max speed direct drive i=1 (rpm)
+  backlash_arcmin:
+    type: number
+    label: Backlash (arcmin)
+  output_moment_of_inertia_kg_cm2:
+    type: number
+    label: Output moment of inertia (kg·cm²)
+  oil_volume_dm3:
+    type: number
+    label: Oil volume (dm³)
+  weight_kg:
+    type: number
+    label: Weight (kg)
+  variant:
+    type: string
+    label: Variant
+  model:
+    type: string
+    label: Model
+  rated_input_torque_nm:
+    type: integer
+    label: Rated input torque (Nm)
+  output_torque_nm:
+    type: integer
+    label: Output torque (Nm)
+  max_speed_rpm:
+    type: integer
+    label: Max speed (rpm, i≠1)
+  direct_drive_speed_rpm:
+    type: integer
+    label: Direct drive max speed (rpm, i=1)
+  output_inertia_kgcm2:
+    type: integer
+    label: Output moment of inertia (kg·cm²)

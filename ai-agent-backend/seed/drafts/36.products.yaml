@@ -1,0 +1,360 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/36.html
+# Review before promoting to seed/products/pwzd.yaml
+product_type_code: pwzd
+products:
+- sku: PWZD300-80
+  name: PWZD300 — Ratio 80
+  specs:
+    model: PWZD300
+    output_torque_nm: 6400
+    ratio: '80'
+    recommended_motor_kw: '75'
+    weight_kg: 90
+    oil_volume_l: 3
+  status: active
+- sku: PWZD300-320
+  name: PWZD300 — Ratio 320
+  specs:
+    model: PWZD300
+    output_torque_nm: 6400
+    ratio: '320'
+    recommended_motor_kw: '75'
+    weight_kg: 90
+    oil_volume_l: 3
+  status: active
+- sku: PWZD350-200
+  name: PWZD350 — Ratio 200
+  specs:
+    model: PWZD350
+    output_torque_nm: 13700
+    ratio: '200'
+    recommended_motor_kw: '11'
+    weight_kg: 150
+    oil_volume_l: 6
+  status: active
+- sku: PWZD350-320
+  name: PWZD350 — Ratio 320
+  specs:
+    model: PWZD350
+    output_torque_nm: 13700
+    ratio: '320'
+    recommended_motor_kw: '11'
+    weight_kg: 150
+    oil_volume_l: 6
+  status: active
+- sku: PWZD410-192
+  name: PWZD410 — Ratio 192
+  specs:
+    model: PWZD410
+    output_torque_nm: 22600
+    ratio: '192'
+    recommended_motor_kw: '15'
+    weight_kg: 270
+    oil_volume_l: 9
+  status: active
+- sku: PWZD410-295
+  name: PWZD410 — Ratio 295
+  specs:
+    model: PWZD410
+    output_torque_nm: 22600
+    ratio: '295'
+    recommended_motor_kw: '15'
+    weight_kg: 270
+    oil_volume_l: 9
+  status: active
+- sku: PWZD450-245
+  name: PWZD450 — Ratio 245
+  specs:
+    model: PWZD450
+    output_torque_nm: 36700
+    ratio: '245'
+    recommended_motor_kw: 18.5/22
+    weight_kg: 300
+    oil_volume_l: 13
+  status: active
+- sku: PWZD450-320
+  name: PWZD450 — Ratio 320
+  specs:
+    model: PWZD450
+    output_torque_nm: 36700
+    ratio: '320'
+    recommended_motor_kw: 18.5/22
+    weight_kg: 300
+    oil_volume_l: 13
+  status: active
+- sku: PWZD490-252
+  name: PWZD490 — Ratio 252
+  specs:
+    model: PWZD490
+    output_torque_nm: 45000
+    ratio: '252'
+    recommended_motor_kw: '30'
+    weight_kg: 450
+    oil_volume_l: 15
+  status: active
+- sku: PWZD490-320
+  name: PWZD490 — Ratio 320
+  specs:
+    model: PWZD490
+    output_torque_nm: 45000
+    ratio: '320'
+    recommended_motor_kw: '30'
+    weight_kg: 450
+    oil_volume_l: 15
+  status: active
+- sku: PWZD560-225
+  name: PWZD560 — Ratio 225
+  specs:
+    model: PWZD560
+    output_torque_nm: 65000
+    ratio: '225'
+    recommended_motor_kw: '37'
+    weight_kg: 567
+    oil_volume_l: 20
+  status: active
+- sku: PWZD560-320
+  name: PWZD560 — Ratio 320
+  specs:
+    model: PWZD560
+    output_torque_nm: 65000
+    ratio: '320'
+    recommended_motor_kw: '37'
+    weight_kg: 567
+    oil_volume_l: 20
+  status: active
+- sku: PWZD610-320
+  name: PWZD610 — Ratio 320
+  specs:
+    model: PWZD610
+    output_torque_nm: 85000
+    ratio: '320'
+    recommended_motor_kw: '37'
+    weight_kg: 730
+    oil_volume_l: 28
+  status: active
+- sku: PWZD610-200
+  name: PWZD610 — Ratio 200
+  specs:
+    model: PWZD610
+    output_torque_nm: 85000
+    ratio: '200'
+    recommended_motor_kw: '37'
+    weight_kg: 730
+    oil_volume_l: 28
+  status: active
+- sku: PWZD680-320
+  name: PWZD680 — Ratio 320
+  specs:
+    model: PWZD680
+    output_torque_nm: 120000
+    ratio: '320'
+    recommended_motor_kw: '45'
+    weight_kg: 950
+    oil_volume_l: 40
+  status: active
+- sku: PWZD710-320
+  name: PWZD710 — Ratio 320
+  specs:
+    model: PWZD710
+    output_torque_nm: 130000
+    ratio: '320'
+    recommended_motor_kw: '55'
+    weight_kg: 1085
+    oil_volume_l: 46
+  status: active
+- sku: PWZD810-250
+  name: PWZD810 — Ratio 250
+  specs:
+    model: PWZD810
+    output_torque_nm: 170000
+    ratio: '250'
+    recommended_motor_kw: 75/90
+    weight_kg: 1580
+    oil_volume_l: 60
+  status: active
+- sku: PWZD870-200
+  name: PWZD870 — Ratio 200
+  specs:
+    model: PWZD870
+    output_torque_nm: 220000
+    ratio: '200'
+    recommended_motor_kw: '110'
+    weight_kg: 2000
+    oil_volume_l: 75
+  status: active
+- sku: PWZD350-P-200
+  name: PWZD350-P — Ratio 200
+  specs:
+    model: PWZD350
+    output_torque_nm: 13700
+    ratio: '200'
+    recommended_motor_kw: '11'
+    weight_kg: 150
+    oil_volume_l: 6
+    variant: P
+  status: active
+- sku: PWZD350-P-320
+  name: PWZD350-P — Ratio 320
+  specs:
+    model: PWZD350
+    output_torque_nm: 13700
+    ratio: '320'
+    recommended_motor_kw: '11'
+    weight_kg: 150
+    oil_volume_l: 6
+    variant: P
+  status: active
+- sku: PWZD410-P-192
+  name: PWZD410-P — Ratio 192
+  specs:
+    model: PWZD410
+    output_torque_nm: 22600
+    ratio: '192'
+    recommended_motor_kw: '15'
+    weight_kg: 270
+    oil_volume_l: 9
+    variant: P
+  status: active
+- sku: PWZD410-P-295
+  name: PWZD410-P — Ratio 295
+  specs:
+    model: PWZD410
+    output_torque_nm: 22600
+    ratio: '295'
+    recommended_motor_kw: '15'
+    weight_kg: 270
+    oil_volume_l: 9
+    variant: P
+  status: active
+- sku: PWZD450-P-245
+  name: PWZD450-P — Ratio 245
+  specs:
+    model: PWZD450
+    output_torque_nm: 36700
+    ratio: '245'
+    recommended_motor_kw: 18.5/22
+    weight_kg: 300
+    oil_volume_l: 13
+    variant: P
+  status: active
+- sku: PWZD450-P-320
+  name: PWZD450-P — Ratio 320
+  specs:
+    model: PWZD450
+    output_torque_nm: 36700
+    ratio: '320'
+    recommended_motor_kw: 18.5/22
+    weight_kg: 300
+    oil_volume_l: 13
+    variant: P
+  status: active
+- sku: PWZD490-P-252
+  name: PWZD490-P — Ratio 252
+  specs:
+    model: PWZD490
+    output_torque_nm: 45000
+    ratio: '252'
+    recommended_motor_kw: '30'
+    weight_kg: 450
+    oil_volume_l: 15
+    variant: P
+  status: active
+- sku: PWZD490-P-320
+  name: PWZD490-P — Ratio 320
+  specs:
+    model: PWZD490
+    output_torque_nm: 45000
+    ratio: '320'
+    recommended_motor_kw: '30'
+    weight_kg: 450
+    oil_volume_l: 15
+    variant: P
+  status: active
+- sku: PWZD560-P-225
+  name: PWZD560-P — Ratio 225
+  specs:
+    model: PWZD560
+    output_torque_nm: 65000
+    ratio: '225'
+    recommended_motor_kw: '37'
+    weight_kg: 567
+    oil_volume_l: 20
+    variant: P
+  status: active
+- sku: PWZD560-P-320
+  name: PWZD560-P — Ratio 320
+  specs:
+    model: PWZD560
+    output_torque_nm: 65000
+    ratio: '320'
+    recommended_motor_kw: '37'
+    weight_kg: 567
+    oil_volume_l: 20
+    variant: P
+  status: active
+- sku: PWZD610-P-320
+  name: PWZD610-P — Ratio 320
+  specs:
+    model: PWZD610
+    output_torque_nm: 85000
+    ratio: '320'
+    recommended_motor_kw: '37'
+    weight_kg: 730
+    oil_volume_l: 28
+    variant: P
+  status: active
+- sku: PWZD610-P-200
+  name: PWZD610-P — Ratio 200
+  specs:
+    model: PWZD610
+    output_torque_nm: 85000
+    ratio: '200'
+    recommended_motor_kw: '37'
+    weight_kg: 730
+    oil_volume_l: 28
+    variant: P
+  status: active
+- sku: PWZD680-P-320
+  name: PWZD680-P — Ratio 320
+  specs:
+    model: PWZD680
+    output_torque_nm: 120000
+    ratio: '320'
+    recommended_motor_kw: '45'
+    weight_kg: 950
+    oil_volume_l: 40
+    variant: P
+  status: active
+- sku: PWZD710-P-320
+  name: PWZD710-P — Ratio 320
+  specs:
+    model: PWZD710
+    output_torque_nm: 130000
+    ratio: '320'
+    recommended_motor_kw: '55'
+    weight_kg: 1085
+    oil_volume_l: 46
+    variant: P
+  status: active
+- sku: PWZD810-P-250
+  name: PWZD810-P — Ratio 250
+  specs:
+    model: PWZD810
+    output_torque_nm: 170000
+    ratio: '250'
+    recommended_motor_kw: 75/90
+    weight_kg: 1580
+    oil_volume_l: 60
+    variant: P
+  status: active
+- sku: PWZD870-P-200
+  name: PWZD870-P — Ratio 200
+  specs:
+    model: PWZD870
+    output_torque_nm: 220000
+    ratio: '200'
+    recommended_motor_kw: '110'
+    weight_kg: 2000
+    oil_volume_l: 75
+    variant: P
+  status: active

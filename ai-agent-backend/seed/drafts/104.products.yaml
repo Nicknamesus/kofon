@@ -1,0 +1,12 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/104.html
+# Review before promoting to seed/products/tkz_series.yaml
+product_type_code: tkz_series
+products:
+- sku: TKZ075
+  name: TKZ075 — Tightening Unit
+  specs:
+    model: TKZ075
+    stage: '1'
+    ratio: unknown
+    frame_size_mm: '75'
+  status: active

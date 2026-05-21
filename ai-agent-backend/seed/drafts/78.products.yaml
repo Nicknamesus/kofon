@@ -1,0 +1,259 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/78.html
+# Review before promoting to seed/products/kbd_mc_series.yaml
+product_type_code: kbd_mc_series
+products:
+- sku: KBD-MC-14-50
+  name: KBD-MC-14 — 50:1
+  specs:
+    frame_size_mm: 14
+    ratio: 50
+    nominal_torque_nm: 3.7
+    peak_torque_nm: 12
+    max_average_load_torque_nm: 4.8
+    max_instant_torque_nm: 24
+    max_input_speed_rpm: 5000
+    max_average_input_speed_rpm: 3000
+    transmission_accuracy_arcmin: 1.5
+    hysteresis_arcmin: 1
+    lost_motion_arcmin: 1
+    repeatability_arcmin: 0.1
+    start_torque_mnm: 62
+  status: active
+- sku: KBD-MC-14-100
+  name: KBD-MC-14 — 100:1
+  specs:
+    frame_size_mm: 14
+    ratio: 100
+    nominal_torque_nm: 5.4
+    peak_torque_nm: 19
+    max_average_load_torque_nm: 7.7
+    max_instant_torque_nm: 35
+    max_input_speed_rpm: 5000
+    max_average_input_speed_rpm: 3000
+    transmission_accuracy_arcmin: 1.5
+    hysteresis_arcmin: 1
+    lost_motion_arcmin: 1
+    repeatability_arcmin: 0.1
+    start_torque_mnm: 50
+  status: active
+- sku: KBD-MC-14-160
+  name: KBD-MC-14 — 160:1
+  specs:
+    frame_size_mm: 14
+    ratio: 160
+    nominal_torque_nm: 11
+    peak_torque_nm: 23
+    max_average_load_torque_nm: 18
+    max_instant_torque_nm: 48
+    max_input_speed_rpm: 5000
+    max_average_input_speed_rpm: 3000
+    transmission_accuracy_arcmin: 1.5
+    hysteresis_arcmin: 1
+    lost_motion_arcmin: 1
+    repeatability_arcmin: 0.1
+    start_torque_mnm: 48
+  status: active
+- sku: KBD-MC-17-50
+  name: KBD-MC-17 — 50:1
+  specs:
+    frame_size_mm: 17
+    ratio: 50
+    nominal_torque_nm: 16
+    peak_torque_nm: 37
+    max_average_load_torque_nm: 27
+    max_instant_torque_nm: 71
+    max_input_speed_rpm: 5000
+    max_average_input_speed_rpm: 3000
+    transmission_accuracy_arcmin: 1.5
+    hysteresis_arcmin: 1
+    lost_motion_arcmin: 1
+    repeatability_arcmin: 0.1
+    start_torque_mnm: 190
+  status: active
+- sku: KBD-MC-17-100
+  name: KBD-MC-17 — 100:1
+  specs:
+    frame_size_mm: 17
+    ratio: 100
+    nominal_torque_nm: 28
+    peak_torque_nm: 57
+    max_average_load_torque_nm: 34
+    max_instant_torque_nm: 95
+    max_input_speed_rpm: 5000
+    max_average_input_speed_rpm: 3000
+    transmission_accuracy_arcmin: 1.5
+    hysteresis_arcmin: 1
+    lost_motion_arcmin: 1
+    repeatability_arcmin: 0.1
+    start_torque_mnm: 160
+  status: active
+- sku: KBD-MC-17-160
+  name: KBD-MC-17 — 160:1
+  specs:
+    frame_size_mm: 17
+    ratio: 160
+    nominal_torque_nm: 47
+    peak_torque_nm: 110
+    max_average_load_torque_nm: 75
+    max_instant_torque_nm: 184
+    max_input_speed_rpm: 5000
+    max_average_input_speed_rpm: 3000
+    transmission_accuracy_arcmin: 1.5
+    hysteresis_arcmin: 1
+    lost_motion_arcmin: 1
+    repeatability_arcmin: 0.1
+    start_torque_mnm: 220
+  status: active
+- sku: KBD-MC-20-50
+  name: KBD-MC-20 — 50:1
+  specs:
+    frame_size_mm: 20
+    ratio: 50
+    nominal_torque_nm: 17
+    peak_torque_nm: 39
+    max_average_load_torque_nm: 24
+    max_instant_torque_nm: 69
+    max_input_speed_rpm: 5000
+    max_average_input_speed_rpm: 3000
+    transmission_accuracy_arcmin: 1
+    hysteresis_arcmin: 1
+    lost_motion_arcmin: 1
+    repeatability_arcmin: 0.1
+    start_torque_mnm: 250
+  status: active
+- sku: KBD-MC-20-100
+  name: KBD-MC-20 — 100:1
+  specs:
+    frame_size_mm: 20
+    ratio: 100
+    nominal_torque_nm: 34
+    peak_torque_nm: 95
+    max_average_load_torque_nm: 160
+    max_instant_torque_nm: 160
+    max_input_speed_rpm: 5000
+    max_average_input_speed_rpm: 3000
+    transmission_accuracy_arcmin: 1
+    hysteresis_arcmin: 1
+    lost_motion_arcmin: 1
+    repeatability_arcmin: 0.1
+    start_torque_mnm: 230
+  status: active
+- sku: KBD-MC-20-160
+  name: KBD-MC-20 — 160:1
+  specs:
+    frame_size_mm: 20
+    ratio: 160
+    nominal_torque_nm: 47
+    peak_torque_nm: 123
+    max_average_load_torque_nm: 75
+    max_instant_torque_nm: 204
+    max_input_speed_rpm: 5000
+    max_average_input_speed_rpm: 3000
+    transmission_accuracy_arcmin: 1
+    hysteresis_arcmin: 1
+    lost_motion_arcmin: 1
+    repeatability_arcmin: 0.1
+    start_torque_mnm: 220
+  status: active
+- sku: KBD-MC-25-50
+  name: KBD-MC-25 — 50:1
+  specs:
+    frame_size_mm: 25
+    ratio: 50
+    nominal_torque_nm: 27
+    peak_torque_nm: 69
+    max_average_load_torque_nm: 38
+    max_instant_torque_nm: 127
+    max_input_speed_rpm: 5000
+    max_average_input_speed_rpm: 3000
+    transmission_accuracy_arcmin: 1
+    hysteresis_arcmin: 1
+    lost_motion_arcmin: 1
+    repeatability_arcmin: 0.1
+    start_torque_mnm: 390
+  status: active
+- sku: KBD-MC-25-100
+  name: KBD-MC-25 — 100:1
+  specs:
+    frame_size_mm: 25
+    ratio: 100
+    nominal_torque_nm: 96
+    peak_torque_nm: 233
+    max_average_load_torque_nm: 151
+    max_instant_torque_nm: 420
+    max_input_speed_rpm: 5000
+    max_average_input_speed_rpm: 3000
+    transmission_accuracy_arcmin: 1
+    hysteresis_arcmin: 1
+    lost_motion_arcmin: 1
+    repeatability_arcmin: 0.1
+    start_torque_mnm: 360
+  status: active
+- sku: KBD-MC-25-160
+  name: KBD-MC-25 — 160:1
+  specs:
+    frame_size_mm: 25
+    ratio: 160
+    nominal_torque_nm: 96
+    peak_torque_nm: 261
+    max_average_load_torque_nm: 151
+    max_instant_torque_nm: 445
+    max_input_speed_rpm: 5000
+    max_average_input_speed_rpm: 3000
+    transmission_accuracy_arcmin: 1
+    hysteresis_arcmin: 1
+    lost_motion_arcmin: 1
+    repeatability_arcmin: 0.1
+    start_torque_mnm: 340
+  status: active
+- sku: KBD-MC-32-50
+  name: KBD-MC-32 — 50:1
+  specs:
+    frame_size_mm: 32
+    ratio: 50
+    nominal_torque_nm: 53
+    peak_torque_nm: 151
+    max_average_load_torque_nm: 75
+    max_instant_torque_nm: 268
+    max_input_speed_rpm: 5000
+    max_average_input_speed_rpm: 3000
+    transmission_accuracy_arcmin: 1
+    hysteresis_arcmin: 1
+    lost_motion_arcmin: 1
+    repeatability_arcmin: 0.1
+    start_torque_mnm: 600
+  status: active
+- sku: KBD-MC-32-100
+  name: KBD-MC-32 — 100:1
+  specs:
+    frame_size_mm: 32
+    ratio: 100
+    nominal_torque_nm: 96
+    peak_torque_nm: 233
+    max_average_load_torque_nm: 151
+    max_instant_torque_nm: 420
+    max_input_speed_rpm: 5000
+    max_average_input_speed_rpm: 3000
+    transmission_accuracy_arcmin: 1
+    hysteresis_arcmin: 1
+    lost_motion_arcmin: 1
+    repeatability_arcmin: 0.1
+    start_torque_mnm: 550
+  status: active
+- sku: KBD-MC-32-160
+  name: KBD-MC-32 — 160:1
+  specs:
+    frame_size_mm: 32
+    ratio: 160
+    nominal_torque_nm: 96
+    peak_torque_nm: 261
+    max_average_load_torque_nm: 151
+    max_instant_torque_nm: 445
+    max_input_speed_rpm: 5000
+    max_average_input_speed_rpm: 3000
+    transmission_accuracy_arcmin: 1
+    hysteresis_arcmin: 1
+    lost_motion_arcmin: 1
+    repeatability_arcmin: 0.1
+    start_torque_mnm: 500
+  status: active

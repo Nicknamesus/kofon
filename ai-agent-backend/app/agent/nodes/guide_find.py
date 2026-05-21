@@ -24,30 +24,60 @@ from typing import Any
 
 from langchain_core.messages import AIMessage, HumanMessage, SystemMessage
 from pydantic import BaseModel, Field
+from sqlalchemy import select
+from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.agent.llm import get_chat_llm
 from app.agent.state import AgentState
 from app.db import SessionLocal
+from app.models import ProductType
 from app.schemas.tools import ProductOut, SearchProductsFilters
 from app.tools import search_products
 
-SYSTEM = """You are the Guide-Find node of a B2B motion-components chatbot.
+SYSTEM_TEMPLATE = """You are the Guide-Find node of a B2B motion-components chatbot.
 Your job is to translate the user's free-form description of what they
 need into a structured SearchProductsFilters object that the search tool
 can consume.
 
 Available filters (all optional):
-  family                — product family code: 'caesarplanetary'
-  frame_size_mm         — 60 | 90 | 140
+  family                — product family code (one of the catalog codes below)
+  frame_size_mm         — number (catalog-specific; common values vary by family)
   min_nominal_torque_nm — number
   max_backlash_arcmin   — number
-  variant               — 'HP' (low backlash) | 'HT' (high torque)
+  variant               — family-specific variant tag (e.g. 'HP' / 'HT' on caesarplanetary)
+
+Product family codes available in the catalog (use one of these literally
+when you set `family`):
+{families_block}
 
 Set ready_to_search=true only when there's enough signal to return a
 useful shortlist (1-2 filters that meaningfully narrow). If you need
 more info, set ready_to_search=false and put ONE clarifying question
 into follow_up_question. Never make up facts the user didn't say.
 """
+
+
+async def _build_system_prompt(session: AsyncSession) -> str:
+    """Format SYSTEM_TEMPLATE with the live catalog.
+
+    Loading from DB on every call keeps the LLM accurate as new
+    families ship — no stale hardcoded list to maintain. The query is
+    tiny (~30 rows of (code, name)) and the result goes into one
+    SystemMessage that the LLM caches across turns anyway."""
+    rows = (
+        await session.execute(
+            select(ProductType.code, ProductType.name, ProductType.family).order_by(
+                ProductType.code
+            )
+        )
+    ).all()
+    if not rows:
+        families_block = "  (catalog is empty — ask the user what they need)"
+    else:
+        families_block = "\n".join(
+            f"  {code:33s} — {name} [{family}]" for code, name, family in rows
+        )
+    return SYSTEM_TEMPLATE.format(families_block=families_block)
 
 
 class _Extraction(BaseModel):
@@ -60,10 +90,16 @@ async def run(state: AgentState) -> dict:
     messages = state.get("messages", [])
     existing_filters = (state.get("slots") or {}).get("filters") or {}
 
+    # Build the SYSTEM prompt with the current catalog so the LLM knows
+    # which family codes are valid. Short-lived session — released before
+    # the LLM call so we don't hold a pool connection during the slow hop.
+    async with SessionLocal() as session:
+        system_prompt = await _build_system_prompt(session)
+
     # Extract filters from the full conversation so the LLM sees prior turns.
     llm = get_chat_llm().with_structured_output(_Extraction)
     extraction: _Extraction = await llm.ainvoke(
-        [SystemMessage(content=SYSTEM), *messages]
+        [SystemMessage(content=system_prompt), *messages]
     )
 
     # Merge: existing filters (e.g. seeded by presales) win unless the LLM

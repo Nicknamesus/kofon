@@ -1,0 +1,50 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/106.html
+# Review before promoting to seed/product_types/pl_tightening_machine.yaml
+# Notes: The page only shows the PL050 model with no detailed technical specification table (torque, backlash, speed, weight, etc.) visible in the extracted text. The "技术参数" (Technical Parameters) section appears to exist but its data table was not captured in the text extraction — likely rendered as images or not included. Only a note about service life (based on tightening cycle ≤13s, max torque ≤5s) was found. The "标准尺寸" (Standard Dimensions) and "资料下载" (Downloads) sections also lack extractable numeric data. I created placeholder SKUs for PL050 with common ratios (3/4/5/8/10) based on typical planetary gearbox conventions, but actual specs (torque, backlash, etc.) are missing from the page text. The reviewer should check the PDF datasheet ("柠紧机系列.pdf") and the actual technical parameter table on the live page for real values.
+code: pl_tightening_machine
+name: PL型拧紧机 (PL Tightening Machine)
+family: Planetary gearbox
+description: PL series tightening machines integrate advanced wear-resistant materials
+  with planetary gear trains for high-speed wear resistance and noise reduction. Customized
+  gear trains with profile modification and tooth optimization improve impact resistance.
+  Special bearing designs handle multi-directional loads under tightening shocks.
+  Can be equipped with built-in torque and displacement sensors for torque visualization.
+  Output shaft uses high-strength special materials with heat treatment for impact
+  and wear resistance.
+spec_schema:
+  model:
+    type: string
+    label: Model
+  stage:
+    type: string
+    label: Stage
+  ratio:
+    type: string
+    label: Ratio
+  nominal_torque_nm:
+    type: number
+    label: Nominal Torque (Nm)
+  peak_torque_nm:
+    type: number
+    label: Peak Torque (Nm)
+  backlash_arcmin:
+    type: number
+    label: Backlash (arcmin)
+  input_speed_rpm_max:
+    type: integer
+    label: Max Input Speed (rpm)
+  efficiency_pct:
+    type: number
+    label: Efficiency (%)
+  weight_kg:
+    type: number
+    label: Weight (kg)
+  frame_size_mm:
+    type: string
+    label: Frame Size (mm)
+  max_tightening_torque_nm:
+    type: number
+    label: Max Tightening Torque (Nm)
+  life_cycles:
+    type: integer
+    label: Service Life (cycles)

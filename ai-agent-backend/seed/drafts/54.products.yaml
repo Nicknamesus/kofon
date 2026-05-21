@@ -1,0 +1,209 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/54.html
+# Review before promoting to seed/products/rd_series.yaml
+product_type_code: rd_series
+products:
+- sku: CDRD-6A05-A01
+  name: CDRD-6A05-A01 — 6-axis, 220V, 5.0/5.0/5.0/3.0/3.0/3.0 Arms
+  specs:
+    axis_count: 6
+    voltage_v: 220
+    axis1_rated_current_arms: 5.0
+    axis2_rated_current_arms: 5.0
+    axis3_rated_current_arms: 5.0
+    axis4_rated_current_arms: 3.0
+    axis5_rated_current_arms: 3.0
+    axis6_rated_current_arms: 3.0
+    datasheet_page: P18
+  status: active
+- sku: CDRD-6A08-A01
+  name: CDRD-6A08-A01 — 6-axis, 220V, 8.0/8.0/5.0/5.0/3.0/3.0 Arms
+  specs:
+    axis_count: 6
+    voltage_v: 220
+    axis1_rated_current_arms: 8.0
+    axis2_rated_current_arms: 8.0
+    axis3_rated_current_arms: 5.0
+    axis4_rated_current_arms: 5.0
+    axis5_rated_current_arms: 3.0
+    axis6_rated_current_arms: 3.0
+    datasheet_page: P18
+  status: active
+- sku: CDRD-6A10-A01
+  name: CDRD-6A10-A01 — 6-axis, 220V, 10.0/10.0/5.0/5.0/3.0/3.0 Arms
+  specs:
+    axis_count: 6
+    voltage_v: 220
+    axis1_rated_current_arms: 10.0
+    axis2_rated_current_arms: 10.0
+    axis3_rated_current_arms: 5.0
+    axis4_rated_current_arms: 5.0
+    axis5_rated_current_arms: 3.0
+    axis6_rated_current_arms: 3.0
+    datasheet_page: P18
+  status: active
+- sku: CDRD-6A20-AG1
+  name: CDRD-6A20-AG1 — 6-axis, 220V, 20.0/20.0/10.0/5.0/5.0/5.0 Arms
+  specs:
+    axis_count: 6
+    voltage_v: 220
+    axis1_rated_current_arms: 20.0
+    axis2_rated_current_arms: 20.0
+    axis3_rated_current_arms: 10.0
+    axis4_rated_current_arms: 5.0
+    axis5_rated_current_arms: 5.0
+    axis6_rated_current_arms: 5.0
+    datasheet_page: P22
+  status: active
+- sku: CDRD-6A25-AG2
+  name: CDRD-6A25-AG2 — 6-axis, 220V, 25.0/25.0/15.0/8.0/5.0/5.0 Arms
+  specs:
+    axis_count: 6
+    voltage_v: 220
+    axis1_rated_current_arms: 25.0
+    axis2_rated_current_arms: 25.0
+    axis3_rated_current_arms: 15.0
+    axis4_rated_current_arms: 8.0
+    axis5_rated_current_arms: 5.0
+    axis6_rated_current_arms: 5.0
+    datasheet_page: P24
+  status: active
+- sku: CDRD-6C25-BG2
+  name: CDRD-6C25-BG2 — 6-axis, 380V, 25.0/25.0/25.0/10.0/10.0/10.0 Arms
+  specs:
+    axis_count: 6
+    voltage_v: 380
+    axis1_rated_current_arms: 25.0
+    axis2_rated_current_arms: 25.0
+    axis3_rated_current_arms: 25.0
+    axis4_rated_current_arms: 10.0
+    axis5_rated_current_arms: 10.0
+    axis6_rated_current_arms: 10.0
+    datasheet_page: P28
+  status: active
+- sku: CDRD-6B35-BG2
+  name: CDRD-6B35-BG2 — 6-axis, 380V, 35.0/35.0/35.0/20.0/20.0/10.0 Arms
+  specs:
+    axis_count: 6
+    voltage_v: 380
+    axis1_rated_current_arms: 35.0
+    axis2_rated_current_arms: 35.0
+    axis3_rated_current_arms: 35.0
+    axis4_rated_current_arms: 20.0
+    axis5_rated_current_arms: 20.0
+    axis6_rated_current_arms: 10.0
+    datasheet_page: P32
+  status: active
+- sku: CDRD-4A05-A11
+  name: CDRD-4A05-A11 — 4-axis, 220V, 5.0/5.0/5.0/2.0 Arms
+  specs:
+    axis_count: 4
+    voltage_v: 220
+    axis1_rated_current_arms: 5.0
+    axis2_rated_current_arms: 5.0
+    axis3_rated_current_arms: 5.0
+    axis4_rated_current_arms: 2.0
+    datasheet_page: P36
+  status: active
+- sku: CDRD-4A08-A01
+  name: CDRD-4A08-A01 — 4-axis, 220V, 8.0/8.0/8.0/3.0 Arms
+  specs:
+    axis_count: 4
+    voltage_v: 220
+    axis1_rated_current_arms: 8.0
+    axis2_rated_current_arms: 8.0
+    axis3_rated_current_arms: 8.0
+    axis4_rated_current_arms: 3.0
+    datasheet_page: P36
+  status: active
+- sku: CDRD-4C08-A11
+  name: CDRD-4C08-A11 — 4-axis, 220V, 8.0/8.0/5.0/3.0 Arms
+  specs:
+    axis_count: 4
+    voltage_v: 220
+    axis1_rated_current_arms: 8.0
+    axis2_rated_current_arms: 8.0
+    axis3_rated_current_arms: 5.0
+    axis4_rated_current_arms: 3.0
+    datasheet_page: P36
+  status: active
+- sku: CDRD-4C10-A01
+  name: CDRD-4C10-A01 — 4-axis, 220V, 10.0/10.0/10.0/5.0 Arms
+  specs:
+    axis_count: 4
+    voltage_v: 220
+    axis1_rated_current_arms: 10.0
+    axis2_rated_current_arms: 10.0
+    axis3_rated_current_arms: 10.0
+    axis4_rated_current_arms: 5.0
+    datasheet_page: P38
+  status: active
+- sku: CDRD-4A15-AG1
+  name: CDRD-4A15-AG1 — 4-axis, 220V, 15.0/15.0/15.0/5.0 Arms
+  specs:
+    axis_count: 4
+    voltage_v: 220
+    axis1_rated_current_arms: 15.0
+    axis2_rated_current_arms: 15.0
+    axis3_rated_current_arms: 15.0
+    axis4_rated_current_arms: 5.0
+    datasheet_page: P42
+  status: active
+- sku: CDRD-4B15-AG1
+  name: CDRD-4B15-AG1 — 4-axis, 220V, 15.0/15.0/10.0/5.0 Arms
+  specs:
+    axis_count: 4
+    voltage_v: 220
+    axis1_rated_current_arms: 15.0
+    axis2_rated_current_arms: 15.0
+    axis3_rated_current_arms: 10.0
+    axis4_rated_current_arms: 5.0
+    datasheet_page: P42
+  status: active
+- sku: CDRD-4A20-AG1
+  name: CDRD-4A20-AG1 — 4-axis, 220V, 20.0/20.0/20.0/5.0 Arms
+  specs:
+    axis_count: 4
+    voltage_v: 220
+    axis1_rated_current_arms: 20.0
+    axis2_rated_current_arms: 20.0
+    axis3_rated_current_arms: 20.0
+    axis4_rated_current_arms: 5.0
+    datasheet_page: P44
+  status: active
+- sku: CDRD-4A35-BG2
+  name: CDRD-4A35-BG2 — 4-axis, 380V, 35.0/35.0/25.0/5.0 Arms
+  specs:
+    axis_count: 4
+    voltage_v: 380
+    axis1_rated_current_arms: 35.0
+    axis2_rated_current_arms: 35.0
+    axis3_rated_current_arms: 25.0
+    axis4_rated_current_arms: 5.0
+    datasheet_page: P48
+  status: active
+- sku: CDRD-2A20-AG1
+  name: CDRD-2A20-AG1 — 2-axis, 220V, 20.0/20.0 Arms
+  specs:
+    axis_count: 2
+    voltage_v: 220
+    axis1_rated_current_arms: 20.0
+    axis2_rated_current_arms: 20.0
+    datasheet_page: P52
+  status: active
+- sku: CDRD-2A20-BG1
+  name: CDRD-2A20-BG1 — 2-axis, 380V, 20.0/20.0 Arms
+  specs:
+    axis_count: 2
+    voltage_v: 380
+    axis1_rated_current_arms: 20.0
+    axis2_rated_current_arms: 20.0
+    datasheet_page: P53
+  status: active
+- sku: CDRD-1A20-BG1
+  name: CDRD-1A20-BG1 — 1-axis, 220V, 20.0 Arms
+  specs:
+    axis_count: 1
+    voltage_v: 220
+    axis1_rated_current_arms: 20.0
+    datasheet_page: P56
+  status: active

@@ -1,0 +1,56 @@
+# Promoted from 3 draft(s) under seed/drafts/.
+# Sources: 101.product_type, 102.product_type, 106.product_type
+code: pl_tightening_machine
+name: PL型拧紧机 (PL Tightening Machine)
+family: Planetary gearbox
+description: PL series tightening machines integrate advanced wear-resistant materials
+  with planetary gear trains for high-speed wear resistance and noise reduction. Features
+  include customized gear trains with profile modification and tooth optimization
+  for improved impact resistance, special bearing designs to withstand multi-directional
+  loads under tightening impacts, optional built-in torque and displacement sensors
+  for torque visualization, self-lubricating bearings in compact spaces under high
+  impact, and high-strength special-material output shafts with heat treatment for
+  impact and wear resistance.
+spec_schema:
+  model:
+    type: string
+    label: Model
+  stage:
+    type: string
+    label: Stage
+  ratio:
+    type: string
+    label: Ratio
+  nominal_torque_nm:
+    type: number
+    label: Nominal Torque (Nm)
+  peak_torque_nm:
+    type: number
+    label: Peak Torque (Nm)
+  backlash_arcmin:
+    type: number
+    label: Backlash (arcmin)
+  input_speed_rpm_max:
+    type: integer
+    label: Max Input Speed (rpm)
+  efficiency_pct:
+    type: number
+    label: Efficiency (%)
+  weight_kg:
+    type: number
+    label: Weight (kg)
+  frame_size_mm:
+    type: string
+    label: Frame Size (mm)
+  variant:
+    type: string
+    label: Variant
+  service_life_cycles:
+    type: integer
+    label: Service Life (cycles)
+  max_tightening_torque_nm:
+    type: number
+    label: Max Tightening Torque (Nm)
+  life_cycles:
+    type: integer
+    label: Service Life (cycles)

@@ -1,0 +1,41 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/98.html
+# Review before promoting to seed/product_types/tk_tightening.yaml
+# Notes: This page is a general product family overview for the TK series tightening machine. It describes features and characteristics but does NOT contain any technical specification tables (no torque values, ratios, dimensions, backlash, speeds, weights, etc.). The only downloadable file is a PDF ("柠紧机系列.pdf" — likely "Tightening Machine Series.pdf") which was not accessible for parsing. Without any numeric spec data, I cannot generate concrete SKUs. The page also lists "相关产品" (related products) like RF080, RF060, R080, R060, KPX-SY180, KPX-SY142 which are separate product lines. The product type code 'tk_tightening' is assigned for the TK family, but no products can be created from the available page content.
+code: tk_tightening
+name: TK型拧紧机 (TK Tightening Machine)
+family: Planetary gearbox
+description: TK series tightening machines integrate advanced wear-resistant materials
+  with planetary gear trains for high-speed wear resistance and noise reduction. Features
+  customized gear profiles with tooth modification for improved impact resistance,
+  special bearing designs to handle multi-directional loads from tightening impacts,
+  and optional built-in torque and displacement sensors for torque visualization.
+  Output shafts use high-strength special materials with heat treatment for enhanced
+  impact and wear resistance.
+spec_schema:
+  frame_size_mm:
+    type: string
+    label: Frame size (mm)
+  ratio:
+    type: integer
+    label: Ratio
+  nominal_torque_nm:
+    type: number
+    label: Nominal torque (Nm)
+  peak_torque_nm:
+    type: number
+    label: Peak torque (Nm)
+  backlash_arcmin:
+    type: number
+    label: Backlash (arcmin)
+  input_speed_rpm_max:
+    type: integer
+    label: Max input speed (rpm)
+  efficiency_pct:
+    type: number
+    label: Efficiency (%)
+  weight_kg:
+    type: number
+    label: Weight (kg)
+  variant:
+    type: string
+    label: Variant

@@ -1,0 +1,12 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/105.html
+# Review before promoting to seed/products/tkz_series.yaml
+product_type_code: tkz_series
+products:
+- sku: TKZ120
+  name: TKZ120 — Tightening Gearbox
+  specs:
+    model: TKZ120
+    stage: '1'
+    ratio: unknown
+    frame_size_mm: '120'
+  status: active

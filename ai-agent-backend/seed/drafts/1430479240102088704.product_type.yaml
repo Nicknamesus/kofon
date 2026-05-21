@@ -1,0 +1,70 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/1430479240102088704.html
+# Review before promoting to seed/product_types/kr110_23.yaml
+# Notes: Single SKU page for the KR110-23 joint module. All specs taken directly from the '技术参数' table. The product appears to be an integrated joint module (likely harmonic drive based) — classified under 'Harmonic drive / strain wave' family. The datasheet PDF link is relative ('伺服行星关节模组20250914.pdf') but the page URL was used as datasheet_url since no absolute URL was available. The 'frame_size_mm' is listed as '110×71' (outer diameter × thickness). Backlash is ≤8 arcmin. Built-in driver is listed as '可选择' (optional).
+code: kr110_23
+name: KR110-23 Joint Module
+family: Harmonic drive / strain wave
+description: The KR110-23 is an integrated joint module from Kofon featuring dual
+  encoders for closed-loop control, eliminating transmission chain errors. It supports
+  multiple control modes including force-position hybrid, servo position, servo speed,
+  and current (torque) control. Equipped with adaptive control technology, it reduces
+  the need for frequent parameter tuning. The module includes over-temperature, over-voltage,
+  and overload protection, and supports non-standard customization.
+spec_schema:
+  ratio:
+    type: integer
+    label: Reducer ratio
+  rated_voltage_v:
+    type: number
+    label: Rated Voltage (V)
+  rated_current_a:
+    type: number
+    label: Rated Phase Current (A)
+  rated_power_w:
+    type: number
+    label: Rated Power (W)
+  rated_speed_rpm:
+    type: number
+    label: Rated Speed (RPM)
+  nominal_torque_nm:
+    type: number
+    label: Rated Torque (Nm)
+  peak_current_a:
+    type: number
+    label: Peak Phase Current (A)
+  peak_torque_nm:
+    type: number
+    label: Peak Torque (Nm)
+  peak_speed_rpm:
+    type: number
+    label: Peak Speed (RPM)
+  efficiency_pct:
+    type: number
+    label: Efficiency (%)
+  power_density_w_kg:
+    type: number
+    label: Power Density (W/Kg)
+  torque_constant_nm_per_a:
+    type: number
+    label: Torque constant (Nm/A)
+  weight_kg:
+    type: number
+    label: Weight (kg)
+  backlash_arcmin:
+    type: number
+    label: Backlash (Arcmin)
+  frame_size_mm:
+    type: string
+    label: Motor Size (mm)
+  communication_protocol:
+    type: string
+    label: Communication method
+  communication_baud_rate:
+    type: string
+    label: Communication baud rate
+  double_encoder:
+    type: string
+    label: Double Encoder
+  built_in_driver:
+    type: string
+    label: Built-in driver

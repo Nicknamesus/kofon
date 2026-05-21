@@ -1,0 +1,648 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/26.html
+# Review before promoting to seed/products/w10_micro.yaml
+product_type_code: w10_micro
+products:
+- sku: W10-08-1-3.9
+  name: W10-08 — 1-stage, 3.9:1
+  specs:
+    frame_size_mm: 8
+    stages: 1
+    ratio: 3.9
+    nominal_torque_nm: 0.01
+    peak_torque_nm: 0.02
+    input_speed_rpm_max: 12000
+    input_speed_instantaneous_rpm_max: 15000
+    efficiency_pct: 90
+    backlash_arcmin: 1.5
+    weight_kg: 0.0067
+    max_motor_shaft_diameter_mm: 1
+    length_mm: 7.2
+    max_continuous_power_w: 1.6
+    max_instantaneous_power_w: 2
+    moment_of_inertia_gcm2: 0.005
+    max_axial_load_n: 5
+    max_radial_load_n: 520
+    temperature_range_c: -15 to +80
+    temperature_range_extended_c: -40 to +90
+  status: active
+- sku: W10-08-1-5.3
+  name: W10-08 — 1-stage, 5.3:1
+  specs:
+    frame_size_mm: 8
+    stages: 1
+    ratio: 5.3
+    nominal_torque_nm: 0.01
+    peak_torque_nm: 0.02
+    input_speed_rpm_max: 12000
+    input_speed_instantaneous_rpm_max: 15000
+    efficiency_pct: 90
+    backlash_arcmin: 1.5
+    weight_kg: 0.0067
+    max_motor_shaft_diameter_mm: 1
+    length_mm: 7.2
+    max_continuous_power_w: 1.6
+    max_instantaneous_power_w: 2
+    moment_of_inertia_gcm2: 0.005
+    max_axial_load_n: 5
+    max_radial_load_n: 520
+    temperature_range_c: -15 to +80
+    temperature_range_extended_c: -40 to +90
+  status: active
+- sku: W10-08-1-6.6
+  name: W10-08 — 1-stage, 6.6:1
+  specs:
+    frame_size_mm: 8
+    stages: 1
+    ratio: 6.6
+    nominal_torque_nm: 0.01
+    peak_torque_nm: 0.02
+    input_speed_rpm_max: 12000
+    input_speed_instantaneous_rpm_max: 15000
+    efficiency_pct: 90
+    backlash_arcmin: 1.5
+    weight_kg: 0.0067
+    max_motor_shaft_diameter_mm: 1
+    length_mm: 7.2
+    max_continuous_power_w: 1.6
+    max_instantaneous_power_w: 2
+    moment_of_inertia_gcm2: 0.005
+    max_axial_load_n: 5
+    max_radial_load_n: 520
+    temperature_range_c: -15 to +80
+    temperature_range_extended_c: -40 to +90
+  status: active
+- sku: W10-08-2-16
+  name: W10-08 — 2-stage, 16:1
+  specs:
+    frame_size_mm: 8
+    stages: 2
+    ratio: 16
+    nominal_torque_nm: 0.03
+    peak_torque_nm: 0.05
+    input_speed_rpm_max: 12000
+    input_speed_instantaneous_rpm_max: 15000
+    efficiency_pct: 80
+    backlash_arcmin: 1.8
+    weight_kg: 0.0073
+    max_motor_shaft_diameter_mm: 1
+    length_mm: 10
+    max_continuous_power_w: 1.2
+    max_instantaneous_power_w: 1.5
+    moment_of_inertia_gcm2: 0.005
+    max_axial_load_n: 5
+    max_radial_load_n: 520
+    temperature_range_c: -15 to +80
+    temperature_range_extended_c: -40 to +90
+  status: active
+- sku: W10-08-2-21
+  name: W10-08 — 2-stage, 21:1
+  specs:
+    frame_size_mm: 8
+    stages: 2
+    ratio: 21
+    nominal_torque_nm: 0.03
+    peak_torque_nm: 0.05
+    input_speed_rpm_max: 12000
+    input_speed_instantaneous_rpm_max: 15000
+    efficiency_pct: 80
+    backlash_arcmin: 1.8
+    weight_kg: 0.0073
+    max_motor_shaft_diameter_mm: 1
+    length_mm: 10
+    max_continuous_power_w: 1.2
+    max_instantaneous_power_w: 1.5
+    moment_of_inertia_gcm2: 0.005
+    max_axial_load_n: 5
+    max_radial_load_n: 520
+    temperature_range_c: -15 to +80
+    temperature_range_extended_c: -40 to +90
+  status: active
+- sku: W10-08-2-26
+  name: W10-08 — 2-stage, 26:1
+  specs:
+    frame_size_mm: 8
+    stages: 2
+    ratio: 26
+    nominal_torque_nm: 0.03
+    peak_torque_nm: 0.05
+    input_speed_rpm_max: 12000
+    input_speed_instantaneous_rpm_max: 15000
+    efficiency_pct: 80
+    backlash_arcmin: 1.8
+    weight_kg: 0.0073
+    max_motor_shaft_diameter_mm: 1
+    length_mm: 10
+    max_continuous_power_w: 1.2
+    max_instantaneous_power_w: 1.5
+    moment_of_inertia_gcm2: 0.005
+    max_axial_load_n: 5
+    max_radial_load_n: 520
+    temperature_range_c: -15 to +80
+    temperature_range_extended_c: -40 to +90
+  status: active
+- sku: W10-08-2-28
+  name: W10-08 — 2-stage, 28:1
+  specs:
+    frame_size_mm: 8
+    stages: 2
+    ratio: 28
+    nominal_torque_nm: 0.03
+    peak_torque_nm: 0.05
+    input_speed_rpm_max: 12000
+    input_speed_instantaneous_rpm_max: 15000
+    efficiency_pct: 80
+    backlash_arcmin: 1.8
+    weight_kg: 0.0073
+    max_motor_shaft_diameter_mm: 1
+    length_mm: 10
+    max_continuous_power_w: 1.2
+    max_instantaneous_power_w: 1.5
+    moment_of_inertia_gcm2: 0.005
+    max_axial_load_n: 5
+    max_radial_load_n: 520
+    temperature_range_c: -15 to +80
+    temperature_range_extended_c: -40 to +90
+  status: active
+- sku: W10-08-2-35
+  name: W10-08 — 2-stage, 35:1
+  specs:
+    frame_size_mm: 8
+    stages: 2
+    ratio: 35
+    nominal_torque_nm: 0.03
+    peak_torque_nm: 0.05
+    input_speed_rpm_max: 12000
+    input_speed_instantaneous_rpm_max: 15000
+    efficiency_pct: 80
+    backlash_arcmin: 1.8
+    weight_kg: 0.0073
+    max_motor_shaft_diameter_mm: 1
+    length_mm: 10
+    max_continuous_power_w: 1.2
+    max_instantaneous_power_w: 1.5
+    moment_of_inertia_gcm2: 0.005
+    max_axial_load_n: 5
+    max_radial_load_n: 520
+    temperature_range_c: -15 to +80
+    temperature_range_extended_c: -40 to +90
+  status: active
+- sku: W10-08-3-62
+  name: W10-08 — 3-stage, 62:1
+  specs:
+    frame_size_mm: 8
+    stages: 3
+    ratio: 62
+    nominal_torque_nm: 0.1
+    peak_torque_nm: 0.15
+    input_speed_rpm_max: 12000
+    input_speed_instantaneous_rpm_max: 15000
+    efficiency_pct: 73
+    backlash_arcmin: 2
+    weight_kg: 0.0078
+    max_motor_shaft_diameter_mm: 1
+    length_mm: 12.8
+    max_continuous_power_w: 1
+    max_instantaneous_power_w: 1.3
+    moment_of_inertia_gcm2: 0.005
+    max_axial_load_n: 5
+    max_radial_load_n: 520
+    temperature_range_c: -15 to +80
+    temperature_range_extended_c: -40 to +90
+  status: active
+- sku: W10-08-3-83
+  name: W10-08 — 3-stage, 83:1
+  specs:
+    frame_size_mm: 8
+    stages: 3
+    ratio: 83
+    nominal_torque_nm: 0.1
+    peak_torque_nm: 0.15
+    input_speed_rpm_max: 12000
+    input_speed_instantaneous_rpm_max: 15000
+    efficiency_pct: 73
+    backlash_arcmin: 2
+    weight_kg: 0.0078
+    max_motor_shaft_diameter_mm: 1
+    length_mm: 12.8
+    max_continuous_power_w: 1
+    max_instantaneous_power_w: 1.3
+    moment_of_inertia_gcm2: 0.005
+    max_axial_load_n: 5
+    max_radial_load_n: 520
+    temperature_range_c: -15 to +80
+    temperature_range_extended_c: -40 to +90
+  status: active
+- sku: W10-08-3-103
+  name: W10-08 — 3-stage, 103:1
+  specs:
+    frame_size_mm: 8
+    stages: 3
+    ratio: 103
+    nominal_torque_nm: 0.1
+    peak_torque_nm: 0.15
+    input_speed_rpm_max: 12000
+    input_speed_instantaneous_rpm_max: 15000
+    efficiency_pct: 73
+    backlash_arcmin: 2
+    weight_kg: 0.0078
+    max_motor_shaft_diameter_mm: 1
+    length_mm: 12.8
+    max_continuous_power_w: 1
+    max_instantaneous_power_w: 1.3
+    moment_of_inertia_gcm2: 0.005
+    max_axial_load_n: 5
+    max_radial_load_n: 520
+    temperature_range_c: -15 to +80
+    temperature_range_extended_c: -40 to +90
+  status: active
+- sku: W10-08-3-111
+  name: W10-08 — 3-stage, 111:1
+  specs:
+    frame_size_mm: 8
+    stages: 3
+    ratio: 111
+    nominal_torque_nm: 0.1
+    peak_torque_nm: 0.15
+    input_speed_rpm_max: 12000
+    input_speed_instantaneous_rpm_max: 15000
+    efficiency_pct: 73
+    backlash_arcmin: 2
+    weight_kg: 0.0078
+    max_motor_shaft_diameter_mm: 1
+    length_mm: 12.8
+    max_continuous_power_w: 1
+    max_instantaneous_power_w: 1.3
+    moment_of_inertia_gcm2: 0.005
+    max_axial_load_n: 5
+    max_radial_load_n: 520
+    temperature_range_c: -15 to +80
+    temperature_range_extended_c: -40 to +90
+  status: active
+- sku: W10-08-3-138
+  name: W10-08 — 3-stage, 138:1
+  specs:
+    frame_size_mm: 8
+    stages: 3
+    ratio: 138
+    nominal_torque_nm: 0.1
+    peak_torque_nm: 0.15
+    input_speed_rpm_max: 12000
+    input_speed_instantaneous_rpm_max: 15000
+    efficiency_pct: 73
+    backlash_arcmin: 2
+    weight_kg: 0.0078
+    max_motor_shaft_diameter_mm: 1
+    length_mm: 12.8
+    max_continuous_power_w: 1
+    max_instantaneous_power_w: 1.3
+    moment_of_inertia_gcm2: 0.005
+    max_axial_load_n: 5
+    max_radial_load_n: 520
+    temperature_range_c: -15 to +80
+    temperature_range_extended_c: -40 to +90
+  status: active
+- sku: W10-08-3-150
+  name: W10-08 — 3-stage, 150:1
+  specs:
+    frame_size_mm: 8
+    stages: 3
+    ratio: 150
+    nominal_torque_nm: 0.1
+    peak_torque_nm: 0.15
+    input_speed_rpm_max: 12000
+    input_speed_instantaneous_rpm_max: 15000
+    efficiency_pct: 73
+    backlash_arcmin: 2
+    weight_kg: 0.0078
+    max_motor_shaft_diameter_mm: 1
+    length_mm: 12.8
+    max_continuous_power_w: 1
+    max_instantaneous_power_w: 1.3
+    moment_of_inertia_gcm2: 0.005
+    max_axial_load_n: 5
+    max_radial_load_n: 520
+    temperature_range_c: -15 to +80
+    temperature_range_extended_c: -40 to +90
+  status: active
+- sku: W10-08-3-172
+  name: W10-08 — 3-stage, 172:1
+  specs:
+    frame_size_mm: 8
+    stages: 3
+    ratio: 172
+    nominal_torque_nm: 0.1
+    peak_torque_nm: 0.15
+    input_speed_rpm_max: 12000
+    input_speed_instantaneous_rpm_max: 15000
+    efficiency_pct: 73
+    backlash_arcmin: 2
+    weight_kg: 0.0078
+    max_motor_shaft_diameter_mm: 1
+    length_mm: 12.8
+    max_continuous_power_w: 1
+    max_instantaneous_power_w: 1.3
+    moment_of_inertia_gcm2: 0.005
+    max_axial_load_n: 5
+    max_radial_load_n: 520
+    temperature_range_c: -15 to +80
+    temperature_range_extended_c: -40 to +90
+  status: active
+- sku: W10-08-3-186
+  name: W10-08 — 3-stage, 186:1
+  specs:
+    frame_size_mm: 8
+    stages: 3
+    ratio: 186
+    nominal_torque_nm: 0.1
+    peak_torque_nm: 0.15
+    input_speed_rpm_max: 12000
+    input_speed_instantaneous_rpm_max: 15000
+    efficiency_pct: 73
+    backlash_arcmin: 2
+    weight_kg: 0.0078
+    max_motor_shaft_diameter_mm: 1
+    length_mm: 12.8
+    max_continuous_power_w: 1
+    max_instantaneous_power_w: 1.3
+    moment_of_inertia_gcm2: 0.005
+    max_axial_load_n: 5
+    max_radial_load_n: 520
+    temperature_range_c: -15 to +80
+    temperature_range_extended_c: -40 to +90
+  status: active
+- sku: W10-08-3-231
+  name: W10-08 — 3-stage, 231:1
+  specs:
+    frame_size_mm: 8
+    stages: 3
+    ratio: 231
+    nominal_torque_nm: 0.1
+    peak_torque_nm: 0.15
+    input_speed_rpm_max: 12000
+    input_speed_instantaneous_rpm_max: 15000
+    efficiency_pct: 73
+    backlash_arcmin: 2
+    weight_kg: 0.0078
+    max_motor_shaft_diameter_mm: 1
+    length_mm: 12.8
+    max_continuous_power_w: 1
+    max_instantaneous_power_w: 1.3
+    moment_of_inertia_gcm2: 0.005
+    max_axial_load_n: 5
+    max_radial_load_n: 520
+    temperature_range_c: -15 to +80
+    temperature_range_extended_c: -40 to +90
+  status: active
+- sku: W10-08-4-243
+  name: W10-08 — 4-stage, 243:1
+  specs:
+    frame_size_mm: 8
+    stages: 4
+    ratio: 243
+    nominal_torque_nm: 0.1
+    peak_torque_nm: 0.15
+    input_speed_rpm_max: 12000
+    input_speed_instantaneous_rpm_max: 15000
+    efficiency_pct: 73
+    backlash_arcmin: 2
+    weight_kg: 0.0078
+    max_motor_shaft_diameter_mm: 1
+    length_mm: 12.8
+    max_continuous_power_w: 1
+    max_instantaneous_power_w: 1.3
+    moment_of_inertia_gcm2: 0.005
+    max_axial_load_n: 5
+    max_radial_load_n: 520
+    temperature_range_c: -15 to +80
+    temperature_range_extended_c: -40 to +90
+  status: active
+- sku: W10-08-4-326
+  name: W10-08 — 4-stage, 326:1
+  specs:
+    frame_size_mm: 8
+    stages: 4
+    ratio: 326
+    nominal_torque_nm: 0.1
+    peak_torque_nm: 0.15
+    input_speed_rpm_max: 12000
+    input_speed_instantaneous_rpm_max: 15000
+    efficiency_pct: 73
+    backlash_arcmin: 2
+    weight_kg: 0.0078
+    max_motor_shaft_diameter_mm: 1
+    length_mm: 12.8
+    max_continuous_power_w: 1
+    max_instantaneous_power_w: 1.3
+    moment_of_inertia_gcm2: 0.005
+    max_axial_load_n: 5
+    max_radial_load_n: 520
+    temperature_range_c: -15 to +80
+    temperature_range_extended_c: -40 to +90
+  status: active
+- sku: W10-08-4-406
+  name: W10-08 — 4-stage, 406:1
+  specs:
+    frame_size_mm: 8
+    stages: 4
+    ratio: 406
+    nominal_torque_nm: 0.1
+    peak_torque_nm: 0.15
+    input_speed_rpm_max: 12000
+    input_speed_instantaneous_rpm_max: 15000
+    efficiency_pct: 73
+    backlash_arcmin: 2
+    weight_kg: 0.0078
+    max_motor_shaft_diameter_mm: 1
+    length_mm: 12.8
+    max_continuous_power_w: 1
+    max_instantaneous_power_w: 1.3
+    moment_of_inertia_gcm2: 0.005
+    max_axial_load_n: 5
+    max_radial_load_n: 520
+    temperature_range_c: -15 to +80
+    temperature_range_extended_c: -40 to +90
+  status: active
+- sku: W10-08-4-439
+  name: W10-08 — 4-stage, 439:1
+  specs:
+    frame_size_mm: 8
+    stages: 4
+    ratio: 439
+    nominal_torque_nm: 0.1
+    peak_torque_nm: 0.15
+    input_speed_rpm_max: 12000
+    input_speed_instantaneous_rpm_max: 15000
+    efficiency_pct: 73
+    backlash_arcmin: 2
+    weight_kg: 0.0078
+    max_motor_shaft_diameter_mm: 1
+    length_mm: 12.8
+    max_continuous_power_w: 1
+    max_instantaneous_power_w: 1.3
+    moment_of_inertia_gcm2: 0.005
+    max_axial_load_n: 5
+    max_radial_load_n: 520
+    temperature_range_c: -15 to +80
+    temperature_range_extended_c: -40 to +90
+  status: active
+- sku: W10-08-4-546
+  name: W10-08 — 4-stage, 546:1
+  specs:
+    frame_size_mm: 8
+    stages: 4
+    ratio: 546
+    nominal_torque_nm: 0.1
+    peak_torque_nm: 0.15
+    input_speed_rpm_max: 12000
+    input_speed_instantaneous_rpm_max: 15000
+    efficiency_pct: 73
+    backlash_arcmin: 2
+    weight_kg: 0.0078
+    max_motor_shaft_diameter_mm: 1
+    length_mm: 12.8
+    max_continuous_power_w: 1
+    max_instantaneous_power_w: 1.3
+    moment_of_inertia_gcm2: 0.005
+    max_axial_load_n: 5
+    max_radial_load_n: 520
+    temperature_range_c: -15 to +80
+    temperature_range_extended_c: -40 to +90
+  status: active
+- sku: W10-08-4-590
+  name: W10-08 — 4-stage, 590:1
+  specs:
+    frame_size_mm: 8
+    stages: 4
+    ratio: 590
+    nominal_torque_nm: 0.1
+    peak_torque_nm: 0.15
+    input_speed_rpm_max: 12000
+    input_speed_instantaneous_rpm_max: 15000
+    efficiency_pct: 73
+    backlash_arcmin: 2
+    weight_kg: 0.0078
+    max_motor_shaft_diameter_mm: 1
+    length_mm: 12.8
+    max_continuous_power_w: 1
+    max_instantaneous_power_w: 1.3
+    moment_of_inertia_gcm2: 0.005
+    max_axial_load_n: 5
+    max_radial_load_n: 520
+    temperature_range_c: -15 to +80
+    temperature_range_extended_c: -40 to +90
+  status: active
+- sku: W10-08-4-679
+  name: W10-08 — 4-stage, 679:1
+  specs:
+    frame_size_mm: 8
+    stages: 4
+    ratio: 679
+    nominal_torque_nm: 0.1
+    peak_torque_nm: 0.15
+    input_speed_rpm_max: 12000
+    input_speed_instantaneous_rpm_max: 15000
+    efficiency_pct: 73
+    backlash_arcmin: 2
+    weight_kg: 0.0078
+    max_motor_shaft_diameter_mm: 1
+    length_mm: 12.8
+    max_continuous_power_w: 1
+    max_instantaneous_power_w: 1.3
+    moment_of_inertia_gcm2: 0.005
+    max_axial_load_n: 5
+    max_radial_load_n: 520
+    temperature_range_c: -15 to +80
+    temperature_range_extended_c: -40 to +90
+  status: active
+- sku: W10-08-4-734
+  name: W10-08 — 4-stage, 734:1
+  specs:
+    frame_size_mm: 8
+    stages: 4
+    ratio: 734
+    nominal_torque_nm: 0.1
+    peak_torque_nm: 0.15
+    input_speed_rpm_max: 12000
+    input_speed_instantaneous_rpm_max: 15000
+    efficiency_pct: 73
+    backlash_arcmin: 2
+    weight_kg: 0.0078
+    max_motor_shaft_diameter_mm: 1
+    length_mm: 12.8
+    max_continuous_power_w: 1
+    max_instantaneous_power_w: 1.3
+    moment_of_inertia_gcm2: 0.005
+    max_axial_load_n: 5
+    max_radial_load_n: 520
+    temperature_range_c: -15 to +80
+    temperature_range_extended_c: -40 to +90
+  status: active
+- sku: W10-08-4-794
+  name: W10-08 — 4-stage, 794:1
+  specs:
+    frame_size_mm: 8
+    stages: 4
+    ratio: 794
+    nominal_torque_nm: 0.1
+    peak_torque_nm: 0.15
+    input_speed_rpm_max: 12000
+    input_speed_instantaneous_rpm_max: 15000
+    efficiency_pct: 73
+    backlash_arcmin: 2
+    weight_kg: 0.0078
+    max_motor_shaft_diameter_mm: 1
+    length_mm: 12.8
+    max_continuous_power_w: 1
+    max_instantaneous_power_w: 1.3
+    moment_of_inertia_gcm2: 0.005
+    max_axial_load_n: 5
+    max_radial_load_n: 520
+    temperature_range_c: -15 to +80
+    temperature_range_extended_c: -40 to +90
+  status: active
+- sku: W10-08-4-913
+  name: W10-08 — 4-stage, 913:1
+  specs:
+    frame_size_mm: 8
+    stages: 4
+    ratio: 913
+    nominal_torque_nm: 0.1
+    peak_torque_nm: 0.15
+    input_speed_rpm_max: 12000
+    input_speed_instantaneous_rpm_max: 15000
+    efficiency_pct: 73
+    backlash_arcmin: 2
+    weight_kg: 0.0078
+    max_motor_shaft_diameter_mm: 1
+    length_mm: 12.8
+    max_continuous_power_w: 1
+    max_instantaneous_power_w: 1.3
+    moment_of_inertia_gcm2: 0.005
+    max_axial_load_n: 5
+    max_radial_load_n: 520
+    temperature_range_c: -15 to +80
+    temperature_range_extended_c: -40 to +90
+  status: active
+- sku: W10-08-4-1135
+  name: W10-08 — 4-stage, 1135:1
+  specs:
+    frame_size_mm: 8
+    stages: 4
+    ratio: 1135
+    nominal_torque_nm: 0.1
+    peak_torque_nm: 0.15
+    input_speed_rpm_max: 12000
+    input_speed_instantaneous_rpm_max: 15000
+    efficiency_pct: 73
+    backlash_arcmin: 2
+    weight_kg: 0.0078
+    max_motor_shaft_diameter_mm: 1
+    length_mm: 12.8
+    max_continuous_power_w: 1
+    max_instantaneous_power_w: 1.3
+    moment_of_inertia_gcm2: 0.005
+    max_axial_load_n: 5
+    max_radial_load_n: 520
+    temperature_range_c: -15 to +80
+    temperature_range_extended_c: -40 to +90
+  status: active

@@ -1,0 +1,215 @@
+# DRAFT — extracted from PDF: https://omo-oss-file110.thefastfile.com/portal-saas/pg2024101217404969641/cms/file/5kh系列高精度行星减速机.pdf
+# Source product pages (stems): 29
+# LLM-chosen code: 5kh_series
+# Review, then promote to seed/product_types/<code>.yaml + seed/products/<code>.yaml
+# Notes: The PDF only contained 2 pages with very limited extractable content. Page 1 was blank (likely a cover page). Page 2 had partial content. The frame size 5KH-060 was identified with 1-stage ratios 3/4/5/8/10 and 2-stage ratios 9/12/15/20/25/30/40/50/60/80/100. Torque values (14 Nm nominal, 28 Nm peak), backlash (3 arcmin 1-stage, 5 arcmin 2-stage), max input speed (6000 rpm), efficiency (97% 1-stage, 94% 2-stage), and weight (0.6 kg 1-stage, 0.7 kg 2-stage) were extracted from the table. These values appear to be shared across ratios within each stage count (band approach). The PDF likely contains more frame sizes (e.g., 5KH-075, 5KH-090, etc.) on subsequent pages that were not captured. Only the first frame size is represented here. Please verify against the full PDF.
+product_type_code: 5kh_series
+products:
+- sku: 5KH-060-1-3
+  name: 5KH-060 — 1-stage, 3:1
+  specs:
+    frame_size_mm: 60
+    ratio: 3
+    stages: 1
+    nominal_torque_nm: 14
+    peak_torque_nm: 28
+    backlash_arcmin: 3
+    input_speed_rpm_max: 6000
+    efficiency_pct: 97
+    weight_kg: 0.6
+  status: active
+- sku: 5KH-060-1-4
+  name: 5KH-060 — 1-stage, 4:1
+  specs:
+    frame_size_mm: 60
+    ratio: 4
+    stages: 1
+    nominal_torque_nm: 14
+    peak_torque_nm: 28
+    backlash_arcmin: 3
+    input_speed_rpm_max: 6000
+    efficiency_pct: 97
+    weight_kg: 0.6
+  status: active
+- sku: 5KH-060-1-5
+  name: 5KH-060 — 1-stage, 5:1
+  specs:
+    frame_size_mm: 60
+    ratio: 5
+    stages: 1
+    nominal_torque_nm: 14
+    peak_torque_nm: 28
+    backlash_arcmin: 3
+    input_speed_rpm_max: 6000
+    efficiency_pct: 97
+    weight_kg: 0.6
+  status: active
+- sku: 5KH-060-1-8
+  name: 5KH-060 — 1-stage, 8:1
+  specs:
+    frame_size_mm: 60
+    ratio: 8
+    stages: 1
+    nominal_torque_nm: 14
+    peak_torque_nm: 28
+    backlash_arcmin: 3
+    input_speed_rpm_max: 6000
+    efficiency_pct: 97
+    weight_kg: 0.6
+  status: active
+- sku: 5KH-060-1-10
+  name: 5KH-060 — 1-stage, 10:1
+  specs:
+    frame_size_mm: 60
+    ratio: 10
+    stages: 1
+    nominal_torque_nm: 14
+    peak_torque_nm: 28
+    backlash_arcmin: 3
+    input_speed_rpm_max: 6000
+    efficiency_pct: 97
+    weight_kg: 0.6
+  status: active
+- sku: 5KH-060-2-9
+  name: 5KH-060 — 2-stage, 9:1
+  specs:
+    frame_size_mm: 60
+    ratio: 9
+    stages: 2
+    nominal_torque_nm: 14
+    peak_torque_nm: 28
+    backlash_arcmin: 5
+    input_speed_rpm_max: 6000
+    efficiency_pct: 94
+    weight_kg: 0.7
+  status: active
+- sku: 5KH-060-2-12
+  name: 5KH-060 — 2-stage, 12:1
+  specs:
+    frame_size_mm: 60
+    ratio: 12
+    stages: 2
+    nominal_torque_nm: 14
+    peak_torque_nm: 28
+    backlash_arcmin: 5
+    input_speed_rpm_max: 6000
+    efficiency_pct: 94
+    weight_kg: 0.7
+  status: active
+- sku: 5KH-060-2-15
+  name: 5KH-060 — 2-stage, 15:1
+  specs:
+    frame_size_mm: 60
+    ratio: 15
+    stages: 2
+    nominal_torque_nm: 14
+    peak_torque_nm: 28
+    backlash_arcmin: 5
+    input_speed_rpm_max: 6000
+    efficiency_pct: 94
+    weight_kg: 0.7
+  status: active
+- sku: 5KH-060-2-20
+  name: 5KH-060 — 2-stage, 20:1
+  specs:
+    frame_size_mm: 60
+    ratio: 20
+    stages: 2
+    nominal_torque_nm: 14
+    peak_torque_nm: 28
+    backlash_arcmin: 5
+    input_speed_rpm_max: 6000
+    efficiency_pct: 94
+    weight_kg: 0.7
+  status: active
+- sku: 5KH-060-2-25
+  name: 5KH-060 — 2-stage, 25:1
+  specs:
+    frame_size_mm: 60
+    ratio: 25
+    stages: 2
+    nominal_torque_nm: 14
+    peak_torque_nm: 28
+    backlash_arcmin: 5
+    input_speed_rpm_max: 6000
+    efficiency_pct: 94
+    weight_kg: 0.7
+  status: active
+- sku: 5KH-060-2-30
+  name: 5KH-060 — 2-stage, 30:1
+  specs:
+    frame_size_mm: 60
+    ratio: 30
+    stages: 2
+    nominal_torque_nm: 14
+    peak_torque_nm: 28
+    backlash_arcmin: 5
+    input_speed_rpm_max: 6000
+    efficiency_pct: 94
+    weight_kg: 0.7
+  status: active
+- sku: 5KH-060-2-40
+  name: 5KH-060 — 2-stage, 40:1
+  specs:
+    frame_size_mm: 60
+    ratio: 40
+    stages: 2
+    nominal_torque_nm: 14
+    peak_torque_nm: 28
+    backlash_arcmin: 5
+    input_speed_rpm_max: 6000
+    efficiency_pct: 94
+    weight_kg: 0.7
+  status: active
+- sku: 5KH-060-2-50
+  name: 5KH-060 — 2-stage, 50:1
+  specs:
+    frame_size_mm: 60
+    ratio: 50
+    stages: 2
+    nominal_torque_nm: 14
+    peak_torque_nm: 28
+    backlash_arcmin: 5
+    input_speed_rpm_max: 6000
+    efficiency_pct: 94
+    weight_kg: 0.7
+  status: active
+- sku: 5KH-060-2-60
+  name: 5KH-060 — 2-stage, 60:1
+  specs:
+    frame_size_mm: 60
+    ratio: 60
+    stages: 2
+    nominal_torque_nm: 14
+    peak_torque_nm: 28
+    backlash_arcmin: 5
+    input_speed_rpm_max: 6000
+    efficiency_pct: 94
+    weight_kg: 0.7
+  status: active
+- sku: 5KH-060-2-80
+  name: 5KH-060 — 2-stage, 80:1
+  specs:
+    frame_size_mm: 60
+    ratio: 80
+    stages: 2
+    nominal_torque_nm: 14
+    peak_torque_nm: 28
+    backlash_arcmin: 5
+    input_speed_rpm_max: 6000
+    efficiency_pct: 94
+    weight_kg: 0.7
+  status: active
+- sku: 5KH-060-2-100
+  name: 5KH-060 — 2-stage, 100:1
+  specs:
+    frame_size_mm: 60
+    ratio: 100
+    stages: 2
+    nominal_torque_nm: 14
+    peak_torque_nm: 28
+    backlash_arcmin: 5
+    input_speed_rpm_max: 6000
+    efficiency_pct: 94
+    weight_kg: 0.7
+  status: active

@@ -1,0 +1,10 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/102.html
+# Review before promoting to seed/products/pl_tightening_machine.yaml
+product_type_code: pl_tightening_machine
+products:
+- sku: PL062
+  name: PL062 拧紧机 (Tightening Machine)
+  specs:
+    model: PL062
+    frame_size_mm: '62'
+  status: active

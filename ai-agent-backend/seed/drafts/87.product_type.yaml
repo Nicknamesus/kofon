@@ -1,0 +1,46 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/87.html
+# Review before promoting to seed/product_types/kr045_series.yaml
+# Notes: Only one ratio (30:1) is listed on the page. The product is called "关节减速器KR045-30" which translates to "Joint reducer KR045-30". The family is borderline — it's described as a "joint reducer" (关节减速器) which could be harmonic/strain wave or a specialised planetary. Given the compact 45×45 size, ≤8 arcmin backlash, and the term "关节减速器" commonly used for robot joint strain-wave reducers in Chinese industry, I classified it under 'Harmonic drive / strain wave'. However, the internal description mentions "行星支架" (planetary carrier) and "行星轮轴承" (planetary gear bearings), suggesting it may be a specialised planetary design. Reviewer should confirm the family. The rated torque is listed as "3 Nm" — this seems very low for a 45mm frame, but I've taken it as-is from the page. The PDF datasheet link is provided but not downloadable without further interaction; I omitted it.
+code: kr045_series
+name: KR045 Series
+family: Harmonic drive / strain wave
+description: KR045 series joint reducers (关节减速器) from Kofon. Compact 45×45 mm form
+  factor with backlash ≤8 arcmin. Features advanced ultra-precision machining, globally
+  leading gear grinding (ISO Grade 4 or better), carburised low-carbon alloy forged
+  steel gears hardened to HRC60, an integrated cage-type planetary carrier and output
+  shaft for high rigidity and precision, and full-needle roller bearings without retainers
+  for increased torque and stiffness. Supports non-standard customisation.
+spec_schema:
+  ratio:
+    type: integer
+    label: Reducer ratio
+  nominal_torque_nm:
+    type: number
+    label: Rated torque (Nm)
+  peak_torque_nm:
+    type: number
+    label: Peak torque (Nm)
+  rated_speed_rpm:
+    type: integer
+    label: Rated speed (RPM)
+  peak_speed_rpm:
+    type: integer
+    label: Peak speed (RPM)
+  efficiency_pct:
+    type: number
+    label: Full-load efficiency (%)
+  weight_kg:
+    type: number
+    label: Weight (kg)
+  backlash_arcmin:
+    type: number
+    label: Backlash (arcmin)
+  frame_size_mm:
+    type: string
+    label: Size (outer diameter × thickness) (mm)
+  operating_temp_range:
+    type: string
+    label: Operating temperature range
+  lubrication:
+    type: string
+    label: Lubrication method

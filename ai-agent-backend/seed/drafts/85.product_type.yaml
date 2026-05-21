@@ -1,0 +1,57 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/85.html
+# Review before promoting to seed/product_types/zf_s_series.yaml
+# Notes: The page lists models 2S250, 2S300, 2S450, 2S600 with ratios 1, 4, 5. The motor center height for 2S450 is listed as "160/180" — I used 160 (the first value) as it matches the 2S300 pattern; reviewer may want to confirm. The backlash column shows two rows (30 and 20 arcmin) — from context, 30 arcmin applies to ratio i=1 (direct drive) and 20 arcmin applies to ratios 4 and 5. The output inertia is listed per ratio (1 vs 4) — I assigned 270/570 for 2S250/2S300 and 530/1100 for 2S450 and 850/1470 for 2S600; ratio 5 shares the same inertia as ratio 4 per the table layout. Max axial force is only listed for ratios 4/5 (column header "4/5"). Oil volume is given for horizontal (B5) mounting; vertical uses circulating oil lubrication. The page also mentions a datasheet PDF (双档减速机ZF-S系列 .pdf) but no direct URL was extractable.
+code: zf_s_series
+name: ZF-S Series
+family: Planetary gearbox
+description: ZF-S two-stage planetary gearbox series is a core drive element for machine
+  tools. Depending on installation orientation, it can be adapted for lathes (horizontal
+  B5) or vertical machining centers (vertical V1). It excels in low-speed, high-torque
+  applications and also provides coaxial output performance suitable for high-speed
+  operation.
+spec_schema:
+  model:
+    type: string
+    label: Model
+  ratio:
+    type: integer
+    label: Ratio i
+  motor_center_height_mm:
+    type: integer
+    label: Motor center height (mm)
+  rated_input_torque_nm:
+    type: integer
+    label: Rated input torque (Nm)
+  output_torque_nm:
+    type: integer
+    label: Output torque (Nm)
+  max_acceleration_torque_nm:
+    type: integer
+    label: Max acceleration torque (Nm)
+  max_axial_force_n:
+    type: integer
+    label: Max axial force (N)
+  rated_power_kw:
+    type: number
+    label: Rated power (kW)
+  rated_speed_rpm:
+    type: integer
+    label: Rated speed (rpm)
+  max_speed_rpm:
+    type: integer
+    label: Max speed (rpm, i≠1)
+  direct_drive_speed_rpm:
+    type: integer
+    label: Direct drive max speed (rpm, i=1)
+  backlash_arcmin:
+    type: integer
+    label: Backlash (arcmin)
+  output_inertia_kgcm2:
+    type: integer
+    label: Output moment of inertia (kg·cm²)
+  oil_volume_dm3:
+    type: number
+    label: Oil volume (dm³)
+  weight_kg:
+    type: integer
+    label: Weight (kg)

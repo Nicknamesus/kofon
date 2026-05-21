@@ -1,0 +1,69 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/118.html
+# Review before promoting to seed/product_types/kpx_s_series.yaml
+# Notes: 1. The page title says "KPX-SY180 手摇" and the category is "手摇输入减速机KPX-S系列". I used product_type_code 'kpx_s_series' to group this family. 2. The page lists torque values per ratio individually (not bands), so each ratio was expanded into its own SKU. 3. The page header says "1-stage" and "2-stage" — I used stages=1 or 2 accordingly. 4. Rotational inertia for 1-stage ratios 5-10 all show 27.35 kg·cm²; for ratio 3 it's 32.2, ratio 4 it's 32.07. For 2-stage, ratios 12 and 15 have slightly different inertia (16.24, 16.17) while all others are 14.25. These are faithfully transcribed. 5. The page labels "最大轴向力" as "Max Radial Force" (F2AMax) and "最大径向力" as "Max Axial Force" (F2QMax) — there appears to be a translation swap. I kept the values as-is but labeled them according to the Chinese meaning (F2AMax = Max Radial Force, F2QMax = Max Axial Force) matching the page's own English headers. 6. Weight: 1-stage = 46.5 kg, 2-stage = 52.1 kg. 7. Noise: 1-stage ≤70 dB(A), 2-stage ≤72 dB(A). 8. Efficiency: 1-stage = 97%, 2-stage = 95%. 9. Max input speed: 1-stage = 6000 rpm, 2-stage = 4000 rpm. 10. Backlash: 1-stage = 5 arcmin, 2-stage = 8 arcmin. 11. The rotational inertia unit on the page says "kgcm" but from context it's kg·cm² — I used kgcm2.
+code: kpx_s_series
+name: KPX-S Series Hand-Input Reducer
+family: Planetary gearbox
+description: The KPX-S series is a hand-input (manual crank) planetary reducer designed
+  for applications where electric power may be unavailable or unreliable. It allows
+  manual operation during power failures or in remote areas, ensuring continued equipment
+  functionality. The series features high reliability, simple operation, and a wide
+  range of reduction ratios in both 1-stage and 2-stage configurations.
+spec_schema:
+  ratio:
+    type: integer
+    label: Ratio i
+  stages:
+    type: integer
+    label: Number of stages
+  nominal_torque_nm:
+    type: number
+    label: Rated output torque (Nm)
+  peak_torque_nm:
+    type: number
+    label: Maximum acceleration torque (Nm)
+  emergency_stop_torque_nm:
+    type: number
+    label: Emergency stop torque (Nm)
+  input_speed_rpm_max:
+    type: integer
+    label: Max input speed (rpm)
+  rated_input_speed_rpm:
+    type: integer
+    label: Rated input speed (rpm)
+  backlash_arcmin:
+    type: number
+    label: Backlash (arcmin)
+  max_radial_force_n:
+    type: integer
+    label: Max radial force (N)
+  max_axial_force_n:
+    type: integer
+    label: Max axial force (N)
+  rotational_inertia_kgcm2:
+    type: number
+    label: Rotational inertia (kg·cm²)
+  noise_db:
+    type: number
+    label: Noise (dB(A))
+  efficiency_pct:
+    type: integer
+    label: Efficiency (%)
+  operating_temp_min_c:
+    type: integer
+    label: Operating temperature min (°C)
+  operating_temp_max_c:
+    type: integer
+    label: Operating temperature max (°C)
+  lubrication:
+    type: string
+    label: Lubrication
+  mounting_position:
+    type: string
+    label: Mounting position
+  service_lifetime_h:
+    type: integer
+    label: Service lifetime (h)
+  weight_kg:
+    type: number
+    label: Weight (kg)

@@ -1,0 +1,60 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/112.html
+# Review before promoting to seed/product_types/zf_s_series.yaml
+# Notes: 1. The page describes a "two-stage" (二段式) gearbox, but the technical table only lists ratios i=1, 4, 5. Ratio i=1 is direct drive (no reduction). Ratios 4 and 5 appear to be the two-stage reduction ratios. The table does not list intermediate ratios like 3, 8, 10 — only 1, 4, 5. So I expanded 4 frame sizes × 3 ratios = 12 SKUs. 2. Motor center height for 2S450 is listed as "160/180" — I used 160 (the lower value) as the primary. 3. Backlash: two rows given (30 arcmin and 20 arcmin). The 30 arcmin row aligns with i=1 (direct drive), and 20 arcmin with i=4 and i=5 (geared). 4. Output moment of inertia: values given for i=1 and i=4; i=5 not listed separately — I used the i=4 value for i=5 as a reasonable assumption (same stage count). 5. Max axial force only listed for "4/5" column — applied to both i=4 and i=5. 6. Oil volume: horizontal (B5) values used; vertical uses circulating oil lubrication (no volume given). 7. The page mentions "双档减速机" (two-speed gearbox) — this is a shiftable two-speed gearbox, not a simple fixed-ratio gearbox. The ratios 1, 4, 5 likely represent the two speed options (low gear / high gear) per frame. I treated each ratio as a separate SKU for configurator purposes. 8. Rated power (kW) values: 39, 47, 47, 63 — these seem to be per frame size, not per ratio. Applied same kW across all ratios for a given frame.
+code: zf_s_series
+name: ZF-S Series
+family: Planetary gearbox
+description: 'ZF-S two-stage planetary gearbox series, designed for machine tool spindle
+  drives. Suitable for lathes (horizontal B5) and vertical machining centers (vertical
+  V1), excelling in low-speed high-torque applications. Features coaxial output, helical
+  gear design for low noise, low backlash, high radial load capacity, and 24V DC shift-by-wire
+  actuation. Available in four frame sizes: 2S250, 2S300, 2S450, 2S600.'
+spec_schema:
+  frame_size:
+    type: string
+    label: Frame size
+  ratio:
+    type: number
+    label: Ratio i
+  motor_center_height_mm:
+    type: integer
+    label: Motor center height (mm)
+  nominal_input_torque_nm:
+    type: number
+    label: Nominal input torque (Nm)
+  nominal_output_torque_nm:
+    type: number
+    label: Nominal output torque (Nm)
+  max_acceleration_torque_nm:
+    type: number
+    label: Max acceleration torque (Nm)
+  max_axial_force_n:
+    type: integer
+    label: Max axial force (N)
+  rated_power_kw:
+    type: number
+    label: Rated power (kW)
+  rated_speed_rpm:
+    type: integer
+    label: Rated speed (rpm)
+  max_speed_geared_rpm:
+    type: integer
+    label: Max speed (geared, rpm)
+  max_speed_direct_drive_rpm:
+    type: integer
+    label: Max speed direct drive i=1 (rpm)
+  backlash_arcmin:
+    type: number
+    label: Backlash (arcmin)
+  output_moment_of_inertia_kg_cm2:
+    type: number
+    label: Output moment of inertia (kg·cm²)
+  oil_volume_dm3:
+    type: number
+    label: Oil volume (dm³)
+  weight_kg:
+    type: number
+    label: Weight (kg)
+  variant:
+    type: string
+    label: Variant

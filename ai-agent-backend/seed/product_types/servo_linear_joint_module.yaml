@@ -1,0 +1,38 @@
+# Promoted from 1 draft(s) under seed/drafts/.
+# Sources: 80.product_type
+code: servo_linear_joint_module
+name: Servo Linear Joint Module
+family: Linear actuator
+description: Servo linear joint modules driven by a motor, transmitting power through
+  a planetary roller screw to achieve precise linear motion. Sensors monitor the joint's
+  motion state in real time and feed back to the control system for accuracy. Available
+  in four thrust/speed/size variants with DC48V power, 3mm lead, and customizable
+  options.
+spec_schema:
+  max_thrust_n:
+    type: integer
+    label: Maximum thrust (N)
+  max_speed_mm_s:
+    type: integer
+    label: Maximum speed (mm/s)
+  stroke_mm:
+    type: integer
+    label: Stroke (mm)
+  size_c1_mm:
+    type: integer
+    label: Size C1 (mm)
+  size_d1_mm:
+    type: integer
+    label: Size D1 (mm)
+  rated_voltage_v:
+    type: string
+    label: Rated voltage
+  lead_mm:
+    type: number
+    label: Lead (mm)
+  holding_brake:
+    type: string
+    label: Holding brake
+  variant:
+    type: string
+    label: Variant / model code

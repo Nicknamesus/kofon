@@ -1,0 +1,72 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/84.html
+# Review before promoting to seed/product_types/kpx_s_series.yaml
+# Notes: Only one frame size (KPX-ST065) and one stage count (1-stage) is documented on this page. The backlash column shows two values: "标准≤3" (Standard ≤3) and "精密≤6" (Precision ≤6). The Chinese text says "标准≤3 精密≤6" which seems reversed (precision should be lower arcmin), but I preserved the text as-is. The page lists ratios 3 through 10 individually with per-ratio torque values, so each ratio was expanded into its own SKU. The model code is derived from the table header "KPX-ST065手摇" — I used "KPX-ST065" as the frame/model code. The rotational inertia for ratio 3 is 0.200, ratio 4 is 0.180, and ratios 5-10 are 0.170 (the table shows 0.17 for ratio 5, then 0.170 for 6-10). The "噪意" appears to be a typo for "噪音" (noise). The "最大轴向力" label says "Max Radial Force" but the value 760N is labeled as "最大径向力" (Max Axial Force) — there may be a translation swap in the original table; I preserved the Chinese labels' intent.
+code: kpx_s_series
+name: KPX-S Series Hand-Input Reducer
+family: Planetary gearbox
+description: The KPX-S series hand-input planetary reducers are designed for manual
+  backup operation when electrical power is unavailable. They offer wide application
+  in remote areas or emergency situations, high reliability by maintaining basic operation
+  even if the motor fails, and simple operation requiring no special skills. The series
+  features a hand-crank input mechanism integrated with a planetary gearbox.
+spec_schema:
+  ratio:
+    type: integer
+    label: Ratio i
+  nominal_torque_nm:
+    type: number
+    label: Rated Output Torque (Nm)
+  peak_torque_nm:
+    type: number
+    label: Maximum Acceleration Torque (Nm)
+  emergency_stop_torque_nm:
+    type: number
+    label: Emergency Stop Torque (Nm)
+  rated_input_speed_rpm:
+    type: integer
+    label: Rated Input Speed (rpm)
+  max_input_speed_rpm:
+    type: integer
+    label: Max Input Speed (rpm)
+  backlash_arcmin:
+    type: string
+    label: Backlash (arcmin)
+  max_radial_force_n:
+    type: integer
+    label: Max Radial Force (N)
+  max_axial_force_n:
+    type: integer
+    label: Max Axial Force (N)
+  rotational_inertia_kgcm2:
+    type: number
+    label: Rotational Inertia (kg·cm²)
+  noise_db_a:
+    type: string
+    label: Noise (dB(A))
+  efficiency_pct:
+    type: integer
+    label: Full Loading Efficiency (%)
+  operating_temp_min_c:
+    type: integer
+    label: Operating Temperature Min (°C)
+  operating_temp_max_c:
+    type: integer
+    label: Operating Temperature Max (°C)
+  lubrication:
+    type: string
+    label: Lubrication
+  mounting_position:
+    type: string
+    label: Mounting Position
+  service_lifetime_h:
+    type: integer
+    label: Service Lifetime (h)
+  weight_kg:
+    type: number
+    label: Weight (kg)
+  stages:
+    type: integer
+    label: Number of stages
+  variant:
+    type: string
+    label: Variant (precision grade)

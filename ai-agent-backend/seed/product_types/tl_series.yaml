@@ -1,0 +1,56 @@
+# Promoted from 3 draft(s) under seed/drafts/.
+# Merged LLM codes: tl_series, tl_series_tightening
+# Sources: 83.product_type, 96.product_type, 97.product_type
+code: tl_series
+name: TL Series
+family: Planetary gearbox
+description: TL offset-type tightening machine gearbox series. Integrates advanced
+  wear-resistant materials with planetary gear trains for high-speed wear resistance
+  and noise reduction. Features customized gear trains with profile modification and
+  tooth optimization for improved impact resistance, special bearing designs to withstand
+  multi-directional loads under tightening shocks, and optional built-in torque and
+  displacement sensors for torque visualization. Output shaft uses high-strength special
+  materials with heat treatment for impact and wear resistance.
+spec_schema:
+  model:
+    type: string
+    label: Model
+  stage:
+    type: string
+    label: Stage
+  ratio:
+    type: string
+    label: Ratio
+  nominal_torque_nm:
+    type: number
+    label: Nominal Torque (Nm)
+  peak_torque_nm:
+    type: number
+    label: Peak Torque (Nm)
+  backlash_arcmin:
+    type: number
+    label: Backlash (arcmin)
+  input_speed_rpm_max:
+    type: integer
+    label: Max Input Speed (rpm)
+  efficiency_pct:
+    type: number
+    label: Efficiency (%)
+  weight_kg:
+    type: number
+    label: Weight (kg)
+  frame_size_mm:
+    type: string
+    label: Frame Size (mm)
+  max_tightening_torque_nm:
+    type: number
+    label: Max tightening torque (Nm)
+  service_life_cycles:
+    type: integer
+    label: Service life (tightening cycles)
+  tightening_speed_rpm:
+    type: number
+    label: Tightening speed (rpm)
+  life_cycles:
+    type: integer
+    label: Service life (cycles)

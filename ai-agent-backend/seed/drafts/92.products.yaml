@@ -1,0 +1,22 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/92.html
+# Review before promoting to seed/products/kr090_series.yaml
+product_type_code: kr090_series
+products:
+- sku: KR090-25
+  name: KR090 — 25:1 Joint Reducer
+  specs:
+    ratio: 25
+    nominal_torque_nm: 75
+    peak_torque_nm: 225
+    rated_speed_rpm: 3000
+    input_speed_rpm_max: 6000
+    efficiency_pct: 85
+    weight_kg: 0.92
+    backlash_arcmin: 8
+    frame_size_mm: 90
+    length_mm: 82.5
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Synthetic grease
+  datasheet_url: https://www.kofon.com.cn/products_detail/92.html
+  status: active

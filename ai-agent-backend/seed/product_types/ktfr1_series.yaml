@@ -1,0 +1,61 @@
+# Promoted from 1 draft(s) under seed/drafts/.
+# Sources: 70.product_type
+code: ktfr1_series
+name: KTFR1 Series Planetary Gearbox
+family: Planetary gearbox
+description: KTFR1 series precision planetary gearboxes from Kofon. Features top-grade
+  spiral bevel gears with optimized design for uniform tooth contact load and high
+  torque output. Integrated aluminum alloy housing ensures maximum rigidity and corrosion
+  resistance. Gears are made of high-strength carburized alloy steel ground to ISO
+  Grade 6 precision. Available in frame sizes KT070 through KT240, with single, double,
+  and triple stage configurations offering ratios from 1:1 to 100:1. Suitable for
+  precision servo applications with low backlash and high efficiency.
+spec_schema:
+  frame_size_mm:
+    type: integer
+    label: Frame size (mm)
+  ratio:
+    type: integer
+    label: Ratio
+  stage:
+    type: integer
+    label: Number of stages
+  variant:
+    type: string
+    label: Variant (FL/FR/FH/FC or L/R/H/C)
+  nominal_torque_nm:
+    type: number
+    label: Rated output torque (Nm)
+  fault_stop_torque_nm:
+    type: string
+    label: Fault stop torque
+  backlash_arcmin:
+    type: number
+    label: Backlash (arcmin)
+  output_max_radial_force_n:
+    type: integer
+    label: Output max radial force (N)
+  output_max_axial_force_n:
+    type: integer
+    label: Output max axial force (N)
+  average_life_hr:
+    type: integer
+    label: Average life (hr)
+  efficiency_pct:
+    type: number
+    label: Full loading efficiency (%)
+  noise_db:
+    type: number
+    label: Noise (dB(A))
+  max_input_speed_rpm:
+    type: integer
+    label: Max input speed (rpm)
+  rated_input_speed_rpm:
+    type: integer
+    label: Rated input speed (rpm)
+  rotational_inertia_kgcm2:
+    type: number
+    label: Rotational inertia (kg·cm²)
+  weight_kg:
+    type: number
+    label: Weight (kg)

@@ -1,0 +1,37 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/35.html
+# Review before promoting to seed/product_types/pwjy_series.yaml
+# Notes: 1. The page lists 6 frame sizes (PWJY450, 490, 620, 720, 740, 800) with no ratio or stage information — these appear to be single-ratio integrated roller-drive gearboxes (not multi-ratio configurable). Each frame is treated as one SKU. 2. Roller radial static load was given in tonnes (T); converted to N using 1 T = 9806.65 N. 3. Braking torque is given as a range (e.g. 50~500 Nm); stored as min/max fields. 4. No backlash, efficiency, weight, or CAD/datasheet URLs were available on the page. 5. The PWJY740 appears twice in the "标准尺寸" section (likely a typo on the page). 6. No ratio information is provided — these seem to be direct-drive or fixed-ratio integrated units, not configurable multi-ratio gearboxes.
+code: pwjy_series
+name: PWJY Series
+family: Planetary gearbox
+description: PWJY series planetary gearboxes from Kofon, featuring an integrated planetary
+  gear structure with high efficiency and stable performance. They include a high-strength
+  alloy steel roller (surface can be rubber-coated), an efficient electromagnetic
+  brake for direct braking of the power shaft, smart sensors for remote monitoring,
+  and an integrated cast support frame. Designed for horizontal installation with
+  industrial gear oil lubrication.
+spec_schema:
+  frame_size_mm:
+    type: string
+    label: Frame size
+  nominal_torque_nm:
+    type: number
+    label: Rated output torque (Nm)
+  input_speed_rpm_max:
+    type: integer
+    label: Rated input speed (r/min)
+  installation_direction:
+    type: string
+    label: Installation direction
+  lubrication_system:
+    type: string
+    label: Lubrication system
+  roller_radial_static_load_n:
+    type: number
+    label: Roller radial static load (N)
+  braking_torque_nm_min:
+    type: number
+    label: Braking torque min (Nm)
+  braking_torque_nm_max:
+    type: number
+    label: Braking torque max (Nm)

@@ -1,0 +1,71 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/88.html
+# Review before promoting to seed/product_types/kr060_22.yaml
+# Notes: Single SKU page for the KR060-22 joint module. All specs taken directly from the '技术参数' table. The page lists '峰值扭矩23Nm' in the feature blurb but the table says 22.44 Nm — used the table value (22.44) as it's more precise. The '减速器侧隙(Backlash)' is listed as ≤8 Arcmin, stored as 8. The motor size is given as '60×52' (diameter × thickness in mm). The family is classified as 'Harmonic drive / strain wave' since this is an integrated joint module (likely using a harmonic/strain wave reducer given the compact form factor and backlash specs).
+code: kr060_22
+name: KR060-22 Joint Module
+family: Harmonic drive / strain wave
+description: The KR060-22 is an integrated joint module featuring dual encoders for
+  closed-loop control, eliminating transmission chain errors. It supports multiple
+  control modes (force-position hybrid, servo position, servo velocity, current/torque)
+  and includes adaptive control technology, high control bandwidth, and protections
+  against over-temperature, over-voltage, and overload. The module has a 22:1 reduction
+  ratio, rated torque of 7.85 Nm, peak torque of 22.44 Nm, and weighs 0.52 kg. It
+  supports CAN communication at 1 Mbps and offers an optional built-in driver.
+spec_schema:
+  reduction_ratio:
+    type: integer
+    label: Reduction Ratio
+  rated_voltage_v:
+    type: number
+    label: Rated Voltage (V)
+  rated_current_a:
+    type: number
+    label: Rated Phase Current (A)
+  rated_power_w:
+    type: integer
+    label: Rated Power (W)
+  rated_speed_rpm:
+    type: integer
+    label: Rated Speed (RPM)
+  rated_torque_nm:
+    type: number
+    label: Rated Torque (Nm)
+  peak_current_a:
+    type: number
+    label: Peak Phase Current (A)
+  peak_torque_nm:
+    type: number
+    label: Peak Torque (Nm)
+  peak_speed_rpm:
+    type: integer
+    label: Peak Speed (RPM)
+  efficiency_pct:
+    type: number
+    label: Efficiency (%)
+  power_density_w_kg:
+    type: integer
+    label: Power Density (W/kg)
+  torque_constant_nm_per_a:
+    type: number
+    label: Torque Constant (Nm/A)
+  weight_kg:
+    type: number
+    label: Weight (kg)
+  backlash_arcmin:
+    type: number
+    label: Backlash (Arcmin)
+  motor_size_mm:
+    type: string
+    label: Motor Size (mm)
+  communication_protocol:
+    type: string
+    label: Communication Protocol
+  communication_baud_rate:
+    type: string
+    label: Communication Baud Rate
+  double_encoder:
+    type: string
+    label: Double Encoder
+  built_in_driver:
+    type: string
+    label: Built-in Driver

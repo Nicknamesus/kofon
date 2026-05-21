@@ -1,0 +1,59 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/76.html
+# Review before promoting to seed/product_types/8_11_series_harmonic.yaml
+# Notes: The page lists two ratios (50 and 100) for each model size (8 and 11). The torque table shows separate rows for each ratio. The inertia/weight table lists multiple structural forms (HF, HS, SF, SS, plus HF-2, HS-2 for model 11). I expanded all combinations: 4 forms for model 8 × 2 ratios = 8 SKUs; 6 forms for model 11 × 2 ratios = 12 SKUs; total 20 SKUs. The inertia values are given as e.g. '0.23x10^6' which I interpret as 0.23×10⁻⁶ kg·m² (the page shows 'Kg㎡' as unit). Weight values are in grams (g) — converted to kg. The '最大平均输入转速' and '平均转速' columns show values 8500/3500 for model 8 ratio 50, but 8501/3501 for model 8 ratio 100 and model 11 — likely a typo on the page, preserved as-is. The 'KC-MC-8' listed under standard sizes for 8 series has no specs in the tables, so omitted. The datasheet PDF link is '谐波减速机.pdf' — relative URL, not included as datasheet_url since full URL unknown.
+code: 8_11_series_harmonic
+name: 8/11 Series Harmonic Drive
+family: Harmonic drive / strain wave
+description: Kofon 8/11 series harmonic drive reducers offering high transmission
+  accuracy, high torsional stiffness, large load capacity, high efficiency, and long
+  life. Available in multiple structural forms (HF, HS, SF, SS) for standalone use
+  with easy installation.
+spec_schema:
+  model:
+    type: string
+    label: Model (size)
+  ratio:
+    type: integer
+    label: Ratio
+  structural_form:
+    type: string
+    label: Structural form (HF/HS/SF/SS)
+  nominal_torque_nm:
+    type: number
+    label: Rated torque at 2000 rpm (Nm)
+  peak_torque_nm:
+    type: number
+    label: Start/stop peak torque (Nm)
+  average_load_torque_max_nm:
+    type: number
+    label: Max average load torque (Nm)
+  instant_max_torque_nm:
+    type: number
+    label: Instant max torque (Nm)
+  max_input_speed_rpm:
+    type: integer
+    label: Max average input speed (rpm)
+  rated_input_speed_rpm:
+    type: integer
+    label: Rated input speed (rpm)
+  inertia_kgm2:
+    type: number
+    label: Moment of inertia (kg·m²)
+  weight_kg:
+    type: number
+    label: Weight (kg)
+  pitch_circle_diameter_mm:
+    type: number
+    label: Pitch circle diameter (mm)
+  basic_dynamic_load_kn:
+    type: number
+    label: Basic dynamic load rating (kN)
+  basic_static_load_kn:
+    type: number
+    label: Basic static load rating (kN)
+  max_axial_force_n:
+    type: number
+    label: Max axial force (N)
+  max_radial_force_n:
+    type: number
+    label: Max radial force (N)

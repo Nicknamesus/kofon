@@ -1,0 +1,47 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/102.html
+# Review before promoting to seed/product_types/pl_tightening_machine.yaml
+# Notes: The page is for the PL series tightening machine, specifically model PL062. However, the page lacks detailed technical specifications (torque, ratio, backlash, speed, efficiency, weight, etc.). Only the model name "PL062" and a general description of features are provided. The "技术参数" (Technical Parameters) section appears to have no data visible in the extracted text — it only contains a note about service life calculation assumptions. The "标准尺寸" (Standard Dimensions) section also has no visible data. A PDF datasheet ("柠紧机系列.pdf") is available for download but its contents are not included in the page text. Therefore, only a minimal product entry with the model code is created. The reviewer should consult the PDF for full specs and expand the product list accordingly.
+code: pl_tightening_machine
+name: PL型拧紧机 (PL Tightening Machine)
+family: Planetary gearbox
+description: PL series tightening machines integrate advanced wear-resistant materials
+  with planetary gear trains for high-speed wear resistance and noise reduction. Customized
+  gear trains with profile modification and tooth optimization improve impact resistance.
+  Special bearing designs handle multi-directional loads under tightening impacts.
+  Can be equipped with built-in torque and displacement sensors for torque visualization.
+  Output shaft uses high-strength special materials with heat treatment for impact
+  and wear resistance.
+spec_schema:
+  model:
+    type: string
+    label: Model
+  stage:
+    type: string
+    label: Stage
+  ratio:
+    type: string
+    label: Ratio
+  nominal_torque_nm:
+    type: number
+    label: Nominal Torque (Nm)
+  peak_torque_nm:
+    type: number
+    label: Peak Torque (Nm)
+  backlash_arcmin:
+    type: number
+    label: Backlash (arcmin)
+  input_speed_rpm_max:
+    type: integer
+    label: Max Input Speed (rpm)
+  efficiency_pct:
+    type: number
+    label: Efficiency (%)
+  weight_kg:
+    type: number
+    label: Weight (kg)
+  frame_size_mm:
+    type: string
+    label: Frame Size (mm)
+  service_life_cycles:
+    type: integer
+    label: Service Life (cycles)

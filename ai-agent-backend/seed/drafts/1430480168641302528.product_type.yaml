@@ -1,0 +1,71 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/1430480168641302528.html
+# Review before promoting to seed/product_types/kr128_22.yaml
+# Notes: Single SKU product page — only one ratio (22:1) is listed for the KR128-22 joint module. No ratio band expansion needed. The datasheet PDF link is relative ('伺服行星关节模组20250914.pdf') — I used the page URL as datasheet_url since the full PDF URL could not be determined. The family is classified as 'Harmonic drive / strain wave' based on the joint module nature (likely harmonic drive due to compact form factor and low backlash ≤8 arcmin), though the page doesn't explicitly state the gear type. The 'Motor Size' field is given as '128×64' mm (diameter×thickness). All specs are directly from the technical parameters table.
+code: kr128_22
+name: KR128-22 Joint Module
+family: Harmonic drive / strain wave
+description: The KR128-22 is an integrated joint module featuring a dual-encoder closed-loop
+  control system that eliminates transmission chain errors. It supports multiple control
+  modes including force-position hybrid, servo position, servo speed, and current
+  (torque) control. Equipped with adaptive control technology, it reduces the need
+  for frequent parameter tuning. The module offers high control bandwidth and dynamic
+  response, with over-temperature, over-voltage, and overload protection. Customization
+  is supported.
+spec_schema:
+  ratio:
+    type: integer
+    label: Reducer ratio
+  rated_voltage_v:
+    type: number
+    label: Rated Voltage (V)
+  rated_current_a:
+    type: number
+    label: Rated Phase Current (A)
+  rated_power_w:
+    type: integer
+    label: Rated Power (W)
+  rated_speed_rpm:
+    type: integer
+    label: Rated Speed (RPM)
+  rated_torque_nm:
+    type: number
+    label: Rated Torque (Nm)
+  peak_current_a:
+    type: number
+    label: Peak Phase Current (A)
+  peak_torque_nm:
+    type: integer
+    label: Peak Torque (Nm)
+  peak_speed_rpm:
+    type: integer
+    label: Peak Speed (RPM)
+  efficiency_pct:
+    type: number
+    label: Efficiency (%)
+  power_density_w_kg:
+    type: number
+    label: Power Density (W/Kg)
+  torque_constant_nm_a:
+    type: number
+    label: Torque constant (Nm/A)
+  weight_kg:
+    type: number
+    label: Weight (kg)
+  backlash_arcmin:
+    type: number
+    label: Backlash (Arcmin)
+  frame_size_mm:
+    type: string
+    label: Motor Size (diameter×thickness, mm)
+  communication_protocol:
+    type: string
+    label: Communication method
+  communication_baud_rate:
+    type: string
+    label: Communication baud rate
+  double_encoder:
+    type: string
+    label: Has dual encoder
+  built_in_drive:
+    type: string
+    label: Built-in drive option

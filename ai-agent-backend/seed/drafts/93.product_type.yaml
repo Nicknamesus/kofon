@@ -1,0 +1,48 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/93.html
+# Review before promoting to seed/product_types/kr095_23.yaml
+# Notes: Single SKU page for KR095-23 with ratio 23:1. The product is described as a "joint reducer" (关节减速器) — it appears to be a precision planetary gearbox. The frame size is 95 mm (outer diameter) and length is 50 mm. Backlash is given as ≤8 arcmin. All specs are from the technical parameters table. No other ratios or stages are listed on this page. The datasheet PDF link is provided but the filename suggests it may be a general catalog rather than a specific datasheet for this model.
+code: kr095_23
+name: KR095-23 Joint Reducer
+family: Planetary gearbox
+description: The KR095-23 is a precision joint reducer (planetary gearbox) from Kofon.
+  It features backlash below 8 arcmin, gear precision to ISO 4 grade or better, case-hardened
+  low-carbon alloy forged steel gears (HRC60), an integrated cage-type planet carrier
+  and output shaft design for high rigidity and accuracy, and full-needle roller bearings
+  without retainers for increased torque and stiffness. Supports non-standard customization.
+spec_schema:
+  ratio:
+    type: integer
+    label: Ratio
+  nominal_torque_nm:
+    type: number
+    label: Rated Torque (Nm)
+  peak_torque_nm:
+    type: number
+    label: Peak Torque (Nm)
+  rated_speed_rpm:
+    type: integer
+    label: Rated Speed (RPM)
+  peak_speed_rpm:
+    type: integer
+    label: Peak Speed (RPM)
+  efficiency_pct:
+    type: number
+    label: Efficiency (%)
+  weight_kg:
+    type: number
+    label: Weight (kg)
+  backlash_arcmin:
+    type: number
+    label: Backlash (Arcmin)
+  frame_size_mm:
+    type: number
+    label: Frame size (mm)
+  length_mm:
+    type: number
+    label: Length (mm)
+  operating_temp_range:
+    type: string
+    label: Operating Temperature Range
+  lubrication:
+    type: string
+    label: Lubrication

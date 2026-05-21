@@ -1,0 +1,38 @@
+# Promoted from 1 draft(s) under seed/drafts/.
+# Sources: 53.product_type
+code: xam_series
+name: XAM Series
+family: Servo motor
+description: XAM series servo motors feature 5-pole-pair, low cogging torque design.
+  Used with RD series servo drives to form a powerful, high-performance servo system.
+  Power range 0.05 kW to 2 kW, flange sizes 60 mm to 130 mm, with multiple inertia
+  and speed configurations. Available in 48 V, 220 V, and 380 V voltage grades. Equipped
+  with 23-bit multi-turn absolute optical encoder. IP65 protection, Class F insulation.
+spec_schema:
+  frame_size_mm:
+    type: integer
+    label: Frame size (mm)
+  voltage_v:
+    type: integer
+    label: Voltage (V)
+  power_w:
+    type: integer
+    label: Rated power (W)
+  with_brake:
+    type: string
+    label: With brake
+  encoder_type:
+    type: string
+    label: Encoder type
+  pole_pairs:
+    type: integer
+    label: Pole pairs
+  protection_class:
+    type: string
+    label: Protection class
+  insulation_class:
+    type: string
+    label: Insulation class
+  variant:
+    type: string
+    label: Variant

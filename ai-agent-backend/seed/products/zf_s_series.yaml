@@ -1,0 +1,429 @@
+# Promoted from 2 draft(s) under seed/drafts/.
+# Sources: 112.products, 85.products
+# SKUs: 24
+product_type_code: zf_s_series
+products:
+- sku: 2S250-1-1
+  name: 2S250 — 1-stage direct drive (i=1)
+  specs:
+    frame_size: 2S250
+    ratio: 1
+    motor_center_height_mm: 132
+    nominal_input_torque_nm: 250
+    nominal_output_torque_nm: 250
+    max_acceleration_torque_nm: 400
+    rated_power_kw: 39
+    rated_speed_rpm: 1500
+    max_speed_direct_drive_rpm: 10000
+    backlash_arcmin: 30
+    output_moment_of_inertia_kg_cm2: 270
+    oil_volume_dm3: 1.5
+    weight_kg: 68
+  status: active
+- sku: 2S250-1-4
+  name: 2S250 — 1-stage, 4:1
+  specs:
+    frame_size: 2S250
+    ratio: 4
+    motor_center_height_mm: 132
+    nominal_input_torque_nm: 250
+    nominal_output_torque_nm: 1000
+    max_acceleration_torque_nm: 1600
+    max_axial_force_n: 3964
+    rated_power_kw: 39
+    rated_speed_rpm: 1500
+    max_speed_geared_rpm: 6300
+    backlash_arcmin: 20
+    output_moment_of_inertia_kg_cm2: 570
+    oil_volume_dm3: 1.5
+    weight_kg: 68
+  status: active
+- sku: 2S250-1-5
+  name: 2S250 — 1-stage, 5:1
+  specs:
+    frame_size: 2S250
+    ratio: 5
+    motor_center_height_mm: 132
+    nominal_input_torque_nm: 250
+    nominal_output_torque_nm: 1250
+    max_acceleration_torque_nm: 2000
+    max_axial_force_n: 3964
+    rated_power_kw: 39
+    rated_speed_rpm: 1500
+    max_speed_geared_rpm: 6300
+    backlash_arcmin: 20
+    output_moment_of_inertia_kg_cm2: 570
+    oil_volume_dm3: 1.5
+    weight_kg: 68
+  status: active
+- sku: 2S300-1-1
+  name: 2S300 — 1-stage direct drive (i=1)
+  specs:
+    frame_size: 2S300
+    ratio: 1
+    motor_center_height_mm: 160
+    nominal_input_torque_nm: 300
+    nominal_output_torque_nm: 300
+    max_acceleration_torque_nm: 400
+    rated_power_kw: 47
+    rated_speed_rpm: 1500
+    max_speed_direct_drive_rpm: 10000
+    backlash_arcmin: 30
+    output_moment_of_inertia_kg_cm2: 270
+    oil_volume_dm3: 2.8
+    weight_kg: 86
+  status: active
+- sku: 2S300-1-4
+  name: 2S300 — 1-stage, 4:1
+  specs:
+    frame_size: 2S300
+    ratio: 4
+    motor_center_height_mm: 160
+    nominal_input_torque_nm: 300
+    nominal_output_torque_nm: 1200
+    max_acceleration_torque_nm: 1600
+    max_axial_force_n: 4756
+    rated_power_kw: 47
+    rated_speed_rpm: 1500
+    max_speed_geared_rpm: 6300
+    backlash_arcmin: 20
+    output_moment_of_inertia_kg_cm2: 570
+    oil_volume_dm3: 2.8
+    weight_kg: 86
+  status: active
+- sku: 2S300-1-5
+  name: 2S300 — 1-stage, 5:1
+  specs:
+    frame_size: 2S300
+    ratio: 5
+    motor_center_height_mm: 160
+    nominal_input_torque_nm: 300
+    nominal_output_torque_nm: 1500
+    max_acceleration_torque_nm: 2000
+    max_axial_force_n: 4756
+    rated_power_kw: 47
+    rated_speed_rpm: 1500
+    max_speed_geared_rpm: 6300
+    backlash_arcmin: 20
+    output_moment_of_inertia_kg_cm2: 570
+    oil_volume_dm3: 2.8
+    weight_kg: 86
+  status: active
+- sku: 2S450-1-1
+  name: 2S450 — 1-stage direct drive (i=1)
+  specs:
+    frame_size: 2S450
+    ratio: 1
+    motor_center_height_mm: 160
+    nominal_input_torque_nm: 450
+    nominal_output_torque_nm: 450
+    max_acceleration_torque_nm: 630
+    rated_power_kw: 47
+    rated_speed_rpm: 1000
+    max_speed_direct_drive_rpm: 8000
+    backlash_arcmin: 30
+    output_moment_of_inertia_kg_cm2: 530
+    oil_volume_dm3: 5.1
+    weight_kg: 155
+  status: active
+- sku: 2S450-1-4
+  name: 2S450 — 1-stage, 4:1
+  specs:
+    frame_size: 2S450
+    ratio: 4
+    motor_center_height_mm: 160
+    nominal_input_torque_nm: 450
+    nominal_output_torque_nm: 1800
+    max_acceleration_torque_nm: 2520
+    max_axial_force_n: 5439
+    rated_power_kw: 47
+    rated_speed_rpm: 1000
+    max_speed_geared_rpm: 5000
+    backlash_arcmin: 20
+    output_moment_of_inertia_kg_cm2: 1100
+    oil_volume_dm3: 5.1
+    weight_kg: 155
+  status: active
+- sku: 2S450-1-5
+  name: 2S450 — 1-stage, 5:1
+  specs:
+    frame_size: 2S450
+    ratio: 5
+    motor_center_height_mm: 160
+    nominal_input_torque_nm: 450
+    nominal_output_torque_nm: 2250
+    max_acceleration_torque_nm: 3150
+    max_axial_force_n: 5439
+    rated_power_kw: 47
+    rated_speed_rpm: 1000
+    max_speed_geared_rpm: 5000
+    backlash_arcmin: 20
+    output_moment_of_inertia_kg_cm2: 1100
+    oil_volume_dm3: 5.1
+    weight_kg: 155
+  status: active
+- sku: 2S600-1-1
+  name: 2S600 — 1-stage direct drive (i=1)
+  specs:
+    frame_size: 2S600
+    ratio: 1
+    motor_center_height_mm: 180
+    nominal_input_torque_nm: 600
+    nominal_output_torque_nm: 600
+    max_acceleration_torque_nm: 840
+    rated_power_kw: 63
+    rated_speed_rpm: 1000
+    max_speed_direct_drive_rpm: 6000
+    backlash_arcmin: 30
+    output_moment_of_inertia_kg_cm2: 850
+    oil_volume_dm3: 5.4
+    weight_kg: 165
+  status: active
+- sku: 2S600-1-4
+  name: 2S600 — 1-stage, 4:1
+  specs:
+    frame_size: 2S600
+    ratio: 4
+    motor_center_height_mm: 180
+    nominal_input_torque_nm: 600
+    nominal_output_torque_nm: 2400
+    max_acceleration_torque_nm: 3360
+    max_axial_force_n: 7253
+    rated_power_kw: 63
+    rated_speed_rpm: 1000
+    max_speed_geared_rpm: 5000
+    backlash_arcmin: 20
+    output_moment_of_inertia_kg_cm2: 1470
+    oil_volume_dm3: 5.4
+    weight_kg: 165
+  status: active
+- sku: 2S600-1-5
+  name: 2S600 — 1-stage, 5:1
+  specs:
+    frame_size: 2S600
+    ratio: 5
+    motor_center_height_mm: 180
+    nominal_input_torque_nm: 600
+    nominal_output_torque_nm: 3000
+    max_acceleration_torque_nm: 4200
+    max_axial_force_n: 7253
+    rated_power_kw: 63
+    rated_speed_rpm: 1000
+    max_speed_geared_rpm: 5000
+    backlash_arcmin: 20
+    output_moment_of_inertia_kg_cm2: 1470
+    oil_volume_dm3: 5.4
+    weight_kg: 165
+  status: active
+- sku: 2S250-1
+  name: 2S250 — ratio 1:1 (direct drive)
+  specs:
+    model: 2S250
+    ratio: 1
+    motor_center_height_mm: 132
+    rated_input_torque_nm: 250
+    output_torque_nm: 250
+    max_acceleration_torque_nm: 400
+    rated_power_kw: 39
+    rated_speed_rpm: 1500
+    direct_drive_speed_rpm: 10000
+    backlash_arcmin: 30
+    output_inertia_kgcm2: 270
+    oil_volume_dm3: 1.5
+    weight_kg: 68
+  status: active
+- sku: 2S250-4
+  name: 2S250 — ratio 4:1
+  specs:
+    model: 2S250
+    ratio: 4
+    motor_center_height_mm: 132
+    rated_input_torque_nm: 250
+    output_torque_nm: 1000
+    max_acceleration_torque_nm: 1600
+    max_axial_force_n: 3964
+    rated_power_kw: 39
+    rated_speed_rpm: 1500
+    max_speed_rpm: 6300
+    backlash_arcmin: 20
+    output_inertia_kgcm2: 570
+    oil_volume_dm3: 1.5
+    weight_kg: 68
+  status: active
+- sku: 2S250-5
+  name: 2S250 — ratio 5:1
+  specs:
+    model: 2S250
+    ratio: 5
+    motor_center_height_mm: 132
+    rated_input_torque_nm: 250
+    output_torque_nm: 1250
+    max_acceleration_torque_nm: 2000
+    max_axial_force_n: 3964
+    rated_power_kw: 39
+    rated_speed_rpm: 1500
+    max_speed_rpm: 6300
+    backlash_arcmin: 20
+    output_inertia_kgcm2: 570
+    oil_volume_dm3: 1.5
+    weight_kg: 68
+  status: active
+- sku: 2S300-1
+  name: 2S300 — ratio 1:1 (direct drive)
+  specs:
+    model: 2S300
+    ratio: 1
+    motor_center_height_mm: 160
+    rated_input_torque_nm: 300
+    output_torque_nm: 300
+    max_acceleration_torque_nm: 400
+    rated_power_kw: 47
+    rated_speed_rpm: 1500
+    direct_drive_speed_rpm: 10000
+    backlash_arcmin: 30
+    output_inertia_kgcm2: 270
+    oil_volume_dm3: 2.8
+    weight_kg: 86
+  status: active
+- sku: 2S300-4
+  name: 2S300 — ratio 4:1
+  specs:
+    model: 2S300
+    ratio: 4
+    motor_center_height_mm: 160
+    rated_input_torque_nm: 300
+    output_torque_nm: 1200
+    max_acceleration_torque_nm: 1600
+    max_axial_force_n: 4756
+    rated_power_kw: 47
+    rated_speed_rpm: 1500
+    max_speed_rpm: 6300
+    backlash_arcmin: 20
+    output_inertia_kgcm2: 570
+    oil_volume_dm3: 2.8
+    weight_kg: 86
+  status: active
+- sku: 2S300-5
+  name: 2S300 — ratio 5:1
+  specs:
+    model: 2S300
+    ratio: 5
+    motor_center_height_mm: 160
+    rated_input_torque_nm: 300
+    output_torque_nm: 1500
+    max_acceleration_torque_nm: 2000
+    max_axial_force_n: 4756
+    rated_power_kw: 47
+    rated_speed_rpm: 1500
+    max_speed_rpm: 6300
+    backlash_arcmin: 20
+    output_inertia_kgcm2: 570
+    oil_volume_dm3: 2.8
+    weight_kg: 86
+  status: active
+- sku: 2S450-1
+  name: 2S450 — ratio 1:1 (direct drive)
+  specs:
+    model: 2S450
+    ratio: 1
+    motor_center_height_mm: 160
+    rated_input_torque_nm: 450
+    output_torque_nm: 450
+    max_acceleration_torque_nm: 630
+    rated_power_kw: 47
+    rated_speed_rpm: 1000
+    direct_drive_speed_rpm: 8000
+    backlash_arcmin: 30
+    output_inertia_kgcm2: 530
+    oil_volume_dm3: 5.1
+    weight_kg: 155
+  status: active
+- sku: 2S450-4
+  name: 2S450 — ratio 4:1
+  specs:
+    model: 2S450
+    ratio: 4
+    motor_center_height_mm: 160
+    rated_input_torque_nm: 450
+    output_torque_nm: 1800
+    max_acceleration_torque_nm: 2520
+    max_axial_force_n: 5439
+    rated_power_kw: 47
+    rated_speed_rpm: 1000
+    max_speed_rpm: 5000
+    backlash_arcmin: 20
+    output_inertia_kgcm2: 1100
+    oil_volume_dm3: 5.1
+    weight_kg: 155
+  status: active
+- sku: 2S450-5
+  name: 2S450 — ratio 5:1
+  specs:
+    model: 2S450
+    ratio: 5
+    motor_center_height_mm: 160
+    rated_input_torque_nm: 450
+    output_torque_nm: 2250
+    max_acceleration_torque_nm: 3150
+    max_axial_force_n: 5439
+    rated_power_kw: 47
+    rated_speed_rpm: 1000
+    max_speed_rpm: 5000
+    backlash_arcmin: 20
+    output_inertia_kgcm2: 1100
+    oil_volume_dm3: 5.1
+    weight_kg: 155
+  status: active
+- sku: 2S600-1
+  name: 2S600 — ratio 1:1 (direct drive)
+  specs:
+    model: 2S600
+    ratio: 1
+    motor_center_height_mm: 180
+    rated_input_torque_nm: 600
+    output_torque_nm: 600
+    max_acceleration_torque_nm: 840
+    rated_power_kw: 63
+    rated_speed_rpm: 1000
+    direct_drive_speed_rpm: 6000
+    backlash_arcmin: 30
+    output_inertia_kgcm2: 850
+    oil_volume_dm3: 5.4
+    weight_kg: 165
+  status: active
+- sku: 2S600-4
+  name: 2S600 — ratio 4:1
+  specs:
+    model: 2S600
+    ratio: 4
+    motor_center_height_mm: 180
+    rated_input_torque_nm: 600
+    output_torque_nm: 2400
+    max_acceleration_torque_nm: 3360
+    max_axial_force_n: 7253
+    rated_power_kw: 63
+    rated_speed_rpm: 1000
+    max_speed_rpm: 5000
+    backlash_arcmin: 20
+    output_inertia_kgcm2: 1470
+    oil_volume_dm3: 5.4
+    weight_kg: 165
+  status: active
+- sku: 2S600-5
+  name: 2S600 — ratio 5:1
+  specs:
+    model: 2S600
+    ratio: 5
+    motor_center_height_mm: 180
+    rated_input_torque_nm: 600
+    output_torque_nm: 3000
+    max_acceleration_torque_nm: 4200
+    max_axial_force_n: 7253
+    rated_power_kw: 63
+    rated_speed_rpm: 1000
+    max_speed_rpm: 5000
+    backlash_arcmin: 20
+    output_inertia_kgcm2: 1470
+    oil_volume_dm3: 5.4
+    weight_kg: 165
+  status: active

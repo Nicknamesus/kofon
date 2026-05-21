@@ -1,0 +1,276 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/44.html
+# Review before promoting to seed/products/kfdg_series.yaml
+product_type_code: kfdg_series
+products:
+- sku: KFDG50-2
+  name: KFDG50 — Frame 50 mm, Lead 2 mm
+  specs:
+    frame_size_mm: 50
+    screw_lead_mm: 2
+    max_thrust_kN: 1.5
+    max_speed_mm_s: 100
+    max_thrust_screw_input_torque_nm: 0.72
+    screw_dynamic_load_rating_kN: 1.85
+    max_stroke_mm: 200
+    weight_per_100mm_stroke_kg: 2.1
+    power_tube_max_rotation_deg: 0.3
+    axial_backlash_mm: 0.02-0.04
+    300mm_lead_error_mm: 0.02
+    repeatability_mm: 0.01
+  status: active
+- sku: KFDG50-3
+  name: KFDG50 — Frame 50 mm, Lead 3 mm
+  specs:
+    frame_size_mm: 50
+    screw_lead_mm: 3
+    max_thrust_kN: 3
+    max_speed_mm_s: 150
+    max_thrust_screw_input_torque_nm: 2.5
+    screw_dynamic_load_rating_kN: 3.4
+    max_stroke_mm: 200
+    weight_per_100mm_stroke_kg: 2.1
+    power_tube_max_rotation_deg: 0.3
+    axial_backlash_mm: 0.02-0.04
+    300mm_lead_error_mm: 0.02
+    repeatability_mm: 0.01
+  status: active
+- sku: KFDG50-4
+  name: KFDG50 — Frame 50 mm, Lead 4 mm
+  specs:
+    frame_size_mm: 50
+    screw_lead_mm: 4
+    max_thrust_kN: 3
+    max_speed_mm_s: 200
+    max_thrust_screw_input_torque_nm: 3
+    screw_dynamic_load_rating_kN: 3.8
+    max_stroke_mm: 200
+    weight_per_100mm_stroke_kg: 2.1
+    power_tube_max_rotation_deg: 0.3
+    axial_backlash_mm: 0.02-0.04
+    300mm_lead_error_mm: 0.02
+    repeatability_mm: 0.01
+  status: active
+- sku: KFDG60-4
+  name: KFDG60 — Frame 60 mm, Lead 4 mm
+  specs:
+    frame_size_mm: 60
+    screw_lead_mm: 4
+    max_thrust_kN: 6
+    max_speed_mm_s: 100
+    max_thrust_screw_input_torque_nm: 5.8
+    screw_dynamic_load_rating_kN: 7.6
+    max_stroke_mm: 300
+    weight_per_100mm_stroke_kg: 3.5
+    power_tube_max_rotation_deg: 0.3
+    axial_backlash_mm: 0.02-0.04
+    300mm_lead_error_mm: 0.02
+    repeatability_mm: 0.02
+  status: active
+- sku: KFDG60-5
+  name: KFDG60 — Frame 60 mm, Lead 5 mm
+  specs:
+    frame_size_mm: 60
+    screw_lead_mm: 5
+    max_thrust_kN: 7.5
+    max_speed_mm_s: 250
+    max_thrust_screw_input_torque_nm: 9.2
+    screw_dynamic_load_rating_kN: 9.8
+    max_stroke_mm: 300
+    weight_per_100mm_stroke_kg: 3.5
+    power_tube_max_rotation_deg: 0.3
+    axial_backlash_mm: 0.02-0.04
+    300mm_lead_error_mm: 0.02
+    repeatability_mm: 0.02
+  status: active
+- sku: KFDG70-5
+  name: KFDG70 — Frame 70 mm, Lead 5 mm
+  specs:
+    frame_size_mm: 70
+    screw_lead_mm: 5
+    max_thrust_kN: 8.5
+    max_speed_mm_s: 250
+    max_thrust_screw_input_torque_nm: 10.5
+    screw_dynamic_load_rating_kN: 11
+    max_stroke_mm: 400
+    weight_per_100mm_stroke_kg: 4.8
+    power_tube_max_rotation_deg: 0.3
+    axial_backlash_mm: 0.02-0.04
+    300mm_lead_error_mm: 0.02
+    repeatability_mm: 0.02
+  status: active
+- sku: KFDG70-6
+  name: KFDG70 — Frame 70 mm, Lead 6 mm
+  specs:
+    frame_size_mm: 70
+    screw_lead_mm: 6
+    max_thrust_kN: 11
+    max_speed_mm_s: 300
+    max_thrust_screw_input_torque_nm: 16.2
+    screw_dynamic_load_rating_kN: 13.8
+    max_stroke_mm: 400
+    weight_per_100mm_stroke_kg: 4.8
+    power_tube_max_rotation_deg: 0.3
+    axial_backlash_mm: 0.02-0.04
+    300mm_lead_error_mm: 0.02
+    repeatability_mm: 0.02
+  status: active
+- sku: KFDG80-5
+  name: KFDG80 — Frame 80 mm, Lead 5 mm
+  specs:
+    frame_size_mm: 80
+    screw_lead_mm: 5
+    max_thrust_kN: 10
+    max_speed_mm_s: 250
+    max_thrust_screw_input_torque_nm: 12.4
+    screw_dynamic_load_rating_kN: 12.5
+    max_stroke_mm: 400
+    weight_per_100mm_stroke_kg: 7.1
+    power_tube_max_rotation_deg: 0.3
+    axial_backlash_mm: 0.03-0.05
+    300mm_lead_error_mm: 0.025
+    repeatability_mm: 0.02
+  status: active
+- sku: KFDG80-6
+  name: KFDG80 — Frame 80 mm, Lead 6 mm
+  specs:
+    frame_size_mm: 80
+    screw_lead_mm: 6
+    max_thrust_kN: 13
+    max_speed_mm_s: 300
+    max_thrust_screw_input_torque_nm: 19.1
+    screw_dynamic_load_rating_kN: 16.3
+    max_stroke_mm: 400
+    weight_per_100mm_stroke_kg: 7.1
+    power_tube_max_rotation_deg: 0.3
+    axial_backlash_mm: 0.03-0.05
+    300mm_lead_error_mm: 0.025
+    repeatability_mm: 0.02
+  status: active
+- sku: KFDG100-5
+  name: KFDG100 — Frame 100 mm, Lead 5 mm
+  specs:
+    frame_size_mm: 100
+    screw_lead_mm: 5
+    max_thrust_kN: 14
+    max_speed_mm_s: 250
+    max_thrust_screw_input_torque_nm: 17.2
+    screw_dynamic_load_rating_kN: 17.6
+    max_stroke_mm: 600
+    weight_per_100mm_stroke_kg: 15
+    power_tube_max_rotation_deg: 0.3
+    axial_backlash_mm: 0.03-0.05
+    300mm_lead_error_mm: 0.03
+    repeatability_mm: 0.02
+  status: active
+- sku: KFDG100-6
+  name: KFDG100 — Frame 100 mm, Lead 6 mm
+  specs:
+    frame_size_mm: 100
+    screw_lead_mm: 6
+    max_thrust_kN: 15
+    max_speed_mm_s: 300
+    max_thrust_screw_input_torque_nm: 22.1
+    screw_dynamic_load_rating_kN: 19.2
+    max_stroke_mm: 600
+    weight_per_100mm_stroke_kg: 15
+    power_tube_max_rotation_deg: 0.3
+    axial_backlash_mm: 0.03-0.05
+    300mm_lead_error_mm: 0.03
+    repeatability_mm: 0.02
+  status: active
+- sku: KFDG100-8
+  name: KFDG100 — Frame 100 mm, Lead 8 mm
+  specs:
+    frame_size_mm: 100
+    screw_lead_mm: 8
+    max_thrust_kN: 18
+    max_speed_mm_s: 400
+    max_thrust_screw_input_torque_nm: 35.3
+    screw_dynamic_load_rating_kN: 23.3
+    max_stroke_mm: 600
+    weight_per_100mm_stroke_kg: 15
+    power_tube_max_rotation_deg: 0.3
+    axial_backlash_mm: 0.03-0.05
+    300mm_lead_error_mm: 0.03
+    repeatability_mm: 0.02
+  status: active
+- sku: KFDG100-10
+  name: KFDG100 — Frame 100 mm, Lead 10 mm
+  specs:
+    frame_size_mm: 100
+    screw_lead_mm: 10
+    max_thrust_kN: 26
+    max_speed_mm_s: 500
+    max_thrust_screw_input_torque_nm: 64
+    screw_dynamic_load_rating_kN: 33.4
+    max_stroke_mm: 600
+    weight_per_100mm_stroke_kg: 15
+    power_tube_max_rotation_deg: 0.3
+    axial_backlash_mm: 0.03-0.05
+    300mm_lead_error_mm: 0.03
+    repeatability_mm: 0.02
+  status: active
+- sku: KFDG120-5
+  name: KFDG120 — Frame 120 mm, Lead 5 mm
+  specs:
+    frame_size_mm: 120
+    screw_lead_mm: 5
+    max_thrust_kN: 17
+    max_speed_mm_s: 250
+    max_thrust_screw_input_torque_nm: 21
+    screw_dynamic_load_rating_kN: 22.3
+    max_stroke_mm: 600
+    weight_per_100mm_stroke_kg: 18
+    power_tube_max_rotation_deg: 0.3
+    axial_backlash_mm: 0.03-0.05
+    300mm_lead_error_mm: 0.03
+    repeatability_mm: 0.02
+  status: active
+- sku: KFDG120-6
+  name: KFDG120 — Frame 120 mm, Lead 6 mm
+  specs:
+    frame_size_mm: 120
+    screw_lead_mm: 6
+    max_thrust_kN: 24
+    max_speed_mm_s: 300
+    max_thrust_screw_input_torque_nm: 35.5
+    screw_dynamic_load_rating_kN: 30.2
+    max_stroke_mm: 600
+    weight_per_100mm_stroke_kg: 18
+    power_tube_max_rotation_deg: 0.3
+    axial_backlash_mm: 0.03-0.05
+    300mm_lead_error_mm: 0.03
+    repeatability_mm: 0.02
+  status: active
+- sku: KFDG120-8
+  name: KFDG120 — Frame 120 mm, Lead 8 mm
+  specs:
+    frame_size_mm: 120
+    screw_lead_mm: 8
+    max_thrust_kN: 30
+    max_speed_mm_s: 400
+    max_thrust_screw_input_torque_nm: 59
+    screw_dynamic_load_rating_kN: 38.5
+    max_stroke_mm: 600
+    weight_per_100mm_stroke_kg: 18
+    power_tube_max_rotation_deg: 0.3
+    axial_backlash_mm: 0.03-0.05
+    300mm_lead_error_mm: 0.03
+    repeatability_mm: 0.02
+  status: active
+- sku: KFDG120-10
+  name: KFDG120 — Frame 120 mm, Lead 10 mm
+  specs:
+    frame_size_mm: 120
+    screw_lead_mm: 10
+    max_thrust_kN: 30
+    max_speed_mm_s: 500
+    max_thrust_screw_input_torque_nm: 74
+    screw_dynamic_load_rating_kN: 38.5
+    max_stroke_mm: 600
+    weight_per_100mm_stroke_kg: 18
+    power_tube_max_rotation_deg: 0.3
+    axial_backlash_mm: 0.03-0.05
+    300mm_lead_error_mm: 0.03
+    repeatability_mm: 0.02
+  status: active

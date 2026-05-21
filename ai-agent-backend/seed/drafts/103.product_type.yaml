@@ -1,0 +1,44 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/103.html
+# Review before promoting to seed/product_types/tkz_series.yaml
+# Notes: The page is a product detail page for the TKZ050 tightening gearbox (TKZ型拧紧机-TKZ050). However, the "技术参数" (Technical Parameters) section and "标准尺寸" (Standard Dimensions) section appear to have no visible data in the extracted text — likely the data is embedded in images or loaded dynamically. No torque, ratio, backlash, speed, efficiency, or weight values could be extracted. Only the model code 'TKZ050' and the frame size hint '050' are available. The PDF datasheet link (柠紧机系列.pdf) is mentioned but the URL is relative and could not be resolved. Only one SKU is listed because no ratio variants or stage options were found on the page. The product family is classified under '行星减速机' (Planetary gearbox). A human reviewer should check the actual page for hidden/table data or download the PDF to fill in specs.
+code: tkz_series
+name: TKZ Series Tightening Gearbox
+family: Planetary gearbox
+description: TKZ series tightening gearboxes (拧紧机) integrate advanced wear-resistant
+  materials with planetary gear trains for high-speed wear resistance and noise reduction.
+  Features include customized gear profiles for improved impact resistance, special
+  bearings that withstand multi-directional loads under tightening shocks, optional
+  built-in torque and displacement sensors for torque visualization, self-lubricating
+  bearings in compact spaces, and high-strength specially treated output shafts for
+  impact and wear resistance.
+spec_schema:
+  model:
+    type: string
+    label: Model
+  stage:
+    type: string
+    label: Stage
+  ratio:
+    type: string
+    label: Ratio
+  nominal_torque_nm:
+    type: number
+    label: Nominal Torque (Nm)
+  peak_torque_nm:
+    type: number
+    label: Peak Torque (Nm)
+  backlash_arcmin:
+    type: number
+    label: Backlash (arcmin)
+  input_speed_rpm_max:
+    type: integer
+    label: Max Input Speed (rpm)
+  efficiency_pct:
+    type: number
+    label: Efficiency (%)
+  weight_kg:
+    type: number
+    label: Weight (kg)
+  frame_size_mm:
+    type: string
+    label: Frame Size (mm)

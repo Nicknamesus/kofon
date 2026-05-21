@@ -1,0 +1,51 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/43.html
+# Review before promoting to seed/product_types/kfdg_series.yaml
+# Notes: The page lists KFDG series direct-coupled electric cylinders. The table columns are: product series, lead (导程), max thrust (最大推力, kN), max speed (最大速度, mm/s), screw input torque at max thrust (最大推力丝杆输入扭矩, Nm), screw dynamic load rating (丝杆额定动载, kN), max stroke (最大行程, mm), weight per 100mm stroke (每100mm行程重量, kg), power tube max rotation angle (动力管最大旋转角度, °), axial backlash (轴向间隙, mm), 300mm lead error (300mm导程误差, mm), repeatability (重复精度, mm). The column headers were slightly ambiguous — "最大推力" appears twice in the table header row (once as thrust, once as part of "最大推力丝杆输入扭矩") but the values align correctly. The "最大速度" column values are in mm/s. The axial backlash is given as a range (e.g. 0.02-0.04) — I used the lower bound (worst-case for precision). The lead error is also a range (0.02-0.04) — used lower bound. The note says recommended speed ≤500 mm/s, but special screws can reach 1 m/s. The page mentions thrust range 15 kg to 30 tons in the description, but the table only goes up to 30 kN — I used table values. SKU naming: KFDG{frame_size}-{lead} (no stage/ratio since these are linear actuators, not gearboxes).
+code: kfdg_series
+name: KFDG Series Direct-Coupled Electric Cylinder
+family: Linear actuator
+description: KFDG series direct-coupled electric cylinders integrate a servo motor,
+  servo drive, and high-precision ball screw in a modular design. The servo motor
+  connects directly to the transmission screw, eliminating intermediate inertia and
+  backlash for improved control precision. Available in frame sizes 50, 60, 70, 80,
+  100, and 120 mm, with multiple lead options per frame. Suitable for harsh environments,
+  offering high strength, high speed, high precision, smooth motion, and low noise.
+  Thrust range from 1.5 kN to 30 kN, speeds up to 500 mm/s (1 m/s with special screws),
+  and strokes up to 1 m.
+spec_schema:
+  frame_size_mm:
+    type: integer
+    label: Frame size (mm)
+  lead_mm:
+    type: number
+    label: Lead (mm)
+  max_thrust_kN:
+    type: number
+    label: Max thrust (kN)
+  max_speed_mm_s:
+    type: integer
+    label: Max speed (mm/s)
+  max_thrust_screw_input_torque_Nm:
+    type: number
+    label: Screw input torque at max thrust (Nm)
+  screw_dynamic_load_rating_kN:
+    type: number
+    label: Screw dynamic load rating (kN)
+  max_stroke_mm:
+    type: integer
+    label: Max stroke (mm)
+  weight_per_100mm_stroke_kg:
+    type: number
+    label: Weight per 100 mm stroke (kg)
+  power_tube_max_rotation_deg:
+    type: number
+    label: Power tube max rotation angle (°)
+  axial_backlash_mm:
+    type: number
+    label: Axial backlash (mm)
+  lead_error_300mm_mm:
+    type: number
+    label: Lead error over 300 mm (mm)
+  repeatability_mm:
+    type: number
+    label: Repeatability (mm)

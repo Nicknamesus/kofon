@@ -1,0 +1,76 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/58.html
+# Review before promoting to seed/product_types/r_series_rf060.yaml
+# Notes: 1. The 3-stage table header shows "速比 Ratio i: 1 64 80 100 125 160 200 256 320" — the leading "1" appears to be a column header artifact (ratio 1 doesn't make sense for 3-stage). I omitted ratio 1 for 3-stage. 2. The page labels "最大轴向力" (Max Axial Force) as F2AMax with value 420 N, and "最大径向力" (Max Radial Force) as F2QMax with value 320 N — these appear swapped relative to typical naming conventions (F2A = axial, F2Q = radial). I preserved the values as labeled on the page. 3. Rotational inertia values are given in kg·cm² on the page; kept as-is. 4. The 3-stage table header row shows "速比 Ratio i: 1 64 80..." — the "1" is likely a formatting error/artifact from the table; I skipped it. 5. All torque values are exact per-ratio values from the table (not bands). 6. The datasheet PDF link is "通用型减速机R系列.pdf" — relative URL, not included as datasheet_url.
+code: r_series_rf060
+name: RF060 Series Precision Planetary Gearbox
+family: Planetary gearbox
+description: The RF060 series precision planetary gearbox from Kofon is a compact,
+  high-precision gearbox in the R-series family. Available in 1-stage, 2-stage, and
+  3-stage configurations with ratios ranging from 3:1 to 320:1. Features include IP65
+  protection, grease lubrication, low backlash (8-15 arcmin depending on stages),
+  high efficiency (93-97%), and a rated input speed of 3000 rpm with max 6000 rpm.
+  The frame size is 60 mm.
+spec_schema:
+  frame_size_mm:
+    type: integer
+    label: Frame size (mm)
+  stages:
+    type: integer
+    label: Number of stages
+  ratio:
+    type: integer
+    label: Ratio
+  nominal_torque_nm:
+    type: number
+    label: Rated output torque (Nm)
+  peak_torque_nm:
+    type: number
+    label: Maximum acceleration torque (Nm)
+  emergency_torque_nm:
+    type: number
+    label: Emergency stop torque (Nm)
+  rated_input_speed_rpm:
+    type: integer
+    label: Rated input speed (rpm)
+  max_input_speed_rpm:
+    type: integer
+    label: Max input speed (rpm)
+  backlash_arcmin:
+    type: number
+    label: Backlash (arcmin)
+  max_radial_force_n:
+    type: integer
+    label: Max radial force (N)
+  max_axial_force_n:
+    type: integer
+    label: Max axial force (N)
+  rotational_inertia_kgcm2:
+    type: number
+    label: Rotational inertia (kg·cm²)
+  noise_db:
+    type: number
+    label: Noise (dB(A))
+  efficiency_pct:
+    type: integer
+    label: Full loading efficiency (%)
+  operating_temp_min_c:
+    type: integer
+    label: Operating temperature min (°C)
+  operating_temp_max_c:
+    type: integer
+    label: Operating temperature max (°C)
+  lubrication:
+    type: string
+    label: Lubrication
+  mounting_position:
+    type: string
+    label: Mounting position
+  protection_class:
+    type: string
+    label: Protection class
+  service_lifetime_h:
+    type: integer
+    label: Service lifetime (h)
+  weight_kg:
+    type: number
+    label: Weight (kg)

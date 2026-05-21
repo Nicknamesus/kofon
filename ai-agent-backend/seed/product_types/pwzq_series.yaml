@@ -1,0 +1,56 @@
+# Promoted from 3 draft(s) under seed/drafts/.
+# Merged LLM codes: pwzq_heavy_duty_travel, pwzq_hub_mounted, pwzq_series
+# Sources: 37.product_type, 38.product_type, 42.product_type
+code: pwzq_series
+name: PWZQ Hub-Mounted Planetary Gearbox
+family: Planetary gearbox
+description: PWZQ series hub-mounted (wheel-specific) planetary gearboxes from Kofon.
+  Designed for direct wheel/drive integration in mobile machinery and AGV applications.
+  The page provides an overview of the series but does not include detailed technical
+  specifications (torque, ratio, backlash, etc.) for individual models.
+spec_schema:
+  frame_size_mm:
+    type: string
+    label: Frame size / model code
+  ratio:
+    type: string
+    label: Ratio
+  nominal_torque_nm:
+    type: number
+    label: Nominal torque (Nm)
+  peak_torque_nm:
+    type: number
+    label: Peak torque (Nm)
+  backlash_arcmin:
+    type: number
+    label: Backlash (arcmin)
+  input_speed_rpm_max:
+    type: integer
+    label: Max input speed (rpm)
+  efficiency_pct:
+    type: number
+    label: Efficiency (%)
+  weight_kg:
+    type: number
+    label: Weight (kg)
+  model:
+    type: string
+    label: Model
+  max_output_torque_nm:
+    type: integer
+    label: Max Output Torque (Nm)
+  rated_input_speed_rpm:
+    type: integer
+    label: Rated Input Speed (r/min)
+  oil_volume_l:
+    type: number
+    label: Oil Volume (L)
+  single_wheel_load_t:
+    type: integer
+    label: Single Wheel Load (t)
+  hydraulic_motor:
+    type: string
+    label: Hydraulic Motor
+  oil_capacity_l:
+    type: number
+    label: Oil Capacity (L)

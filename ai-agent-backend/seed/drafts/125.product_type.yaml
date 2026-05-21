@@ -1,0 +1,69 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/125.html
+# Review before promoting to seed/product_types/kpx_sy_series.yaml
+# Notes: This page covers a single frame size (KPX-SY085) of the KPX-SY hand-input gearbox series. All ratios from the 1-stage and 2-stage tables have been expanded into individual SKUs. The rotational inertia values for 2-stage are listed in the table as "kgcm" (likely kg·cm²) — used as-is. The page mentions a PDF datasheet (手摇输入减速机KPX-S系列.pdf) but no direct URL was extractable. No CAD URLs found. The product family code 'kpx_sy_series' was chosen to cover the broader KPX-SY hand-input series (which includes other frame sizes like SY180, SY142 visible in related products).
+code: kpx_sy_series
+name: KPX-SY Series Hand-Input Gearbox
+family: Planetary gearbox
+description: The KPX-SY series is a hand-input (manual crank) planetary gearbox designed
+  for applications where electric power is unavailable or unreliable. It provides
+  a reliable mechanical backup in remote areas or emergency situations. Available
+  in 1-stage and 2-stage configurations with a wide range of ratios, offering high
+  efficiency, low backlash, and compact dimensions.
+spec_schema:
+  ratio:
+    type: integer
+    label: Ratio i
+  stages:
+    type: integer
+    label: Number of stages
+  nominal_torque_nm:
+    type: number
+    label: Rated output torque (Nm)
+  peak_torque_nm:
+    type: number
+    label: Maximum acceleration torque (Nm)
+  emergency_stop_torque_nm:
+    type: number
+    label: Emergency stop torque (Nm)
+  input_speed_rpm_max:
+    type: integer
+    label: Max input speed (rpm)
+  rated_input_speed_rpm:
+    type: integer
+    label: Rated input speed (rpm)
+  backlash_arcmin:
+    type: number
+    label: Backlash (arcmin)
+  max_radial_force_n:
+    type: integer
+    label: Max radial force (N)
+  max_axial_force_n:
+    type: integer
+    label: Max axial force (N)
+  rotational_inertia_kgcm2:
+    type: number
+    label: Rotational inertia (kg·cm²)
+  noise_db:
+    type: number
+    label: Noise (dB(A))
+  efficiency_pct:
+    type: number
+    label: Full loading efficiency (%)
+  operating_temp_min_c:
+    type: integer
+    label: Operating temperature min (°C)
+  operating_temp_max_c:
+    type: integer
+    label: Operating temperature max (°C)
+  lubrication:
+    type: string
+    label: Lubrication
+  mounting_position:
+    type: string
+    label: Mounting position
+  service_lifetime_h:
+    type: integer
+    label: Service lifetime (h)
+  weight_kg:
+    type: number
+    label: Weight (kg)

@@ -1,0 +1,19 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/103.html
+# Review before promoting to seed/products/tkz_series.yaml
+product_type_code: tkz_series
+products:
+- sku: TKZ050
+  name: TKZ050 — Tightening Gearbox
+  specs:
+    model: TKZ050
+    stage: null
+    ratio: null
+    nominal_torque_nm: null
+    peak_torque_nm: null
+    backlash_arcmin: null
+    input_speed_rpm_max: null
+    efficiency_pct: null
+    weight_kg: null
+    frame_size_mm: '050'
+  datasheet_url: https://www.kofon.com.cn/products_detail/103.html
+  status: active

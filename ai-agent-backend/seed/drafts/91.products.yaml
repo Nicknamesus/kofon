@@ -1,0 +1,28 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/91.html
+# Review before promoting to seed/products/kr090_25.yaml
+product_type_code: kr090_25
+products:
+- sku: KR090-25
+  name: KR090-25 Joint Module — 25:1
+  specs:
+    ratio: 25
+    rated_voltage_v: 48
+    rated_current_a: 24.3
+    rated_power_w: 811.5
+    rated_speed_rpm: 100
+    nominal_torque_nm: 77.5
+    peak_current_a: 93
+    peak_torque_nm: 239.9
+    peak_speed_rpm: 200
+    efficiency_pct: 76.5
+    power_density_w_kg: 374
+    torque_constant_nm_per_a: 0.15
+    weight_kg: 2.17
+    backlash_arcmin: 8
+    frame_size_mm: 90×82.5
+    communication_protocol: EtherCAT
+    baud_rate: 1M
+    has_dual_encoder: 'Yes'
+    has_built_in_drive: 'Yes'
+  datasheet_url: https://www.kofon.com.cn/products_detail/91.html
+  status: active

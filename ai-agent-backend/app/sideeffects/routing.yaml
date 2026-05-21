@@ -10,46 +10,95 @@
 #   2. exact (main_type, '*')
 #   3. fallback
 #
-# product_family_code matches `product_types.code` from the seed
-# (caesarplanetary, rollsate, elitewave, servolux, kgv, spiralbevel).
+# product_family_code matches `product_types.code` from the seed verbatim.
+# Keep this map in sync with `seed/product_types/` — when a new family is
+# added to the catalog, add a row under `families:` below or it will fall
+# through to `applications`.
 #
-# Only the structure is authoritative — the actual division names and
-# inbox addresses should be edited by the Kofon team before going live.
+# Inbox addresses are placeholders (kofon-motion.example) — the Kofon
+# team should replace them with real distribution lists before going live.
 
 divisions:
   planetary:
     code: planetary
     name: Planetary Gear Division
     inbox: planetary-sales@kofon-motion.example
-  roller_screw:
-    code: roller_screw
-    name: Roller Screw Division
-    inbox: rollsate-sales@kofon-motion.example
   harmonic:
     code: harmonic
     name: Harmonic Drive Division
-    inbox: elitewave-sales@kofon-motion.example
+    inbox: harmonic-sales@kofon-motion.example
+  bevel:
+    code: bevel
+    name: Right-Angle / Bevel Gear Division
+    inbox: bevel-sales@kofon-motion.example
   linear:
     code: linear
     name: Linear Motion Division
-    inbox: servolux-sales@kofon-motion.example
-  bevel:
-    code: bevel
-    name: Bevel Gear Division
-    inbox: bevel-sales@kofon-motion.example
+    inbox: linear-sales@kofon-motion.example
+  mobility:
+    code: mobility
+    name: AGV / Mobility Division
+    inbox: mobility-sales@kofon-motion.example
+  servo_systems:
+    code: servo_systems
+    name: Servo Systems Division
+    inbox: servo-sales@kofon-motion.example
+  assembly:
+    code: assembly
+    name: Assembly & Tightening Division
+    inbox: assembly-sales@kofon-motion.example
   applications:
     code: applications
     name: Applications Engineering
     inbox: apps-engineering@kofon-motion.example
 
-# Map product family → division. Used as the second key in routes.
+# Map product family code → division. Used as the second key in routes
+# when a route has `division_by_family: true`. Codes match
+# `product_types.code` from the seed verbatim.
 families:
+  # ---- Planetary gearboxes (precision + general-purpose) ----
   caesarplanetary: planetary
-  rollsate: roller_screw
-  elitewave: harmonic
-  servolux: linear
-  kgv: linear
-  spiralbevel: bevel
+  5kh_series: planetary
+  kpx_s_series: planetary
+  kpx_s_series_hand_crank: planetary
+  kpx_sy_series: planetary
+  ktfr1_series: planetary
+  pwhz_rotary: planetary
+  pwjy_series: planetary
+  pwzd: planetary
+  pwzq_series: planetary
+  r_industrial_series: planetary
+  r_series: planetary
+  w_series: planetary
+  zf_s_series: planetary
+
+  # ---- Harmonic drives / strain wave ----
+  8_11_series_harmonic: harmonic
+  kbd_mc_series: harmonic
+  kcd_mc_series: harmonic
+
+  # ---- Right-angle / bevel gear ----
+  kgr_series: bevel
+  kr_series: bevel
+
+  # ---- Linear motion (electric cylinders, ball screws, roller screws) ----
+  kfdg_series: linear
+  kofon_ball_screw: linear
+  servo_linear_joint_module: linear
+
+  # ---- AGV / mobility ----
+  agv_drive_wheel_kfq150: mobility
+  agv_steering_differential_wheel: mobility
+  xgv_series: mobility
+
+  # ---- Servo motors + multi-axis drives ----
+  rd_series: servo_systems
+  xam_series: servo_systems
+
+  # ---- Assembly / tightening machines ----
+  pl_tightening_machine: assembly
+  tkz_series: assembly
+  tl_series: assembly
 
 routes:
   # Confirmed sales — go to the division that owns the family.

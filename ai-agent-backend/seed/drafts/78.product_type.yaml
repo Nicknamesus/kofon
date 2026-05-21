@@ -1,0 +1,53 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/78.html
+# Review before promoting to seed/product_types/kbd_mc_series.yaml
+# Notes: The page lists ratios 50, 100, 160 for each frame size. The "速比" column header shows 50, 100, 160 stacked vertically — I interpreted each row as one ratio per row. For frame 14, the table shows three rows: 50 (3.7 Nm), 100 (5.4 Nm), 160 (11 Nm). For frame 17: 50 (16 Nm), 100 (28 Nm), 160 (47 Nm). For frame 20: 50 (17 Nm), 100 (34 Nm), 160 (47 Nm). For frame 25: 50 (27 Nm), 100 (96 Nm), 160 (96 Nm). For frame 32: 50 (53 Nm), 100 (96 Nm), 160 (96 Nm). The "max average load torque" column for some entries shows values that seem to be from the "瞬间容许最大转矩" column — I matched columns as best as possible. The page also mentions "KCD-MC" in the dimension section but the product is KBD-MC — likely a typo on the page. Weight data is not provided on the page. Start torque values are from the "启动扭矩" table at i=50, i=80, i=100, i=120, i=160 — I used the closest matching ratio (50→i=50, 100→i=100, 160→i=160). For frame 14 ratio 160, start torque is listed as "/" (not available) so I used 48 from i=120 as closest available. For frame 17 ratio 160, start torque 220 from i=120. For frame 20 ratio 160, start torque 220 from i=120. For frame 25 ratio 160, start torque 340 from i=120. For frame 32 ratio 160, start torque 500 from i=120. The page also lists ratios 80 and 120 in the start torque table but these ratios are not in the main performance table — I omitted them as they may not be standard offerings. Transmission accuracy: frame 14 and 17 have <1.5 arcmin, frames ≥20 have <1 arcmin. Hysteresis and lost motion are both <1 arcmin for all. Repeatability <±0.1 arcmin for all.
+code: kbd_mc_series
+name: KBD-MC Series Harmonic Drive
+family: Harmonic drive / strain wave
+description: KBD-MC series harmonic drive reducers from Kofon. Ultra-short design
+  with high transmission accuracy, high torsional stiffness, large load capacity,
+  high efficiency, and long life. Available in frame sizes 14, 17, 20, 25, and 32
+  with various reduction ratios.
+spec_schema:
+  frame_size_mm:
+    type: integer
+    label: Frame size
+  ratio:
+    type: integer
+    label: Ratio
+  nominal_torque_nm:
+    type: number
+    label: Rated torque (Nm)
+  peak_torque_nm:
+    type: number
+    label: Max start/stop peak torque (Nm)
+  max_average_load_torque_nm:
+    type: number
+    label: Max average load torque (Nm)
+  max_instant_torque_nm:
+    type: number
+    label: Instant max torque (Nm)
+  max_input_speed_rpm:
+    type: integer
+    label: Max input speed (rpm)
+  max_average_input_speed_rpm:
+    type: integer
+    label: Max average input speed (rpm)
+  transmission_accuracy_arcmin:
+    type: number
+    label: Transmission accuracy (arcmin)
+  hysteresis_arcmin:
+    type: number
+    label: Hysteresis (arcmin)
+  lost_motion_arcmin:
+    type: number
+    label: Lost motion (arcmin)
+  repeatability_arcmin:
+    type: number
+    label: Repeatability (±arcmin)
+  start_torque_mnm:
+    type: integer
+    label: Start torque (mNm)
+  weight_kg:
+    type: number
+    label: Weight (kg)

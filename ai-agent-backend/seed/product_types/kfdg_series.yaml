@@ -1,0 +1,62 @@
+# Promoted from 2 draft(s) under seed/drafts/.
+# Sources: 43.product_type, 44.product_type
+code: kfdg_series
+name: KFDG Series Direct-Coupled Electric Cylinder
+family: Linear actuator
+description: KFDG series direct-coupled electric cylinders integrate a servo motor,
+  servo drive, and high-precision ball screw in a modular design. The servo motor
+  connects directly to the transmission screw, eliminating intermediate inertia and
+  backlash for improved control precision. Available in frame sizes 50, 60, 70, 80,
+  100, and 120 mm, with multiple lead options per frame. Suitable for harsh environments,
+  offering high strength, high speed, high precision, smooth motion, and low noise.
+  Thrust range from 1.5 kN to 30 kN, speeds up to 500 mm/s (1 m/s with special screws),
+  and strokes up to 1 m.
+spec_schema:
+  frame_size_mm:
+    type: integer
+    label: Frame size (mm)
+  lead_mm:
+    type: number
+    label: Lead (mm)
+  max_thrust_kN:
+    type: number
+    label: Max thrust (kN)
+  max_speed_mm_s:
+    type: integer
+    label: Max speed (mm/s)
+  max_thrust_screw_input_torque_Nm:
+    type: number
+    label: Screw input torque at max thrust (Nm)
+  screw_dynamic_load_rating_kN:
+    type: number
+    label: Screw dynamic load rating (kN)
+  max_stroke_mm:
+    type: integer
+    label: Max stroke (mm)
+  weight_per_100mm_stroke_kg:
+    type: number
+    label: Weight per 100 mm stroke (kg)
+  power_tube_max_rotation_deg:
+    type: number
+    label: Power tube max rotation angle (°)
+  axial_backlash_mm:
+    type: number
+    label: Axial backlash (mm)
+  lead_error_300mm_mm:
+    type: number
+    label: Lead error over 300 mm (mm)
+  repeatability_mm:
+    type: number
+    label: Repeatability (mm)
+  screw_lead_mm:
+    type: number
+    label: Screw lead (mm)
+  max_thrust_screw_input_torque_nm:
+    type: number
+    label: Screw input torque at max thrust (Nm)
+  positioning_accuracy_mm:
+    type: number
+    label: Positioning accuracy (mm)
+  300mm_lead_error_mm:
+    type: number
+    label: 300 mm lead error (mm)

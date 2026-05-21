@@ -1,0 +1,21 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/97.html
+# Review before promoting to seed/products/tl_series.yaml
+product_type_code: tl_series
+products:
+- sku: TL054
+  name: TL054 — Offset tightening gearbox
+  specs:
+    model: TL054
+    stage: '1'
+    ratio: null
+    nominal_torque_nm: null
+    peak_torque_nm: null
+    backlash_arcmin: null
+    input_speed_rpm_max: null
+    efficiency_pct: null
+    weight_kg: null
+    frame_size_mm: TL054
+    max_tightening_torque_nm: null
+    tightening_speed_rpm: null
+    life_cycles: null
+  status: active

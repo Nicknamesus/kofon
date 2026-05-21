@@ -1,0 +1,40 @@
+# DRAFT — extracted from PDF: https://omo-oss-file110.thefastfile.com/portal-saas/pg2024101217404969641/cms/file/5kh系列高精度行星减速机.pdf
+# Source product pages (stems): 29
+# LLM-chosen code: 5kh_series
+# Review, then promote to seed/product_types/<code>.yaml + seed/products/<code>.yaml
+# Notes: The PDF only contained 2 pages with very limited extractable content. Page 1 was blank (likely a cover page). Page 2 had partial content. The frame size 5KH-060 was identified with 1-stage ratios 3/4/5/8/10 and 2-stage ratios 9/12/15/20/25/30/40/50/60/80/100. Torque values (14 Nm nominal, 28 Nm peak), backlash (3 arcmin 1-stage, 5 arcmin 2-stage), max input speed (6000 rpm), efficiency (97% 1-stage, 94% 2-stage), and weight (0.6 kg 1-stage, 0.7 kg 2-stage) were extracted from the table. These values appear to be shared across ratios within each stage count (band approach). The PDF likely contains more frame sizes (e.g., 5KH-075, 5KH-090, etc.) on subsequent pages that were not captured. Only the first frame size is represented here. Please verify against the full PDF.
+code: 5kh_series
+name: 5KH Series High Precision Planetary Gearbox
+family: Planetary gearbox
+description: The 5KH series is a high-precision planetary gearbox line designed for
+  applications requiring low backlash, high torque density, and smooth operation.
+  Available in multiple frame sizes and reduction ratios, the series offers robust
+  performance for servo-driven motion control systems.
+spec_schema:
+  frame_size_mm:
+    type: integer
+    label: Frame size (mm)
+  ratio:
+    type: integer
+    label: Reduction ratio
+  stages:
+    type: integer
+    label: Number of stages
+  nominal_torque_nm:
+    type: number
+    label: Nominal torque (Nm)
+  peak_torque_nm:
+    type: number
+    label: Peak torque (Nm)
+  backlash_arcmin:
+    type: number
+    label: Backlash (arcmin)
+  input_speed_rpm_max:
+    type: integer
+    label: Max input speed (rpm)
+  efficiency_pct:
+    type: number
+    label: Efficiency (%)
+  weight_kg:
+    type: number
+    label: Weight (kg)

@@ -1,0 +1,21 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/93.html
+# Review before promoting to seed/products/kr095_23.yaml
+product_type_code: kr095_23
+products:
+- sku: KR095-23
+  name: KR095-23 — 23:1 Joint Reducer
+  specs:
+    ratio: 23
+    nominal_torque_nm: 50
+    peak_torque_nm: 150
+    rated_speed_rpm: 3000
+    peak_speed_rpm: 6000
+    efficiency_pct: 85
+    weight_kg: 0.67
+    backlash_arcmin: 8
+    frame_size_mm: 95
+    length_mm: 50
+    operating_temp_range: -25°C~+90°C
+    lubrication: Synthetic grease
+  datasheet_url: https://www.kofon.com.cn/products_detail/93.html
+  status: active

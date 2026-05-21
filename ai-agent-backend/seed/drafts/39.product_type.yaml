@@ -1,0 +1,77 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/39.html
+# Review before promoting to seed/product_types/agv_steering_differential_wheel.yaml
+# Notes: The model number on the page is "KF150S-16(21、24、28、32)-400W-A" — the parentheses indicate 5 available speed ratios (16, 21, 24, 28, 32). I expanded these into 5 separate SKUs. The max speed values in m/min are listed in parentheses corresponding to each ratio: 88.3 (ratio 16), 67.3 (ratio 21), 58.9 (ratio 24), 50.5 (ratio 28), 44.2 (ratio 32). All other specs (torque, weight, load, etc.) are shared across the variants. The steering ratio is fixed at 160. The page mentions optional DC24V supply but the table shows 48V DC as standard. The 'A' suffix in the model is preserved as-is (Type A variant). No datasheet URL or CAD URL was found on the page beyond a PDF link ('1AGV舵轮及差速轮.pdf') which is a relative path — I omitted it as the full URL could not be determined. The product family is AGV steering/differential wheels with planetary gear internals — classified under 'Planetary gearbox' family.
+code: agv_steering_differential_wheel
+name: AGV Steering & Differential Wheel
+family: Planetary gearbox
+description: AGV steering and differential wheels from Kofon, featuring a planetary
+  gear structure inside the wheel hub. The wheel core uses a planetary gearbox design,
+  offering customizable speed ratios, compact structure, high reliability, and maintenance-free
+  operation. The outer wheel layer uses resin rubber or polyurethane for high strength
+  and wear resistance. The drive wheel integrates travel and steering units, with
+  low-voltage servo motors (48V DC), optional encoders, and both electronic and mechanical
+  limit switches for safe steering control.
+spec_schema:
+  model:
+    type: string
+    label: Model
+  speed_ratio_options:
+    type: string
+    label: Available speed ratios (drive)
+  steering_ratio:
+    type: integer
+    label: Steering ratio
+  motor_power_walking_w:
+    type: integer
+    label: Walking motor rated power (W)
+  motor_torque_walking_nm:
+    type: number
+    label: Walking motor rated torque (Nm)
+  voltage_v:
+    type: integer
+    label: Voltage (V DC)
+  motor_current_walking_a:
+    type: number
+    label: Walking motor rated current (A)
+  motor_speed_walking_rpm:
+    type: integer
+    label: Walking motor rated speed (rpm)
+  motor_power_steering_w:
+    type: integer
+    label: Steering motor rated power (W)
+  motor_torque_steering_nm:
+    type: number
+    label: Steering motor rated torque (Nm)
+  motor_current_steering_a:
+    type: number
+    label: Steering motor rated current (A)
+  motor_speed_steering_rpm:
+    type: integer
+    label: Steering motor rated speed (rpm)
+  drive_wheel_diameter_mm:
+    type: integer
+    label: Drive wheel diameter (mm)
+  max_speed_m_min:
+    type: number
+    label: Max speed (m/min)
+  max_turning_speed_deg_sec:
+    type: number
+    label: Max turning speed (°/s)
+  driving_wheel_load_kg:
+    type: integer
+    label: Driving wheel load capacity (kg)
+  turning_radius_mm:
+    type: integer
+    label: Turning radius (mm)
+  brake_torque_nm:
+    type: number
+    label: Brake torque (Nm)
+  electron_limit_angle_deg:
+    type: integer
+    label: Electronic limit angle (°)
+  mechanical_limit_angle_deg:
+    type: integer
+    label: Mechanical limit angle (°)
+  total_weight_kg:
+    type: number
+    label: Total weight (kg)

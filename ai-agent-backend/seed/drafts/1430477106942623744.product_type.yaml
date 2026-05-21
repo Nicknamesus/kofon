@@ -1,0 +1,50 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/1430477106942623744.html
+# Review before promoting to seed/product_types/kr080_series.yaml
+# Notes: Single SKU page for KR080-19. The product is listed under "关节减速器" (joint reducer) with a fixed ratio of 19:1. No other ratios or stages are offered on this page. The "Size" dimension (80×53 mm) is interpreted as frame_size_mm=80 (outer diameter) and length_mm=53. Backlash is given as ≤8 arcmin; stored as 8 (upper bound). All values are directly from the technical parameters table. The datasheet PDF link is a relative path; the full URL is not reconstructable from the page text alone, so omitted.
+code: kr080_series
+name: KR080 Series
+family: Planetary gearbox
+description: KR080 series joint reducer (关节减速器) from Kofon. A compact planetary gearbox
+  with a frame size of 80 mm, backlash ≤8 arcmin, and a single ratio of 19:1. Features
+  include advanced ultra-precision machining, world-leading gear grinding (ISO Grade
+  4 or better), carburised and quenched alloy steel gears (HRC60), an integrated cage-type
+  planetary carrier and output shaft design for high rigidity and precision, and full-needle
+  roller bearings without retainers for increased torque and stiffness. Supports non-standard
+  customisation.
+spec_schema:
+  ratio:
+    type: integer
+    label: Ratio
+  nominal_torque_nm:
+    type: number
+    label: Rated torque (Nm)
+  peak_torque_nm:
+    type: number
+    label: Peak torque (Nm)
+  rated_speed_rpm:
+    type: integer
+    label: Rated speed (RPM)
+  peak_speed_rpm:
+    type: integer
+    label: Peak speed (RPM)
+  efficiency_pct:
+    type: number
+    label: Efficiency (%)
+  weight_kg:
+    type: number
+    label: Weight (kg)
+  backlash_arcmin:
+    type: number
+    label: Backlash (arcmin)
+  frame_size_mm:
+    type: integer
+    label: Frame size (mm)
+  length_mm:
+    type: integer
+    label: Length (mm)
+  temperature_range:
+    type: string
+    label: Operating temperature range
+  lubrication:
+    type: string
+    label: Lubrication

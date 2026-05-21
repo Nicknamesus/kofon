@@ -1,0 +1,409 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/129.html
+# Review before promoting to seed/products/kgr070.yaml
+product_type_code: kgr070
+products:
+- sku: KGR070-1-3
+  name: KGR070 — 1-stage, 3:1
+  specs:
+    ratio: 3
+    stages: 1
+    nominal_torque_nm: 21
+    peak_torque_nm: 27
+    emergency_stop_torque_nm: 33
+    rated_input_speed_rpm: 2500
+    max_input_speed_rpm: 7500
+    no_load_torque_nm: 1.7
+    backlash_arcmin: 5
+    torsional_rigidity_nm_per_arcmin: 2
+    max_radial_force_n: 2400
+    max_tilting_moment_nm: 251
+    rotational_inertia_kgcm2: 0.87
+    noise_db: 64
+    efficiency_pct: 96
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Oil lubrication
+    mounting_position: Any
+    protection_class: IP65
+    service_lifetime_h: 20000
+    weight_kg: 2.9
+    frame_size: KGR070
+  status: active
+- sku: KGR070-1-4
+  name: KGR070 — 1-stage, 4:1
+  specs:
+    ratio: 4
+    stages: 1
+    nominal_torque_nm: 21
+    peak_torque_nm: 27
+    emergency_stop_torque_nm: 33
+    rated_input_speed_rpm: 2700
+    max_input_speed_rpm: 7500
+    no_load_torque_nm: 1.6
+    backlash_arcmin: 5
+    torsional_rigidity_nm_per_arcmin: 2.1
+    max_radial_force_n: 2400
+    max_tilting_moment_nm: 251
+    rotational_inertia_kgcm2: 0.79
+    noise_db: 64
+    efficiency_pct: 96
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Oil lubrication
+    mounting_position: Any
+    protection_class: IP65
+    service_lifetime_h: 20000
+    weight_kg: 2.9
+    frame_size: KGR070
+  status: active
+- sku: KGR070-1-5
+  name: KGR070 — 1-stage, 5:1
+  specs:
+    ratio: 5
+    stages: 1
+    nominal_torque_nm: 21
+    peak_torque_nm: 27
+    emergency_stop_torque_nm: 33
+    rated_input_speed_rpm: 3000
+    max_input_speed_rpm: 7500
+    no_load_torque_nm: 1.4
+    backlash_arcmin: 5
+    torsional_rigidity_nm_per_arcmin: 2.2
+    max_radial_force_n: 2400
+    max_tilting_moment_nm: 251
+    rotational_inertia_kgcm2: 0.75
+    noise_db: 64
+    efficiency_pct: 96
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Oil lubrication
+    mounting_position: Any
+    protection_class: IP65
+    service_lifetime_h: 20000
+    weight_kg: 2.9
+    frame_size: KGR070
+  status: active
+- sku: KGR070-1-7
+  name: KGR070 — 1-stage, 7:1
+  specs:
+    ratio: 7
+    stages: 1
+    nominal_torque_nm: 19
+    peak_torque_nm: 25
+    emergency_stop_torque_nm: 25
+    rated_input_speed_rpm: 3000
+    max_input_speed_rpm: 7500
+    no_load_torque_nm: 1.5
+    backlash_arcmin: 5
+    torsional_rigidity_nm_per_arcmin: 1.8
+    max_radial_force_n: 2400
+    max_tilting_moment_nm: 251
+    rotational_inertia_kgcm2: 0.71
+    noise_db: 64
+    efficiency_pct: 96
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Oil lubrication
+    mounting_position: Any
+    protection_class: IP65
+    service_lifetime_h: 20000
+    weight_kg: 2.9
+    frame_size: KGR070
+  status: active
+- sku: KGR070-1-10
+  name: KGR070 — 1-stage, 10:1
+  specs:
+    ratio: 10
+    stages: 1
+    nominal_torque_nm: 14
+    peak_torque_nm: 18
+    emergency_stop_torque_nm: 18
+    rated_input_speed_rpm: 3000
+    max_input_speed_rpm: 7500
+    no_load_torque_nm: 1.4
+    backlash_arcmin: 5
+    torsional_rigidity_nm_per_arcmin: 1.5
+    max_radial_force_n: 2400
+    max_tilting_moment_nm: 251
+    rotational_inertia_kgcm2: 0.7
+    noise_db: 64
+    efficiency_pct: 96
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Oil lubrication
+    mounting_position: Any
+    protection_class: IP65
+    service_lifetime_h: 20000
+    weight_kg: 2.9
+    frame_size: KGR070
+  status: active
+- sku: KGR070-2-12
+  name: KGR070 — 2-stage, 12:1
+  specs:
+    ratio: 12
+    stages: 2
+    nominal_torque_nm: 21
+    peak_torque_nm: 27
+    emergency_stop_torque_nm: 33
+    rated_input_speed_rpm: 4000
+    max_input_speed_rpm: 6000
+    no_load_torque_nm: 0.2
+    backlash_arcmin: 5
+    torsional_rigidity_nm_per_arcmin: 2
+    max_radial_force_n: 2400
+    max_tilting_moment_nm: 251
+    rotational_inertia_kgcm2: 0.21
+    noise_db: 64
+    efficiency_pct: 94
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Grease lubrication
+    mounting_position: Any
+    protection_class: IP65
+    service_lifetime_h: 20000
+    weight_kg: 3.3
+    frame_size: KGR070
+  status: active
+- sku: KGR070-2-16
+  name: KGR070 — 2-stage, 16:1
+  specs:
+    ratio: 16
+    stages: 2
+    nominal_torque_nm: 21
+    peak_torque_nm: 27
+    emergency_stop_torque_nm: 33
+    rated_input_speed_rpm: 4000
+    max_input_speed_rpm: 6000
+    no_load_torque_nm: 0.2
+    backlash_arcmin: 5
+    torsional_rigidity_nm_per_arcmin: 2.1
+    max_radial_force_n: 2400
+    max_tilting_moment_nm: 251
+    rotational_inertia_kgcm2: 0.2
+    noise_db: 64
+    efficiency_pct: 94
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Grease lubrication
+    mounting_position: Any
+    protection_class: IP65
+    service_lifetime_h: 20000
+    weight_kg: 3.3
+    frame_size: KGR070
+  status: active
+- sku: KGR070-2-20
+  name: KGR070 — 2-stage, 20:1
+  specs:
+    ratio: 20
+    stages: 2
+    nominal_torque_nm: 21
+    peak_torque_nm: 27
+    emergency_stop_torque_nm: 33
+    rated_input_speed_rpm: 4000
+    max_input_speed_rpm: 6000
+    no_load_torque_nm: 0.2
+    backlash_arcmin: 5
+    torsional_rigidity_nm_per_arcmin: 2.8
+    max_radial_force_n: 2400
+    max_tilting_moment_nm: 251
+    rotational_inertia_kgcm2: 0.2
+    noise_db: 64
+    efficiency_pct: 94
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Grease lubrication
+    mounting_position: Any
+    protection_class: IP65
+    service_lifetime_h: 20000
+    weight_kg: 3.3
+    frame_size: KGR070
+  status: active
+- sku: KGR070-2-25
+  name: KGR070 — 2-stage, 25:1
+  specs:
+    ratio: 25
+    stages: 2
+    nominal_torque_nm: 21
+    peak_torque_nm: 27
+    emergency_stop_torque_nm: 33
+    rated_input_speed_rpm: 4000
+    max_input_speed_rpm: 6000
+    no_load_torque_nm: 0.2
+    backlash_arcmin: 5
+    torsional_rigidity_nm_per_arcmin: 2.2
+    max_radial_force_n: 2400
+    max_tilting_moment_nm: 251
+    rotational_inertia_kgcm2: 0.2
+    noise_db: 64
+    efficiency_pct: 94
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Grease lubrication
+    mounting_position: Any
+    protection_class: IP65
+    service_lifetime_h: 20000
+    weight_kg: 3.3
+    frame_size: KGR070
+  status: active
+- sku: KGR070-2-28
+  name: KGR070 — 2-stage, 28:1
+  specs:
+    ratio: 28
+    stages: 2
+    nominal_torque_nm: 21
+    peak_torque_nm: 27
+    emergency_stop_torque_nm: 33
+    rated_input_speed_rpm: 4000
+    max_input_speed_rpm: 6000
+    no_load_torque_nm: 0.2
+    backlash_arcmin: 5
+    torsional_rigidity_nm_per_arcmin: 2.1
+    max_radial_force_n: 2400
+    max_tilting_moment_nm: 251
+    rotational_inertia_kgcm2: 0.2
+    noise_db: 64
+    efficiency_pct: 94
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Grease lubrication
+    mounting_position: Any
+    protection_class: IP65
+    service_lifetime_h: 20000
+    weight_kg: 3.3
+    frame_size: KGR070
+  status: active
+- sku: KGR070-2-35
+  name: KGR070 — 2-stage, 35:1
+  specs:
+    ratio: 35
+    stages: 2
+    nominal_torque_nm: 21
+    peak_torque_nm: 27
+    emergency_stop_torque_nm: 33
+    rated_input_speed_rpm: 4000
+    max_input_speed_rpm: 6000
+    no_load_torque_nm: 0.2
+    backlash_arcmin: 5
+    torsional_rigidity_nm_per_arcmin: 2.2
+    max_radial_force_n: 2400
+    max_tilting_moment_nm: 251
+    rotational_inertia_kgcm2: 0.2
+    noise_db: 64
+    efficiency_pct: 94
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Grease lubrication
+    mounting_position: Any
+    protection_class: IP65
+    service_lifetime_h: 20000
+    weight_kg: 3.3
+    frame_size: KGR070
+  status: active
+- sku: KGR070-2-40
+  name: KGR070 — 2-stage, 40:1
+  specs:
+    ratio: 40
+    stages: 2
+    nominal_torque_nm: 21
+    peak_torque_nm: 27
+    emergency_stop_torque_nm: 33
+    rated_input_speed_rpm: 4000
+    max_input_speed_rpm: 6000
+    no_load_torque_nm: 0.2
+    backlash_arcmin: 5
+    torsional_rigidity_nm_per_arcmin: 2.1
+    max_radial_force_n: 2400
+    max_tilting_moment_nm: 251
+    rotational_inertia_kgcm2: 0.2
+    noise_db: 64
+    efficiency_pct: 94
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Grease lubrication
+    mounting_position: Any
+    protection_class: IP65
+    service_lifetime_h: 20000
+    weight_kg: 3.3
+    frame_size: KGR070
+  status: active
+- sku: KGR070-2-50
+  name: KGR070 — 2-stage, 50:1
+  specs:
+    ratio: 50
+    stages: 2
+    nominal_torque_nm: 21
+    peak_torque_nm: 27
+    emergency_stop_torque_nm: 33
+    rated_input_speed_rpm: 4000
+    max_input_speed_rpm: 6000
+    no_load_torque_nm: 0.2
+    backlash_arcmin: 5
+    torsional_rigidity_nm_per_arcmin: 2.2
+    max_radial_force_n: 2400
+    max_tilting_moment_nm: 251
+    rotational_inertia_kgcm2: 0.2
+    noise_db: 64
+    efficiency_pct: 94
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Grease lubrication
+    mounting_position: Any
+    protection_class: IP65
+    service_lifetime_h: 20000
+    weight_kg: 3.3
+    frame_size: KGR070
+  status: active
+- sku: KGR070-2-70
+  name: KGR070 — 2-stage, 70:1
+  specs:
+    ratio: 70
+    stages: 2
+    nominal_torque_nm: 19
+    peak_torque_nm: 25
+    emergency_stop_torque_nm: 25
+    rated_input_speed_rpm: 4000
+    max_input_speed_rpm: 6000
+    no_load_torque_nm: 0.2
+    backlash_arcmin: 5
+    torsional_rigidity_nm_per_arcmin: 1.8
+    max_radial_force_n: 2400
+    max_tilting_moment_nm: 251
+    rotational_inertia_kgcm2: 0.2
+    noise_db: 64
+    efficiency_pct: 94
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Grease lubrication
+    mounting_position: Any
+    protection_class: IP65
+    service_lifetime_h: 20000
+    weight_kg: 3.3
+    frame_size: KGR070
+  status: active
+- sku: KGR070-2-100
+  name: KGR070 — 2-stage, 100:1
+  specs:
+    ratio: 100
+    stages: 2
+    nominal_torque_nm: 14
+    peak_torque_nm: 18
+    emergency_stop_torque_nm: 18
+    rated_input_speed_rpm: 4000
+    max_input_speed_rpm: 6000
+    no_load_torque_nm: 0.2
+    backlash_arcmin: 5
+    torsional_rigidity_nm_per_arcmin: 1.5
+    max_radial_force_n: 2400
+    max_tilting_moment_nm: 251
+    rotational_inertia_kgcm2: 0.2
+    noise_db: 64
+    efficiency_pct: 94
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Grease lubrication
+    mounting_position: Any
+    protection_class: IP65
+    service_lifetime_h: 20000
+    weight_kg: 3.3
+    frame_size: KGR070
+  status: active

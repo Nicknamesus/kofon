@@ -1,0 +1,29 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/40.html
+# Review before promoting to seed/products/agv_drive_wheel_kfq150.yaml
+product_type_code: agv_drive_wheel_kfq150
+products:
+- sku: KFQ150-16-400W-A
+  name: KFQ150 — 16:1, 400W, Type A
+  specs:
+    voltage_v_dc: 48
+    motor_rated_power_w: 400
+    motor_rated_torque_nm: 1.27
+    motor_peak_torque_nm: 2.54
+    motor_rated_speed_rpm: 3000
+    motor_rated_current_a: 11.95
+    ratio: 16
+    rated_output_torque_nm: 75
+    fault_stop_torque_nm: 150
+    peak_output_torque_nm: 61
+    rated_input_speed_rpm: 3000
+    max_input_speed_rpm: 6000
+    efficiency_pct: 93
+    protection_class: IP54
+    drive_wheel_diameter_mm: 150
+    wheel_width_mm: 40
+    max_speed_m_s: 88.3
+    operation_temperature_min_c: -25
+    operation_temperature_max_c: 90
+    rated_load_kg: 300
+    variant: A
+  status: active

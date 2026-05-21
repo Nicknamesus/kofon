@@ -1,0 +1,19 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/87.html
+# Review before promoting to seed/products/kr045_series.yaml
+product_type_code: kr045_series
+products:
+- sku: KR045-30
+  name: KR045 — 30:1
+  specs:
+    ratio: 30
+    nominal_torque_nm: 3
+    peak_torque_nm: 9
+    rated_speed_rpm: 4000
+    peak_speed_rpm: 6000
+    efficiency_pct: 85
+    weight_kg: 0.17
+    backlash_arcmin: 8
+    frame_size_mm: 45×45
+    operating_temp_range: -25°C~+90°C
+    lubrication: 合成润滑脂 (Synthetic grease)
+  status: active

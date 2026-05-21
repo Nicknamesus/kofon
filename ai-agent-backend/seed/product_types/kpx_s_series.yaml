@@ -1,0 +1,78 @@
+# Promoted from 6 draft(s) under seed/drafts/.
+# Sources: 114.product_type, 116.product_type, 117.product_type, 118.product_type, 126.product_type, 84.product_type
+code: kpx_s_series
+name: KPX-S Series Hand-Input Reducer
+family: Planetary gearbox
+description: The KPX-S series hand-input (manual crank) planetary reducers from Kofon
+  are designed for applications where electric power may be unavailable or unreliable.
+  They allow manual operation via a hand crank to maintain essential equipment function
+  during power failures or in remote locations. The series features high efficiency
+  (up to 97% for 1-stage), low backlash options, and a compact design. Available in
+  1-stage and 2-stage configurations with a wide range of ratios.
+spec_schema:
+  stages:
+    type: integer
+    label: Number of stages
+  ratio:
+    type: integer
+    label: Ratio i
+  nominal_torque_nm:
+    type: number
+    label: Rated output torque (Nm)
+  peak_torque_nm:
+    type: number
+    label: Maximum acceleration torque (Nm)
+  emergency_stop_torque_nm:
+    type: number
+    label: Emergency stop torque (Nm)
+  input_speed_rpm_max:
+    type: integer
+    label: Max input speed (rpm)
+  rated_input_speed_rpm:
+    type: integer
+    label: Rated input speed (rpm)
+  backlash_arcmin:
+    type: string
+    label: Backlash (arcmin)
+  max_radial_force_n:
+    type: integer
+    label: Max radial force (N)
+  max_axial_force_n:
+    type: integer
+    label: Max axial force (N)
+  rotational_inertia_kgcm2:
+    type: number
+    label: Rotational inertia (kg·cm²)
+  noise_db:
+    type: number
+    label: Noise (dB(A))
+  efficiency_pct:
+    type: integer
+    label: Full loading efficiency (%)
+  operating_temp_min_c:
+    type: integer
+    label: Operating temperature min (°C)
+  operating_temp_max_c:
+    type: integer
+    label: Operating temperature max (°C)
+  lubrication:
+    type: string
+    label: Lubrication
+  mounting_position:
+    type: string
+    label: Mounting position
+  service_lifetime_h:
+    type: integer
+    label: Service lifetime (h)
+  weight_kg:
+    type: number
+    label: Weight (kg)
+  variant:
+    type: string
+    label: Variant (standard/precision)
+  max_input_speed_rpm:
+    type: integer
+    label: Max input speed (rpm)
+  noise_db_a:
+    type: number
+    label: Noise (dB(A))

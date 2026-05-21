@@ -1,0 +1,46 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/104.html
+# Review before promoting to seed/product_types/tkz_series.yaml
+# Notes: The page is for a single product model TKZ075 (TKZ型拧紧机-TKZ075). The page has sections for "技术参数" (Technical Parameters) and "标准尺寸" (Standard Dimensions) but the actual tabular data (torque, ratio, speed, etc.) is NOT rendered in the scraped text — likely loaded via JavaScript or images. Only the model code TKZ075 is identifiable. No ratio, torque, backlash, speed, efficiency, or weight values could be extracted. The PDF datasheet "柠紧机系列.pdf" is linked but not accessible via scraping. I created a single placeholder SKU with minimal specs. A human should review the actual datasheet PDF or the live page with JS rendering to fill in the technical parameters. The product family is categorized under "行星减速机" (Planetary gearbox).
+code: tkz_series
+name: TKZ Series
+family: Planetary gearbox
+description: TKZ series tightening units (拧紧机) designed for high-speed, high-impact
+  tightening applications. Features advanced wear-resistant materials integrated with
+  planetary gear trains, customized gear profiles for impact resistance, special bearings
+  capable of multi-directional load under tightening shocks, and optional built-in
+  torque and displacement sensors for torque visualization. Output shaft uses high-strength
+  special materials with heat treatment for impact and wear resistance.
+spec_schema:
+  model:
+    type: string
+    label: Model
+  stage:
+    type: string
+    label: Stage
+  ratio:
+    type: string
+    label: Ratio
+  nominal_torque_nm:
+    type: number
+    label: Nominal Torque (Nm)
+  peak_torque_nm:
+    type: number
+    label: Peak Torque (Nm)
+  backlash_arcmin:
+    type: number
+    label: Backlash (arcmin)
+  input_speed_rpm_max:
+    type: integer
+    label: Max Input Speed (rpm)
+  efficiency_pct:
+    type: number
+    label: Efficiency (%)
+  weight_kg:
+    type: number
+    label: Weight (kg)
+  frame_size_mm:
+    type: string
+    label: Frame Size (mm)
+  variant:
+    type: string
+    label: Variant

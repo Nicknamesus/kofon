@@ -1,0 +1,28 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/1430480168641302528.html
+# Review before promoting to seed/products/kr128_22.yaml
+product_type_code: kr128_22
+products:
+- sku: KR128-22
+  name: KR128-22 Joint Module — 22:1
+  specs:
+    ratio: 22
+    rated_voltage_v: 48
+    rated_current_a: 14
+    rated_power_w: 477
+    rated_speed_rpm: 68
+    rated_torque_nm: 67
+    peak_current_a: 42
+    peak_torque_nm: 201
+    peak_speed_rpm: 113
+    efficiency_pct: 76.5
+    power_density_w_kg: 184.8
+    torque_constant_nm_a: 0.2
+    weight_kg: 2.58
+    backlash_arcmin: 8
+    frame_size_mm: 128×64
+    communication_protocol: CAN
+    communication_baud_rate: 1M
+    double_encoder: 'Yes'
+    built_in_drive: Optional
+  datasheet_url: https://www.kofon.com.cn/products_detail/1430480168641302528.html
+  status: active

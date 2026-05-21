@@ -1,0 +1,36 @@
+# Promoted from 1 draft(s) under seed/drafts/.
+# Sources: 35.product_type
+code: pwjy_series
+name: PWJY Series
+family: Planetary gearbox
+description: PWJY series planetary gearboxes from Kofon, featuring an integrated planetary
+  gear structure with high efficiency and stable performance. They include a high-strength
+  alloy steel roller (surface can be rubber-coated), an efficient electromagnetic
+  brake for direct braking of the power shaft, smart sensors for remote monitoring,
+  and an integrated cast support frame. Designed for horizontal installation with
+  industrial gear oil lubrication.
+spec_schema:
+  frame_size_mm:
+    type: string
+    label: Frame size
+  nominal_torque_nm:
+    type: number
+    label: Rated output torque (Nm)
+  input_speed_rpm_max:
+    type: integer
+    label: Rated input speed (r/min)
+  installation_direction:
+    type: string
+    label: Installation direction
+  lubrication_system:
+    type: string
+    label: Lubrication system
+  roller_radial_static_load_n:
+    type: number
+    label: Roller radial static load (N)
+  braking_torque_nm_min:
+    type: number
+    label: Braking torque min (Nm)
+  braking_torque_nm_max:
+    type: number
+    label: Braking torque max (Nm)

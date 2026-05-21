@@ -1,0 +1,58 @@
+# Promoted from 1 draft(s) under seed/drafts/.
+# Sources: 77.product_type
+code: kcd_mc_series
+name: KCD-MC Series Harmonic Drive / Strain Wave Gearbox
+family: Harmonic drive / strain wave
+description: KCD-MC series harmonic drive reducers from Kofon. Features ultra-short
+  component design, high transmission accuracy and repeatability, high torsional stiffness,
+  large load capacity, high efficiency, and long service life. Available in frame
+  sizes 14, 17, 20, 25, and 32 with various reduction ratios.
+spec_schema:
+  frame_size:
+    type: integer
+    label: Frame size
+  ratio:
+    type: integer
+    label: Reduction ratio
+  peak_torque_nm:
+    type: number
+    label: Start/stop permissible peak torque (Nm)
+  avg_load_torque_nm:
+    type: number
+    label: Average load torque max (Nm)
+  nominal_torque_nm:
+    type: number
+    label: Rated output torque (Nm)
+  emergency_stop_torque_nm:
+    type: number
+    label: Emergency stop torque (Nm)
+  input_speed_rpm_max:
+    type: integer
+    label: Max input speed (r/min)
+  avg_input_speed_rpm_max:
+    type: integer
+    label: Max average input speed (r/min)
+  design_life_hrs:
+    type: integer
+    label: Design life (Hrs)
+  transmission_accuracy_arcmin:
+    type: number
+    label: Transmission accuracy (arc min)
+  hysteresis_arcmin:
+    type: number
+    label: Hysteresis (arc min)
+  lost_motion_arcmin:
+    type: number
+    label: Lost motion (arc min)
+  repeatability_arcmin:
+    type: number
+    label: Repeatability (±arc min)
+  start_torque_mnm:
+    type: integer
+    label: Start torque (mNm)
+  weight_kg:
+    type: number
+    label: Weight (kg)
+  variant:
+    type: string
+    label: Variant

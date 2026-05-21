@@ -1,0 +1,57 @@
+# Promoted from 1 draft(s) under seed/drafts/.
+# Sources: 80.products
+# SKUs: 4
+product_type_code: servo_linear_joint_module
+products:
+- sku: SLJM-500N
+  name: Servo Linear Joint Module — 500N thrust, 200mm/s, 50mm stroke
+  specs:
+    max_thrust_n: 500
+    max_speed_mm_s: 200
+    stroke_mm: 50
+    size_c1_mm: 42
+    size_d1_mm: 171
+    rated_voltage_v: DC48V±10%
+    lead_mm: 3
+    holding_brake: 'No'
+    variant: 500N
+  status: active
+- sku: SLJM-4000N
+  name: Servo Linear Joint Module — 4000N thrust, 300mm/s, 90mm stroke
+  specs:
+    max_thrust_n: 4000
+    max_speed_mm_s: 300
+    stroke_mm: 90
+    size_c1_mm: 52
+    size_d1_mm: 238
+    rated_voltage_v: DC48V±10%
+    lead_mm: 3
+    holding_brake: 'No'
+    variant: 4000N
+  status: active
+- sku: SLJM-8000N
+  name: Servo Linear Joint Module — 8000N thrust, 300mm/s, 90mm stroke
+  specs:
+    max_thrust_n: 8000
+    max_speed_mm_s: 300
+    stroke_mm: 90
+    size_c1_mm: 62
+    size_d1_mm: 262
+    rated_voltage_v: DC48V±10%
+    lead_mm: 3
+    holding_brake: 'No'
+    variant: 8000N
+  status: active
+- sku: SLJM-13000N
+  name: Servo Linear Joint Module — 13000N thrust, 300mm/s, 90mm stroke
+  specs:
+    max_thrust_n: 13000
+    max_speed_mm_s: 300
+    stroke_mm: 90
+    size_c1_mm: 77
+    size_d1_mm: 320
+    rated_voltage_v: DC48V±10%
+    lead_mm: 3
+    holding_brake: 'No'
+    variant: 13000N
+  status: active

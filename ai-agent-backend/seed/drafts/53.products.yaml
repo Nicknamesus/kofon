@@ -1,0 +1,238 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/53.html
+# Review before promoting to seed/products/xam_series.yaml
+product_type_code: xam_series
+products:
+- sku: XAM060-P6430FA0-01BA0
+  name: XAM060 — 200 W, 220 V, 60 mm flange, no brake
+  specs:
+    frame_size_mm: 60
+    voltage_v: 220
+    power_w: 200
+    with_brake: 'No'
+    encoder_type: 23-bit multi-turn absolute optical
+    pole_pairs: 5
+    protection_class: IP65
+    insulation_class: F
+    variant: 01BA0
+  status: active
+- sku: XAM060-01330FA0-01BA0
+  name: XAM060 — 400 W, 220 V, 60 mm flange, no brake
+  specs:
+    frame_size_mm: 60
+    voltage_v: 220
+    power_w: 400
+    with_brake: 'No'
+    encoder_type: 23-bit multi-turn absolute optical
+    pole_pairs: 5
+    protection_class: IP65
+    insulation_class: F
+    variant: 01BA0
+  status: active
+- sku: XAM060-P6430FA0-11BA0
+  name: XAM060 — 200 W, 220 V, 60 mm flange, with brake
+  specs:
+    frame_size_mm: 60
+    voltage_v: 220
+    power_w: 200
+    with_brake: 'Yes'
+    encoder_type: 23-bit multi-turn absolute optical
+    pole_pairs: 5
+    protection_class: IP65
+    insulation_class: F
+    variant: 11BA0
+  status: active
+- sku: XAM060-01330FA0-11BA0
+  name: XAM060 — 400 W, 220 V, 60 mm flange, with brake
+  specs:
+    frame_size_mm: 60
+    voltage_v: 220
+    power_w: 400
+    with_brake: 'Yes'
+    encoder_type: 23-bit multi-turn absolute optical
+    pole_pairs: 5
+    protection_class: IP65
+    insulation_class: F
+    variant: 11BA0
+  status: active
+- sku: XAM080-02430FA0-01BA0
+  name: XAM080 — 750 W, 220 V, 80 mm flange, no brake
+  specs:
+    frame_size_mm: 80
+    voltage_v: 220
+    power_w: 750
+    with_brake: 'No'
+    encoder_type: 23-bit multi-turn absolute optical
+    pole_pairs: 5
+    protection_class: IP65
+    insulation_class: F
+    variant: 01BA0
+  status: active
+- sku: XAM080-02430FA0-01AA0
+  name: XAM080 — 750 W, 220 V, 80 mm flange, no brake (AA variant)
+  specs:
+    frame_size_mm: 80
+    voltage_v: 220
+    power_w: 750
+    with_brake: 'No'
+    encoder_type: 23-bit multi-turn absolute optical
+    pole_pairs: 5
+    protection_class: IP65
+    insulation_class: F
+    variant: 01AA0
+  status: active
+- sku: XAM080-03230FA0-01BA0
+  name: XAM080 — 1000 W, 220 V, 80 mm flange, no brake
+  specs:
+    frame_size_mm: 80
+    voltage_v: 220
+    power_w: 1000
+    with_brake: 'No'
+    encoder_type: 23-bit multi-turn absolute optical
+    pole_pairs: 5
+    protection_class: IP65
+    insulation_class: F
+    variant: 01BA0
+  status: active
+- sku: XAM080-02430FA0-11BA0
+  name: XAM080 — 750 W, 220 V, 80 mm flange, with brake
+  specs:
+    frame_size_mm: 80
+    voltage_v: 220
+    power_w: 750
+    with_brake: 'Yes'
+    encoder_type: 23-bit multi-turn absolute optical
+    pole_pairs: 5
+    protection_class: IP65
+    insulation_class: F
+    variant: 11BA0
+  status: active
+- sku: XAM080-02430FA0-11AA0
+  name: XAM080 — 750 W, 220 V, 80 mm flange, with brake (AA variant)
+  specs:
+    frame_size_mm: 80
+    voltage_v: 220
+    power_w: 750
+    with_brake: 'Yes'
+    encoder_type: 23-bit multi-turn absolute optical
+    pole_pairs: 5
+    protection_class: IP65
+    insulation_class: F
+    variant: 11AA0
+  status: active
+- sku: XAM080-03230FA0-11BA0
+  name: XAM080 — 1000 W, 220 V, 80 mm flange, with brake
+  specs:
+    frame_size_mm: 80
+    voltage_v: 220
+    power_w: 1000
+    with_brake: 'Yes'
+    encoder_type: 23-bit multi-turn absolute optical
+    pole_pairs: 5
+    protection_class: IP65
+    insulation_class: F
+    variant: 11BA0
+  status: active
+- sku: XAM100-03230FA2-01B01
+  name: XAM100 — 1000 W, 220 V, 100 mm flange, no brake
+  specs:
+    frame_size_mm: 100
+    voltage_v: 220
+    power_w: 1000
+    with_brake: 'No'
+    encoder_type: 23-bit multi-turn absolute optical
+    pole_pairs: 5
+    protection_class: IP65
+    insulation_class: F
+    variant: 01B01
+  status: active
+- sku: XAM100-03230FA2-11B01
+  name: XAM100 — 1000 W, 220 V, 100 mm flange, with brake
+  specs:
+    frame_size_mm: 100
+    voltage_v: 220
+    power_w: 1000
+    with_brake: 'Yes'
+    encoder_type: 23-bit multi-turn absolute optical
+    pole_pairs: 5
+    protection_class: IP65
+    insulation_class: F
+    variant: 11B01
+  status: active
+- sku: XAM130-04820FA1-01B00
+  name: XAM130 — 1000 W, 220 V, 130 mm flange, no brake
+  specs:
+    frame_size_mm: 130
+    voltage_v: 220
+    power_w: 1000
+    with_brake: 'No'
+    encoder_type: 23-bit multi-turn absolute optical
+    pole_pairs: 5
+    protection_class: IP65
+    insulation_class: F
+    variant: 01B00
+  status: active
+- sku: XAM130-07220FA1-01B00
+  name: XAM130 — 1500 W, 220 V, 130 mm flange, no brake
+  specs:
+    frame_size_mm: 130
+    voltage_v: 220
+    power_w: 1500
+    with_brake: 'No'
+    encoder_type: 23-bit multi-turn absolute optical
+    pole_pairs: 5
+    protection_class: IP65
+    insulation_class: F
+    variant: 01B00
+  status: active
+- sku: XAM130-09620FA1-01B00
+  name: XAM130 — 2000 W, 220 V, 130 mm flange, no brake
+  specs:
+    frame_size_mm: 130
+    voltage_v: 220
+    power_w: 2000
+    with_brake: 'No'
+    encoder_type: 23-bit multi-turn absolute optical
+    pole_pairs: 5
+    protection_class: IP65
+    insulation_class: F
+    variant: 01B00
+  status: active
+- sku: XAM130-04820FA1-11B00
+  name: XAM130 — 1000 W, 220 V, 130 mm flange, with brake
+  specs:
+    frame_size_mm: 130
+    voltage_v: 220
+    power_w: 1000
+    with_brake: 'Yes'
+    encoder_type: 23-bit multi-turn absolute optical
+    pole_pairs: 5
+    protection_class: IP65
+    insulation_class: F
+    variant: 11B00
+  status: active
+- sku: XAM130-07220FA1-11B00
+  name: XAM130 — 1500 W, 220 V, 130 mm flange, with brake
+  specs:
+    frame_size_mm: 130
+    voltage_v: 220
+    power_w: 1500
+    with_brake: 'Yes'
+    encoder_type: 23-bit multi-turn absolute optical
+    pole_pairs: 5
+    protection_class: IP65
+    insulation_class: F
+    variant: 11B00
+  status: active
+- sku: XAM130-09620FA1-11B00
+  name: XAM130 — 2000 W, 220 V, 130 mm flange, with brake
+  specs:
+    frame_size_mm: 130
+    voltage_v: 220
+    power_w: 2000
+    with_brake: 'Yes'
+    encoder_type: 23-bit multi-turn absolute optical
+    pole_pairs: 5
+    protection_class: IP65
+    insulation_class: F
+    variant: 11B00
+  status: active

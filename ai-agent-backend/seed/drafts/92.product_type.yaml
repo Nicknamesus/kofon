@@ -1,0 +1,54 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/92.html
+# Review before promoting to seed/product_types/kr090_series.yaml
+# Notes: Only one ratio (25:1) is listed on this page. The product is called "关节减速器" (joint reducer) which is a harmonic/strain-wave type reducer for robotic joints. The family is set to 'Harmonic drive / strain wave' based on the product name and application. The datasheet PDF link is relative ('伺服行星关节模组20250914.pdf') but no full URL is available from the page text. The backlash is listed as ≤8 arcmin — used 8 as the upper bound. Frame size 90 mm is from the model code KR090 and confirmed by the Size dimension (90 mm outer diameter). Length is 82.5 mm from the Size field. The page mentions "侧隙低于8弧分" (backlash below 8 arcmin) and the table says ≤8 arcmin — consistent.
+code: kr090_series
+name: KR090 Series
+family: Harmonic drive / strain wave
+description: The KR090 series is a precision joint reducer (关节减速器) from Kofon, designed
+  for robotic joint applications. It features backlash below 8 arcmin, ultra-precision
+  machined gears with ISO Grade 4 or better accuracy, carburized and hardened alloy
+  steel gears (HRC60), an integrated cage-type planetary carrier and output shaft
+  for high rigidity and precision, and full-needle roller bearings without cages for
+  increased torque and stiffness. The KR090-25 model offers a 25:1 reduction ratio,
+  75 Nm rated torque, and 225 Nm peak torque in a compact 90 mm × 82.5 mm package
+  weighing 0.92 kg.
+spec_schema:
+  ratio:
+    type: integer
+    label: Reducer ratio
+  nominal_torque_nm:
+    type: number
+    label: Rated torque (Nm)
+  peak_torque_nm:
+    type: number
+    label: Peak torque (Nm)
+  input_speed_rpm_max:
+    type: integer
+    label: Max input speed (RPM)
+  rated_speed_rpm:
+    type: integer
+    label: Rated input speed (RPM)
+  efficiency_pct:
+    type: number
+    label: Efficiency (%)
+  weight_kg:
+    type: number
+    label: Weight (kg)
+  backlash_arcmin:
+    type: number
+    label: Backlash (arcmin)
+  frame_size_mm:
+    type: number
+    label: Frame size (mm)
+  length_mm:
+    type: number
+    label: Length (mm)
+  operating_temp_min_c:
+    type: integer
+    label: Min operating temperature (°C)
+  operating_temp_max_c:
+    type: integer
+    label: Max operating temperature (°C)
+  lubrication:
+    type: string
+    label: Lubrication

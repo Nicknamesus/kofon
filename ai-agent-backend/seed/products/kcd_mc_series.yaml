@@ -1,0 +1,455 @@
+# Promoted from 1 draft(s) under seed/drafts/.
+# Sources: 77.products
+# SKUs: 25
+product_type_code: kcd_mc_series
+products:
+- sku: KCD-MC-14-50
+  name: KCD-MC-14 — 50:1
+  specs:
+    frame_size: 14
+    ratio: 50
+    peak_torque_nm: 12
+    avg_load_torque_nm: 4.8
+    nominal_torque_nm: 3.7
+    emergency_stop_torque_nm: 23
+    input_speed_rpm_max: 6000
+    avg_input_speed_rpm_max: 2000
+    design_life_hrs: 10000
+    transmission_accuracy_arcmin: 1.5
+    hysteresis_arcmin: 1
+    lost_motion_arcmin: 1
+    repeatability_arcmin: 0.1
+    start_torque_mnm: 62
+  status: active
+- sku: KCD-MC-14-80
+  name: KCD-MC-14 — 80:1
+  specs:
+    frame_size: 14
+    ratio: 80
+    peak_torque_nm: 12
+    avg_load_torque_nm: 4.8
+    nominal_torque_nm: 3.7
+    emergency_stop_torque_nm: 23
+    input_speed_rpm_max: 6000
+    avg_input_speed_rpm_max: 2000
+    design_life_hrs: 10000
+    transmission_accuracy_arcmin: 1.5
+    hysteresis_arcmin: 1
+    lost_motion_arcmin: 1
+    repeatability_arcmin: 0.1
+    start_torque_mnm: 50
+  status: active
+- sku: KCD-MC-14-100
+  name: KCD-MC-14 — 100:1
+  specs:
+    frame_size: 14
+    ratio: 100
+    peak_torque_nm: 12
+    avg_load_torque_nm: 4.8
+    nominal_torque_nm: 3.7
+    emergency_stop_torque_nm: 23
+    input_speed_rpm_max: 6000
+    avg_input_speed_rpm_max: 2000
+    design_life_hrs: 10000
+    transmission_accuracy_arcmin: 1.5
+    hysteresis_arcmin: 1
+    lost_motion_arcmin: 1
+    repeatability_arcmin: 0.1
+    start_torque_mnm: 48
+  status: active
+- sku: KCD-MC-14-120
+  name: KCD-MC-14 — 120:1
+  specs:
+    frame_size: 14
+    ratio: 120
+    peak_torque_nm: 12
+    avg_load_torque_nm: 4.8
+    nominal_torque_nm: 3.7
+    emergency_stop_torque_nm: 23
+    input_speed_rpm_max: 6000
+    avg_input_speed_rpm_max: 2000
+    design_life_hrs: 10000
+    transmission_accuracy_arcmin: 1.5
+    hysteresis_arcmin: 1
+    lost_motion_arcmin: 1
+    repeatability_arcmin: 0.1
+    start_torque_mnm: null
+  status: active
+- sku: KCD-MC-14-160
+  name: KCD-MC-14 — 160:1
+  specs:
+    frame_size: 14
+    ratio: 160
+    peak_torque_nm: 12
+    avg_load_torque_nm: 4.8
+    nominal_torque_nm: 3.7
+    emergency_stop_torque_nm: 23
+    input_speed_rpm_max: 6000
+    avg_input_speed_rpm_max: 2000
+    design_life_hrs: 10000
+    transmission_accuracy_arcmin: 1.5
+    hysteresis_arcmin: 1
+    lost_motion_arcmin: 1
+    repeatability_arcmin: 0.1
+    start_torque_mnm: null
+  status: active
+- sku: KCD-MC-17-50
+  name: KCD-MC-17 — 50:1
+  specs:
+    frame_size: 17
+    ratio: 50
+    peak_torque_nm: 19
+    avg_load_torque_nm: 7.7
+    nominal_torque_nm: 5.4
+    emergency_stop_torque_nm: 35
+    input_speed_rpm_max: 6000
+    avg_input_speed_rpm_max: 2000
+    design_life_hrs: 10000
+    transmission_accuracy_arcmin: 1.5
+    hysteresis_arcmin: 1
+    lost_motion_arcmin: 1
+    repeatability_arcmin: 0.1
+    start_torque_mnm: 190
+  status: active
+- sku: KCD-MC-17-80
+  name: KCD-MC-17 — 80:1
+  specs:
+    frame_size: 17
+    ratio: 80
+    peak_torque_nm: 19
+    avg_load_torque_nm: 7.7
+    nominal_torque_nm: 5.4
+    emergency_stop_torque_nm: 35
+    input_speed_rpm_max: 6000
+    avg_input_speed_rpm_max: 2000
+    design_life_hrs: 10000
+    transmission_accuracy_arcmin: 1.5
+    hysteresis_arcmin: 1
+    lost_motion_arcmin: 1
+    repeatability_arcmin: 0.1
+    start_torque_mnm: 160
+  status: active
+- sku: KCD-MC-17-100
+  name: KCD-MC-17 — 100:1
+  specs:
+    frame_size: 17
+    ratio: 100
+    peak_torque_nm: 19
+    avg_load_torque_nm: 7.7
+    nominal_torque_nm: 5.4
+    emergency_stop_torque_nm: 35
+    input_speed_rpm_max: 6000
+    avg_input_speed_rpm_max: 2000
+    design_life_hrs: 10000
+    transmission_accuracy_arcmin: 1.5
+    hysteresis_arcmin: 1
+    lost_motion_arcmin: 1
+    repeatability_arcmin: 0.1
+    start_torque_mnm: 170
+  status: active
+- sku: KCD-MC-17-120
+  name: KCD-MC-17 — 120:1
+  specs:
+    frame_size: 17
+    ratio: 120
+    peak_torque_nm: 19
+    avg_load_torque_nm: 7.7
+    nominal_torque_nm: 5.4
+    emergency_stop_torque_nm: 35
+    input_speed_rpm_max: 6000
+    avg_input_speed_rpm_max: 2000
+    design_life_hrs: 10000
+    transmission_accuracy_arcmin: 1.5
+    hysteresis_arcmin: 1
+    lost_motion_arcmin: 1
+    repeatability_arcmin: 0.1
+    start_torque_mnm: 130
+  status: active
+- sku: KCD-MC-17-160
+  name: KCD-MC-17 — 160:1
+  specs:
+    frame_size: 17
+    ratio: 160
+    peak_torque_nm: 19
+    avg_load_torque_nm: 7.7
+    nominal_torque_nm: 5.4
+    emergency_stop_torque_nm: 35
+    input_speed_rpm_max: 6000
+    avg_input_speed_rpm_max: 2000
+    design_life_hrs: 10000
+    transmission_accuracy_arcmin: 1.5
+    hysteresis_arcmin: 1
+    lost_motion_arcmin: 1
+    repeatability_arcmin: 0.1
+    start_torque_mnm: null
+  status: active
+- sku: KCD-MC-20-50
+  name: KCD-MC-20 — 50:1
+  specs:
+    frame_size: 20
+    ratio: 50
+    peak_torque_nm: 37
+    avg_load_torque_nm: 23
+    nominal_torque_nm: 18
+    emergency_stop_torque_nm: 48
+    input_speed_rpm_max: 6000
+    avg_input_speed_rpm_max: 2000
+    design_life_hrs: 10000
+    transmission_accuracy_arcmin: 1
+    hysteresis_arcmin: 1
+    lost_motion_arcmin: 1
+    repeatability_arcmin: 0.1
+    start_torque_mnm: 250
+  status: active
+- sku: KCD-MC-20-80
+  name: KCD-MC-20 — 80:1
+  specs:
+    frame_size: 20
+    ratio: 80
+    peak_torque_nm: 37
+    avg_load_torque_nm: 23
+    nominal_torque_nm: 18
+    emergency_stop_torque_nm: 48
+    input_speed_rpm_max: 6000
+    avg_input_speed_rpm_max: 2000
+    design_life_hrs: 10000
+    transmission_accuracy_arcmin: 1
+    hysteresis_arcmin: 1
+    lost_motion_arcmin: 1
+    repeatability_arcmin: 0.1
+    start_torque_mnm: 230
+  status: active
+- sku: KCD-MC-20-100
+  name: KCD-MC-20 — 100:1
+  specs:
+    frame_size: 20
+    ratio: 100
+    peak_torque_nm: 37
+    avg_load_torque_nm: 23
+    nominal_torque_nm: 18
+    emergency_stop_torque_nm: 48
+    input_speed_rpm_max: 6000
+    avg_input_speed_rpm_max: 2000
+    design_life_hrs: 10000
+    transmission_accuracy_arcmin: 1
+    hysteresis_arcmin: 1
+    lost_motion_arcmin: 1
+    repeatability_arcmin: 0.1
+    start_torque_mnm: 220
+  status: active
+- sku: KCD-MC-20-120
+  name: KCD-MC-20 — 120:1
+  specs:
+    frame_size: 20
+    ratio: 120
+    peak_torque_nm: 37
+    avg_load_torque_nm: 23
+    nominal_torque_nm: 18
+    emergency_stop_torque_nm: 48
+    input_speed_rpm_max: 6000
+    avg_input_speed_rpm_max: 2000
+    design_life_hrs: 10000
+    transmission_accuracy_arcmin: 1
+    hysteresis_arcmin: 1
+    lost_motion_arcmin: 1
+    repeatability_arcmin: 0.1
+    start_torque_mnm: 220
+  status: active
+- sku: KCD-MC-20-160
+  name: KCD-MC-20 — 160:1
+  specs:
+    frame_size: 20
+    ratio: 160
+    peak_torque_nm: 37
+    avg_load_torque_nm: 23
+    nominal_torque_nm: 18
+    emergency_stop_torque_nm: 48
+    input_speed_rpm_max: 6000
+    avg_input_speed_rpm_max: 2000
+    design_life_hrs: 10000
+    transmission_accuracy_arcmin: 1
+    hysteresis_arcmin: 1
+    lost_motion_arcmin: 1
+    repeatability_arcmin: 0.1
+    start_torque_mnm: 220
+  status: active
+- sku: KCD-MC-25-50
+  name: KCD-MC-25 — 50:1
+  specs:
+    frame_size: 25
+    ratio: 50
+    peak_torque_nm: 69
+    avg_load_torque_nm: 38
+    nominal_torque_nm: 27
+    emergency_stop_torque_nm: 127
+    input_speed_rpm_max: 5600
+    avg_input_speed_rpm_max: 2000
+    design_life_hrs: 10000
+    transmission_accuracy_arcmin: 1
+    hysteresis_arcmin: 1
+    lost_motion_arcmin: 1
+    repeatability_arcmin: 0.1
+    start_torque_mnm: 390
+  status: active
+- sku: KCD-MC-25-80
+  name: KCD-MC-25 — 80:1
+  specs:
+    frame_size: 25
+    ratio: 80
+    peak_torque_nm: 69
+    avg_load_torque_nm: 38
+    nominal_torque_nm: 27
+    emergency_stop_torque_nm: 127
+    input_speed_rpm_max: 5600
+    avg_input_speed_rpm_max: 2000
+    design_life_hrs: 10000
+    transmission_accuracy_arcmin: 1
+    hysteresis_arcmin: 1
+    lost_motion_arcmin: 1
+    repeatability_arcmin: 0.1
+    start_torque_mnm: 360
+  status: active
+- sku: KCD-MC-25-100
+  name: KCD-MC-25 — 100:1
+  specs:
+    frame_size: 25
+    ratio: 100
+    peak_torque_nm: 69
+    avg_load_torque_nm: 38
+    nominal_torque_nm: 27
+    emergency_stop_torque_nm: 127
+    input_speed_rpm_max: 5600
+    avg_input_speed_rpm_max: 2000
+    design_life_hrs: 10000
+    transmission_accuracy_arcmin: 1
+    hysteresis_arcmin: 1
+    lost_motion_arcmin: 1
+    repeatability_arcmin: 0.1
+    start_torque_mnm: 340
+  status: active
+- sku: KCD-MC-25-120
+  name: KCD-MC-25 — 120:1
+  specs:
+    frame_size: 25
+    ratio: 120
+    peak_torque_nm: 69
+    avg_load_torque_nm: 38
+    nominal_torque_nm: 27
+    emergency_stop_torque_nm: 127
+    input_speed_rpm_max: 5600
+    avg_input_speed_rpm_max: 2000
+    design_life_hrs: 10000
+    transmission_accuracy_arcmin: 1
+    hysteresis_arcmin: 1
+    lost_motion_arcmin: 1
+    repeatability_arcmin: 0.1
+    start_torque_mnm: 340
+  status: active
+- sku: KCD-MC-25-160
+  name: KCD-MC-25 — 160:1
+  specs:
+    frame_size: 25
+    ratio: 160
+    peak_torque_nm: 69
+    avg_load_torque_nm: 38
+    nominal_torque_nm: 27
+    emergency_stop_torque_nm: 127
+    input_speed_rpm_max: 5600
+    avg_input_speed_rpm_max: 2000
+    design_life_hrs: 10000
+    transmission_accuracy_arcmin: 1
+    hysteresis_arcmin: 1
+    lost_motion_arcmin: 1
+    repeatability_arcmin: 0.1
+    start_torque_mnm: 330
+  status: active
+- sku: KCD-MC-32-50
+  name: KCD-MC-32 — 50:1
+  specs:
+    frame_size: 32
+    ratio: 50
+    peak_torque_nm: 151
+    avg_load_torque_nm: 75
+    nominal_torque_nm: 53
+    emergency_stop_torque_nm: 268
+    input_speed_rpm_max: 4800
+    avg_input_speed_rpm_max: 2000
+    design_life_hrs: 10000
+    transmission_accuracy_arcmin: 1
+    hysteresis_arcmin: 1
+    lost_motion_arcmin: 1
+    repeatability_arcmin: 0.1
+    start_torque_mnm: 600
+  status: active
+- sku: KCD-MC-32-80
+  name: KCD-MC-32 — 80:1
+  specs:
+    frame_size: 32
+    ratio: 80
+    peak_torque_nm: 151
+    avg_load_torque_nm: 75
+    nominal_torque_nm: 53
+    emergency_stop_torque_nm: 268
+    input_speed_rpm_max: 4800
+    avg_input_speed_rpm_max: 2000
+    design_life_hrs: 10000
+    transmission_accuracy_arcmin: 1
+    hysteresis_arcmin: 1
+    lost_motion_arcmin: 1
+    repeatability_arcmin: 0.1
+    start_torque_mnm: 550
+  status: active
+- sku: KCD-MC-32-100
+  name: KCD-MC-32 — 100:1
+  specs:
+    frame_size: 32
+    ratio: 100
+    peak_torque_nm: 151
+    avg_load_torque_nm: 75
+    nominal_torque_nm: 53
+    emergency_stop_torque_nm: 268
+    input_speed_rpm_max: 4800
+    avg_input_speed_rpm_max: 2000
+    design_life_hrs: 10000
+    transmission_accuracy_arcmin: 1
+    hysteresis_arcmin: 1
+    lost_motion_arcmin: 1
+    repeatability_arcmin: 0.1
+    start_torque_mnm: 500
+  status: active
+- sku: KCD-MC-32-120
+  name: KCD-MC-32 — 120:1
+  specs:
+    frame_size: 32
+    ratio: 120
+    peak_torque_nm: 151
+    avg_load_torque_nm: 75
+    nominal_torque_nm: 53
+    emergency_stop_torque_nm: 268
+    input_speed_rpm_max: 4800
+    avg_input_speed_rpm_max: 2000
+    design_life_hrs: 10000
+    transmission_accuracy_arcmin: 1
+    hysteresis_arcmin: 1
+    lost_motion_arcmin: 1
+    repeatability_arcmin: 0.1
+    start_torque_mnm: 480
+  status: active
+- sku: KCD-MC-32-160
+  name: KCD-MC-32 — 160:1
+  specs:
+    frame_size: 32
+    ratio: 160
+    peak_torque_nm: 151
+    avg_load_torque_nm: 75
+    nominal_torque_nm: 53
+    emergency_stop_torque_nm: 268
+    input_speed_rpm_max: 4800
+    avg_input_speed_rpm_max: 2000
+    design_life_hrs: 10000
+    transmission_accuracy_arcmin: 1
+    hysteresis_arcmin: 1
+    lost_motion_arcmin: 1
+    repeatability_arcmin: 0.1
+    start_torque_mnm: 470
+  status: active

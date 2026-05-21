@@ -1,0 +1,384 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/131.html
+# Review before promoting to seed/products/kgr_series.yaml
+product_type_code: kgr_series
+products:
+- sku: KGR180-1-3
+  name: KGR180 — 1-stage, 3:1
+  specs:
+    ratio: 3
+    stages: 1
+    nominal_torque_nm: 380
+    peak_torque_nm: 608
+    emergency_stop_torque_nm: 703
+    rated_input_speed_rpm: 1600
+    max_input_speed_rpm: 4500
+    mean_no_load_torque_nm: 18.5
+    backlash_arcmin: 4
+    torsional_rigidity_nm_per_arcmin: 64
+    max_radial_force_n: 14200
+    max_tilting_moment_nm: 3213
+    rotational_inertia_kgcm2: 96.5
+    noise_db_a: 68
+    efficiency_pct: 96
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Oil lubrication
+    mounting_position: Any position
+    protection_class: IP65
+    service_lifetime_h: 20000
+    weight_kg: 44.9
+  status: active
+- sku: KGR180-1-4
+  name: KGR180 — 1-stage, 4:1
+  specs:
+    ratio: 4
+    stages: 1
+    nominal_torque_nm: 380
+    peak_torque_nm: 608
+    emergency_stop_torque_nm: 703
+    rated_input_speed_rpm: 1800
+    max_input_speed_rpm: 4500
+    mean_no_load_torque_nm: 16.8
+    backlash_arcmin: 4
+    torsional_rigidity_nm_per_arcmin: 70
+    max_radial_force_n: 14200
+    max_tilting_moment_nm: 3213
+    rotational_inertia_kgcm2: 64.6
+    noise_db_a: 68
+    efficiency_pct: 96
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Oil lubrication
+    mounting_position: Any position
+    protection_class: IP65
+    service_lifetime_h: 20000
+    weight_kg: 44.9
+  status: active
+- sku: KGR180-1-5
+  name: KGR180 — 1-stage, 5:1
+  specs:
+    ratio: 5
+    stages: 1
+    nominal_torque_nm: 380
+    peak_torque_nm: 608
+    emergency_stop_torque_nm: 703
+    rated_input_speed_rpm: 2000
+    max_input_speed_rpm: 4500
+    mean_no_load_torque_nm: 15.2
+    backlash_arcmin: 4
+    torsional_rigidity_nm_per_arcmin: 78
+    max_radial_force_n: 14200
+    max_tilting_moment_nm: 3213
+    rotational_inertia_kgcm2: 50.5
+    noise_db_a: 68
+    efficiency_pct: 96
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Oil lubrication
+    mounting_position: Any position
+    protection_class: IP65
+    service_lifetime_h: 20000
+    weight_kg: 44.9
+  status: active
+- sku: KGR180-1-7
+  name: KGR180 — 1-stage, 7:1
+  specs:
+    ratio: 7
+    stages: 1
+    nominal_torque_nm: 361
+    peak_torque_nm: 523
+    emergency_stop_torque_nm: 523
+    rated_input_speed_rpm: 1800
+    max_input_speed_rpm: 4500
+    mean_no_load_torque_nm: 17.3
+    backlash_arcmin: 4
+    torsional_rigidity_nm_per_arcmin: 73
+    max_radial_force_n: 14200
+    max_tilting_moment_nm: 3213
+    rotational_inertia_kgcm2: 38.2
+    noise_db_a: 68
+    efficiency_pct: 96
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Oil lubrication
+    mounting_position: Any position
+    protection_class: IP65
+    service_lifetime_h: 20000
+    weight_kg: 44.9
+  status: active
+- sku: KGR180-1-10
+  name: KGR180 — 1-stage, 10:1
+  specs:
+    ratio: 10
+    stages: 1
+    nominal_torque_nm: 342
+    peak_torque_nm: 445
+    emergency_stop_torque_nm: 445
+    rated_input_speed_rpm: 1800
+    max_input_speed_rpm: 4500
+    mean_no_load_torque_nm: 14.5
+    backlash_arcmin: 4
+    torsional_rigidity_nm_per_arcmin: 68
+    max_radial_force_n: 14200
+    max_tilting_moment_nm: 3213
+    rotational_inertia_kgcm2: 31.8
+    noise_db_a: 68
+    efficiency_pct: 96
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Oil lubrication
+    mounting_position: Any position
+    protection_class: IP65
+    service_lifetime_h: 20000
+    weight_kg: 44.9
+  status: active
+- sku: KGR180-2-12
+  name: KGR180 — 2-stage, 12:1
+  specs:
+    ratio: 12
+    stages: 2
+    nominal_torque_nm: 380
+    peak_torque_nm: 608
+    emergency_stop_torque_nm: 703
+    rated_input_speed_rpm: 2700
+    max_input_speed_rpm: 4000
+    mean_no_load_torque_nm: 3.2
+    backlash_arcmin: 4
+    torsional_rigidity_nm_per_arcmin: 64
+    max_radial_force_n: 14200
+    max_tilting_moment_nm: 3213
+    rotational_inertia_kgcm2: 31.5
+    efficiency_pct: 94
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Grease lubrication
+    mounting_position: Any position
+    protection_class: IP65
+    service_lifetime_h: 20000
+    weight_kg: 49
+  status: active
+- sku: KGR180-2-16
+  name: KGR180 — 2-stage, 16:1
+  specs:
+    ratio: 16
+    stages: 2
+    nominal_torque_nm: 380
+    peak_torque_nm: 608
+    emergency_stop_torque_nm: 703
+    rated_input_speed_rpm: 2700
+    max_input_speed_rpm: 4000
+    mean_no_load_torque_nm: 2.8
+    backlash_arcmin: 4
+    torsional_rigidity_nm_per_arcmin: 70
+    max_radial_force_n: 14200
+    max_tilting_moment_nm: 3213
+    rotational_inertia_kgcm2: 29.5
+    efficiency_pct: 94
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Grease lubrication
+    mounting_position: Any position
+    protection_class: IP65
+    service_lifetime_h: 20000
+    weight_kg: 49
+  status: active
+- sku: KGR180-2-20
+  name: KGR180 — 2-stage, 20:1
+  specs:
+    ratio: 20
+    stages: 2
+    nominal_torque_nm: 380
+    peak_torque_nm: 608
+    emergency_stop_torque_nm: 703
+    rated_input_speed_rpm: 2700
+    max_input_speed_rpm: 4000
+    mean_no_load_torque_nm: 2.2
+    backlash_arcmin: 4
+    torsional_rigidity_nm_per_arcmin: 78
+    max_radial_force_n: 14200
+    max_tilting_moment_nm: 3213
+    rotational_inertia_kgcm2: 27.6
+    efficiency_pct: 94
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Grease lubrication
+    mounting_position: Any position
+    protection_class: IP65
+    service_lifetime_h: 20000
+    weight_kg: 49
+  status: active
+- sku: KGR180-2-25
+  name: KGR180 — 2-stage, 25:1
+  specs:
+    ratio: 25
+    stages: 2
+    nominal_torque_nm: 380
+    peak_torque_nm: 608
+    emergency_stop_torque_nm: 703
+    rated_input_speed_rpm: 2700
+    max_input_speed_rpm: 4000
+    mean_no_load_torque_nm: 1.9
+    backlash_arcmin: 4
+    torsional_rigidity_nm_per_arcmin: 78
+    max_radial_force_n: 14200
+    max_tilting_moment_nm: 3213
+    rotational_inertia_kgcm2: 27
+    efficiency_pct: 94
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Grease lubrication
+    mounting_position: Any position
+    protection_class: IP65
+    service_lifetime_h: 20000
+    weight_kg: 49
+  status: active
+- sku: KGR180-2-28
+  name: KGR180 — 2-stage, 28:1
+  specs:
+    ratio: 28
+    stages: 2
+    nominal_torque_nm: 380
+    peak_torque_nm: 608
+    emergency_stop_torque_nm: 703
+    rated_input_speed_rpm: 2700
+    max_input_speed_rpm: 4000
+    mean_no_load_torque_nm: 1.6
+    backlash_arcmin: 4
+    torsional_rigidity_nm_per_arcmin: 70
+    max_radial_force_n: 14200
+    max_tilting_moment_nm: 3213
+    rotational_inertia_kgcm2: 25.9
+    efficiency_pct: 94
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Grease lubrication
+    mounting_position: Any position
+    protection_class: IP65
+    service_lifetime_h: 20000
+    weight_kg: 49
+  status: active
+- sku: KGR180-2-35
+  name: KGR180 — 2-stage, 35:1
+  specs:
+    ratio: 35
+    stages: 2
+    nominal_torque_nm: 380
+    peak_torque_nm: 608
+    emergency_stop_torque_nm: 703
+    rated_input_speed_rpm: 2700
+    max_input_speed_rpm: 4000
+    mean_no_load_torque_nm: 1.4
+    backlash_arcmin: 4
+    torsional_rigidity_nm_per_arcmin: 78
+    max_radial_force_n: 14200
+    max_tilting_moment_nm: 3213
+    rotational_inertia_kgcm2: 25.6
+    efficiency_pct: 94
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Grease lubrication
+    mounting_position: Any position
+    protection_class: IP65
+    service_lifetime_h: 20000
+    weight_kg: 49
+  status: active
+- sku: KGR180-2-40
+  name: KGR180 — 2-stage, 40:1
+  specs:
+    ratio: 40
+    stages: 2
+    nominal_torque_nm: 380
+    peak_torque_nm: 608
+    emergency_stop_torque_nm: 703
+    rated_input_speed_rpm: 2700
+    max_input_speed_rpm: 4000
+    mean_no_load_torque_nm: 1.4
+    backlash_arcmin: 4
+    torsional_rigidity_nm_per_arcmin: 70
+    max_radial_force_n: 14200
+    max_tilting_moment_nm: 3213
+    rotational_inertia_kgcm2: 25
+    efficiency_pct: 94
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Grease lubrication
+    mounting_position: Any position
+    protection_class: IP65
+    service_lifetime_h: 20000
+    weight_kg: 49
+  status: active
+- sku: KGR180-2-50
+  name: KGR180 — 2-stage, 50:1
+  specs:
+    ratio: 50
+    stages: 2
+    nominal_torque_nm: 380
+    peak_torque_nm: 608
+    emergency_stop_torque_nm: 703
+    rated_input_speed_rpm: 2700
+    max_input_speed_rpm: 4000
+    mean_no_load_torque_nm: 1.1
+    backlash_arcmin: 4
+    torsional_rigidity_nm_per_arcmin: 78
+    max_radial_force_n: 14200
+    max_tilting_moment_nm: 3213
+    rotational_inertia_kgcm2: 25
+    efficiency_pct: 94
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Grease lubrication
+    mounting_position: Any position
+    protection_class: IP65
+    service_lifetime_h: 20000
+    weight_kg: 49
+  status: active
+- sku: KGR180-2-70
+  name: KGR180 — 2-stage, 70:1
+  specs:
+    ratio: 70
+    stages: 2
+    nominal_torque_nm: 380
+    peak_torque_nm: 608
+    emergency_stop_torque_nm: 703
+    rated_input_speed_rpm: 2900
+    max_input_speed_rpm: 4000
+    mean_no_load_torque_nm: 1.1
+    backlash_arcmin: 4
+    torsional_rigidity_nm_per_arcmin: 78
+    max_radial_force_n: 14200
+    max_tilting_moment_nm: 3213
+    rotational_inertia_kgcm2: 25
+    efficiency_pct: 94
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Grease lubrication
+    mounting_position: Any position
+    protection_class: IP65
+    service_lifetime_h: 20000
+    weight_kg: 49
+  status: active
+- sku: KGR180-2-100
+  name: KGR180 — 2-stage, 100:1
+  specs:
+    ratio: 100
+    stages: 2
+    nominal_torque_nm: 342
+    peak_torque_nm: 445
+    emergency_stop_torque_nm: 445
+    rated_input_speed_rpm: 3000
+    max_input_speed_rpm: 4000
+    mean_no_load_torque_nm: 1.1
+    backlash_arcmin: 4
+    torsional_rigidity_nm_per_arcmin: 68
+    max_radial_force_n: 14200
+    max_tilting_moment_nm: 3213
+    rotational_inertia_kgcm2: 25
+    efficiency_pct: 94
+    operating_temp_min_c: -25
+    operating_temp_max_c: 90
+    lubrication: Grease lubrication
+    mounting_position: Any position
+    protection_class: IP65
+    service_lifetime_h: 20000
+    weight_kg: 49
+  status: active

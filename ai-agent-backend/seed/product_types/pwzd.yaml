@@ -1,0 +1,33 @@
+# Promoted from 1 draft(s) under seed/drafts/.
+# Sources: 36.product_type
+code: pwzd
+name: PWZD Series Planetary Gearbox
+family: Planetary gearbox
+description: PWZD series planetary gearboxes are heavy-duty drives designed for tunnel
+  boring, pipe jacking, and other non-excavation construction machinery. They feature
+  carburized and ground sun/planet gears, nitrided ring gears, a motor-direct input
+  design, and German-standard internal spline outputs. The housing is ultra-compact
+  for confined spaces, and the load capacity exceeds that of standard planetary gearboxes
+  by over 20%.
+spec_schema:
+  model:
+    type: string
+    label: Model
+  output_torque_nm:
+    type: number
+    label: Output torque (Nm)
+  ratio:
+    type: string
+    label: Ratio
+  recommended_motor_kw:
+    type: string
+    label: Recommended motor (kW)
+  weight_kg:
+    type: number
+    label: Weight (kg)
+  oil_volume_l:
+    type: number
+    label: Oil volume (L)
+  variant:
+    type: string
+    label: Variant

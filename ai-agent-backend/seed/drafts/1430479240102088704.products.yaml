@@ -1,0 +1,28 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/1430479240102088704.html
+# Review before promoting to seed/products/kr110_23.yaml
+product_type_code: kr110_23
+products:
+- sku: KR110-23
+  name: KR110-23 Joint Module — 23:1
+  specs:
+    ratio: 23
+    rated_voltage_v: 48
+    rated_current_a: 13.3
+    rated_power_w: 425.4
+    rated_speed_rpm: 65
+    nominal_torque_nm: 62.5
+    peak_current_a: 40
+    peak_torque_nm: 187
+    peak_speed_rpm: 108
+    efficiency_pct: 76.5
+    power_density_w_kg: 209.5
+    torque_constant_nm_per_a: 0.19
+    weight_kg: 2.03
+    backlash_arcmin: 8
+    frame_size_mm: 110×71
+    communication_protocol: CAN
+    communication_baud_rate: 1M
+    double_encoder: 'Yes'
+    built_in_driver: Optional
+  datasheet_url: https://www.kofon.com.cn/products_detail/1430479240102088704.html
+  status: active

@@ -1,0 +1,39 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/80.html
+# Review before promoting to seed/product_types/servo_linear_joint_module.yaml
+# Notes: The page lists four variants in a table (500N, 4000N, 8000N, 13000N). No explicit model code is given beyond the thrust values, so I used 'SLJM-<thrust>N' as SKU. The family is 'Linear actuator' (planetary roller screw driven). The page mentions '行星滚柱丝杆' (planetary roller screw) in the description. All variants share DC48V±10%, 3mm lead, no holding brake. The 500N variant has 200mm/s max speed and 50mm stroke; the other three have 300mm/s and 90mm stroke. Dimensions C1 and D1 vary per variant. The page notes parameters are for reference and customization is available. No datasheet URL embedded (just a PDF filename '伺服直线关节模组.pdf' but no full URL). No CAD URLs or lead times found.
+code: servo_linear_joint_module
+name: Servo Linear Joint Module
+family: Linear actuator
+description: Servo linear joint modules driven by a motor, transmitting power through
+  a planetary roller screw to achieve precise linear motion. Sensors monitor the joint's
+  motion state in real time and feed back to the control system for accuracy. Available
+  in four thrust/speed/size variants with DC48V power, 3mm lead, and customizable
+  options.
+spec_schema:
+  max_thrust_n:
+    type: integer
+    label: Maximum thrust (N)
+  max_speed_mm_s:
+    type: integer
+    label: Maximum speed (mm/s)
+  stroke_mm:
+    type: integer
+    label: Stroke (mm)
+  size_c1_mm:
+    type: integer
+    label: Size C1 (mm)
+  size_d1_mm:
+    type: integer
+    label: Size D1 (mm)
+  rated_voltage_v:
+    type: string
+    label: Rated voltage
+  lead_mm:
+    type: number
+    label: Lead (mm)
+  holding_brake:
+    type: string
+    label: Holding brake
+  variant:
+    type: string
+    label: Variant / model code

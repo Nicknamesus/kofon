@@ -88,14 +88,23 @@ async def run(state: AgentState) -> dict:
                 family = all_families[0]
 
     if family is None:
-        # Genuinely ambiguous — multiple families and none chosen. Ask.
+        # Genuinely ambiguous — multiple families and none chosen. Ask,
+        # showing a couple of real family names from the catalog so the
+        # user has concrete options to pick from instead of "give us
+        # any family code."
+        async with SessionLocal() as session:
+            examples = (
+                await session.execute(
+                    select(ProductType.name).order_by(ProductType.code).limit(3)
+                )
+            ).scalars().all()
+        example_block = (
+            f" (e.g. {', '.join(examples)})" if examples else ""
+        )
         return {
             "messages": [
                 AIMessage(
-                    content=(
-                        "Which family do you want to configure? "
-                        "(e.g. CaesarPlanetary for planetary gearboxes)"
-                    )
+                    content=f"Which family do you want to configure?{example_block}"
                 )
             ],
             "slots": {

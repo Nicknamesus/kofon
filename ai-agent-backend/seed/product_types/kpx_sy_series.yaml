@@ -1,0 +1,68 @@
+# Promoted from 1 draft(s) under seed/drafts/.
+# Sources: 125.product_type
+code: kpx_sy_series
+name: KPX-SY Series Hand-Input Gearbox
+family: Planetary gearbox
+description: The KPX-SY series is a hand-input (manual crank) planetary gearbox designed
+  for applications where electric power is unavailable or unreliable. It provides
+  a reliable mechanical backup in remote areas or emergency situations. Available
+  in 1-stage and 2-stage configurations with a wide range of ratios, offering high
+  efficiency, low backlash, and compact dimensions.
+spec_schema:
+  ratio:
+    type: integer
+    label: Ratio i
+  stages:
+    type: integer
+    label: Number of stages
+  nominal_torque_nm:
+    type: number
+    label: Rated output torque (Nm)
+  peak_torque_nm:
+    type: number
+    label: Maximum acceleration torque (Nm)
+  emergency_stop_torque_nm:
+    type: number
+    label: Emergency stop torque (Nm)
+  input_speed_rpm_max:
+    type: integer
+    label: Max input speed (rpm)
+  rated_input_speed_rpm:
+    type: integer
+    label: Rated input speed (rpm)
+  backlash_arcmin:
+    type: number
+    label: Backlash (arcmin)
+  max_radial_force_n:
+    type: integer
+    label: Max radial force (N)
+  max_axial_force_n:
+    type: integer
+    label: Max axial force (N)
+  rotational_inertia_kgcm2:
+    type: number
+    label: Rotational inertia (kg·cm²)
+  noise_db:
+    type: number
+    label: Noise (dB(A))
+  efficiency_pct:
+    type: number
+    label: Full loading efficiency (%)
+  operating_temp_min_c:
+    type: integer
+    label: Operating temperature min (°C)
+  operating_temp_max_c:
+    type: integer
+    label: Operating temperature max (°C)
+  lubrication:
+    type: string
+    label: Lubrication
+  mounting_position:
+    type: string
+    label: Mounting position
+  service_lifetime_h:
+    type: integer
+    label: Service lifetime (h)
+  weight_kg:
+    type: number
+    label: Weight (kg)

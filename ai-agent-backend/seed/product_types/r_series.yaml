@@ -1,0 +1,83 @@
+# R Series — Kofon's general-purpose planetary gearbox family.
+# Extracted from https://www.kofon.com.cn/products_detail/120.html via
+# `python -m app.seed.extract_url` then human-reviewed.
+#
+# Frame scoping: `r_series` is the family code; individual frame sizes
+# (RF080, future RF060 / RF120 / ...) share this product_type and are
+# distinguished via `frame_size_mm` on each SKU.
+
+code: r_series
+name: R Series
+family: Planetary gearbox
+description: >-
+  General-purpose inline planetary gearbox family. Available in 1-, 2-,
+  and 3-stage configurations with reduction ratios from 3:1 through
+  320:1. Grease-lubricated, IP65, with a -25 to +90 °C operating range
+  and 20 000 h rated lifetime. Lower torque-density than the
+  high-precision CaesarPlanetary line, but suitable across a broad set
+  of motion-control use cases.
+
+spec_schema:
+  frame_size_mm:
+    type: integer
+    label: Frame size (mm)
+  stages:
+    type: integer
+    label: Number of stages
+  ratio:
+    type: integer
+    label: Reduction ratio (:1)
+  nominal_torque_nm:
+    type: number
+    label: Rated output torque (Nm)
+  peak_torque_nm:
+    type: number
+    label: Max acceleration torque (Nm)
+  emergency_stop_torque_nm:
+    type: number
+    label: Emergency stop torque (Nm)
+  rated_input_speed_rpm:
+    type: integer
+    label: Rated input speed (rpm)
+  input_speed_rpm_max:
+    type: integer
+    label: Max input speed (rpm)
+  backlash_arcmin:
+    type: number
+    label: Backlash (arcmin)
+  max_radial_force_n:
+    type: integer
+    label: Max radial force (N)
+  max_axial_force_n:
+    type: integer
+    label: Max axial force (N)
+  rotational_inertia_kgcm2:
+    type: number
+    label: Rotational inertia (kg·cm²)
+  noise_db_a:
+    type: number
+    label: Noise level (dB(A))
+  efficiency_pct:
+    type: integer
+    label: Full-load efficiency (%)
+  operating_temp_min_c:
+    type: integer
+    label: Operating temperature min (°C)
+  operating_temp_max_c:
+    type: integer
+    label: Operating temperature max (°C)
+  lubrication:
+    type: string
+    label: Lubrication
+  mounting_position:
+    type: string
+    label: Mounting position
+  protection_class:
+    type: string
+    label: Protection class
+  service_lifetime_h:
+    type: integer
+    label: Service lifetime (h)
+  weight_kg:
+    type: number
+    label: Weight (kg)

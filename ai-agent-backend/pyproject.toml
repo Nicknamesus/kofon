@@ -31,6 +31,12 @@ dependencies = [
   # Used by the DashScope embeddings provider. BGE-M3 (sentence-transformers)
   # stays an opt-in install — see `app/embeddings.py`.
   "httpx>=0.27",
+  # Phase 4.1: catalog ingest. Used by app/seed/extract_url.py to strip
+  # HTML before handing the page text to the LLM for structured extraction.
+  "beautifulsoup4>=4.12",
+  # Used by app/seed/extract_pdf.py — preserves table column structure
+  # that the HTML-text path loses on Kofon's dense spec sheets.
+  "pdfplumber>=0.11",
 ]
 
 [project.optional-dependencies]

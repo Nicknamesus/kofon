@@ -1,0 +1,37 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/81.html
+# Review before promoting to seed/product_types/servo_planetary_joint_module.yaml
+# Notes: This page is a category/listing page for "伺服行星关节模组" (Servo Planetary Joint Module). It does not contain any technical specifications, dimensions, torque values, ratios, or other product data. The page only shows navigation, related product thumbnails (RF080, RF060, R080, R060, KPX-SY180, KPX-SY142), and contact info. No concrete SKU data can be extracted. The related products link to their own detail pages which would need to be scraped individually.
+code: servo_planetary_joint_module
+name: Servo Planetary Joint Module
+family: Planetary gearbox
+description: Servo planetary joint modules from Kofon, integrating a planetary gearbox
+  with a servo motor for compact, high-torque motion control applications. These modules
+  are designed for robotic joints and precision automation where space is constrained.
+spec_schema:
+  frame_size_mm:
+    type: integer
+    label: Frame size (mm)
+  ratio:
+    type: integer
+    label: Ratio
+  nominal_torque_nm:
+    type: number
+    label: Nominal torque (Nm)
+  peak_torque_nm:
+    type: number
+    label: Peak torque (Nm)
+  backlash_arcmin:
+    type: number
+    label: Backlash (arcmin)
+  input_speed_rpm_max:
+    type: integer
+    label: Max input speed (rpm)
+  efficiency_pct:
+    type: number
+    label: Efficiency (%)
+  weight_kg:
+    type: number
+    label: Weight (kg)
+  variant:
+    type: string
+    label: Variant

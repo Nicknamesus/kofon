@@ -1,0 +1,41 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/54.html
+# Review before promoting to seed/product_types/rd_series.yaml
+# Notes: This is a servo drive product page, not a gearbox. The family is 'Servo drive' (new family not in the original examples). The table lists '轴额定输出电流/轴额定最大输出电流[Arms]' — interpreted as rated output current (Arms). The column header says '轴额定输出电流/轴额定最大输出电流[Arms]' which could be rated/max; I've used the single value given as the rated current. The voltage column only says '220V' or '380V' — I assigned based on the row grouping. The 'CDRD-4A05-A11' and 'CDRD-4C08-A11' have a space in the page text ('CDRD- 4A05-A11', 'CDRD- 4C08-A11') — I removed the space. The 'CDRD-6B35- BG2' also has a space — removed. The single-axis model 'CDRD-1A20-BG1' is listed under '单轴伺服' (single-axis servo) with 220V. The datasheet PDF link is provided as '多轴一体伺服驱动RD系列.pdf'. No CAD URLs, lead times, or torque/speed specs are available on this page.
+code: rd_series
+name: RD Series — Compact Multi-Axis Integrated Servo Drive
+family: Servo drive
+description: The RD Series is a compact multi-axis integrated servo drive from Kofon.
+  It supports 2 to 6 servo axes in a single housing, reducing installation space by
+  up to 30% compared to equivalent discrete configurations. Features include dynamic
+  braking, vibration suppression, integrated safety functions, and a user-friendly
+  tuning software with auto stiffness control and system parameter identification.
+  Available in 220V and 380V variants with per-axis rated output currents from 2.0
+  to 35.0 Arms.
+spec_schema:
+  axis_count:
+    type: integer
+    label: Number of axes
+  voltage_v:
+    type: integer
+    label: Supply voltage (V)
+  axis1_rated_current_arms:
+    type: number
+    label: Axis 1 rated output current (Arms)
+  axis2_rated_current_arms:
+    type: number
+    label: Axis 2 rated output current (Arms)
+  axis3_rated_current_arms:
+    type: number
+    label: Axis 3 rated output current (Arms)
+  axis4_rated_current_arms:
+    type: number
+    label: Axis 4 rated output current (Arms)
+  axis5_rated_current_arms:
+    type: number
+    label: Axis 5 rated output current (Arms)
+  axis6_rated_current_arms:
+    type: number
+    label: Axis 6 rated output current (Arms)
+  datasheet_page:
+    type: string
+    label: Datasheet page reference

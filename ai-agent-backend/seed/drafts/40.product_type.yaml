@@ -1,0 +1,75 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/40.html
+# Review before promoting to seed/product_types/agv_drive_wheel_kfq150.yaml
+# Notes: Only one model (KFQ150-16-400W-A) is listed on the page. The ratio is listed as "16(可选)" meaning 16 (optional), but no other ratio options are detailed with specs, so only ratio 16 is extracted. The motor rated torque of 127 Nm appears to be a typo/error (likely 1.27 Nm based on power/speed relationship: 400W / (3000 rpm * 2π/60) ≈ 1.27 Nm). The peak torque of 2.54 Nm is consistent with 2× rated torque. The max speed of 88.3 m/s seems extremely high for an AGV drive wheel (over 300 km/h) — this may be a data error on the page (possibly 88.3 m/min or a typo), but I've transcribed it as-is. The rated output torque of 75 Nm and peak output torque of 61 Nm are also inconsistent (peak < rated) — likely a data issue on the source page. The "额定转矩 Rated Torque 20N.m" appears to be a separate parameter (possibly the reducer input torque rating) but is not clearly mapped; I've omitted it as it's ambiguous.
+code: agv_drive_wheel_kfq150
+name: KFQ150 AGV Drive Wheel
+family: AGV drive wheel
+description: Integrated AGV drive wheel combining a servo motor and high-precision
+  gearmotor in a compact hub-motor design. Features a resin-rubber or polyurethane
+  outer tire layer for high strength and wear resistance, a compact hub reducer structure,
+  and a simple mounting bracket for easy positioning and improved drive precision.
+  Optional matching driver available.
+spec_schema:
+  voltage_v_dc:
+    type: number
+    label: Voltage (V DC)
+  motor_rated_power_w:
+    type: number
+    label: Motor Rated Power (W)
+  motor_rated_torque_nm:
+    type: number
+    label: Motor Rated Torque (Nm)
+  motor_peak_torque_nm:
+    type: number
+    label: Motor Peak Torque (Nm)
+  motor_rated_speed_rpm:
+    type: number
+    label: Motor Rated Speed (rpm)
+  motor_rated_current_a:
+    type: number
+    label: Motor Rated Current (A)
+  ratio:
+    type: integer
+    label: Speed Ratio
+  rated_output_torque_nm:
+    type: number
+    label: Rated Output Torque (Nm)
+  fault_stop_torque_nm:
+    type: number
+    label: Fault Stop Torque (Nm)
+  peak_output_torque_nm:
+    type: number
+    label: Peak Output Torque (Nm)
+  rated_input_speed_rpm:
+    type: number
+    label: Rated Input Speed (rpm)
+  max_input_speed_rpm:
+    type: number
+    label: Maximum Input Speed (rpm)
+  efficiency_pct:
+    type: number
+    label: Full Load Efficiency (%)
+  protection_class:
+    type: string
+    label: Protection Class
+  drive_wheel_diameter_mm:
+    type: number
+    label: Drive Wheel Diameter (mm)
+  wheel_width_mm:
+    type: number
+    label: Wheel Width (mm)
+  max_speed_m_s:
+    type: number
+    label: Maximum Speed (m/s)
+  operation_temperature_min_c:
+    type: number
+    label: Operation Temperature Min (°C)
+  operation_temperature_max_c:
+    type: number
+    label: Operation Temperature Max (°C)
+  rated_load_kg:
+    type: number
+    label: Rated Load (kg)
+  variant:
+    type: string
+    label: Variant

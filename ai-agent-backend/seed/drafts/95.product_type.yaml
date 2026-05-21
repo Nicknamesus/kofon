@@ -1,0 +1,51 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/95.html
+# Review before promoting to seed/product_types/kr128_series.yaml
+# Notes: Only one ratio (22:1) is listed on the page. The product is called "关节减速器KR128-22" which translates to "Joint reducer KR128-22". The family is classified as 'Harmonic drive / strain wave' based on the product name "关节减速器" (joint reducer) which typically refers to harmonic/strain wave reducers used in robotic joints, though the construction description mentions planetary-style features (cage-type planetary carrier, planetary wheel bearings). The frame size (128 mm outer diameter) and length (60.6 mm) were extracted from the "尺寸(外径×厚度)" field. Backlash is listed as ≤8 arcmin. All values are directly from the page.
+code: kr128_series
+name: KR128 Series
+family: Harmonic drive / strain wave
+description: KR128 series joint reducers (关节减速器) from Kofon. Features backlash ≤8
+  arcmin, precision gear grinding to ISO 4 grade, carburized and hardened alloy steel
+  gears (HRC60), integrated cage-type planetary carrier and output shaft design for
+  high rigidity and precision, and full needle roller bearings without cage for increased
+  torque and stiffness. Supports non-standard customization.
+spec_schema:
+  ratio:
+    type: integer
+    label: Reducer ratio
+  nominal_torque_nm:
+    type: number
+    label: Rated torque (Nm)
+  peak_torque_nm:
+    type: number
+    label: Peak torque (Nm)
+  rated_speed_rpm:
+    type: integer
+    label: Rated speed (RPM)
+  peak_speed_rpm:
+    type: integer
+    label: Peak speed (RPM)
+  efficiency_pct:
+    type: number
+    label: Efficiency (%)
+  weight_kg:
+    type: number
+    label: Weight (kg)
+  backlash_arcmin:
+    type: number
+    label: Backlash (Arcmin)
+  frame_size_mm:
+    type: number
+    label: Size (outer diameter, mm)
+  length_mm:
+    type: number
+    label: Length (mm)
+  operating_temp_min_c:
+    type: integer
+    label: Operating temperature min (°C)
+  operating_temp_max_c:
+    type: integer
+    label: Operating temperature max (°C)
+  lubrication:
+    type: string
+    label: Lubrication

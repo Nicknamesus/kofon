@@ -1,0 +1,44 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/83.html
+# Review before promoting to seed/product_types/tl_series.yaml
+# Notes: The page is for the TL045 offset-type tightening gearbox series. However, the "技术参数" (Technical Parameters) section appears to have no visible data table in the extracted text — only a note about service life calculation. The actual torque, ratio, backlash, speed, efficiency, and weight values are missing from the page text. I could only extract the model code TL045 and the general description. No ratio bands, torque values, or other numeric specs were present in the cleaned text. The PDF "柠紧机系列.pdf" might contain the detailed specs but is not accessible via text extraction. I created a single placeholder SKU with minimal specs. The human reviewer should locate the actual technical parameter table (possibly loaded as an image or in the PDF) and fill in the missing specs. The product family is 'TL Series' (TL 偏置型拧紧机).
+code: tl_series
+name: TL Series
+family: Planetary gearbox
+description: TL offset-type tightening machine gearbox series. Integrates advanced
+  wear-resistant materials with planetary gear trains for high-speed wear resistance
+  and noise reduction. Features customized gear trains with profile modification and
+  tooth optimization for improved impact resistance, special bearing designs to withstand
+  multi-directional loads under tightening shocks, and optional built-in torque and
+  displacement sensors for torque visualization. Output shaft uses high-strength special
+  materials with heat treatment for impact and wear resistance.
+spec_schema:
+  model:
+    type: string
+    label: Model
+  stage:
+    type: string
+    label: Stage
+  ratio:
+    type: string
+    label: Ratio
+  nominal_torque_nm:
+    type: number
+    label: Nominal Torque (Nm)
+  peak_torque_nm:
+    type: number
+    label: Peak Torque (Nm)
+  backlash_arcmin:
+    type: number
+    label: Backlash (arcmin)
+  input_speed_rpm_max:
+    type: integer
+    label: Max Input Speed (rpm)
+  efficiency_pct:
+    type: number
+    label: Efficiency (%)
+  weight_kg:
+    type: number
+    label: Weight (kg)
+  frame_size_mm:
+    type: string
+    label: Frame Size (mm)

@@ -1,0 +1,66 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/46.html
+# Review before promoting to seed/product_types/kofon_ball_screw.yaml
+# Notes: The HTML table is complex with merged cells and some rows where ball diameter and circuit count are not clearly indicated (the table headers span multiple columns). I've done my best to parse the data. Some rows appear to have misaligned columns (e.g., the row for 18×4 screw, and some 20×4, 25×4, 25×5, 32×5, 32×6 rows where the ball diameter and circuit columns seem to be missing or merged). For rows where ball diameter/circuit count could not be confidently determined, I used placeholder SKUs with '?' and omitted those spec fields. Also, some values appear to be misaligned (e.g., the 32×6 row showing 5000/7500/61/73/43/63 — these look like they belong to a different column layout). The 'rigidity_kgf_per_um' column header says 'kgf/um' — kept as-is. Load ratings are in kgf (not N) as per the original table. The product family is 'ball screw' (滚珠丝杠) which falls under the 'Roller screw' family category. The page also lists related products (RF080, RF060, R080, R060 gearboxes, KPX-SY180/142 hand cranks) but those are separate product types not included here.
+code: kofon_ball_screw
+name: Kofon Precision Ball Screw
+family: Roller screw
+description: Kofon precision ball screw series. High-efficiency (≥90%) rolling-element
+  linear actuator converting rotary to linear motion (or vice versa) with low friction,
+  high positioning accuracy, high rigidity (via preload), high speed capability, and
+  long service life. Available in multiple screw diameters (16–63 mm) and leads (4–10
+  mm) with various ball diameters and circuit configurations.
+spec_schema:
+  screw_diameter_mm:
+    type: integer
+    label: Screw outer diameter (mm)
+  lead_mm:
+    type: integer
+    label: Lead (mm)
+  ball_diameter_mm:
+    type: number
+    label: Ball diameter (mm)
+  circuit_count:
+    type: integer
+    label: Number of circuit turns
+  dynamic_load_capacity_kgf:
+    type: integer
+    label: Dynamic load capacity Ca (kgf)
+  static_load_capacity_kgf:
+    type: integer
+    label: Static load capacity Coa (kgf)
+  nut_outer_diameter_mm:
+    type: number
+    label: Nut outer diameter Dg6 (mm)
+  nut_length_mm:
+    type: integer
+    label: Nut length L (mm)
+  flange_diameter_mm:
+    type: integer
+    label: Flange diameter A (mm)
+  flange_thickness_mm:
+    type: integer
+    label: Flange thickness T (mm)
+  flange_width_mm:
+    type: integer
+    label: Flange width W (mm)
+  flange_center_hole_mm:
+    type: integer
+    label: Flange center hole G (mm)
+  flange_bolt_circle_mm:
+    type: integer
+    label: Flange bolt circle H (mm)
+  mounting_hole_diameter_mm:
+    type: number
+    label: Mounting hole diameter S (mm)
+  mounting_hole_counterbore_mm:
+    type: number
+    label: Mounting hole counterbore X (mm)
+  mounting_hole_depth_mm:
+    type: number
+    label: Mounting hole depth Y (mm)
+  oil_hole:
+    type: string
+    label: Oil hole thread
+  rigidity_kgf_per_um:
+    type: integer
+    label: Rigidity (kgf/µm)

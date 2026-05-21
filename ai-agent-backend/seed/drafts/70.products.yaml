@@ -1,0 +1,564 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/70.html
+# Review before promoting to seed/products/ktfr1_series.yaml
+product_type_code: ktfr1_series
+products:
+- sku: KT070FL1-1-1
+  name: KT070FL1 — 1-stage, 1:1
+  specs:
+    frame_size_mm: 70
+    ratio: 1
+    stage: 1
+    variant: FL1
+    nominal_torque_nm: 45
+    fault_stop_torque_nm: 2x rated
+    backlash_arcmin: 6
+    output_max_radial_force_n: 1100
+    output_max_axial_force_n: 550
+    average_life_hr: 20000
+    efficiency_pct: 96
+    noise_db: 72
+    max_input_speed_rpm: 3500
+    rated_input_speed_rpm: 2500
+    rotational_inertia_kgcm2: 1.3
+    weight_kg: 4.4
+  status: active
+- sku: KT090FL1-1-1
+  name: KT090FL1 — 1-stage, 1:1
+  specs:
+    frame_size_mm: 90
+    ratio: 1
+    stage: 1
+    variant: FL1
+    nominal_torque_nm: 78
+    fault_stop_torque_nm: 2x rated
+    backlash_arcmin: 6
+    output_max_radial_force_n: 1700
+    output_max_axial_force_n: 850
+    average_life_hr: 20000
+    efficiency_pct: 96
+    noise_db: 76
+    max_input_speed_rpm: 3500
+    rated_input_speed_rpm: 2500
+    rotational_inertia_kgcm2: 3.16
+    weight_kg: 7.1
+  status: active
+- sku: KT110FL1-1-1
+  name: KT110FL1 — 1-stage, 1:1
+  specs:
+    frame_size_mm: 110
+    ratio: 1
+    stage: 1
+    variant: FL1
+    nominal_torque_nm: 150
+    fault_stop_torque_nm: 2x rated
+    backlash_arcmin: 6
+    output_max_radial_force_n: 2700
+    output_max_axial_force_n: 1350
+    average_life_hr: 20000
+    efficiency_pct: 96
+    noise_db: 77
+    max_input_speed_rpm: 3000
+    rated_input_speed_rpm: 2000
+    rotational_inertia_kgcm2: 7.7
+    weight_kg: 12.1
+  status: active
+- sku: KT140FL1-1-1
+  name: KT140FL1 — 1-stage, 1:1
+  specs:
+    frame_size_mm: 140
+    ratio: 1
+    stage: 1
+    variant: FL1
+    nominal_torque_nm: 360
+    fault_stop_torque_nm: 2x rated
+    backlash_arcmin: 6
+    output_max_radial_force_n: 4800
+    output_max_axial_force_n: 2400
+    average_life_hr: 20000
+    efficiency_pct: 96
+    noise_db: 78
+    max_input_speed_rpm: 3000
+    rated_input_speed_rpm: 2000
+    rotational_inertia_kgcm2: 23.57
+    weight_kg: 20.9
+  status: active
+- sku: KT170FL1-1-1
+  name: KT170FL1 — 1-stage, 1:1
+  specs:
+    frame_size_mm: 170
+    ratio: 1
+    stage: 1
+    variant: FL1
+    nominal_torque_nm: 585
+    fault_stop_torque_nm: 2x rated
+    backlash_arcmin: 8
+    output_max_radial_force_n: 6600
+    output_max_axial_force_n: 3300
+    average_life_hr: 20000
+    efficiency_pct: 96
+    noise_db: 79
+    max_input_speed_rpm: 2500
+    rated_input_speed_rpm: 1500
+    rotational_inertia_kgcm2: 58.99
+    weight_kg: 36.1
+  status: active
+- sku: KT210FL1-1-1
+  name: KT210FL1 — 1-stage, 1:1
+  specs:
+    frame_size_mm: 210
+    ratio: 1
+    stage: 1
+    variant: FL1
+    nominal_torque_nm: 1300
+    fault_stop_torque_nm: 2x rated
+    backlash_arcmin: 10
+    output_max_radial_force_n: 11500
+    output_max_axial_force_n: 5750
+    average_life_hr: 20000
+    efficiency_pct: 96
+    noise_db: 81
+    max_input_speed_rpm: 2000
+    rated_input_speed_rpm: 1500
+    rotational_inertia_kgcm2: 195.4
+    weight_kg: 69.4
+  status: active
+- sku: KT240FL1-1-1
+  name: KT240FL1 — 1-stage, 1:1
+  specs:
+    frame_size_mm: 240
+    ratio: 1
+    stage: 1
+    variant: FL1
+    nominal_torque_nm: 2150
+    fault_stop_torque_nm: 2x rated
+    backlash_arcmin: 12
+    output_max_radial_force_n: 16000
+    output_max_axial_force_n: 8500
+    average_life_hr: 20000
+    efficiency_pct: 96
+    noise_db: 83
+    max_input_speed_rpm: 1800
+    rated_input_speed_rpm: 1200
+    rotational_inertia_kgcm2: 369.34
+    weight_kg: 95.2
+  status: active
+- sku: KT070FR1-1-1
+  name: KT070FR1 — 1-stage, 1:1
+  specs:
+    frame_size_mm: 70
+    ratio: 1
+    stage: 1
+    variant: FR1
+    nominal_torque_nm: 45
+    fault_stop_torque_nm: 2x rated
+    backlash_arcmin: 6
+    output_max_radial_force_n: 1100
+    output_max_axial_force_n: 550
+    average_life_hr: 20000
+    efficiency_pct: 96
+    noise_db: 72
+    max_input_speed_rpm: 3500
+    rated_input_speed_rpm: 2500
+    rotational_inertia_kgcm2: 1.3
+    weight_kg: 4.4
+  status: active
+- sku: KT090FR1-1-1
+  name: KT090FR1 — 1-stage, 1:1
+  specs:
+    frame_size_mm: 90
+    ratio: 1
+    stage: 1
+    variant: FR1
+    nominal_torque_nm: 78
+    fault_stop_torque_nm: 2x rated
+    backlash_arcmin: 6
+    output_max_radial_force_n: 1700
+    output_max_axial_force_n: 850
+    average_life_hr: 20000
+    efficiency_pct: 96
+    noise_db: 76
+    max_input_speed_rpm: 3500
+    rated_input_speed_rpm: 2500
+    rotational_inertia_kgcm2: 3.16
+    weight_kg: 7.1
+  status: active
+- sku: KT110FR1-1-1
+  name: KT110FR1 — 1-stage, 1:1
+  specs:
+    frame_size_mm: 110
+    ratio: 1
+    stage: 1
+    variant: FR1
+    nominal_torque_nm: 150
+    fault_stop_torque_nm: 2x rated
+    backlash_arcmin: 6
+    output_max_radial_force_n: 2700
+    output_max_axial_force_n: 1350
+    average_life_hr: 20000
+    efficiency_pct: 96
+    noise_db: 77
+    max_input_speed_rpm: 3000
+    rated_input_speed_rpm: 2000
+    rotational_inertia_kgcm2: 7.7
+    weight_kg: 12.1
+  status: active
+- sku: KT140FR1-1-1
+  name: KT140FR1 — 1-stage, 1:1
+  specs:
+    frame_size_mm: 140
+    ratio: 1
+    stage: 1
+    variant: FR1
+    nominal_torque_nm: 360
+    fault_stop_torque_nm: 2x rated
+    backlash_arcmin: 6
+    output_max_radial_force_n: 4800
+    output_max_axial_force_n: 2400
+    average_life_hr: 20000
+    efficiency_pct: 96
+    noise_db: 78
+    max_input_speed_rpm: 3000
+    rated_input_speed_rpm: 2000
+    rotational_inertia_kgcm2: 23.57
+    weight_kg: 20.9
+  status: active
+- sku: KT170FR1-1-1
+  name: KT170FR1 — 1-stage, 1:1
+  specs:
+    frame_size_mm: 170
+    ratio: 1
+    stage: 1
+    variant: FR1
+    nominal_torque_nm: 585
+    fault_stop_torque_nm: 2x rated
+    backlash_arcmin: 8
+    output_max_radial_force_n: 6600
+    output_max_axial_force_n: 3300
+    average_life_hr: 20000
+    efficiency_pct: 96
+    noise_db: 79
+    max_input_speed_rpm: 2500
+    rated_input_speed_rpm: 1500
+    rotational_inertia_kgcm2: 58.99
+    weight_kg: 36.1
+  status: active
+- sku: KT210FR1-1-1
+  name: KT210FR1 — 1-stage, 1:1
+  specs:
+    frame_size_mm: 210
+    ratio: 1
+    stage: 1
+    variant: FR1
+    nominal_torque_nm: 1300
+    fault_stop_torque_nm: 2x rated
+    backlash_arcmin: 10
+    output_max_radial_force_n: 11500
+    output_max_axial_force_n: 5750
+    average_life_hr: 20000
+    efficiency_pct: 96
+    noise_db: 81
+    max_input_speed_rpm: 2000
+    rated_input_speed_rpm: 1500
+    rotational_inertia_kgcm2: 195.4
+    weight_kg: 69.4
+  status: active
+- sku: KT240FR1-1-1
+  name: KT240FR1 — 1-stage, 1:1
+  specs:
+    frame_size_mm: 240
+    ratio: 1
+    stage: 1
+    variant: FR1
+    nominal_torque_nm: 2150
+    fault_stop_torque_nm: 2x rated
+    backlash_arcmin: 12
+    output_max_radial_force_n: 16000
+    output_max_axial_force_n: 8500
+    average_life_hr: 20000
+    efficiency_pct: 96
+    noise_db: 83
+    max_input_speed_rpm: 1800
+    rated_input_speed_rpm: 1200
+    rotational_inertia_kgcm2: 369.34
+    weight_kg: 95.2
+  status: active
+- sku: KT070FH-1-1
+  name: KT070FH — 1-stage, 1:1
+  specs:
+    frame_size_mm: 70
+    ratio: 1
+    stage: 1
+    variant: FH
+    nominal_torque_nm: 45
+    fault_stop_torque_nm: 2x rated
+    backlash_arcmin: 6
+    output_max_radial_force_n: 1100
+    output_max_axial_force_n: 550
+    average_life_hr: 20000
+    efficiency_pct: 96
+    noise_db: 72
+    max_input_speed_rpm: 3500
+    rated_input_speed_rpm: 2500
+    rotational_inertia_kgcm2: 1.3
+    weight_kg: 4.4
+  status: active
+- sku: KT090FH-1-1
+  name: KT090FH — 1-stage, 1:1
+  specs:
+    frame_size_mm: 90
+    ratio: 1
+    stage: 1
+    variant: FH
+    nominal_torque_nm: 78
+    fault_stop_torque_nm: 2x rated
+    backlash_arcmin: 6
+    output_max_radial_force_n: 1700
+    output_max_axial_force_n: 850
+    average_life_hr: 20000
+    efficiency_pct: 96
+    noise_db: 76
+    max_input_speed_rpm: 3500
+    rated_input_speed_rpm: 2500
+    rotational_inertia_kgcm2: 3.16
+    weight_kg: 7.1
+  status: active
+- sku: KT110FH-1-1
+  name: KT110FH — 1-stage, 1:1
+  specs:
+    frame_size_mm: 110
+    ratio: 1
+    stage: 1
+    variant: FH
+    nominal_torque_nm: 150
+    fault_stop_torque_nm: 2x rated
+    backlash_arcmin: 6
+    output_max_radial_force_n: 2700
+    output_max_axial_force_n: 1350
+    average_life_hr: 20000
+    efficiency_pct: 96
+    noise_db: 77
+    max_input_speed_rpm: 3000
+    rated_input_speed_rpm: 2000
+    rotational_inertia_kgcm2: 7.7
+    weight_kg: 12.1
+  status: active
+- sku: KT140FH-1-1
+  name: KT140FH — 1-stage, 1:1
+  specs:
+    frame_size_mm: 140
+    ratio: 1
+    stage: 1
+    variant: FH
+    nominal_torque_nm: 360
+    fault_stop_torque_nm: 2x rated
+    backlash_arcmin: 6
+    output_max_radial_force_n: 4800
+    output_max_axial_force_n: 2400
+    average_life_hr: 20000
+    efficiency_pct: 96
+    noise_db: 78
+    max_input_speed_rpm: 3000
+    rated_input_speed_rpm: 2000
+    rotational_inertia_kgcm2: 23.57
+    weight_kg: 20.9
+  status: active
+- sku: KT170FH-1-1
+  name: KT170FH — 1-stage, 1:1
+  specs:
+    frame_size_mm: 170
+    ratio: 1
+    stage: 1
+    variant: FH
+    nominal_torque_nm: 585
+    fault_stop_torque_nm: 2x rated
+    backlash_arcmin: 8
+    output_max_radial_force_n: 6600
+    output_max_axial_force_n: 3300
+    average_life_hr: 20000
+    efficiency_pct: 96
+    noise_db: 79
+    max_input_speed_rpm: 2500
+    rated_input_speed_rpm: 1500
+    rotational_inertia_kgcm2: 58.99
+    weight_kg: 36.1
+  status: active
+- sku: KT210FH-1-1
+  name: KT210FH — 1-stage, 1:1
+  specs:
+    frame_size_mm: 210
+    ratio: 1
+    stage: 1
+    variant: FH
+    nominal_torque_nm: 1300
+    fault_stop_torque_nm: 2x rated
+    backlash_arcmin: 10
+    output_max_radial_force_n: 11500
+    output_max_axial_force_n: 5750
+    average_life_hr: 20000
+    efficiency_pct: 96
+    noise_db: 81
+    max_input_speed_rpm: 2000
+    rated_input_speed_rpm: 1500
+    rotational_inertia_kgcm2: 195.4
+    weight_kg: 69.4
+  status: active
+- sku: KT240FH-1-1
+  name: KT240FH — 1-stage, 1:1
+  specs:
+    frame_size_mm: 240
+    ratio: 1
+    stage: 1
+    variant: FH
+    nominal_torque_nm: 2150
+    fault_stop_torque_nm: 2x rated
+    backlash_arcmin: 12
+    output_max_radial_force_n: 16000
+    output_max_axial_force_n: 8500
+    average_life_hr: 20000
+    efficiency_pct: 96
+    noise_db: 83
+    max_input_speed_rpm: 1800
+    rated_input_speed_rpm: 1200
+    rotational_inertia_kgcm2: 369.34
+    weight_kg: 95.2
+  status: active
+- sku: KT070FC-1-1
+  name: KT070FC — 1-stage, 1:1
+  specs:
+    frame_size_mm: 70
+    ratio: 1
+    stage: 1
+    variant: FC
+    nominal_torque_nm: 45
+    fault_stop_torque_nm: 2x rated
+    backlash_arcmin: 6
+    output_max_radial_force_n: 1100
+    output_max_axial_force_n: 550
+    average_life_hr: 20000
+    efficiency_pct: 96
+    noise_db: 72
+    max_input_speed_rpm: 3500
+    rated_input_speed_rpm: 2500
+    rotational_inertia_kgcm2: 1.3
+    weight_kg: 4.4
+  status: active
+- sku: KT090FC-1-1
+  name: KT090FC — 1-stage, 1:1
+  specs:
+    frame_size_mm: 90
+    ratio: 1
+    stage: 1
+    variant: FC
+    nominal_torque_nm: 78
+    fault_stop_torque_nm: 2x rated
+    backlash_arcmin: 6
+    output_max_radial_force_n: 1700
+    output_max_axial_force_n: 850
+    average_life_hr: 20000
+    efficiency_pct: 96
+    noise_db: 76
+    max_input_speed_rpm: 3500
+    rated_input_speed_rpm: 2500
+    rotational_inertia_kgcm2: 3.16
+    weight_kg: 7.1
+  status: active
+- sku: KT110FC-1-1
+  name: KT110FC — 1-stage, 1:1
+  specs:
+    frame_size_mm: 110
+    ratio: 1
+    stage: 1
+    variant: FC
+    nominal_torque_nm: 150
+    fault_stop_torque_nm: 2x rated
+    backlash_arcmin: 6
+    output_max_radial_force_n: 2700
+    output_max_axial_force_n: 1350
+    average_life_hr: 20000
+    efficiency_pct: 96
+    noise_db: 77
+    max_input_speed_rpm: 3000
+    rated_input_speed_rpm: 2000
+    rotational_inertia_kgcm2: 7.7
+    weight_kg: 12.1
+  status: active
+- sku: KT140FC-1-1
+  name: KT140FC — 1-stage, 1:1
+  specs:
+    frame_size_mm: 140
+    ratio: 1
+    stage: 1
+    variant: FC
+    nominal_torque_nm: 360
+    fault_stop_torque_nm: 2x rated
+    backlash_arcmin: 6
+    output_max_radial_force_n: 4800
+    output_max_axial_force_n: 2400
+    average_life_hr: 20000
+    efficiency_pct: 96
+    noise_db: 78
+    max_input_speed_rpm: 3000
+    rated_input_speed_rpm: 2000
+    rotational_inertia_kgcm2: 23.57
+    weight_kg: 20.9
+  status: active
+- sku: KT170FC-1-1
+  name: KT170FC — 1-stage, 1:1
+  specs:
+    frame_size_mm: 170
+    ratio: 1
+    stage: 1
+    variant: FC
+    nominal_torque_nm: 585
+    fault_stop_torque_nm: 2x rated
+    backlash_arcmin: 8
+    output_max_radial_force_n: 6600
+    output_max_axial_force_n: 3300
+    average_life_hr: 20000
+    efficiency_pct: 96
+    noise_db: 79
+    max_input_speed_rpm: 2500
+    rated_input_speed_rpm: 1500
+    rotational_inertia_kgcm2: 58.99
+    weight_kg: 36.1
+  status: active
+- sku: KT210FC-1-1
+  name: KT210FC — 1-stage, 1:1
+  specs:
+    frame_size_mm: 210
+    ratio: 1
+    stage: 1
+    variant: FC
+    nominal_torque_nm: 1300
+    fault_stop_torque_nm: 2x rated
+    backlash_arcmin: 10
+    output_max_radial_force_n: 11500
+    output_max_axial_force_n: 5750
+    average_life_hr: 20000
+    efficiency_pct: 96
+    noise_db: 81
+    max_input_speed_rpm: 2000
+    rated_input_speed_rpm: 1500
+    rotational_inertia_kgcm2: 195.4
+    weight_kg: 69.4
+  status: active
+- sku: KT240FC-1-1
+  name: KT240FC — 1-stage, 1:1
+  specs:
+    frame_size_mm: 240
+    ratio: 1
+    stage: 1
+    variant: FC
+    nominal_torque_nm: 2150
+    fault_stop_torque_nm: 2x rated
+    backlash_arcmin: 12
+    output_max_radial_force_n: 16000
+    output_max_axial_force_n: 8500
+    average_life_hr: 20000
+    efficiency_pct: 96
+    noise_db: 83
+    max_input_speed_rpm: 1800
+    rated_input_speed_rpm: 1200
+    rotational_inertia_kgcm2: 369.34
+    weight_kg: 95.2
+  status: active

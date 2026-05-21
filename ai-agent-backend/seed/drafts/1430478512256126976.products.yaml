@@ -1,0 +1,28 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/1430478512256126976.html
+# Review before promoting to seed/products/kr095_23.yaml
+product_type_code: kr095_23
+products:
+- sku: KR095-23
+  name: KR095-23 Joint Module — 23:1
+  specs:
+    reduction_ratio: 23
+    rated_voltage_v: 48
+    rated_current_a: 6.8
+    rated_power_w: 189
+    rated_speed_rpm: 44
+    rated_torque_nm: 41
+    peak_current_a: 20.4
+    peak_torque_nm: 123
+    peak_speed_rpm: 130
+    efficiency_pct: 76.5
+    power_density_w_kg: 144.2
+    torque_constant_nm_per_a: 0.24
+    weight_kg: 1.31
+    backlash_arcmin: 8
+    size_mm: 95×60
+    communication: CAN
+    communication_baud_rate: 1M
+    double_encoder: 'Yes'
+    built_in_drive: Optional
+  datasheet_url: https://www.kofon.com.cn/products_detail/1430478512256126976.html
+  status: active

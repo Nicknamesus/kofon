@@ -1,0 +1,44 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/96.html
+# Review before promoting to seed/product_types/tl_series_tightening.yaml
+# Notes: The page is for the TL067 offset tightening gearbox. However, the "技术参数" (Technical Parameters) section and "标准尺寸" (Standard Dimensions) section appear to have their content loaded dynamically (likely images or tables not captured in the text extraction). No numeric specs (torque, ratio, speed, weight, backlash, efficiency) were present in the scraped text. Only the model code TL067 is identifiable. The datasheet PDF link is provided. The product description and features are well described in Chinese. I created a single SKU with null specs since no technical data table was captured. The page mentions service life based on tightening cycles ≤13s per cycle and max tightening torque ≤5s, but no numeric values were given. The reviewer should check the actual page images or PDF datasheet for the technical parameter table and dimension table to fill in specs.
+code: tl_series_tightening
+name: TL Series Offset Tightening Gearbox
+family: Planetary gearbox
+description: TL series offset-type tightening gearboxes from Kofon. Designed for high-speed
+  nutrunner/tightening applications, featuring advanced wear-resistant materials integrated
+  with planetary gear trains for reduced noise and wear at high speeds. Custom gear
+  profiles improve impact resistance. Special bearings handle multi-directional loads
+  from tightening shocks and can self-lubricate in confined spaces. The output shaft
+  uses high-strength specially treated materials for impact and wear resistance. Can
+  be equipped with built-in torque and displacement sensors for torque visualisation.
+spec_schema:
+  frame_size_mm:
+    type: string
+    label: Frame size
+  ratio:
+    type: string
+    label: Ratio
+  nominal_torque_nm:
+    type: number
+    label: Nominal torque (Nm)
+  peak_torque_nm:
+    type: number
+    label: Peak torque (Nm)
+  max_tightening_torque_nm:
+    type: number
+    label: Max tightening torque (Nm)
+  input_speed_rpm_max:
+    type: integer
+    label: Max input speed (rpm)
+  weight_kg:
+    type: number
+    label: Weight (kg)
+  backlash_arcmin:
+    type: number
+    label: Backlash (arcmin)
+  efficiency_pct:
+    type: number
+    label: Efficiency (%)
+  service_life_cycles:
+    type: integer
+    label: Service life (tightening cycles)

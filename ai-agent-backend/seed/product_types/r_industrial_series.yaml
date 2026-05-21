@@ -1,0 +1,75 @@
+# Promoted from 2 draft(s) under seed/drafts/.
+# Merged LLM codes: r060_series, r080_series
+# Sources: 56.product_type, 57.product_type
+code: r_industrial_series
+name: R060 Series
+family: Planetary gearbox
+description: The R060 series is a compact precision planetary gearbox from Kofon's
+  R-series line, available in 1-stage, 2-stage, and 3-stage configurations. It offers
+  ratios from 3:1 to 320:1, rated torques up to 35 Nm, backlash as low as 8 arcmin
+  (1-stage), and IP65 protection. Suitable for general-purpose precision motion control
+  applications.
+spec_schema:
+  ratio:
+    type: integer
+    label: Ratio
+  stage_count:
+    type: integer
+    label: Number of stages
+  nominal_torque_nm:
+    type: number
+    label: Rated output torque (Nm)
+  peak_torque_nm:
+    type: number
+    label: Maximum acceleration torque (Nm)
+  emergency_stop_torque_nm:
+    type: number
+    label: Emergency stop torque (Nm)
+  rated_input_speed_rpm:
+    type: integer
+    label: Rated input speed (rpm)
+  max_input_speed_rpm:
+    type: integer
+    label: Max input speed (rpm)
+  backlash_arcmin:
+    type: number
+    label: Backlash (arcmin)
+  max_radial_force_n:
+    type: integer
+    label: Max radial force (N)
+  max_axial_force_n:
+    type: integer
+    label: Max axial force (N)
+  rotational_inertia_kgcm2:
+    type: number
+    label: Rotational inertia (kg·cm²)
+  noise_db_a:
+    type: number
+    label: Noise (dB(A))
+  efficiency_pct:
+    type: integer
+    label: Full-load efficiency (%)
+  operating_temp_min_c:
+    type: integer
+    label: Operating temperature min (°C)
+  operating_temp_max_c:
+    type: integer
+    label: Operating temperature max (°C)
+  lubrication:
+    type: string
+    label: Lubrication
+  mounting_position:
+    type: string
+    label: Mounting position
+  protection_class:
+    type: string
+    label: Protection class
+  service_lifetime_h:
+    type: integer
+    label: Service lifetime (h)
+  weight_kg:
+    type: number
+    label: Weight (kg)
+  stage:
+    type: integer
+    label: Number of stages

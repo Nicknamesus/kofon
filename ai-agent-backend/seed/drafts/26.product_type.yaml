@@ -1,0 +1,69 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/26.html
+# Review before promoting to seed/product_types/w10_micro.yaml
+# Notes: The page is titled "W10微型减速机" (W10 Micro Gearbox) but the technical data table appears to be for frame size 08 specifically (the smallest in the W10 series). The overview mentions frame sizes 08/10/12/16/19/22/26/32, but the detailed specs table only provides data for what seems to be the 08 variant (max motor shaft diameter 1mm, length 7.2mm for 1-stage). The torque/power/speed values in the technical table are specific to one frame size. I've used frame_size_mm=8 based on the data. The overview lists ratio bands (e.g. single-stage 3.9/5.3/6.6) but the technical table only shows one ratio per stage (4, 16, 64). I expanded all listed ratios from the overview section. For 3-stage and 4-stage, the technical table only provides data for ratio 64 (3-stage) — I applied the same 3-stage torque/power/speed values to all 3-stage and 4-stage ratios since no separate data was given. The weight values from the table: 6.7g (1-stage), 7.3g (2-stage), 7.8g (3-stage) — converted to kg. The "转动供量" is likely "moment of inertia" (0.005 g·cm²). The axial load (5N) and radial load (520N) appear to be general values for the series. The page is a product page for the W10 micro series.
+code: w10_micro
+name: W10 Micro Gearbox
+family: Planetary gearbox
+description: W10 micro planetary gearbox series from Kofon. Hardened gear hobbing,
+  integrated front-flange ring gear design, high torque, impact resistant, low noise,
+  grease lubrication (maintenance-free). Designed for low-speed high-torque applications
+  in small spaces such as humanoid robot joints and drones. Available in frame sizes
+  08/10/12/16/19/22/26/32 with single, double, triple and quadruple stage reductions.
+spec_schema:
+  frame_size_mm:
+    type: integer
+    label: Frame size (mm)
+  stages:
+    type: integer
+    label: Number of stages
+  ratio:
+    type: number
+    label: Ratio
+  nominal_torque_nm:
+    type: number
+    label: Max continuous torque (Nm)
+  peak_torque_nm:
+    type: number
+    label: Max instantaneous torque (Nm)
+  input_speed_rpm_max:
+    type: integer
+    label: Max continuous input speed (rpm)
+  input_speed_instantaneous_rpm_max:
+    type: integer
+    label: Max instantaneous input speed (rpm)
+  efficiency_pct:
+    type: number
+    label: Efficiency (%)
+  backlash_arcmin:
+    type: number
+    label: Backlash (arcmin)
+  weight_kg:
+    type: number
+    label: Weight (kg)
+  max_motor_shaft_diameter_mm:
+    type: number
+    label: Max motor shaft diameter (mm)
+  length_mm:
+    type: number
+    label: Gearbox length L1 (mm)
+  max_continuous_power_w:
+    type: number
+    label: Max continuous power (W)
+  max_instantaneous_power_w:
+    type: number
+    label: Max instantaneous power (W)
+  moment_of_inertia_gcm2:
+    type: number
+    label: Moment of inertia (g·cm²)
+  max_axial_load_n:
+    type: number
+    label: Max axial load (N)
+  max_radial_load_n:
+    type: number
+    label: Max radial load (N)
+  temperature_range_c:
+    type: string
+    label: Recommended temperature range (°C)
+  temperature_range_extended_c:
+    type: string
+    label: Extended temperature range (°C)

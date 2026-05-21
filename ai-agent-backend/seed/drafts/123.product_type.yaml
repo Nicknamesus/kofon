@@ -1,0 +1,57 @@
+# DRAFT — extracted from https://www.kofon.com.cn/products_detail/123.html
+# Review before promoting to seed/product_types/kpx_s_series_hand_crank.yaml
+# Notes: 1. The page lists "标准≤3 精密≤6" for 1-stage backlash and "标准≤5 精密≤8" for 2-stage backlash — these are ranges (standard vs precision grade). I stored them as strings since they represent two possible values per SKU. 2. The 2-stage noise value is listed as "dB(AF" — likely a typo for "dB(A)"; I used 65 as shown. 3. Rotational inertia units are listed as "kgcm²" (1-stage) and "kgcm" (2-stage) — assumed both are kg·cm². 4. The page labels "最大轴向力" as "Max Radial Force" and "最大径向力" as "Max Axial Force" — these appear swapped vs. standard engineering terminology. I preserved the Chinese-to-English mapping as given on the page (axial force = 6700N, radial force = 3300N). 5. Weight differs: 1-stage = 14 kg, 2-stage = 17 kg. 6. Only one frame size (ST115) is covered on this page. Other frame sizes in the KPX-S series would be separate pages.
+code: kpx_s_series_hand_crank
+name: KPX-S Series Hand-Crank Input Reducer
+family: Planetary gearbox
+description: The KPX-S series hand-crank input planetary gearboxes from Kofon are
+  designed for manual backup operation when electrical power is unavailable. They
+  feature high reliability, simple operation, and wide application suitability. Available
+  in 1-stage and 2-stage configurations with frame size ST115, offering ratios from
+  3:1 to 64:1.
+spec_schema:
+  frame_size_mm:
+    type: string
+    label: Frame size
+  stage:
+    type: integer
+    label: Number of stages
+  ratio:
+    type: integer
+    label: Ratio
+  nominal_torque_nm:
+    type: number
+    label: Rated output torque (Nm)
+  peak_torque_nm:
+    type: number
+    label: Maximum acceleration torque (Nm)
+  emergency_stop_torque_nm:
+    type: number
+    label: Emergency stop torque (Nm)
+  rated_input_speed_rpm:
+    type: integer
+    label: Rated input speed (rpm)
+  max_input_speed_rpm:
+    type: integer
+    label: Max input speed (rpm)
+  backlash_arcmin:
+    type: string
+    label: Backlash (arcmin)
+  max_radial_force_n:
+    type: integer
+    label: Max radial force (N)
+  max_axial_force_n:
+    type: integer
+    label: Max axial force (N)
+  rotational_inertia_kgcm2:
+    type: number
+    label: Rotational inertia (kg·cm²)
+  noise_db:
+    type: number
+    label: Noise (dB(A))
+  efficiency_pct:
+    type: integer
+    label: Efficiency (%)
+  weight_kg:
+    type: number
+    label: Weight (kg)
