@@ -1,12 +1,13 @@
 # Promoted from 1 draft(s) under seed/drafts/.
 # Sources: pdf_5kh_8a8963.product_type
 code: 5kh_series
-name: 5KH Series High Precision Planetary Gearbox
-family: Planetary gearbox
+name: High-precision planetary gearbox (5KH)
+family: Precision Planetary Gearbox
 description: The 5KH series is a high-precision planetary gearbox line designed for
   applications requiring low backlash, high torque density, and smooth operation.
   Available in multiple frame sizes and reduction ratios, the series offers robust
   performance for servo-driven motion control systems.
+product_page_url: https://www.kofon.com.cn/products_detail/29.html
 spec_schema:
   frame_size_mm:
     type: integer

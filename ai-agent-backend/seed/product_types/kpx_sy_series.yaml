@@ -1,13 +1,14 @@
 # Promoted from 1 draft(s) under seed/drafts/.
 # Sources: 125.product_type
 code: kpx_sy_series
-name: KPX-SY Series Hand-Input Gearbox
-family: Planetary gearbox
+name: Hand-input planetary gearbox (KPX-SY)
+family: Precision Planetary Gearbox
 description: The KPX-SY series is a hand-input (manual crank) planetary gearbox designed
   for applications where electric power is unavailable or unreliable. It provides
   a reliable mechanical backup in remote areas or emergency situations. Available
   in 1-stage and 2-stage configurations with a wide range of ratios, offering high
   efficiency, low backlash, and compact dimensions.
+product_page_url: https://www.kofon.com.cn/products_detail/116.html
 spec_schema:
   ratio:
     type: integer

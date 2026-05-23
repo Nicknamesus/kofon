@@ -38,6 +38,7 @@ async def recommend_categories(
             ProductType.name,
             ProductType.family,
             ProductType.description,
+            ProductType.product_page_url,
             UseCaseProductType.fit_score,
             UseCaseProductType.rationale,
         )
@@ -57,10 +58,11 @@ async def recommend_categories(
             name=name,
             family=family,
             description=desc,
+            product_page_url=page_url,
             fit_score=fit,
             rationale=rationale,
         )
-        for code, name, family, desc, fit, rationale in rows
+        for code, name, family, desc, page_url, fit, rationale in rows
     ]
     return RecommendCategoriesResponse(
         industry=industry,

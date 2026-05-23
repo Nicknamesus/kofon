@@ -4,14 +4,15 @@
 # `search_products` tool can filter on them.
 
 code: caesarplanetary
-name: CaesarPlanetary
-family: Planetary gearbox
+name: Precision planetary gearbox (CaesarPlanetary)
+family: Precision Planetary Gearbox
 description: >-
   High-precision inline planetary gearboxes for servo-driven motion. Available
   in three frame sizes (60, 90, 140 mm) and ratios from 3:1 to 100:1.
   Low-backlash (HP) and high-torque (HT) variants share a common mounting
   interface so a customer can step up torque without redesigning the bracket.
 
+product_page_url: https://www.kofon.com.cn/products_detail/6.html
 spec_schema:
   frame_size_mm:
     type: integer

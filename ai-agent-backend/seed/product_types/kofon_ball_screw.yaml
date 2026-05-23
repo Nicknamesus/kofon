@@ -1,13 +1,14 @@
 # Promoted from 1 draft(s) under seed/drafts/.
 # Sources: 46.product_type
 code: kofon_ball_screw
-name: Kofon Precision Ball Screw
-family: Roller screw
+name: Precision ball screw
+family: Planetary Roller Screw
 description: Kofon precision ball screw series. High-efficiency (≥90%) rolling-element
   linear actuator converting rotary to linear motion (or vice versa) with low friction,
   high positioning accuracy, high rigidity (via preload), high speed capability, and
   long service life. Available in multiple screw diameters (16–63 mm) and leads (4–10
   mm) with various ball diameters and circuit configurations.
+product_page_url: https://www.kofon.com.cn/products_detail/46.html
 spec_schema:
   screw_diameter_mm:
     type: integer

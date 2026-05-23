@@ -1,12 +1,13 @@
 # Promoted from 1 draft(s) under seed/drafts/.
 # Sources: 76.product_type
 code: 8_11_series_harmonic
-name: 8/11 Series Harmonic Drive
-family: Harmonic drive / strain wave
+name: Compact harmonic gear (8/11)
+family: Strain Wave / Harmonic Gear
 description: Kofon 8/11 series harmonic drive reducers offering high transmission
   accuracy, high torsional stiffness, large load capacity, high efficiency, and long
   life. Available in multiple structural forms (HF, HS, SF, SS) for standalone use
   with easy installation.
+product_page_url: https://www.kofon.com.cn/products_detail/76.html
 spec_schema:
   model:
     type: string

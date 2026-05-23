@@ -1,14 +1,15 @@
 # Promoted from 6 draft(s) under seed/drafts/.
 # Sources: 114.product_type, 116.product_type, 117.product_type, 118.product_type, 126.product_type, 84.product_type
 code: kpx_s_series
-name: KPX-S Series Hand-Input Reducer
-family: Planetary gearbox
+name: Hand-crank planetary gearbox (KPX-S)
+family: Precision Planetary Gearbox
 description: The KPX-S series hand-input (manual crank) planetary reducers from Kofon
   are designed for applications where electric power may be unavailable or unreliable.
   They allow manual operation via a hand crank to maintain essential equipment function
   during power failures or in remote locations. The series features high efficiency
   (up to 97% for 1-stage), low backlash options, and a compact design. Available in
   1-stage and 2-stage configurations with a wide range of ratios.
+product_page_url: https://www.kofon.com.cn/products_detail/114.html
 spec_schema:
   stages:
     type: integer

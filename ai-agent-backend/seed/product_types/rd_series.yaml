@@ -1,8 +1,8 @@
 # Promoted from 1 draft(s) under seed/drafts/.
 # Sources: 54.product_type
 code: rd_series
-name: RD Series — Compact Multi-Axis Integrated Servo Drive
-family: Servo drive
+name: Multi-axis servo drive (RD)
+family: Servo Motor Solution
 description: The RD Series is a compact multi-axis integrated servo drive from Kofon.
   It supports 2 to 6 servo axes in a single housing, reducing installation space by
   up to 30% compared to equivalent discrete configurations. Features include dynamic
@@ -10,6 +10,7 @@ description: The RD Series is a compact multi-axis integrated servo drive from K
   tuning software with auto stiffness control and system parameter identification.
   Available in 220V and 380V variants with per-axis rated output currents from 2.0
   to 35.0 Arms.
+product_page_url: https://www.kofon.com.cn/products_detail/54.html
 spec_schema:
   axis_count:
     type: integer

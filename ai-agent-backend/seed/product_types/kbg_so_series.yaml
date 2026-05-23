@@ -1,0 +1,28 @@
+code: kbg_so_series
+name: Standard harmonic gear (KB/KBG-SO)
+family: Strain Wave / Harmonic Gear
+description: >-
+  KB/KBG-SO series harmonic gear reducers in the standard-output (SO) structural form. The general-purpose configuration of the KB(G) harmonic family.
+product_page_url: https://www.kofon.com.cn/products_detail/32.html
+spec_schema:
+  frame_size:
+    type: integer
+    label: Frame size
+  ratio:
+    type: integer
+    label: Reduction ratio
+  nominal_torque_nm:
+    type: number
+    label: Rated torque (Nm)
+  peak_torque_nm:
+    type: number
+    label: Peak torque (Nm)
+  repeatability_arcsec:
+    type: number
+    label: Repeatability (arcsec)
+  backlash_arcsec:
+    type: number
+    label: Backlash (arcsec)
+  weight_kg:
+    type: number
+    label: Weight (kg)

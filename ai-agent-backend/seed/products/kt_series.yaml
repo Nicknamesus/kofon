@@ -1,0 +1,51 @@
+# Stub SKUs generated from kofon_products_all.csv (datasheet_url
+# points to the Kofon product page; specs to be filled later by
+# app.seed.extract_url).
+product_type_code: kt_series
+
+products:
+  - sku: KTFL
+    name: KTFL Planetary gearbox
+    specs: {}
+    datasheet_url: https://www.kofon.com.cn/products_detail/61.html
+    status: active
+  - sku: KTFL1
+    name: KTFL1 Planetary gearbox
+    specs: {}
+    datasheet_url: https://www.kofon.com.cn/products_detail/62.html
+    status: active
+  - sku: KTFH
+    name: KTFH Planetary gearbox
+    specs: {}
+    datasheet_url: https://www.kofon.com.cn/products_detail/63.html
+    status: active
+  - sku: KTL
+    name: KTL Planetary gearbox
+    specs: {}
+    datasheet_url: https://www.kofon.com.cn/products_detail/64.html
+    status: active
+  - sku: KTR1
+    name: KTR1 Planetary gearbox
+    specs: {}
+    datasheet_url: https://www.kofon.com.cn/products_detail/65.html
+    status: active
+  - sku: KTC
+    name: KTC Planetary gearbox
+    specs: {}
+    datasheet_url: https://www.kofon.com.cn/products_detail/66.html
+    status: active
+  - sku: KTH
+    name: KTH Planetary gearbox
+    specs: {}
+    datasheet_url: https://www.kofon.com.cn/products_detail/67.html
+    status: active
+  - sku: KTL1
+    name: KTL1 Planetary gearbox
+    specs: {}
+    datasheet_url: https://www.kofon.com.cn/products_detail/68.html
+    status: active
+  - sku: KTFC
+    name: KTFC Planetary gearbox
+    specs: {}
+    datasheet_url: https://www.kofon.com.cn/products_detail/69.html
+    status: active

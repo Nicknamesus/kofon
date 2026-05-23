@@ -24,6 +24,7 @@ from sqlalchemy import select
 from app.agent.llm import get_chat_llm
 from app.agent.state import AgentState
 from app.db import SessionLocal
+from app.i18n import language_instruction, t
 from app.models import ProductType
 from app.tools import recommend_categories
 
@@ -53,19 +54,17 @@ class _Extraction(BaseModel):
 async def run(state: AgentState) -> dict:
     slots = state.get("slots") or {}
     presales = dict(slots.get("presales") or {})
+    lang = state.get("language")
 
     # Phase 2: we've shown recommendations; classify the user's reply.
     if presales.get("recommendations_shown"):
         top_family = presales.get("top_family_code")
-        verdict = await _classify_recommendation_reply(state.get("messages", []))
+        verdict = await _classify_recommendation_reply(state.get("messages", []), lang)
 
         if verdict == "no":
             return {
                 "messages": [
-                    AIMessage(
-                        content="Got it — let me hand you off to an "
-                        "application engineer who can look at this with you."
-                    )
+                    AIMessage(content=t("pfo_handoff_engineer", lang))
                 ],
                 "outcome": "human_handoff",
                 "cards": [
@@ -73,7 +72,7 @@ async def run(state: AgentState) -> dict:
                         "kind": "outcome",
                         "payload": {
                             "outcome": "human_handoff",
-                            "title": "Connecting you with an engineer",
+                            "title": t("title_connecting_engineer", lang),
                             "next_step": "human",
                         },
                     }
@@ -94,9 +93,7 @@ async def run(state: AgentState) -> dict:
         # already escalates) — fall through to a soft handoff.
         return {
             "messages": [
-                AIMessage(
-                    content="Let me connect you with an application engineer."
-                )
+                AIMessage(content=t("pfo_connect_engineer", lang))
             ],
             "outcome": "human_handoff",
             "current_node": "presales.figure_out",
@@ -106,13 +103,13 @@ async def run(state: AgentState) -> dict:
     messages = state.get("messages", [])
     llm = get_chat_llm(temperature=0).with_structured_output(_Extraction)
     extraction: _Extraction = await llm.ainvoke(
-        [SystemMessage(content=SYSTEM_EXTRACT), *messages]
+        [SystemMessage(content=SYSTEM_EXTRACT + language_instruction(lang)), *messages]
     )
 
     if not extraction.ready:
         question = (
             extraction.follow_up_question
-            or "What industry are you in, and what's the application?"
+            or t("pfo_industry_question", lang)
         )
         return {
             "messages": [AIMessage(content=question)],
@@ -146,16 +143,18 @@ async def run(state: AgentState) -> dict:
                 session,
                 industry=extraction.industry or "",
                 application=extraction.application or "",
+                lang=lang,
             )
 
         if fallback is not None:
-            family_code, family_name, family_desc, rationale = fallback
-            summary = (
-                f"I don't have a pre-curated fit for **{extraction.industry} "
-                f"→ {extraction.application}**, but **{family_name}** looks "
-                f"like the closest match in our catalog.\n\n"
-                f"_{rationale}_\n\n"
-                "Want me to pull up specific products in that family?"
+            family_code, family_name, family_desc, rationale, page_url = fallback
+            summary = t(
+                "pfo_no_curated_fit",
+                lang,
+                industry=extraction.industry,
+                application=extraction.application,
+                family_name=family_name,
+                rationale=rationale,
             )
             return {
                 "messages": [AIMessage(content=summary)],
@@ -175,27 +174,30 @@ async def run(state: AgentState) -> dict:
                             "industry": extraction.industry,
                             "application": extraction.application,
                             "use_case_matched": False,
+                            "title": t("pfo_rec_card_title", lang),
                             "recommendations": [
                                 {
                                     "product_type_code": family_code,
                                     "name": family_name,
                                     "family": family_name,
                                     "description": family_desc,
+                                    "product_page_url": page_url,
                                     "fit_score": 3,
                                     "rationale": rationale,
                                 }
                             ],
                         },
                     },
-                    _proceed_gate_card(family_name),
+                    _proceed_gate_card(family_name, lang),
                 ],
                 "current_node": "presales.figure_out.llm_fallback",
             }
 
-        msg = (
-            f"I don't have anything that fits '{extraction.industry} / "
-            f"{extraction.application}' in my catalog — let me connect "
-            "you with an application engineer who can help."
+        msg = t(
+            "pfo_no_match",
+            lang,
+            industry=extraction.industry,
+            application=extraction.application,
         )
         return {
             "messages": [AIMessage(content=msg)],
@@ -213,13 +215,18 @@ async def run(state: AgentState) -> dict:
         }
 
     top = recs.recommendations[0]
-    summary = (
-        f"Based on **{recs.industry} → {recs.application}**, the best "
-        f"family fit is **{top.name}** (fit {top.fit_score}/5).\n\n"
-        f"_{top.rationale}_\n\n"
-        "Want me to pull up specific products in that family?"
+    summary = t(
+        "pfo_summary",
+        lang,
+        industry=recs.industry,
+        application=recs.application,
+        name=top.name,
+        fit_score=top.fit_score,
+        rationale=top.rationale,
     )
 
+    rec_payload = recs.model_dump()
+    rec_payload["title"] = t("pfo_rec_card_title", lang)
     return {
         "messages": [AIMessage(content=summary)],
         "slots": {
@@ -234,22 +241,22 @@ async def run(state: AgentState) -> dict:
         "cards": [
             {
                 "kind": "recommendations",
-                "payload": recs.model_dump(),
+                "payload": rec_payload,
             },
-            _proceed_gate_card(top.name),
+            _proceed_gate_card(top.name, lang),
         ],
         "current_node": "presales.figure_out.recommended",
     }
 
 
-def _proceed_gate_card(family_name: str) -> dict:
+def _proceed_gate_card(family_name: str, lang: str | None) -> dict:
     """Yes/No gate the widget shows after a recommendation."""
     return {
         "kind": "gate",
         "payload": {
-            "question": f"Want me to pull up specific products in {family_name}?",
-            "yes_label": "Yes, show me products",
-            "no_label": "No, talk to an engineer",
+            "question": t("pfo_proceed_question", lang, family_name=family_name),
+            "yes_label": t("gate_yes_show_products", lang),
+            "no_label": t("gate_no_engineer", lang),
         },
     }
 
@@ -267,7 +274,7 @@ class _ProceedVerdict(BaseModel):
     verdict: str = Field(description="'yes' or 'no'")
 
 
-async def _classify_recommendation_reply(messages: list) -> str:
+async def _classify_recommendation_reply(messages: list, lang: str | None = None) -> str:
     """Return 'yes' or 'no' for the user's latest reply."""
     last_human = next(
         (m for m in reversed(messages) if isinstance(m, HumanMessage)), None
@@ -284,7 +291,7 @@ async def _classify_recommendation_reply(messages: list) -> str:
 
     llm = get_chat_llm(temperature=0).with_structured_output(_ProceedVerdict)
     result: _ProceedVerdict = await llm.ainvoke(
-        [SystemMessage(content=_PROCEED_SYSTEM), last_human]
+        [SystemMessage(content=_PROCEED_SYSTEM + language_instruction(lang)), last_human]
     )
     return "no" if result.verdict.strip().lower() == "no" else "yes"
 
@@ -332,8 +339,9 @@ async def _llm_pick_family(
     *,
     industry: str,
     application: str,
-) -> tuple[str, str, str, str] | None:
-    """If the LLM picks a real family, return (code, name, description, rationale)."""
+    lang: str | None = None,
+) -> tuple[str, str, str, str, str | None] | None:
+    """If the LLM picks a real family, return (code, name, description, rationale, product_page_url)."""
 
     rows = (
         await session.execute(
@@ -342,6 +350,7 @@ async def _llm_pick_family(
                 ProductType.name,
                 ProductType.family,
                 ProductType.description,
+                ProductType.product_page_url,
             )
         )
     ).all()
@@ -350,7 +359,7 @@ async def _llm_pick_family(
 
     families_block = "\n".join(
         f"- `{code}` — {name} ({family}): {desc}"
-        for code, name, family, desc in rows
+        for code, name, family, desc, _url in rows
     )
 
     llm = get_chat_llm(temperature=0).with_structured_output(_FamilyPick)
@@ -358,7 +367,7 @@ async def _llm_pick_family(
         [
             SystemMessage(content=_SYSTEM_TEMPLATE.format(
                 families_block=families_block
-            )),
+            ) + language_instruction(lang)),
             HumanMessage(content=f"Industry: {industry}\nApplication: {application}"),
         ]
     )
@@ -367,8 +376,8 @@ async def _llm_pick_family(
         return None
 
     # Validate the LLM didn't hallucinate a code.
-    for code, name, _family, desc in rows:
+    for code, name, _family, desc, page_url in rows:
         if code == pick.family_code:
-            return code, name, desc, pick.rationale or "Closest fit in our current catalog."
+            return code, name, desc, pick.rationale or "Closest fit in our current catalog.", page_url
 
     return None

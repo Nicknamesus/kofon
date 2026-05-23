@@ -2,8 +2,8 @@
 # Merged LLM codes: tl_series, tl_series_tightening
 # Sources: 83.product_type, 96.product_type, 97.product_type
 code: tl_series
-name: TL Series
-family: Planetary gearbox
+name: Tightening tool gearbox (TL)
+family: Precision Planetary Gearbox
 description: TL offset-type tightening machine gearbox series. Integrates advanced
   wear-resistant materials with planetary gear trains for high-speed wear resistance
   and noise reduction. Features customized gear trains with profile modification and
@@ -11,6 +11,7 @@ description: TL offset-type tightening machine gearbox series. Integrates advanc
   multi-directional loads under tightening shocks, and optional built-in torque and
   displacement sensors for torque visualization. Output shaft uses high-strength special
   materials with heat treatment for impact and wear resistance.
+product_page_url: https://www.kofon.com.cn/products_detail/97.html
 spec_schema:
   model:
     type: string

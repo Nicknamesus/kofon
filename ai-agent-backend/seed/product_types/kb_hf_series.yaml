@@ -1,0 +1,28 @@
+code: kb_hf_series
+name: Hollow-shaft harmonic gear (KB/KBG-HF)
+family: Strain Wave / Harmonic Gear
+description: >-
+  KB/KBG-HF series harmonic gear reducers with hollow-shaft (HF) output, ideal for routing cables or pneumatic lines through the joint center. Common in collaborative robots and dexterous arms.
+product_page_url: https://www.kofon.com.cn/products_detail/74.html
+spec_schema:
+  frame_size:
+    type: integer
+    label: Frame size
+  ratio:
+    type: integer
+    label: Reduction ratio
+  nominal_torque_nm:
+    type: number
+    label: Rated torque (Nm)
+  peak_torque_nm:
+    type: number
+    label: Peak torque (Nm)
+  repeatability_arcsec:
+    type: number
+    label: Repeatability (arcsec)
+  backlash_arcsec:
+    type: number
+    label: Backlash (arcsec)
+  weight_kg:
+    type: number
+    label: Weight (kg)

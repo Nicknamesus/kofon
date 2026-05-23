@@ -1,8 +1,8 @@
 # Promoted from 3 draft(s) under seed/drafts/.
 # Sources: 101.product_type, 102.product_type, 106.product_type
 code: pl_tightening_machine
-name: PL型拧紧机 (PL Tightening Machine)
-family: Planetary gearbox
+name: Tightening tool gearbox (PL)
+family: Precision Planetary Gearbox
 description: PL series tightening machines integrate advanced wear-resistant materials
   with planetary gear trains for high-speed wear resistance and noise reduction. Features
   include customized gear trains with profile modification and tooth optimization
@@ -11,6 +11,7 @@ description: PL series tightening machines integrate advanced wear-resistant mat
   for torque visualization, self-lubricating bearings in compact spaces under high
   impact, and high-strength special-material output shafts with heat treatment for
   impact and wear resistance.
+product_page_url: https://www.kofon.com.cn/products_detail/106.html
 spec_schema:
   model:
     type: string

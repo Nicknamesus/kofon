@@ -1,0 +1,34 @@
+code: tk_series
+name: Tightening tool gearbox (TK)
+family: Precision Planetary Gearbox
+description: >-
+  TK-type tightening-tool gearboxes from Kofon, planetary gear heads used inside industrial nutrunners. Wear-resistant materials, impact-rated bearings, and optional built-in torque sensors. Sister line to TL, TKZ, and PL.
+product_page_url: https://www.kofon.com.cn/products_detail/98.html
+spec_schema:
+  frame_size_mm:
+    type: string
+    label: Frame size (mm)
+  stages:
+    type: integer
+    label: Number of stages
+  ratio:
+    type: number
+    label: Reduction ratio
+  nominal_torque_nm:
+    type: number
+    label: Rated output torque (Nm)
+  peak_torque_nm:
+    type: number
+    label: Peak output torque (Nm)
+  backlash_arcmin:
+    type: number
+    label: Backlash (arcmin)
+  input_speed_rpm_max:
+    type: integer
+    label: Max input speed (rpm)
+  efficiency_pct:
+    type: number
+    label: Efficiency (%)
+  weight_kg:
+    type: number
+    label: Weight (kg)

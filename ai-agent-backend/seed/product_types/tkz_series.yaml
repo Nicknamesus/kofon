@@ -1,8 +1,8 @@
 # Promoted from 5 draft(s) under seed/drafts/.
 # Sources: 100.product_type, 103.product_type, 104.product_type, 105.product_type, 99.product_type
 code: tkz_series
-name: TKZ Series Tightening Gearbox
-family: Planetary gearbox
+name: Tightening tool gearbox (TKZ)
+family: Precision Planetary Gearbox
 description: TKZ series tightening gearboxes (拧紧机) integrate advanced wear-resistant
   materials with planetary gear trains for high-speed wear resistance and noise reduction.
   They feature customized gear profiles with tooth optimization for improved impact
@@ -10,6 +10,7 @@ description: TKZ series tightening gearboxes (拧紧机) integrate advanced wear
   tightening shocks, and can accommodate built-in torque and displacement sensors
   for torque visualization. The output shaft uses high-strength special materials
   with appropriate heat treatment for enhanced impact resistance and wear resistance.
+product_page_url: https://www.kofon.com.cn/products_detail/105.html
 spec_schema:
   model:
     type: string

@@ -1,14 +1,15 @@
 # Promoted from 1 draft(s) under seed/drafts/.
 # Sources: 55.product_type
 code: xgv_series
-name: XGV Series Servo Integrated Drive Wheel
-family: Servo integrated drive wheel
+name: Integrated servo drive wheel (XGV)
+family: AGV / AMR Drive Solution
 description: XGV series servo integrated drive wheels adopt an integrated design concept,
   highly integrating the driver, encoder, brake, motor and reducer into one coaxial
   unit. The motor and reducer are coaxially integrated to ensure precision and stability
   during operation. High-performance servo motors paired with high-reliability precision
   planetary reducers achieve long life and high precision retention. Available in
   500W, 750W, 1000W and 1500W power variants with wheel diameters of 150mm or 180mm.
+product_page_url: https://www.kofon.com.cn/products_detail/55.html
 spec_schema:
   power_supply_v:
     type: integer

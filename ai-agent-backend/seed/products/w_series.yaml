@@ -26,6 +26,7 @@ products:
     max_radial_load_n: 10
     temperature_range_c: -15~+80
     temperature_range_extended_c: -40~+90
+    datasheet_url: https://www.kofon.com.cn/products_detail/25.html
   status: active
 - sku: W8-08-2-16
   name: W8-08 — 2-stage, 16:1
@@ -49,6 +50,7 @@ products:
     max_radial_load_n: 10
     temperature_range_c: -15~+80
     temperature_range_extended_c: -40~+90
+    datasheet_url: https://www.kofon.com.cn/products_detail/25.html
   status: active
 - sku: W8-08-3-64
   name: W8-08 — 3-stage, 64:1
@@ -72,6 +74,7 @@ products:
     max_radial_load_n: 10
     temperature_range_c: -15~+80
     temperature_range_extended_c: -40~+90
+    datasheet_url: https://www.kofon.com.cn/products_detail/25.html
   status: active
 - sku: W10-08-1-3.9
   name: W10-08 — 1-stage, 3.9:1
@@ -95,6 +98,7 @@ products:
     max_radial_load_n: 520
     temperature_range_c: -15 to +80
     temperature_range_extended_c: -40 to +90
+    datasheet_url: https://www.kofon.com.cn/products_detail/26.html
   status: active
 - sku: W10-08-1-5.3
   name: W10-08 — 1-stage, 5.3:1
@@ -118,6 +122,7 @@ products:
     max_radial_load_n: 520
     temperature_range_c: -15 to +80
     temperature_range_extended_c: -40 to +90
+    datasheet_url: https://www.kofon.com.cn/products_detail/26.html
   status: active
 - sku: W10-08-1-6.6
   name: W10-08 — 1-stage, 6.6:1
@@ -141,6 +146,7 @@ products:
     max_radial_load_n: 520
     temperature_range_c: -15 to +80
     temperature_range_extended_c: -40 to +90
+    datasheet_url: https://www.kofon.com.cn/products_detail/26.html
   status: active
 - sku: W10-08-2-16
   name: W10-08 — 2-stage, 16:1
@@ -164,6 +170,7 @@ products:
     max_radial_load_n: 520
     temperature_range_c: -15 to +80
     temperature_range_extended_c: -40 to +90
+    datasheet_url: https://www.kofon.com.cn/products_detail/26.html
   status: active
 - sku: W10-08-2-21
   name: W10-08 — 2-stage, 21:1
@@ -187,6 +194,7 @@ products:
     max_radial_load_n: 520
     temperature_range_c: -15 to +80
     temperature_range_extended_c: -40 to +90
+    datasheet_url: https://www.kofon.com.cn/products_detail/26.html
   status: active
 - sku: W10-08-2-26
   name: W10-08 — 2-stage, 26:1
@@ -210,6 +218,7 @@ products:
     max_radial_load_n: 520
     temperature_range_c: -15 to +80
     temperature_range_extended_c: -40 to +90
+    datasheet_url: https://www.kofon.com.cn/products_detail/26.html
   status: active
 - sku: W10-08-2-28
   name: W10-08 — 2-stage, 28:1
@@ -233,6 +242,7 @@ products:
     max_radial_load_n: 520
     temperature_range_c: -15 to +80
     temperature_range_extended_c: -40 to +90
+    datasheet_url: https://www.kofon.com.cn/products_detail/26.html
   status: active
 - sku: W10-08-2-35
   name: W10-08 — 2-stage, 35:1
@@ -256,6 +266,7 @@ products:
     max_radial_load_n: 520
     temperature_range_c: -15 to +80
     temperature_range_extended_c: -40 to +90
+    datasheet_url: https://www.kofon.com.cn/products_detail/26.html
   status: active
 - sku: W10-08-3-62
   name: W10-08 — 3-stage, 62:1
@@ -279,6 +290,7 @@ products:
     max_radial_load_n: 520
     temperature_range_c: -15 to +80
     temperature_range_extended_c: -40 to +90
+    datasheet_url: https://www.kofon.com.cn/products_detail/26.html
   status: active
 - sku: W10-08-3-83
   name: W10-08 — 3-stage, 83:1
@@ -302,6 +314,7 @@ products:
     max_radial_load_n: 520
     temperature_range_c: -15 to +80
     temperature_range_extended_c: -40 to +90
+    datasheet_url: https://www.kofon.com.cn/products_detail/26.html
   status: active
 - sku: W10-08-3-103
   name: W10-08 — 3-stage, 103:1
@@ -325,6 +338,7 @@ products:
     max_radial_load_n: 520
     temperature_range_c: -15 to +80
     temperature_range_extended_c: -40 to +90
+    datasheet_url: https://www.kofon.com.cn/products_detail/26.html
   status: active
 - sku: W10-08-3-111
   name: W10-08 — 3-stage, 111:1
@@ -348,6 +362,7 @@ products:
     max_radial_load_n: 520
     temperature_range_c: -15 to +80
     temperature_range_extended_c: -40 to +90
+    datasheet_url: https://www.kofon.com.cn/products_detail/26.html
   status: active
 - sku: W10-08-3-138
   name: W10-08 — 3-stage, 138:1
@@ -371,6 +386,7 @@ products:
     max_radial_load_n: 520
     temperature_range_c: -15 to +80
     temperature_range_extended_c: -40 to +90
+    datasheet_url: https://www.kofon.com.cn/products_detail/26.html
   status: active
 - sku: W10-08-3-150
   name: W10-08 — 3-stage, 150:1
@@ -394,6 +410,7 @@ products:
     max_radial_load_n: 520
     temperature_range_c: -15 to +80
     temperature_range_extended_c: -40 to +90
+    datasheet_url: https://www.kofon.com.cn/products_detail/26.html
   status: active
 - sku: W10-08-3-172
   name: W10-08 — 3-stage, 172:1
@@ -417,6 +434,7 @@ products:
     max_radial_load_n: 520
     temperature_range_c: -15 to +80
     temperature_range_extended_c: -40 to +90
+    datasheet_url: https://www.kofon.com.cn/products_detail/26.html
   status: active
 - sku: W10-08-3-186
   name: W10-08 — 3-stage, 186:1
@@ -440,6 +458,7 @@ products:
     max_radial_load_n: 520
     temperature_range_c: -15 to +80
     temperature_range_extended_c: -40 to +90
+    datasheet_url: https://www.kofon.com.cn/products_detail/26.html
   status: active
 - sku: W10-08-3-231
   name: W10-08 — 3-stage, 231:1
@@ -463,6 +482,7 @@ products:
     max_radial_load_n: 520
     temperature_range_c: -15 to +80
     temperature_range_extended_c: -40 to +90
+    datasheet_url: https://www.kofon.com.cn/products_detail/26.html
   status: active
 - sku: W10-08-4-243
   name: W10-08 — 4-stage, 243:1
@@ -486,6 +506,7 @@ products:
     max_radial_load_n: 520
     temperature_range_c: -15 to +80
     temperature_range_extended_c: -40 to +90
+    datasheet_url: https://www.kofon.com.cn/products_detail/26.html
   status: active
 - sku: W10-08-4-326
   name: W10-08 — 4-stage, 326:1
@@ -509,6 +530,7 @@ products:
     max_radial_load_n: 520
     temperature_range_c: -15 to +80
     temperature_range_extended_c: -40 to +90
+    datasheet_url: https://www.kofon.com.cn/products_detail/26.html
   status: active
 - sku: W10-08-4-406
   name: W10-08 — 4-stage, 406:1
@@ -532,6 +554,7 @@ products:
     max_radial_load_n: 520
     temperature_range_c: -15 to +80
     temperature_range_extended_c: -40 to +90
+    datasheet_url: https://www.kofon.com.cn/products_detail/26.html
   status: active
 - sku: W10-08-4-439
   name: W10-08 — 4-stage, 439:1
@@ -555,6 +578,7 @@ products:
     max_radial_load_n: 520
     temperature_range_c: -15 to +80
     temperature_range_extended_c: -40 to +90
+    datasheet_url: https://www.kofon.com.cn/products_detail/26.html
   status: active
 - sku: W10-08-4-546
   name: W10-08 — 4-stage, 546:1
@@ -578,6 +602,7 @@ products:
     max_radial_load_n: 520
     temperature_range_c: -15 to +80
     temperature_range_extended_c: -40 to +90
+    datasheet_url: https://www.kofon.com.cn/products_detail/26.html
   status: active
 - sku: W10-08-4-590
   name: W10-08 — 4-stage, 590:1
@@ -601,6 +626,7 @@ products:
     max_radial_load_n: 520
     temperature_range_c: -15 to +80
     temperature_range_extended_c: -40 to +90
+    datasheet_url: https://www.kofon.com.cn/products_detail/26.html
   status: active
 - sku: W10-08-4-679
   name: W10-08 — 4-stage, 679:1
@@ -624,6 +650,7 @@ products:
     max_radial_load_n: 520
     temperature_range_c: -15 to +80
     temperature_range_extended_c: -40 to +90
+    datasheet_url: https://www.kofon.com.cn/products_detail/26.html
   status: active
 - sku: W10-08-4-734
   name: W10-08 — 4-stage, 734:1
@@ -647,6 +674,7 @@ products:
     max_radial_load_n: 520
     temperature_range_c: -15 to +80
     temperature_range_extended_c: -40 to +90
+    datasheet_url: https://www.kofon.com.cn/products_detail/26.html
   status: active
 - sku: W10-08-4-794
   name: W10-08 — 4-stage, 794:1
@@ -670,6 +698,7 @@ products:
     max_radial_load_n: 520
     temperature_range_c: -15 to +80
     temperature_range_extended_c: -40 to +90
+    datasheet_url: https://www.kofon.com.cn/products_detail/26.html
   status: active
 - sku: W10-08-4-913
   name: W10-08 — 4-stage, 913:1
@@ -693,6 +722,7 @@ products:
     max_radial_load_n: 520
     temperature_range_c: -15 to +80
     temperature_range_extended_c: -40 to +90
+    datasheet_url: https://www.kofon.com.cn/products_detail/26.html
   status: active
 - sku: W10-08-4-1135
   name: W10-08 — 4-stage, 1135:1
@@ -716,6 +746,7 @@ products:
     max_radial_load_n: 520
     temperature_range_c: -15 to +80
     temperature_range_extended_c: -40 to +90
+    datasheet_url: https://www.kofon.com.cn/products_detail/26.html
   status: active
 - sku: W12-1-3.9
   name: W12 — 1-stage, 3.9:1
@@ -738,6 +769,7 @@ products:
     max_radial_load_n: 40
     recommended_temperature_range_c: -15~+80
     optional_extended_temperature_range_c: -40~+90
+    datasheet_url: https://www.kofon.com.cn/products_detail/27.html
   status: active
 - sku: W12-1-5.3
   name: W12 — 1-stage, 5.3:1
@@ -760,6 +792,7 @@ products:
     max_radial_load_n: 40
     recommended_temperature_range_c: -15~+80
     optional_extended_temperature_range_c: -40~+90
+    datasheet_url: https://www.kofon.com.cn/products_detail/27.html
   status: active
 - sku: W12-1-6.6
   name: W12 — 1-stage, 6.6:1
@@ -782,6 +815,7 @@ products:
     max_radial_load_n: 40
     recommended_temperature_range_c: -15~+80
     optional_extended_temperature_range_c: -40~+90
+    datasheet_url: https://www.kofon.com.cn/products_detail/27.html
   status: active
 - sku: W12-2-16
   name: W12 — 2-stage, 16:1
@@ -804,6 +838,7 @@ products:
     max_radial_load_n: 40
     recommended_temperature_range_c: -15~+80
     optional_extended_temperature_range_c: -40~+90
+    datasheet_url: https://www.kofon.com.cn/products_detail/27.html
   status: active
 - sku: W12-2-21
   name: W12 — 2-stage, 21:1
@@ -826,6 +861,7 @@ products:
     max_radial_load_n: 40
     recommended_temperature_range_c: -15~+80
     optional_extended_temperature_range_c: -40~+90
+    datasheet_url: https://www.kofon.com.cn/products_detail/27.html
   status: active
 - sku: W12-2-26
   name: W12 — 2-stage, 26:1
@@ -848,6 +884,7 @@ products:
     max_radial_load_n: 40
     recommended_temperature_range_c: -15~+80
     optional_extended_temperature_range_c: -40~+90
+    datasheet_url: https://www.kofon.com.cn/products_detail/27.html
   status: active
 - sku: W12-2-28
   name: W12 — 2-stage, 28:1
@@ -870,6 +907,7 @@ products:
     max_radial_load_n: 40
     recommended_temperature_range_c: -15~+80
     optional_extended_temperature_range_c: -40~+90
+    datasheet_url: https://www.kofon.com.cn/products_detail/27.html
   status: active
 - sku: W12-2-35
   name: W12 — 2-stage, 35:1
@@ -892,6 +930,7 @@ products:
     max_radial_load_n: 40
     recommended_temperature_range_c: -15~+80
     optional_extended_temperature_range_c: -40~+90
+    datasheet_url: https://www.kofon.com.cn/products_detail/27.html
   status: active
 - sku: W12-3-62
   name: W12 — 3-stage, 62:1
@@ -914,6 +953,7 @@ products:
     max_radial_load_n: 40
     recommended_temperature_range_c: -15~+80
     optional_extended_temperature_range_c: -40~+90
+    datasheet_url: https://www.kofon.com.cn/products_detail/27.html
   status: active
 - sku: W12-3-83
   name: W12 — 3-stage, 83:1
@@ -936,6 +976,7 @@ products:
     max_radial_load_n: 40
     recommended_temperature_range_c: -15~+80
     optional_extended_temperature_range_c: -40~+90
+    datasheet_url: https://www.kofon.com.cn/products_detail/27.html
   status: active
 - sku: W12-3-103
   name: W12 — 3-stage, 103:1
@@ -958,6 +999,7 @@ products:
     max_radial_load_n: 40
     recommended_temperature_range_c: -15~+80
     optional_extended_temperature_range_c: -40~+90
+    datasheet_url: https://www.kofon.com.cn/products_detail/27.html
   status: active
 - sku: W12-3-111
   name: W12 — 3-stage, 111:1
@@ -980,6 +1022,7 @@ products:
     max_radial_load_n: 40
     recommended_temperature_range_c: -15~+80
     optional_extended_temperature_range_c: -40~+90
+    datasheet_url: https://www.kofon.com.cn/products_detail/27.html
   status: active
 - sku: W12-3-138
   name: W12 — 3-stage, 138:1
@@ -1002,6 +1045,7 @@ products:
     max_radial_load_n: 40
     recommended_temperature_range_c: -15~+80
     optional_extended_temperature_range_c: -40~+90
+    datasheet_url: https://www.kofon.com.cn/products_detail/27.html
   status: active
 - sku: W12-3-150
   name: W12 — 3-stage, 150:1
@@ -1024,6 +1068,7 @@ products:
     max_radial_load_n: 40
     recommended_temperature_range_c: -15~+80
     optional_extended_temperature_range_c: -40~+90
+    datasheet_url: https://www.kofon.com.cn/products_detail/27.html
   status: active
 - sku: W12-3-172
   name: W12 — 3-stage, 172:1
@@ -1046,6 +1091,7 @@ products:
     max_radial_load_n: 40
     recommended_temperature_range_c: -15~+80
     optional_extended_temperature_range_c: -40~+90
+    datasheet_url: https://www.kofon.com.cn/products_detail/27.html
   status: active
 - sku: W12-3-186
   name: W12 — 3-stage, 186:1
@@ -1068,6 +1114,7 @@ products:
     max_radial_load_n: 40
     recommended_temperature_range_c: -15~+80
     optional_extended_temperature_range_c: -40~+90
+    datasheet_url: https://www.kofon.com.cn/products_detail/27.html
   status: active
 - sku: W12-3-231
   name: W12 — 3-stage, 231:1
@@ -1090,4 +1137,5 @@ products:
     max_radial_load_n: 40
     recommended_temperature_range_c: -15~+80
     optional_extended_temperature_range_c: -40~+90
+    datasheet_url: https://www.kofon.com.cn/products_detail/27.html
   status: active

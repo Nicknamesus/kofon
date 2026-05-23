@@ -90,6 +90,7 @@ class ProductTypeRecommendation(BaseModel):
     name: str
     family: str
     description: str
+    product_page_url: str | None = None
     fit_score: int
     rationale: str
 

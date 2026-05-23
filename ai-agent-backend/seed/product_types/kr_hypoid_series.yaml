@@ -1,0 +1,81 @@
+# Split out from former kr_series.yaml. KHR/KGR-series K-R hypoid right-angle
+# gearboxes — distinct from the KR-series joint reducers, which now live in
+# kr_joint_series.yaml.
+code: kr_hypoid_series
+name: Right-angle hypoid gearbox (K-R)
+family: Spiral Bevel Gearbox
+description: K-R series hypoid right-angle gearboxes from Kofon, featuring high precision
+  (backlash ≤5 arcmin), high efficiency (up to 96%), and compact design. Available
+  in 1-stage and 2-stage configurations with ratios from 3 to 100. Suitable for servo
+  motor integration with customizable output dimensions.
+product_page_url: https://www.kofon.com.cn/products_detail/107.html
+spec_schema:
+  ratio:
+    type: integer
+    label: Ratio
+  stages:
+    type: integer
+    label: Stages
+  nominal_torque_nm:
+    type: number
+    label: Rated Output Torque (Nm)
+  peak_torque_nm:
+    type: number
+    label: Maximum Acceleration Torque (Nm)
+  emergency_stop_torque_nm:
+    type: number
+    label: Emergency Stop Torque (Nm)
+  rated_input_speed_rpm:
+    type: integer
+    label: Rated Input Speed (rpm)
+  max_input_speed_rpm:
+    type: integer
+    label: Max Input Speed (rpm)
+  no_load_torque_nm:
+    type: number
+    label: Mean No Load Running Torque (Nm)
+  backlash_arcmin:
+    type: number
+    label: Backlash (arcmin)
+  torsional_rigidity_nm_per_arcmin:
+    type: number
+    label: Torsional Rigidity (Nm/arcmin)
+  max_axial_force_n:
+    type: integer
+    label: Max Axial Force (N)
+  max_tilting_moment_nm:
+    type: integer
+    label: Max Tilting Moment (Nm)
+  rotational_inertia_kgcm2:
+    type: number
+    label: Rotational Inertia (kg·cm²)
+  noise_db:
+    type: number
+    label: Noise (dB(A))
+  efficiency_pct:
+    type: integer
+    label: Full Loading Efficiency (%)
+  operating_temp_min_c:
+    type: integer
+    label: Operating Temperature Min (°C)
+  operating_temp_max_c:
+    type: integer
+    label: Operating Temperature Max (°C)
+  lubrication:
+    type: string
+    label: Lubrication
+  mounting_position:
+    type: string
+    label: Mounting Position
+  protection_class:
+    type: string
+    label: Protection Class
+  service_lifetime_h:
+    type: integer
+    label: Service Lifetime (h)
+  weight_kg:
+    type: number
+    label: Weight (kg)
+  frame_size_mm:
+    type: string
+    label: Frame size

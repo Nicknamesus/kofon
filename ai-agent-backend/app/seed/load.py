@@ -113,7 +113,7 @@ async def load_product_types(session: AsyncSession) -> int:
         ProductType,
         rows,
         conflict_cols=["code"],
-        update_cols=["name", "family", "description", "spec_schema"],
+        update_cols=["name", "family", "description", "product_page_url", "spec_schema"],
     )
 
 

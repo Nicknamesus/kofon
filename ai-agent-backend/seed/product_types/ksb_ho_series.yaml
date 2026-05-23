@@ -1,0 +1,28 @@
+code: ksb_ho_series
+name: Hat-type compact harmonic gear (KSB/KSBG-HO)
+family: Strain Wave / Harmonic Gear
+description: >-
+  KSB/KSBG-HO series compact harmonic gear reducers in the hat-output (HO) configuration. Smaller envelope than the standard KB-HO line for tight robot-joint integration.
+product_page_url: https://www.kofon.com.cn/products_detail/79.html
+spec_schema:
+  frame_size:
+    type: integer
+    label: Frame size
+  ratio:
+    type: integer
+    label: Reduction ratio
+  nominal_torque_nm:
+    type: number
+    label: Rated torque (Nm)
+  peak_torque_nm:
+    type: number
+    label: Peak torque (Nm)
+  repeatability_arcsec:
+    type: number
+    label: Repeatability (arcsec)
+  backlash_arcsec:
+    type: number
+    label: Backlash (arcsec)
+  weight_kg:
+    type: number
+    label: Weight (kg)

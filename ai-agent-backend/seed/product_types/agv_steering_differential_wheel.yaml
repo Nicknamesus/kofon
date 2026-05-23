@@ -1,8 +1,8 @@
 # Promoted from 1 draft(s) under seed/drafts/.
 # Sources: 39.product_type
 code: agv_steering_differential_wheel
-name: AGV Steering & Differential Wheel
-family: Planetary gearbox
+name: AGV steering & differential wheel
+family: AGV / AMR Drive Solution
 description: AGV steering and differential wheels from Kofon, featuring a planetary
   gear structure inside the wheel hub. The wheel core uses a planetary gearbox design,
   offering customizable speed ratios, compact structure, high reliability, and maintenance-free
@@ -10,6 +10,7 @@ description: AGV steering and differential wheels from Kofon, featuring a planet
   and wear resistance. The drive wheel integrates travel and steering units, with
   low-voltage servo motors (48V DC), optional encoders, and both electronic and mechanical
   limit switches for safe steering control.
+product_page_url: https://www.kofon.com.cn/products_detail/40.html
 spec_schema:
   model:
     type: string

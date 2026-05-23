@@ -30,6 +30,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.agent.llm import get_chat_llm
 from app.agent.state import AgentState
 from app.db import SessionLocal
+from app.i18n import language_instruction, t
 from app.models import ProductType
 from app.schemas.tools import ProductOut, SearchProductsFilters
 from app.tools import search_products
@@ -89,12 +90,14 @@ class _Extraction(BaseModel):
 async def run(state: AgentState) -> dict:
     messages = state.get("messages", [])
     existing_filters = (state.get("slots") or {}).get("filters") or {}
+    lang = state.get("language")
 
     # Build the SYSTEM prompt with the current catalog so the LLM knows
     # which family codes are valid. Short-lived session — released before
     # the LLM call so we don't hold a pool connection during the slow hop.
     async with SessionLocal() as session:
         system_prompt = await _build_system_prompt(session)
+    system_prompt += language_instruction(lang)
 
     # Extract filters from the full conversation so the LLM sees prior turns.
     llm = get_chat_llm().with_structured_output(_Extraction)
@@ -117,7 +120,7 @@ async def run(state: AgentState) -> dict:
     if not ready:
         question = (
             extraction.follow_up_question
-            or "Could you tell me a bit more about what you need?"
+            or t("gf_clarify", lang)
         )
         return {
             "messages": [AIMessage(content=question)],
@@ -135,11 +138,7 @@ async def run(state: AgentState) -> dict:
         )
 
     if not results:
-        msg = (
-            "I couldn't find any matches with those constraints. "
-            "Could you loosen one of them — for example, allow more backlash "
-            "or a different frame size?"
-        )
+        msg = t("gf_no_results", lang)
         return {
             "messages": [AIMessage(content=msg)],
             "slots": {
@@ -149,7 +148,7 @@ async def run(state: AgentState) -> dict:
             "current_node": "guide.find",
         }
 
-    summary = _format_results(results)
+    summary = _format_results(results, lang)
     return {
         "messages": [AIMessage(content=summary)],
         "slots": {
@@ -160,14 +159,17 @@ async def run(state: AgentState) -> dict:
         "cards": [
             {
                 "kind": "product_results",
-                "payload": {"results": [r.model_dump() for r in results]},
+                "payload": {
+                    "results": [r.model_dump() for r in results],
+                    "title": t("gf_card_title", lang),
+                },
             },
             {
                 "kind": "gate",
                 "payload": {
-                    "question": "Do any of these look right?",
-                    "yes_label": "Yes, this works",
-                    "no_label": "No, none of these fit",
+                    "question": t("gf_do_any_fit", lang),
+                    "yes_label": t("gate_yes_works", lang),
+                    "no_label": t("gate_no_fit", lang),
                 },
             },
         ],
@@ -175,8 +177,8 @@ async def run(state: AgentState) -> dict:
     }
 
 
-def _format_results(results: list[ProductOut]) -> str:
-    lines = ["Here are the closest matches:"]
+def _format_results(results: list[ProductOut], lang: str | None) -> str:
+    lines = [t("gf_results_header", lang)]
     for r in results:
         torque = r.specs.get("nominal_torque_nm")
         ratio = r.specs.get("ratio")
@@ -189,8 +191,9 @@ def _format_results(results: list[ProductOut]) -> str:
         if backlash is not None:
             bits.append(f"{backlash} arcmin backlash")
         detail = ", ".join(bits) if bits else r.family or ""
-        lines.append(f"  - {r.sku} ({r.name}) — {detail}")
-    lines.append("\nDo any of these look right?")
+        link = f"\n    {r.datasheet_url}" if r.datasheet_url else ""
+        lines.append(f"  - {r.sku} ({r.name}) — {detail}{link}")
+    lines.append("\n" + t("gf_do_any_fit", lang))
     return "\n".join(lines)
 
 

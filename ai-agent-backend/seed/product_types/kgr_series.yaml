@@ -2,13 +2,14 @@
 # Merged LLM codes: kgr070, kgr_series
 # Sources: 110.product_type, 129.product_type, 130.product_type, 131.product_type
 code: kgr_series
-name: KGR Series
-family: Bevel gear
+name: Right-angle hypoid gearbox (KGR)
+family: Spiral Bevel Gearbox
 description: KGR series hypoid right-angle gearboxes from Kofon. Available in 1-stage
   and 2-stage configurations with ratios from 3:1 to 100:1. Features high precision
   (backlash ≤4 arcmin), high torque density, tapered roller bearings for high overturning
   moment capacity, and IP65 protection. Suitable for servo motor applications requiring
   compact right-angle power transmission.
+product_page_url: https://www.kofon.com.cn/products_detail/110.html
 spec_schema:
   frame_size_mm:
     type: string

@@ -1,14 +1,15 @@
 # Promoted from 1 draft(s) under seed/drafts/.
 # Sources: 34.product_type
 code: pwhz_rotary
-name: PWHZ Rotary Planetary Gearbox
-family: Planetary gearbox
+name: Slewing planetary drive (PWHZ)
+family: Precision Planetary Gearbox
 description: PWHZ series rotary planetary gearboxes are designed for slewing applications
   in hydraulic truck cranes, crawler cranes, railway cranes, ship decks, docks, and
   container handling. Features include same-direction input/output rotation, easy
   installation and oil change, low-noise operation, modular high-strength planetary
   gearing, and 1–3 stage configurations. A wet multi-disc brake (normally closed)
   is integrated. The motor is not included.
+product_page_url: https://www.kofon.com.cn/products_detail/34.html
 spec_schema:
   model:
     type: string

@@ -1,0 +1,41 @@
+# Stub SKUs generated from kofon_products_all.csv (datasheet_url
+# points to the Kofon product page; specs to be filled later by
+# app.seed.extract_url).
+product_type_code: s_series
+
+products:
+  - sku: SPL
+    name: SPL Planetary gearbox
+    specs: {}
+    datasheet_url: https://www.kofon.com.cn/products_detail/18.html
+    status: active
+  - sku: SPLF
+    name: SPLF Planetary gearbox
+    specs: {}
+    datasheet_url: https://www.kofon.com.cn/products_detail/19.html
+    status: active
+  - sku: SPLN
+    name: SPLN Planetary gearbox
+    specs: {}
+    datasheet_url: https://www.kofon.com.cn/products_detail/20.html
+    status: active
+  - sku: SPLS
+    name: SPLS Planetary gearbox
+    specs: {}
+    datasheet_url: https://www.kofon.com.cn/products_detail/21.html
+    status: active
+  - sku: SPX
+    name: SPX Planetary gearbox
+    specs: {}
+    datasheet_url: https://www.kofon.com.cn/products_detail/22.html
+    status: active
+  - sku: SVX
+    name: SVX Planetary gearbox
+    specs: {}
+    datasheet_url: https://www.kofon.com.cn/products_detail/23.html
+    status: active
+  - sku: SPH
+    name: SPH Planetary gearbox
+    specs: {}
+    datasheet_url: https://www.kofon.com.cn/products_detail/24.html
+    status: active

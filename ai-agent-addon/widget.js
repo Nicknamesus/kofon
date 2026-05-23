@@ -46,6 +46,42 @@
       "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&#39;"
     }[c]));
   }
+  /* Tiny translation table — used only as fallback when the backend
+     doesn't ship a localized label in the SSE card payload. Keep keys
+     in lockstep with `app/i18n.py` on the server. */
+  const I18N = {
+    matching_products: { EN: "Matching products",   DE: "Passende Produkte",       KO: "일치하는 제품",          ZH: "匹配的产品" },
+    no_matches_yet:    { EN: "No matches yet.",     DE: "Noch keine Treffer.",     KO: "아직 일치 항목이 없습니다.", ZH: "暂无匹配。" },
+    recommended_families: { EN: "Recommended families", DE: "Empfohlene Familien", KO: "추천 제품군",            ZH: "推荐系列" },
+    no_curated_match:  { EN: "No curated match for that combination yet.", DE: "Für diese Kombination gibt es noch keine passende Empfehlung.", KO: "이 조합에 맞는 사전 추천이 아직 없습니다.", ZH: "暂时还没有为此组合预设的推荐。" },
+    closest_matches:   { EN: "Closest matches",     DE: "Nächste Treffer",         KO: "가장 비슷한 사례",         ZH: "最接近的匹配" },
+    none_of_these:     { EN: "None of these — let me describe more", DE: "Keines davon — ich beschreibe mehr", KO: "위 중에 없어요 — 더 설명할게요", ZH: "都不对 — 让我多描述一些" },
+    candidates_more_info: { EN: "Could you tell me a bit more about what's happening? Any noise, error code, or what changed recently helps me narrow it down.", DE: "Können Sie mir etwas mehr darüber erzählen, was passiert? Geräusche, Fehlercode oder kürzliche Änderungen helfen, das einzugrenzen.", KO: "상황을 조금 더 알려주시겠어요? 소음, 에러 코드, 최근에 바뀐 점 같은 정보가 도움이 됩니다.", ZH: "能再多说一些情况吗?比如有没有异响、错误代码,或最近有什么变化,都能帮我缩小范围。" },
+    candidates_describe_more: { EN: "Got it — could you describe what the unit is doing in a bit more detail? E.g. any noise, leak, error code, or what changed recently.", DE: "Verstanden — können Sie etwas genauer beschreiben, was das Gerät tut? Z. B. Geräusche, Leckagen, Fehlercode oder kürzliche Änderungen.", KO: "알겠어요 — 제품 동작을 조금 더 자세히 설명해 주시겠어요? 예: 소음, 누유, 에러 코드, 최근의 변화 등.", ZH: "好的 — 能再详细描述一下设备的表现吗?例如有没有异响、漏油、错误代码,或者最近发生了什么变化。" },
+    likely_issue:      { EN: "Likely issue",        DE: "Wahrscheinliches Problem", KO: "추정되는 문제",          ZH: "可能的问题" },
+    badge_sales:       { EN: "Sales handoff",       DE: "Vertriebsübergabe",       KO: "영업팀 인계",            ZH: "转接销售" },
+    badge_engineer:    { EN: "Engineer",            DE: "Ingenieur",               KO: "엔지니어",               ZH: "工程师" },
+    badge_resolved:    { EN: "Resolved",            DE: "Gelöst",                  KO: "해결됨",                 ZH: "已解决" },
+    title_sales:       { EN: "Connecting you with sales",    DE: "Verbinde Sie mit dem Vertrieb",  KO: "영업팀에 연결 중",   ZH: "正在为您转接销售" },
+    title_engineer:    { EN: "Connecting you with an engineer", DE: "Verbinde Sie mit einem Ingenieur", KO: "엔지니어에게 연결 중", ZH: "正在为您转接工程师" },
+    title_all_set:     { EN: "All set",             DE: "Alles erledigt",          KO: "완료",                  ZH: "全部就绪" },
+    title_done:        { EN: "Done",                DE: "Fertig",                  KO: "완료",                  ZH: "完成" },
+    next_prefix:       { EN: "Next: ",              DE: "Weiter: ",                KO: "다음 단계: ",            ZH: "下一步:" },
+    gate_yes:          { EN: "Yes",                 DE: "Ja",                      KO: "네",                   ZH: "是" },
+    gate_no:           { EN: "No",                  DE: "Nein",                    KO: "아니요",                ZH: "否" },
+    are_these_helpful: { EN: "Are these results helpful?", DE: "Sind diese Treffer hilfreich?", KO: "이 결과가 도움이 되었나요?", ZH: "这些结果对您有帮助吗?" },
+    datasheet_label:   { EN: "Datasheet",           DE: "Datenblatt",              KO: "데이터시트",             ZH: "数据手册" },
+    view_product:      { EN: "View product",        DE: "Produkt ansehen",         KO: "제품 보기",              ZH: "查看产品" },
+    back_to_menu:      { EN: "Back to menu",        DE: "Zurück zum Menü",         KO: "메뉴로 돌아가기",         ZH: "返回菜单" },
+    type_placeholder:  { EN: "Type your question…", DE: "Geben Sie Ihre Frage ein…", KO: "질문을 입력하세요…",     ZH: "请输入您的问题…" },
+  };
+  function _t(widget, key) {
+    const lang = (widget && widget.state && widget.state.language) || "EN";
+    const entry = I18N[key];
+    if (!entry) return key;
+    return entry[lang] || entry.EN || key;
+  }
+
   /* Minimal markdown — bold (**x**) and italics (_x_ or *x*).
      Run AFTER _escapeHtml so the tags can't be smuggled in via user text. */
   function _miniMarkdown(html) {
@@ -156,14 +192,14 @@
           <div class="aiagent-body">
             ${this._welcomeScreenHTML()}
             <div class="aiagent-screen aiagent-screen-chat" data-screen="chat">
-              <button class="aiagent-back-bar" type="button">${ICON.back}<span>Back to menu</span></button>
+              <button class="aiagent-back-bar" type="button">${ICON.back}<span>${_t(this, "back_to_menu")}</span></button>
               <div class="aiagent-thread"></div>
             </div>
           </div>
           <div class="aiagent-suggestions"></div>
           <div class="aiagent-composer">
             <div class="aiagent-composer-input-wrap">
-              <input class="aiagent-composer-input" type="text" placeholder="Type your question…" />
+              <input class="aiagent-composer-input" type="text" placeholder="${_t(this, "type_placeholder")}" />
             </div>
             <button class="aiagent-send" type="button" aria-label="Send">${ICON.send}</button>
           </div>
@@ -361,7 +397,7 @@
         updateSendState();
         if (this.state.screen === "welcome") this.showScreen("chat");
         if (this.cfg.apiUrl && global.AIAgentAPI) {
-          this._streamFromApi({ text: v });
+          this._streamFromApi({ text: v, language: this.state.language });
           return;
         }
         this.showTyping();
@@ -416,8 +452,19 @@
         b.setAttribute("data-active", b.dataset.lang === code ? "true" : "false");
       });
       $(this.root, ".aiagent-lang-menu").setAttribute("data-open", "false");
+      // Refresh chrome strings that don't re-render on their own.
+      const backLabel = $(this.root, ".aiagent-back-bar span");
+      if (backLabel) backLabel.textContent = _t(this, "back_to_menu");
+      const input = $(this.root, ".aiagent-composer-input");
+      if (input) input.placeholder = _t(this, "type_placeholder");
       if (lang && this.state.screen === "chat") {
-        this.addBotMessage(`Switched to ${lang.label}. How can I help?`);
+        const switched = {
+          EN: `Switched to ${lang.label}. How can I help?`,
+          DE: `Auf ${lang.label} umgestellt. Womit kann ich helfen?`,
+          KO: `${lang.label} 로 전환했습니다. 어떤 도움이 필요하신가요?`,
+          ZH: `已切换到${lang.label}。我可以怎么帮您?`,
+        }[code] || `Switched to ${lang.label}. How can I help?`;
+        this.addBotMessage(switched);
       }
     }
 
@@ -449,20 +496,43 @@
       }
 
       // The primary flows have a router-friendly seed; secondary
-      // utilities pass through whatever the chip implied.
-      const seedByFlow = {
-        presales:  "I want to explore what would fit my application.",
-        guide:     "I know roughly what I need — help me find products.",
-        postsales: "I have a problem with a product I own.",
-        other:     "I have a question.",
+      // utilities pass through whatever the chip implied. Seeds are
+      // localized so a Chinese user's first visible bubble reads in
+      // Chinese, not English.
+      const seedsByLang = {
+        EN: {
+          presales:  "I want to explore what would fit my application.",
+          guide:     "I know roughly what I need — help me find products.",
+          postsales: "I have a problem with a product I own.",
+          other:     "I have a question.",
+        },
+        DE: {
+          presales:  "Ich möchte herausfinden, was zu meiner Anwendung passt.",
+          guide:     "Ich weiß ungefähr, was ich brauche — helfen Sie mir, Produkte zu finden.",
+          postsales: "Ich habe ein Problem mit einem Produkt, das ich besitze.",
+          other:     "Ich habe eine Frage.",
+        },
+        KO: {
+          presales:  "제 응용 분야에 맞는 제품을 살펴보고 싶어요.",
+          guide:     "필요한 게 대략 정해져 있어요 — 제품을 찾아 주세요.",
+          postsales: "구매한 제품에 문제가 있어요.",
+          other:     "질문이 하나 있어요.",
+        },
+        ZH: {
+          presales:  "我想了解一下适合我应用的产品。",
+          guide:     "我大致知道需要什么 — 帮我找一下产品。",
+          postsales: "我购买的产品出了问题。",
+          other:     "我有一个问题。",
+        },
       };
+      const seedByFlow = seedsByLang[this.state.language] || seedsByLang.EN;
       const text = (opts && opts.seed) || seedByFlow[name] || "(hi)";
       const apiFlow = (name === "presales" || name === "guide"
         || name === "postsales" || name === "other") ? name : undefined;
       const subflow = opts && opts.subflow ? opts.subflow : undefined;
 
       this.addUserMessage(text);
-      this._streamFromApi({ text, flow: apiFlow, subflow });
+      this._streamFromApi({ text, flow: apiFlow, subflow, language: this.state.language });
     }
 
     /* ----- Stream a turn through the backend. ----- */
@@ -481,9 +551,13 @@
         );
       } catch (err) {
         this.hideTyping();
-        this.addBotMessage(
-          `<em>Couldn't reach the agent (${err.message}). Check the backend on <code>${this.cfg.apiUrl}</code>.</em>`
-        );
+        const errMsg = {
+          EN: `<em>Couldn't reach the agent (${err.message}). Check the backend on <code>${this.cfg.apiUrl}</code>.</em>`,
+          DE: `<em>Konnte den Agenten nicht erreichen (${err.message}). Bitte das Backend unter <code>${this.cfg.apiUrl}</code> prüfen.</em>`,
+          KO: `<em>에이전트에 연결할 수 없습니다 (${err.message}). <code>${this.cfg.apiUrl}</code> 백엔드를 확인해 주세요.</em>`,
+          ZH: `<em>无法连接到客服(${err.message})。请检查 <code>${this.cfg.apiUrl}</code> 上的后端服务。</em>`,
+        }[this.state.language] || `<em>Couldn't reach the agent (${err.message}).</em>`;
+        this.addBotMessage(errMsg);
       } finally {
         this._lockComposer(false);
       }
@@ -533,7 +607,7 @@
         if (specs.backlash_arcmin != null) bits.push(`${specs.backlash_arcmin} arcmin`);
         const detail = bits.join(" · ");
         const datasheet = r.datasheet_url
-          ? `<a class="aiagent-card-cta" href="${r.datasheet_url}" target="_blank" rel="noopener">Datasheet ${ICON.arrow}</a>`
+          ? `<a class="aiagent-card-cta" href="${r.datasheet_url}" target="_blank" rel="noopener">${_t(this, "datasheet_label")} ${ICON.arrow}</a>`
           : "";
         return `
           <div class="aiagent-product-row">
@@ -547,43 +621,48 @@
       }).join("");
       return this.addCard(`
         <div class="aiagent-card aiagent-product-results">
-          <p class="aiagent-card-title">Matching products</p>
-          ${rows || "<p>No matches yet.</p>"}
+          <p class="aiagent-card-title">${_escapeHtml(payload.title || _t(this, "matching_products"))}</p>
+          ${rows || `<p>${_t(this, "no_matches_yet")}</p>`}
         </div>
       `);
     }
 
     _renderRecommendationsCard(payload) {
       const recs = payload.recommendations || [];
-      const rows = recs.map(r => `
+      const rows = recs.map(r => {
+        const link = r.product_page_url
+          ? `<a class="aiagent-card-cta" href="${r.product_page_url}" target="_blank" rel="noopener">${_t(this, "view_product")} ${ICON.arrow}</a>`
+          : "";
+        return `
         <div class="aiagent-product-row">
           <div class="aiagent-product-row-main">
             <strong>${_escapeHtml(r.name || "")}</strong>
             <span class="aiagent-product-row-meta">fit ${r.fit_score}/5 · ${_escapeHtml(r.family || "")}</span>
             <span class="aiagent-product-row-name">${_escapeHtml(r.rationale || "")}</span>
           </div>
-        </div>
-      `).join("");
+          ${link}
+        </div>`;
+      }).join("");
       return this.addCard(`
         <div class="aiagent-card aiagent-product-results">
-          <p class="aiagent-card-title">Recommended families</p>
-          ${rows || "<p>No curated match for that combination yet.</p>"}
+          <p class="aiagent-card-title">${_escapeHtml(payload.title || _t(this, "recommended_families"))}</p>
+          ${rows || `<p>${_t(this, "no_curated_match")}</p>`}
         </div>
       `);
     }
 
     _renderGateCard(payload) {
       this._addGate({
-        title: payload.question || "Are these results helpful?",
-        yesLabel: payload.yes_label || "Yes",
-        noLabel:  payload.no_label  || "No",
+        title: payload.question || _t(this, "are_these_helpful"),
+        yesLabel: payload.yes_label || _t(this, "gate_yes"),
+        noLabel:  payload.no_label  || _t(this, "gate_no"),
         onYes: () => {
-          this.addUserMessage(payload.yes_label || "Yes");
-          this._streamFromApi({ gate_choice: "yes" });
+          this.addUserMessage(payload.yes_label || _t(this, "gate_yes"));
+          this._streamFromApi({ gate_choice: "yes", language: this.state.language });
         },
         onNo: () => {
-          this.addUserMessage(payload.no_label || "No");
-          this._streamFromApi({ gate_choice: "no" });
+          this.addUserMessage(payload.no_label || _t(this, "gate_no"));
+          this._streamFromApi({ gate_choice: "no", language: this.state.language });
         },
       });
     }
@@ -592,9 +671,7 @@
       const candidates = payload.candidates || [];
       if (!candidates.length) {
         // Nothing useful to pick. Don't render an empty list — just nudge.
-        return this.addBotMessage(
-          "Could you tell me a bit more about what's happening? Any noise, error code, or what changed recently helps me narrow it down."
-        );
+        return this.addBotMessage(_t(this, "candidates_more_info"));
       }
       const rows = candidates.map((c, idx) => `
         <button class="aiagent-product-row aiagent-candidate-row" type="button" data-idx="${idx}">
@@ -606,9 +683,9 @@
       `).join("");
       const card = this.addCard(`
         <div class="aiagent-card aiagent-product-results">
-          <p class="aiagent-card-title">Closest matches</p>
+          <p class="aiagent-card-title">${_escapeHtml(payload.title || _t(this, "closest_matches"))}</p>
           ${rows}
-          <button class="aiagent-card-cta aiagent-candidate-none" type="button">None of these — let me describe more</button>
+          <button class="aiagent-card-cta aiagent-candidate-none" type="button">${_t(this, "none_of_these")}</button>
         </div>
       `);
       $$(card, ".aiagent-candidate-row").forEach(btn => {
@@ -618,16 +695,14 @@
           if (!picked) return;
           $$(card, "button").forEach(b => { b.disabled = true; });
           this.addUserMessage(picked.label);
-          this._streamFromApi({ picked_problem_id: picked.problem_type_id });
+          this._streamFromApi({ picked_problem_id: picked.problem_type_id, language: this.state.language });
         });
       });
       const none = card.querySelector(".aiagent-candidate-none");
       if (none) {
         none.addEventListener("click", () => {
           $$(card, "button").forEach(b => { b.disabled = true; });
-          this.addBotMessage(
-            "Got it — could you describe what the unit is doing in a bit more detail? E.g. any noise, leak, error code, or what changed recently."
-          );
+          this.addBotMessage(_t(this, "candidates_describe_more"));
         });
       }
       return card;
@@ -642,7 +717,7 @@
         : "";
       return this.addCard(`
         <div class="aiagent-card aiagent-product-results">
-          <p class="aiagent-card-title">${_escapeHtml(problem.label || "Likely issue")}</p>
+          <p class="aiagent-card-title">${_escapeHtml(problem.label || _t(this, "likely_issue"))}</p>
           ${problem.description ? `<p>${_escapeHtml(problem.description)}</p>` : ""}
           ${solution.summary ? `<p><em>${_escapeHtml(solution.summary)}</em></p>` : ""}
           ${stepHtml}
@@ -652,12 +727,15 @@
 
     _renderOutcomeCard(payload) {
       const map = {
-        sell:           { type: "sell",     badge: "Sales handoff",  title: payload.title || "Connecting you with sales" },
-        human_handoff:  { type: "human",    badge: "Engineer",       title: payload.title || "Connecting you with an engineer" },
-        resolved:       { type: "resolved", badge: "Resolved",       title: payload.title || "All set" },
+        sell:           { type: "sell",     badge: _t(this, "badge_sales"),    title: payload.title || _t(this, "title_sales") },
+        human_handoff:  { type: "human",    badge: _t(this, "badge_engineer"), title: payload.title || _t(this, "title_engineer") },
+        resolved:       { type: "resolved", badge: _t(this, "badge_resolved"), title: payload.title || _t(this, "title_all_set") },
       };
-      const opt = map[payload.outcome] || { type: "info", badge: "", title: payload.title || "Done" };
-      this._addOutcome({ ...opt, description: payload.next_step ? `Next: ${payload.next_step}` : "" });
+      const opt = map[payload.outcome] || { type: "info", badge: "", title: payload.title || _t(this, "title_done") };
+      this._addOutcome({
+        ...opt,
+        description: payload.next_step ? `${_t(this, "next_prefix")}${payload.next_step}` : "",
+      });
     }
 
     /* ----- Internal: thread & message helpers ----- */

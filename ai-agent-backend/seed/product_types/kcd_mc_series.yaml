@@ -1,12 +1,13 @@
 # Promoted from 1 draft(s) under seed/drafts/.
 # Sources: 77.product_type
 code: kcd_mc_series
-name: KCD-MC Series Harmonic Drive / Strain Wave Gearbox
-family: Harmonic drive / strain wave
+name: Compact harmonic gear (KCD-MC)
+family: Strain Wave / Harmonic Gear
 description: KCD-MC series harmonic drive reducers from Kofon. Features ultra-short
   component design, high transmission accuracy and repeatability, high torsional stiffness,
   large load capacity, high efficiency, and long service life. Available in frame
   sizes 14, 17, 20, 25, and 32 with various reduction ratios.
+product_page_url: https://www.kofon.com.cn/products_detail/77.html
 spec_schema:
   frame_size:
     type: integer

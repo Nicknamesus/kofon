@@ -1,13 +1,14 @@
 # Promoted from 1 draft(s) under seed/drafts/.
 # Sources: 40.product_type
 code: agv_drive_wheel_kfq150
-name: KFQ150 AGV Drive Wheel
-family: AGV drive wheel
+name: AGV drive wheel (KFQ150)
+family: AGV / AMR Drive Solution
 description: Integrated AGV drive wheel combining a servo motor and high-precision
   gearmotor in a compact hub-motor design. Features a resin-rubber or polyurethane
   outer tire layer for high strength and wear resistance, a compact hub reducer structure,
   and a simple mounting bracket for easy positioning and improved drive precision.
   Optional matching driver available.
+product_page_url: https://www.kofon.com.cn/products_detail/40.html
 spec_schema:
   voltage_v_dc:
     type: number

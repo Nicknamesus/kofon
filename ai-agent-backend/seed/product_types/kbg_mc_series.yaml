@@ -1,0 +1,28 @@
+code: kbg_mc_series
+name: Component harmonic gear set (KB/KBG-MC)
+family: Strain Wave / Harmonic Gear
+description: >-
+  KB/KBG-MC series harmonic gear sets supplied as a three-piece component kit (wave generator, flexspline, circular spline) for OEM integration into customer housings.
+product_page_url: https://www.kofon.com.cn/products_detail/33.html
+spec_schema:
+  frame_size:
+    type: integer
+    label: Frame size
+  ratio:
+    type: integer
+    label: Reduction ratio
+  nominal_torque_nm:
+    type: number
+    label: Rated torque (Nm)
+  peak_torque_nm:
+    type: number
+    label: Peak torque (Nm)
+  repeatability_arcsec:
+    type: number
+    label: Repeatability (arcsec)
+  backlash_arcsec:
+    type: number
+    label: Backlash (arcsec)
+  weight_kg:
+    type: number
+    label: Weight (kg)

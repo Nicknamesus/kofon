@@ -1,13 +1,12 @@
 industry,application,product_type_code,fit_score,rationale
 Aerospace / defense,Drone / UAV actuator,w_series,5,"W8 micro gearbox series is explicitly designed for drones and humanoid robot joints, with frame sizes as small as 08 mm, high torque-to-weight, and low noise."
 Aerospace ground support,Antenna positioner,kgr_series,4,"KGR series with ≤4 arcmin backlash, IP65, and corrosion-resistant aluminum housing suits outdoor antenna positioning requiring smooth low-speed control."
-Aerospace ground support,Antenna positioner,kr_series,4,K-R series hypoid gearbox with ≤5 arcmin backlash and compact right-angle design fits antenna positioner envelope constraints.
+Aerospace ground support,Antenna positioner,kr_hypoid_series,4,K-R series hypoid gearbox with ≤5 arcmin backlash and compact right-angle design fits antenna positioner envelope constraints.
 Aerospace ground support,Antenna positioner,8_11_series_harmonic,4,Harmonic drive's near-zero backlash and smooth velocity output at low speeds are ideal for precision antenna pointing.
 Assembly,Torque-controlled tightening / bolting,pl_tightening_machine,5,"PL series tightening machine is purpose-built for bolting with wear-resistant planetary trains, multi-directional load bearings, and optional built-in torque/displacement sensors."
 Assembly,Torque-controlled tightening / bolting,tkz_series,5,"TKZ series tightening gearbox is explicitly designed for precision fastening with customized gear profiles, impact-resistant bearings, and optional torque sensors."
 Assembly,Torque-controlled tightening / bolting,tl_series,5,"TL offset-type tightening machine gearbox with profile-modified gears, multi-directional load bearings, and optional torque/displacement sensors is purpose-built for assembly bolting."
 Energy,Manual backup drive for remote equipment,kpx_s_series,5,"KPX-S series hand-input planetary reducer is explicitly designed for manual backup operation when electric power is unavailable, with up to 97% efficiency and low backlash."
-Energy,Manual backup drive for remote equipment,kpx_s_series_hand_crank,5,KPX-S series hand-crank input reducer is purpose-built for emergency/manual operation in remote areas with high reliability and simple operation.
 Energy,Manual backup drive for remote equipment,kpx_sy_series,5,"KPX-SY series hand-input gearbox is explicitly designed for applications where electric power is unavailable, offering a reliable mechanical backup in remote areas."
 Industrial automation,Multi-axis servo system,rd_series,5,"RD series multi-axis integrated servo drive supports 2–6 axes in one housing with 30% space reduction, vibration suppression, and auto-tuning — purpose-built for coordinated multi-axis systems."
 Industrial automation,Multi-axis servo system,xam_series,5,XAM series servo motors with 5-pole-pair low-cogging design and 23-bit absolute encoder pair perfectly with RD series drives for high-performance multi-axis servo systems.
@@ -37,5 +36,5 @@ Robotics,Linear joint / lifting axis,kfdg_series,5,"KFDG series direct-coupled e
 Robotics,Linear joint / lifting axis,servo_linear_joint_module,5,"Servo linear joint module with planetary roller screw, real-time sensor feedback, and DC48V power is purpose-built for precise linear motion in robotic joints."
 Robotics,Linear joint / lifting axis,kofon_ball_screw,4,"Kofon precision ball screw with ≥90% efficiency, diameters 16–63 mm, and high positioning accuracy can serve as the linear conversion element in a custom linear joint."
 Solar,Heliostat / tracker drive,kgr_series,4,"KGR series hypoid right-angle gearbox with IP65, ≤4 arcmin backlash, and tapered roller bearings for high overturning moment is well-suited for outdoor tracker azimuth/elevation drives."
-Solar,Heliostat / tracker drive,kr_series,4,"K-R series hypoid right-angle gearbox with ≤5 arcmin backlash, IP65, and 96% efficiency provides a compact right-angle solution for solar tracker drives."
+Solar,Heliostat / tracker drive,kr_hypoid_series,4,"K-R series hypoid right-angle gearbox with ≤5 arcmin backlash, IP65, and 96% efficiency provides a compact right-angle solution for solar tracker drives."
 Solar,Heliostat / tracker drive,kpx_s_series,3,"KPX-S series hand-input reducer could serve as a manual backup for tracker drives, but is not the primary drive for motorized tracking."

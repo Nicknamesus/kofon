@@ -1,0 +1,56 @@
+# Stub SKUs generated from kofon_products_all.csv (datasheet_url
+# points to the Kofon product page; specs to be filled later by
+# app.seed.extract_url).
+product_type_code: k_series
+
+products:
+  - sku: KPL
+    name: KPL Planetary gearbox
+    specs: {}
+    datasheet_url: https://www.kofon.com.cn/products_detail/5.html
+    status: active
+  - sku: KPLF
+    name: KPLF Planetary gearbox
+    specs: {}
+    datasheet_url: https://www.kofon.com.cn/products_detail/6.html
+    status: active
+  - sku: KPLS
+    name: KPLS Planetary gearbox
+    specs: {}
+    datasheet_url: https://www.kofon.com.cn/products_detail/7.html
+    status: active
+  - sku: KPLN
+    name: KPLN Planetary gearbox
+    specs: {}
+    datasheet_url: https://www.kofon.com.cn/products_detail/8.html
+    status: active
+  - sku: KPX
+    name: KPX Planetary gearbox
+    specs: {}
+    datasheet_url: https://www.kofon.com.cn/products_detail/9.html
+    status: active
+  - sku: KVX
+    name: KVX Planetary gearbox
+    specs: {}
+    datasheet_url: https://www.kofon.com.cn/products_detail/10.html
+    status: active
+  - sku: KPH
+    name: KPH Planetary gearbox
+    specs: {}
+    datasheet_url: https://www.kofon.com.cn/products_detail/11.html
+    status: active
+  - sku: KGP
+    name: KGP Planetary gearbox
+    specs: {}
+    datasheet_url: https://www.kofon.com.cn/products_detail/60.html
+    status: active
+  - sku: PX
+    name: PX Planetary gearbox
+    specs: {}
+    datasheet_url: https://www.kofon.com.cn/products_detail/71.html
+    status: active
+  - sku: PW
+    name: PW Planetary gearbox
+    specs: {}
+    datasheet_url: https://www.kofon.com.cn/products_detail/72.html
+    status: active

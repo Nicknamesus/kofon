@@ -2,12 +2,13 @@
 # Merged LLM codes: pwzq_heavy_duty_travel, pwzq_hub_mounted, pwzq_series
 # Sources: 37.product_type, 38.product_type, 42.product_type
 code: pwzq_series
-name: PWZQ Hub-Mounted Planetary Gearbox
-family: Planetary gearbox
+name: Wheel-hub planetary drive (PWZQ)
+family: AGV / AMR Drive Solution
 description: PWZQ series hub-mounted (wheel-specific) planetary gearboxes from Kofon.
   Designed for direct wheel/drive integration in mobile machinery and AGV applications.
   The page provides an overview of the series but does not include detailed technical
   specifications (torque, ratio, backlash, etc.) for individual models.
+product_page_url: https://www.kofon.com.cn/products_detail/42.html
 spec_schema:
   frame_size_mm:
     type: string

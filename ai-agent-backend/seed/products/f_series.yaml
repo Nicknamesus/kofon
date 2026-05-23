@@ -1,0 +1,86 @@
+# Stub SKUs generated from kofon_products_all.csv (datasheet_url
+# points to the Kofon product page; specs to be filled later by
+# app.seed.extract_url).
+product_type_code: f_series
+
+products:
+  - sku: FL070
+    name: FL070 Precision Planetary gearbox
+    specs: {}
+    datasheet_url: https://www.kofon.com.cn/products_detail/1.html
+    status: active
+  - sku: FX070
+    name: FX070 Precision Planetary gearbox
+    specs: {}
+    datasheet_url: https://www.kofon.com.cn/products_detail/2.html
+    status: active
+  - sku: FG070
+    name: FG070 Precision Planetary gearbox
+    specs: {}
+    datasheet_url: https://www.kofon.com.cn/products_detail/3.html
+    status: active
+  - sku: FH070
+    name: FH070 Precision Planetary gearbox
+    specs: {}
+    datasheet_url: https://www.kofon.com.cn/products_detail/4.html
+    status: active
+  - sku: FL090
+    name: FL090 Precision Planetary gearbox
+    specs: {}
+    datasheet_url: https://www.kofon.com.cn/products_detail/12.html
+    status: active
+  - sku: FL120
+    name: FL120 Precision Planetary gearbox
+    specs: {}
+    datasheet_url: https://www.kofon.com.cn/products_detail/13.html
+    status: active
+  - sku: FL160
+    name: FL160 Precision Planetary gearbox
+    specs: {}
+    datasheet_url: https://www.kofon.com.cn/products_detail/14.html
+    status: active
+  - sku: FX090
+    name: FX090 Precision Planetary gearbox
+    specs: {}
+    datasheet_url: https://www.kofon.com.cn/products_detail/15.html
+    status: active
+  - sku: FX120
+    name: FX120 Precision Planetary gearbox
+    specs: {}
+    datasheet_url: https://www.kofon.com.cn/products_detail/16.html
+    status: active
+  - sku: FX160
+    name: FX160 Precision Planetary gearbox
+    specs: {}
+    datasheet_url: https://www.kofon.com.cn/products_detail/17.html
+    status: active
+  - sku: FH090
+    name: FH090 Precision Planetary gearbox
+    specs: {}
+    datasheet_url: https://www.kofon.com.cn/products_detail/47.html
+    status: active
+  - sku: FH120
+    name: FH120 Precision Planetary gearbox
+    specs: {}
+    datasheet_url: https://www.kofon.com.cn/products_detail/48.html
+    status: active
+  - sku: FH160
+    name: FH160 Precision Planetary gearbox
+    specs: {}
+    datasheet_url: https://www.kofon.com.cn/products_detail/49.html
+    status: active
+  - sku: FG090
+    name: FG090 Precision Planetary gearbox
+    specs: {}
+    datasheet_url: https://www.kofon.com.cn/products_detail/50.html
+    status: active
+  - sku: FG120
+    name: FG120 Precision Planetary gearbox
+    specs: {}
+    datasheet_url: https://www.kofon.com.cn/products_detail/51.html
+    status: active
+  - sku: FG160
+    name: FG160 Precision Planetary gearbox
+    specs: {}
+    datasheet_url: https://www.kofon.com.cn/products_detail/52.html
+    status: active

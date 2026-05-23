@@ -57,48 +57,65 @@ divisions:
 # `product_types.code` from the seed verbatim.
 families:
   # ---- Planetary gearboxes (precision + general-purpose) ----
+  # ---- Precision Planetary Gearbox ----
   caesarplanetary: planetary
   5kh_series: planetary
+  f_series: planetary
+  k_series: planetary
+  s_series: planetary
+  kh_series: planetary
+  kvh_series: planetary
   kpx_s_series: planetary
-  kpx_s_series_hand_crank: planetary
   kpx_sy_series: planetary
-  ktfr1_series: planetary
   pwhz_rotary: planetary
   pwjy_series: planetary
   pwzd: planetary
-  pwzq_series: planetary
-  r_industrial_series: planetary
   r_series: planetary
   w_series: planetary
   zf_s_series: planetary
+  pl_tightening_machine: planetary
+  tkz_series: planetary
+  tl_series: planetary
+  tk_series: planetary
 
-  # ---- Harmonic drives / strain wave ----
+  # ---- Strain Wave / Harmonic Gear ----
   8_11_series_harmonic: harmonic
   kbd_mc_series: harmonic
   kcd_mc_series: harmonic
+  kbg_ho_series: harmonic
+  kbg_so_series: harmonic
+  kbg_mc_series: harmonic
+  kc_mc_series: harmonic
+  kb_hf_series: harmonic
+  ksb_mo_series: harmonic
+  ksb_ho_series: harmonic
 
-  # ---- Right-angle / bevel gear ----
+  # ---- Spiral Bevel Gearbox ----
   kgr_series: bevel
-  kr_series: bevel
+  kr_hypoid_series: bevel
+  ktfr1_series: bevel
+  kt_series: bevel
 
-  # ---- Linear motion (electric cylinders, ball screws, roller screws) ----
+  # ---- Planetary Roller Screw ----
   kfdg_series: linear
   kofon_ball_screw: linear
-  servo_linear_joint_module: linear
+  folded_electric_cylinder: linear
+  planetary_roller_screw: linear
 
-  # ---- AGV / mobility ----
+  # ---- AGV / AMR Drive Solution ----
   agv_drive_wheel_kfq150: mobility
   agv_steering_differential_wheel: mobility
   xgv_series: mobility
+  pwzq_series: mobility
 
-  # ---- Servo motors + multi-axis drives ----
+  # ---- Servo Motor Solution ----
   rd_series: servo_systems
   xam_series: servo_systems
+  servo_linear_joint_module: servo_systems
+  servo_planetary_joint_module: servo_systems
 
-  # ---- Assembly / tightening machines ----
-  pl_tightening_machine: assembly
-  tkz_series: assembly
-  tl_series: assembly
+  # ---- RV / Robot Reducer ----
+  kr_joint_series: robotics
 
 routes:
   # Confirmed sales — go to the division that owns the family.

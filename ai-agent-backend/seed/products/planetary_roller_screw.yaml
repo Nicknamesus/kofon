@@ -1,0 +1,11 @@
+# Stub SKUs generated from kofon_products_all.csv (datasheet_url
+# points to the Kofon product page; specs to be filled later by
+# app.seed.extract_url).
+product_type_code: planetary_roller_screw
+
+products:
+  - sku: Planetary
+    name: Planetary Roller Screw
+    specs: {}
+    datasheet_url: https://www.kofon.com.cn/products_detail/46.html
+    status: active

@@ -2,7 +2,7 @@
 # Merged LLM codes: k_r_series, kr045_30, kr045_series, kr060_22, kr070_25, kr070_series, kr080_19, kr080_series, kr090_25, kr090_series, kr095_23, kr110_23, kr128_22, kr128_series
 # Sources: 107.products, 108.products, 109.products, 111.products, 127.products, 128.products, 1430473083887861760.products, 1430475026110025728.products, 1430475997913485312.products, 1430477106942623744.products, 1430478512256126976.products, 1430479240102088704.products, 1430480168641302528.products, 86.products, 87.products, 88.products, 89.products, 90.products, 91.products, 92.products, 93.products, 94.products, 95.products
 # SKUs: 98
-product_type_code: kr_series
+product_type_code: kr_hypoid_series
 products:
 - sku: KHR070-1-3
   name: KHR070 — 1-stage, 3:1
@@ -29,6 +29,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 2.6
+    datasheet_url: https://www.kofon.com.cn/products_detail/107.html
   status: active
 - sku: KHR070-1-4
   name: KHR070 — 1-stage, 4:1
@@ -55,6 +56,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 2.6
+    datasheet_url: https://www.kofon.com.cn/products_detail/107.html
   status: active
 - sku: KHR070-1-5
   name: KHR070 — 1-stage, 5:1
@@ -81,6 +83,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 2.6
+    datasheet_url: https://www.kofon.com.cn/products_detail/107.html
   status: active
 - sku: KHR070-1-7
   name: KHR070 — 1-stage, 7:1
@@ -107,6 +110,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 2.6
+    datasheet_url: https://www.kofon.com.cn/products_detail/107.html
   status: active
 - sku: KHR070-1-10
   name: KHR070 — 1-stage, 10:1
@@ -133,6 +137,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 2.6
+    datasheet_url: https://www.kofon.com.cn/products_detail/107.html
   status: active
 - sku: KHR070-2-12
   name: KHR070 — 2-stage, 12:1
@@ -159,6 +164,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 3.1
+    datasheet_url: https://www.kofon.com.cn/products_detail/107.html
   status: active
 - sku: KHR070-2-16
   name: KHR070 — 2-stage, 16:1
@@ -185,6 +191,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 3.1
+    datasheet_url: https://www.kofon.com.cn/products_detail/107.html
   status: active
 - sku: KHR070-2-20
   name: KHR070 — 2-stage, 20:1
@@ -211,6 +218,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 3.1
+    datasheet_url: https://www.kofon.com.cn/products_detail/107.html
   status: active
 - sku: KHR070-2-25
   name: KHR070 — 2-stage, 25:1
@@ -237,6 +245,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 3.1
+    datasheet_url: https://www.kofon.com.cn/products_detail/107.html
   status: active
 - sku: KHR070-2-28
   name: KHR070 — 2-stage, 28:1
@@ -263,6 +272,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 3.1
+    datasheet_url: https://www.kofon.com.cn/products_detail/107.html
   status: active
 - sku: KHR070-2-35
   name: KHR070 — 2-stage, 35:1
@@ -289,6 +299,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 3.1
+    datasheet_url: https://www.kofon.com.cn/products_detail/107.html
   status: active
 - sku: KHR070-2-40
   name: KHR070 — 2-stage, 40:1
@@ -315,6 +326,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 3.1
+    datasheet_url: https://www.kofon.com.cn/products_detail/107.html
   status: active
 - sku: KHR070-2-50
   name: KHR070 — 2-stage, 50:1
@@ -341,6 +353,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 3.1
+    datasheet_url: https://www.kofon.com.cn/products_detail/107.html
   status: active
 - sku: KHR070-2-70
   name: KHR070 — 2-stage, 70:1
@@ -367,6 +380,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 3.1
+    datasheet_url: https://www.kofon.com.cn/products_detail/107.html
   status: active
 - sku: KHR070-2-100
   name: KHR070 — 2-stage, 100:1
@@ -393,6 +407,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 3.1
+    datasheet_url: https://www.kofon.com.cn/products_detail/107.html
   status: active
 - sku: KHR120-1-3
   name: KHR120 — 1-stage, 3:1
@@ -419,6 +434,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 8.1
+    datasheet_url: https://www.kofon.com.cn/products_detail/108.html
   status: active
 - sku: KHR120-1-4
   name: KHR120 — 1-stage, 4:1
@@ -445,6 +461,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 8.1
+    datasheet_url: https://www.kofon.com.cn/products_detail/108.html
   status: active
 - sku: KHR120-1-5
   name: KHR120 — 1-stage, 5:1
@@ -471,6 +488,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 8.1
+    datasheet_url: https://www.kofon.com.cn/products_detail/108.html
   status: active
 - sku: KHR120-1-7
   name: KHR120 — 1-stage, 7:1
@@ -497,6 +515,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 8.1
+    datasheet_url: https://www.kofon.com.cn/products_detail/108.html
   status: active
 - sku: KHR120-1-10
   name: KHR120 — 1-stage, 10:1
@@ -523,6 +542,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 8.1
+    datasheet_url: https://www.kofon.com.cn/products_detail/108.html
   status: active
 - sku: KHR120-2-12
   name: KHR120 — 2-stage, 12:1
@@ -549,6 +569,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 10.5
+    datasheet_url: https://www.kofon.com.cn/products_detail/108.html
   status: active
 - sku: KHR120-2-16
   name: KHR120 — 2-stage, 16:1
@@ -575,6 +596,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 10.5
+    datasheet_url: https://www.kofon.com.cn/products_detail/108.html
   status: active
 - sku: KHR120-2-20
   name: KHR120 — 2-stage, 20:1
@@ -601,6 +623,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 10.5
+    datasheet_url: https://www.kofon.com.cn/products_detail/108.html
   status: active
 - sku: KHR120-2-25
   name: KHR120 — 2-stage, 25:1
@@ -627,6 +650,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 10.5
+    datasheet_url: https://www.kofon.com.cn/products_detail/108.html
   status: active
 - sku: KHR120-2-28
   name: KHR120 — 2-stage, 28:1
@@ -653,6 +677,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 10.5
+    datasheet_url: https://www.kofon.com.cn/products_detail/108.html
   status: active
 - sku: KHR120-2-35
   name: KHR120 — 2-stage, 35:1
@@ -679,6 +704,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 10.5
+    datasheet_url: https://www.kofon.com.cn/products_detail/108.html
   status: active
 - sku: KHR120-2-40
   name: KHR120 — 2-stage, 40:1
@@ -705,6 +731,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 10.5
+    datasheet_url: https://www.kofon.com.cn/products_detail/108.html
   status: active
 - sku: KHR120-2-50
   name: KHR120 — 2-stage, 50:1
@@ -731,6 +758,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 10.5
+    datasheet_url: https://www.kofon.com.cn/products_detail/108.html
   status: active
 - sku: KHR120-2-70
   name: KHR120 — 2-stage, 70:1
@@ -757,6 +785,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 10.5
+    datasheet_url: https://www.kofon.com.cn/products_detail/108.html
   status: active
 - sku: KHR120-2-100
   name: KHR120 — 2-stage, 100:1
@@ -783,6 +812,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 10.5
+    datasheet_url: https://www.kofon.com.cn/products_detail/108.html
   status: active
 - sku: KHR180-1-3
   name: KHR180 — 1-stage, 3:1
@@ -809,6 +839,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 47
+    datasheet_url: https://www.kofon.com.cn/products_detail/109.html
   status: active
 - sku: KHR180-1-4
   name: KHR180 — 1-stage, 4:1
@@ -835,6 +866,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 47
+    datasheet_url: https://www.kofon.com.cn/products_detail/109.html
   status: active
 - sku: KHR180-1-5
   name: KHR180 — 1-stage, 5:1
@@ -861,6 +893,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 47
+    datasheet_url: https://www.kofon.com.cn/products_detail/109.html
   status: active
 - sku: KHR180-1-7
   name: KHR180 — 1-stage, 7:1
@@ -887,6 +920,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 47
+    datasheet_url: https://www.kofon.com.cn/products_detail/109.html
   status: active
 - sku: KHR180-1-10
   name: KHR180 — 1-stage, 10:1
@@ -913,6 +947,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 47
+    datasheet_url: https://www.kofon.com.cn/products_detail/109.html
   status: active
 - sku: KHR180-2-12
   name: KHR180 — 2-stage, 12:1
@@ -939,6 +974,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 54
+    datasheet_url: https://www.kofon.com.cn/products_detail/109.html
   status: active
 - sku: KHR180-2-16
   name: KHR180 — 2-stage, 16:1
@@ -965,6 +1001,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 54
+    datasheet_url: https://www.kofon.com.cn/products_detail/109.html
   status: active
 - sku: KHR180-2-20
   name: KHR180 — 2-stage, 20:1
@@ -991,6 +1028,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 54
+    datasheet_url: https://www.kofon.com.cn/products_detail/109.html
   status: active
 - sku: KHR180-2-25
   name: KHR180 — 2-stage, 25:1
@@ -1017,6 +1055,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 54
+    datasheet_url: https://www.kofon.com.cn/products_detail/109.html
   status: active
 - sku: KHR180-2-28
   name: KHR180 — 2-stage, 28:1
@@ -1043,6 +1082,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 54
+    datasheet_url: https://www.kofon.com.cn/products_detail/109.html
   status: active
 - sku: KHR180-2-35
   name: KHR180 — 2-stage, 35:1
@@ -1069,6 +1109,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 54
+    datasheet_url: https://www.kofon.com.cn/products_detail/109.html
   status: active
 - sku: KHR180-2-40
   name: KHR180 — 2-stage, 40:1
@@ -1095,6 +1136,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 54
+    datasheet_url: https://www.kofon.com.cn/products_detail/109.html
   status: active
 - sku: KHR180-2-50
   name: KHR180 — 2-stage, 50:1
@@ -1121,6 +1163,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 54
+    datasheet_url: https://www.kofon.com.cn/products_detail/109.html
   status: active
 - sku: KHR180-2-70
   name: KHR180 — 2-stage, 70:1
@@ -1147,6 +1190,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 54
+    datasheet_url: https://www.kofon.com.cn/products_detail/109.html
   status: active
 - sku: KHR180-2-100
   name: KHR180 — 2-stage, 100:1
@@ -1173,6 +1217,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 54
+    datasheet_url: https://www.kofon.com.cn/products_detail/109.html
   status: active
 - sku: KGR160-1-3
   name: KGR160 — 1-stage, 3:1
@@ -1199,6 +1244,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 22.1
+    datasheet_url: https://www.kofon.com.cn/products_detail/111.html
   status: active
 - sku: KGR160-1-4
   name: KGR160 — 1-stage, 4:1
@@ -1225,6 +1271,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 22.1
+    datasheet_url: https://www.kofon.com.cn/products_detail/111.html
   status: active
 - sku: KGR160-1-5
   name: KGR160 — 1-stage, 5:1
@@ -1251,6 +1298,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 22.1
+    datasheet_url: https://www.kofon.com.cn/products_detail/111.html
   status: active
 - sku: KGR160-1-7
   name: KGR160 — 1-stage, 7:1
@@ -1277,6 +1325,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 22.1
+    datasheet_url: https://www.kofon.com.cn/products_detail/111.html
   status: active
 - sku: KGR160-1-10
   name: KGR160 — 1-stage, 10:1
@@ -1303,6 +1352,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 22.1
+    datasheet_url: https://www.kofon.com.cn/products_detail/111.html
   status: active
 - sku: KGR160-2-12
   name: KGR160 — 2-stage, 12:1
@@ -1329,6 +1379,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 25.2
+    datasheet_url: https://www.kofon.com.cn/products_detail/111.html
   status: active
 - sku: KGR160-2-16
   name: KGR160 — 2-stage, 16:1
@@ -1355,6 +1406,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 25.2
+    datasheet_url: https://www.kofon.com.cn/products_detail/111.html
   status: active
 - sku: KGR160-2-20
   name: KGR160 — 2-stage, 20:1
@@ -1381,6 +1433,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 25.2
+    datasheet_url: https://www.kofon.com.cn/products_detail/111.html
   status: active
 - sku: KGR160-2-25
   name: KGR160 — 2-stage, 25:1
@@ -1407,6 +1460,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 25.2
+    datasheet_url: https://www.kofon.com.cn/products_detail/111.html
   status: active
 - sku: KGR160-2-28
   name: KGR160 — 2-stage, 28:1
@@ -1433,6 +1487,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 25.2
+    datasheet_url: https://www.kofon.com.cn/products_detail/111.html
   status: active
 - sku: KGR160-2-35
   name: KGR160 — 2-stage, 35:1
@@ -1459,6 +1514,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 25.2
+    datasheet_url: https://www.kofon.com.cn/products_detail/111.html
   status: active
 - sku: KGR160-2-40
   name: KGR160 — 2-stage, 40:1
@@ -1485,6 +1541,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 25.2
+    datasheet_url: https://www.kofon.com.cn/products_detail/111.html
   status: active
 - sku: KGR160-2-50
   name: KGR160 — 2-stage, 50:1
@@ -1511,6 +1568,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 25.2
+    datasheet_url: https://www.kofon.com.cn/products_detail/111.html
   status: active
 - sku: KGR160-2-70
   name: KGR160 — 2-stage, 70:1
@@ -1537,6 +1595,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 25.2
+    datasheet_url: https://www.kofon.com.cn/products_detail/111.html
   status: active
 - sku: KGR160-2-100
   name: KGR160 — 2-stage, 100:1
@@ -1563,6 +1622,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 25.2
+    datasheet_url: https://www.kofon.com.cn/products_detail/111.html
   status: active
 - sku: KHR090-1-3
   name: KHR090 — 1-stage, 3:1
@@ -1590,6 +1650,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 4.8
+    datasheet_url: https://www.kofon.com.cn/products_detail/127.html
   status: active
 - sku: KHR090-1-4
   name: KHR090 — 1-stage, 4:1
@@ -1617,6 +1678,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 4.8
+    datasheet_url: https://www.kofon.com.cn/products_detail/127.html
   status: active
 - sku: KHR090-1-5
   name: KHR090 — 1-stage, 5:1
@@ -1644,6 +1706,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 4.8
+    datasheet_url: https://www.kofon.com.cn/products_detail/127.html
   status: active
 - sku: KHR090-1-7
   name: KHR090 — 1-stage, 7:1
@@ -1671,6 +1734,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 4.8
+    datasheet_url: https://www.kofon.com.cn/products_detail/127.html
   status: active
 - sku: KHR090-1-10
   name: KHR090 — 1-stage, 10:1
@@ -1698,6 +1762,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 4.8
+    datasheet_url: https://www.kofon.com.cn/products_detail/127.html
   status: active
 - sku: KHR090-2-12
   name: KHR090 — 2-stage, 12:1
@@ -1725,6 +1790,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 6
+    datasheet_url: https://www.kofon.com.cn/products_detail/127.html
   status: active
 - sku: KHR090-2-16
   name: KHR090 — 2-stage, 16:1
@@ -1752,6 +1818,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 6
+    datasheet_url: https://www.kofon.com.cn/products_detail/127.html
   status: active
 - sku: KHR090-2-20
   name: KHR090 — 2-stage, 20:1
@@ -1779,6 +1846,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 6
+    datasheet_url: https://www.kofon.com.cn/products_detail/127.html
   status: active
 - sku: KHR090-2-25
   name: KHR090 — 2-stage, 25:1
@@ -1806,6 +1874,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 6
+    datasheet_url: https://www.kofon.com.cn/products_detail/127.html
   status: active
 - sku: KHR090-2-28
   name: KHR090 — 2-stage, 28:1
@@ -1833,6 +1902,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 6
+    datasheet_url: https://www.kofon.com.cn/products_detail/127.html
   status: active
 - sku: KHR090-2-35
   name: KHR090 — 2-stage, 35:1
@@ -1860,6 +1930,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 6
+    datasheet_url: https://www.kofon.com.cn/products_detail/127.html
   status: active
 - sku: KHR090-2-40
   name: KHR090 — 2-stage, 40:1
@@ -1887,6 +1958,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 6
+    datasheet_url: https://www.kofon.com.cn/products_detail/127.html
   status: active
 - sku: KHR090-2-50
   name: KHR090 — 2-stage, 50:1
@@ -1914,6 +1986,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 6
+    datasheet_url: https://www.kofon.com.cn/products_detail/127.html
   status: active
 - sku: KHR090-2-70
   name: KHR090 — 2-stage, 70:1
@@ -1941,6 +2014,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 6
+    datasheet_url: https://www.kofon.com.cn/products_detail/127.html
   status: active
 - sku: KHR090-2-100
   name: KHR090 — 2-stage, 100:1
@@ -1968,6 +2042,7 @@ products:
     protection_class: IP65
     service_lifetime_h: 20000
     weight_kg: 6
+    datasheet_url: https://www.kofon.com.cn/products_detail/127.html
   status: active
 - sku: KHR160-1-3
   name: KHR160 — 1-stage, 3:1
@@ -1995,6 +2070,7 @@ products:
     service_lifetime_h: 20000
     weight_kg: 20
     frame_size: KHR160
+    datasheet_url: https://www.kofon.com.cn/products_detail/128.html
   status: active
 - sku: KHR160-1-4
   name: KHR160 — 1-stage, 4:1
@@ -2022,6 +2098,7 @@ products:
     service_lifetime_h: 20000
     weight_kg: 20
     frame_size: KHR160
+    datasheet_url: https://www.kofon.com.cn/products_detail/128.html
   status: active
 - sku: KHR160-1-5
   name: KHR160 — 1-stage, 5:1
@@ -2049,6 +2126,7 @@ products:
     service_lifetime_h: 20000
     weight_kg: 20
     frame_size: KHR160
+    datasheet_url: https://www.kofon.com.cn/products_detail/128.html
   status: active
 - sku: KHR160-1-7
   name: KHR160 — 1-stage, 7:1
@@ -2076,6 +2154,7 @@ products:
     service_lifetime_h: 20000
     weight_kg: 20
     frame_size: KHR160
+    datasheet_url: https://www.kofon.com.cn/products_detail/128.html
   status: active
 - sku: KHR160-1-10
   name: KHR160 — 1-stage, 10:1
@@ -2103,6 +2182,7 @@ products:
     service_lifetime_h: 20000
     weight_kg: 20
     frame_size: KHR160
+    datasheet_url: https://www.kofon.com.cn/products_detail/128.html
   status: active
 - sku: KHR160-2-12
   name: KHR160 — 2-stage, 12:1
@@ -2130,6 +2210,7 @@ products:
     service_lifetime_h: 20000
     weight_kg: 25
     frame_size: KHR160
+    datasheet_url: https://www.kofon.com.cn/products_detail/128.html
   status: active
 - sku: KHR160-2-16
   name: KHR160 — 2-stage, 16:1
@@ -2157,6 +2238,7 @@ products:
     service_lifetime_h: 20000
     weight_kg: 25
     frame_size: KHR160
+    datasheet_url: https://www.kofon.com.cn/products_detail/128.html
   status: active
 - sku: KHR160-2-20
   name: KHR160 — 2-stage, 20:1
@@ -2184,6 +2266,7 @@ products:
     service_lifetime_h: 20000
     weight_kg: 25
     frame_size: KHR160
+    datasheet_url: https://www.kofon.com.cn/products_detail/128.html
   status: active
 - sku: KHR160-2-25
   name: KHR160 — 2-stage, 25:1
@@ -2211,6 +2294,7 @@ products:
     service_lifetime_h: 20000
     weight_kg: 25
     frame_size: KHR160
+    datasheet_url: https://www.kofon.com.cn/products_detail/128.html
   status: active
 - sku: KHR160-2-28
   name: KHR160 — 2-stage, 28:1
@@ -2238,6 +2322,7 @@ products:
     service_lifetime_h: 20000
     weight_kg: 25
     frame_size: KHR160
+    datasheet_url: https://www.kofon.com.cn/products_detail/128.html
   status: active
 - sku: KHR160-2-35
   name: KHR160 — 2-stage, 35:1
@@ -2265,6 +2350,7 @@ products:
     service_lifetime_h: 20000
     weight_kg: 25
     frame_size: KHR160
+    datasheet_url: https://www.kofon.com.cn/products_detail/128.html
   status: active
 - sku: KHR160-2-40
   name: KHR160 — 2-stage, 40:1
@@ -2292,6 +2378,7 @@ products:
     service_lifetime_h: 20000
     weight_kg: 25
     frame_size: KHR160
+    datasheet_url: https://www.kofon.com.cn/products_detail/128.html
   status: active
 - sku: KHR160-2-50
   name: KHR160 — 2-stage, 50:1
@@ -2319,6 +2406,7 @@ products:
     service_lifetime_h: 20000
     weight_kg: 25
     frame_size: KHR160
+    datasheet_url: https://www.kofon.com.cn/products_detail/128.html
   status: active
 - sku: KHR160-2-70
   name: KHR160 — 2-stage, 70:1
@@ -2346,6 +2434,7 @@ products:
     service_lifetime_h: 20000
     weight_kg: 25
     frame_size: KHR160
+    datasheet_url: https://www.kofon.com.cn/products_detail/128.html
   status: active
 - sku: KHR160-2-100
   name: KHR160 — 2-stage, 100:1
@@ -2373,176 +2462,5 @@ products:
     service_lifetime_h: 20000
     weight_kg: 25
     frame_size: KHR160
-  status: active
-- sku: KR045-30
-  name: KR045-30 Joint Module — 30:1 Reduction
-  specs:
-    reduction_ratio: 30
-    rated_voltage_v: 48
-    rated_current_a: 1.8
-    rated_power_w: 52
-    rated_speed_rpm: 166
-    rated_torque_nm: 3
-    peak_current_a: 5.4
-    peak_torque_nm: 9
-    peak_speed_rpm: 200
-    efficiency_pct: 76.5
-    power_density_w_kg: 148.5
-    torque_constant_nm_per_a: 0.053
-    weight_kg: 0.35
-    backlash_arcmin: 8
-    motor_size_mm: 45×53.5
-    communication_protocol: CAN
-    communication_baud_rate: 1M
-    double_encoder: 'Yes'
-    built_in_driver: Optional
-  datasheet_url: https://www.kofon.com.cn/products_detail/1430473083887861760.html
-  status: active
-- sku: KR060-22
-  name: KR060-22 — Joint Reducer, 22:1
-  specs:
-    ratio: 22
-    nominal_torque_nm: 11
-    peak_torque_nm: 33
-    rated_speed_rpm: 4000
-    peak_speed_rpm: 6000
-    efficiency_pct: 85
-    weight_kg: 0.24
-    backlash_arcmin: 8
-    frame_size_mm: 60
-    length_mm: 39
-    operating_temp_min_c: -25
-    operating_temp_max_c: 90
-    lubrication: Synthetic grease
-  status: active
-- sku: KR070-25
-  name: KR070 — 25:1 Joint Reducer
-  specs:
-    ratio: 25
-    nominal_torque_nm: 30
-    peak_torque_nm: 90
-    rated_speed_rpm: 3000
-    peak_speed_rpm: 6000
-    efficiency_pct: 85
-    weight_kg: 0.47
-    backlash_arcmin: 8
-    frame_size_mm: 70
-    length_mm: 63.5
-    operating_temp_min_c: -25
-    operating_temp_max_c: 90
-    lubrication: Synthetic grease
-  datasheet_url: https://www.kofon.com.cn/products_detail/1430475997913485312.html
-  status: active
-- sku: KR080-19
-  name: KR080 — 19:1
-  specs:
-    ratio: 19
-    nominal_torque_nm: 20
-    peak_torque_nm: 80
-    rated_speed_rpm: 4000
-    peak_speed_rpm: 6000
-    efficiency_pct: 85
-    weight_kg: 0.56
-    backlash_arcmin: 8
-    frame_size_mm: 80
-    length_mm: 53
-    temperature_range: -25°C~+90°C
-    lubrication: Synthetic grease
-  datasheet_url: https://www.kofon.com.cn/products_detail/1430477106942623744.html
-  status: active
-- sku: KR095-23
-  name: KR095-23 Joint Module — 23:1
-  specs:
-    reduction_ratio: 23
-    rated_voltage_v: 48
-    rated_current_a: 6.8
-    rated_power_w: 189
-    rated_speed_rpm: 44
-    rated_torque_nm: 41
-    peak_current_a: 20.4
-    peak_torque_nm: 123
-    peak_speed_rpm: 130
-    efficiency_pct: 76.5
-    power_density_w_kg: 144.2
-    torque_constant_nm_per_a: 0.24
-    weight_kg: 1.31
-    backlash_arcmin: 8
-    size_mm: 95×60
-    communication: CAN
-    communication_baud_rate: 1M
-    double_encoder: 'Yes'
-    built_in_drive: Optional
-  datasheet_url: https://www.kofon.com.cn/products_detail/1430478512256126976.html
-  status: active
-- sku: KR110-23
-  name: KR110-23 Joint Module — 23:1
-  specs:
-    ratio: 23
-    rated_voltage_v: 48
-    rated_current_a: 13.3
-    rated_power_w: 425.4
-    rated_speed_rpm: 65
-    nominal_torque_nm: 62.5
-    peak_current_a: 40
-    peak_torque_nm: 187
-    peak_speed_rpm: 108
-    efficiency_pct: 76.5
-    power_density_w_kg: 209.5
-    torque_constant_nm_per_a: 0.19
-    weight_kg: 2.03
-    backlash_arcmin: 8
-    frame_size_mm: 110×71
-    communication_protocol: CAN
-    communication_baud_rate: 1M
-    double_encoder: 'Yes'
-    built_in_driver: Optional
-  datasheet_url: https://www.kofon.com.cn/products_detail/1430479240102088704.html
-  status: active
-- sku: KR128-22
-  name: KR128-22 Joint Module — 22:1
-  specs:
-    ratio: 22
-    rated_voltage_v: 48
-    rated_current_a: 14
-    rated_power_w: 477
-    rated_speed_rpm: 68
-    rated_torque_nm: 67
-    peak_current_a: 42
-    peak_torque_nm: 201
-    peak_speed_rpm: 113
-    efficiency_pct: 76.5
-    power_density_w_kg: 184.8
-    torque_constant_nm_a: 0.2
-    weight_kg: 2.58
-    backlash_arcmin: 8
-    frame_size_mm: 128×64
-    communication_protocol: CAN
-    communication_baud_rate: 1M
-    double_encoder: 'Yes'
-    built_in_drive: Optional
-  datasheet_url: https://www.kofon.com.cn/products_detail/1430480168641302528.html
-  status: active
-- sku: KR090-25
-  name: KR090-25 Joint Module — 25:1
-  specs:
-    ratio: 25
-    rated_voltage_v: 48
-    rated_current_a: 24.3
-    rated_power_w: 811.5
-    rated_speed_rpm: 100
-    nominal_torque_nm: 77.5
-    peak_current_a: 93
-    peak_torque_nm: 239.9
-    peak_speed_rpm: 200
-    efficiency_pct: 76.5
-    power_density_w_kg: 374
-    torque_constant_nm_per_a: 0.15
-    weight_kg: 2.17
-    backlash_arcmin: 8
-    frame_size_mm: 90×82.5
-    communication_protocol: EtherCAT
-    baud_rate: 1M
-    has_dual_encoder: 'Yes'
-    has_built_in_drive: 'Yes'
-  datasheet_url: https://www.kofon.com.cn/products_detail/91.html
+    datasheet_url: https://www.kofon.com.cn/products_detail/128.html
   status: active

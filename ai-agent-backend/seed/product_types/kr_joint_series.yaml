@@ -1,0 +1,68 @@
+# Split out from former kr_series.yaml. KR-series joint reducers and modules
+# for robot joints — RV / Robot Reducer family. Integrated motor + planetary
+# reducer in a single coaxial housing.
+code: kr_joint_series
+name: Robot joint reducer (KR)
+family: RV / Robot Reducer
+description: KR-series joint reducers and modules from Kofon for industrial and
+  collaborative robot joints. Each unit integrates a high-torque-density planetary
+  reducer with a servo motor (and optional driver, encoder, and brake) into a
+  single coaxial assembly. Available in frame sizes 045–128 with standard reduction
+  ratios of 19:1 through 30:1. The "module" variants add a built-in driver and
+  dual encoder for plug-and-play robot integration.
+product_page_url: https://www.kofon.com.cn/products_detail/1430473083887861760.html
+spec_schema:
+  reducer_ratio:
+    type: integer
+    label: Reduction ratio
+  rated_voltage_v:
+    type: number
+    label: Rated voltage (V)
+  rated_current_a:
+    type: number
+    label: Rated phase current (A)
+  rated_power_w:
+    type: number
+    label: Rated power (W)
+  rated_speed_rpm:
+    type: number
+    label: Rated speed (rpm)
+  rated_torque_nm:
+    type: number
+    label: Rated torque (Nm)
+  peak_current_a:
+    type: number
+    label: Peak phase current (A)
+  peak_speed_rpm:
+    type: number
+    label: Peak speed (rpm)
+  peak_torque_nm:
+    type: number
+    label: Peak torque (Nm)
+  power_density_w_kg:
+    type: number
+    label: Power density (W/kg)
+  torque_constant_nm_per_a:
+    type: number
+    label: Torque constant (Nm/A)
+  motor_size_mm:
+    type: string
+    label: Motor size (Ø × thickness, mm)
+  communication_protocol:
+    type: string
+    label: Communication protocol
+  communication_baud_rate:
+    type: string
+    label: Communication baud rate
+  double_encoder:
+    type: string
+    label: Dual encoder
+  built_in_driver:
+    type: string
+    label: Built-in driver
+  weight_kg:
+    type: number
+    label: Weight (kg)
+  variant:
+    type: string
+    label: Variant (reducer / module)

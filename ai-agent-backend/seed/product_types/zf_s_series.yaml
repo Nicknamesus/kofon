@@ -1,13 +1,14 @@
 # Promoted from 2 draft(s) under seed/drafts/.
 # Sources: 112.product_type, 85.product_type
 code: zf_s_series
-name: ZF-S Series
-family: Planetary gearbox
+name: Two-speed planetary gearbox (ZF-S)
+family: Precision Planetary Gearbox
 description: 'ZF-S two-stage planetary gearbox series, designed for machine tool spindle
   drives. Suitable for lathes (horizontal B5) and vertical machining centers (vertical
   V1), excelling in low-speed high-torque applications. Features coaxial output, helical
   gear design for low noise, low backlash, high radial load capacity, and 24V DC shift-by-wire
   actuation. Available in four frame sizes: 2S250, 2S300, 2S450, 2S600.'
+product_page_url: https://www.kofon.com.cn/products_detail/112.html
 spec_schema:
   frame_size:
     type: string

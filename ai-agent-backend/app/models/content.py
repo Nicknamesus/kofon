@@ -78,6 +78,7 @@ class ProductType(Base):
     name: Mapped[str] = mapped_column(Text, nullable=False)
     family: Mapped[str] = mapped_column(Text, nullable=False)
     description: Mapped[str] = mapped_column(Text, nullable=False)
+    product_page_url: Mapped[str | None] = mapped_column(Text)
     spec_schema: Mapped[dict[str, Any]] = mapped_column(JSONB, nullable=False)
 
 

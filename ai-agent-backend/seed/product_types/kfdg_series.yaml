@@ -1,8 +1,8 @@
 # Promoted from 2 draft(s) under seed/drafts/.
 # Sources: 43.product_type, 44.product_type
 code: kfdg_series
-name: KFDG Series Direct-Coupled Electric Cylinder
-family: Linear actuator
+name: Direct-drive electric cylinder (KFDG)
+family: Planetary Roller Screw
 description: KFDG series direct-coupled electric cylinders integrate a servo motor,
   servo drive, and high-precision ball screw in a modular design. The servo motor
   connects directly to the transmission screw, eliminating intermediate inertia and
@@ -11,6 +11,7 @@ description: KFDG series direct-coupled electric cylinders integrate a servo mot
   offering high strength, high speed, high precision, smooth motion, and low noise.
   Thrust range from 1.5 kN to 30 kN, speeds up to 500 mm/s (1 m/s with special screws),
   and strokes up to 1 m.
+product_page_url: https://www.kofon.com.cn/products_detail/43.html
 spec_schema:
   frame_size_mm:
     type: integer

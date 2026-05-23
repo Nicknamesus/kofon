@@ -7,8 +7,8 @@
 # distinguished via `frame_size_mm` on each SKU.
 
 code: r_series
-name: R Series
-family: Planetary gearbox
+name: General-purpose planetary gearbox (R)
+family: Precision Planetary Gearbox
 description: >-
   General-purpose inline planetary gearbox family. Available in 1-, 2-,
   and 3-stage configurations with reduction ratios from 3:1 through
@@ -17,6 +17,7 @@ description: >-
   high-precision CaesarPlanetary line, but suitable across a broad set
   of motion-control use cases.
 
+product_page_url: https://www.kofon.com.cn/products_detail/121.html
 spec_schema:
   frame_size_mm:
     type: integer

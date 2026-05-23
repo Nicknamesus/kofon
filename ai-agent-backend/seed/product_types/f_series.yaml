@@ -1,0 +1,34 @@
+code: f_series
+name: Precision planetary gearbox (F-series)
+family: Precision Planetary Gearbox
+description: >-
+  F-series precision planetary gearboxes from Kofon. Available in frame sizes 070/090/120/160 mm and four sub-variants per frame: FL (low backlash), FX (high precision), FG (high torque), and FH (heavy-duty). Suitable for general servo-driven motion control.
+product_page_url: https://www.kofon.com.cn/products_detail/1.html
+spec_schema:
+  frame_size_mm:
+    type: string
+    label: Frame size (mm)
+  stages:
+    type: integer
+    label: Number of stages
+  ratio:
+    type: number
+    label: Reduction ratio
+  nominal_torque_nm:
+    type: number
+    label: Rated output torque (Nm)
+  peak_torque_nm:
+    type: number
+    label: Peak output torque (Nm)
+  backlash_arcmin:
+    type: number
+    label: Backlash (arcmin)
+  input_speed_rpm_max:
+    type: integer
+    label: Max input speed (rpm)
+  efficiency_pct:
+    type: number
+    label: Efficiency (%)
+  weight_kg:
+    type: number
+    label: Weight (kg)

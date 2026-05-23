@@ -2,14 +2,15 @@
 # Merged LLM codes: w10_micro, w12_micro, w8_micro, w_series
 # Sources: 25.product_type, 26.product_type, 27.product_type, pdf_4_-w_304708.product_type
 code: w_series
-name: W8 Micro Gearbox
-family: Planetary gearbox
+name: Micro planetary gearbox (W)
+family: Precision Planetary Gearbox
 description: W8 micro planetary gearbox series from Kofon. Designed for low-speed,
   high-torque applications in small spaces such as humanoid robot joints and drones.
   Features hardened gear hobbing, integrated front-flange ring gear, high torque,
   impact resistance, low noise, and grease lubrication (maintenance-free). Available
   in frame sizes 08/10/12/16/19/22/26/32 with single, double, triple, and quadruple
   stage configurations.
+product_page_url: https://www.kofon.com.cn/products_detail/25.html
 spec_schema:
   frame_size_mm:
     type: integer

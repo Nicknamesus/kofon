@@ -1,14 +1,15 @@
 # Promoted from 1 draft(s) under seed/drafts/.
 # Sources: 35.product_type
 code: pwjy_series
-name: PWJY Series
-family: Planetary gearbox
+name: Belt-conveyor planetary drive (PWJY)
+family: Precision Planetary Gearbox
 description: PWJY series planetary gearboxes from Kofon, featuring an integrated planetary
   gear structure with high efficiency and stable performance. They include a high-strength
   alloy steel roller (surface can be rubber-coated), an efficient electromagnetic
   brake for direct braking of the power shaft, smart sensors for remote monitoring,
   and an integrated cast support frame. Designed for horizontal installation with
   industrial gear oil lubrication.
+product_page_url: https://www.kofon.com.cn/products_detail/35.html
 spec_schema:
   frame_size_mm:
     type: string

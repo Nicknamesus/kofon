@@ -1,0 +1,25 @@
+code: planetary_roller_screw
+name: Planetary roller screw
+family: Planetary Roller Screw
+description: >-
+  Planetary roller screw assemblies from Kofon. Higher load capacity, higher rigidity, and longer life than equivalent-sized ball screws, at the cost of higher cost-per-unit. Used in high-thrust electric cylinders and precision linear actuators.
+product_page_url: https://www.kofon.com.cn/products_detail/46.html
+spec_schema:
+  screw_diameter_mm:
+    type: number
+    label: Screw diameter (mm)
+  lead_mm:
+    type: number
+    label: Lead (mm)
+  max_thrust_kn:
+    type: number
+    label: Max thrust (kN)
+  max_speed_mm_s:
+    type: number
+    label: Max linear speed (mm/s)
+  stroke_mm:
+    type: number
+    label: Max stroke (mm)
+  precision_grade:
+    type: string
+    label: Precision grade

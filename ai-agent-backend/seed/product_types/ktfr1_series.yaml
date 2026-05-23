@@ -1,8 +1,8 @@
 # Promoted from 1 draft(s) under seed/drafts/.
 # Sources: 70.product_type
 code: ktfr1_series
-name: KTFR1 Series Planetary Gearbox
-family: Planetary gearbox
+name: Spiral-bevel gearbox (KTFR1)
+family: Spiral Bevel Gearbox
 description: KTFR1 series precision planetary gearboxes from Kofon. Features top-grade
   spiral bevel gears with optimized design for uniform tooth contact load and high
   torque output. Integrated aluminum alloy housing ensures maximum rigidity and corrosion
@@ -10,6 +10,7 @@ description: KTFR1 series precision planetary gearboxes from Kofon. Features top
   Grade 6 precision. Available in frame sizes KT070 through KT240, with single, double,
   and triple stage configurations offering ratios from 1:1 to 100:1. Suitable for
   precision servo applications with low backlash and high efficiency.
+product_page_url: https://www.kofon.com.cn/products_detail/70.html
 spec_schema:
   frame_size_mm:
     type: integer
