@@ -33,6 +33,7 @@ from sqlalchemy import select
 from app.agent.llm import get_chat_llm
 from app.agent.state import AgentState
 from app.db import SessionLocal
+from app.i18n import language_instruction, t
 from app.models import ProductType
 from app.tools import build_custom_config
 
@@ -65,6 +66,7 @@ class _Extraction(BaseModel):
 async def run(state: AgentState) -> dict:
     slots = state.get("slots") or {}
     customize = dict(slots.get("customize") or {})
+    lang = state.get("language")
 
     family_code = customize.get("family_code") or (
         slots.get("filters") or {}
@@ -99,12 +101,13 @@ async def run(state: AgentState) -> dict:
                 )
             ).scalars().all()
         example_block = (
-            f" (e.g. {', '.join(examples)})" if examples else ""
+            t("gc_examples_lead_in", lang, examples=", ".join(examples))
+            if examples else ""
         )
         return {
             "messages": [
                 AIMessage(
-                    content=f"Which family do you want to configure?{example_block}"
+                    content=t("gc_which_family", lang, example_block=example_block)
                 )
             ],
             "slots": {
@@ -125,7 +128,7 @@ async def run(state: AgentState) -> dict:
                     family_name=family.name,
                     schema_block=schema_block,
                     min_filled=MIN_FILLED,
-                )
+                ) + language_instruction(lang)
             ),
             *state.get("messages", []),
         ]
@@ -143,7 +146,7 @@ async def run(state: AgentState) -> dict:
     if not ready:
         question = (
             extraction.follow_up_question
-            or f"What {next(iter(schema.keys()), 'value')} are you targeting?"
+            or t("gc_what_target", lang, key=next(iter(schema.keys()), "value"))
         )
         return {
             "messages": [AIMessage(content=question)],
@@ -164,15 +167,16 @@ async def run(state: AgentState) -> dict:
         )
 
     closest = (
-        f"\n\nClosest stock SKU: **{config.closest_stock_sku}** — we could "
-        "start from there if you don't need a custom."
+        t("gc_closest_suffix", lang, sku=config.closest_stock_sku)
         if config.closest_stock_sku
         else ""
     )
-    summary = (
-        f"Here's the custom **{config.family_name}** build I've put "
-        f"together:\n\n_{config.rationale}_{closest}\n\nWant me to send "
-        "this to a sales engineer for pricing?"
+    summary = t(
+        "gc_summary",
+        lang,
+        family_name=config.family_name,
+        rationale=config.rationale,
+        closest=closest,
     )
 
     return {
@@ -185,9 +189,9 @@ async def run(state: AgentState) -> dict:
             {
                 "kind": "gate",
                 "payload": {
-                    "question": "Send this to sales for a quote?",
-                    "yes_label": "Yes, request a quote",
-                    "no_label": "No, talk to an engineer first",
+                    "question": t("gc_quote_question", lang),
+                    "yes_label": t("gate_yes_request_quote", lang),
+                    "no_label": t("gate_no_engineer_first", lang),
                 },
             },
         ],

@@ -23,6 +23,7 @@ from pydantic import BaseModel, Field
 
 from app.agent.llm import get_chat_llm
 from app.agent.state import AgentState
+from app.i18n import t
 
 CONFIDENCE_FLOOR = 0.6
 RECLASSIFY_MAX_ATTEMPTS = 2
@@ -53,6 +54,7 @@ async def run(state: AgentState) -> dict:
     slots = state.get("slots") or {}
     other = dict(slots.get("other") or {})
     attempts = int(other.get("reclassify_attempts", 0))
+    lang = state.get("language")
 
     last_human = next(
         (m for m in reversed(state.get("messages", []))
@@ -61,11 +63,11 @@ async def run(state: AgentState) -> dict:
     )
 
     if last_human is None:
-        return _free_chat_reply(other, attempts, "Hi — what can I help with?")
+        return _free_chat_reply(other, attempts, t("or_what_help", lang), lang)
 
     llm = get_chat_llm(temperature=0).with_structured_output(_Reclass)
     pick: _Reclass = await llm.ainvoke(
-        [SystemMessage(content=SYSTEM), last_human]
+        [SystemMessage(content=SYSTEM), last_human]  # router output is structured, no need to localize
     )
     flow = (pick.flow or "other").strip().lower()
 
@@ -88,19 +90,14 @@ async def run(state: AgentState) -> dict:
         return {
             "outcome": "human_handoff",
             "messages": [
-                AIMessage(
-                    content=(
-                        "I'm not finding a path that fits — let me connect you "
-                        "with a human who can help."
-                    )
-                )
+                AIMessage(content=t("or_no_path", lang))
             ],
             "cards": [
                 {
                     "kind": "outcome",
                     "payload": {
                         "outcome": "human_handoff",
-                        "title": "Connecting you with a human",
+                        "title": t("title_connecting_human", lang),
                         "next_step": "human",
                     },
                 }
@@ -116,14 +113,12 @@ async def run(state: AgentState) -> dict:
     return _free_chat_reply(
         other,
         attempts,
-        "Happy to chat — but I'm best at three things: helping you "
-        "pick a product, configuring one, or troubleshooting a unit "
-        "you already have. Which of those sounds closest? (Or I can "
-        "connect you with a human.)",
+        t("or_free_chat", lang),
+        lang,
     )
 
 
-def _free_chat_reply(other: dict, attempts: int, text: str) -> dict:
+def _free_chat_reply(other: dict, attempts: int, text: str, lang: str | None) -> dict:
     return {
         "messages": [AIMessage(content=text)],
         "slots": {
@@ -134,9 +129,9 @@ def _free_chat_reply(other: dict, attempts: int, text: str) -> dict:
                 "kind": "suggest",
                 "payload": {
                     "replies": [
-                        "I'm choosing a product",
-                        "I have a broken unit",
-                        "Talk to a human",
+                        t("or_reply_choosing", lang),
+                        t("or_reply_broken", lang),
+                        t("or_reply_human", lang),
                     ]
                 },
             }

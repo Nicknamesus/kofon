@@ -118,6 +118,7 @@ async def post_message(payload: MessageRequest) -> StreamingResponse:
         graph_input: dict = {
             "session_uuid": payload.session_uuid,
             "conversation_id": conversation_id,
+            "language": payload.language,
         }
         if user_text:
             graph_input["messages"] = [HumanMessage(content=user_text)]

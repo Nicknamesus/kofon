@@ -17,6 +17,7 @@ from langchain_core.messages import AIMessage, SystemMessage
 
 from app.agent.llm import get_chat_llm
 from app.agent.state import AgentState
+from app.i18n import language_instruction, t
 
 
 _BASE = (
@@ -56,12 +57,14 @@ _OUTCOME_FLAVOR = {
 async def run(state: AgentState) -> dict:
     outcome = state.get("outcome") or "human_handoff"
     messages = state.get("messages", [])
+    lang = state.get("language")
 
     system = SystemMessage(
         content=(
             _BASE.format(outcome=outcome)
             + "\n\n"
             + _OUTCOME_FLAVOR.get(outcome, "")
+            + language_instruction(lang)
         )
     )
 
@@ -73,10 +76,7 @@ async def run(state: AgentState) -> dict:
         text = ""
 
     if not text:
-        text = (
-            "Thanks — I've passed that along. Anything else you'd like "
-            "to add for the engineer who'll be in touch?"
-        )
+        text = t("poc_fallback", lang)
 
     return {
         "messages": [AIMessage(content=text)],

@@ -12,6 +12,7 @@ from __future__ import annotations
 from langchain_core.messages import AIMessage
 
 from app.agent.state import AgentState
+from app.i18n import t
 from app.sideeffects import (
     handle_human_handoff,
     handle_resolved,
@@ -34,15 +35,15 @@ async def outcome_sell(state: AgentState) -> dict:
     slots = state.get("slots") or {}
     candidates = slots.get("candidates") or []
     chosen = candidates[0] if candidates else None
+    lang = state.get("language")
 
     diff = await handle_sell(state)
     sideeffects = (diff.get("slots") or {}).get("sideeffects") or {}
 
     msg = (
-        f"Great — {chosen['sku']} is a solid fit. "
-        "I'll have a sales engineer reach out with a quote and lead time."
+        t("os_sell_with_sku", lang, sku=chosen["sku"])
         if chosen
-        else "Great — I'll have a sales engineer reach out with next steps."
+        else t("os_sell_generic", lang)
     )
 
     return {
@@ -55,7 +56,7 @@ async def outcome_sell(state: AgentState) -> dict:
                 "kind": "outcome",
                 "payload": {
                     "outcome": "sell",
-                    "title": "Connecting you with sales",
+                    "title": t("title_connecting_sales", lang),
                     "chosen_sku": chosen["sku"] if chosen else None,
                     "next_step": "rfq",
                     "rfq_id": sideeffects.get("rfq_id"),
@@ -69,6 +70,7 @@ async def outcome_sell(state: AgentState) -> dict:
 async def outcome_human(state: AgentState) -> dict:
     slots = state.get("slots") or {}
     postsales = slots.get("postsales") or {}
+    lang = state.get("language")
     # Pick a reason / priority based on what brought us here.
     if postsales.get("low_confidence_escalation"):
         reason = "low_confidence_kb_match"
@@ -86,10 +88,7 @@ async def outcome_human(state: AgentState) -> dict:
     diff = await handle_human_handoff(state, reason=reason, priority=priority)
     sideeffects = (diff.get("slots") or {}).get("sideeffects") or {}
 
-    msg = (
-        "Got it — let me hand you off to one of our application engineers. "
-        "They'll have more options than my catalog covers."
-    )
+    msg = t("oh_engineer_msg", lang)
     return {
         "messages": [AIMessage(content=msg)],
         "outcome": "human_handoff",
@@ -100,7 +99,7 @@ async def outcome_human(state: AgentState) -> dict:
                 "kind": "outcome",
                 "payload": {
                     "outcome": "human_handoff",
-                    "title": "Connecting you with an engineer",
+                    "title": t("title_connecting_engineer", lang),
                     "next_step": "human",
                     "ticket_id": sideeffects.get("ticket_id"),
                     "division_code": sideeffects.get("division_code"),
@@ -120,15 +119,14 @@ async def outcome_resolved(state: AgentState) -> dict:
     postsales = slots.get("postsales") or {}
     solution = postsales.get("candidate_solution") or {}
     label = postsales.get("candidate_problem_label")
+    lang = state.get("language")
 
     await handle_resolved(state)
 
     msg = (
-        f"Glad that worked. If the symptom comes back, mention "
-        f"**{label}** to support so they can pick up where we left off."
+        t("ores_glad_worked_label", lang, label=label)
         if label
-        else "Glad that worked. If the symptom comes back, just open a "
-        "new chat and we'll dig in again."
+        else t("ores_glad_worked", lang)
     )
 
     return {
@@ -140,7 +138,7 @@ async def outcome_resolved(state: AgentState) -> dict:
                 "kind": "outcome",
                 "payload": {
                     "outcome": "resolved",
-                    "title": "Issue resolved",
+                    "title": t("title_issue_resolved", lang),
                     "sop_url": solution.get("sop_url"),
                     "next_step": "feedback",
                 },

@@ -21,6 +21,7 @@ from sqlalchemy import select
 
 from app.agent.state import AgentState
 from app.db import SessionLocal
+from app.i18n import t
 from app.models import ProblemType, ProductType, Solution
 from app.schemas.tools import ProblemSummary, SolutionOut
 from app.tools import find_problems
@@ -38,7 +39,7 @@ AMBIGUOUS_FLOOR = 0.30
 
 
 async def _present_by_id(
-    problem_id: int, postsales: dict
+    problem_id: int, postsales: dict, lang: str | None = None
 ) -> dict | None:
     """Look up a problem + its top solution by id and build a presented
     response. Returns None if the id doesn't resolve."""
@@ -78,13 +79,7 @@ async def _present_by_id(
     if top_sol is None:
         return {
             "messages": [
-                AIMessage(
-                    content=(
-                        f"This looks like **{prob.label}**, but I don't "
-                        "have a self-serve fix for it on file. Let me hand "
-                        "you off to a service engineer."
-                    )
-                )
+                AIMessage(content=t("pmk_no_solution", lang, label=prob.label))
             ],
             "outcome": "human_handoff",
             "cards": [
@@ -92,7 +87,7 @@ async def _present_by_id(
                     "kind": "outcome",
                     "payload": {
                         "outcome": "human_handoff",
-                        "title": "Connecting you with service",
+                        "title": t("title_connecting_service", lang),
                         "next_step": "human",
                     },
                 }
@@ -117,10 +112,8 @@ async def _present_by_id(
         sop_url=top_sol.sop_url,
         rma_template_url=top_sol.rma_template_url,
     )
-    summary_text = (
-        f"This looks like **{prob.label}**.\n\n"
-        f"_{sol_out.summary}_\n\n"
-        "Did that fix it?"
+    summary_text = t(
+        "pmk_match_summary", lang, label=prob.label, summary=sol_out.summary
     )
     return {
         "messages": [AIMessage(content=summary_text)],
@@ -136,9 +129,9 @@ async def _present_by_id(
             {
                 "kind": "gate",
                 "payload": {
-                    "question": "Did that fix the issue?",
-                    "yes_label": "Yes, fixed",
-                    "no_label": "No, still broken",
+                    "question": t("pmk_did_that_fix", lang),
+                    "yes_label": t("gate_yes_fixed", lang),
+                    "no_label": t("gate_no_still_broken", lang),
                 },
             },
         ],
@@ -162,12 +155,13 @@ async def _present_by_id(
 async def run(state: AgentState) -> dict:
     slots = state.get("slots") or {}
     postsales = dict(slots.get("postsales") or {})
+    lang = state.get("language")
 
     # Deterministic pick from the UI's candidate shortlist — skip the
     # vector search entirely and present the chosen problem by id.
     picked_id = slots.get("picked_problem_id")
     if picked_id:
-        result = await _present_by_id(int(picked_id), postsales)
+        result = await _present_by_id(int(picked_id), postsales, lang)
         if result is not None:
             return result
         # Fell through — id didn't resolve. Fall back to vector path.
@@ -178,7 +172,7 @@ async def run(state: AgentState) -> dict:
     if not symptom:
         # Shouldn't reach here — identify gates on symptom — but be safe.
         return {
-            "messages": [AIMessage(content="What's the symptom you're seeing?")],
+            "messages": [AIMessage(content=t("pi_what_symptom", lang))],
             "current_node": "postsales.match_kb",
         }
 
@@ -192,10 +186,7 @@ async def run(state: AgentState) -> dict:
         # Either no rows at all, or the closest row is far enough away
         # that even offering it as a candidate would be misleading
         # (e.g. unrelated symptom against a gearbox-only KB).
-        msg = (
-            "I don't have any known issues that look like this in my "
-            "catalog. Let me connect you with a service engineer."
-        )
+        msg = t("pmk_no_match", lang)
         return {
             "messages": [AIMessage(content=msg)],
             "outcome": "human_handoff",
@@ -204,7 +195,7 @@ async def run(state: AgentState) -> dict:
                     "kind": "outcome",
                     "payload": {
                         "outcome": "human_handoff",
-                        "title": "Connecting you with service",
+                        "title": t("title_connecting_service", lang),
                         "next_step": "human",
                     },
                 }
@@ -233,17 +224,15 @@ async def run(state: AgentState) -> dict:
         ]
         return {
             "messages": [
-                AIMessage(
-                    content=(
-                        "I'm not 100% sure which issue this is — does any of "
-                        "the following look closest to what you're seeing?"
-                    )
-                )
+                AIMessage(content=t("pmk_ambiguous_intro", lang))
             ],
             "cards": [
                 {
                     "kind": "problem_candidates",
-                    "payload": {"candidates": candidates_payload},
+                    "payload": {
+                        "candidates": candidates_payload,
+                        "title": t("pmk_closest_matches", lang),
+                    },
                 }
             ],
             "slots": {
@@ -261,13 +250,7 @@ async def run(state: AgentState) -> dict:
         # We matched a problem with no curated solution — escalate gracefully.
         return {
             "messages": [
-                AIMessage(
-                    content=(
-                        f"This looks like **{top.problem.label}**, but I don't "
-                        "have a self-serve fix for it on file. Let me hand you "
-                        "off to a service engineer."
-                    )
-                )
+                AIMessage(content=t("pmk_no_solution", lang, label=top.problem.label))
             ],
             "outcome": "human_handoff",
             "cards": [
@@ -275,7 +258,7 @@ async def run(state: AgentState) -> dict:
                     "kind": "outcome",
                     "payload": {
                         "outcome": "human_handoff",
-                        "title": "Connecting you with service",
+                        "title": t("title_connecting_service", lang),
                         "next_step": "human",
                     },
                 }
@@ -290,10 +273,8 @@ async def run(state: AgentState) -> dict:
             "current_node": "postsales.match_kb.no_solution",
         }
 
-    summary = (
-        f"This looks like **{top.problem.label}**.\n\n"
-        f"_{sol.summary}_\n\n"
-        "Did that fix it?"
+    summary = t(
+        "pmk_match_summary", lang, label=top.problem.label, summary=sol.summary
     )
 
     return {
@@ -310,9 +291,9 @@ async def run(state: AgentState) -> dict:
             {
                 "kind": "gate",
                 "payload": {
-                    "question": "Did that fix the issue?",
-                    "yes_label": "Yes, fixed",
-                    "no_label": "No, still broken",
+                    "question": t("pmk_did_that_fix", lang),
+                    "yes_label": t("gate_yes_fixed", lang),
+                    "no_label": t("gate_no_still_broken", lang),
                 },
             },
         ],

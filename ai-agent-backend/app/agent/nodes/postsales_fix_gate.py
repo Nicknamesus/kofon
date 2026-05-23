@@ -6,27 +6,51 @@ combine to decide the outcome:
   1. UI button click (`yes` / `no`) — strongest signal, bypasses the LLM.
   2. The curated `solutions.confidence` we showed (1..5). Low confidence
      biases toward escalation even on a tentative 'yes'.
-  3. An LLM 'yes' / 'no' / 'unclear' classification of the free-text
-     reply, with one re-ask before falling through.
+  3. An LLM classification of the free-text reply into one of yes / no /
+     question / unclear, with one re-ask before falling through.
 
-The LLM only paraphrases the outcome — it doesn't decide it.
+Asking a question about the proposed fix is NOT an escalation signal —
+the agent answers it (grounded on the candidate solution) and re-emits
+the gate so the user can still confirm or reject.
 
 Slot keys (under slots.postsales):
-  fix_gate_attempts            int
+  fix_gate_attempts            int — only bumped on yes/no/unclear, NOT
+                                     on a question turn.
   fixed                        bool — set on the yes path
 """
 
 from __future__ import annotations
 
+import json
+
 from langchain_core.messages import AIMessage, HumanMessage, SystemMessage
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 from app.agent.llm import get_chat_llm
 from app.agent.state import AgentState
+from app.i18n import language_instruction, t
 
-SYSTEM = (
-    "Classify the user's reply to 'Did that fix the issue?'. "
-    "Return 'yes' if the fix worked, 'no' if it didn't, 'unclear' otherwise."
+_CLASSIFY_SYSTEM = (
+    "Classify the user's reply to 'Did that fix the issue?'.\n\n"
+    "Buckets (pick exactly one):\n"
+    "  yes      — the fix worked.\n"
+    "  no       — the fix didn't work or the user wants a human / "
+    "service engineer.\n"
+    "  question — the user is asking for clarification about the "
+    "proposed fix (what a step means, how to verify, how long it "
+    "takes, etc.) BEFORE deciding whether it worked.\n"
+    "  unclear  — you genuinely can't tell."
+)
+
+_ANSWER_SYSTEM = (
+    "You are a B2B motion-components support chatbot. The customer "
+    "was just shown the following problem / solution and is asking a "
+    "follow-up question about it. Answer concisely using ONLY the "
+    "data below — if the answer isn't there, say so honestly. Don't "
+    "claim to be 'connecting' anyone or restart the diagnostic. "
+    "Finish your reply with a brief nudge asking whether the fix "
+    "worked or if they need more help.\n\n"
+    "Problem & solution (JSON):\n{context_json}"
 )
 
 # Solutions with confidence at or below this stay on the human path when
@@ -36,7 +60,7 @@ LOW_CONFIDENCE_FLOOR = 2
 
 
 class _Verdict(BaseModel):
-    verdict: str  # 'yes' | 'no' | 'unclear'
+    verdict: str = Field(description="One of: yes, no, question, unclear")
 
 
 async def run(state: AgentState) -> dict:
@@ -45,6 +69,7 @@ async def run(state: AgentState) -> dict:
     attempts = int(postsales.get("fix_gate_attempts", 0))
     solution = postsales.get("candidate_solution") or {}
     confidence = int(solution.get("confidence", 0) or 0)
+    lang = state.get("language")
 
     last_human = next(
         (m for m in reversed(state.get("messages", []))
@@ -54,7 +79,7 @@ async def run(state: AgentState) -> dict:
 
     if last_human is None:
         return {
-            "messages": [AIMessage(content="Did that fix the issue?")],
+            "messages": [AIMessage(content=t("pfg_did_fix", lang))],
             "current_node": "postsales.fix_gate",
         }
 
@@ -65,11 +90,14 @@ async def run(state: AgentState) -> dict:
     else:
         llm = get_chat_llm(temperature=0).with_structured_output(_Verdict)
         v: _Verdict = await llm.ainvoke(
-            [SystemMessage(content=SYSTEM), last_human]
+            [SystemMessage(content=_CLASSIFY_SYSTEM), last_human]
         )
-        verdict = v.verdict.strip().lower()
-        if verdict not in {"yes", "no"}:
+        verdict = (v.verdict or "unclear").strip().lower()
+        if verdict not in {"yes", "no", "question", "unclear"}:
             verdict = "unclear"
+
+    if verdict == "question":
+        return await _answer_and_reprompt(state, last_human, postsales, lang)
 
     if verdict == "yes":
         # Low-confidence solution? Don't claim resolved — bump to human
@@ -113,12 +141,7 @@ async def run(state: AgentState) -> dict:
     if attempts == 0:
         return {
             "messages": [
-                AIMessage(
-                    content=(
-                        "Sorry — just to confirm, did that resolve the issue, "
-                        "or is it still happening?"
-                    )
-                )
+                AIMessage(content=t("pfg_reask", lang))
             ],
             "slots": {
                 "postsales": {
@@ -138,4 +161,52 @@ async def run(state: AgentState) -> dict:
             }
         },
         "current_node": "postsales.fix_gate",
+    }
+
+
+async def _answer_and_reprompt(
+    state: AgentState,
+    last_human: HumanMessage,
+    postsales: dict,
+    lang: str | None,
+) -> dict:
+    """Answer a follow-up question about the proposed fix and re-emit
+    the gate. `fixed` stays None and `fix_gate_attempts` is not bumped
+    — a question is a normal turn, not a failed gate attempt.
+    """
+    context = {
+        "problem_label": postsales.get("candidate_problem_label"),
+        "solution": postsales.get("candidate_solution"),
+        "symptom": postsales.get("symptom"),
+        "sku": postsales.get("sku"),
+    }
+    context_json = json.dumps(context, ensure_ascii=False, default=str)
+
+    llm = get_chat_llm(temperature=0.2)
+    reply = await llm.ainvoke(
+        [
+            SystemMessage(
+                content=_ANSWER_SYSTEM.format(context_json=context_json)
+                + language_instruction(lang)
+            ),
+            last_human,
+        ]
+    )
+    answer = (getattr(reply, "content", "") or "").strip()
+    messages: list = []
+    if answer:
+        messages.append(AIMessage(content=answer))
+    return {
+        "messages": messages or [AIMessage(content=t("pfg_anything_else", lang))],
+        "cards": [
+            {
+                "kind": "gate",
+                "payload": {
+                    "question": t("pfg_anything_else", lang),
+                    "yes_label": t("gate_yes_fixed", lang),
+                    "no_label": t("gate_no_still_broken", lang),
+                },
+            }
+        ],
+        "current_node": "postsales.fix_gate.question",
     }

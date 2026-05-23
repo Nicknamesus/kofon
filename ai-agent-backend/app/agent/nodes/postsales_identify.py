@@ -21,6 +21,7 @@ from pydantic import BaseModel, Field
 
 from app.agent.llm import get_chat_llm
 from app.agent.state import AgentState
+from app.i18n import language_instruction, t
 
 SYSTEM = """You are the Post-Sales identify node of a B2B motion-components
 chatbot. Extract:
@@ -97,6 +98,7 @@ async def run(state: AgentState) -> dict:
     slots = state.get("slots") or {}
     postsales = dict(slots.get("postsales") or {})
     messages = state.get("messages", [])
+    lang = state.get("language")
 
     # Fast path: we just presented an ambiguous shortlist and the user
     # replied. Treat that reply as the refined symptom directly — the LLM
@@ -124,7 +126,7 @@ async def run(state: AgentState) -> dict:
 
     llm = get_chat_llm(temperature=0).with_structured_output(_Extraction)
     extraction: _Extraction = await llm.ainvoke(
-        [SystemMessage(content=SYSTEM), *messages]
+        [SystemMessage(content=SYSTEM + language_instruction(lang)), *messages]
     )
 
     # Carry forward anything we already had; the LLM may only see new info.
@@ -140,8 +142,7 @@ async def run(state: AgentState) -> dict:
     if not symptom:
         question = (
             extraction.follow_up_question
-            or "I'm sorry to hear that — could you tell me what the unit "
-            "is doing, or what isn't working as expected?"
+            or t("pi_sorry_what_doing", lang)
         )
         return {
             "messages": [AIMessage(content=question)],

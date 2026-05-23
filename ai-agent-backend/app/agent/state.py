@@ -57,3 +57,7 @@ class AgentState(TypedDict, total=False):
 
     # Terminal state — set by outcome_* nodes only.
     outcome: str | None       # 'sell' | 'human_handoff' | 'resolved' | 'abandoned'
+
+    # Widget-selected language code (EN | DE | KO | ZH). Every node reads
+    # this and emits user-facing text in that language; see app.i18n.
+    language: str | None

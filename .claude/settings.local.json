@@ -80,7 +80,18 @@
       "Bash(diff -q /x/programming/websites/kofon/agent-hardcoded/app/sideeffects/routing.yaml /x/programming/websites/kofon/ai-agent-backend/app/sideeffects/routing.yaml)",
       "Bash(echo \"routing OK\")",
       "Bash(diff -q /x/programming/websites/kofon/agent-hardcoded/app/agent/nodes/guide_find.py /x/programming/websites/kofon/ai-agent-backend/app/agent/nodes/guide_find.py)",
-      "Bash(echo \"guide_find OK\")"
+      "Bash(echo \"guide_find OK\")",
+      "Bash(python -c \"from app import i18n; from app.agent.state import AgentState; from app.agent.nodes import guide_find, guide_customize, guide_happy_gate, postsales_identify, postsales_match_kb, postsales_fix_gate, presales_figure_out, other_reclassify, outcomes, post_outcome_chat; from app.routers import agent; print\\('imports ok'\\)\")",
+      "Bash(.venv/Scripts/python -c \"from app import i18n; from app.agent.state import AgentState; from app.agent.nodes import guide_find, guide_customize, guide_happy_gate, postsales_identify, postsales_match_kb, postsales_fix_gate, presales_figure_out, other_reclassify, outcomes, post_outcome_chat; from app.routers import agent; print\\('imports ok'\\); print\\('sample:', i18n.t\\('gate_yes_works', 'ZH'\\)\\)\")",
+      "Bash(PYTHONIOENCODING=utf-8 .venv/Scripts/python -c \"from app import i18n; print\\(i18n.t\\('gate_yes_works', 'ZH'\\)\\); print\\(i18n.t\\('pmk_match_summary', 'KO', label='backlash', summary='Re-preload required'\\)\\); print\\(i18n.language_instruction\\('DE'\\)\\)\")",
+      "Bash(PYTHONIOENCODING=utf-8 .venv/Scripts/python -c \"from app.agent.graph import build_graph; g = build_graph\\(\\); print\\('graph compiled, nodes:', list\\(g.nodes\\)\\)\")",
+      "Bash(docker info *)",
+      "Bash(C:\\\\Program Files\\\\Docker\\\\Docker\\\\Docker Desktop.exe *)",
+      "Bash(.venv/Scripts/python -m alembic upgrade head)",
+      "Bash(PYTHONIOENCODING=utf-8 .venv/Scripts/python -m app.agent.smoke_i18n_zh)",
+      "Bash(PYTHONIOENCODING=utf-8 .venv/Scripts/python -c \"from app.agent.graph import build_graph; g = build_graph\\(\\); print\\('graph compiled OK'\\)\")",
+      "Bash(PYTHONIOENCODING=utf-8 .venv/Scripts/python -c ' *)",
+      "Bash(PYTHONIOENCODING=utf-8 .venv/Scripts/python -c \"from app.agent.graph import build_graph; from app import i18n; g = build_graph\\(\\); print\\('graph compiled, nodes:', len\\(list\\(g.nodes\\)\\)\\); print\\('ZH yes:', i18n.t\\('gate_yes_works', 'ZH'\\)\\)\")"
     ]
   }
 }
