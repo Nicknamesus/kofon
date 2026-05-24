@@ -357,12 +357,17 @@ async def _resolve_family_from_conversation(
     for f in all_families:
         if text == f.code or text == f.name.lower():
             return f
-    # Partial match: user text appears in family name/code, or vice versa.
-    for f in all_families:
-        if f.code in text or text in f.code or text in f.name.lower() or f.name.lower() in text:
-            return f
+    # Partial match — only use if exactly one family matches, otherwise
+    # fall through to the LLM which can disambiguate.
+    partial = [
+        f for f in all_families
+        if f.code in text or text in f.code
+        or text in f.name.lower() or f.name.lower() in text
+    ]
+    if len(partial) == 1:
+        return partial[0]
 
-    # LLM fallback: ask the model to pick from the catalog.
+    # LLM fallback: handles ambiguous input like "harmonic gear" (10+ families).
     families_block = "\n".join(
         f"- `{f.code}` — {f.name} ({f.family})" for f in all_families
     )
