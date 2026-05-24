@@ -85,12 +85,24 @@
     utilities: [
       {
         flow: "guide", subflow: "customize", icon: "sparkle", label: "Custom build",
-        seed: "I want to customize a gearbox for my application."
+        seed: "I'd like to configure a custom gearbox build."
       },
-      { flow: "leadtime", icon: "clock", label: "Lead times" },
-      { flow: "datasheet", icon: "file", label: "Get a datasheet" },
-      { flow: "expo", icon: "expo", label: "We met at an expo" },
-      { flow: "human", icon: "user", label: "Talk to a human" },
+      {
+        flow: "leadtime", icon: "clock", label: "Lead times",
+        seed: "What are your current lead times?"
+      },
+      {
+        flow: "datasheet", icon: "file", label: "Get a datasheet",
+        seed: "I need a product datasheet."
+      },
+      {
+        flow: "expo", icon: "expo", label: "We met at an expo",
+        seed: "We met at a trade show — picking up where we left off."
+      },
+      {
+        flow: "human", icon: "user", label: "Talk to a human",
+        seed: "Connect me with an engineer."
+      },
     ],
 
     /* ----- Bottom-of-welcome resource links ----- */

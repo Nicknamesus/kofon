@@ -839,6 +839,13 @@
   margin-right: 4px;
 }
 
+.aiagent-inline-link {
+  color: var(--aiagent-primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+.aiagent-inline-link:hover { text-decoration: underline; }
+
 .aiagent-card-hint {
   font-size: 11.5px;
   color: var(--aiagent-text-muted);

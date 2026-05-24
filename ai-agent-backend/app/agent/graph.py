@@ -116,8 +116,13 @@ def _entry_dispatch(state: AgentState) -> str:
         # via the post-outcome chat node so the conversation stays open.
         return "post_outcome_chat"
 
-    flow = state.get("flow")
     slots = state.get("slots") or {}
+
+    # Fast lane: "Talk to a human" utility chip bypasses all flow logic.
+    if slots.get("force_human"):
+        return "outcome_human"
+
+    flow = state.get("flow")
 
     if not flow:
         return "entry_router"

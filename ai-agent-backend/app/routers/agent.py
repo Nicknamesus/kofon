@@ -85,6 +85,11 @@ class MessageRequest(BaseModel):
         description="Structured spec values from the customisation form widget. "
         "Keyed by spec_schema keys (e.g. frame_size_mm, ratio).",
     )
+    force_human: bool = Field(
+        default=False,
+        description="Fast-lane signal from the 'Talk to a human' utility chip. "
+        "Bypasses flow routing and goes straight to outcome_human.",
+    )
 
 
 @router.post("/sessions", response_model=SessionStartResponse)
@@ -136,6 +141,8 @@ async def post_message(payload: MessageRequest) -> StreamingResponse:
         if payload.subflow == "customize":
             # Trip the guide.customize branch in _guide_dispatch.
             slot_input["customize"] = {"active": True}
+        if payload.force_human:
+            slot_input["force_human"] = True
         if payload.custom_modules:
             slot_input["custom_modules_submitted"] = payload.custom_modules
         if payload.picked_problem_id:

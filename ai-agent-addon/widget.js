@@ -77,6 +77,8 @@
     config_form_title: { EN: "Configure {family}",  DE: "{family} konfigurieren",   KO: "{family} 구성",           ZH: "配置 {family}" },
     config_submit:     { EN: "Find closest match",  DE: "Nächstes Produkt finden",  KO: "가장 가까운 제품 찾기",     ZH: "查找最接近的产品" },
     config_optional:   { EN: "All fields optional — fill in what you know.", DE: "Alle Felder optional — tragen Sie ein, was Sie wissen.", KO: "모든 필드 선택 사항 — 아는 값만 입력하세요.", ZH: "所有字段均为选填 — 填写您已知的参数即可。" },
+    feature_in_dev:    { EN: "This feature is currently in development. In the meantime, feel free to ask me anything else or <strong>talk to one of our engineers</strong> directly.", DE: "Diese Funktion befindet sich derzeit in Entwicklung. In der Zwischenzeit können Sie mir gerne andere Fragen stellen oder <strong>direkt mit einem unserer Ingenieure sprechen</strong>.", KO: "이 기능은 현재 개발 중입니다. 그동안 다른 질문을 해 주시거나 <strong>엔지니어와 직접 대화</strong>하실 수 있습니다.", ZH: "此功能正在开发中。您可以先问我其他问题,或<strong>直接联系我们的工程师</strong>。" },
+    datasheet_answer:  { EN: "You can browse and download all product datasheets from our <a class=\"aiagent-inline-link\" href=\"https://www.kofon.com.cn/service177/data_download782/\" target=\"_blank\" rel=\"noopener\">data downloads page</a>. If you tell me which product family you're interested in, I can help narrow it down.", DE: "Alle Produktdatenblätter finden Sie auf unserer <a class=\"aiagent-inline-link\" href=\"https://www.kofon.com.cn/service177/data_download782/\" target=\"_blank\" rel=\"noopener\">Download-Seite</a>. Sagen Sie mir, welche Produktfamilie Sie interessiert, und ich kann weiterhelfen.", KO: "모든 제품 데이터시트는 <a class=\"aiagent-inline-link\" href=\"https://www.kofon.com.cn/service177/data_download782/\" target=\"_blank\" rel=\"noopener\">데이터 다운로드 페이지</a>에서 확인하실 수 있습니다. 관심 있는 제품군을 알려주시면 더 도와드리겠습니다.", ZH: "您可以在<a class=\"aiagent-inline-link\" href=\"https://www.kofon.com.cn/service177/data_download782/\" target=\"_blank\" rel=\"noopener\">数据下载页面</a>浏览和下载所有产品数据手册。如果您告诉我感兴趣的产品系列,我可以帮您缩小范围。" },
   };
   function _t(widget, key) {
     const lang = (widget && widget.state && widget.state.language) || "EN";
@@ -498,6 +500,21 @@
         global.AIAgentAPI.resetSession();
       }
 
+      // --- Quick-tool fast paths (no backend round-trip needed) -----------
+      if (name === "leadtime" || name === "expo") {
+        const text = (opts && opts.seed) || "(hi)";
+        this.addUserMessage(text);
+        this.addBotMessage(_t(this, "feature_in_dev"));
+        return;
+      }
+      if (name === "datasheet") {
+        const text = (opts && opts.seed) || "Get me a datasheet.";
+        this.addUserMessage(text);
+        this.addBotMessage(_t(this, "datasheet_answer"));
+        return;
+      }
+
+      // --- Standard backend-routed flows ----------------------------------
       // The primary flows have a router-friendly seed; secondary
       // utilities pass through whatever the chip implied. Seeds are
       // localized so a Chinese user's first visible bubble reads in
@@ -508,34 +525,45 @@
           guide:     "I know roughly what I need — help me find products.",
           postsales: "I have a problem with a product I own.",
           other:     "I have a question.",
+          human:     "Connect me with a human engineer.",
         },
         DE: {
           presales:  "Ich möchte herausfinden, was zu meiner Anwendung passt.",
           guide:     "Ich weiß ungefähr, was ich brauche — helfen Sie mir, Produkte zu finden.",
           postsales: "Ich habe ein Problem mit einem Produkt, das ich besitze.",
           other:     "Ich habe eine Frage.",
+          human:     "Verbinden Sie mich mit einem Ingenieur.",
         },
         KO: {
           presales:  "제 응용 분야에 맞는 제품을 살펴보고 싶어요.",
           guide:     "필요한 게 대략 정해져 있어요 — 제품을 찾아 주세요.",
           postsales: "구매한 제품에 문제가 있어요.",
           other:     "질문이 하나 있어요.",
+          human:     "엔지니어와 연결해 주세요.",
         },
         ZH: {
           presales:  "我想了解一下适合我应用的产品。",
           guide:     "我大致知道需要什么 — 帮我找一下产品。",
           postsales: "我购买的产品出了问题。",
           other:     "我有一个问题。",
+          human:     "请帮我转接人工工程师。",
         },
       };
       const seedByFlow = seedsByLang[this.state.language] || seedsByLang.EN;
       const text = (opts && opts.seed) || seedByFlow[name] || "(hi)";
-      const apiFlow = (name === "presales" || name === "guide"
+      let apiFlow = (name === "presales" || name === "guide"
         || name === "postsales" || name === "other") ? name : undefined;
       const subflow = opts && opts.subflow ? opts.subflow : undefined;
+      const extra = {};
+
+      // "Talk to a human" fast lane — routes directly to outcome_human.
+      if (name === "human") {
+        apiFlow = "other";
+        extra.force_human = true;
+      }
 
       this.addUserMessage(text);
-      this._streamFromApi({ text, flow: apiFlow, subflow, language: this.state.language });
+      this._streamFromApi({ text, flow: apiFlow, subflow, ...extra, language: this.state.language });
     }
 
     /* ----- Stream a turn through the backend. ----- */
