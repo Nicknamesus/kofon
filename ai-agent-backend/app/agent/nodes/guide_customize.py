@@ -357,8 +357,9 @@ async def _resolve_family_from_conversation(
     for f in all_families:
         if text == f.code or text == f.name.lower():
             return f
+    # Partial match: user text appears in family name/code, or vice versa.
     for f in all_families:
-        if f.code in text or f.name.lower() in text:
+        if f.code in text or text in f.code or text in f.name.lower() or f.name.lower() in text:
             return f
 
     # LLM fallback: ask the model to pick from the catalog.
