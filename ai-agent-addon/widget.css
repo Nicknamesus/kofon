@@ -823,12 +823,21 @@
   cursor: default;
 }
 
-.aiagent-config-submit svg {
+.aiagent-config-form .aiagent-card-cta svg {
   display: inline-block;
   width: 14px;
   height: 14px;
   vertical-align: -2px;
   margin-right: 4px;
+}
+
+.aiagent-config-custom {
+  background: #fff !important;
+  color: var(--aiagent-primary) !important;
+  border: 1.5px solid var(--aiagent-primary);
+}
+.aiagent-config-custom:hover {
+  background: rgba(19, 33, 120, 0.06) !important;
 }
 
 .aiagent-config-form .aiagent-card-title svg {
@@ -1353,6 +1362,21 @@
   opacity: 0.55;
   cursor: not-allowed;
 }
+
+.aiagent-gate-dismiss {
+  display: block;
+  width: 100%;
+  margin-top: 6px;
+  padding: 6px 0;
+  font-size: 12px;
+  color: var(--aiagent-text-muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 160ms ease;
+}
+.aiagent-gate-dismiss:hover { color: var(--aiagent-primary); }
+.aiagent-gate-dismiss:disabled { opacity: 0.55; cursor: not-allowed; }
 
 /* ============================================================
    OUTCOME CARDS (terminal states — Sell / Human / Resolved)

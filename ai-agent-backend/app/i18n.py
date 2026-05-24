@@ -102,6 +102,27 @@ _T: dict[str, dict[str, str]] = {
         "KO": "아니요, 맞는 게 없어요",
         "ZH": "都不合适",
     },
+    "gate_just_browsing": {
+        "EN": "I just needed the info, thanks",
+        "DE": "Ich brauchte nur die Info, danke",
+        "KO": "정보만 필요했어요, 감사합니다",
+        "ZH": "我只需要了解一下,谢谢",
+    },
+    "ghg_glad_helped": {
+        "EN": "Great, glad I could help! Feel free to come back anytime "
+              "if you need a quote or have questions.",
+        "DE": "Freut mich, dass ich helfen konnte! Kommen Sie gerne "
+              "jederzeit zurück für ein Angebot oder bei Fragen.",
+        "KO": "도움이 되어 기쁩니다! 견적이 필요하거나 질문이 있으시면 "
+              "언제든 다시 찾아주세요.",
+        "ZH": "很高兴能帮到您！如果需要报价或有任何问题,随时欢迎再来。",
+    },
+    "title_glad_helped": {
+        "EN": "Glad I could help",
+        "DE": "Gerne geholfen",
+        "KO": "도움이 되어 기쁩니다",
+        "ZH": "很高兴帮到您",
+    },
 
     # ----- guide.customize -----
     "gc_which_family": {

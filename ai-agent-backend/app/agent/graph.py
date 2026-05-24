@@ -162,6 +162,8 @@ def _after_presales(state: AgentState) -> str:
 
 
 def _after_gate(state: AgentState) -> str:
+    if state.get("outcome"):
+        return END
     slots = state.get("slots") or {}
     happy = slots.get("happy")
     if happy is True:

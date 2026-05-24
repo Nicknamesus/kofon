@@ -169,6 +169,7 @@ async def run(state: AgentState) -> dict:
                     "question": t("gf_do_any_fit", lang),
                     "yes_label": t("gate_yes_works", lang),
                     "no_label": t("gate_no_fit", lang),
+                    "dismiss_label": t("gate_just_browsing", lang),
                 },
             },
         ],

@@ -68,6 +68,7 @@ class ProductOut(BaseModel):
     specs: dict[str, Any]
     datasheet_url: str | None
     cad_url: str | None
+    product_page_url: str | None = None
     lead_time_days: int | None
     status: str
 

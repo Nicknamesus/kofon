@@ -26,7 +26,7 @@ from __future__ import annotations
 
 from typing import Any
 
-from langchain_core.messages import AIMessage
+from langchain_core.messages import AIMessage, HumanMessage
 from pydantic import BaseModel, Field
 from sqlalchemy import select
 
@@ -90,10 +90,19 @@ async def run(state: AgentState) -> dict:
                 family = all_families[0]
 
     if family is None:
-        # Genuinely ambiguous — multiple families and none chosen. Ask,
-        # showing a couple of real family names from the catalog so the
-        # user has concrete options to pick from instead of "give us
-        # any family code."
+        # If we already asked and the user replied, try to resolve from text.
+        if customize.get("phase") == "collecting":
+            family = await _resolve_family_from_conversation(
+                state.get("messages", []), lang
+            )
+            if family is not None:
+                schema = family.spec_schema or {}
+                return _form_card(
+                    family, schema, {},
+                    {**customize, "family_code": family.code}, lang,
+                )
+
+    if family is None:
         async with SessionLocal() as session:
             examples = (
                 await session.execute(
@@ -301,3 +310,64 @@ def _format_schema(schema: dict) -> str:
         tail = f" — one of {enum}" if enum else ""
         lines.append(f"  - {key}: {label}{tail}")
     return "\n".join(lines)
+
+
+_FAMILY_PICK_SYSTEM = """Pick the product family the user is asking about.
+
+Available families:
+{families_block}
+
+Return the exact `code` value from the list above. If no family
+clearly matches, set code to null.
+"""
+
+
+class _FamilyChoice(BaseModel):
+    code: str | None = Field(description="Exact family code, or null if unclear.")
+
+
+async def _resolve_family_from_conversation(
+    messages: list, lang: str | None
+) -> ProductType | None:
+    """Try to match the user's latest message to a product family."""
+    last_human = next(
+        (m for m in reversed(messages) if isinstance(m, HumanMessage)), None
+    )
+    if last_human is None:
+        return None
+    text = (last_human.content or "").strip().lower()
+    if not text:
+        return None
+
+    async with SessionLocal() as session:
+        all_families = (await session.execute(select(ProductType))).scalars().all()
+
+    if not all_families:
+        return None
+
+    # Fast path: exact code or case-insensitive name match.
+    for f in all_families:
+        if text == f.code or text == f.name.lower():
+            return f
+    for f in all_families:
+        if f.code in text or f.name.lower() in text:
+            return f
+
+    # LLM fallback: ask the model to pick from the catalog.
+    families_block = "\n".join(
+        f"- `{f.code}` — {f.name} ({f.family})" for f in all_families
+    )
+    llm = get_chat_llm(temperature=0).with_structured_output(_FamilyChoice)
+    pick: _FamilyChoice = await llm.ainvoke(
+        [
+            system_message(
+                _FAMILY_PICK_SYSTEM.format(families_block=families_block), lang
+            ),
+            last_human,
+        ]
+    )
+    if pick.code:
+        for f in all_families:
+            if f.code == pick.code:
+                return f
+    return None

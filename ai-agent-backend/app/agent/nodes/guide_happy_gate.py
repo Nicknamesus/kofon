@@ -92,8 +92,24 @@ async def run(state: AgentState) -> dict:
             "current_node": "guide.happy_gate",
         }
 
-    # Fast path: gate-button clicks come through as bare 'yes' / 'no'.
+    # Fast path: gate-button clicks come through as bare 'yes' / 'no' / 'info_only'.
     text = (last_human.content or "").strip().lower()
+    if text == "info_only":
+        return {
+            "messages": [AIMessage(content=t("ghg_glad_helped", lang))],
+            "slots": {"happy": True, "gate_attempts": attempts + 1},
+            "outcome": "resolved",
+            "cards": [
+                {
+                    "kind": "outcome",
+                    "payload": {
+                        "outcome": "resolved",
+                        "title": t("title_glad_helped", lang),
+                    },
+                }
+            ],
+            "current_node": "guide.happy_gate.info_only",
+        }
     if text == "yes":
         verdict = "yes"
     elif text == "no":

@@ -82,6 +82,7 @@ async def search_products(
             specs=p.specs,
             datasheet_url=p.datasheet_url,
             cad_url=p.cad_url,
+            product_page_url=pt.product_page_url if pt else None,
             lead_time_days=p.lead_time_days,
             status=p.status,
         )
