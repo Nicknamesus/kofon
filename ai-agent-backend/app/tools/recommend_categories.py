@@ -9,7 +9,7 @@ from __future__ import annotations
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.models import ProductType, UseCase, UseCaseProductType
+from app.models import ProductType, UseCase, UseCaseProductType, has_active_products
 from app.schemas.tools import (
     ProductTypeRecommendation,
     RecommendCategoriesResponse,
@@ -47,6 +47,7 @@ async def recommend_categories(
             UseCaseProductType.product_type_id == ProductType.id,
         )
         .where(UseCaseProductType.use_case_id == use_case_id)
+        .where(ProductType.id.in_(has_active_products()))
         .order_by(UseCaseProductType.fit_score.desc(), ProductType.name)
         .limit(limit)
     )

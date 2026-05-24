@@ -31,7 +31,7 @@ from app.agent.llm import get_chat_llm, system_message
 from app.agent.state import AgentState
 from app.db import SessionLocal
 from app.i18n import t
-from app.models import ProductType
+from app.models import ProductType, has_active_products
 from app.schemas.tools import ProductOut, SearchProductsFilters
 from app.tools import search_products
 
@@ -67,9 +67,9 @@ async def _build_system_prompt(session: AsyncSession) -> str:
     SystemMessage that the LLM caches across turns anyway."""
     rows = (
         await session.execute(
-            select(ProductType.code, ProductType.name, ProductType.family).order_by(
-                ProductType.code
-            )
+            select(ProductType.code, ProductType.name, ProductType.family)
+            .where(ProductType.id.in_(has_active_products()))
+            .order_by(ProductType.code)
         )
     ).all()
     if not rows:

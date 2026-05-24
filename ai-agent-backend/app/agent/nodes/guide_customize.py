@@ -34,7 +34,7 @@ from app.agent.llm import get_chat_llm, system_message
 from app.agent.state import AgentState
 from app.db import SessionLocal
 from app.i18n import t
-from app.models import ProductType
+from app.models import ProductType, has_active_products
 from app.tools import build_custom_config
 
 MIN_FILLED = 2
@@ -84,7 +84,9 @@ async def run(state: AgentState) -> dict:
             # No family in scope yet — but if the catalog only has one,
             # picking it for the user is much friendlier than asking.
             all_families = (
-                await session.execute(select(ProductType))
+                await session.execute(
+                    select(ProductType).where(ProductType.id.in_(has_active_products()))
+                )
             ).scalars().all()
             if len(all_families) == 1:
                 family = all_families[0]
@@ -106,7 +108,9 @@ async def run(state: AgentState) -> dict:
         async with SessionLocal() as session:
             examples = (
                 await session.execute(
-                    select(ProductType.name).order_by(ProductType.code).limit(3)
+                    select(ProductType.name)
+                    .where(ProductType.id.in_(has_active_products()))
+                    .order_by(ProductType.code).limit(3)
                 )
             ).scalars().all()
         example_block = (
@@ -340,7 +344,11 @@ async def _resolve_family_from_conversation(
         return None
 
     async with SessionLocal() as session:
-        all_families = (await session.execute(select(ProductType))).scalars().all()
+        all_families = (
+            await session.execute(
+                select(ProductType).where(ProductType.id.in_(has_active_products()))
+            )
+        ).scalars().all()
 
     if not all_families:
         return None

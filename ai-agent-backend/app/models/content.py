@@ -18,6 +18,7 @@ from sqlalchemy import (
     SmallInteger,
     Text,
     UniqueConstraint,
+    select,
 )
 from sqlalchemy.dialects.postgresql import JSONB
 from sqlalchemy.orm import Mapped, mapped_column
@@ -130,6 +131,16 @@ class Product(Base):
         nullable=False,
         default="active",
         server_default="active",
+    )
+
+
+def has_active_products():
+    """Subquery: use as ``ProductType.id.in_(has_active_products())``."""
+    return (
+        select(Product.product_type_id)
+        .where(Product.status == "active")
+        .correlate(None)
+        .scalar_subquery()
     )
 
 

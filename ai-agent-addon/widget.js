@@ -1206,6 +1206,7 @@
           subtitle: "I can quote the top match, send datasheets/CAD, or loop in an engineer.",
           yesLabel: "Yes — get me a quote",
           noLabel:  "Not quite — talk to an engineer",
+          dismissLabel: "I just needed the info, thanks",
           onYes: () => {
             this.addUserMessage("Yes — get me a quote");
             this._addOutcome({
@@ -1224,6 +1225,15 @@
               title: "I'll connect you with the right team",
               description: "I'll pass the full conversation, your specs and the shortlist to a Kofon application engineer (KOFON alpha division). Average response ~30 min during business hours.",
               cta: "Confirm and send →",
+            });
+          },
+          onDismiss: () => {
+            this.addUserMessage("I just needed the info, thanks");
+            this.addBotMessage("Great, glad I could help! Feel free to come back anytime if you need a quote or have questions.");
+            this._addOutcome({
+              type: "resolved",
+              badge: _t(this, "badge_resolved"),
+              title: "Glad I could help",
             });
           },
         });

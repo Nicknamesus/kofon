@@ -20,6 +20,7 @@ from app.models.content import (
     Solution,
     UseCase,
     UseCaseProductType,
+    has_active_products,
 )
 from app.models.runtime import Conversation, Message
 from app.models.sideeffects import CrmCall, EmailCall, Rfq, Ticket

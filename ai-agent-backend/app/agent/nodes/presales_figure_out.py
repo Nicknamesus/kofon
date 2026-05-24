@@ -25,7 +25,7 @@ from app.agent.llm import get_chat_llm, system_message
 from app.agent.state import AgentState
 from app.db import SessionLocal
 from app.i18n import t
-from app.models import ProductType
+from app.models import ProductType, has_active_products
 from app.tools import recommend_categories
 
 SYSTEM_EXTRACT = """You are the Pre-Sales node of a B2B motion-components
@@ -351,7 +351,7 @@ async def _llm_pick_family(
                 ProductType.family,
                 ProductType.description,
                 ProductType.product_page_url,
-            )
+            ).where(ProductType.id.in_(has_active_products()))
         )
     ).all()
     if not rows:
