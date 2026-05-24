@@ -27,12 +27,13 @@ from __future__ import annotations
 
 import json
 
-from langchain_core.messages import AIMessage, HumanMessage, SystemMessage
+from langchain_core.messages import AIMessage, HumanMessage
 from pydantic import BaseModel, Field
 
-from app.agent.llm import get_chat_llm
+from app.agent.llm import get_chat_llm, system_message
+from app.agent.sanitize import fence
 from app.agent.state import AgentState
-from app.i18n import language_instruction, t
+from app.i18n import t
 
 # Verdict-only classification — no answer text here, so we can keep this
 # call cheap (temperature 0, structured output).
@@ -100,7 +101,7 @@ async def run(state: AgentState) -> dict:
     else:
         llm = get_chat_llm(temperature=0).with_structured_output(_Verdict)
         v: _Verdict = await llm.ainvoke(
-            [SystemMessage(content=_CLASSIFY_SYSTEM), last_human]
+            [system_message(_CLASSIFY_SYSTEM), last_human]
         )
         verdict = (v.verdict or "unclear").strip().lower()
         if verdict not in {"yes", "no", "question", "unclear"}:
@@ -151,14 +152,16 @@ async def _answer_and_reprompt(
     is a normal turn, not a failed gate attempt.
     """
     candidates = slots.get("candidates") or []
-    candidates_json = json.dumps(candidates, ensure_ascii=False, default=str)
+    candidates_json = fence(
+        json.dumps(candidates, ensure_ascii=False, default=str), "candidates"
+    )
 
     llm = get_chat_llm(temperature=0.2)
     reply = await llm.ainvoke(
         [
-            SystemMessage(
-                content=_ANSWER_SYSTEM.format(candidates_json=candidates_json)
-                + language_instruction(lang)
+            system_message(
+                _ANSWER_SYSTEM.format(candidates_json=candidates_json),
+                lang,
             ),
             last_human,
         ]

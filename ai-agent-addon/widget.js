@@ -74,6 +74,9 @@
     view_product:      { EN: "View product",        DE: "Produkt ansehen",         KO: "제품 보기",              ZH: "查看产品" },
     back_to_menu:      { EN: "Back to menu",        DE: "Zurück zum Menü",         KO: "메뉴로 돌아가기",         ZH: "返回菜单" },
     type_placeholder:  { EN: "Type your question…", DE: "Geben Sie Ihre Frage ein…", KO: "질문을 입력하세요…",     ZH: "请输入您的问题…" },
+    config_form_title: { EN: "Configure {family}",  DE: "{family} konfigurieren",   KO: "{family} 구성",           ZH: "配置 {family}" },
+    config_submit:     { EN: "Find closest match",  DE: "Nächstes Produkt finden",  KO: "가장 가까운 제품 찾기",     ZH: "查找最接近的产品" },
+    config_optional:   { EN: "All fields optional — fill in what you know.", DE: "Alle Felder optional — tragen Sie ein, was Sie wissen.", KO: "모든 필드 선택 사항 — 아는 값만 입력하세요.", ZH: "所有字段均为选填 — 填写您已知的参数即可。" },
   };
   function _t(widget, key) {
     const lang = (widget && widget.state && widget.state.language) || "EN";
@@ -587,6 +590,7 @@
         if (kind === "outcome")             return this._renderOutcomeCard(payload);
         if (kind === "problem_candidates")  return this._renderProblemCandidatesCard(payload);
         if (kind === "problem_match")       return this._renderProblemMatchCard(payload);
+        if (kind === "custom_config_form")  return this._renderCustomConfigFormCard(payload);
         console.warn("AIAgent: unknown card kind", kind, payload);
         return;
       }
@@ -723,6 +727,111 @@
           ${stepHtml}
         </div>
       `);
+    }
+
+    _renderCustomConfigFormCard(payload) {
+      const fields = payload.fields || [];
+      const familyName = _escapeHtml(payload.family_name || "");
+      const title = _t(this, "config_form_title").replace("{family}", familyName);
+      const hint = _t(this, "config_optional");
+
+      // Split fields: enum fields first (quick to fill), then inputs.
+      const enumFields = fields.filter(f => f.enum && f.enum.length);
+      const inputFields = fields.filter(f => !f.enum || !f.enum.length);
+      const ordered = [...enumFields, ...inputFields];
+
+      const fieldHtml = ordered.map(f => {
+        const key = _escapeHtml(f.key);
+        const label = _escapeHtml(f.label || f.key);
+        const existing = f.value != null ? f.value : "";
+
+        if (f.enum && f.enum.length) {
+          const pills = f.enum.map(v => {
+            const sv = _escapeHtml(String(v));
+            const sel = String(v) === String(existing) ? ' data-selected="true"' : "";
+            return `<button type="button" class="aiagent-radio-pill" data-key="${key}" data-value="${sv}"${sel}>${sv}</button>`;
+          }).join("");
+          return `
+            <div class="aiagent-field" data-field-key="${key}">
+              <span class="aiagent-field-label">${label}</span>
+              <div class="aiagent-radio-group">${pills}</div>
+            </div>`;
+        }
+
+        const inputType = (f.type === "integer" || f.type === "number") ? "number" : "text";
+        const step = f.type === "number" ? ' step="any"' : "";
+        const val = existing !== "" ? ` value="${_escapeHtml(String(existing))}"` : "";
+        return `
+          <div class="aiagent-field" data-field-key="${key}">
+            <span class="aiagent-field-label">${label}</span>
+            <input class="aiagent-field-input" type="${inputType}"${step}${val}
+                   data-key="${key}" placeholder="—">
+          </div>`;
+      }).join("");
+
+      // Pair narrow numeric inputs two-per-row where possible.
+      const card = this.addCard(`
+        <div class="aiagent-card aiagent-config-form">
+          <p class="aiagent-card-title">${ICON.gear} ${title}</p>
+          <p class="aiagent-card-hint" style="margin-bottom:10px">${hint}</p>
+          ${fieldHtml}
+          <button class="aiagent-card-cta aiagent-config-submit" type="button">
+            ${ICON.check} ${_t(this, "config_submit")}
+          </button>
+        </div>
+      `);
+
+      // Wire radio pills: clicking one deselects siblings.
+      $$(card, ".aiagent-radio-pill").forEach(pill => {
+        pill.addEventListener("click", () => {
+          const group = pill.parentElement;
+          $$(group, ".aiagent-radio-pill").forEach(p => p.setAttribute("data-selected", "false"));
+          pill.setAttribute("data-selected", "true");
+        });
+      });
+
+      // Wire submit button.
+      const submitBtn = card.querySelector(".aiagent-config-submit");
+      submitBtn.addEventListener("click", () => {
+        const modules = {};
+
+        // Collect radio-pill values.
+        $$(card, ".aiagent-radio-group").forEach(group => {
+          const sel = group.querySelector('[data-selected="true"]');
+          if (sel) {
+            const raw = sel.dataset.value;
+            const key = sel.dataset.key;
+            const field = fields.find(f => f.key === key);
+            modules[key] = (field && (field.type === "integer" || field.type === "number"))
+              ? Number(raw) : raw;
+          }
+        });
+
+        // Collect text/number inputs.
+        $$(card, ".aiagent-field-input").forEach(inp => {
+          const v = inp.value.trim();
+          if (!v) return;
+          const key = inp.dataset.key;
+          const field = fields.find(f => f.key === key);
+          modules[key] = (field && (field.type === "integer" || field.type === "number"))
+            ? Number(v) : v;
+        });
+
+        // Disable the form after submission.
+        $$(card, "button").forEach(b => { b.disabled = true; });
+        $$(card, "input").forEach(i => { i.disabled = true; });
+
+        // Build a human-readable summary for the chat thread.
+        const bits = Object.entries(modules).map(([k, v]) => {
+          const f = fields.find(x => x.key === k);
+          return `${(f && f.label) || k}: ${v}`;
+        });
+        if (bits.length) this.addUserMessage(bits.join(", "));
+
+        this._streamFromApi({ custom_modules: modules, language: this.state.language });
+      });
+
+      return card;
     }
 
     _renderOutcomeCard(payload) {

@@ -13,11 +13,11 @@ single LLM call. It never re-opens the flow or changes state.
 
 from __future__ import annotations
 
-from langchain_core.messages import AIMessage, SystemMessage
+from langchain_core.messages import AIMessage
 
-from app.agent.llm import get_chat_llm
+from app.agent.llm import get_chat_llm, system_message
 from app.agent.state import AgentState
-from app.i18n import language_instruction, t
+from app.i18n import t
 
 
 _BASE = (
@@ -59,13 +59,11 @@ async def run(state: AgentState) -> dict:
     messages = state.get("messages", [])
     lang = state.get("language")
 
-    system = SystemMessage(
-        content=(
-            _BASE.format(outcome=outcome)
-            + "\n\n"
-            + _OUTCOME_FLAVOR.get(outcome, "")
-            + language_instruction(lang)
-        )
+    system = system_message(
+        _BASE.format(outcome=outcome)
+        + "\n\n"
+        + _OUTCOME_FLAVOR.get(outcome, ""),
+        lang,
     )
 
     llm = get_chat_llm(temperature=0.3)

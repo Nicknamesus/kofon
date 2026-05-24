@@ -17,14 +17,14 @@ Slot keys (all under slots.presales for namespacing):
 
 from __future__ import annotations
 
-from langchain_core.messages import AIMessage, HumanMessage, SystemMessage
+from langchain_core.messages import AIMessage, HumanMessage
 from pydantic import BaseModel, Field
 from sqlalchemy import select
 
-from app.agent.llm import get_chat_llm
+from app.agent.llm import get_chat_llm, system_message
 from app.agent.state import AgentState
 from app.db import SessionLocal
-from app.i18n import language_instruction, t
+from app.i18n import t
 from app.models import ProductType
 from app.tools import recommend_categories
 
@@ -103,7 +103,7 @@ async def run(state: AgentState) -> dict:
     messages = state.get("messages", [])
     llm = get_chat_llm(temperature=0).with_structured_output(_Extraction)
     extraction: _Extraction = await llm.ainvoke(
-        [SystemMessage(content=SYSTEM_EXTRACT + language_instruction(lang)), *messages]
+        [system_message(SYSTEM_EXTRACT, lang), *messages]
     )
 
     if not extraction.ready:
@@ -291,7 +291,7 @@ async def _classify_recommendation_reply(messages: list, lang: str | None = None
 
     llm = get_chat_llm(temperature=0).with_structured_output(_ProceedVerdict)
     result: _ProceedVerdict = await llm.ainvoke(
-        [SystemMessage(content=_PROCEED_SYSTEM + language_instruction(lang)), last_human]
+        [system_message(_PROCEED_SYSTEM, lang), last_human]
     )
     return "no" if result.verdict.strip().lower() == "no" else "yes"
 
@@ -365,9 +365,10 @@ async def _llm_pick_family(
     llm = get_chat_llm(temperature=0).with_structured_output(_FamilyPick)
     pick: _FamilyPick = await llm.ainvoke(
         [
-            SystemMessage(content=_SYSTEM_TEMPLATE.format(
-                families_block=families_block
-            ) + language_instruction(lang)),
+            system_message(
+                _SYSTEM_TEMPLATE.format(families_block=families_block),
+                lang,
+            ),
             HumanMessage(content=f"Industry: {industry}\nApplication: {application}"),
         ]
     )

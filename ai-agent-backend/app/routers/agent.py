@@ -29,6 +29,7 @@ from __future__ import annotations
 
 import json
 from collections.abc import AsyncIterator
+from typing import Any
 from uuid import UUID, uuid4
 
 from fastapi import APIRouter
@@ -39,6 +40,7 @@ from pydantic import BaseModel, Field
 from app import persistence
 from app.agent.checkpointer import make_checkpointer
 from app.agent.graph import build_graph
+from app.agent.sanitize import sanitize_user_input
 
 router = APIRouter(prefix="/api", tags=["agent"])
 
@@ -78,6 +80,11 @@ class MessageRequest(BaseModel):
         description="Optional 2-letter language code (e.g. 'EN', 'ZH'). "
         "Persisted on the conversations row for analytics.",
     )
+    custom_modules: dict[str, Any] | None = Field(
+        default=None,
+        description="Structured spec values from the customisation form widget. "
+        "Keyed by spec_schema keys (e.g. frame_size_mm, ratio).",
+    )
 
 
 @router.post("/sessions", response_model=SessionStartResponse)
@@ -88,14 +95,15 @@ async def start_session() -> SessionStartResponse:
 
 @router.post("/messages")
 async def post_message(payload: MessageRequest) -> StreamingResponse:
-    if not payload.text and not payload.gate_choice and not payload.picked_problem_id:
+    if not payload.text and not payload.gate_choice and not payload.picked_problem_id and not payload.custom_modules:
         # No content to send — empty stream with just `done`.
         async def empty() -> AsyncIterator[str]:
             yield _sse("done", {})
 
         return StreamingResponse(empty(), media_type="text/event-stream")
 
-    user_text = payload.text or payload.gate_choice or ""
+    clean_text = sanitize_user_input(payload.text)
+    user_text = clean_text or payload.gate_choice or ""
 
     async def event_stream() -> AsyncIterator[str]:
         # Persist conversation + user message before running the graph,
@@ -107,7 +115,7 @@ async def post_message(payload: MessageRequest) -> StreamingResponse:
         )
         await persistence.append_user_message(
             conversation_id,
-            text=payload.text,
+            text=clean_text,
             gate_choice=payload.gate_choice,
             flow=payload.flow,
             subflow=payload.subflow,
@@ -128,6 +136,8 @@ async def post_message(payload: MessageRequest) -> StreamingResponse:
         if payload.subflow == "customize":
             # Trip the guide.customize branch in _guide_dispatch.
             slot_input["customize"] = {"active": True}
+        if payload.custom_modules:
+            slot_input["custom_modules_submitted"] = payload.custom_modules
         if payload.picked_problem_id:
             slot_input["picked_problem_id"] = payload.picked_problem_id
         if slot_input:

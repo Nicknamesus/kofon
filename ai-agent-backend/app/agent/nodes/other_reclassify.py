@@ -18,10 +18,10 @@ Slot keys (under slots.other):
 
 from __future__ import annotations
 
-from langchain_core.messages import AIMessage, HumanMessage, SystemMessage
+from langchain_core.messages import AIMessage, HumanMessage
 from pydantic import BaseModel, Field
 
-from app.agent.llm import get_chat_llm
+from app.agent.llm import get_chat_llm, system_message
 from app.agent.state import AgentState
 from app.i18n import t
 
@@ -67,7 +67,7 @@ async def run(state: AgentState) -> dict:
 
     llm = get_chat_llm(temperature=0).with_structured_output(_Reclass)
     pick: _Reclass = await llm.ainvoke(
-        [SystemMessage(content=SYSTEM), last_human]  # router output is structured, no need to localize
+        [system_message(SYSTEM), last_human]
     )
     flow = (pick.flow or "other").strip().lower()
 

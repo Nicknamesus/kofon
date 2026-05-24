@@ -23,12 +23,13 @@ from __future__ import annotations
 
 import json
 
-from langchain_core.messages import AIMessage, HumanMessage, SystemMessage
+from langchain_core.messages import AIMessage, HumanMessage
 from pydantic import BaseModel, Field
 
-from app.agent.llm import get_chat_llm
+from app.agent.llm import get_chat_llm, system_message
+from app.agent.sanitize import fence
 from app.agent.state import AgentState
-from app.i18n import language_instruction, t
+from app.i18n import t
 
 _CLASSIFY_SYSTEM = (
     "Classify the user's reply to 'Did that fix the issue?'.\n\n"
@@ -90,7 +91,7 @@ async def run(state: AgentState) -> dict:
     else:
         llm = get_chat_llm(temperature=0).with_structured_output(_Verdict)
         v: _Verdict = await llm.ainvoke(
-            [SystemMessage(content=_CLASSIFY_SYSTEM), last_human]
+            [system_message(_CLASSIFY_SYSTEM), last_human]
         )
         verdict = (v.verdict or "unclear").strip().lower()
         if verdict not in {"yes", "no", "question", "unclear"}:
@@ -180,14 +181,16 @@ async def _answer_and_reprompt(
         "symptom": postsales.get("symptom"),
         "sku": postsales.get("sku"),
     }
-    context_json = json.dumps(context, ensure_ascii=False, default=str)
+    context_json = fence(
+        json.dumps(context, ensure_ascii=False, default=str), "context"
+    )
 
     llm = get_chat_llm(temperature=0.2)
     reply = await llm.ainvoke(
         [
-            SystemMessage(
-                content=_ANSWER_SYSTEM.format(context_json=context_json)
-                + language_instruction(lang)
+            system_message(
+                _ANSWER_SYSTEM.format(context_json=context_json),
+                lang,
             ),
             last_human,
         ]

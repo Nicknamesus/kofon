@@ -16,12 +16,12 @@ Slot phase keys:
 
 from __future__ import annotations
 
-from langchain_core.messages import AIMessage, HumanMessage, SystemMessage
+from langchain_core.messages import AIMessage, HumanMessage
 from pydantic import BaseModel, Field
 
-from app.agent.llm import get_chat_llm
+from app.agent.llm import get_chat_llm, system_message
 from app.agent.state import AgentState
-from app.i18n import language_instruction, t
+from app.i18n import t
 
 SYSTEM = """You are the Post-Sales identify node of a B2B motion-components
 chatbot. Extract:
@@ -126,7 +126,7 @@ async def run(state: AgentState) -> dict:
 
     llm = get_chat_llm(temperature=0).with_structured_output(_Extraction)
     extraction: _Extraction = await llm.ainvoke(
-        [SystemMessage(content=SYSTEM + language_instruction(lang)), *messages]
+        [system_message(SYSTEM, lang), *messages]
     )
 
     # Carry forward anything we already had; the LLM may only see new info.

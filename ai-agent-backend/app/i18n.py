@@ -146,6 +146,18 @@ _T: dict[str, dict[str, str]] = {
         "ZH": "\n\n最接近的标准 SKU: **{sku}** — 如果不一定要定制,"
               "也可以从这一型号入手。",
     },
+    "gc_form_intro": {
+        "EN": "Here's the configuration form for **{family_name}**. "
+              "Fill in the specs you care about and hit submit — "
+              "I'll find the closest match.",
+        "DE": "Hier ist das Konfigurationsformular für **{family_name}**. "
+              "Tragen Sie die gewünschten Werte ein und klicken Sie auf "
+              "Absenden — ich finde das passendste Produkt.",
+        "KO": "**{family_name}** 구성 양식입니다. 원하시는 사양을 입력하고 "
+              "제출을 누르시면 가장 가까운 제품을 찾아 드리겠습니다.",
+        "ZH": "这是 **{family_name}** 的配置表单。填写您关心的参数后点击提交,"
+              "我会为您找到最接近的匹配产品。",
+    },
     "gc_quote_question": {
         "EN": "Send this to sales for a quote?",
         "DE": "An den Vertrieb für ein Angebot senden?",

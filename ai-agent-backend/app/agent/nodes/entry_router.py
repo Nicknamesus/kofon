@@ -12,10 +12,10 @@ take over from there.
 
 from __future__ import annotations
 
-from langchain_core.messages import HumanMessage, SystemMessage
+from langchain_core.messages import HumanMessage
 from pydantic import BaseModel, Field
 
-from app.agent.llm import get_chat_llm
+from app.agent.llm import get_chat_llm, system_message
 from app.agent.state import AgentState
 
 ALLOWED_FLOWS = {"presales", "guide", "postsales", "other"}
@@ -90,7 +90,7 @@ async def run(state: AgentState) -> dict:
 
     llm = get_chat_llm(temperature=0).with_structured_output(_Route)
     route: _Route = await llm.ainvoke(
-        [SystemMessage(content=SYSTEM), last_human]
+        [system_message(SYSTEM), last_human]
     )
 
     flow = route.flow.strip().lower()

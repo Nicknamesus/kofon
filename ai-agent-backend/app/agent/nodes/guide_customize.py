@@ -26,14 +26,14 @@ from __future__ import annotations
 
 from typing import Any
 
-from langchain_core.messages import AIMessage, SystemMessage
+from langchain_core.messages import AIMessage
 from pydantic import BaseModel, Field
 from sqlalchemy import select
 
-from app.agent.llm import get_chat_llm
+from app.agent.llm import get_chat_llm, system_message
 from app.agent.state import AgentState
 from app.db import SessionLocal
-from app.i18n import language_instruction, t
+from app.i18n import t
 from app.models import ProductType
 from app.tools import build_custom_config
 
@@ -117,24 +117,40 @@ async def run(state: AgentState) -> dict:
         }
 
     schema = family.spec_schema or {}
-    schema_block = _format_schema(schema)
     existing_modules = dict(customize.get("modules") or {})
 
+    # --- Fast path: structured form submission from the widget -----------
+    submitted = slots.get("custom_modules_submitted")
+    if submitted is not None:
+        merged = {k: v for k, v in submitted.items() if k in schema and v is not None}
+        if sum(1 for v in merged.values() if v is not None) >= 1:
+            return await _build_and_present(
+                family, {**existing_modules, **merged}, customize, lang,
+            )
+        # Empty form submitted — re-show the form
+        return _form_card(family, schema, existing_modules, customize, lang)
+
+    # --- First visit with a known family: show the structured form ------
+    if customize.get("phase") not in ("form_shown", "collecting"):
+        return _form_card(family, schema, existing_modules, customize, lang)
+
+    # --- Conversational fallback: user typed text after form was shown ---
+    schema_block = _format_schema(schema)
     llm = get_chat_llm(temperature=0).with_structured_output(_Extraction)
     extraction: _Extraction = await llm.ainvoke(
         [
-            SystemMessage(
-                content=SYSTEM_TEMPLATE.format(
+            system_message(
+                SYSTEM_TEMPLATE.format(
                     family_name=family.name,
                     schema_block=schema_block,
                     min_filled=MIN_FILLED,
-                ) + language_instruction(lang)
+                ),
+                lang,
             ),
             *state.get("messages", []),
         ]
     )
 
-    # Merge: existing values stand unless the LLM extracted a non-null override.
     merged: dict[str, Any] = {**existing_modules}
     for key, value in (extraction.modules or {}).items():
         if key in schema and value is not None:
@@ -161,6 +177,57 @@ async def run(state: AgentState) -> dict:
             "current_node": "guide.customize.collecting",
         }
 
+    return await _build_and_present(family, merged, customize, lang)
+
+
+def _form_card(
+    family, schema: dict, existing_modules: dict, customize: dict, lang: str | None
+) -> dict:
+    """Emit a ``custom_config_form`` card so the widget renders a structured form."""
+    fields: list[dict] = []
+    for key, meta in schema.items():
+        meta = meta or {}
+        field: dict[str, Any] = {
+            "key": key,
+            "label": meta.get("label") or key,
+            "type": meta.get("type", "string"),
+        }
+        if "enum" in meta:
+            field["enum"] = meta["enum"]
+        if key in existing_modules and existing_modules[key] is not None:
+            field["value"] = existing_modules[key]
+        fields.append(field)
+
+    return {
+        "messages": [
+            AIMessage(content=t("gc_form_intro", lang, family_name=family.name))
+        ],
+        "cards": [
+            {
+                "kind": "custom_config_form",
+                "payload": {
+                    "family_code": family.code,
+                    "family_name": family.name,
+                    "fields": fields,
+                },
+            }
+        ],
+        "slots": {
+            "customize": {
+                **customize,
+                "family_code": family.code,
+                "phase": "form_shown",
+            },
+            "custom_modules_submitted": None,
+        },
+        "current_node": "guide.customize.form_shown",
+    }
+
+
+async def _build_and_present(
+    family, merged: dict, customize: dict, lang: str | None
+) -> dict:
+    """Call ``build_custom_config`` and emit the result + quote gate."""
     async with SessionLocal() as session:
         config = await build_custom_config(
             session, family_code=family.code, modules=merged
@@ -202,9 +269,7 @@ async def run(state: AgentState) -> dict:
                 "modules": merged,
                 "phase": "presented",
             },
-            # Reuse the happy-gate verdict path: 'happy=true' → outcome_sell
-            # (RFQ), 'happy=false' → outcome_human. find_phase signals the
-            # graph dispatcher that the next user reply should hit the gate.
+            "custom_modules_submitted": None,
             "find_phase": "presented",
             "candidates": [
                 {
