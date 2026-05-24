@@ -1106,7 +1106,10 @@
       },
 
       /* ------ 2. Guide ("Knows what they want, not which SKU") ------ */
-      guide() {
+      guide(opts) {
+        if (opts && opts.subflow === "customize") {
+          return this._flows._guideCustomize.call(this);
+        }
         this.addBotMessage("Great — how would you like to proceed?");
         this.addCard(`
           <div class="aiagent-card">
@@ -1236,6 +1239,86 @@
               title: "Glad I could help",
             });
           },
+        });
+      },
+
+      /* ------ 2b. Guide → Customize (structured form mock) ------ */
+      _guideCustomize() {
+        this.addBotMessage("Here's the configuration form for **CaesarPlanetary**. Fill in the specs you care about and hit submit — I'll find the closest match.");
+        const form = this.addCard(`
+          <div class="aiagent-card aiagent-config-form">
+            <p class="aiagent-card-title">${ICON.gear} Configure CaesarPlanetary</p>
+            <p class="aiagent-card-hint" style="margin-bottom:10px">All fields optional — fill in what you know.</p>
+            <div class="aiagent-field" data-field-key="frame_size_mm">
+              <span class="aiagent-field-label">Frame size (mm)</span>
+              <div class="aiagent-radio-group">
+                <button type="button" class="aiagent-radio-pill" data-key="frame_size_mm" data-value="60">60</button>
+                <button type="button" class="aiagent-radio-pill" data-key="frame_size_mm" data-value="90" data-selected="true">90</button>
+                <button type="button" class="aiagent-radio-pill" data-key="frame_size_mm" data-value="140">140</button>
+              </div>
+            </div>
+            <div class="aiagent-field" data-field-key="variant">
+              <span class="aiagent-field-label">Variant (HP = low backlash, HT = high torque)</span>
+              <div class="aiagent-radio-group">
+                <button type="button" class="aiagent-radio-pill" data-key="variant" data-value="HP" data-selected="true">HP</button>
+                <button type="button" class="aiagent-radio-pill" data-key="variant" data-value="HT">HT</button>
+              </div>
+            </div>
+            <div class="aiagent-field" data-field-key="ratio">
+              <span class="aiagent-field-label">Reduction ratio (:1)</span>
+              <input class="aiagent-field-input" type="number" data-key="ratio" placeholder="—" value="10">
+            </div>
+            <div class="aiagent-field" data-field-key="nominal_torque_nm">
+              <span class="aiagent-field-label">Nominal output torque (Nm)</span>
+              <input class="aiagent-field-input" type="number" data-key="nominal_torque_nm" placeholder="—">
+            </div>
+            <button class="aiagent-card-cta aiagent-config-submit" type="button">
+              ${ICON.check} Find closest match
+            </button>
+            <button class="aiagent-card-cta aiagent-config-custom" type="button">
+              ${ICON.handoff} Request a custom part
+            </button>
+          </div>
+        `);
+        $$(form, ".aiagent-radio-pill").forEach(pill => {
+          pill.addEventListener("click", () => {
+            const group = pill.parentElement;
+            $$(group, ".aiagent-radio-pill").forEach(p => p.setAttribute("data-selected", "false"));
+            pill.setAttribute("data-selected", "true");
+          });
+        });
+        const lockForm = () => {
+          $$(form, "button").forEach(b => { b.disabled = true; });
+          $$(form, "input").forEach(i => { i.disabled = true; });
+        };
+        form.querySelector(".aiagent-config-submit").addEventListener("click", () => {
+          lockForm();
+          this.addUserMessage("Frame size: 90, Variant: HP, Ratio: 10");
+          this.addBotMessage("Here's the custom **CaesarPlanetary** build I've put together:\n\n_Custom CaesarPlanetary build with frame_size_mm=90, ratio=10, variant=HP._\n\nClosest stock SKU: **PG090-10-HP** — we could start from there if you don't need a custom.");
+          this._addGate({
+            title: "Send this to sales for a quote?",
+            yesLabel: "Yes, request a quote",
+            noLabel: "Talk to an engineer first",
+            dismissLabel: "I just needed the info, thanks",
+            onYes: () => {
+              this.addUserMessage("Yes, request a quote");
+              this._addOutcome({ type: "sell", badge: "RFQ ready", title: "Let's get you a quote", description: "A Kofon engineer will follow up with pricing within 1 business day." });
+            },
+            onNo: () => {
+              this.addUserMessage("Talk to an engineer first");
+              this._addOutcome({ type: "human", badge: "Routing to engineer", title: "I'll connect you with the right team" });
+            },
+            onDismiss: () => {
+              this.addUserMessage("I just needed the info, thanks");
+              this.addBotMessage("Great, glad I could help! Feel free to come back anytime if you need a quote or have questions.");
+              this._addOutcome({ type: "resolved", badge: _t(this, "badge_resolved"), title: "Glad I could help" });
+            },
+          });
+        });
+        form.querySelector(".aiagent-config-custom").addEventListener("click", () => {
+          lockForm();
+          this.addUserMessage("Frame size: 90, Variant: HP, Ratio: 10 — requesting custom part");
+          this._addOutcome({ type: "human", badge: "Custom request", title: "Sending your spec to engineering", description: "A Kofon engineer will review your custom configuration and reach out within 1 business day." });
         });
       },
 
