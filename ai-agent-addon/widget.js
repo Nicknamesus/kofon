@@ -148,6 +148,7 @@
 
       this.root.appendChild(this._renderLauncher());
       if (this.cfg.teaser) this.root.appendChild(this._renderTeaser());
+      this.root.appendChild(this._renderBackdrop());
       this.root.appendChild(this._renderPanel());
 
       document.body.appendChild(this.root);
@@ -189,6 +190,12 @@
       setTimeout(() => {
         if (!this.state.open) teaser.setAttribute("data-visible", "true");
       }, 1800);
+    }
+
+    _renderBackdrop() {
+      const bd = h(`<div class="aiagent-backdrop" aria-hidden="true"></div>`);
+      bd.addEventListener("click", () => this.close());
+      return bd;
     }
 
     /* ----- Panel (open-state) ----- */
