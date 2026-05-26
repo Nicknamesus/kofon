@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI 智能助手 — 科峰演示</title>
+<link rel="stylesheet" href="widget.css">
+<style>
+  /* ----- Demo page styling (the widget brings its own CSS) ----- */
+  :root {
+    --kofon-navy: #132178;
+    --kofon-navy-dark: #0c164f;
+    --kofon-green: #c2e295;
+    --ink: #16181d;
+    --ink-muted: #5a6473;
+    --ink-faint: #9ca3af;
+    --line: #e6e8ef;
+    --bg: #f6f7fb;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+  /* Top bar */
+  .nav {
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+    position: sticky; top: 0; z-index: 10;
+  }
+  .nav-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+  }
+  .logo {
+    font-weight: 800; font-size: 20px; letter-spacing: -0.4px;
+    color: var(--kofon-navy);
+  }
+  .logo span { color: var(--ink-muted); font-weight: 500; margin-left: 4px; }
+  .nav-links { display: flex; gap: 26px; }
+  .nav-links a {
+    color: var(--ink); text-decoration: none; font-size: 14px; font-weight: 500;
+  }
+  .nav-links a:hover { color: var(--kofon-navy); }
+  .nav-right { display: flex; align-items: center; gap: 14px; }
+  .lang-switch {
+    display: inline-flex; align-items: center; gap: 4px;
+    padding: 5px 10px; border-radius: 6px;
+    font-size: 13px; font-weight: 600; color: var(--ink-muted);
+    border: 1px solid var(--line); background: #fff;
+    text-decoration: none; transition: border-color .15s;
+  }
+  .lang-switch:hover { border-color: var(--kofon-navy); color: var(--kofon-navy); }
+  .nav-cta {
+    background: var(--kofon-navy); color: #fff; padding: 8px 16px;
+    border-radius: 8px; font-size: 13px; font-weight: 600; text-decoration: none;
+  }
+  .nav-cta:hover { background: #1e2f9c; }
+  /* Hero */
+  .hero {
+    background:
+      radial-gradient(80% 60% at 80% 0%, rgba(194, 226, 149, 0.18), transparent 60%),
+      linear-gradient(150deg, var(--kofon-navy) 0%, var(--kofon-navy-dark) 100%);
+    color: #fff;
+    padding: 80px 0 100px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero h1 {
+    font-size: 48px; line-height: 1.18; margin: 0 0 20px;
+    font-weight: 700; letter-spacing: -1px;
+    max-width: 720px;
+  }
+  .hero p {
+    font-size: 17px; color: rgba(255,255,255,0.78); margin: 0 0 28px;
+    max-width: 560px;
+  }
+  .hero-tags {
+    display: flex; gap: 10px; flex-wrap: wrap;
+  }
+  .hero-tag {
+    padding: 6px 12px; border-radius: 16px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.18);
+    font-size: 12.5px; color: rgba(255,255,255,0.9);
+  }
+  .hero-btns { display: flex; gap: 12px; margin-top: 28px; }
+  .hero-btn {
+    display: inline-block; padding: 12px 22px; border-radius: 8px;
+    font-size: 14px; font-weight: 600;
+  }
+  .hero-btn-primary { background: #fff; color: var(--kofon-navy); }
+  .hero-btn-primary:hover { background: #f0f2fa; }
+  .hero-btn-outline {
+    background: transparent; color: #fff;
+    border: 1.5px solid rgba(255,255,255,0.4);
+  }
+  .hero-btn-outline:hover { border-color: #fff; }
+  /* Section */
+  section { padding: 64px 0; }
+  .section-eyebrow {
+    text-transform: uppercase; letter-spacing: 1.2px; font-size: 12px;
+    font-weight: 700; color: var(--kofon-navy); margin: 0 0 10px;
+  }
+  .section-title {
+    font-size: 32px; line-height: 1.15; margin: 0 0 12px;
+    font-weight: 700; letter-spacing: -0.6px;
+  }
+  .section-lead {
+    font-size: 16px; color: var(--ink-muted); max-width: 640px; margin: 0 0 36px;
+  }
+  /* Product family grid */
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .card {
+    background: #fff; border: 1px solid var(--line); border-radius: 14px;
+    padding: 22px; text-decoration: none; color: inherit;
+    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    display: block;
+  }
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px rgba(15, 23, 60, 0.08);
+    border-color: var(--kofon-navy);
+  }
+  .card-thumb {
+    height: 160px; border-radius: 10px; margin-bottom: 16px;
+    background: #f0f2f8;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .card-thumb img {
+    max-width: 80%; max-height: 90%; object-fit: contain;
+  }
+  .card h3 { margin: 0 0 4px; font-size: 16px; font-weight: 600; }
+  .card p { margin: 0; font-size: 13px; color: var(--ink-muted); }
+  .card-link {
+    display: inline-flex; align-items: center; gap: 4px;
+    margin-top: 12px; font-size: 12.5px; font-weight: 600; color: var(--kofon-navy);
+  }
+  .card-link:hover { text-decoration: underline; }
+  /* Product table */
+  .product-table {
+    width: 100%; border-collapse: collapse; background: #fff;
+    border: 1px solid var(--line); border-radius: 12px; overflow: hidden;
+  }
+  .product-table th {
+    text-align: left; padding: 12px 16px; font-size: 11.5px;
+    font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px;
+    color: var(--ink-muted); background: #fafbfd; border-bottom: 1px solid var(--line);
+  }
+  .product-table td {
+    padding: 14px 16px; font-size: 13.5px; border-bottom: 1px solid var(--line);
+    vertical-align: middle;
+  }
+  .product-table tr:last-child td { border-bottom: none; }
+  .product-table tr:hover td { background: #fafbfe; }
+  .product-table .model {
+    font-weight: 600; color: var(--kofon-navy);
+  }
+  .product-table .spec { color: var(--ink-muted); font-variant-numeric: tabular-nums; }
+  .product-table .tbl-link {
+    font-size: 12.5px; font-weight: 600; color: var(--kofon-navy);
+  }
+  .product-table .tbl-link:hover { text-decoration: underline; }
+  /* Industry pills */
+  .industry-grid {
+    display: flex; flex-wrap: wrap; gap: 10px;
+  }
+  .industry-pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 10px 16px; background: #fff; border: 1px solid var(--line);
+    border-radius: 10px; font-size: 13.5px; font-weight: 500;
+    transition: border-color .16s ease, transform .16s ease, box-shadow .16s ease;
+  }
+  .industry-pill:hover {
+    border-color: var(--kofon-navy); transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(15, 23, 60, 0.06);
+  }
+  .industry-icon { font-size: 18px; }
+  /* Banner */
+  .banner {
+    background: #fff; border: 1px solid var(--line); border-radius: 16px;
+    padding: 36px; display: grid; grid-template-columns: 1.4fr 1fr; gap: 36px;
+    align-items: center;
+  }
+  .banner h3 { font-size: 24px; margin: 0 0 10px; letter-spacing: -0.4px; }
+  .banner p { color: var(--ink-muted); margin: 0 0 18px; font-size: 14.5px; }
+  .banner-cta {
+    display: inline-block; background: var(--kofon-navy); color: #fff;
+    padding: 11px 20px; border-radius: 8px; font-size: 14px; font-weight: 600;
+    text-decoration: none;
+  }
+  .banner-cta:hover { background: #1e2f9c; }
+  .banner-visual {
+    height: 180px; border-radius: 12px;
+    background:
+      radial-gradient(circle at 30% 30%, rgba(194, 226, 149, 0.5), transparent 60%),
+      linear-gradient(135deg, var(--kofon-navy) 0%, #1e2f9c 100%);
+  }
+  /* Stats strip */
+  .stats {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+    padding: 48px 0;
+  }
+  .stat {
+    text-align: center; background: #fff; border: 1px solid var(--line);
+    border-radius: 12px; padding: 24px 16px;
+  }
+  .stat-num {
+    font-size: 32px; font-weight: 700; color: var(--kofon-navy);
+    letter-spacing: -1px; margin-bottom: 4px;
+  }
+  .stat-label { font-size: 13px; color: var(--ink-muted); }
+  /* Footer */
+  footer {
+    padding: 48px 0 36px; border-top: 1px solid var(--line); background: #fff;
+  }
+  .footer-grid {
+    display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px;
+    margin-bottom: 32px;
+  }
+  .footer-brand { font-weight: 800; font-size: 18px; color: var(--kofon-navy); margin-bottom: 10px; }
+  .footer-brand span { font-weight: 500; color: var(--ink-muted); margin-left: 3px; }
+  .footer-desc { font-size: 13px; color: var(--ink-muted); max-width: 280px; }
+  .footer-col h4 {
+    font-size: 12px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.8px; color: var(--ink); margin: 0 0 12px;
+  }
+  .footer-col a {
+    display: block; font-size: 13px; color: var(--ink-muted);
+    padding: 3px 0;
+  }
+  .footer-col a:hover { color: var(--kofon-navy); }
+  .footer-bottom {
+    border-top: 1px solid var(--line); padding-top: 20px;
+    font-size: 12px; color: var(--ink-faint); text-align: center;
+  }
+  @media (max-width: 760px) {
+    .hero h1 { font-size: 34px; }
+    .grid { grid-template-columns: 1fr; }
+    .banner { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    .stats { grid-template-columns: 1fr 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+    .hero-btns { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <a class="logo" href="https://www.kofon-motion.com">KOFON<span>motion</span></a>
+    <div class="nav-links">
+      <a href="https://www.kofon-motion.com/company/about_us/">公司</a>
+      <a href="https://www.kofon-motion.com/Products/caesarplanetarylu___precision_planetary_gearbox/">产品</a>
+      <a href="https://www.kofon-motion.com/competence_industries/factory_automation/">行业</a>
+      <a href="https://www.kofon-motion.com/Precision_motion_institute/planetary_gearbox/">研究院</a>
+      <a href="https://www.kofon-motion.com/service177/faq984/">服务</a>
+    </div>
+    <div class="nav-right">
+      <a class="lang-switch" href="index.html">EN</a>
+      <a class="nav-cta" href="https://www.kofon-motion.com/Contact/">联系销售</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <h1>精密运动组件，为未来而设计。</h1>
+    <p>行星减速机、滚柱丝杠、谐波减速器和机器人关节模组 — 覆盖15+行业，ISO 9001认证生产，5天标准交期。</p>
+    <div class="hero-tags">
+      <a class="hero-tag" href="https://www.kofon-motion.com/competence_industries/factory_automation/">工厂自动化</a>
+      <a class="hero-tag" href="https://www.kofon-motion.com/competence_industries/robotics/">机器人</a>
+      <a class="hero-tag" href="https://www.kofon-motion.com/competence_industries/semi_conductor/">半导体</a>
+      <a class="hero-tag" href="https://www.kofon-motion.com/competence_industries/medical_equipment/">医疗设备</a>
+      <a class="hero-tag" href="https://www.kofon-motion.com/competence_industries/laser_processing/">激光加工</a>
+      <a class="hero-tag" href="https://www.kofon-motion.com/competence_industries/intelligent_logistics/">智能物流</a>
+    </div>
+    <div class="hero-btns">
+      <a class="hero-btn hero-btn-primary" href="https://www.kofon-motion.com/Products/caesarplanetarylu___precision_planetary_gearbox/">浏览产品</a>
+      <a class="hero-btn hero-btn-outline" href="http://select.kofon-motion.com/#/applicationSelection">打开 KDP 选型工具</a>
+    </div>
+  </div>
+</section>
+
+<!-- Stats strip -->
+<div class="container">
+  <div class="stats">
+    <div class="stat"><div class="stat-num">6</div><div class="stat-label">产品系列</div></div>
+    <div class="stat"><div class="stat-num">15+</div><div class="stat-label">覆盖行业</div></div>
+    <div class="stat"><div class="stat-num">5天</div><div class="stat-label">标准交期</div></div>
+    <div class="stat"><div class="stat-num">ISO 9001</div><div class="stat-label">认证生产</div></div>
+  </div>
+</div>
+
+<!-- Product families -->
+<section>
+  <div class="container">
+    <p class="section-eyebrow">产品系列</p>
+    <h2 class="section-title">六大产品系列，一站式供应。</h2>
+    <p class="section-lead">从经济型标准产品到高精度定制方案。数据手册、CAD文件及KDP选型工具均可在线获取。</p>
+    <div class="grid">
+      <a class="card" href="https://www.kofon-motion.com/Products/caesarplanetarylu___precision_planetary_gearbox/">
+        <div class="card-thumb"><img src="https://www.kofon-motion.com/uploads/allimg/20241205/1-24120511393cM.png" alt="CaesarPlanetary XA 减速机"></div>
+        <h3>CaesarPlanetary&reg;</h3>
+        <p>精密行星减速机 — 直线型、直角型、加强型。速比3-512，回差低至1弧分。</p>
+        <span class="card-link">查看全部系列 &rarr;</span>
+      </a>
+      <a class="card" href="https://www.kofon-motion.com/Products/rollsatelu__precision_planetary_roller_screw/">
+        <div class="card-thumb"><img src="https://www.kofon-motion.com/uploads/allimg/20250107/1-25010FQUJ60.png" alt="Rollsate PL 滚柱丝杠"></div>
+        <h3>Rollsate&reg;</h3>
+        <p>精密行星滚柱丝杠，适用于大载荷直线运动。PL、HPL、PLI、RPL系列。</p>
+        <span class="card-link">查看全部系列 &rarr;</span>
+      </a>
+      <a class="card" href="https://www.kofon-motion.com/Products/strain_wave_gear/">
+        <div class="card-thumb"><img src="https://www.kofon-motion.com/uploads/allimg/20241026/1-2410262116494V.png" alt="Elitewave KB-MC 谐波减速器"></div>
+        <h3>Elitewave&reg;</h3>
+        <p>谐波减速器，回差&lt;20弧秒，速比可达160。尺寸14-45。</p>
+        <span class="card-link">查看全部系列 &rarr;</span>
+      </a>
+      <a class="card" href="https://www.kofon-motion.com/Products/servoluxlu--robot-modular-joint-solutions/">
+        <div class="card-thumb"><img src="https://www.kofon-motion.com/uploads/allimg/20251225/1-251225121S4253.png" alt="Servolux 机器人关节模组"></div>
+        <h3>Servolux&reg;</h3>
+        <p>机器人模块化关节方案 — 关节模组（KR045-KR070）及关节减速器（KR080-KR128）。</p>
+        <span class="card-link">查看全部系列 &rarr;</span>
+      </a>
+      <a class="card" href="https://www.kofon-motion.com/Products/spiral_bevel_gearbox/">
+        <div class="card-thumb"><img src="https://www.kofon-motion.com/uploads/allimg/20241027/1-24102G30211209.png" alt="螺旋锥齿轮箱"></div>
+        <h3>螺旋锥齿轮箱</h3>
+        <p>紧凑型直角齿轮箱，适用于安装空间受限的场合。</p>
+        <span class="card-link">查看全部系列 &rarr;</span>
+      </a>
+      <a class="card" href="https://www.kofon-motion.com/Products/kgv_solutions/">
+        <div class="card-thumb"><img src="https://www.kofon-motion.com/uploads/allimg/20241027/1-24102G32553106.png" alt="KGV 齿轮电机方案"></div>
+        <h3>KGV Solutions</h3>
+        <p>为专业OEM应用定制的齿轮电机方案。</p>
+        <span class="card-link">查看全部系列 &rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Featured products table — CaesarPlanetary -->
+<section style="padding-top:0">
+  <div class="container">
+    <p class="section-eyebrow">精选 — CaesarPlanetary&reg; 系列</p>
+    <h2 class="section-title">行星减速机速查表</h2>
+    <p class="section-lead">高精度及经济型直线、直角、加强系列。点击任意型号查看完整规格及数据手册。</p>
+    <table class="product-table">
+      <thead>
+        <tr><th>型号</th><th>类型</th><th>速比</th><th>回差</th><th>扭矩 (Nm)</th><th></th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="model">XA</td><td>直线型 &middot; 高精度</td><td class="spec">3 – 100</td><td class="spec">1 – 8 弧分</td><td class="spec">14 – 2050</td>
+          <td><a class="tbl-link" href="https://www.kofon-motion.com/Products/caesarplanetarylu___precision_planetary_gearbox/373.html">查看 &rarr;</a></td>
+        </tr>
+        <tr>
+          <td class="model">KPLF</td><td>直线型 &middot; 高精度</td><td class="spec">3 – 100</td><td class="spec">3 – 11 弧分</td><td class="spec">14 – 2050</td>
+          <td><a class="tbl-link" href="https://www.kofon-motion.com/Products/caesarplanetarylu___precision_planetary_gearbox/inline_planetary_gearbox__igh_precision/211.html">查看 &rarr;</a></td>
+        </tr>
+        <tr>
+          <td class="model">KPG</td><td>加强型 &middot; 高精度</td><td class="spec">3 – 100</td><td class="spec">1 – 7 弧分</td><td class="spec">42 – 1250</td>
+          <td><a class="tbl-link" href="https://www.kofon-motion.com/Products/caesarplanetarylu___precision_planetary_gearbox/reinforced_type_gearbox__igh_precision/230.html">查看 &rarr;</a></td>
+        </tr>
+        <tr>
+          <td class="model">KVE</td><td>直角型 &middot; 高精度</td><td class="spec">3 – 100</td><td class="spec">8 – 10 弧分</td><td class="spec">42 – 910</td>
+          <td><a class="tbl-link" href="https://www.kofon-motion.com/Products/caesarplanetarylu___precision_planetary_gearbox/right_angle_gearbox__igh_precision/234.html">查看 &rarr;</a></td>
+        </tr>
+        <tr>
+          <td class="model">SPL</td><td>直线型 &middot; 经济型</td><td class="spec">3 – 512</td><td class="spec">8 – 17 弧分</td><td class="spec">12 – 1850</td>
+          <td><a class="tbl-link" href="https://www.kofon-motion.com/Products/caesarplanetarylu___precision_planetary_gearbox/inline_planetary_gearbox__conomic_type/225.html">查看 &rarr;</a></td>
+        </tr>
+        <tr>
+          <td class="model">SPH</td><td>加强型 &middot; 经济型</td><td class="spec">3 – 512</td><td class="spec">8 – 12 弧分</td><td class="spec">32 – 1000</td>
+          <td><a class="tbl-link" href="https://www.kofon-motion.com/Products/caesarplanetarylu___precision_planetary_gearbox/reinforced_type_gearbox__conomic_type/233.html">查看 &rarr;</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Elitewave + Rollsate tables -->
+<section style="padding-top:0">
+  <div class="container" style="display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+    <div>
+      <p class="section-eyebrow">Elitewave&reg; 谐波减速器</p>
+      <table class="product-table">
+        <thead><tr><th>型号</th><th>速比</th><th>扭矩 (Nm)</th><th></th></tr></thead>
+        <tbody>
+          <tr><td class="model">KB-MC</td><td class="spec">50 – 160</td><td class="spec">5.1 – 503</td><td><a class="tbl-link" href="https://www.kofon-motion.com/Products/strain_wave_gear/215.html">查看 &rarr;</a></td></tr>
+          <tr><td class="model">KB-HO</td><td class="spec">50 – 160</td><td class="spec">5.1 – 503</td><td><a class="tbl-link" href="https://www.kofon-motion.com/Products/strain_wave_gear/216.html">查看 &rarr;</a></td></tr>
+          <tr><td class="model">KC-MC</td><td class="spec">50 – 160</td><td class="spec">5.4 – 529</td><td><a class="tbl-link" href="https://www.kofon-motion.com/Products/strain_wave_gear/214.html">查看 &rarr;</a></td></tr>
+          <tr><td class="model">KBG-MC</td><td class="spec">50 – 160</td><td class="spec">6.3 – 654</td><td><a class="tbl-link" href="https://www.kofon-motion.com/Products/strain_wave_gear/220.html">查看 &rarr;</a></td></tr>
+          <tr><td class="model">KSB-MO</td><td class="spec">14 – 50</td><td class="spec">5.1 – 503</td><td><a class="tbl-link" href="https://www.kofon-motion.com/Products/strain_wave_gear/217.html">查看 &rarr;</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <p class="section-eyebrow">Rollsate&reg; 滚柱丝杠</p>
+      <table class="product-table">
+        <thead><tr><th>系列</th><th>尺寸</th><th></th></tr></thead>
+        <tbody>
+          <tr><td class="model">PL</td><td class="spec">12, 15, 18, 21, 25, 27, 30</td><td><a class="tbl-link" href="https://www.kofon-motion.com/Products/rollsatelu__precision_planetary_roller_screw/381.html">查看 &rarr;</a></td></tr>
+          <tr><td class="model">HPL</td><td class="spec">60, 75, 87, 99, 112, 120, 135</td><td><a class="tbl-link" href="https://www.kofon-motion.com/Products/rollsatelu__precision_planetary_roller_screw/382.html">查看 &rarr;</a></td></tr>
+          <tr><td class="model">PLI</td><td class="spec">12, 15, 18, 21, 24, 27, 30</td><td><a class="tbl-link" href="https://www.kofon-motion.com/Products/rollsatelu__precision_planetary_roller_screw/383.html">查看 &rarr;</a></td></tr>
+          <tr><td class="model">RPL</td><td class="spec">12, 16, 20, 25, 32, 36, 40</td><td><a class="tbl-link" href="https://www.kofon-motion.com/Products/rollsatelu__precision_planetary_roller_screw/384.html">查看 &rarr;</a></td></tr>
+          <tr><td class="model">Ball Screws</td><td class="spec">16, 20, 25, 32, 40, 50, 63</td><td><a class="tbl-link" href="https://www.kofon-motion.com/Products/rollsatelu__precision_planetary_roller_screw/406.html">查看 &rarr;</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- Industries -->
+<section>
+  <div class="container">
+    <p class="section-eyebrow">优势行业</p>
+    <h2 class="section-title">覆盖15+行业领域。</h2>
+    <p class="section-lead">科峰组件广泛应用于从半导体制造到手术机器人的各类精密场景。</p>
+    <div class="industry-grid">
+      <a class="industry-pill" href="https://www.kofon-motion.com/competence_industries/factory_automation/"><span class="industry-icon">&#9881;</span> 工厂自动化</a>
+      <a class="industry-pill" href="https://www.kofon-motion.com/competence_industries/robotics/"><span class="industry-icon">&#129302;</span> 机器人</a>
+      <a class="industry-pill" href="https://www.kofon-motion.com/competence_industries/semi_conductor/"><span class="industry-icon">&#128308;</span> 半导体</a>
+      <a class="industry-pill" href="https://www.kofon-motion.com/competence_industries/medical_equipment/"><span class="industry-icon">&#9877;</span> 医疗设备</a>
+      <a class="industry-pill" href="https://www.kofon-motion.com/competence_industries/laser_processing/"><span class="industry-icon">&#128161;</span> 激光加工</a>
+      <a class="industry-pill" href="https://www.kofon-motion.com/competence_industries/intelligent_logistics/"><span class="industry-icon">&#128230;</span> 智能物流</a>
+      <a class="industry-pill" href="https://www.kofon-motion.com/competence_industries/tooling_machine/"><span class="industry-icon">&#128736;</span> 机床</a>
+      <a class="industry-pill" href="https://www.kofon-motion.com/competence_industries/intelligent_transportation/"><span class="industry-icon">&#128643;</span> 智能交通</a>
+      <a class="industry-pill" href="https://www.kofon-motion.com/competence_industries/new_energy/"><span class="industry-icon">&#9889;</span> 新能源</a>
+      <a class="industry-pill" href="https://www.kofon-motion.com/competence_industries/packing_amp_amp_printing_machinery/"><span class="industry-icon">&#128230;</span> 包装印刷</a>
+      <a class="industry-pill" href="https://www.kofon-motion.com/competence_industries/food_industry/"><span class="industry-icon">&#127860;</span> 食品工业</a>
+      <a class="industry-pill" href="https://www.kofon-motion.com/competence_industries/textile_industry/"><span class="industry-icon">&#129526;</span> 纺织</a>
+    </div>
+  </div>
+</section>
+
+<!-- KDP banner -->
+<section>
+  <div class="container">
+    <div class="banner">
+      <div>
+        <p class="section-eyebrow">选型工具</p>
+        <h3>使用 KDP 一分钟内选定合适的减速机。</h3>
+        <p>输入扭矩、速比、回差等级和安装方式，KDP 即刻返回匹配产品列表，数据手册和CAD文件可直接下载。</p>
+        <a class="banner-cta" href="http://select.kofon-motion.com/#/applicationSelection">打开 KDP &rarr;</a>
+      </div>
+      <div class="banner-visual"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">KOFON<span>motion</span></div>
+        <p class="footer-desc">精密运动组件 — 行星减速机、滚柱丝杠、谐波减速器和机器人关节模组。ISO 9001:2015 认证生产。</p>
+      </div>
+      <div class="footer-col">
+        <h4>产品</h4>
+        <a href="https://www.kofon-motion.com/Products/caesarplanetarylu___precision_planetary_gearbox/">CaesarPlanetary</a>
+        <a href="https://www.kofon-motion.com/Products/strain_wave_gear/">Elitewave</a>
+        <a href="https://www.kofon-motion.com/Products/rollsatelu__precision_planetary_roller_screw/">Rollsate</a>
+        <a href="https://www.kofon-motion.com/Products/servoluxlu--robot-modular-joint-solutions/">Servolux</a>
+        <a href="https://www.kofon-motion.com/Products/spiral_bevel_gearbox/">螺旋锥齿轮箱</a>
+        <a href="https://www.kofon-motion.com/Products/kgv_solutions/">KGV Solutions</a>
+      </div>
+      <div class="footer-col">
+        <h4>服务</h4>
+        <a href="http://select.kofon-motion.com/#/applicationSelection">KDP 选型工具</a>
+        <a href="https://www.kofon-motion.com/service177/enginnering_support/">工程支持</a>
+        <a href="https://www.kofon-motion.com/service177/technical_training869/">技术培训</a>
+        <a href="https://www.kofon-motion.com/service177/data_download782/">资料下载</a>
+        <a href="https://www.kofon-motion.com/service177/faq984/">常见问题</a>
+      </div>
+      <div class="footer-col">
+        <h4>公司</h4>
+        <a href="https://www.kofon-motion.com/company/about_us/">关于我们</a>
+        <a href="https://www.kofon-motion.com/company/TechnologyQuality/">技术与质量</a>
+        <a href="https://www.kofon-motion.com/company/company_news/">新闻</a>
+        <a href="https://www.kofon-motion.com/company/exhibitions/">展会</a>
+        <a href="https://www.kofon-motion.com/Contact/">联系我们</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 科峰传动集团 &middot; info@kofon-motion.com &middot; +86 713 8585919 &middot; <a href="https://www.kofon-motion.com/company/PrivacyPolicy/" style="color:var(--ink-muted)">隐私政策</a>
+    </div>
+  </div>
+</footer>
+
+<!-- AI Agent widget — drop these lines into any site -->
+<script src="api.js"></script>
+<script src="widget.js"></script>
+<script src="i18n-extra.js"></script>
+<script src="config.kofon.js"></script>
+
+</body>
+</html>

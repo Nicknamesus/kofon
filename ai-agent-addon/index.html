@@ -6,13 +6,14 @@
 <title>AI Agent Widget — Kofon demo</title>
 <link rel="stylesheet" href="widget.css">
 <style>
-  /* ----- Demo page styling only (the widget brings its own CSS) ----- */
+  /* ----- Demo page styling (the widget brings its own CSS) ----- */
   :root {
     --kofon-navy: #132178;
     --kofon-navy-dark: #0c164f;
     --kofon-green: #c2e295;
     --ink: #16181d;
     --ink-muted: #5a6473;
+    --ink-faint: #9ca3af;
     --line: #e6e8ef;
     --bg: #f6f7fb;
   }
@@ -25,6 +26,7 @@
     line-height: 1.55;
     -webkit-font-smoothing: antialiased;
   }
+  a { color: inherit; text-decoration: none; }
   .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
   /* Top bar */
   .nav {
@@ -46,27 +48,37 @@
     color: var(--ink); text-decoration: none; font-size: 14px; font-weight: 500;
   }
   .nav-links a:hover { color: var(--kofon-navy); }
+  .nav-right { display: flex; align-items: center; gap: 14px; }
+  .lang-switch {
+    display: inline-flex; align-items: center; gap: 4px;
+    padding: 5px 10px; border-radius: 6px;
+    font-size: 13px; font-weight: 600; color: var(--ink-muted);
+    border: 1px solid var(--line); background: #fff;
+    text-decoration: none; transition: border-color .15s;
+  }
+  .lang-switch:hover { border-color: var(--kofon-navy); color: var(--kofon-navy); }
   .nav-cta {
     background: var(--kofon-navy); color: #fff; padding: 8px 16px;
     border-radius: 8px; font-size: 13px; font-weight: 600; text-decoration: none;
   }
+  .nav-cta:hover { background: #1e2f9c; }
   /* Hero */
   .hero {
     background:
       radial-gradient(80% 60% at 80% 0%, rgba(194, 226, 149, 0.18), transparent 60%),
       linear-gradient(150deg, var(--kofon-navy) 0%, var(--kofon-navy-dark) 100%);
     color: #fff;
-    padding: 90px 0 110px;
+    padding: 80px 0 100px;
     position: relative;
     overflow: hidden;
   }
   .hero h1 {
-    font-size: 52px; line-height: 1.05; margin: 0 0 22px;
+    font-size: 48px; line-height: 1.08; margin: 0 0 20px;
     font-weight: 700; letter-spacing: -1.5px;
     max-width: 720px;
   }
   .hero p {
-    font-size: 18px; color: rgba(255,255,255,0.78); margin: 0 0 32px;
+    font-size: 17px; color: rgba(255,255,255,0.78); margin: 0 0 28px;
     max-width: 560px;
   }
   .hero-tags {
@@ -78,24 +90,38 @@
     border: 1px solid rgba(255,255,255,0.18);
     font-size: 12.5px; color: rgba(255,255,255,0.9);
   }
+  .hero-btns { display: flex; gap: 12px; margin-top: 28px; }
+  .hero-btn {
+    display: inline-block; padding: 12px 22px; border-radius: 8px;
+    font-size: 14px; font-weight: 600;
+  }
+  .hero-btn-primary { background: #fff; color: var(--kofon-navy); }
+  .hero-btn-primary:hover { background: #f0f2fa; }
+  .hero-btn-outline {
+    background: transparent; color: #fff;
+    border: 1.5px solid rgba(255,255,255,0.4);
+  }
+  .hero-btn-outline:hover { border-color: #fff; }
   /* Section */
-  section { padding: 72px 0; }
+  section { padding: 64px 0; }
   .section-eyebrow {
     text-transform: uppercase; letter-spacing: 1.2px; font-size: 12px;
     font-weight: 700; color: var(--kofon-navy); margin: 0 0 10px;
   }
   .section-title {
-    font-size: 34px; line-height: 1.15; margin: 0 0 16px;
+    font-size: 32px; line-height: 1.15; margin: 0 0 12px;
     font-weight: 700; letter-spacing: -0.6px;
   }
   .section-lead {
-    font-size: 17px; color: var(--ink-muted); max-width: 640px; margin: 0 0 40px;
+    font-size: 16px; color: var(--ink-muted); max-width: 640px; margin: 0 0 36px;
   }
-  /* Product grid */
+  /* Product family grid */
   .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
   .card {
     background: #fff; border: 1px solid var(--line); border-radius: 14px;
-    padding: 22px; transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    padding: 22px; text-decoration: none; color: inherit;
+    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    display: block;
   }
   .card:hover {
     transform: translateY(-2px);
@@ -103,76 +129,145 @@
     border-color: var(--kofon-navy);
   }
   .card-thumb {
-    height: 120px; border-radius: 10px; margin-bottom: 16px;
-    background: linear-gradient(135deg, #eef1f9 0%, #d8dfee 100%);
+    height: 160px; border-radius: 10px; margin-bottom: 16px;
+    background: #f0f2f8;
     display: flex; align-items: center; justify-content: center;
-    color: var(--kofon-navy); font-size: 28px; font-weight: 700;
+    overflow: hidden;
   }
-  .card h3 { margin: 0 0 6px; font-size: 17px; font-weight: 600; }
-  .card p { margin: 0; font-size: 13.5px; color: var(--ink-muted); }
+  .card-thumb img {
+    max-width: 80%; max-height: 90%; object-fit: contain;
+  }
+  .card h3 { margin: 0 0 4px; font-size: 16px; font-weight: 600; }
+  .card p { margin: 0; font-size: 13px; color: var(--ink-muted); }
+  .card-link {
+    display: inline-flex; align-items: center; gap: 4px;
+    margin-top: 12px; font-size: 12.5px; font-weight: 600; color: var(--kofon-navy);
+  }
+  .card-link:hover { text-decoration: underline; }
+  /* Product table */
+  .product-table {
+    width: 100%; border-collapse: collapse; background: #fff;
+    border: 1px solid var(--line); border-radius: 12px; overflow: hidden;
+  }
+  .product-table th {
+    text-align: left; padding: 12px 16px; font-size: 11.5px;
+    font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px;
+    color: var(--ink-muted); background: #fafbfd; border-bottom: 1px solid var(--line);
+  }
+  .product-table td {
+    padding: 14px 16px; font-size: 13.5px; border-bottom: 1px solid var(--line);
+    vertical-align: middle;
+  }
+  .product-table tr:last-child td { border-bottom: none; }
+  .product-table tr:hover td { background: #fafbfe; }
+  .product-table .model {
+    font-weight: 600; color: var(--kofon-navy);
+  }
+  .product-table .spec { color: var(--ink-muted); font-variant-numeric: tabular-nums; }
+  .product-table .tbl-link {
+    font-size: 12.5px; font-weight: 600; color: var(--kofon-navy);
+  }
+  .product-table .tbl-link:hover { text-decoration: underline; }
+  /* Industry pills */
+  .industry-grid {
+    display: flex; flex-wrap: wrap; gap: 10px;
+  }
+  .industry-pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 10px 16px; background: #fff; border: 1px solid var(--line);
+    border-radius: 10px; font-size: 13.5px; font-weight: 500;
+    transition: border-color .16s ease, transform .16s ease, box-shadow .16s ease;
+  }
+  .industry-pill:hover {
+    border-color: var(--kofon-navy); transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(15, 23, 60, 0.06);
+  }
+  .industry-icon { font-size: 18px; }
   /* Banner */
   .banner {
     background: #fff; border: 1px solid var(--line); border-radius: 16px;
     padding: 36px; display: grid; grid-template-columns: 1.4fr 1fr; gap: 36px;
     align-items: center;
   }
-  .banner h3 { font-size: 26px; margin: 0 0 12px; letter-spacing: -0.4px; }
-  .banner p { color: var(--ink-muted); margin: 0 0 18px; font-size: 15px; }
+  .banner h3 { font-size: 24px; margin: 0 0 10px; letter-spacing: -0.4px; }
+  .banner p { color: var(--ink-muted); margin: 0 0 18px; font-size: 14.5px; }
   .banner-cta {
     display: inline-block; background: var(--kofon-navy); color: #fff;
     padding: 11px 20px; border-radius: 8px; font-size: 14px; font-weight: 600;
     text-decoration: none;
   }
+  .banner-cta:hover { background: #1e2f9c; }
   .banner-visual {
     height: 180px; border-radius: 12px;
     background:
       radial-gradient(circle at 30% 30%, rgba(194, 226, 149, 0.5), transparent 60%),
       linear-gradient(135deg, var(--kofon-navy) 0%, #1e2f9c 100%);
   }
+  /* Stats strip */
+  .stats {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+    padding: 48px 0;
+  }
+  .stat {
+    text-align: center; background: #fff; border: 1px solid var(--line);
+    border-radius: 12px; padding: 24px 16px;
+  }
+  .stat-num {
+    font-size: 32px; font-weight: 700; color: var(--kofon-navy);
+    letter-spacing: -1px; margin-bottom: 4px;
+  }
+  .stat-label { font-size: 13px; color: var(--ink-muted); }
   /* Footer */
   footer {
-    padding: 40px 0; border-top: 1px solid var(--line); background: #fff;
-    color: var(--ink-muted); font-size: 13px; text-align: center;
+    padding: 48px 0 36px; border-top: 1px solid var(--line); background: #fff;
   }
-  /* Demo banner explaining this is a preview */
-  .demo-note {
-    position: fixed; top: 12px; left: 12px; z-index: 100;
-    background: rgba(22, 24, 29, 0.92);
-    color: #fff; padding: 10px 14px; border-radius: 10px;
-    font-size: 12.5px; max-width: 320px;
-    backdrop-filter: blur(8px);
+  .footer-grid {
+    display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px;
+    margin-bottom: 32px;
   }
-  .demo-note strong { color: var(--kofon-green); }
-  .demo-note kbd {
-    background: rgba(255,255,255,0.14); padding: 1px 6px; border-radius: 4px;
-    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-    font-size: 11px;
+  .footer-brand { font-weight: 800; font-size: 18px; color: var(--kofon-navy); margin-bottom: 10px; }
+  .footer-brand span { font-weight: 500; color: var(--ink-muted); margin-left: 3px; }
+  .footer-desc { font-size: 13px; color: var(--ink-muted); max-width: 280px; }
+  .footer-col h4 {
+    font-size: 12px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.8px; color: var(--ink); margin: 0 0 12px;
+  }
+  .footer-col a {
+    display: block; font-size: 13px; color: var(--ink-muted);
+    padding: 3px 0;
+  }
+  .footer-col a:hover { color: var(--kofon-navy); }
+  .footer-bottom {
+    border-top: 1px solid var(--line); padding-top: 20px;
+    font-size: 12px; color: var(--ink-faint); text-align: center;
   }
   @media (max-width: 760px) {
-    .hero h1 { font-size: 36px; }
+    .hero h1 { font-size: 34px; }
     .grid { grid-template-columns: 1fr; }
     .banner { grid-template-columns: 1fr; }
     .nav-links { display: none; }
+    .stats { grid-template-columns: 1fr 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+    .hero-btns { flex-direction: column; }
   }
 </style>
 </head>
 <body>
 
-<div class="demo-note">
-  <strong>Widget preview</strong> — this faux site shows the chat addon in context. Click the launcher (bottom-right).
-</div>
-
 <nav class="nav">
   <div class="container nav-inner">
-    <a class="logo" href="#">KOFON<span>motion</span></a>
+    <a class="logo" href="https://www.kofon-motion.com">KOFON<span>motion</span></a>
     <div class="nav-links">
-      <a href="#">Company</a>
-      <a href="#">Products</a>
-      <a href="#">Industries</a>
-      <a href="#">Institute</a>
-      <a href="#">Service</a>
+      <a href="https://www.kofon-motion.com/company/about_us/">Company</a>
+      <a href="https://www.kofon-motion.com/Products/caesarplanetarylu___precision_planetary_gearbox/">Products</a>
+      <a href="https://www.kofon-motion.com/competence_industries/factory_automation/">Industries</a>
+      <a href="https://www.kofon-motion.com/Precision_motion_institute/planetary_gearbox/">Institute</a>
+      <a href="https://www.kofon-motion.com/service177/faq984/">Service</a>
     </div>
-    <a class="nav-cta" href="#">Contact</a>
+    <div class="nav-right">
+      <a class="lang-switch" href="index.zh.html">ZH</a>
+      <a class="nav-cta" href="https://www.kofon-motion.com/Contact/">Contact sales</a>
+    </div>
   </div>
 </nav>
 
@@ -181,56 +276,173 @@
     <h1>Precision motion components, engineered for what comes next.</h1>
     <p>Planetary gearboxes, roller screws, strain wave gears and robot joint modules — across 15+ industries, with ISO 9001 production and 5-day standard lead times.</p>
     <div class="hero-tags">
-      <span class="hero-tag">Factory automation</span>
-      <span class="hero-tag">Robotics</span>
-      <span class="hero-tag">Semiconductor</span>
-      <span class="hero-tag">Medical equipment</span>
-      <span class="hero-tag">Laser processing</span>
-      <span class="hero-tag">+ 10 more</span>
+      <a class="hero-tag" href="https://www.kofon-motion.com/competence_industries/factory_automation/">Factory automation</a>
+      <a class="hero-tag" href="https://www.kofon-motion.com/competence_industries/robotics/">Robotics</a>
+      <a class="hero-tag" href="https://www.kofon-motion.com/competence_industries/semi_conductor/">Semiconductor</a>
+      <a class="hero-tag" href="https://www.kofon-motion.com/competence_industries/medical_equipment/">Medical equipment</a>
+      <a class="hero-tag" href="https://www.kofon-motion.com/competence_industries/laser_processing/">Laser processing</a>
+      <a class="hero-tag" href="https://www.kofon-motion.com/competence_industries/intelligent_logistics/">Logistics</a>
+    </div>
+    <div class="hero-btns">
+      <a class="hero-btn hero-btn-primary" href="https://www.kofon-motion.com/Products/caesarplanetarylu___precision_planetary_gearbox/">Browse products</a>
+      <a class="hero-btn hero-btn-outline" href="http://select.kofon-motion.com/#/applicationSelection">Open KDP design tool</a>
     </div>
   </div>
 </section>
 
+<!-- Stats strip -->
+<div class="container">
+  <div class="stats">
+    <div class="stat"><div class="stat-num">6</div><div class="stat-label">Product families</div></div>
+    <div class="stat"><div class="stat-num">15+</div><div class="stat-label">Industries served</div></div>
+    <div class="stat"><div class="stat-num">5 days</div><div class="stat-label">Standard lead time</div></div>
+    <div class="stat"><div class="stat-num">ISO 9001</div><div class="stat-label">Certified production</div></div>
+  </div>
+</div>
+
+<!-- Product families -->
 <section>
   <div class="container">
     <p class="section-eyebrow">Product families</p>
     <h2 class="section-title">Six engineering families, one supplier.</h2>
     <p class="section-lead">From economic-tier standard SKUs to high-precision custom builds. Datasheets, CAD files and KDP design tool available online.</p>
     <div class="grid">
-      <div class="card">
-        <div class="card-thumb">CP</div>
-        <h3>CaesarPlanetary</h3>
-        <p>Precision planetary gearboxes — inline, right-angle, reinforced.</p>
-      </div>
-      <div class="card">
-        <div class="card-thumb">RS</div>
-        <h3>Rollsate</h3>
-        <p>Precision planetary roller screws for high-load linear motion.</p>
-      </div>
-      <div class="card">
-        <div class="card-thumb">EW</div>
-        <h3>Elitewave</h3>
-        <p>Strain wave gears with low backlash and high reduction ratios.</p>
-      </div>
-      <div class="card">
-        <div class="card-thumb">SV</div>
-        <h3>Servolux</h3>
-        <p>Robot modular joint solutions for collaborative & industrial arms.</p>
-      </div>
-      <div class="card">
-        <div class="card-thumb">SB</div>
-        <h3>Spiral bevel</h3>
+      <a class="card" href="https://www.kofon-motion.com/Products/caesarplanetarylu___precision_planetary_gearbox/">
+        <div class="card-thumb"><img src="https://www.kofon-motion.com/uploads/allimg/20241205/1-24120511393cM.png" alt="CaesarPlanetary XA gearbox"></div>
+        <h3>CaesarPlanetary&reg;</h3>
+        <p>Precision planetary gearboxes — inline, right-angle, reinforced. Ratios 3-512, backlash from 1 arcmin.</p>
+        <span class="card-link">View all series &rarr;</span>
+      </a>
+      <a class="card" href="https://www.kofon-motion.com/Products/rollsatelu__precision_planetary_roller_screw/">
+        <div class="card-thumb"><img src="https://www.kofon-motion.com/uploads/allimg/20250107/1-25010FQUJ60.png" alt="Rollsate PL roller screw"></div>
+        <h3>Rollsate&reg;</h3>
+        <p>Precision planetary roller screws for high-load linear motion. PL, HPL, PLI, RPL series.</p>
+        <span class="card-link">View all series &rarr;</span>
+      </a>
+      <a class="card" href="https://www.kofon-motion.com/Products/strain_wave_gear/">
+        <div class="card-thumb"><img src="https://www.kofon-motion.com/uploads/allimg/20241026/1-2410262116494V.png" alt="Elitewave KB-MC strain wave gear"></div>
+        <h3>Elitewave&reg;</h3>
+        <p>Strain wave gears with &lt;20 arcsec backlash and ratios up to 160. Sizes 14-45.</p>
+        <span class="card-link">View all series &rarr;</span>
+      </a>
+      <a class="card" href="https://www.kofon-motion.com/Products/servoluxlu--robot-modular-joint-solutions/">
+        <div class="card-thumb"><img src="https://www.kofon-motion.com/uploads/allimg/20251225/1-251225121S4253.png" alt="Servolux robot joint module"></div>
+        <h3>Servolux&reg;</h3>
+        <p>Robot modular joint solutions — joint modules (KR045-KR070) and joint reducers (KR080-KR128).</p>
+        <span class="card-link">View all series &rarr;</span>
+      </a>
+      <a class="card" href="https://www.kofon-motion.com/Products/spiral_bevel_gearbox/">
+        <div class="card-thumb"><img src="https://www.kofon-motion.com/uploads/allimg/20241027/1-24102G30211209.png" alt="Spiral bevel gearbox"></div>
+        <h3>Spiral Bevel Gearbox</h3>
         <p>Compact right-angle gearboxes for tight installation envelopes.</p>
-      </div>
-      <div class="card">
-        <div class="card-thumb">KGV</div>
-        <h3>KGV solutions</h3>
-        <p>Customized geared motors for specialist applications.</p>
-      </div>
+        <span class="card-link">View all series &rarr;</span>
+      </a>
+      <a class="card" href="https://www.kofon-motion.com/Products/kgv_solutions/">
+        <div class="card-thumb"><img src="https://www.kofon-motion.com/uploads/allimg/20241027/1-24102G32553106.png" alt="KGV geared motor solution"></div>
+        <h3>KGV Solutions</h3>
+        <p>Customized geared motors for specialist OEM applications.</p>
+        <span class="card-link">View all series &rarr;</span>
+      </a>
     </div>
   </div>
 </section>
 
+<!-- Featured products table — CaesarPlanetary -->
+<section style="padding-top:0">
+  <div class="container">
+    <p class="section-eyebrow">Featured — CaesarPlanetary&reg; series</p>
+    <h2 class="section-title">Planetary gearbox quick reference</h2>
+    <p class="section-lead">High-precision and economic inline, right-angle, and reinforced series. Click any model for full specs and datasheets.</p>
+    <table class="product-table">
+      <thead>
+        <tr><th>Model</th><th>Type</th><th>Ratio</th><th>Backlash</th><th>Torque (Nm)</th><th></th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="model">XA</td><td>Inline &middot; High precision</td><td class="spec">3 – 100</td><td class="spec">1 – 8 arcmin</td><td class="spec">14 – 2050</td>
+          <td><a class="tbl-link" href="https://www.kofon-motion.com/Products/caesarplanetarylu___precision_planetary_gearbox/373.html">View &rarr;</a></td>
+        </tr>
+        <tr>
+          <td class="model">KPLF</td><td>Inline &middot; High precision</td><td class="spec">3 – 100</td><td class="spec">3 – 11 arcmin</td><td class="spec">14 – 2050</td>
+          <td><a class="tbl-link" href="https://www.kofon-motion.com/Products/caesarplanetarylu___precision_planetary_gearbox/inline_planetary_gearbox__igh_precision/211.html">View &rarr;</a></td>
+        </tr>
+        <tr>
+          <td class="model">KPG</td><td>Reinforced &middot; High precision</td><td class="spec">3 – 100</td><td class="spec">1 – 7 arcmin</td><td class="spec">42 – 1250</td>
+          <td><a class="tbl-link" href="https://www.kofon-motion.com/Products/caesarplanetarylu___precision_planetary_gearbox/reinforced_type_gearbox__igh_precision/230.html">View &rarr;</a></td>
+        </tr>
+        <tr>
+          <td class="model">KVE</td><td>Right-angle &middot; High precision</td><td class="spec">3 – 100</td><td class="spec">8 – 10 arcmin</td><td class="spec">42 – 910</td>
+          <td><a class="tbl-link" href="https://www.kofon-motion.com/Products/caesarplanetarylu___precision_planetary_gearbox/right_angle_gearbox__igh_precision/234.html">View &rarr;</a></td>
+        </tr>
+        <tr>
+          <td class="model">SPL</td><td>Inline &middot; Economic</td><td class="spec">3 – 512</td><td class="spec">8 – 17 arcmin</td><td class="spec">12 – 1850</td>
+          <td><a class="tbl-link" href="https://www.kofon-motion.com/Products/caesarplanetarylu___precision_planetary_gearbox/inline_planetary_gearbox__conomic_type/225.html">View &rarr;</a></td>
+        </tr>
+        <tr>
+          <td class="model">SPH</td><td>Reinforced &middot; Economic</td><td class="spec">3 – 512</td><td class="spec">8 – 12 arcmin</td><td class="spec">32 – 1000</td>
+          <td><a class="tbl-link" href="https://www.kofon-motion.com/Products/caesarplanetarylu___precision_planetary_gearbox/reinforced_type_gearbox__conomic_type/233.html">View &rarr;</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Elitewave + Rollsate tables -->
+<section style="padding-top:0">
+  <div class="container" style="display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+    <div>
+      <p class="section-eyebrow">Elitewave&reg; Strain Wave Gears</p>
+      <table class="product-table">
+        <thead><tr><th>Model</th><th>Ratio</th><th>Torque (Nm)</th><th></th></tr></thead>
+        <tbody>
+          <tr><td class="model">KB-MC</td><td class="spec">50 – 160</td><td class="spec">5.1 – 503</td><td><a class="tbl-link" href="https://www.kofon-motion.com/Products/strain_wave_gear/215.html">View &rarr;</a></td></tr>
+          <tr><td class="model">KB-HO</td><td class="spec">50 – 160</td><td class="spec">5.1 – 503</td><td><a class="tbl-link" href="https://www.kofon-motion.com/Products/strain_wave_gear/216.html">View &rarr;</a></td></tr>
+          <tr><td class="model">KC-MC</td><td class="spec">50 – 160</td><td class="spec">5.4 – 529</td><td><a class="tbl-link" href="https://www.kofon-motion.com/Products/strain_wave_gear/214.html">View &rarr;</a></td></tr>
+          <tr><td class="model">KBG-MC</td><td class="spec">50 – 160</td><td class="spec">6.3 – 654</td><td><a class="tbl-link" href="https://www.kofon-motion.com/Products/strain_wave_gear/220.html">View &rarr;</a></td></tr>
+          <tr><td class="model">KSB-MO</td><td class="spec">14 – 50</td><td class="spec">5.1 – 503</td><td><a class="tbl-link" href="https://www.kofon-motion.com/Products/strain_wave_gear/217.html">View &rarr;</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <p class="section-eyebrow">Rollsate&reg; Roller Screws</p>
+      <table class="product-table">
+        <thead><tr><th>Series</th><th>Sizes</th><th></th></tr></thead>
+        <tbody>
+          <tr><td class="model">PL</td><td class="spec">12, 15, 18, 21, 25, 27, 30</td><td><a class="tbl-link" href="https://www.kofon-motion.com/Products/rollsatelu__precision_planetary_roller_screw/381.html">View &rarr;</a></td></tr>
+          <tr><td class="model">HPL</td><td class="spec">60, 75, 87, 99, 112, 120, 135</td><td><a class="tbl-link" href="https://www.kofon-motion.com/Products/rollsatelu__precision_planetary_roller_screw/382.html">View &rarr;</a></td></tr>
+          <tr><td class="model">PLI</td><td class="spec">12, 15, 18, 21, 24, 27, 30</td><td><a class="tbl-link" href="https://www.kofon-motion.com/Products/rollsatelu__precision_planetary_roller_screw/383.html">View &rarr;</a></td></tr>
+          <tr><td class="model">RPL</td><td class="spec">12, 16, 20, 25, 32, 36, 40</td><td><a class="tbl-link" href="https://www.kofon-motion.com/Products/rollsatelu__precision_planetary_roller_screw/384.html">View &rarr;</a></td></tr>
+          <tr><td class="model">Ball Screws</td><td class="spec">16, 20, 25, 32, 40, 50, 63</td><td><a class="tbl-link" href="https://www.kofon-motion.com/Products/rollsatelu__precision_planetary_roller_screw/406.html">View &rarr;</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- Industries -->
+<section>
+  <div class="container">
+    <p class="section-eyebrow">Competence industries</p>
+    <h2 class="section-title">Proven across 15+ sectors.</h2>
+    <p class="section-lead">Kofon components are deployed in precision applications from semiconductor fabs to surgical robotics.</p>
+    <div class="industry-grid">
+      <a class="industry-pill" href="https://www.kofon-motion.com/competence_industries/factory_automation/"><span class="industry-icon">&#9881;</span> Factory automation</a>
+      <a class="industry-pill" href="https://www.kofon-motion.com/competence_industries/robotics/"><span class="industry-icon">&#129302;</span> Robotics</a>
+      <a class="industry-pill" href="https://www.kofon-motion.com/competence_industries/semi_conductor/"><span class="industry-icon">&#128308;</span> Semiconductor</a>
+      <a class="industry-pill" href="https://www.kofon-motion.com/competence_industries/medical_equipment/"><span class="industry-icon">&#9877;</span> Medical equipment</a>
+      <a class="industry-pill" href="https://www.kofon-motion.com/competence_industries/laser_processing/"><span class="industry-icon">&#128161;</span> Laser processing</a>
+      <a class="industry-pill" href="https://www.kofon-motion.com/competence_industries/intelligent_logistics/"><span class="industry-icon">&#128230;</span> Intelligent logistics</a>
+      <a class="industry-pill" href="https://www.kofon-motion.com/competence_industries/tooling_machine/"><span class="industry-icon">&#128736;</span> Tooling machines</a>
+      <a class="industry-pill" href="https://www.kofon-motion.com/competence_industries/intelligent_transportation/"><span class="industry-icon">&#128643;</span> Transportation</a>
+      <a class="industry-pill" href="https://www.kofon-motion.com/competence_industries/new_energy/"><span class="industry-icon">&#9889;</span> New energy</a>
+      <a class="industry-pill" href="https://www.kofon-motion.com/competence_industries/packing_amp_amp_printing_machinery/"><span class="industry-icon">&#128230;</span> Packaging &amp; printing</a>
+      <a class="industry-pill" href="https://www.kofon-motion.com/competence_industries/food_industry/"><span class="industry-icon">&#127860;</span> Food industry</a>
+      <a class="industry-pill" href="https://www.kofon-motion.com/competence_industries/textile_industry/"><span class="industry-icon">&#129526;</span> Textile</a>
+    </div>
+  </div>
+</section>
+
+<!-- KDP banner -->
 <section>
   <div class="container">
     <div class="banner">
@@ -238,22 +450,57 @@
         <p class="section-eyebrow">Design tools</p>
         <h3>Pick the right gearbox in under a minute with KDP.</h3>
         <p>Enter torque, ratio, backlash class and mounting. KDP returns a shortlist of matching SKUs with datasheets and CAD files ready to download.</p>
-        <a class="banner-cta" href="#">Open KDP →</a>
+        <a class="banner-cta" href="http://select.kofon-motion.com/#/applicationSelection">Open KDP &rarr;</a>
       </div>
       <div class="banner-visual"></div>
     </div>
   </div>
 </section>
 
+<!-- Footer -->
 <footer>
   <div class="container">
-    Kofon Motion Group · ISO 9001:2015 · info@kofon-motion.com · +86 713 8585919
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">KOFON<span>motion</span></div>
+        <p class="footer-desc">Precision motion components — planetary gearboxes, roller screws, strain wave gears and robot joint modules. ISO 9001:2015 certified production.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <a href="https://www.kofon-motion.com/Products/caesarplanetarylu___precision_planetary_gearbox/">CaesarPlanetary</a>
+        <a href="https://www.kofon-motion.com/Products/strain_wave_gear/">Elitewave</a>
+        <a href="https://www.kofon-motion.com/Products/rollsatelu__precision_planetary_roller_screw/">Rollsate</a>
+        <a href="https://www.kofon-motion.com/Products/servoluxlu--robot-modular-joint-solutions/">Servolux</a>
+        <a href="https://www.kofon-motion.com/Products/spiral_bevel_gearbox/">Spiral Bevel</a>
+        <a href="https://www.kofon-motion.com/Products/kgv_solutions/">KGV Solutions</a>
+      </div>
+      <div class="footer-col">
+        <h4>Service</h4>
+        <a href="http://select.kofon-motion.com/#/applicationSelection">KDP Design Tool</a>
+        <a href="https://www.kofon-motion.com/service177/enginnering_support/">Engineering support</a>
+        <a href="https://www.kofon-motion.com/service177/technical_training869/">Technical training</a>
+        <a href="https://www.kofon-motion.com/service177/data_download782/">Data downloads</a>
+        <a href="https://www.kofon-motion.com/service177/faq984/">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="https://www.kofon-motion.com/company/about_us/">About us</a>
+        <a href="https://www.kofon-motion.com/company/TechnologyQuality/">Technology &amp; quality</a>
+        <a href="https://www.kofon-motion.com/company/company_news/">News</a>
+        <a href="https://www.kofon-motion.com/company/exhibitions/">Exhibitions</a>
+        <a href="https://www.kofon-motion.com/Contact/">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; Kofon Motion Group &middot; info@kofon-motion.com &middot; +86 713 8585919 &middot; <a href="https://www.kofon-motion.com/company/PrivacyPolicy/" style="color:var(--ink-muted)">Privacy policy</a>
+    </div>
   </div>
 </footer>
 
 <!-- AI Agent widget — drop these lines into any site -->
 <script src="api.js"></script>
 <script src="widget.js"></script>
+<script src="i18n-extra.js"></script>
 <script src="config.kofon.js"></script>
 
 </body>

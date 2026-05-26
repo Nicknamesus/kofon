@@ -39,6 +39,9 @@
     languages: [
       { code: "EN", label: "English", flag: "🇬🇧" },
       { code: "DE", label: "Deutsch", flag: "🇩🇪" },
+      { code: "FR", label: "Français", flag: "🇫🇷" },
+      { code: "RU", label: "Русский", flag: "🇷🇺" },
+      { code: "JA", label: "日本語", flag: "🇯🇵" },
       { code: "KO", label: "한국어", flag: "🇰🇷" },
       { code: "ZH", label: "中文", flag: "🇨🇳" },
     ],
@@ -113,7 +116,7 @@
     ],
 
     /* ----- Footer trust strip ----- */
-    footerNote: 'ISO 9001:2015 certified  ·  EN / DE / KO / ZH support  ·  <a href="#">Privacy</a>',
+    footerNote: 'ISO 9001:2015 certified  ·  EN / DE / FR / RU / JA / KO / ZH support  ·  <a href="#">Privacy</a>',
   };
 
   // Boot the widget when the DOM is ready

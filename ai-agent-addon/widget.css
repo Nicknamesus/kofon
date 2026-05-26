@@ -53,7 +53,7 @@
    LAUNCHER (closed state)
    ============================================================ */
 
-.aiagent-launcher {
+.aiagent-root .aiagent-launcher {
   position: fixed;
   right: 24px;
   bottom: 24px;
@@ -132,13 +132,13 @@
   right: 100px;
   bottom: 34px;
   max-width: 280px;
-  background: var(--aiagent-bg-panel);
+  background: var(--aiagent-primary);
   border-radius: 14px;
   padding: 12px 36px 12px 14px;
-  box-shadow: 0 8px 24px rgba(15, 23, 60, 0.18);
+  box-shadow: 0 8px 24px rgba(19, 33, 120, 0.35);
   font-size: 13.5px;
   line-height: 1.45;
-  color: var(--aiagent-text);
+  color: #fff;
   z-index: 1;
   opacity: 0;
   transform: translateY(8px);
@@ -159,9 +159,9 @@
   bottom: 16px;
   width: 12px;
   height: 12px;
-  background: var(--aiagent-bg-panel);
+  background: var(--aiagent-primary);
   transform: rotate(45deg);
-  box-shadow: 4px -4px 6px -2px rgba(15, 23, 60, 0.06);
+  box-shadow: 4px -4px 6px -2px rgba(19, 33, 120, 0.15);
 }
 
 .aiagent-teaser-close {
@@ -172,15 +172,15 @@
   height: 24px;
   border-radius: 6px;
   font-size: 14px;
-  color: var(--aiagent-text-faint);
+  color: rgba(255, 255, 255, 0.6);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .aiagent-teaser-close:hover {
-  background: var(--aiagent-bg-app);
-  color: var(--aiagent-text);
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
 }
 
 /* ============================================================

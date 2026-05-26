@@ -46,41 +46,72 @@
       "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&#39;"
     }[c]));
   }
-  /* Tiny translation table — used only as fallback when the backend
-     doesn't ship a localized label in the SSE card payload. Keep keys
-     in lockstep with `app/i18n.py` on the server. */
+  /* Translation table — EN fallback only. All other languages are
+     loaded from i18n-extra.js via AIAgent.I18N before mount(). */
   const I18N = {
-    matching_products: { EN: "Matching products",   DE: "Passende Produkte",       KO: "일치하는 제품",          ZH: "匹配的产品" },
-    no_matches_yet:    { EN: "No matches yet.",     DE: "Noch keine Treffer.",     KO: "아직 일치 항목이 없습니다.", ZH: "暂无匹配。" },
-    recommended_families: { EN: "Recommended families", DE: "Empfohlene Familien", KO: "추천 제품군",            ZH: "推荐系列" },
-    no_curated_match:  { EN: "No curated match for that combination yet.", DE: "Für diese Kombination gibt es noch keine passende Empfehlung.", KO: "이 조합에 맞는 사전 추천이 아직 없습니다.", ZH: "暂时还没有为此组合预设的推荐。" },
-    closest_matches:   { EN: "Closest matches",     DE: "Nächste Treffer",         KO: "가장 비슷한 사례",         ZH: "最接近的匹配" },
-    none_of_these:     { EN: "None of these — let me describe more", DE: "Keines davon — ich beschreibe mehr", KO: "위 중에 없어요 — 더 설명할게요", ZH: "都不对 — 让我多描述一些" },
-    candidates_more_info: { EN: "Could you tell me a bit more about what's happening? Any noise, error code, or what changed recently helps me narrow it down.", DE: "Können Sie mir etwas mehr darüber erzählen, was passiert? Geräusche, Fehlercode oder kürzliche Änderungen helfen, das einzugrenzen.", KO: "상황을 조금 더 알려주시겠어요? 소음, 에러 코드, 최근에 바뀐 점 같은 정보가 도움이 됩니다.", ZH: "能再多说一些情况吗?比如有没有异响、错误代码,或最近有什么变化,都能帮我缩小范围。" },
-    candidates_describe_more: { EN: "Got it — could you describe what the unit is doing in a bit more detail? E.g. any noise, leak, error code, or what changed recently.", DE: "Verstanden — können Sie etwas genauer beschreiben, was das Gerät tut? Z. B. Geräusche, Leckagen, Fehlercode oder kürzliche Änderungen.", KO: "알겠어요 — 제품 동작을 조금 더 자세히 설명해 주시겠어요? 예: 소음, 누유, 에러 코드, 최근의 변화 등.", ZH: "好的 — 能再详细描述一下设备的表现吗?例如有没有异响、漏油、错误代码,或者最近发生了什么变化。" },
-    likely_issue:      { EN: "Likely issue",        DE: "Wahrscheinliches Problem", KO: "추정되는 문제",          ZH: "可能的问题" },
-    badge_sales:       { EN: "Sales handoff",       DE: "Vertriebsübergabe",       KO: "영업팀 인계",            ZH: "转接销售" },
-    badge_engineer:    { EN: "Engineer",            DE: "Ingenieur",               KO: "엔지니어",               ZH: "工程师" },
-    badge_resolved:    { EN: "Resolved",            DE: "Gelöst",                  KO: "해결됨",                 ZH: "已解决" },
-    title_sales:       { EN: "Connecting you with sales",    DE: "Verbinde Sie mit dem Vertrieb",  KO: "영업팀에 연결 중",   ZH: "正在为您转接销售" },
-    title_engineer:    { EN: "Connecting you with an engineer", DE: "Verbinde Sie mit einem Ingenieur", KO: "엔지니어에게 연결 중", ZH: "正在为您转接工程师" },
-    title_all_set:     { EN: "All set",             DE: "Alles erledigt",          KO: "완료",                  ZH: "全部就绪" },
-    title_done:        { EN: "Done",                DE: "Fertig",                  KO: "완료",                  ZH: "完成" },
-    next_prefix:       { EN: "Next: ",              DE: "Weiter: ",                KO: "다음 단계: ",            ZH: "下一步:" },
-    gate_yes:          { EN: "Yes",                 DE: "Ja",                      KO: "네",                   ZH: "是" },
-    gate_no:           { EN: "No",                  DE: "Nein",                    KO: "아니요",                ZH: "否" },
-    are_these_helpful: { EN: "Are these results helpful?", DE: "Sind diese Treffer hilfreich?", KO: "이 결과가 도움이 되었나요?", ZH: "这些结果对您有帮助吗?" },
-    datasheet_label:   { EN: "Datasheet",           DE: "Datenblatt",              KO: "데이터시트",             ZH: "数据手册" },
-    view_product:      { EN: "View product",        DE: "Produkt ansehen",         KO: "제품 보기",              ZH: "查看产品" },
-    back_to_menu:      { EN: "Back to menu",        DE: "Zurück zum Menü",         KO: "메뉴로 돌아가기",         ZH: "返回菜单" },
-    type_placeholder:  { EN: "Type your question…", DE: "Geben Sie Ihre Frage ein…", KO: "질문을 입력하세요…",     ZH: "请输入您的问题…" },
-    config_form_title: { EN: "Configure {family}",  DE: "{family} konfigurieren",   KO: "{family} 구성",           ZH: "配置 {family}" },
-    config_submit:     { EN: "Find closest match",  DE: "Nächstes Produkt finden",  KO: "가장 가까운 제품 찾기",     ZH: "查找最接近的产品" },
-    config_request_custom: { EN: "Request a custom part", DE: "Sonderfertigung anfragen", KO: "맞춤 부품 요청", ZH: "申请定制零件" },
-    config_optional:   { EN: "All fields optional — fill in what you know.", DE: "Alle Felder optional — tragen Sie ein, was Sie wissen.", KO: "모든 필드 선택 사항 — 아는 값만 입력하세요.", ZH: "所有字段均为选填 — 填写您已知的参数即可。" },
-    feature_in_dev:    { EN: "This feature is currently in development. In the meantime, feel free to ask me anything else or <strong>talk to one of our engineers</strong> directly.", DE: "Diese Funktion befindet sich derzeit in Entwicklung. In der Zwischenzeit können Sie mir gerne andere Fragen stellen oder <strong>direkt mit einem unserer Ingenieure sprechen</strong>.", KO: "이 기능은 현재 개발 중입니다. 그동안 다른 질문을 해 주시거나 <strong>엔지니어와 직접 대화</strong>하실 수 있습니다.", ZH: "此功能正在开发中。您可以先问我其他问题,或<strong>直接联系我们的工程师</strong>。" },
-    expo_followup:     { EN: "Thanks for visiting us! This feature is still being built — for now, please tell me what you're looking for and I'll help from here, or I can <strong>connect you with the engineer you spoke to</strong>.", DE: "Vielen Dank für Ihren Besuch! Diese Funktion wird noch entwickelt. Beschreiben Sie mir, was Sie suchen, oder ich <strong>verbinde Sie mit dem Ingenieur, mit dem Sie gesprochen haben</strong>.", KO: "방문해 주셔서 감사합니다! 이 기능은 아직 개발 중입니다. 찾으시는 것을 말씀해 주시면 도와드리겠습니다. 또는 <strong>대화하셨던 엔지니어에게 연결</strong>해 드릴 수도 있습니다.", ZH: "感谢您的来访！此功能仍在开发中。请告诉我您在寻找什么,我来帮您,或者我可以<strong>为您转接您之前交流过的工程师</strong>。" },
-    datasheet_answer:  { EN: "I can help you find a datasheet. Tell me which product family or SKU you're interested in and I'll point you to the right page.", DE: "Ich kann Ihnen helfen, ein Datenblatt zu finden. Sagen Sie mir, welche Produktfamilie oder SKU Sie interessiert, und ich leite Sie zur richtigen Seite.", KO: "데이터시트를 찾아 드리겠습니다. 관심 있는 제품군이나 SKU를 알려주시면 해당 페이지로 안내해 드리겠습니다.", ZH: "我可以帮您找到数据手册。请告诉我您感兴趣的产品系列或 SKU,我会指引您到正确的页面。" },
+    matching_products:       { EN: "Matching products" },
+    no_matches_yet:          { EN: "No matches yet." },
+    recommended_families:    { EN: "Recommended families" },
+    no_curated_match:        { EN: "No curated match for that combination yet." },
+    closest_matches:         { EN: "Closest matches" },
+    none_of_these:           { EN: "None of these — let me describe more" },
+    candidates_more_info:    { EN: "Could you tell me a bit more about what's happening? Any noise, error code, or what changed recently helps me narrow it down." },
+    candidates_describe_more:{ EN: "Got it — could you describe what the unit is doing in a bit more detail? E.g. any noise, leak, error code, or what changed recently." },
+    likely_issue:            { EN: "Likely issue" },
+    badge_sales:             { EN: "Sales handoff" },
+    badge_engineer:          { EN: "Engineer" },
+    badge_resolved:          { EN: "Resolved" },
+    title_sales:             { EN: "Connecting you with sales" },
+    title_engineer:          { EN: "Connecting you with an engineer" },
+    title_all_set:           { EN: "All set" },
+    title_done:              { EN: "Done" },
+    next_prefix:             { EN: "Next: " },
+    gate_yes:                { EN: "Yes" },
+    gate_no:                 { EN: "No" },
+    are_these_helpful:       { EN: "Are these results helpful?" },
+    datasheet_label:         { EN: "Datasheet" },
+    view_product:            { EN: "View product" },
+    back_to_menu:            { EN: "Back to menu" },
+    type_placeholder:        { EN: "Type your question…" },
+    config_form_title:       { EN: "Configure {family}" },
+    config_submit:           { EN: "Find closest match" },
+    config_request_custom:   { EN: "Request a custom part" },
+    config_optional:         { EN: "All fields optional — fill in what you know." },
+    feature_in_dev:          { EN: "This feature is currently in development. In the meantime, feel free to ask me anything else or <strong>talk to one of our engineers</strong> directly." },
+    expo_followup:           { EN: "Thanks for visiting us! This feature is still being built — for now, please tell me what you're looking for and I'll help from here, or I can <strong>connect you with the engineer you spoke to</strong>." },
+    datasheet_answer:        { EN: "I can help you find a datasheet. Tell me which product family or SKU you're interested in and I'll point you to the right page." },
+    seed_presales:           { EN: "I want to explore what would fit my application." },
+    seed_guide:              { EN: "I know roughly what I need — help me find products." },
+    seed_postsales:          { EN: "I have a problem with a product I own." },
+    seed_other:              { EN: "I have a question." },
+    seed_human:              { EN: "Connect me with a human engineer." },
+    switched_lang:           { EN: "Switched to {lang}. How can I help?" },
+    greeting:                { EN: "Hi, I'm Kofon AI" },
+    subtitle:                { EN: "I help you find the right motion component, customize one, or fix an issue with an existing product." },
+    status_label:            { EN: "Online · usually replies in ~30s" },
+    teaser_text:             { EN: "Need help picking a gearbox? Ask me." },
+    actions_title:           { EN: "What brings you here today?" },
+    action_presales:         { EN: "I'm exploring" },
+    action_presales_sub:     { EN: "Not sure what I need yet — help me figure it out" },
+    action_guide:            { EN: "I know what I need" },
+    action_guide_sub:        { EN: "Find or customize a specific product" },
+    action_postsales:        { EN: "I have a product issue" },
+    action_postsales_sub:    { EN: "Post-sales support for a product I own" },
+    action_other:            { EN: "Something else" },
+    action_other_sub:        { EN: "Question doesn't fit the above" },
+    utilities_title:         { EN: "Quick tools" },
+    util_custom_build:       { EN: "Custom build" },
+    util_lead_times:         { EN: "Lead times" },
+    util_datasheet:          { EN: "Get a datasheet" },
+    util_expo:               { EN: "We met at an expo" },
+    util_human:              { EN: "Talk to a human" },
+    resources_title:         { EN: "Helpful resources" },
+    link_faq:                { EN: "FAQ — lead times, certifications, customization" },
+    link_downloads:          { EN: "Browse all data downloads" },
+    link_kdp:                { EN: "Open the KDP design selection tool" },
+    expo_title:              { EN: "We're at AUTOMATE 2026 — Booth 3245" },
+    expo_meta:               { EN: "Detroit · May 14–17" },
+    expo_cta:                { EN: "Were you there? Continue here" },
   };
   function _t(widget, key) {
     const lang = (widget && widget.state && widget.state.language) || "EN";
@@ -233,7 +264,7 @@
               <div class="aiagent-avatar">${this.cfg.agentInitial}</div>
               <div class="aiagent-brand-text">
                 <p class="aiagent-brand-name">${this.cfg.agentName}</p>
-                <p class="aiagent-brand-status"><span class="aiagent-status-dot"></span>${this.cfg.statusLabel}</p>
+                <p class="aiagent-brand-status"><span class="aiagent-status-dot"></span><span class="aiagent-status-text">${_t(this, "status_label")}</span></p>
               </div>
             </div>
             <div class="aiagent-header-actions">
@@ -256,8 +287,8 @@
             </div>
           </div>
           <div class="aiagent-header-hero">
-            <h2>${this.cfg.greeting}</h2>
-            ${this.cfg.subtitle ? `<p>${this.cfg.subtitle}</p>` : ""}
+            <h2 class="aiagent-greeting">${_t(this, "greeting")}</h2>
+            <p class="aiagent-subtitle">${_t(this, "subtitle")}</p>
           </div>
         </div>
       `;
@@ -265,38 +296,40 @@
 
     _welcomeScreenHTML() {
       const utilities = this.cfg.utilities || [];
+      const utilKeys = ["util_custom_build", "util_lead_times", "util_datasheet", "util_expo", "util_human"];
+      const linkKeys = ["link_faq", "link_downloads", "link_kdp"];
       return `
         <div class="aiagent-screen aiagent-screen-welcome" data-screen="welcome" data-active="true">
           ${this.cfg.expoBanner ? this._expoBannerHTML(this.cfg.expoBanner) : ""}
-          <p class="aiagent-section-title">${this.cfg.actionsTitle || "How can I help?"}</p>
+          <p class="aiagent-section-title">${_t(this, "actions_title")}</p>
           <div class="aiagent-action-grid">
             ${this.cfg.actions.map(a => `
               <button class="aiagent-action-chip" type="button" data-flow="${a.flow}">
                 <span class="aiagent-chip-icon">${ICON[a.icon] || a.icon || ICON.chat}</span>
                 <span>
-                  <span class="aiagent-chip-text">${a.label}</span>
-                  ${a.sublabel ? `<span class="aiagent-chip-sub">${a.sublabel}</span>` : ""}
+                  <span class="aiagent-chip-text">${_t(this, "action_" + a.flow)}</span>
+                  <span class="aiagent-chip-sub">${_t(this, "action_" + a.flow + "_sub")}</span>
                 </span>
               </button>
             `).join("")}
           </div>
           ${utilities.length ? `
-            <p class="aiagent-section-title">${this.cfg.utilitiesTitle || "Quick tools"}</p>
+            <p class="aiagent-section-title">${_t(this, "utilities_title")}</p>
             <div class="aiagent-utility-row">
               ${utilities.map((u, i) => `
                 <button class="aiagent-utility-chip" type="button" data-flow="${u.flow}" data-utility-idx="${i}">
                   <span class="aiagent-utility-icon">${ICON[u.icon] || u.icon || ICON.chat}</span>
-                  <span>${u.label}</span>
+                  <span>${_t(this, utilKeys[i] || ("util_" + i))}</span>
                 </button>
               `).join("")}
             </div>
           ` : ""}
           ${this.cfg.quickLinks && this.cfg.quickLinks.length ? `
-            <p class="aiagent-section-title">Helpful resources</p>
+            <p class="aiagent-section-title">${_t(this, "resources_title")}</p>
             <div class="aiagent-quick-links">
-              ${this.cfg.quickLinks.map(q => `
+              ${this.cfg.quickLinks.map((q, i) => `
                 <button class="aiagent-quick-link" type="button" data-href="${q.href || ""}">
-                  <span>${q.label}</span>
+                  <span>${_t(this, linkKeys[i] || ("link_" + i))}</span>
                   <span class="aiagent-quick-link-arrow">${ICON.arrow}</span>
                 </button>
               `).join("")}
@@ -311,9 +344,9 @@
         <div class="aiagent-expo-banner" data-flow="expo">
           <span class="aiagent-expo-emoji">${b.emoji || "🎪"}</span>
           <div class="aiagent-expo-text">
-            <p class="aiagent-expo-title">${b.title}</p>
-            <p class="aiagent-expo-meta">${b.meta}</p>
-            <a class="aiagent-expo-cta">${b.cta || "Continue the conversation"} ${ICON.arrow}</a>
+            <p class="aiagent-expo-title">${_t(this, "expo_title")}</p>
+            <p class="aiagent-expo-meta">${_t(this, "expo_meta")}</p>
+            <a class="aiagent-expo-cta">${_t(this, "expo_cta")} ${ICON.arrow}</a>
           </div>
         </div>
       `;
@@ -466,20 +499,62 @@
         b.setAttribute("data-active", b.dataset.lang === code ? "true" : "false");
       });
       $(this.root, ".aiagent-lang-menu").setAttribute("data-open", "false");
-      // Refresh chrome strings that don't re-render on their own.
+
+      // Refresh all translatable chrome.
       const backLabel = $(this.root, ".aiagent-back-bar span");
       if (backLabel) backLabel.textContent = _t(this, "back_to_menu");
       const input = $(this.root, ".aiagent-composer-input");
       if (input) input.placeholder = _t(this, "type_placeholder");
+
+      // Header hero
+      const greet = $(this.root, ".aiagent-greeting");
+      if (greet) greet.textContent = _t(this, "greeting");
+      const sub = $(this.root, ".aiagent-subtitle");
+      if (sub) sub.textContent = _t(this, "subtitle");
+      const status = $(this.root, ".aiagent-status-text");
+      if (status) status.textContent = _t(this, "status_label");
+
+      // Teaser bubble
+      const teaser = $(this.root, ".aiagent-teaser > span");
+      if (teaser) teaser.textContent = _t(this, "teaser_text");
+
+      // Re-render the welcome screen body (preserves scroll, re-wires clicks).
+      this._refreshWelcome();
+
       if (lang && this.state.screen === "chat") {
-        const switched = {
-          EN: `Switched to ${lang.label}. How can I help?`,
-          DE: `Auf ${lang.label} umgestellt. Womit kann ich helfen?`,
-          KO: `${lang.label} 로 전환했습니다. 어떤 도움이 필요하신가요?`,
-          ZH: `已切换到${lang.label}。我可以怎么帮您?`,
-        }[code] || `Switched to ${lang.label}. How can I help?`;
+        const switched = _t(this, "switched_lang").replace("{lang}", lang.label);
         this.addBotMessage(switched);
       }
+    }
+
+    _refreshWelcome() {
+      const body = $(this.root, ".aiagent-body");
+      const oldWelcome = $(body, ".aiagent-screen-welcome");
+      if (!oldWelcome) return;
+      const wasActive = oldWelcome.getAttribute("data-active");
+      const newWelcome = h(this._welcomeScreenHTML());
+      newWelcome.setAttribute("data-active", wasActive);
+      body.replaceChild(newWelcome, oldWelcome);
+      // Re-wire click handlers on the fresh DOM.
+      $$(newWelcome, ".aiagent-action-chip, .aiagent-utility-chip").forEach(c => {
+        c.addEventListener("click", () => {
+          const opts = {};
+          const idx = c.dataset.utilityIdx;
+          if (idx != null && this.cfg.utilities && this.cfg.utilities[idx]) {
+            const u = this.cfg.utilities[idx];
+            if (u.subflow) opts.subflow = u.subflow;
+            if (u.seed) opts.seed = u.seed;
+          }
+          this.startFlow(c.dataset.flow, opts);
+        });
+      });
+      const expo = $(newWelcome, ".aiagent-expo-banner");
+      if (expo) expo.addEventListener("click", () => this.startFlow("expo"));
+      $$(newWelcome, ".aiagent-quick-link").forEach(q => {
+        q.addEventListener("click", () => {
+          this.startFlow("freeform", { seed: q.textContent.trim() });
+        });
+      });
     }
 
     /* ----- Flow dispatch.
@@ -534,37 +609,13 @@
       // utilities pass through whatever the chip implied. Seeds are
       // localized so a Chinese user's first visible bubble reads in
       // Chinese, not English.
-      const seedsByLang = {
-        EN: {
-          presales:  "I want to explore what would fit my application.",
-          guide:     "I know roughly what I need — help me find products.",
-          postsales: "I have a problem with a product I own.",
-          other:     "I have a question.",
-          human:     "Connect me with a human engineer.",
-        },
-        DE: {
-          presales:  "Ich möchte herausfinden, was zu meiner Anwendung passt.",
-          guide:     "Ich weiß ungefähr, was ich brauche — helfen Sie mir, Produkte zu finden.",
-          postsales: "Ich habe ein Problem mit einem Produkt, das ich besitze.",
-          other:     "Ich habe eine Frage.",
-          human:     "Verbinden Sie mich mit einem Ingenieur.",
-        },
-        KO: {
-          presales:  "제 응용 분야에 맞는 제품을 살펴보고 싶어요.",
-          guide:     "필요한 게 대략 정해져 있어요 — 제품을 찾아 주세요.",
-          postsales: "구매한 제품에 문제가 있어요.",
-          other:     "질문이 하나 있어요.",
-          human:     "엔지니어와 연결해 주세요.",
-        },
-        ZH: {
-          presales:  "我想了解一下适合我应用的产品。",
-          guide:     "我大致知道需要什么 — 帮我找一下产品。",
-          postsales: "我购买的产品出了问题。",
-          other:     "我有一个问题。",
-          human:     "请帮我转接人工工程师。",
-        },
+      const seedByFlow = {
+        presales:  _t(this, "seed_presales"),
+        guide:     _t(this, "seed_guide"),
+        postsales: _t(this, "seed_postsales"),
+        other:     _t(this, "seed_other"),
+        human:     _t(this, "seed_human"),
       };
-      const seedByFlow = seedsByLang[this.state.language] || seedsByLang.EN;
       const text = (opts && opts.seed) || seedByFlow[name] || "(hi)";
       let apiFlow = (name === "presales" || name === "guide"
         || name === "postsales" || name === "other") ? name : undefined;
@@ -1664,5 +1715,6 @@
   /* ---------- Public API ---------- */
   global.AIAgent = {
     mount(config) { return new AIAgent(config).mount(); },
+    I18N,
   };
 })(window);
