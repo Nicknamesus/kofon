@@ -137,6 +137,7 @@
       this.cfg = Object.assign({
         agentName: "AI Assistant",
         agentInitial: "A",
+        agentAvatar: null,
         primaryColor: null,
         accentColor: null,
         greeting: "Hi — how can I help today?",
@@ -156,6 +157,13 @@
         language: (this.cfg.languages[0] || { code: "EN" }).code,
       };
       this.handlers = this.cfg.on || {};
+    }
+
+    _avatarHTML(cls) {
+      if (this.cfg.agentAvatar) {
+        return `<img class="${cls}" src="${this.cfg.agentAvatar}" alt="${this.cfg.agentName}">`;
+      }
+      return `<div class="${cls}">${this.cfg.agentInitial}</div>`;
     }
 
     /* ----- mount: build & inject ----- */
@@ -261,7 +269,7 @@
         <div class="aiagent-header">
           <div class="aiagent-header-top">
             <div class="aiagent-brand">
-              <div class="aiagent-avatar">${this.cfg.agentInitial}</div>
+              ${this._avatarHTML("aiagent-avatar")}
               <div class="aiagent-brand-text">
                 <p class="aiagent-brand-name">${this.cfg.agentName}</p>
                 <p class="aiagent-brand-status"><span class="aiagent-status-dot"></span><span class="aiagent-status-text">${_t(this, "status_label")}</span></p>
@@ -969,7 +977,7 @@
     addBotMessage(text) {
       const msg = h(`
         <div class="aiagent-msg aiagent-msg-bot">
-          <div class="aiagent-msg-avatar">${this.cfg.agentInitial}</div>
+          ${this._avatarHTML("aiagent-msg-avatar")}
           <div class="aiagent-msg-bubble">${text}</div>
         </div>
       `);
@@ -999,7 +1007,7 @@
 
     showTyping() {
       const t = h(`<div class="aiagent-msg aiagent-msg-bot" data-typing="true">
-        <div class="aiagent-msg-avatar">${this.cfg.agentInitial}</div>
+        ${this._avatarHTML("aiagent-msg-avatar")}
         <div class="aiagent-msg-bubble aiagent-typing"><span></span><span></span><span></span></div>
       </div>`);
       this._thread().appendChild(t);

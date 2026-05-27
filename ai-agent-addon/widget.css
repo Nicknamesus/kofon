@@ -283,6 +283,20 @@
   position: relative;
 }
 
+img.aiagent-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  position: relative;
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.3);
+}
+
+.aiagent-avatar::after,
+img.aiagent-avatar + .aiagent-avatar-dot { /* dot handled via pseudo on div, separate element not needed */ }
+
 .aiagent-avatar::after {
   content: "";
   position: absolute;
@@ -685,6 +699,17 @@
   justify-content: center;
   flex-shrink: 0;
   margin-top: 2px;
+}
+
+img.aiagent-msg-avatar {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  margin-top: 2px;
+  padding: 3px;
+  background: #fff;
 }
 
 .aiagent-msg-bubble {

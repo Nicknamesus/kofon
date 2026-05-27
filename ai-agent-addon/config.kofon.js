@@ -26,6 +26,7 @@
     accentColor: "#c2e295",     // Kofon green
     agentName: "Kofon AI",
     agentInitial: "K",
+    agentAvatar: "agent-profilepic.jpeg",
 
     /* ----- Greeting ----- */
     greeting: "Hi, I'm Kofon AI",
