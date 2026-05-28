@@ -10,7 +10,7 @@ description: W8 micro planetary gearbox series from Kofon. Designed for low-spee
   impact resistance, low noise, and grease lubrication (maintenance-free). Available
   in frame sizes 08/10/12/16/19/22/26/32 with single, double, triple, and quadruple
   stage configurations.
-product_page_url: https://www.kofon.com.cn/products_detail/25.html
+product_page_url: https://www.kofon.com.cn/products_list/10.html
 spec_schema:
   frame_size_mm:
     type: integer

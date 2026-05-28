@@ -3,7 +3,7 @@ name: Servo planetary joint module
 family: Servo Motor Solution
 description: >-
   Servo planetary joint modules integrate a servo motor, planetary reducer, and (optionally) driver/encoder/brake into a single rotary unit. Sister to the servo_linear_joint_module line, but rotary output for revolute robot joints.
-product_page_url: https://www.kofon.com.cn/products_detail/81.html
+product_page_url: https://www.kofon.com.cn/products_list/43.html
 spec_schema:
   max_thrust_n:
     type: integer

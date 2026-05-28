@@ -3,7 +3,7 @@ name: Precision planetary gearbox (S-series)
 family: Precision Planetary Gearbox
 description: >-
   S-series planetary gearboxes from Kofon. Sub-variants include SPL, SPLF, SPLN, SPLS, SPX, SVX, and SPH covering inline and flange-output configurations for servo motion applications.
-product_page_url: https://www.kofon.com.cn/products_detail/18.html
+product_page_url: https://www.kofon.com.cn/products_list/9.html
 spec_schema:
   frame_size_mm:
     type: string

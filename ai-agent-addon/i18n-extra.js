@@ -73,6 +73,13 @@
       expo_title:              "Wir sind auf der AUTOMATE 2026 — Stand 3245",
       expo_meta:               "Detroit · 14.–17. Mai",
       expo_cta:                "Waren Sie dort? Hier weitermachen",
+      config_email_label:      "Ihre E-Mail (für Rückmeldung zum Angebot)",
+      config_email_placeholder: "name@firma.de",
+      seed_customize:          "Ich möchte ein individuelles Getriebe konfigurieren.",
+      seed_leadtime:           "Wie sind Ihre aktuellen Lieferzeiten?",
+      seed_datasheet:          "Ich brauche ein Produktdatenblatt.",
+      seed_expo:               "Wir haben uns auf einer Messe getroffen — ich möchte dort anknüpfen.",
+      footer_note:             'ISO 9001:2015 · EN / DE / FR / RU / JA / KO / ZH · <a href="#">Datenschutz</a>',
     },
 
     /* ---- French ---- */
@@ -140,6 +147,13 @@
       expo_title:              "Nous sommes à AUTOMATE 2026 — Stand 3245",
       expo_meta:               "Detroit · 14–17 mai",
       expo_cta:                "Vous y étiez ? Continuez ici",
+      config_email_label:      "Votre e-mail (pour le suivi du devis)",
+      config_email_placeholder: "vous@entreprise.com",
+      seed_customize:          "Je voudrais configurer un réducteur sur mesure.",
+      seed_leadtime:           "Quels sont vos délais de livraison actuels ?",
+      seed_datasheet:          "J'ai besoin d'une fiche technique produit.",
+      seed_expo:               "On s'est rencontrés à un salon — je reprends la conversation.",
+      footer_note:             'ISO 9001:2015 · EN / DE / FR / RU / JA / KO / ZH · <a href="#">Confidentialité</a>',
     },
 
     /* ---- Russian ---- */
@@ -207,6 +221,13 @@
       expo_title:              "Мы на AUTOMATE 2026 — стенд 3245",
       expo_meta:               "Детройт · 14–17 мая",
       expo_cta:                "Вы были там? Продолжим здесь",
+      config_email_label:      "Ваш e-mail (для обратной связи по запросу)",
+      config_email_placeholder: "вы@компания.ru",
+      seed_customize:          "Хочу сконфигурировать индивидуальный редуктор.",
+      seed_leadtime:           "Какие у вас сейчас сроки поставки?",
+      seed_datasheet:          "Мне нужна спецификация на продукт.",
+      seed_expo:               "Мы встречались на выставке — хочу продолжить разговор.",
+      footer_note:             'ISO 9001:2015 · EN / DE / FR / RU / JA / KO / ZH · <a href="#">Конфиденциальность</a>',
     },
 
     /* ---- Japanese ---- */
@@ -274,6 +295,13 @@
       expo_title:              "AUTOMATE 2026 に出展中 — ブース 3245",
       expo_meta:               "デトロイト · 5月14–17日",
       expo_cta:                "ご来場されましたか？こちらからどうぞ",
+      config_email_label:      "メールアドレス（見積もりのご連絡用）",
+      config_email_placeholder: "you@company.co.jp",
+      seed_customize:          "カスタム減速機を構成したいです。",
+      seed_leadtime:           "現在の納期はどのくらいですか？",
+      seed_datasheet:          "製品データシートが必要です。",
+      seed_expo:               "展示会でお会いしました — 続きをお願いします。",
+      footer_note:             'ISO 9001:2015 · EN / DE / FR / RU / JA / KO / ZH · <a href="#">プライバシー</a>',
     },
 
     /* ---- Korean ---- */
@@ -341,6 +369,13 @@
       expo_title:              "AUTOMATE 2026 참가 중 — 부스 3245",
       expo_meta:               "디트로이트 · 5월 14–17일",
       expo_cta:                "방문하셨나요? 여기서 계속하세요",
+      config_email_label:      "이메일 (견적 회신용)",
+      config_email_placeholder: "you@company.co.kr",
+      seed_customize:          "맞춤형 감속기를 구성하고 싶습니다.",
+      seed_leadtime:           "현재 납기가 어떻게 되나요?",
+      seed_datasheet:          "제품 데이터시트가 필요합니다.",
+      seed_expo:               "전시회에서 만났었는데요 — 이어서 하고 싶습니다.",
+      footer_note:             'ISO 9001:2015 · EN / DE / FR / RU / JA / KO / ZH · <a href="#">개인정보</a>',
     },
 
     /* ---- Chinese ---- */
@@ -408,6 +443,13 @@
       expo_title:              "我们在 AUTOMATE 2026 — 展位 3245",
       expo_meta:               "底特律 · 5月14–17日",
       expo_cta:                "您去过吗？在这里继续",
+      config_email_label:      "您的邮箱（用于报价回复）",
+      config_email_placeholder: "you@company.cn",
+      seed_customize:          "我想配置一款定制减速机。",
+      seed_leadtime:           "目前的交货期是多久？",
+      seed_datasheet:          "我需要一份产品数据手册。",
+      seed_expo:               "我们在展会上见过——想继续之前的交流。",
+      footer_note:             'ISO 9001:2015 · EN / DE / FR / RU / JA / KO / ZH · <a href="#">隐私政策</a>',
     },
   };
 

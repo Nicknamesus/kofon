@@ -8,7 +8,7 @@ description: Kofon precision ball screw series. High-efficiency (≥90%) rolling
   high positioning accuracy, high rigidity (via preload), high speed capability, and
   long service life. Available in multiple screw diameters (16–63 mm) and leads (4–10
   mm) with various ball diameters and circuit configurations.
-product_page_url: https://www.kofon.com.cn/products_detail/46.html
+product_page_url: https://www.kofon.com.cn/products_list/25.html
 spec_schema:
   screw_diameter_mm:
     type: integer

@@ -7,7 +7,7 @@ description: KBD-MC series harmonic drive reducers from Kofon. Ultra-short desig
   with high transmission accuracy, high torsional stiffness, large load capacity,
   high efficiency, and long life. Available in frame sizes 14, 17, 20, 25, and 32
   with various reduction ratios.
-product_page_url: https://www.kofon.com.cn/products_detail/78.html
+product_page_url: https://www.kofon.com.cn/products_list/39.html
 spec_schema:
   frame_size_mm:
     type: integer

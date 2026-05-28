@@ -3,7 +3,7 @@ name: Spiral-bevel gearbox (KT-series)
 family: Spiral Bevel Gearbox
 description: >-
   KT-series precision spiral-bevel gearboxes from Kofon (the CaesarSpiral line). Variants include KTFL, KTFL1, KTFH, KTL, KTR1, KTC, KTH, KTL1, and KTFC, covering right-angle and inline configurations with high torque density. The KTFR1 sub-variant has its own product_type entry.
-product_page_url: https://www.kofon.com.cn/products_detail/61.html
+product_page_url: https://www.kofon.com.cn/products_list/34.html
 spec_schema:
   frame_size_mm:
     type: string

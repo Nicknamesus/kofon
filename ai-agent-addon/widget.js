@@ -112,6 +112,13 @@
     expo_title:              { EN: "We're at AUTOMATE 2026 — Booth 3245" },
     expo_meta:               { EN: "Detroit · May 14–17" },
     expo_cta:                { EN: "Were you there? Continue here" },
+    seed_customize:          { EN: "I'd like to configure a custom gearbox build." },
+    seed_leadtime:           { EN: "What are your current lead times?" },
+    seed_datasheet:          { EN: "I need a product datasheet." },
+    seed_expo:               { EN: "We met at a trade show — picking up where we left off." },
+    footer_note:             { EN: 'ISO 9001:2015 · EN / DE / FR / RU / JA / KO / ZH · <a href="#">Privacy</a>' },
+    config_email_label:      { EN: "Your email (for quote follow-up)" },
+    config_email_placeholder:{ EN: "you@company.com" },
   };
   function _t(widget, key) {
     const lang = (widget && widget.state && widget.state.language) || "EN";
@@ -140,15 +147,10 @@
         agentAvatar: null,
         primaryColor: null,
         accentColor: null,
-        greeting: "Hi — how can I help today?",
-        subtitle: "",
-        statusLabel: "Online",
         actions: [],
         languages: [{ code: "EN", label: "English", flag: "🇺🇸" }],
         expoBanner: null,
         quickLinks: [],
-        footerNote: "",
-        teaser: null,
       }, config || {});
       this.state = {
         open: false,
@@ -186,7 +188,8 @@
       }
 
       this.root.appendChild(this._renderLauncher());
-      if (this.cfg.teaser) this.root.appendChild(this._renderTeaser());
+      const teaserText = _t(this, "teaser_text");
+      if (teaserText && teaserText !== "teaser_text") this.root.appendChild(this._renderTeaser());
       this.root.appendChild(this._renderBackdrop());
       this.root.appendChild(this._renderPanel());
 
@@ -212,7 +215,7 @@
       const t = h(`
         <div class="aiagent-teaser" data-visible="false">
           <button class="aiagent-teaser-close" aria-label="Dismiss">${ICON.close}</button>
-          <span>${this.cfg.teaser}</span>
+          <span>${_t(this, "teaser_text")}</span>
         </div>
       `);
       $(t, ".aiagent-teaser-close").addEventListener("click", (e) => {
@@ -361,8 +364,9 @@
     }
 
     _footerHTML() {
-      if (!this.cfg.footerNote) return "";
-      return `<div class="aiagent-footer">${this.cfg.footerNote}</div>`;
+      const note = _t(this, "footer_note");
+      if (!note || note === "footer_note") return "";
+      return `<div class="aiagent-footer">${note}</div>`;
     }
 
     /* ----- Event wiring ----- */
@@ -594,20 +598,17 @@
 
       // --- Quick-tool fast paths (no backend round-trip needed) -----------
       if (name === "leadtime") {
-        const text = (opts && opts.seed) || "(hi)";
-        this.addUserMessage(text);
+        this.addUserMessage(_t(this, "seed_leadtime"));
         this.addBotMessage(_t(this, "feature_in_dev"));
         return;
       }
       if (name === "expo") {
-        const text = (opts && opts.seed) || "We met at an expo.";
-        this.addUserMessage(text);
+        this.addUserMessage(_t(this, "seed_expo"));
         this.addBotMessage(_t(this, "expo_followup"));
         return;
       }
       if (name === "datasheet") {
-        const text = (opts && opts.seed) || "I need a product datasheet.";
-        this.addUserMessage(text);
+        this.addUserMessage(_t(this, "seed_datasheet"));
         this.addBotMessage(_t(this, "datasheet_answer"));
         return;
       }
@@ -624,10 +625,12 @@
         other:     _t(this, "seed_other"),
         human:     _t(this, "seed_human"),
       };
-      const text = (opts && opts.seed) || seedByFlow[name] || "(hi)";
+      const subflow = opts && opts.subflow ? opts.subflow : undefined;
+      const subflowSeed = subflow ? _t(this, "seed_" + subflow) : null;
+      const text = (subflowSeed && subflowSeed !== "seed_" + subflow)
+        ? subflowSeed : seedByFlow[name] || "(hi)";
       let apiFlow = (name === "presales" || name === "guide"
         || name === "postsales" || name === "other") ? name : undefined;
-      const subflow = opts && opts.subflow ? opts.subflow : undefined;
       const extra = {};
 
       // "Talk to a human" fast lane — routes directly to outcome_human.
@@ -883,6 +886,11 @@
         <div class="aiagent-card aiagent-config-form">
           <p class="aiagent-card-title">${ICON.gear} ${title}</p>
           <p class="aiagent-card-hint" style="margin-bottom:10px">${hint}</p>
+          <div class="aiagent-field">
+            <span class="aiagent-field-label">${_t(this, "config_email_label")}</span>
+            <input class="aiagent-field-input aiagent-config-email" type="email"
+                   placeholder="${_t(this, "config_email_placeholder")}">
+          </div>
           ${fieldHtml}
           <button class="aiagent-card-cta aiagent-config-submit" type="button">
             ${ICON.check} ${_t(this, "config_submit")}
@@ -939,20 +947,31 @@
         if (bits.length) this.addUserMessage(bits.join(", "));
       };
 
+      const getEmail = () => {
+        const inp = card.querySelector(".aiagent-config-email");
+        return inp ? inp.value.trim() : "";
+      };
+
       // "Find closest match" — sends modules to the backend for matching.
       card.querySelector(".aiagent-config-submit").addEventListener("click", () => {
         const modules = collectModules();
+        const email = getEmail();
         lockForm();
         summarize(modules);
-        this._streamFromApi({ custom_modules: modules, language: this.state.language });
+        const payload = { custom_modules: modules, language: this.state.language };
+        if (email) payload.contact_email = email;
+        this._streamFromApi(payload);
       });
 
       // "Request custom part" — sends modules + force_human for a handoff.
       card.querySelector(".aiagent-config-custom").addEventListener("click", () => {
         const modules = collectModules();
+        const email = getEmail();
         lockForm();
         summarize(modules);
-        this._streamFromApi({ custom_modules: modules, force_human: true, language: this.state.language });
+        const payload = { custom_modules: modules, force_human: true, language: this.state.language };
+        if (email) payload.contact_email = email;
+        this._streamFromApi(payload);
       });
 
       return card;

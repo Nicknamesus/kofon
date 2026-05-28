@@ -8,7 +8,7 @@ description: XAM series servo motors feature 5-pole-pair, low cogging torque des
   Power range 0.05 kW to 2 kW, flange sizes 60 mm to 130 mm, with multiple inertia
   and speed configurations. Available in 48 V, 220 V, and 380 V voltage grades. Equipped
   with 23-bit multi-turn absolute optical encoder. IP65 protection, Class F insulation.
-product_page_url: https://www.kofon.com.cn/products_detail/53.html
+product_page_url: https://www.kofon.com.cn/products_list/54.html
 spec_schema:
   frame_size_mm:
     type: integer

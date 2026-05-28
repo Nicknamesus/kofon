@@ -3,7 +3,7 @@ name: Compact harmonic gear (KSB/KSBG-MO)
 family: Strain Wave / Harmonic Gear
 description: >-
   KSB/KSBG-MO series compact harmonic gear reducers in the medium-output (MO) configuration, optimized for low-axial-length integration.
-product_page_url: https://www.kofon.com.cn/products_detail/75.html
+product_page_url: https://www.kofon.com.cn/products_list/37.html
 spec_schema:
   frame_size:
     type: integer

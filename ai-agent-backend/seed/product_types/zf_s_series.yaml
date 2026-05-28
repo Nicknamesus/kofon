@@ -8,7 +8,7 @@ description: 'ZF-S two-stage planetary gearbox series, designed for machine tool
   V1), excelling in low-speed high-torque applications. Features coaxial output, helical
   gear design for low noise, low backlash, high radial load capacity, and 24V DC shift-by-wire
   actuation. Available in four frame sizes: 2S250, 2S300, 2S450, 2S600.'
-product_page_url: https://www.kofon.com.cn/products_detail/112.html
+product_page_url: https://www.kofon.com.cn/products_list/63.html
 spec_schema:
   frame_size:
     type: string
