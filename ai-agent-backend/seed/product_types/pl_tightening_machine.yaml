@@ -41,7 +41,7 @@ spec_schema:
     type: number
     label: Weight (kg)
   frame_size_mm:
-    type: string
+    type: integer
     label: Frame Size (mm)
   variant:
     type: string
@@ -52,6 +52,3 @@ spec_schema:
   max_tightening_torque_nm:
     type: number
     label: Max Tightening Torque (Nm)
-  life_cycles:
-    type: integer
-    label: Service Life (cycles)

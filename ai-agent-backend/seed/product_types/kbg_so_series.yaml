@@ -6,7 +6,7 @@ description: >-
 product_page_url: https://www.kofon.com.cn/products_list/15.html
 spec_schema:
   frame_size:
-    type: integer
+    type: string
     label: Frame size
   ratio:
     type: integer

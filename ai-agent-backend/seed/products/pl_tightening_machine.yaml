@@ -15,7 +15,6 @@ products:
     input_speed_rpm_max: null
     efficiency_pct: null
     weight_kg: null
-    frame_size_mm: null
     variant: null
   datasheet_url: https://www.kofon.com.cn/products_detail/101.html
   status: active
@@ -23,7 +22,7 @@ products:
   name: PL062 拧紧机 (Tightening Machine)
   specs:
     model: PL062
-    frame_size_mm: '62'
+    frame_size_mm: 62
   status: active
 - sku: PL050
   name: PL050 — Tightening Machine
@@ -31,7 +30,7 @@ products:
     model: PL050
     stage: '1'
     ratio: '1:1'
-    frame_size_mm: '50'
+    frame_size_mm: 50
   status: active
 - sku: PL050-1-3
   name: PL050 — 1-stage, 3:1
@@ -39,7 +38,7 @@ products:
     model: PL050
     stage: '1'
     ratio: '3:1'
-    frame_size_mm: '50'
+    frame_size_mm: 50
   status: active
 - sku: PL050-1-4
   name: PL050 — 1-stage, 4:1
@@ -47,7 +46,7 @@ products:
     model: PL050
     stage: '1'
     ratio: '4:1'
-    frame_size_mm: '50'
+    frame_size_mm: 50
   status: active
 - sku: PL050-1-5
   name: PL050 — 1-stage, 5:1
@@ -55,7 +54,7 @@ products:
     model: PL050
     stage: '1'
     ratio: '5:1'
-    frame_size_mm: '50'
+    frame_size_mm: 50
   status: active
 - sku: PL050-1-8
   name: PL050 — 1-stage, 8:1
@@ -63,7 +62,7 @@ products:
     model: PL050
     stage: '1'
     ratio: '8:1'
-    frame_size_mm: '50'
+    frame_size_mm: 50
   status: active
 - sku: PL050-1-10
   name: PL050 — 1-stage, 10:1
@@ -71,5 +70,5 @@ products:
     model: PL050
     stage: '1'
     ratio: '10:1'
-    frame_size_mm: '50'
+    frame_size_mm: 50
   status: active

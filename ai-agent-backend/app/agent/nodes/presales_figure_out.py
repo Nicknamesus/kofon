@@ -38,15 +38,24 @@ Application examples: Cobot joint actuation, AGV / AMR wheel drive,
 Servo indexing table, Rotary axis (B/C), Heliostat / tracker drive,
 Antenna positioner.
 
-If either is missing or unclear, set ready=false and put ONE targeted
-clarifying question into follow_up_question. Don't ask for both at once.
-Never invent values the user didn't actually say.
+If the user mentions a specific model code or SKU verbatim (e.g. 'RF080',
+'KGR070', 'R080-2-20'), copy it exactly into `query`. It's forwarded to
+the product search so the handoff can land on that exact product instead
+of only the recommended family. Don't invent a code the user didn't type.
+
+If either industry or application is missing or unclear, set ready=false
+and put ONE targeted clarifying question into follow_up_question. Don't
+ask for both at once. Never invent values the user didn't actually say.
 """
 
 
 class _Extraction(BaseModel):
     industry: str | None = None
     application: str | None = None
+    query: str | None = Field(
+        default=None,
+        description="Literal model code / SKU the user typed verbatim, if any.",
+    )
     ready: bool = Field(description="True if both industry and application are known")
     follow_up_question: str | None = None
 
@@ -81,12 +90,17 @@ async def run(state: AgentState) -> dict:
             }
 
         if top_family:
+            handoff_slots: dict = {
+                "filters": {"family": top_family},
+                "presales": {**presales, "handed_off": True},
+            }
+            # Forward any model code the user named earlier so guide.find
+            # lands on the exact product, not just the recommended family.
+            if presales.get("query"):
+                handoff_slots["query"] = presales["query"]
             return {
                 "flow": "guide",
-                "slots": {
-                    "filters": {"family": top_family},
-                    "presales": {**presales, "handed_off": True},
-                },
+                "slots": handoff_slots,
                 "current_node": "presales.figure_out.handed_off",
             }
         # No top family was set (shouldn't happen given the no-match branch
@@ -106,6 +120,10 @@ async def run(state: AgentState) -> dict:
         [system_message(SYSTEM_EXTRACT, lang), *messages]
     )
 
+    # Persist any literal model code the user mentioned so it survives the
+    # clarification loop and the later handoff to guide.find.
+    carried_query = (extraction.query or "").strip() or presales.get("query")
+
     if not extraction.ready:
         question = (
             extraction.follow_up_question
@@ -118,6 +136,7 @@ async def run(state: AgentState) -> dict:
                     **presales,
                     "industry": extraction.industry,
                     "application": extraction.application,
+                    "query": carried_query,
                 }
             },
             "current_node": "presales.figure_out",
@@ -165,6 +184,7 @@ async def run(state: AgentState) -> dict:
                         "application": extraction.application,
                         "recommendations_shown": True,
                         "top_family_code": family_code,
+                        "query": carried_query,
                     }
                 },
                 "cards": [
@@ -209,6 +229,7 @@ async def run(state: AgentState) -> dict:
                     "application": extraction.application,
                     "recommendations_shown": True,
                     "top_family_code": None,
+                    "query": carried_query,
                 }
             },
             "current_node": "presales.figure_out.no_match",
@@ -236,6 +257,7 @@ async def run(state: AgentState) -> dict:
                 "application": extraction.application,
                 "recommendations_shown": True,
                 "top_family_code": top.product_type_code,
+                "query": carried_query,
             }
         },
         "cards": [

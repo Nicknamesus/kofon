@@ -9,7 +9,7 @@ products:
     model: TKZ090
     stage: N/A
     ratio: N/A
-    frame_size_mm: 090
+    frame_size_mm: 90
   status: active
 - sku: TKZ050
   name: TKZ050 — Tightening Gearbox
@@ -23,7 +23,7 @@ products:
     input_speed_rpm_max: null
     efficiency_pct: null
     weight_kg: null
-    frame_size_mm: '050'
+    frame_size_mm: 50
   datasheet_url: https://www.kofon.com.cn/products_detail/103.html
   status: active
 - sku: TKZ075
@@ -32,7 +32,7 @@ products:
     model: TKZ075
     stage: '1'
     ratio: unknown
-    frame_size_mm: '75'
+    frame_size_mm: 75
   status: active
 - sku: TKZ120
   name: TKZ120 — Tightening Gearbox
@@ -40,7 +40,7 @@ products:
     model: TKZ120
     stage: '1'
     ratio: unknown
-    frame_size_mm: '120'
+    frame_size_mm: 120
   status: active
 - sku: TKZ060
   name: TKZ060 — Tightening Gearbox
@@ -54,7 +54,6 @@ products:
     input_speed_rpm_max: null
     efficiency_pct: null
     weight_kg: null
-    frame_size_mm: null
     variant: null
   datasheet_url: https://www.kofon.com.cn/products_detail/99.html
   status: active

@@ -40,9 +40,19 @@ Your job is to translate the user's free-form description of what they
 need into a structured SearchProductsFilters object that the search tool
 can consume.
 
+Besides the structured filters, capture any literal model code, SKU, or
+product-name fragment the user typed into the top-level `query` field,
+VERBATIM (e.g. 'RF080', 'KGR070', 'R080-2-20'). This is matched directly
+against the catalog's SKUs and names, so it finds the right product even
+when you can't map the code to a family code below. Do NOT invent a code
+the user didn't type, and do NOT guess a `family` from a code you don't
+recognise — leave `family` unset and let `query` do the work.
+
 Available filters (all optional):
   family                — product family code (one of the catalog codes below)
   frame_size_mm         — number (catalog-specific; common values vary by family)
+  ratio                 — reduction ratio, the N in 'N:1' (e.g. '20:1' -> 20)
+  stages                — number of stages (e.g. '2 stage' / '2-stage' -> 2)
   min_nominal_torque_nm — number
   max_backlash_arcmin   — number
   variant               — family-specific variant tag (e.g. 'HP' / 'HT' on caesarplanetary)
@@ -51,10 +61,11 @@ Product family codes available in the catalog (use one of these literally
 when you set `family`):
 {families_block}
 
-Set ready_to_search=true only when there's enough signal to return a
-useful shortlist (1-2 filters that meaningfully narrow). If you need
-more info, set ready_to_search=false and put ONE clarifying question
-into follow_up_question. Never make up facts the user didn't say.
+Set ready_to_search=true when there's enough signal to return a useful
+shortlist — that includes any time `query` holds a model code/SKU, or when
+1-2 filters meaningfully narrow. If you need more info, set
+ready_to_search=false and put ONE clarifying question into
+follow_up_question. Never make up facts the user didn't say.
 """
 
 
@@ -83,13 +94,19 @@ async def _build_system_prompt(session: AsyncSession) -> str:
 
 class _Extraction(BaseModel):
     filters: SearchProductsFilters = Field(default_factory=SearchProductsFilters)
+    query: str | None = Field(
+        default=None,
+        description="Literal model code / SKU / name fragment the user typed.",
+    )
     ready_to_search: bool
     follow_up_question: str | None = None
 
 
 async def run(state: AgentState) -> dict:
     messages = state.get("messages", [])
-    existing_filters = (state.get("slots") or {}).get("filters") or {}
+    slots = state.get("slots") or {}
+    existing_filters = slots.get("filters") or {}
+    existing_query = slots.get("query") or ""
     lang = state.get("language")
 
     # Build the SYSTEM prompt with the current catalog so the LLM knows
@@ -111,10 +128,15 @@ async def run(state: AgentState) -> dict:
         merged[key] = value
     merged_filters = SearchProductsFilters(**merged)
 
+    # The literal model code/SKU persists across turns just like filters:
+    # the user may type "RF080" then "2 stage 20:1" in separate messages.
+    # Latest non-empty extraction wins.
+    query = (extraction.query or "").strip() or existing_query
+
     # Re-evaluate readiness with merged context — if presales seeded a family,
     # we may already have enough to search even if this turn's extraction
-    # alone wouldn't.
-    ready = extraction.ready_to_search or any(merged.values())
+    # alone wouldn't. A bare model code is also enough to search.
+    ready = extraction.ready_to_search or any(merged.values()) or bool(query)
 
     if not ready:
         question = (
@@ -125,16 +147,36 @@ async def run(state: AgentState) -> dict:
             "messages": [AIMessage(content=question)],
             "slots": {
                 "filters": merged,
+                "query": query,
                 "find_phase": "asking",
             },
             "current_node": "guide.find",
         }
 
-    # Ready: run the search.
+    # Ready: run the search. Pass the literal model code/SKU as `query` so
+    # the tool's SKU/name match can find the exact product even when the
+    # code doesn't map to a family code (e.g. "RF080" -> r_series SKUs).
     async with SessionLocal() as session:
         results: list[ProductOut] = await search_products(
-            session, filters=merged_filters, limit=3
+            session, query=query, filters=merged_filters, limit=3
         )
+
+        # Relaxation ladder for over-constrained searches — drop the
+        # strictest signals before dead-ending, since a shortlist beats
+        # "no results" every time.
+        #   1. Keep the literal model code, drop the structured filters. The
+        #      LLM often reads "KGR070" as family + frame_size_mm and stacks
+        #      filters that, combined, match nothing.
+        if not results and query and any(merged.values()):
+            results = await search_products(session, query=query, limit=3)
+        #   2. Fall back to the family alone (e.g. frame size stored as the
+        #      string "KGR070" rather than the numeric frame_size_mm).
+        if not results and merged.get("family") and len(merged) > 1:
+            results = await search_products(
+                session,
+                filters=SearchProductsFilters(family=merged["family"]),
+                limit=3,
+            )
 
     if not results:
         msg = t("gf_no_results", lang)
@@ -142,6 +184,7 @@ async def run(state: AgentState) -> dict:
             "messages": [AIMessage(content=msg)],
             "slots": {
                 "filters": merged,
+                "query": query,
                 "find_phase": "asking",
             },
             "current_node": "guide.find",
@@ -152,6 +195,7 @@ async def run(state: AgentState) -> dict:
         "messages": [AIMessage(content=summary)],
         "slots": {
             "filters": merged,
+            "query": query,
             "candidates": [r.model_dump() for r in results],
             "find_phase": "presented",
         },

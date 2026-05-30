@@ -38,6 +38,16 @@ class SearchProductsFilters(BaseModel):
             "uses 60/90/140; kr_series uses 045/060/070/080/090/110/128."
         ),
     )
+    ratio: int | None = Field(
+        default=None,
+        description=(
+            "Reduction ratio (the N in 'N:1'). e.g. a '20:1' gearbox has ratio=20."
+        ),
+    )
+    stages: int | None = Field(
+        default=None,
+        description="Number of planetary stages (1, 2, or 3).",
+    )
     min_nominal_torque_nm: float | None = None
     max_backlash_arcmin: float | None = None
     variant: str | None = Field(

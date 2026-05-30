@@ -12,8 +12,8 @@ description: PWJY series planetary gearboxes from Kofon, featuring an integrated
 product_page_url: https://www.kofon.com.cn/products_list/17.html
 spec_schema:
   frame_size_mm:
-    type: string
-    label: Frame size
+    type: integer
+    label: Frame size (mm)
   nominal_torque_nm:
     type: number
     label: Rated output torque (Nm)

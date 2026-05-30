@@ -73,6 +73,3 @@ spec_schema:
   direct_drive_speed_rpm:
     type: integer
     label: Direct drive max speed (rpm, i=1)
-  output_inertia_kgcm2:
-    type: integer
-    label: Output moment of inertia (kg·cm²)

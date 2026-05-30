@@ -77,5 +77,5 @@ spec_schema:
     type: number
     label: Weight (kg)
   frame_size_mm:
-    type: string
-    label: Frame size
+    type: integer
+    label: Frame size (mm)

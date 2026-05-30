@@ -31,6 +31,7 @@
     check:   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>',
     handoff: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 11a4 4 0 1 0-8 0"/><path d="M2 21a10 10 0 0 1 20 0"/><circle cx="12" cy="7" r="4"/></svg>',
     sparkle: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.5 5.5l2.8 2.8M15.7 15.7l2.8 2.8M5.5 18.5l2.8-2.8M15.7 8.3l2.8-2.8"/></svg>',
+    star:    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>',
   };
 
   /* ---------- Tiny DOM helpers ---------- */
@@ -119,6 +120,12 @@
     footer_note:             { EN: 'ISO 9001:2015 · EN / DE / FR / RU / JA / KO / ZH · <a href="#">Privacy</a>' },
     config_email_label:      { EN: "Your email (for quote follow-up)" },
     config_email_placeholder:{ EN: "you@company.com" },
+    rating_title:            { EN: "How was this conversation?" },
+    rating_feedback_placeholder: { EN: "Anything we could do better? (optional)" },
+    rating_submit:           { EN: "Send feedback" },
+    rating_dismiss:          { EN: "Maybe later" },
+    rating_thanks:           { EN: "Thanks for your feedback!" },
+    rating_star_label:       { EN: "Rate {n} of 5" },
   };
   function _t(widget, key) {
     const lang = (widget && widget.state && widget.state.language) || "EN";
@@ -156,6 +163,7 @@
         open: false,
         screen: "welcome",   // welcome | chat
         flow: null,
+        ratingShown: false,  // one rating prompt per conversation
         language: (this.cfg.languages[0] || { code: "EN" }).code,
       };
       this.handlers = this.cfg.on || {};
@@ -497,6 +505,7 @@
         // conversation would cause the next chip click to silently no-op.
         this._thread().innerHTML = "";
         this._setSuggestions([]);
+        this.state.ratingShown = false;  // fresh start → eligible again
         if (this.cfg.apiUrl && global.AIAgentAPI && global.AIAgentAPI.resetSession) {
           global.AIAgentAPI.resetSession();
         }
@@ -576,6 +585,7 @@
        - `cfg.apiUrl` null → pre-baked mock _flows below (visuals-only). ----- */
     startFlow(name, opts) {
       this.state.flow = name;
+      this.state.ratingShown = false;  // fresh conversation → eligible again
       this.showScreen("chat");
       this._thread().innerHTML = "";
 
@@ -699,7 +709,15 @@
         console.warn("AIAgent: unknown card kind", kind, payload);
         return;
       }
-      if (name === "outcome" || name === "done") {
+      if (name === "outcome") {
+        // The conversation has reached a logical end (sell / handoff /
+        // resolved). Offer a rating — non-blocking: it's appended to the
+        // thread, the composer stays open, the user can ignore it and
+        // keep chatting (the backend's post_outcome_chat node handles that).
+        this._maybeShowRatingCard(data && data.outcome);
+        return;
+      }
+      if (name === "done") {
         // No UI; outcome card already rendered (if any), done just unlocks.
         return;
       }
@@ -1106,6 +1124,81 @@
           ${opts.cta ? `<button class="aiagent-card-cta" type="button">${opts.cta}</button>` : ""}
         </div>
       `);
+    }
+
+    /* ----- Conversation rating card (5 stars + optional feedback) -----
+       Shown once per conversation when an outcome is reached. Purely
+       additive: it never locks the composer or forces the chat to end —
+       the user can rate, dismiss, or simply keep typing. ----- */
+    _maybeShowRatingCard(outcome) {
+      // Once per conversation. `ratingShown` is reset whenever a new flow
+      // starts (see startFlow), so each fresh conversation gets one prompt.
+      if (this.state.ratingShown) return;
+      this.state.ratingShown = true;
+      this._addRatingCard(outcome);
+    }
+
+    _addRatingCard(outcome) {
+      const starLabel = (n) => _t(this, "rating_star_label").replace("{n}", n);
+      const stars = [1, 2, 3, 4, 5].map(n => `
+        <button class="aiagent-rating-star" type="button" data-value="${n}"
+                data-on="false" aria-label="${starLabel(n)}">${ICON.star}</button>
+      `).join("");
+      const card = this.addCard(`
+        <div class="aiagent-card aiagent-rating">
+          <button class="aiagent-rating-dismiss" type="button" aria-label="${_t(this, "rating_dismiss")}">${ICON.close}</button>
+          <p class="aiagent-rating-title">${_t(this, "rating_title")}</p>
+          <div class="aiagent-rating-stars" role="radiogroup">${stars}</div>
+          <textarea class="aiagent-rating-feedback" rows="2"
+                    placeholder="${_t(this, "rating_feedback_placeholder")}"></textarea>
+          <div class="aiagent-rating-actions">
+            <button class="aiagent-rating-skip" type="button">${_t(this, "rating_dismiss")}</button>
+            <button class="aiagent-card-cta aiagent-rating-submit" type="button" disabled>
+              ${_t(this, "rating_submit")}
+            </button>
+          </div>
+        </div>
+      `);
+
+      const starBtns = $$(card, ".aiagent-rating-star");
+      const submit = $(card, ".aiagent-rating-submit");
+      let selected = 0;
+      const paint = (n) => starBtns.forEach((s, i) => s.setAttribute("data-on", i < n ? "true" : "false"));
+      starBtns.forEach((s, i) => {
+        s.addEventListener("mouseenter", () => paint(i + 1));
+        s.addEventListener("click", () => {
+          selected = i + 1;
+          paint(selected);
+          submit.disabled = false;
+        });
+      });
+      const starsWrap = $(card, ".aiagent-rating-stars");
+      starsWrap.addEventListener("mouseleave", () => paint(selected));
+
+      const close = () => card.remove();
+      $(card, ".aiagent-rating-dismiss").addEventListener("click", close);
+      $(card, ".aiagent-rating-skip").addEventListener("click", close);
+
+      submit.addEventListener("click", () => {
+        if (!selected) return;
+        const comment = $(card, ".aiagent-rating-feedback").value.trim();
+        // Hand the rating to a config hook if one is wired; otherwise this
+        // is a no-op stub the host site can later point at /api/feedback.
+        const fb = { rating: selected, comment, outcome, language: this.state.language };
+        try {
+          if (this.handlers && typeof this.handlers.onFeedback === "function") {
+            this.handlers.onFeedback(fb);
+          } else {
+            console.debug("AIAgent feedback (no handler wired):", fb);
+          }
+        } catch (err) {
+          console.warn("AIAgent: onFeedback handler threw", err);
+        }
+        // Collapse the card into a thank-you confirmation.
+        card.innerHTML = `<p class="aiagent-rating-thanks">${ICON.check}<span>${_t(this, "rating_thanks")}</span></p>`;
+      });
+
+      return card;
     }
 
     /* ============================================================

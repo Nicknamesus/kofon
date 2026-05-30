@@ -708,8 +708,6 @@ img.aiagent-msg-avatar {
   object-fit: cover;
   flex-shrink: 0;
   margin-top: 2px;
-  padding: 3px;
-  background: #fff;
 }
 
 .aiagent-msg-bubble {
@@ -1496,6 +1494,137 @@ img.aiagent-msg-avatar {
   align-items: center;
   margin-top: 2px;
 }
+
+/* ============================================================
+   RATING CARD (post-outcome 5-star + feedback, non-blocking)
+   ============================================================ */
+
+.aiagent-rating {
+  position: relative;
+}
+
+.aiagent-rating-dismiss {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 24px;
+  height: 24px;
+  padding: 4px;
+  border: none;
+  background: transparent;
+  color: var(--aiagent-text-faint);
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.aiagent-rating-dismiss:hover {
+  color: var(--aiagent-text-muted);
+  background: var(--aiagent-bg-app);
+}
+
+.aiagent-rating-dismiss svg { width: 16px; height: 16px; }
+
+.aiagent-rating-title {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--aiagent-text);
+  margin: 0 28px 10px 0;
+}
+
+.aiagent-rating-stars {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 10px;
+}
+
+.aiagent-rating-star {
+  width: 30px;
+  height: 30px;
+  padding: 2px;
+  border: none;
+  background: transparent;
+  color: #d9b23a;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: transform 120ms ease;
+}
+
+.aiagent-rating-star:hover { transform: scale(1.12); }
+
+.aiagent-rating-star svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  transition: fill 120ms ease;
+}
+
+.aiagent-rating-star[data-on="true"] svg {
+  fill: #f5b301;
+  stroke: #f5b301;
+}
+
+.aiagent-rating-feedback {
+  width: 100%;
+  resize: vertical;
+  min-height: 38px;
+  padding: 8px 10px;
+  font-family: inherit;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--aiagent-text);
+  background: var(--aiagent-bg-panel);
+  border: 1px solid var(--aiagent-border-strong);
+  border-radius: 10px;
+  margin-bottom: 10px;
+  transition: border-color 160ms ease;
+}
+
+.aiagent-rating-feedback:focus {
+  outline: none;
+  border-color: var(--aiagent-primary);
+}
+
+.aiagent-rating-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.aiagent-rating-skip {
+  border: none;
+  background: transparent;
+  color: var(--aiagent-text-muted);
+  font-size: 12.5px;
+  cursor: pointer;
+  padding: 6px 4px;
+}
+
+.aiagent-rating-skip:hover { color: var(--aiagent-text); }
+
+.aiagent-rating .aiagent-rating-submit {
+  width: auto;
+  display: inline-flex;
+  align-items: center;
+  margin: 0;
+}
+
+.aiagent-rating-submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.aiagent-rating-thanks {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--aiagent-primary);
+}
+
+.aiagent-rating-thanks svg { width: 18px; height: 18px; flex-shrink: 0; }
 
 /* ============================================================
    CARD BODY HELPERS (used inside flow cards for prose content)

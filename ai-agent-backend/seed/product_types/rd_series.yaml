@@ -36,6 +36,3 @@ spec_schema:
   axis6_rated_current_arms:
     type: number
     label: Axis 6 rated output current (Arms)
-  datasheet_page:
-    type: string
-    label: Datasheet page reference

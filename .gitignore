@@ -1,3 +1,11 @@
 # Standalone repo for the hardcoded (single-process) demo build.
 # Lives inside this tree for convenience but is managed independently.
 agent-hardcoded/
+
+# Manager's manual (kept local, regenerated from source)
+AGENT_MANUAL.md
+AGENT_MANUAL.docx
+build_manual_docx.py
+
+# planning
+conversation_analysis.md

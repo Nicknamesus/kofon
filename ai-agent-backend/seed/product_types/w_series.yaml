@@ -27,12 +27,6 @@ spec_schema:
   peak_torque_nm:
     type: number
     label: Peak torque (Nm)
-  input_speed_rpm_max:
-    type: integer
-    label: Max continuous input speed (rpm)
-  input_speed_instantaneous_rpm_max:
-    type: integer
-    label: Max instantaneous input speed (rpm)
   efficiency_pct:
     type: number
     label: Efficiency (%)
@@ -69,9 +63,6 @@ spec_schema:
   temperature_range_extended_c:
     type: string
     label: Extended temperature range (°C)
-  moment_of_inertia_gcm2:
-    type: number
-    label: Moment of inertia (g·cm²)
   max_axial_load_n:
     type: number
     label: Max axial load (N)
@@ -90,12 +81,6 @@ spec_schema:
   weight_g:
     type: integer
     label: Weight (g)
-  recommended_temperature_range_c:
-    type: string
-    label: Recommended temperature range (°C)
   optional_extended_temperature_range_c:
     type: string
     label: Optional extended temperature range (°C)
-  stage:
-    type: integer
-    label: Number of stages

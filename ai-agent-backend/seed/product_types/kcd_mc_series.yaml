@@ -10,7 +10,7 @@ description: KCD-MC series harmonic drive reducers from Kofon. Features ultra-sh
 product_page_url: https://www.kofon.com.cn/products_list/40.html
 spec_schema:
   frame_size:
-    type: integer
+    type: string
     label: Frame size
   ratio:
     type: integer

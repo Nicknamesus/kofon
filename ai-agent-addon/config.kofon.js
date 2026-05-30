@@ -44,7 +44,7 @@
     ],
 
     /* ----- Top-of-welcome contextual banner (set null to hide) ----- */
-    expoBanner: { emoji: "🎪" },
+    expoBanner: null,
 
     /* ----- Primary actions = the 4 conversation types ----- */
     actions: [

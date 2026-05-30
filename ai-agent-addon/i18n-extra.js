@@ -80,6 +80,12 @@
       seed_datasheet:          "Ich brauche ein Produktdatenblatt.",
       seed_expo:               "Wir haben uns auf einer Messe getroffen — ich möchte dort anknüpfen.",
       footer_note:             'ISO 9001:2015 · EN / DE / FR / RU / JA / KO / ZH · <a href="#">Datenschutz</a>',
+      rating_title:            "Wie war dieses Gespräch?",
+      rating_feedback_placeholder: "Was könnten wir besser machen? (optional)",
+      rating_submit:           "Feedback senden",
+      rating_dismiss:          "Vielleicht später",
+      rating_thanks:           "Danke für Ihr Feedback!",
+      rating_star_label:       "{n} von 5 bewerten",
     },
 
     /* ---- French ---- */
@@ -154,6 +160,12 @@
       seed_datasheet:          "J'ai besoin d'une fiche technique produit.",
       seed_expo:               "On s'est rencontrés à un salon — je reprends la conversation.",
       footer_note:             'ISO 9001:2015 · EN / DE / FR / RU / JA / KO / ZH · <a href="#">Confidentialité</a>',
+      rating_title:            "Comment s'est passée cette conversation ?",
+      rating_feedback_placeholder: "Que pourrions-nous améliorer ? (facultatif)",
+      rating_submit:           "Envoyer mon avis",
+      rating_dismiss:          "Plus tard",
+      rating_thanks:           "Merci pour votre retour !",
+      rating_star_label:       "Noter {n} sur 5",
     },
 
     /* ---- Russian ---- */
@@ -228,6 +240,12 @@
       seed_datasheet:          "Мне нужна спецификация на продукт.",
       seed_expo:               "Мы встречались на выставке — хочу продолжить разговор.",
       footer_note:             'ISO 9001:2015 · EN / DE / FR / RU / JA / KO / ZH · <a href="#">Конфиденциальность</a>',
+      rating_title:            "Как прошёл этот разговор?",
+      rating_feedback_placeholder: "Что мы могли бы улучшить? (необязательно)",
+      rating_submit:           "Отправить отзыв",
+      rating_dismiss:          "Позже",
+      rating_thanks:           "Спасибо за ваш отзыв!",
+      rating_star_label:       "Оценить на {n} из 5",
     },
 
     /* ---- Japanese ---- */
@@ -302,6 +320,12 @@
       seed_datasheet:          "製品データシートが必要です。",
       seed_expo:               "展示会でお会いしました — 続きをお願いします。",
       footer_note:             'ISO 9001:2015 · EN / DE / FR / RU / JA / KO / ZH · <a href="#">プライバシー</a>',
+      rating_title:            "今回の対応はいかがでしたか？",
+      rating_feedback_placeholder: "改善できる点があればお聞かせください（任意）",
+      rating_submit:           "フィードバックを送信",
+      rating_dismiss:          "後で",
+      rating_thanks:           "フィードバックありがとうございます！",
+      rating_star_label:       "5段階中{n}で評価",
     },
 
     /* ---- Korean ---- */
@@ -376,6 +400,12 @@
       seed_datasheet:          "제품 데이터시트가 필요합니다.",
       seed_expo:               "전시회에서 만났었는데요 — 이어서 하고 싶습니다.",
       footer_note:             'ISO 9001:2015 · EN / DE / FR / RU / JA / KO / ZH · <a href="#">개인정보</a>',
+      rating_title:            "이번 대화는 어떠셨나요?",
+      rating_feedback_placeholder: "개선할 점이 있다면 알려주세요 (선택)",
+      rating_submit:           "피드백 보내기",
+      rating_dismiss:          "나중에",
+      rating_thanks:           "피드백 감사합니다!",
+      rating_star_label:       "5점 중 {n}점",
     },
 
     /* ---- Chinese ---- */
@@ -450,6 +480,12 @@
       seed_datasheet:          "我需要一份产品数据手册。",
       seed_expo:               "我们在展会上见过——想继续之前的交流。",
       footer_note:             'ISO 9001:2015 · EN / DE / FR / RU / JA / KO / ZH · <a href="#">隐私政策</a>',
+      rating_title:            "这次对话体验如何？",
+      rating_feedback_placeholder: "我们有哪些可以改进的地方？（选填）",
+      rating_submit:           "提交反馈",
+      rating_dismiss:          "稍后再说",
+      rating_thanks:           "感谢您的反馈！",
+      rating_star_label:       "评分 {n} / 5",
     },
   };
 

@@ -71,6 +71,16 @@ async def _upsert(
     """Bulk upsert with ON CONFLICT DO UPDATE. Returns rows touched."""
     if not rows:
         return 0
+    # Normalize to a consistent column set. SQLAlchemy compiles a bulk
+    # `.values(list_of_dicts)` using the keys of the FIRST dict, silently
+    # dropping any column that only later rows carry. Seed files are
+    # heterogeneous (e.g. some products have a datasheet_url, others don't),
+    # so we fill the union of keys with None to keep every column in the
+    # INSERT — otherwise ON CONFLICT's `excluded.<col>` has nothing to write.
+    all_keys: set[str] = set()
+    for row in rows:
+        all_keys.update(row.keys())
+    rows = [{key: row.get(key) for key in all_keys} for row in rows]
     stmt = pg_insert(model).values(rows)
     stmt = stmt.on_conflict_do_update(
         index_elements=conflict_cols,

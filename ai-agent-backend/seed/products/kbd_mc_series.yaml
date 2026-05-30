@@ -19,8 +19,8 @@ products:
     lost_motion_arcmin: 1
     repeatability_arcmin: 0.1
     start_torque_mnm: 62
-    datasheet_url: https://www.kofon.com.cn/products_detail/78.html
   status: active
+  datasheet_url: https://www.kofon.com.cn/products_detail/78.html
 - sku: KBD-MC-14-100
   name: KBD-MC-14 — 100:1
   specs:
@@ -37,8 +37,8 @@ products:
     lost_motion_arcmin: 1
     repeatability_arcmin: 0.1
     start_torque_mnm: 50
-    datasheet_url: https://www.kofon.com.cn/products_detail/78.html
   status: active
+  datasheet_url: https://www.kofon.com.cn/products_detail/78.html
 - sku: KBD-MC-14-160
   name: KBD-MC-14 — 160:1
   specs:
@@ -55,8 +55,8 @@ products:
     lost_motion_arcmin: 1
     repeatability_arcmin: 0.1
     start_torque_mnm: 48
-    datasheet_url: https://www.kofon.com.cn/products_detail/78.html
   status: active
+  datasheet_url: https://www.kofon.com.cn/products_detail/78.html
 - sku: KBD-MC-17-50
   name: KBD-MC-17 — 50:1
   specs:
@@ -73,8 +73,8 @@ products:
     lost_motion_arcmin: 1
     repeatability_arcmin: 0.1
     start_torque_mnm: 190
-    datasheet_url: https://www.kofon.com.cn/products_detail/78.html
   status: active
+  datasheet_url: https://www.kofon.com.cn/products_detail/78.html
 - sku: KBD-MC-17-100
   name: KBD-MC-17 — 100:1
   specs:
@@ -91,8 +91,8 @@ products:
     lost_motion_arcmin: 1
     repeatability_arcmin: 0.1
     start_torque_mnm: 160
-    datasheet_url: https://www.kofon.com.cn/products_detail/78.html
   status: active
+  datasheet_url: https://www.kofon.com.cn/products_detail/78.html
 - sku: KBD-MC-17-160
   name: KBD-MC-17 — 160:1
   specs:
@@ -109,8 +109,8 @@ products:
     lost_motion_arcmin: 1
     repeatability_arcmin: 0.1
     start_torque_mnm: 220
-    datasheet_url: https://www.kofon.com.cn/products_detail/78.html
   status: active
+  datasheet_url: https://www.kofon.com.cn/products_detail/78.html
 - sku: KBD-MC-20-50
   name: KBD-MC-20 — 50:1
   specs:
@@ -127,8 +127,8 @@ products:
     lost_motion_arcmin: 1
     repeatability_arcmin: 0.1
     start_torque_mnm: 250
-    datasheet_url: https://www.kofon.com.cn/products_detail/78.html
   status: active
+  datasheet_url: https://www.kofon.com.cn/products_detail/78.html
 - sku: KBD-MC-20-100
   name: KBD-MC-20 — 100:1
   specs:
@@ -145,8 +145,8 @@ products:
     lost_motion_arcmin: 1
     repeatability_arcmin: 0.1
     start_torque_mnm: 230
-    datasheet_url: https://www.kofon.com.cn/products_detail/78.html
   status: active
+  datasheet_url: https://www.kofon.com.cn/products_detail/78.html
 - sku: KBD-MC-20-160
   name: KBD-MC-20 — 160:1
   specs:
@@ -163,8 +163,8 @@ products:
     lost_motion_arcmin: 1
     repeatability_arcmin: 0.1
     start_torque_mnm: 220
-    datasheet_url: https://www.kofon.com.cn/products_detail/78.html
   status: active
+  datasheet_url: https://www.kofon.com.cn/products_detail/78.html
 - sku: KBD-MC-25-50
   name: KBD-MC-25 — 50:1
   specs:
@@ -181,8 +181,8 @@ products:
     lost_motion_arcmin: 1
     repeatability_arcmin: 0.1
     start_torque_mnm: 390
-    datasheet_url: https://www.kofon.com.cn/products_detail/78.html
   status: active
+  datasheet_url: https://www.kofon.com.cn/products_detail/78.html
 - sku: KBD-MC-25-100
   name: KBD-MC-25 — 100:1
   specs:
@@ -199,8 +199,8 @@ products:
     lost_motion_arcmin: 1
     repeatability_arcmin: 0.1
     start_torque_mnm: 360
-    datasheet_url: https://www.kofon.com.cn/products_detail/78.html
   status: active
+  datasheet_url: https://www.kofon.com.cn/products_detail/78.html
 - sku: KBD-MC-25-160
   name: KBD-MC-25 — 160:1
   specs:
@@ -217,8 +217,8 @@ products:
     lost_motion_arcmin: 1
     repeatability_arcmin: 0.1
     start_torque_mnm: 340
-    datasheet_url: https://www.kofon.com.cn/products_detail/78.html
   status: active
+  datasheet_url: https://www.kofon.com.cn/products_detail/78.html
 - sku: KBD-MC-32-50
   name: KBD-MC-32 — 50:1
   specs:
@@ -235,8 +235,8 @@ products:
     lost_motion_arcmin: 1
     repeatability_arcmin: 0.1
     start_torque_mnm: 600
-    datasheet_url: https://www.kofon.com.cn/products_detail/78.html
   status: active
+  datasheet_url: https://www.kofon.com.cn/products_detail/78.html
 - sku: KBD-MC-32-100
   name: KBD-MC-32 — 100:1
   specs:
@@ -253,8 +253,8 @@ products:
     lost_motion_arcmin: 1
     repeatability_arcmin: 0.1
     start_torque_mnm: 550
-    datasheet_url: https://www.kofon.com.cn/products_detail/78.html
   status: active
+  datasheet_url: https://www.kofon.com.cn/products_detail/78.html
 - sku: KBD-MC-32-160
   name: KBD-MC-32 — 160:1
   specs:
@@ -271,5 +271,5 @@ products:
     lost_motion_arcmin: 1
     repeatability_arcmin: 0.1
     start_torque_mnm: 500
-    datasheet_url: https://www.kofon.com.cn/products_detail/78.html
   status: active
+  datasheet_url: https://www.kofon.com.cn/products_detail/78.html

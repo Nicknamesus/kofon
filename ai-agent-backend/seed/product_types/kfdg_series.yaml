@@ -52,9 +52,6 @@ spec_schema:
   screw_lead_mm:
     type: number
     label: Screw lead (mm)
-  max_thrust_screw_input_torque_nm:
-    type: number
-    label: Screw input torque at max thrust (Nm)
   positioning_accuracy_mm:
     type: number
     label: Positioning accuracy (mm)

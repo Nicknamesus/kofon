@@ -6,6 +6,7 @@ products:
 - sku: 2S250-1-1
   name: 2S250 — 1-stage direct drive (i=1)
   specs:
+    frame_size_mm: 250
     frame_size: 2S250
     ratio: 1
     motor_center_height_mm: 132
@@ -23,6 +24,7 @@ products:
 - sku: 2S250-1-4
   name: 2S250 — 1-stage, 4:1
   specs:
+    frame_size_mm: 250
     frame_size: 2S250
     ratio: 4
     motor_center_height_mm: 132
@@ -41,6 +43,7 @@ products:
 - sku: 2S250-1-5
   name: 2S250 — 1-stage, 5:1
   specs:
+    frame_size_mm: 250
     frame_size: 2S250
     ratio: 5
     motor_center_height_mm: 132
@@ -59,6 +62,7 @@ products:
 - sku: 2S300-1-1
   name: 2S300 — 1-stage direct drive (i=1)
   specs:
+    frame_size_mm: 300
     frame_size: 2S300
     ratio: 1
     motor_center_height_mm: 160
@@ -76,6 +80,7 @@ products:
 - sku: 2S300-1-4
   name: 2S300 — 1-stage, 4:1
   specs:
+    frame_size_mm: 300
     frame_size: 2S300
     ratio: 4
     motor_center_height_mm: 160
@@ -94,6 +99,7 @@ products:
 - sku: 2S300-1-5
   name: 2S300 — 1-stage, 5:1
   specs:
+    frame_size_mm: 300
     frame_size: 2S300
     ratio: 5
     motor_center_height_mm: 160
@@ -112,6 +118,7 @@ products:
 - sku: 2S450-1-1
   name: 2S450 — 1-stage direct drive (i=1)
   specs:
+    frame_size_mm: 450
     frame_size: 2S450
     ratio: 1
     motor_center_height_mm: 160
@@ -129,6 +136,7 @@ products:
 - sku: 2S450-1-4
   name: 2S450 — 1-stage, 4:1
   specs:
+    frame_size_mm: 450
     frame_size: 2S450
     ratio: 4
     motor_center_height_mm: 160
@@ -147,6 +155,7 @@ products:
 - sku: 2S450-1-5
   name: 2S450 — 1-stage, 5:1
   specs:
+    frame_size_mm: 450
     frame_size: 2S450
     ratio: 5
     motor_center_height_mm: 160
@@ -165,6 +174,7 @@ products:
 - sku: 2S600-1-1
   name: 2S600 — 1-stage direct drive (i=1)
   specs:
+    frame_size_mm: 600
     frame_size: 2S600
     ratio: 1
     motor_center_height_mm: 180
@@ -182,6 +192,7 @@ products:
 - sku: 2S600-1-4
   name: 2S600 — 1-stage, 4:1
   specs:
+    frame_size_mm: 600
     frame_size: 2S600
     ratio: 4
     motor_center_height_mm: 180
@@ -200,6 +211,7 @@ products:
 - sku: 2S600-1-5
   name: 2S600 — 1-stage, 5:1
   specs:
+    frame_size_mm: 600
     frame_size: 2S600
     ratio: 5
     motor_center_height_mm: 180
@@ -228,7 +240,7 @@ products:
     rated_speed_rpm: 1500
     direct_drive_speed_rpm: 10000
     backlash_arcmin: 30
-    output_inertia_kgcm2: 270
+    output_moment_of_inertia_kg_cm2: 270
     oil_volume_dm3: 1.5
     weight_kg: 68
   status: active
@@ -246,7 +258,7 @@ products:
     rated_speed_rpm: 1500
     max_speed_rpm: 6300
     backlash_arcmin: 20
-    output_inertia_kgcm2: 570
+    output_moment_of_inertia_kg_cm2: 570
     oil_volume_dm3: 1.5
     weight_kg: 68
   status: active
@@ -264,7 +276,7 @@ products:
     rated_speed_rpm: 1500
     max_speed_rpm: 6300
     backlash_arcmin: 20
-    output_inertia_kgcm2: 570
+    output_moment_of_inertia_kg_cm2: 570
     oil_volume_dm3: 1.5
     weight_kg: 68
   status: active
@@ -281,7 +293,7 @@ products:
     rated_speed_rpm: 1500
     direct_drive_speed_rpm: 10000
     backlash_arcmin: 30
-    output_inertia_kgcm2: 270
+    output_moment_of_inertia_kg_cm2: 270
     oil_volume_dm3: 2.8
     weight_kg: 86
   status: active
@@ -299,7 +311,7 @@ products:
     rated_speed_rpm: 1500
     max_speed_rpm: 6300
     backlash_arcmin: 20
-    output_inertia_kgcm2: 570
+    output_moment_of_inertia_kg_cm2: 570
     oil_volume_dm3: 2.8
     weight_kg: 86
   status: active
@@ -317,7 +329,7 @@ products:
     rated_speed_rpm: 1500
     max_speed_rpm: 6300
     backlash_arcmin: 20
-    output_inertia_kgcm2: 570
+    output_moment_of_inertia_kg_cm2: 570
     oil_volume_dm3: 2.8
     weight_kg: 86
   status: active
@@ -334,7 +346,7 @@ products:
     rated_speed_rpm: 1000
     direct_drive_speed_rpm: 8000
     backlash_arcmin: 30
-    output_inertia_kgcm2: 530
+    output_moment_of_inertia_kg_cm2: 530
     oil_volume_dm3: 5.1
     weight_kg: 155
   status: active
@@ -352,7 +364,7 @@ products:
     rated_speed_rpm: 1000
     max_speed_rpm: 5000
     backlash_arcmin: 20
-    output_inertia_kgcm2: 1100
+    output_moment_of_inertia_kg_cm2: 1100
     oil_volume_dm3: 5.1
     weight_kg: 155
   status: active
@@ -370,7 +382,7 @@ products:
     rated_speed_rpm: 1000
     max_speed_rpm: 5000
     backlash_arcmin: 20
-    output_inertia_kgcm2: 1100
+    output_moment_of_inertia_kg_cm2: 1100
     oil_volume_dm3: 5.1
     weight_kg: 155
   status: active
@@ -387,7 +399,7 @@ products:
     rated_speed_rpm: 1000
     direct_drive_speed_rpm: 6000
     backlash_arcmin: 30
-    output_inertia_kgcm2: 850
+    output_moment_of_inertia_kg_cm2: 850
     oil_volume_dm3: 5.4
     weight_kg: 165
   status: active
@@ -405,7 +417,7 @@ products:
     rated_speed_rpm: 1000
     max_speed_rpm: 5000
     backlash_arcmin: 20
-    output_inertia_kgcm2: 1470
+    output_moment_of_inertia_kg_cm2: 1470
     oil_volume_dm3: 5.4
     weight_kg: 165
   status: active
@@ -423,7 +435,7 @@ products:
     rated_speed_rpm: 1000
     max_speed_rpm: 5000
     backlash_arcmin: 20
-    output_inertia_kgcm2: 1470
+    output_moment_of_inertia_kg_cm2: 1470
     oil_volume_dm3: 5.4
     weight_kg: 165
   status: active

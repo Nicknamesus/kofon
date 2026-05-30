@@ -10,12 +10,13 @@ products:
     model: TL045
     stage: '1'
     ratio: '1:1'
-    frame_size_mm: '45'
+    frame_size_mm: 45
   status: active
 - sku: TL067-1
   name: TL067 — Offset Tightening Gearbox
   specs:
-    frame_size_mm: TL067
+    frame_size_mm: 67
+    frame_size: TL067
     ratio: '1'
     nominal_torque_nm: null
     peak_torque_nm: null
@@ -39,7 +40,8 @@ products:
     input_speed_rpm_max: null
     efficiency_pct: null
     weight_kg: null
-    frame_size_mm: TL054
+    frame_size_mm: 54
+    frame_size: TL054
     max_tightening_torque_nm: null
     tightening_speed_rpm: null
     life_cycles: null

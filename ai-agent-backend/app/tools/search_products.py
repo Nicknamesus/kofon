@@ -40,6 +40,7 @@ async def search_products(
         pattern = f"%{query}%"
         stmt = stmt.where(
             or_(
+                Product.sku.ilike(pattern),
                 Product.name.ilike(pattern),
                 ProductType.name.ilike(pattern),
                 ProductType.description.ilike(pattern),
@@ -55,6 +56,19 @@ async def search_products(
     if filters.frame_size_mm is not None:
         stmt = stmt.where(
             Product.specs["frame_size_mm"].as_integer() == filters.frame_size_mm
+        )
+    if filters.ratio is not None:
+        stmt = stmt.where(Product.specs["ratio"].as_integer() == filters.ratio)
+    if filters.stages is not None:
+        # Stage count is stored under inconsistent keys across families
+        # (`stages` / `stage` / `stage_count`); match any of them. A missing
+        # key casts to SQL NULL and simply fails its arm of the OR.
+        stmt = stmt.where(
+            or_(
+                Product.specs["stages"].as_integer() == filters.stages,
+                Product.specs["stage"].as_integer() == filters.stages,
+                Product.specs["stage_count"].as_integer() == filters.stages,
+            )
         )
     if filters.min_nominal_torque_nm is not None:
         stmt = stmt.where(
@@ -80,8 +94,12 @@ async def search_products(
             family=pt.family if pt else None,
             product_type_code=pt.code if pt else None,
             specs=p.specs,
-            datasheet_url=p.datasheet_url,
-            cad_url=p.cad_url,
+            # Many SKUs promoted from drafts carry their product-detail link
+            # nested in `specs.datasheet_url` rather than the column; fall
+            # back to it so the widget links to the specific product page
+            # instead of dropping to the product-type's category list.
+            datasheet_url=p.datasheet_url or (p.specs or {}).get("datasheet_url"),
+            cad_url=p.cad_url or (p.specs or {}).get("cad_url"),
             product_page_url=pt.product_page_url if pt else None,
             lead_time_days=p.lead_time_days,
             status=p.status,

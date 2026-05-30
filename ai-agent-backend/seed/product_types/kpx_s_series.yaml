@@ -26,9 +26,6 @@ spec_schema:
   emergency_stop_torque_nm:
     type: number
     label: Emergency stop torque (Nm)
-  input_speed_rpm_max:
-    type: integer
-    label: Max input speed (rpm)
   rated_input_speed_rpm:
     type: integer
     label: Rated input speed (rpm)
@@ -74,6 +71,3 @@ spec_schema:
   max_input_speed_rpm:
     type: integer
     label: Max input speed (rpm)
-  noise_db_a:
-    type: number
-    label: Noise (dB(A))
