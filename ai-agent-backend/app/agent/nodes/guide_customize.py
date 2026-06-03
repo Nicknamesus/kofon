@@ -31,7 +31,9 @@ from pydantic import BaseModel, Field
 from sqlalchemy import select
 
 from app.agent.llm import get_chat_llm, system_message
+from app.agent.sanitize import clean_llm_text
 from app.agent.state import AgentState
+from app.content_i18n import tr_family_group, tr_family_name, tr_label
 from app.db import SessionLocal
 from app.i18n import t
 from app.models import ProductType, has_active_products
@@ -92,17 +94,20 @@ async def run(state: AgentState) -> dict:
                 family = all_families[0]
 
     if family is None:
-        # If we already asked and the user replied, try to resolve from text.
-        if customize.get("phase") == "collecting":
-            family = await _resolve_family_from_conversation(
-                state.get("messages", []), lang
+        # Try to resolve the family straight from what the user already
+        # said — both on first contact ("customise a planetary roller
+        # screw") and after we've explicitly asked. Skipping this on the
+        # first turn forced a needless "which family?" round-trip even when
+        # they named the family in their opening message.
+        family = await _resolve_family_from_conversation(
+            state.get("messages", []), lang
+        )
+        if family is not None:
+            schema = family.spec_schema or {}
+            return _form_card(
+                family, schema, {},
+                {**customize, "family_code": family.code}, lang,
             )
-            if family is not None:
-                schema = family.spec_schema or {}
-                return _form_card(
-                    family, schema, {},
-                    {**customize, "family_code": family.code}, lang,
-                )
 
     if family is None:
         async with SessionLocal() as session:
@@ -174,7 +179,7 @@ async def run(state: AgentState) -> dict:
 
     if not ready:
         question = (
-            extraction.follow_up_question
+            clean_llm_text(extraction.follow_up_question)
             or t("gc_what_target", lang, key=next(iter(schema.keys()), "value"))
         )
         return {
@@ -202,7 +207,7 @@ def _form_card(
         meta = meta or {}
         field: dict[str, Any] = {
             "key": key,
-            "label": meta.get("label") or key,
+            "label": tr_label(meta.get("label") or key, lang),
             "type": meta.get("type", "string"),
         }
         if "enum" in meta:
@@ -211,16 +216,17 @@ def _form_card(
             field["value"] = existing_modules[key]
         fields.append(field)
 
+    localized_name = tr_family_name(family.name, lang)
     return {
         "messages": [
-            AIMessage(content=t("gc_form_intro", lang, family_name=family.name))
+            AIMessage(content=t("gc_form_intro", lang, family_name=localized_name))
         ],
         "cards": [
             {
                 "kind": "custom_config_form",
                 "payload": {
                     "family_code": family.code,
-                    "family_name": family.name,
+                    "family_name": localized_name,
                     "fields": fields,
                 },
             }
@@ -246,6 +252,24 @@ async def _build_and_present(
             session, family_code=family.code, modules=merged
         )
 
+    localized_name = tr_family_name(config.family_name, lang)
+
+    # Re-build the rationale in the user's language: build_custom_config
+    # emits an English template with raw spec keys, so localize the family
+    # name and swap raw keys for their translated schema labels.
+    schema = family.spec_schema or {}
+    bits = ", ".join(
+        f"{tr_label((schema.get(k) or {}).get('label') or k, lang)}={v}"
+        for k, v in sorted(config.modules.items())
+        if v is not None
+    )
+    config.family_name = localized_name
+    config.rationale = (
+        t("gc_custom_build_desc", lang, family_name=localized_name, bits=bits)
+        if bits
+        else t("gc_custom_build_desc_empty", lang, family_name=localized_name)
+    )
+
     closest = (
         t("gc_closest_suffix", lang, sku=config.closest_stock_sku)
         if config.closest_stock_sku
@@ -254,7 +278,7 @@ async def _build_and_present(
     summary = t(
         "gc_summary",
         lang,
-        family_name=config.family_name,
+        family_name=localized_name,
         rationale=config.rationale,
         closest=closest,
     )
@@ -288,8 +312,8 @@ async def _build_and_present(
                 {
                     "sku": config.closest_stock_sku
                     or f"CUSTOM-{family.code.upper()}",
-                    "name": f"Custom {config.family_name}",
-                    "family": family.family,
+                    "name": t("gc_custom_candidate_name", lang, family_name=localized_name),
+                    "family": tr_family_group(family.family, lang),
                     "product_type_code": family.code,
                     "specs": merged,
                     "datasheet_url": None,

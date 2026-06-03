@@ -6,6 +6,11 @@ agent-hardcoded/
 AGENT_MANUAL.md
 AGENT_MANUAL.docx
 build_manual_docx.py
+# Engineering manual: source builder lives in agent-hardcoded/ (already
+# ignored); these are the generated .docx/.pdf outputs (EN + ZH, incl. A5).
+Kofon_Chatbot_Engineering_Manual*.docx
+Kofon_Chatbot_Engineering_Manual*.pdf
 
 # planning
 conversation_analysis.md
+

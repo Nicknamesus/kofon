@@ -44,6 +44,8 @@ def get_chat_llm(
         model=model or settings.deepseek_chat_model,
         temperature=temperature,
         api_key=settings.deepseek_api_key,
+        timeout=settings.llm_timeout_seconds,
+        max_retries=settings.llm_max_retries,
     )
 
 
@@ -57,4 +59,6 @@ def get_reasoner_llm() -> ChatDeepSeek:
     return ChatDeepSeek(
         model=settings.deepseek_reasoner_model,
         api_key=settings.deepseek_api_key,
+        timeout=settings.llm_timeout_seconds,
+        max_retries=settings.llm_max_retries,
     )

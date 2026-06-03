@@ -17,8 +17,8 @@ products:
       efficiency_pct: 96
       weight_kg: 1.1
       variant: HP
-    datasheet_url: https://www.kofon-motion.com/datasheets/PG060-3-HP.pdf
-    cad_url: https://www.kofon-motion.com/cad/PG060-3-HP.step
+    datasheet_url: https://www.kofon.com.cn/products_detail/1.html
+    cad_url: https://www.kofon.com.cn/products_detail/1.html
     lead_time_days: 21
     status: active
 
@@ -34,8 +34,8 @@ products:
       efficiency_pct: 94
       weight_kg: 3.2
       variant: HP
-    datasheet_url: https://www.kofon-motion.com/datasheets/PG090-10-HP.pdf
-    cad_url: https://www.kofon-motion.com/cad/PG090-10-HP.step
+    datasheet_url: https://www.kofon.com.cn/products_detail/12.html
+    cad_url: https://www.kofon.com.cn/products_detail/12.html
     lead_time_days: 28
     status: active
 
@@ -51,8 +51,8 @@ products:
       efficiency_pct: 92
       weight_kg: 3.4
       variant: HT
-    datasheet_url: https://www.kofon-motion.com/datasheets/PG090-25-HT.pdf
-    cad_url: https://www.kofon-motion.com/cad/PG090-25-HT.step
+    datasheet_url: https://www.kofon.com.cn/products_detail/12.html
+    cad_url: https://www.kofon.com.cn/products_detail/12.html
     lead_time_days: 28
     status: active
 
@@ -68,7 +68,7 @@ products:
       efficiency_pct: 90
       weight_kg: 9.8
       variant: HT
-    datasheet_url: https://www.kofon-motion.com/datasheets/PG140-50-HT.pdf
-    cad_url: https://www.kofon-motion.com/cad/PG140-50-HT.step
+    datasheet_url: https://www.kofon.com.cn/products_detail/13.html
+    cad_url: https://www.kofon.com.cn/products_detail/13.html
     lead_time_days: 42
     status: active

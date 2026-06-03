@@ -28,6 +28,7 @@ these tables cover analytics.
 from __future__ import annotations
 
 import json
+import logging
 from collections.abc import AsyncIterator
 from typing import Any
 from uuid import UUID, uuid4
@@ -41,6 +42,9 @@ from app import persistence
 from app.agent.checkpointer import make_checkpointer
 from app.agent.graph import build_graph
 from app.agent.sanitize import sanitize_user_input
+from app.i18n import t
+
+logger = logging.getLogger(__name__)
 
 router = APIRouter(prefix="/api", tags=["agent"])
 
@@ -157,40 +161,65 @@ async def post_message(payload: MessageRequest) -> StreamingResponse:
             last_node: str | None = None
             last_state: dict | None = None
 
-            async for chunk in graph.astream(
-                graph_input, config=config, stream_mode="updates"
-            ):
-                # chunk is {node_name: state_update}
-                for node_name, update in chunk.items():
-                    if not isinstance(update, dict):
-                        continue
-                    last_node = node_name
-                    last_state = update
-                    for msg in update.get("messages") or []:
-                        if isinstance(msg, AIMessage) and msg.content:
-                            yield _sse("bot_text", {"text": msg.content})
-                            await persistence.append_bot_text(
-                                conversation_id, msg.content, node=node_name
+            try:
+                async for chunk in graph.astream(
+                    graph_input, config=config, stream_mode="updates"
+                ):
+                    # chunk is {node_name: state_update}
+                    for node_name, update in chunk.items():
+                        if not isinstance(update, dict):
+                            continue
+                        last_node = node_name
+                        last_state = update
+                        for msg in update.get("messages") or []:
+                            if isinstance(msg, AIMessage) and msg.content:
+                                yield _sse("bot_text", {"text": msg.content})
+                                await persistence.append_bot_text(
+                                    conversation_id, msg.content, node=node_name
+                                )
+                        for card in update.get("cards") or []:
+                            yield _sse("card", card)
+                            await persistence.append_bot_card(
+                                conversation_id, card, node=node_name
                             )
-                    for card in update.get("cards") or []:
-                        yield _sse("card", card)
-                        await persistence.append_bot_card(
-                            conversation_id, card, node=node_name
-                        )
-                    if update.get("outcome"):
-                        final_outcome = update["outcome"]
+                        if update.get("outcome"):
+                            final_outcome = update["outcome"]
 
-            if final_outcome:
-                yield _sse("outcome", {"outcome": final_outcome})
+                if final_outcome:
+                    yield _sse("outcome", {"outcome": final_outcome})
+            except Exception:
+                # A node raised mid-turn — a malformed structured-output
+                # parse, a DeepSeek timeout/5xx after retries, etc. Without
+                # this, the SSE stream would die with no bot_text and no
+                # `done`, and the widget would show nothing — the "same
+                # message works sometimes" symptom. Emit a localized retry
+                # prompt and still close the stream cleanly.
+                logger.exception(
+                    "agent turn failed (session=%s, last_node=%s)",
+                    payload.session_uuid,
+                    last_node,
+                )
+                fallback = t("err_transient", payload.language)
+                yield _sse("bot_text", {"text": fallback})
+                try:
+                    await persistence.append_bot_text(
+                        conversation_id, fallback, node="error"
+                    )
+                except Exception:
+                    logger.exception("failed to persist fallback bot text")
 
             # Patch the conversations row with the latest snapshot. The
             # outcome side-effects handler already wrote outcome/rfq/ticket
             # columns; here we sync current_node and the slim state mirror.
-            await persistence.update_conversation_state(
-                conversation_id,
-                current_node=(last_state or {}).get("current_node") or last_node,
-                state_snapshot=last_state,
-            )
+            # Best-effort: a DB hiccup here must not break the SSE response.
+            try:
+                await persistence.update_conversation_state(
+                    conversation_id,
+                    current_node=(last_state or {}).get("current_node") or last_node,
+                    state_snapshot=last_state,
+                )
+            except Exception:
+                logger.exception("failed to update conversation state")
 
             yield _sse("done", {})
 

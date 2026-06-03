@@ -34,6 +34,12 @@ class Settings(BaseSettings):
     deepseek_api_key: str = ""
     deepseek_chat_model: str = "deepseek-chat"
     deepseek_reasoner_model: str = "deepseek-reasoner"
+    # Resilience knobs for the DeepSeek API. Calls from China to DeepSeek
+    # are occasionally slow or flaky; without a timeout a hung request
+    # hangs the whole turn. A bounded timeout + a few retries turns most
+    # transient hiccups into a slightly slower (but successful) turn.
+    llm_timeout_seconds: float = 30.0
+    llm_max_retries: int = 3
 
     # ---- Embeddings (Phase 3) ----
     # Provider for product/problem text embeddings. Three values:

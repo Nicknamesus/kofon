@@ -10,6 +10,7 @@
   var packs = {
     /* ---- German ---- */
     DE: {
+      fit_label:              "Eignung {n}/5",
       matching_products:      "Passende Produkte",
       no_matches_yet:         "Noch keine Treffer.",
       recommended_families:   "Empfohlene Familien",
@@ -90,6 +91,7 @@
 
     /* ---- French ---- */
     FR: {
+      fit_label:              "adéquation {n}/5",
       matching_products:      "Produits correspondants",
       no_matches_yet:         "Aucun résultat pour l'instant.",
       recommended_families:   "Familles recommandées",
@@ -170,6 +172,7 @@
 
     /* ---- Russian ---- */
     RU: {
+      fit_label:              "соответствие {n}/5",
       matching_products:      "Подходящие продукты",
       no_matches_yet:         "Пока совпадений нет.",
       recommended_families:   "Рекомендуемые серии",
@@ -250,6 +253,7 @@
 
     /* ---- Japanese ---- */
     JA: {
+      fit_label:              "適合度 {n}/5",
       matching_products:      "該当製品",
       no_matches_yet:         "まだ一致する製品はありません。",
       recommended_families:   "おすすめシリーズ",
@@ -330,6 +334,7 @@
 
     /* ---- Korean ---- */
     KO: {
+      fit_label:              "적합도 {n}/5",
       matching_products:      "일치하는 제품",
       no_matches_yet:         "아직 일치 항목이 없습니다.",
       recommended_families:   "추천 제품군",
@@ -410,6 +415,7 @@
 
     /* ---- Chinese ---- */
     ZH: {
+      fit_label:              "契合度 {n}/5",
       matching_products:      "匹配的产品",
       no_matches_yet:         "暂无匹配。",
       recommended_families:   "推荐系列",

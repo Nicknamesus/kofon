@@ -20,6 +20,7 @@ from langchain_core.messages import AIMessage, HumanMessage
 from pydantic import BaseModel, Field
 
 from app.agent.llm import get_chat_llm, system_message
+from app.agent.sanitize import clean_llm_text
 from app.agent.state import AgentState
 from app.i18n import t
 
@@ -38,9 +39,11 @@ issue' — are NOT symptoms. Leave symptom=null in those cases.
 Set ready=true once you have a specific symptom. SKU is helpful but
 optional — don't block on it. If the symptom is missing or only generic,
 set ready=false and put ONE targeted question in follow_up_question,
-acknowledging the issue and asking what specifically is happening
-(e.g. "I'm sorry to hear that — could you tell me what the unit is
-doing, or what's not working as expected?").
+acknowledging the issue, asking what specifically is happening, AND —
+when the product model/SKU isn't known yet — asking for the product
+model in the same message (e.g. "I'm sorry to hear that — could you
+tell me what the unit is doing, or what's not working as expected? And
+if you have it, the product model helps too.").
 
 Never invent a SKU or symptom the user didn't state.
 """
@@ -82,7 +85,12 @@ def _looks_vague(symptom: str | None) -> bool:
     if not symptom:
         return True
     normalized = symptom.strip().lower().rstrip(".!?")
-    if len(normalized) < 12:
+    # Reject only genuine noise (empty / a stray character or two). Real
+    # symptoms are often terse — "oil leak", "no power", "leaking oil" (11
+    # chars) — so a high length floor here produced false negatives that
+    # trapped the user in a re-ask loop. Wordy non-symptoms ("I have a
+    # problem with my product") are long and caught by the fragment list.
+    if len(normalized) < 4:
         return True
     # If the whole symptom is a vague announcement (no extra detail), reject.
     for frag in _VAGUE_SYMPTOM_FRAGMENTS:
@@ -130,8 +138,10 @@ async def run(state: AgentState) -> dict:
     )
 
     # Carry forward anything we already had; the LLM may only see new info.
-    sku = extraction.sku or postsales.get("sku")
-    symptom = extraction.symptom or postsales.get("symptom")
+    # clean_llm_text guards against the literal "null"/"none" strings DeepSeek
+    # emits for nullable fields, which would otherwise pass the `or` fallback.
+    sku = clean_llm_text(extraction.sku) or postsales.get("sku")
+    symptom = clean_llm_text(extraction.symptom) or postsales.get("symptom")
 
     # Code-level guard: even if the LLM extracted a "symptom", reject it
     # if it's just a generic announcement of having a problem. We'd rather
@@ -141,7 +151,7 @@ async def run(state: AgentState) -> dict:
 
     if not symptom:
         question = (
-            extraction.follow_up_question
+            clean_llm_text(extraction.follow_up_question)
             or t("pi_sorry_what_doing", lang)
         )
         return {

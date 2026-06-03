@@ -8,6 +8,30 @@ MAX_USER_MESSAGE_LENGTH = 2000
 
 _CONTROL_CHARS_RE = re.compile(r"[\x00-\x08\x0b\x0c\x0e-\x1f\x7f]")
 
+# Tokens an LLM emits *as a string* for a field that should have been JSON
+# null. DeepSeek's structured output does this routinely; left unchecked, a
+# truthy "null" slips past `value or fallback` guards and surfaces to the
+# user (a literal "null" chat bubble) or poisons a downstream match.
+_NULLISH_LLM_TOKENS = frozenset(
+    {"", "null", "none", "nil", "n/a", "na", "undefined", "nan"}
+)
+
+
+def clean_llm_text(value: str | None) -> str | None:
+    """Normalize an optional string an LLM produced.
+
+    Returns ``None`` when *value* is missing, whitespace-only, or one of the
+    literal null-ish tokens an LLM emits in place of a real JSON null. Use at
+    every site that does ``extraction.field or fallback`` so the fallback
+    actually fires instead of rendering the string "null".
+    """
+    if value is None:
+        return None
+    stripped = value.strip()
+    if stripped.lower() in _NULLISH_LLM_TOKENS:
+        return None
+    return stripped
+
 
 def sanitize_user_input(
     text: str | None, *, max_length: int = MAX_USER_MESSAGE_LENGTH

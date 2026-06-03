@@ -28,7 +28,9 @@ from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.agent.llm import get_chat_llm, system_message
+from app.agent.sanitize import clean_llm_text
 from app.agent.state import AgentState
+from app.content_i18n import tr_family_group
 from app.db import SessionLocal
 from app.i18n import t
 from app.models import ProductType, has_active_products
@@ -116,7 +118,10 @@ async def run(state: AgentState) -> dict:
         prompt_content = await _build_system_prompt(session)
 
     # Extract filters from the full conversation so the LLM sees prior turns.
-    llm = get_chat_llm().with_structured_output(_Extraction)
+    # temperature=0: this is slot extraction, not prose. The default 0.2
+    # made the same query extract different filters across turns — a source
+    # of "works sometimes" flakiness. Match every other extractor node.
+    llm = get_chat_llm(temperature=0).with_structured_output(_Extraction)
     extraction: _Extraction = await llm.ainvoke(
         [system_message(prompt_content, lang), *messages]
     )
@@ -131,7 +136,7 @@ async def run(state: AgentState) -> dict:
     # The literal model code/SKU persists across turns just like filters:
     # the user may type "RF080" then "2 stage 20:1" in separate messages.
     # Latest non-empty extraction wins.
-    query = (extraction.query or "").strip() or existing_query
+    query = clean_llm_text(extraction.query) or existing_query
 
     # Re-evaluate readiness with merged context — if presales seeded a family,
     # we may already have enough to search even if this turn's extraction
@@ -140,7 +145,7 @@ async def run(state: AgentState) -> dict:
 
     if not ready:
         question = (
-            extraction.follow_up_question
+            clean_llm_text(extraction.follow_up_question)
             or t("gf_clarify", lang)
         )
         return {
@@ -229,12 +234,12 @@ def _format_results(results: list[ProductOut], lang: str | None) -> str:
         backlash = r.specs.get("backlash_arcmin")
         bits: list[str] = []
         if ratio is not None:
-            bits.append(f"{ratio}:1 ratio")
+            bits.append(t("gf_detail_ratio", lang, v=ratio))
         if torque is not None:
-            bits.append(f"{torque} Nm nominal")
+            bits.append(t("gf_detail_torque", lang, v=torque))
         if backlash is not None:
-            bits.append(f"{backlash} arcmin backlash")
-        detail = ", ".join(bits) if bits else r.family or ""
+            bits.append(t("gf_detail_backlash", lang, v=backlash))
+        detail = ", ".join(bits) if bits else tr_family_group(r.family, lang) or ""
         link = f"\n    {r.datasheet_url}" if r.datasheet_url else ""
         lines.append(f"  - {r.sku} ({r.name}) — {detail}{link}")
     lines.append("\n" + t("gf_do_any_fit", lang))

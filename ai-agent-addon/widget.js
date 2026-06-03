@@ -53,6 +53,7 @@
     matching_products:       { EN: "Matching products" },
     no_matches_yet:          { EN: "No matches yet." },
     recommended_families:    { EN: "Recommended families" },
+    fit_label:               { EN: "fit {n}/5" },
     no_curated_match:        { EN: "No curated match for that combination yet." },
     closest_matches:         { EN: "Closest matches" },
     none_of_these:           { EN: "None of these — let me describe more" },
@@ -766,7 +767,7 @@
         <div class="aiagent-product-row">
           <div class="aiagent-product-row-main">
             <strong>${_escapeHtml(r.name || "")}</strong>
-            <span class="aiagent-product-row-meta">fit ${r.fit_score}/5 · ${_escapeHtml(r.family || "")}</span>
+            <span class="aiagent-product-row-meta">${_t(this, "fit_label").replace("{n}", r.fit_score)} · ${_escapeHtml(r.family || "")}</span>
             <span class="aiagent-product-row-name">${_escapeHtml(r.rationale || "")}</span>
           </div>
           ${link}

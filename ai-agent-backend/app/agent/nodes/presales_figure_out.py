@@ -22,7 +22,9 @@ from pydantic import BaseModel, Field
 from sqlalchemy import select
 
 from app.agent.llm import get_chat_llm, system_message
+from app.agent.sanitize import clean_llm_text
 from app.agent.state import AgentState
+from app.content_i18n import tr_family_group, tr_family_name
 from app.db import SessionLocal
 from app.i18n import t
 from app.models import ProductType, has_active_products
@@ -122,11 +124,11 @@ async def run(state: AgentState) -> dict:
 
     # Persist any literal model code the user mentioned so it survives the
     # clarification loop and the later handoff to guide.find.
-    carried_query = (extraction.query or "").strip() or presales.get("query")
+    carried_query = clean_llm_text(extraction.query) or presales.get("query")
 
     if not extraction.ready:
         question = (
-            extraction.follow_up_question
+            clean_llm_text(extraction.follow_up_question)
             or t("pfo_industry_question", lang)
         )
         return {
@@ -134,8 +136,8 @@ async def run(state: AgentState) -> dict:
             "slots": {
                 "presales": {
                     **presales,
-                    "industry": extraction.industry,
-                    "application": extraction.application,
+                    "industry": clean_llm_text(extraction.industry),
+                    "application": clean_llm_text(extraction.application),
                     "query": carried_query,
                 }
             },
@@ -167,6 +169,7 @@ async def run(state: AgentState) -> dict:
 
         if fallback is not None:
             family_code, family_name, family_desc, rationale, page_url = fallback
+            family_name = tr_family_name(family_name, lang)
             summary = t(
                 "pfo_no_curated_fit",
                 lang,
@@ -236,18 +239,22 @@ async def run(state: AgentState) -> dict:
         }
 
     top = recs.recommendations[0]
+    top_name = tr_family_name(top.name, lang)
     summary = t(
         "pfo_summary",
         lang,
         industry=recs.industry,
         application=recs.application,
-        name=top.name,
+        name=top_name,
         fit_score=top.fit_score,
         rationale=top.rationale,
     )
 
     rec_payload = recs.model_dump()
     rec_payload["title"] = t("pfo_rec_card_title", lang)
+    for rec in rec_payload.get("recommendations", []):
+        rec["name"] = tr_family_name(rec.get("name"), lang)
+        rec["family"] = tr_family_group(rec.get("family"), lang)
     return {
         "messages": [AIMessage(content=summary)],
         "slots": {
@@ -265,7 +272,7 @@ async def run(state: AgentState) -> dict:
                 "kind": "recommendations",
                 "payload": rec_payload,
             },
-            _proceed_gate_card(top.name, lang),
+            _proceed_gate_card(top_name, lang),
         ],
         "current_node": "presales.figure_out.recommended",
     }

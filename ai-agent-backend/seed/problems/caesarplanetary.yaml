@@ -30,7 +30,6 @@ problems:
           4. Re-measure backlash with a dial indicator at 100 mm radius. If
              still out of spec, escalate to RMA.
         confidence: 4
-        sop_url: https://www.kofon-motion.com/sop/SOP-CP-001.pdf
 
   - code: input_seal_leak
     label: Input shaft oil weep
@@ -53,8 +52,6 @@ problems:
           Most weep cases are seated installation issues, not seal failure —
           inspect for an over-torqued motor flange before replacing.
         confidence: 5
-        sop_url: https://www.kofon-motion.com/sop/SOP-CP-002.pdf
-        rma_template_url: https://www.kofon-motion.com/rma/RKT-CP-IN.pdf
 
   - code: thermal_alarm_continuous_duty
     label: Housing temperature alarm under continuous duty
@@ -85,4 +82,3 @@ problems:
           duty_cycle_within_spec: true
           ambient_within_spec: true
           mounting_adequate: true
-        sop_url: https://www.kofon-motion.com/sop/SOP-CP-003.pdf
